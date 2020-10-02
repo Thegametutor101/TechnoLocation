@@ -86,6 +86,12 @@
     <Compile Include="AppBundle\UserControls\UCRent.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCDashboard.Designer.vb">
+      <DependentUpon>UCDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
