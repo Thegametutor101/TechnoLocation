@@ -30,7 +30,7 @@ Partial Class UCRent
         Me.btAddUser = New System.Windows.Forms.Button()
         Me.tbUserSearch = New System.Windows.Forms.TextBox()
         Me.gridUserSearch = New System.Windows.Forms.DataGridView()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.calendarRent = New System.Windows.Forms.MonthCalendar()
         Me.labBeginDate = New System.Windows.Forms.Label()
         Me.tbBeginDate = New System.Windows.Forms.TextBox()
         Me.tbEndDate = New System.Windows.Forms.TextBox()
@@ -123,11 +123,11 @@ Partial Class UCRent
         Me.gridUserSearch.Size = New System.Drawing.Size(455, 231)
         Me.gridUserSearch.TabIndex = 7
         '
-        'MonthCalendar1
+        'calendarRent
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(121, 361)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 8
+        Me.calendarRent.Location = New System.Drawing.Point(121, 361)
+        Me.calendarRent.Name = "calendarRent"
+        Me.calendarRent.TabIndex = 8
         '
         'labBeginDate
         '
@@ -265,7 +265,7 @@ Partial Class UCRent
         Me.Controls.Add(Me.labEndDate)
         Me.Controls.Add(Me.tbBeginDate)
         Me.Controls.Add(Me.labBeginDate)
-        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.calendarRent)
         Me.Controls.Add(Me.gridUserSearch)
         Me.Controls.Add(Me.tbUserSearch)
         Me.Controls.Add(Me.btAddUser)
@@ -290,7 +290,7 @@ Partial Class UCRent
     Friend WithEvents btAddUser As Button
     Friend WithEvents tbUserSearch As TextBox
     Friend WithEvents gridUserSearch As DataGridView
-    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents calendarRent As MonthCalendar
     Friend WithEvents labBeginDate As Label
     Friend WithEvents tbBeginDate As TextBox
     Friend WithEvents tbEndDate As TextBox

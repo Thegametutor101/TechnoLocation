@@ -33,7 +33,7 @@ Partial Class UCUser
         '
         'btAddUser
         '
-        Me.btAddUser.Location = New System.Drawing.Point(37, 49)
+        Me.btAddUser.Location = New System.Drawing.Point(90, 51)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.Size = New System.Drawing.Size(142, 23)
         Me.btAddUser.TabIndex = 9
@@ -45,8 +45,9 @@ Partial Class UCUser
         Me.checkUser.AutoSize = True
         Me.checkUser.Location = New System.Drawing.Point(3, 55)
         Me.checkUser.Name = "checkUser"
-        Me.checkUser.Size = New System.Drawing.Size(15, 14)
+        Me.checkUser.Size = New System.Drawing.Size(81, 17)
         Me.checkUser.TabIndex = 8
+        Me.checkUser.Text = "Cocher tout"
         Me.checkUser.UseVisualStyleBackColor = True
         '
         'gridUser
@@ -75,7 +76,7 @@ Partial Class UCUser
         '
         'btDeleteUser
         '
-        Me.btDeleteUser.Location = New System.Drawing.Point(185, 49)
+        Me.btDeleteUser.Location = New System.Drawing.Point(238, 51)
         Me.btDeleteUser.Name = "btDeleteUser"
         Me.btDeleteUser.Size = New System.Drawing.Size(142, 23)
         Me.btDeleteUser.TabIndex = 10

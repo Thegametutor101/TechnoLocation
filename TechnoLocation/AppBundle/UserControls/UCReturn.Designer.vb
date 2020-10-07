@@ -59,13 +59,14 @@ Partial Class UCReturn
         Me.checkReturn.AutoSize = True
         Me.checkReturn.Location = New System.Drawing.Point(3, 55)
         Me.checkReturn.Name = "checkReturn"
-        Me.checkReturn.Size = New System.Drawing.Size(15, 14)
+        Me.checkReturn.Size = New System.Drawing.Size(81, 17)
         Me.checkReturn.TabIndex = 3
+        Me.checkReturn.Text = "Cocher tout"
         Me.checkReturn.UseVisualStyleBackColor = True
         '
         'btReturn
         '
-        Me.btReturn.Location = New System.Drawing.Point(37, 49)
+        Me.btReturn.Location = New System.Drawing.Point(90, 51)
         Me.btReturn.Name = "btReturn"
         Me.btReturn.Size = New System.Drawing.Size(104, 23)
         Me.btReturn.TabIndex = 4
