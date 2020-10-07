@@ -98,6 +98,18 @@
     <Compile Include="AppBundle\UserControls\UCEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCReturn.Designer.vb">
+      <DependentUpon>UCReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCHistory.Designer.vb">
+      <DependentUpon>UCHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -126,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCReturn.resx">
+      <DependentUpon>UCReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCHistory.resx">
+      <DependentUpon>UCHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

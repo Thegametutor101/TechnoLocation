@@ -22,36 +22,17 @@ Partial Class UCEquipment
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.tb_search = New System.Windows.Forms.TextBox()
-        Me.drop_search = New System.Windows.Forms.ComboBox()
         Me.cb_all = New System.Windows.Forms.CheckBox()
         Me.grid_equipment = New System.Windows.Forms.DataGridView()
+        Me.drop_search = New System.Windows.Forms.ComboBox()
+        Me.tb_search = New System.Windows.Forms.TextBox()
         CType(Me.grid_equipment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'tb_search
-        '
-        Me.tb_search.Location = New System.Drawing.Point(53, 28)
-        Me.tb_search.MaximumSize = New System.Drawing.Size(350, 40)
-        Me.tb_search.MinimumSize = New System.Drawing.Size(350, 40)
-        Me.tb_search.Name = "tb_search"
-        Me.tb_search.Size = New System.Drawing.Size(350, 40)
-        Me.tb_search.TabIndex = 0
-        '
-        'drop_search
-        '
-        Me.drop_search.FormattingEnabled = True
-        Me.drop_search.Location = New System.Drawing.Point(409, 37)
-        Me.drop_search.MaximumSize = New System.Drawing.Size(200, 0)
-        Me.drop_search.MinimumSize = New System.Drawing.Size(200, 0)
-        Me.drop_search.Name = "drop_search"
-        Me.drop_search.Size = New System.Drawing.Size(200, 21)
-        Me.drop_search.TabIndex = 1
         '
         'cb_all
         '
         Me.cb_all.AutoSize = True
-        Me.cb_all.Location = New System.Drawing.Point(3, 100)
+        Me.cb_all.Location = New System.Drawing.Point(3, 88)
         Me.cb_all.Name = "cb_all"
         Me.cb_all.Size = New System.Drawing.Size(70, 17)
         Me.cb_all.TabIndex = 2
@@ -61,19 +42,35 @@ Partial Class UCEquipment
         'grid_equipment
         '
         Me.grid_equipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_equipment.Location = New System.Drawing.Point(3, 134)
+        Me.grid_equipment.Location = New System.Drawing.Point(3, 123)
         Me.grid_equipment.Name = "grid_equipment"
-        Me.grid_equipment.Size = New System.Drawing.Size(950, 510)
+        Me.grid_equipment.Size = New System.Drawing.Size(953, 580)
         Me.grid_equipment.TabIndex = 3
+        '
+        'drop_search
+        '
+        Me.drop_search.FormattingEnabled = True
+        Me.drop_search.Location = New System.Drawing.Point(336, 27)
+        Me.drop_search.Name = "drop_search"
+        Me.drop_search.Size = New System.Drawing.Size(135, 21)
+        Me.drop_search.TabIndex = 5
+        '
+        'tb_search
+        '
+        Me.tb_search.Location = New System.Drawing.Point(3, 27)
+        Me.tb_search.Name = "tb_search"
+        Me.tb_search.Size = New System.Drawing.Size(281, 20)
+        Me.tb_search.TabIndex = 4
+        Me.tb_search.Text = "Recherche"
         '
         'UCEquipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.grid_equipment)
-        Me.Controls.Add(Me.cb_all)
         Me.Controls.Add(Me.drop_search)
         Me.Controls.Add(Me.tb_search)
+        Me.Controls.Add(Me.grid_equipment)
+        Me.Controls.Add(Me.cb_all)
         Me.Name = "UCEquipment"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.grid_equipment, System.ComponentModel.ISupportInitialize).EndInit()
@@ -81,9 +78,8 @@ Partial Class UCEquipment
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents tb_search As TextBox
-    Friend WithEvents drop_search As ComboBox
     Friend WithEvents cb_all As CheckBox
     Friend WithEvents grid_equipment As DataGridView
+    Friend WithEvents drop_search As ComboBox
+    Friend WithEvents tb_search As TextBox
 End Class
