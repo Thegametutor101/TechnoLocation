@@ -58,12 +58,12 @@ Partial Class UCHistory
         Me.cb_all.AutoSize = True
         Me.cb_all.Location = New System.Drawing.Point(3, 44)
         Me.cb_all.Name = "cb_all"
-        Me.cb_all.Size = New System.Drawing.Size(70, 17)
+        Me.cb_all.Size = New System.Drawing.Size(81, 17)
         Me.cb_all.TabIndex = 8
-        Me.cb_all.Text = "Check all"
+        Me.cb_all.Text = "Cocher tout"
         Me.cb_all.UseVisualStyleBackColor = True
         '
-        'UserControl1
+        'UCHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -71,7 +71,7 @@ Partial Class UCHistory
         Me.Controls.Add(Me.grid_history)
         Me.Controls.Add(Me.drop_history)
         Me.Controls.Add(Me.tb_history)
-        Me.Name = "UserControl1"
+        Me.Name = "UCHistory"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.grid_history, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
