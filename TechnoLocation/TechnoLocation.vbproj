@@ -112,6 +112,9 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCDashboard.resx">
+      <DependentUpon>UCDashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>
     </EmbeddedResource>
