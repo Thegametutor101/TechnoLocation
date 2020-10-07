@@ -92,6 +92,12 @@
     <Compile Include="AppBundle\UserControls\UCDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipment.Designer.vb">
+      <DependentUpon>UCEquipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCDashboard.resx">
       <DependentUpon>UCDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCEquipment.resx">
+      <DependentUpon>UCEquipment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>

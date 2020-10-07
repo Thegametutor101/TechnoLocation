@@ -28,10 +28,10 @@ Partial Class UCDashboard
         Me.lab_inactive = New System.Windows.Forms.Label()
         Me.lab_amount = New System.Windows.Forms.Label()
         Me.pb_graph = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.grid_late = New System.Windows.Forms.DataGridView()
         Me.lab_late = New System.Windows.Forms.Label()
         CType(Me.pb_graph, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_late, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MonthCalendar1
@@ -96,13 +96,13 @@ Partial Class UCDashboard
         Me.pb_graph.TabIndex = 5
         Me.pb_graph.TabStop = False
         '
-        'DataGridView1
+        'grid_late
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(68, 518)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(815, 129)
-        Me.DataGridView1.TabIndex = 6
+        Me.grid_late.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_late.Location = New System.Drawing.Point(68, 518)
+        Me.grid_late.Name = "grid_late"
+        Me.grid_late.Size = New System.Drawing.Size(815, 129)
+        Me.grid_late.TabIndex = 6
         '
         'lab_late
         '
@@ -118,7 +118,7 @@ Partial Class UCDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.lab_late)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.grid_late)
         Me.Controls.Add(Me.pb_graph)
         Me.Controls.Add(Me.lab_amount)
         Me.Controls.Add(Me.lab_inactive)
@@ -128,7 +128,7 @@ Partial Class UCDashboard
         Me.Name = "UCDashboard"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.pb_graph, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_late, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -140,6 +140,6 @@ Partial Class UCDashboard
     Friend WithEvents lab_inactive As Label
     Friend WithEvents lab_amount As Label
     Friend WithEvents pb_graph As PictureBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents grid_late As DataGridView
     Friend WithEvents lab_late As Label
 End Class
