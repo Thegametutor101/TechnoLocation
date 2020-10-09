@@ -80,6 +80,12 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCNotif.Designer.vb">
+      <DependentUpon>UCNotif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCNotif.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCRent.Designer.vb">
       <DependentUpon>UCRent.vb</DependentUpon>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCEquipment.resx">
       <DependentUpon>UCEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCNotif.resx">
+      <DependentUpon>UCNotif.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>

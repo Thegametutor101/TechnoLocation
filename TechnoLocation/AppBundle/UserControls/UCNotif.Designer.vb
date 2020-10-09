@@ -39,114 +39,126 @@ Partial Class UCNotif
         'labNot1
         '
         Me.labNot1.AutoSize = True
-        Me.labNot1.Location = New System.Drawing.Point(18, 15)
+        Me.labNot1.Location = New System.Drawing.Point(24, 18)
+        Me.labNot1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labNot1.Name = "labNot1"
-        Me.labNot1.Size = New System.Drawing.Size(39, 13)
+        Me.labNot1.Size = New System.Drawing.Size(51, 17)
         Me.labNot1.TabIndex = 0
         Me.labNot1.Text = "Label1"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 48)
+        Me.Label1.Location = New System.Drawing.Point(24, 59)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Label1"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 85)
+        Me.Label2.Location = New System.Drawing.Point(24, 105)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Label1"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 122)
+        Me.Label3.Location = New System.Drawing.Point(24, 150)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(51, 17)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Label1"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 155)
+        Me.Label4.Location = New System.Drawing.Point(24, 191)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(51, 17)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Label1"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(18, 189)
+        Me.Label5.Location = New System.Drawing.Point(24, 233)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.Size = New System.Drawing.Size(51, 17)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Label1"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(18, 402)
+        Me.Label6.Location = New System.Drawing.Point(24, 495)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.Size = New System.Drawing.Size(51, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Label1"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(18, 368)
+        Me.Label7.Location = New System.Drawing.Point(24, 453)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.Size = New System.Drawing.Size(51, 17)
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Label1"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(18, 335)
+        Me.Label8.Location = New System.Drawing.Point(24, 412)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.Size = New System.Drawing.Size(51, 17)
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "Label1"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(18, 298)
+        Me.Label9.Location = New System.Drawing.Point(24, 367)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.Size = New System.Drawing.Size(51, 17)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = "Label1"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 261)
+        Me.Label10.Location = New System.Drawing.Point(24, 321)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.Size = New System.Drawing.Size(59, 17)
         Me.Label10.TabIndex = 7
         Me.Label10.Text = "Label10"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 228)
+        Me.Label11.Location = New System.Drawing.Point(24, 281)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(39, 13)
+        Me.Label11.Size = New System.Drawing.Size(51, 17)
         Me.Label11.TabIndex = 6
         Me.Label11.Text = "Label1"
         '
         'UCNotif
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
@@ -160,8 +172,9 @@ Partial Class UCNotif
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.labNot1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCNotif"
-        Me.Size = New System.Drawing.Size(250, 647)
+        Me.Size = New System.Drawing.Size(333, 796)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
