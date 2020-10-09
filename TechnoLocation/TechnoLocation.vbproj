@@ -151,11 +151,17 @@
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCRestriction.resx">
+      <DependentUpon>UCRestriction.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCReturn.resx">
       <DependentUpon>UCReturn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCHistory.resx">
       <DependentUpon>UCHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCUser.resx">
+      <DependentUpon>UCUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
