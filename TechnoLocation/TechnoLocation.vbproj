@@ -73,11 +73,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBundle\Language\FR_CA.vb" />
     <Compile Include="AppBundle\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppBundle\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCNotif.Designer.vb">
+      <DependentUpon>UCNotif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCNotif.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\Connection.Designer.vb">
+      <DependentUpon>Connection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\Connection.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\UCRent.Designer.vb">
@@ -98,6 +111,12 @@
     <Compile Include="AppBundle\UserControls\UCEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCRestriction.Designer.vb">
+      <DependentUpon>UCRestriction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCRestriction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCReturn.Designer.vb">
       <DependentUpon>UCReturn.vb</DependentUpon>
     </Compile>
@@ -108,6 +127,12 @@
       <DependentUpon>UCHistory.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\UCHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCUser.Designer.vb">
+      <DependentUpon>UCUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCUser.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,6 +152,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppBundle\Connection.resx">
+      <DependentUpon>Connection.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -136,14 +164,23 @@
     <EmbeddedResource Include="AppBundle\UserControls\UCEquipment.resx">
       <DependentUpon>UCEquipment.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCNotif.resx">
+      <DependentUpon>UCNotif.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCRestriction.resx">
+      <DependentUpon>UCRestriction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCReturn.resx">
       <DependentUpon>UCReturn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCHistory.resx">
       <DependentUpon>UCHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCUser.resx">
+      <DependentUpon>UCUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
