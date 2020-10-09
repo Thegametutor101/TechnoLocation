@@ -33,6 +33,7 @@ Partial Class MainForm
         Me.bt_history = New System.Windows.Forms.Button()
         Me.bt_equipment = New System.Windows.Forms.Button()
         Me.bt_quit = New System.Windows.Forms.Button()
+        Me.btDisconnection = New System.Windows.Forms.Button()
         CType(Me.pb_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,18 +126,28 @@ Partial Class MainForm
         '
         'bt_quit
         '
-        Me.bt_quit.Location = New System.Drawing.Point(12, 590)
+        Me.bt_quit.Location = New System.Drawing.Point(12, 601)
         Me.bt_quit.Name = "bt_quit"
         Me.bt_quit.Size = New System.Drawing.Size(180, 36)
         Me.bt_quit.TabIndex = 10
         Me.bt_quit.Text = "Quitter"
         Me.bt_quit.UseVisualStyleBackColor = True
         '
+        'btDisconnection
+        '
+        Me.btDisconnection.Location = New System.Drawing.Point(12, 559)
+        Me.btDisconnection.Name = "btDisconnection"
+        Me.btDisconnection.Size = New System.Drawing.Size(180, 36)
+        Me.btDisconnection.TabIndex = 11
+        Me.btDisconnection.Text = "Déconnexion"
+        Me.btDisconnection.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1155, 649)
+        Me.Controls.Add(Me.btDisconnection)
         Me.Controls.Add(Me.bt_quit)
         Me.Controls.Add(Me.bt_calendar)
         Me.Controls.Add(Me.bt_history)
@@ -167,4 +178,5 @@ Partial Class MainForm
     Friend WithEvents bt_history As Button
     Friend WithEvents bt_equipment As Button
     Friend WithEvents bt_quit As Button
+    Friend WithEvents btDisconnection As Button
 End Class
