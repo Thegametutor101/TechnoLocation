@@ -63,11 +63,21 @@
     End Sub
 
     Private Sub bt_quit_Click(sender As Object, e As EventArgs) Handles bt_quit.Click
-        Dim style = vbYesNo + vbCritical + vbDefaultButton2
+        Dim style = vbYesNo + vbDefaultButton2
         Dim response = MsgBox(Msg.getMsgQuit, style, Msg.getMsgQuitTitle)
 
         If response = vbYes Then
-            Close()
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub btDisconnection_Click(sender As Object, e As EventArgs) Handles btDisconnection.Click
+        Dim style = vbYesNo + vbDefaultButton2
+        Dim response = MsgBox(Msg.getMsgDisconnection, style, Msg.getMsgDisconnecTitle)
+
+        If response = vbYes Then
+            Connection.Show()
+            Me.Close()
         End If
     End Sub
 End Class
