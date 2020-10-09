@@ -41,7 +41,7 @@ Partial Class UCRent
         Me.tbRealDeposit = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.labSuggDeposit = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.labReelDeposit = New System.Windows.Forms.Label()
         Me.btSavNewRent = New System.Windows.Forms.Button()
         Me.btCancelRent = New System.Windows.Forms.Button()
         Me.btResetRent = New System.Windows.Forms.Button()
@@ -211,14 +211,14 @@ Partial Class UCRent
         Me.labSuggDeposit.TabIndex = 18
         Me.labSuggDeposit.Text = "Dépôt suggéré :"
         '
-        'Label1
+        'labReelDeposit
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(772, 534)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 13)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "Dépôt demandé :"
+        Me.labReelDeposit.AutoSize = True
+        Me.labReelDeposit.Location = New System.Drawing.Point(772, 534)
+        Me.labReelDeposit.Name = "labReelDeposit"
+        Me.labReelDeposit.Size = New System.Drawing.Size(89, 13)
+        Me.labReelDeposit.TabIndex = 19
+        Me.labReelDeposit.Text = "Dépôt demandé :"
         '
         'btSavNewRent
         '
@@ -252,7 +252,7 @@ Partial Class UCRent
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btSavNewRent)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.labReelDeposit)
         Me.Controls.Add(Me.btCancelRent)
         Me.Controls.Add(Me.labSuggDeposit)
         Me.Controls.Add(Me.btResetRent)
@@ -301,7 +301,7 @@ Partial Class UCRent
     Friend WithEvents tbRealDeposit As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents labSuggDeposit As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labReelDeposit As Label
     Friend WithEvents btSavNewRent As Button
     Friend WithEvents btCancelRent As Button
     Friend WithEvents btResetRent As Button
