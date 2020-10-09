@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Connection
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Connection
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.labUserName = New System.Windows.Forms.Label()
         Me.tbUsername = New System.Windows.Forms.TextBox()
@@ -28,7 +28,7 @@ Partial Class Connection
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.btConnection = New System.Windows.Forms.Button()
         Me.btQuitConnection = New System.Windows.Forms.Button()
-        Me.labPasswordForget = New System.Windows.Forms.Label()
+        Me.linklabPasswordForget = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'labUserName
@@ -81,23 +81,22 @@ Partial Class Connection
         Me.btQuitConnection.Text = "Quitter"
         Me.btQuitConnection.UseVisualStyleBackColor = True
         '
-        'labPasswordForget
+        'linklabPasswordForget
         '
-        Me.labPasswordForget.AutoSize = True
-        Me.labPasswordForget.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPasswordForget.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.labPasswordForget.Location = New System.Drawing.Point(56, 126)
-        Me.labPasswordForget.Name = "labPasswordForget"
-        Me.labPasswordForget.Size = New System.Drawing.Size(111, 13)
-        Me.labPasswordForget.TabIndex = 6
-        Me.labPasswordForget.Text = "Mot de passe oublier?"
+        Me.linklabPasswordForget.AutoSize = True
+        Me.linklabPasswordForget.Location = New System.Drawing.Point(56, 128)
+        Me.linklabPasswordForget.Name = "linklabPasswordForget"
+        Me.linklabPasswordForget.Size = New System.Drawing.Size(111, 13)
+        Me.linklabPasswordForget.TabIndex = 7
+        Me.linklabPasswordForget.TabStop = True
+        Me.linklabPasswordForget.Text = "Mot de passe oublier?"
         '
         'Connection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(314, 219)
-        Me.Controls.Add(Me.labPasswordForget)
+        Me.Controls.Add(Me.linklabPasswordForget)
         Me.Controls.Add(Me.btQuitConnection)
         Me.Controls.Add(Me.btConnection)
         Me.Controls.Add(Me.tbPassword)
@@ -117,5 +116,5 @@ Partial Class Connection
     Friend WithEvents tbPassword As TextBox
     Friend WithEvents btConnection As Button
     Friend WithEvents btQuitConnection As Button
-    Friend WithEvents labPasswordForget As Label
+    Friend WithEvents linklabPasswordForget As LinkLabel
 End Class

@@ -1,5 +1,6 @@
 ﻿Public Class MainForm
     Private Sub p_Main_Paint(sender As Object, e As PaintEventArgs) Handles p_Main.Paint
+    Dim Msg As FR_CA = New FR_CA
 
     End Sub
 
@@ -65,8 +66,11 @@
     End Sub
 
     Private Sub bt_quit_Click(sender As Object, e As EventArgs) Handles bt_quit.Click
-        If MessageBox.Show($"Voulez-vous vraiment quitter le gestionnaire?{Environment.NewLine}Tous vos changement non sauvegardés seront supprimés.", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Me.Close()
+        Dim style = vbYesNo + vbCritical + vbDefaultButton2
+        Dim response = MsgBox(Msg.getMsgQuit, style, Msg.getMsgQuitTitle)
+
+        If response = vbYes Then
+            Close()
         End If
     End Sub
 End Class
