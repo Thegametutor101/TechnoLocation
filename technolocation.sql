@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 09, 2020 at 01:13 PM
+-- Generation Time: Oct 09, 2020 at 02:18 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rentalproject`
+-- Database: `technolocation`
 --
 
 DELIMITER $$
