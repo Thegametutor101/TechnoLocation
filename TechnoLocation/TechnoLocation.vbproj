@@ -98,6 +98,12 @@
     <Compile Include="AppBundle\UserControls\UCEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCRestriction.Designer.vb">
+      <DependentUpon>UCRestriction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCRestriction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCReturn.Designer.vb">
       <DependentUpon>UCReturn.vb</DependentUpon>
     </Compile>
@@ -108,6 +114,12 @@
       <DependentUpon>UCHistory.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\UCHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCUser.Designer.vb">
+      <DependentUpon>UCUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCUser.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
