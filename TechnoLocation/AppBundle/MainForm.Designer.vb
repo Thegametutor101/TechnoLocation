@@ -148,7 +148,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.bt_home)
         Me.Controls.Add(Me.pb_logo)
         Me.Controls.Add(Me.p_Main)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
         Me.Text = "MainForm"
         CType(Me.pb_logo, System.ComponentModel.ISupportInitialize).EndInit()
