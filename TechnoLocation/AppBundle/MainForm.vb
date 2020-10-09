@@ -1,8 +1,5 @@
 ﻿Public Class MainForm
-    Private Sub p_Main_Paint(sender As Object, e As PaintEventArgs) Handles p_Main.Paint
     Dim Msg As FR_CA = New FR_CA
-
-    End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
