@@ -24,15 +24,15 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.p_Main = New System.Windows.Forms.Panel()
         Me.pb_logo = New System.Windows.Forms.PictureBox()
-        Me.bt_home = New System.Windows.Forms.Button()
-        Me.bt_alert = New System.Windows.Forms.Button()
-        Me.bt_borrow = New System.Windows.Forms.Button()
-        Me.bt_return = New System.Windows.Forms.Button()
-        Me.bt_user = New System.Windows.Forms.Button()
-        Me.bt_calendar = New System.Windows.Forms.Button()
-        Me.bt_history = New System.Windows.Forms.Button()
-        Me.bt_equipment = New System.Windows.Forms.Button()
-        Me.bt_quit = New System.Windows.Forms.Button()
+        Me.btHome = New System.Windows.Forms.Button()
+        Me.btAlert = New System.Windows.Forms.Button()
+        Me.btBorrow = New System.Windows.Forms.Button()
+        Me.btReturn = New System.Windows.Forms.Button()
+        Me.btUser = New System.Windows.Forms.Button()
+        Me.btCalendar = New System.Windows.Forms.Button()
+        Me.btHistory = New System.Windows.Forms.Button()
+        Me.btEquipment = New System.Windows.Forms.Button()
+        Me.btQuit = New System.Windows.Forms.Button()
         Me.btDisconnection = New System.Windows.Forms.Button()
         CType(Me.pb_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,86 +52,86 @@ Partial Class MainForm
         Me.pb_logo.TabIndex = 1
         Me.pb_logo.TabStop = False
         '
-        'bt_home
+        'btHome
         '
-        Me.bt_home.Location = New System.Drawing.Point(12, 195)
-        Me.bt_home.Name = "bt_home"
-        Me.bt_home.Size = New System.Drawing.Size(180, 36)
-        Me.bt_home.TabIndex = 2
-        Me.bt_home.Text = "Accueil"
-        Me.bt_home.UseVisualStyleBackColor = True
+        Me.btHome.Location = New System.Drawing.Point(12, 195)
+        Me.btHome.Name = "btHome"
+        Me.btHome.Size = New System.Drawing.Size(180, 36)
+        Me.btHome.TabIndex = 2
+        Me.btHome.Text = "Accueil"
+        Me.btHome.UseVisualStyleBackColor = True
         '
-        'bt_alert
+        'btAlert
         '
-        Me.bt_alert.Location = New System.Drawing.Point(12, 237)
-        Me.bt_alert.Name = "bt_alert"
-        Me.bt_alert.Size = New System.Drawing.Size(180, 36)
-        Me.bt_alert.TabIndex = 3
-        Me.bt_alert.Text = "Notifications"
-        Me.bt_alert.UseVisualStyleBackColor = True
+        Me.btAlert.Location = New System.Drawing.Point(12, 237)
+        Me.btAlert.Name = "btAlert"
+        Me.btAlert.Size = New System.Drawing.Size(180, 36)
+        Me.btAlert.TabIndex = 3
+        Me.btAlert.Text = "Notifications"
+        Me.btAlert.UseVisualStyleBackColor = True
         '
-        'bt_borrow
+        'btBorrow
         '
-        Me.bt_borrow.Location = New System.Drawing.Point(12, 279)
-        Me.bt_borrow.Name = "bt_borrow"
-        Me.bt_borrow.Size = New System.Drawing.Size(180, 36)
-        Me.bt_borrow.TabIndex = 4
-        Me.bt_borrow.Text = "Prêt"
-        Me.bt_borrow.UseVisualStyleBackColor = True
+        Me.btBorrow.Location = New System.Drawing.Point(12, 279)
+        Me.btBorrow.Name = "btBorrow"
+        Me.btBorrow.Size = New System.Drawing.Size(180, 36)
+        Me.btBorrow.TabIndex = 4
+        Me.btBorrow.Text = "Prêt"
+        Me.btBorrow.UseVisualStyleBackColor = True
         '
-        'bt_return
+        'btReturn
         '
-        Me.bt_return.Location = New System.Drawing.Point(12, 321)
-        Me.bt_return.Name = "bt_return"
-        Me.bt_return.Size = New System.Drawing.Size(180, 36)
-        Me.bt_return.TabIndex = 5
-        Me.bt_return.Text = "Retour"
-        Me.bt_return.UseVisualStyleBackColor = True
+        Me.btReturn.Location = New System.Drawing.Point(12, 321)
+        Me.btReturn.Name = "btReturn"
+        Me.btReturn.Size = New System.Drawing.Size(180, 36)
+        Me.btReturn.TabIndex = 5
+        Me.btReturn.Text = "Retour"
+        Me.btReturn.UseVisualStyleBackColor = True
         '
-        'bt_user
+        'btUser
         '
-        Me.bt_user.Location = New System.Drawing.Point(12, 363)
-        Me.bt_user.Name = "bt_user"
-        Me.bt_user.Size = New System.Drawing.Size(180, 36)
-        Me.bt_user.TabIndex = 6
-        Me.bt_user.Text = "Utilisateurs"
-        Me.bt_user.UseVisualStyleBackColor = True
+        Me.btUser.Location = New System.Drawing.Point(12, 363)
+        Me.btUser.Name = "btUser"
+        Me.btUser.Size = New System.Drawing.Size(180, 36)
+        Me.btUser.TabIndex = 6
+        Me.btUser.Text = "Utilisateurs"
+        Me.btUser.UseVisualStyleBackColor = True
         '
-        'bt_calendar
+        'btCalendar
         '
-        Me.bt_calendar.Location = New System.Drawing.Point(12, 489)
-        Me.bt_calendar.Name = "bt_calendar"
-        Me.bt_calendar.Size = New System.Drawing.Size(180, 36)
-        Me.bt_calendar.TabIndex = 9
-        Me.bt_calendar.Text = "Calendrier de Restrictions"
-        Me.bt_calendar.UseVisualStyleBackColor = True
+        Me.btCalendar.Location = New System.Drawing.Point(12, 489)
+        Me.btCalendar.Name = "btCalendar"
+        Me.btCalendar.Size = New System.Drawing.Size(180, 36)
+        Me.btCalendar.TabIndex = 9
+        Me.btCalendar.Text = "Calendrier de Restrictions"
+        Me.btCalendar.UseVisualStyleBackColor = True
         '
-        'bt_history
+        'btHistory
         '
-        Me.bt_history.Location = New System.Drawing.Point(12, 447)
-        Me.bt_history.Name = "bt_history"
-        Me.bt_history.Size = New System.Drawing.Size(180, 36)
-        Me.bt_history.TabIndex = 8
-        Me.bt_history.Text = "History"
-        Me.bt_history.UseVisualStyleBackColor = True
+        Me.btHistory.Location = New System.Drawing.Point(12, 447)
+        Me.btHistory.Name = "btHistory"
+        Me.btHistory.Size = New System.Drawing.Size(180, 36)
+        Me.btHistory.TabIndex = 8
+        Me.btHistory.Text = "Historique"
+        Me.btHistory.UseVisualStyleBackColor = True
         '
-        'bt_equipment
+        'btEquipment
         '
-        Me.bt_equipment.Location = New System.Drawing.Point(12, 405)
-        Me.bt_equipment.Name = "bt_equipment"
-        Me.bt_equipment.Size = New System.Drawing.Size(180, 36)
-        Me.bt_equipment.TabIndex = 7
-        Me.bt_equipment.Text = "Équipement"
-        Me.bt_equipment.UseVisualStyleBackColor = True
+        Me.btEquipment.Location = New System.Drawing.Point(12, 405)
+        Me.btEquipment.Name = "btEquipment"
+        Me.btEquipment.Size = New System.Drawing.Size(180, 36)
+        Me.btEquipment.TabIndex = 7
+        Me.btEquipment.Text = "Équipement"
+        Me.btEquipment.UseVisualStyleBackColor = True
         '
-        'bt_quit
+        'btQuit
         '
-        Me.bt_quit.Location = New System.Drawing.Point(12, 601)
-        Me.bt_quit.Name = "bt_quit"
-        Me.bt_quit.Size = New System.Drawing.Size(180, 36)
-        Me.bt_quit.TabIndex = 10
-        Me.bt_quit.Text = "Quitter"
-        Me.bt_quit.UseVisualStyleBackColor = True
+        Me.btQuit.Location = New System.Drawing.Point(12, 601)
+        Me.btQuit.Name = "btQuit"
+        Me.btQuit.Size = New System.Drawing.Size(180, 36)
+        Me.btQuit.TabIndex = 10
+        Me.btQuit.Text = "Quitter"
+        Me.btQuit.UseVisualStyleBackColor = True
         '
         'btDisconnection
         '
@@ -148,15 +148,15 @@ Partial Class MainForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1155, 649)
         Me.Controls.Add(Me.btDisconnection)
-        Me.Controls.Add(Me.bt_quit)
-        Me.Controls.Add(Me.bt_calendar)
-        Me.Controls.Add(Me.bt_history)
-        Me.Controls.Add(Me.bt_equipment)
-        Me.Controls.Add(Me.bt_user)
-        Me.Controls.Add(Me.bt_return)
-        Me.Controls.Add(Me.bt_borrow)
-        Me.Controls.Add(Me.bt_alert)
-        Me.Controls.Add(Me.bt_home)
+        Me.Controls.Add(Me.btQuit)
+        Me.Controls.Add(Me.btCalendar)
+        Me.Controls.Add(Me.btHistory)
+        Me.Controls.Add(Me.btEquipment)
+        Me.Controls.Add(Me.btUser)
+        Me.Controls.Add(Me.btReturn)
+        Me.Controls.Add(Me.btBorrow)
+        Me.Controls.Add(Me.btAlert)
+        Me.Controls.Add(Me.btHome)
         Me.Controls.Add(Me.pb_logo)
         Me.Controls.Add(Me.p_Main)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -169,14 +169,14 @@ Partial Class MainForm
 
     Friend WithEvents p_Main As Panel
     Friend WithEvents pb_logo As PictureBox
-    Friend WithEvents bt_home As Button
-    Friend WithEvents bt_alert As Button
-    Friend WithEvents bt_borrow As Button
-    Friend WithEvents bt_return As Button
-    Friend WithEvents bt_user As Button
-    Friend WithEvents bt_calendar As Button
-    Friend WithEvents bt_history As Button
-    Friend WithEvents bt_equipment As Button
-    Friend WithEvents bt_quit As Button
+    Friend WithEvents btHome As Button
+    Friend WithEvents btAlert As Button
+    Friend WithEvents btBorrow As Button
+    Friend WithEvents btReturn As Button
+    Friend WithEvents btUser As Button
+    Friend WithEvents btCalendar As Button
+    Friend WithEvents btHistory As Button
+    Friend WithEvents btEquipment As Button
+    Friend WithEvents btQuit As Button
     Friend WithEvents btDisconnection As Button
 End Class

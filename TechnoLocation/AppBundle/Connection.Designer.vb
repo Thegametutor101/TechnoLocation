@@ -60,6 +60,7 @@ Partial Class Connection
         '
         Me.tbPassword.Location = New System.Drawing.Point(135, 92)
         Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbPassword.Size = New System.Drawing.Size(117, 20)
         Me.tbPassword.TabIndex = 3
         '

@@ -23,15 +23,15 @@ Partial Class UCDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.lab_loan = New System.Windows.Forms.Label()
-        Me.lab_user = New System.Windows.Forms.Label()
-        Me.lab_inactive = New System.Windows.Forms.Label()
-        Me.lab_amount = New System.Windows.Forms.Label()
-        Me.pb_graph = New System.Windows.Forms.PictureBox()
-        Me.grid_late = New System.Windows.Forms.DataGridView()
+        Me.labLoan = New System.Windows.Forms.Label()
+        Me.labUser = New System.Windows.Forms.Label()
+        Me.labInactive = New System.Windows.Forms.Label()
+        Me.labAmount = New System.Windows.Forms.Label()
+        Me.pbGraph = New System.Windows.Forms.PictureBox()
+        Me.gridLate = New System.Windows.Forms.DataGridView()
         Me.lab_late = New System.Windows.Forms.Label()
-        CType(Me.pb_graph, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grid_late, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridLate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MonthCalendar1
@@ -40,69 +40,69 @@ Partial Class UCDashboard
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
         '
-        'lab_loan
+        'labLoan
         '
-        Me.lab_loan.AutoSize = True
-        Me.lab_loan.BackColor = System.Drawing.Color.White
-        Me.lab_loan.Location = New System.Drawing.Point(65, 40)
-        Me.lab_loan.MinimumSize = New System.Drawing.Size(200, 120)
-        Me.lab_loan.Name = "lab_loan"
-        Me.lab_loan.Size = New System.Drawing.Size(200, 120)
-        Me.lab_loan.TabIndex = 1
-        Me.lab_loan.Text = "# emprunts"
-        Me.lab_loan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labLoan.AutoSize = True
+        Me.labLoan.BackColor = System.Drawing.Color.White
+        Me.labLoan.Location = New System.Drawing.Point(65, 40)
+        Me.labLoan.MinimumSize = New System.Drawing.Size(200, 120)
+        Me.labLoan.Name = "labLoan"
+        Me.labLoan.Size = New System.Drawing.Size(200, 120)
+        Me.labLoan.TabIndex = 1
+        Me.labLoan.Text = "# emprunts"
+        Me.labLoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lab_user
+        'labUser
         '
-        Me.lab_user.AutoSize = True
-        Me.lab_user.BackColor = System.Drawing.Color.White
-        Me.lab_user.Location = New System.Drawing.Point(271, 40)
-        Me.lab_user.MinimumSize = New System.Drawing.Size(200, 120)
-        Me.lab_user.Name = "lab_user"
-        Me.lab_user.Size = New System.Drawing.Size(200, 120)
-        Me.lab_user.TabIndex = 2
-        Me.lab_user.Text = "# utilisateurs"
-        Me.lab_user.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labUser.AutoSize = True
+        Me.labUser.BackColor = System.Drawing.Color.White
+        Me.labUser.Location = New System.Drawing.Point(271, 40)
+        Me.labUser.MinimumSize = New System.Drawing.Size(200, 120)
+        Me.labUser.Name = "labUser"
+        Me.labUser.Size = New System.Drawing.Size(200, 120)
+        Me.labUser.TabIndex = 2
+        Me.labUser.Text = "# utilisateurs"
+        Me.labUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lab_inactive
+        'labInactive
         '
-        Me.lab_inactive.AutoSize = True
-        Me.lab_inactive.BackColor = System.Drawing.Color.White
-        Me.lab_inactive.Location = New System.Drawing.Point(477, 40)
-        Me.lab_inactive.MinimumSize = New System.Drawing.Size(200, 120)
-        Me.lab_inactive.Name = "lab_inactive"
-        Me.lab_inactive.Size = New System.Drawing.Size(200, 120)
-        Me.lab_inactive.TabIndex = 3
-        Me.lab_inactive.Text = "# Utilisateurs Inactifs"
-        Me.lab_inactive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labInactive.AutoSize = True
+        Me.labInactive.BackColor = System.Drawing.Color.White
+        Me.labInactive.Location = New System.Drawing.Point(477, 40)
+        Me.labInactive.MinimumSize = New System.Drawing.Size(200, 120)
+        Me.labInactive.Name = "labInactive"
+        Me.labInactive.Size = New System.Drawing.Size(200, 120)
+        Me.labInactive.TabIndex = 3
+        Me.labInactive.Text = "# Utilisateurs Inactifs"
+        Me.labInactive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lab_amount
+        'labAmount
         '
-        Me.lab_amount.AutoSize = True
-        Me.lab_amount.BackColor = System.Drawing.Color.White
-        Me.lab_amount.Location = New System.Drawing.Point(683, 40)
-        Me.lab_amount.MinimumSize = New System.Drawing.Size(200, 120)
-        Me.lab_amount.Name = "lab_amount"
-        Me.lab_amount.Size = New System.Drawing.Size(200, 120)
-        Me.lab_amount.TabIndex = 4
-        Me.lab_amount.Text = "Montant dépôt"
-        Me.lab_amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labAmount.AutoSize = True
+        Me.labAmount.BackColor = System.Drawing.Color.White
+        Me.labAmount.Location = New System.Drawing.Point(683, 40)
+        Me.labAmount.MinimumSize = New System.Drawing.Size(200, 120)
+        Me.labAmount.Name = "labAmount"
+        Me.labAmount.Size = New System.Drawing.Size(200, 120)
+        Me.labAmount.TabIndex = 4
+        Me.labAmount.Text = "Montant dépôt"
+        Me.labAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'pb_graph
+        'pbGraph
         '
-        Me.pb_graph.Location = New System.Drawing.Point(68, 228)
-        Me.pb_graph.Name = "pb_graph"
-        Me.pb_graph.Size = New System.Drawing.Size(519, 251)
-        Me.pb_graph.TabIndex = 5
-        Me.pb_graph.TabStop = False
+        Me.pbGraph.Location = New System.Drawing.Point(68, 228)
+        Me.pbGraph.Name = "pbGraph"
+        Me.pbGraph.Size = New System.Drawing.Size(519, 251)
+        Me.pbGraph.TabIndex = 5
+        Me.pbGraph.TabStop = False
         '
-        'grid_late
+        'gridLate
         '
-        Me.grid_late.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_late.Location = New System.Drawing.Point(68, 518)
-        Me.grid_late.Name = "grid_late"
-        Me.grid_late.Size = New System.Drawing.Size(815, 129)
-        Me.grid_late.TabIndex = 6
+        Me.gridLate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridLate.Location = New System.Drawing.Point(68, 518)
+        Me.gridLate.Name = "gridLate"
+        Me.gridLate.Size = New System.Drawing.Size(815, 129)
+        Me.gridLate.TabIndex = 6
         '
         'lab_late
         '
@@ -118,28 +118,28 @@ Partial Class UCDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.lab_late)
-        Me.Controls.Add(Me.grid_late)
-        Me.Controls.Add(Me.pb_graph)
-        Me.Controls.Add(Me.lab_amount)
-        Me.Controls.Add(Me.lab_inactive)
-        Me.Controls.Add(Me.lab_user)
-        Me.Controls.Add(Me.lab_loan)
+        Me.Controls.Add(Me.gridLate)
+        Me.Controls.Add(Me.pbGraph)
+        Me.Controls.Add(Me.labAmount)
+        Me.Controls.Add(Me.labInactive)
+        Me.Controls.Add(Me.labUser)
+        Me.Controls.Add(Me.labLoan)
         Me.Controls.Add(Me.MonthCalendar1)
         Me.Name = "UCDashboard"
         Me.Size = New System.Drawing.Size(956, 647)
-        CType(Me.pb_graph, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grid_late, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridLate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents MonthCalendar1 As MonthCalendar
-    Friend WithEvents lab_loan As Label
-    Friend WithEvents lab_user As Label
-    Friend WithEvents lab_inactive As Label
-    Friend WithEvents lab_amount As Label
-    Friend WithEvents pb_graph As PictureBox
-    Friend WithEvents grid_late As DataGridView
+    Friend WithEvents labLoan As Label
+    Friend WithEvents labUser As Label
+    Friend WithEvents labInactive As Label
+    Friend WithEvents labAmount As Label
+    Friend WithEvents pbGraph As PictureBox
+    Friend WithEvents gridLate As DataGridView
     Friend WithEvents lab_late As Label
 End Class
