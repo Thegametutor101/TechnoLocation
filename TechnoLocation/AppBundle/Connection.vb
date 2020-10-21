@@ -17,7 +17,7 @@
     '__________________________________________________________________________________________________________
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        testConnection()
     End Sub
 
 

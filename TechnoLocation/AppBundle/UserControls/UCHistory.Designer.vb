@@ -22,65 +22,65 @@ Partial Class UCHistory
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.grid_history = New System.Windows.Forms.DataGridView()
-        Me.drop_history = New System.Windows.Forms.ComboBox()
-        Me.tb_history = New System.Windows.Forms.TextBox()
-        Me.cb_all = New System.Windows.Forms.CheckBox()
-        CType(Me.grid_history, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gridHistory = New System.Windows.Forms.DataGridView()
+        Me.dropHistory = New System.Windows.Forms.ComboBox()
+        Me.tbHistory = New System.Windows.Forms.TextBox()
+        Me.cbAll = New System.Windows.Forms.CheckBox()
+        CType(Me.gridHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'grid_history
+        'gridHistory
         '
-        Me.grid_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_history.Location = New System.Drawing.Point(2, 67)
-        Me.grid_history.Name = "grid_history"
-        Me.grid_history.Size = New System.Drawing.Size(953, 569)
-        Me.grid_history.TabIndex = 7
+        Me.gridHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridHistory.Location = New System.Drawing.Point(2, 67)
+        Me.gridHistory.Name = "gridHistory"
+        Me.gridHistory.Size = New System.Drawing.Size(953, 569)
+        Me.gridHistory.TabIndex = 7
         '
-        'drop_history
+        'dropHistory
         '
-        Me.drop_history.FormattingEnabled = True
-        Me.drop_history.Location = New System.Drawing.Point(335, 10)
-        Me.drop_history.Name = "drop_history"
-        Me.drop_history.Size = New System.Drawing.Size(135, 21)
-        Me.drop_history.TabIndex = 6
+        Me.dropHistory.FormattingEnabled = True
+        Me.dropHistory.Location = New System.Drawing.Point(335, 10)
+        Me.dropHistory.Name = "dropHistory"
+        Me.dropHistory.Size = New System.Drawing.Size(135, 21)
+        Me.dropHistory.TabIndex = 6
         '
-        'tb_history
+        'tbHistory
         '
-        Me.tb_history.Location = New System.Drawing.Point(2, 10)
-        Me.tb_history.Name = "tb_history"
-        Me.tb_history.Size = New System.Drawing.Size(281, 20)
-        Me.tb_history.TabIndex = 5
-        Me.tb_history.Text = "Recherche"
+        Me.tbHistory.Location = New System.Drawing.Point(2, 10)
+        Me.tbHistory.Name = "tbHistory"
+        Me.tbHistory.Size = New System.Drawing.Size(281, 20)
+        Me.tbHistory.TabIndex = 5
+        Me.tbHistory.Text = "Recherche"
         '
-        'cb_all
+        'cbAll
         '
-        Me.cb_all.AutoSize = True
-        Me.cb_all.Location = New System.Drawing.Point(3, 44)
-        Me.cb_all.Name = "cb_all"
-        Me.cb_all.Size = New System.Drawing.Size(81, 17)
-        Me.cb_all.TabIndex = 8
-        Me.cb_all.Text = "Cocher tout"
-        Me.cb_all.UseVisualStyleBackColor = True
+        Me.cbAll.AutoSize = True
+        Me.cbAll.Location = New System.Drawing.Point(3, 44)
+        Me.cbAll.Name = "cbAll"
+        Me.cbAll.Size = New System.Drawing.Size(81, 17)
+        Me.cbAll.TabIndex = 8
+        Me.cbAll.Text = "Cocher tout"
+        Me.cbAll.UseVisualStyleBackColor = True
         '
         'UCHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.cb_all)
-        Me.Controls.Add(Me.grid_history)
-        Me.Controls.Add(Me.drop_history)
-        Me.Controls.Add(Me.tb_history)
+        Me.Controls.Add(Me.cbAll)
+        Me.Controls.Add(Me.gridHistory)
+        Me.Controls.Add(Me.dropHistory)
+        Me.Controls.Add(Me.tbHistory)
         Me.Name = "UCHistory"
         Me.Size = New System.Drawing.Size(956, 647)
-        CType(Me.grid_history, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents grid_history As DataGridView
-    Friend WithEvents drop_history As ComboBox
-    Friend WithEvents tb_history As TextBox
-    Friend WithEvents cb_all As CheckBox
+    Friend WithEvents gridHistory As DataGridView
+    Friend WithEvents dropHistory As ComboBox
+    Friend WithEvents tbHistory As TextBox
+    Friend WithEvents cbAll As CheckBox
 End Class
