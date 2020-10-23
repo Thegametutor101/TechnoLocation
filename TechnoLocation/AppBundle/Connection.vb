@@ -1,4 +1,6 @@
-﻿Public Class Connection
+﻿Imports System.Text.RegularExpressions
+
+Public Class Connection
 
     '__________________________________________________________________________________________________________
     'Attributes
@@ -17,6 +19,7 @@
     '__________________________________________________________________________________________________________
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         testConnection()
     End Sub
 
@@ -49,17 +52,16 @@
     '__________________________________________________________________________________________________________
 
     Private Sub btQuitConnection_Click(sender As Object, e As EventArgs) Handles btQuitConnection.Click
-        Dim style = vbYesNo + vbDefaultButton2
-        Dim response = MsgBox(Msg.getMsgQuit, style, Msg.getMsgQuitTitle)
-
-        If response = vbYes Then
-            Close()
+        If MessageBox.Show("Voulez-vous quitter le programme ?",
+                           "Attention",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Me.Close()
         End If
     End Sub
 
     Private Sub btConnection_Click(sender As Object, e As EventArgs) Handles btConnection.Click
-        Me.Hide()
-        MainForm.Show()
+
     End Sub
 
     '__________________________________________________________________________________________________________
