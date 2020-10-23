@@ -19,12 +19,12 @@ Public Class ModelCharacters
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
+            command.CommandText = $"insert into characters values('{passChar}', '{value}')"
             connection.Open()
-            command.CommandText = $"insert into characters values('{passChar}', '{value}'"
-            Dim result = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
+            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
         End Try
     End Function
 End Class

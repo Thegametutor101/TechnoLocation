@@ -62,10 +62,11 @@ Public Class Connection
     End Sub
 
     Private Sub btConnection_Click(sender As Object, e As EventArgs) Handles btConnection.Click
+        Dim loginController = New LoginController
         Dim username As String = Regex.Replace(tbUsername.Text, "[^A-Za-z0-9]", String.Empty)
         Dim password As String = Replace(tbPassword.Text, " ", "")
         If Not IsNothing(username) Then
-            Dim result As Boolean = LoginController.getInstance().login(username, password)
+            Dim result As Boolean = loginController.login(username, password)
             If result Then
                 MainForm.getInstance().Show()
                 Me.Close()
