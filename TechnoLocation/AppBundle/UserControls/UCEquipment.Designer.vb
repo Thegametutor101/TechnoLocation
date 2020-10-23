@@ -29,6 +29,7 @@ Partial Class UCEquipment
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btNewEquipment = New System.Windows.Forms.Button()
         Me.btDelEquipment = New System.Windows.Forms.Button()
+        Me.btPrintBarcodeEquip = New System.Windows.Forms.Button()
         CType(Me.gridEquipment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -70,6 +71,7 @@ Partial Class UCEquipment
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.btPrintBarcodeEquip)
         Me.Panel1.Controls.Add(Me.btNewEquipment)
         Me.Panel1.Controls.Add(Me.btDelEquipment)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -95,6 +97,15 @@ Partial Class UCEquipment
         Me.btDelEquipment.Text = "Supprimer"
         Me.btDelEquipment.UseVisualStyleBackColor = True
         '
+        'btPrintBarcodeEquip
+        '
+        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(309, -1)
+        Me.btPrintBarcodeEquip.Name = "btPrintBarcodeEquip"
+        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(147, 54)
+        Me.btPrintBarcodeEquip.TabIndex = 3
+        Me.btPrintBarcodeEquip.Text = "Imprimer les codes barres"
+        Me.btPrintBarcodeEquip.UseVisualStyleBackColor = True
+        '
         'UCEquipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -119,4 +130,5 @@ Partial Class UCEquipment
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btNewEquipment As Button
     Friend WithEvents btDelEquipment As Button
+    Friend WithEvents btPrintBarcodeEquip As Button
 End Class

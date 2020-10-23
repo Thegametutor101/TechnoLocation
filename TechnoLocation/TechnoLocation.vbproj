@@ -132,6 +132,12 @@
     </Compile>
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
     <Compile Include="AppBundle\Translators\StringFormatterTranslator.vb" />
+    <Compile Include="AppBundle\UserControls\UCEquipmentAdd.Designer.vb">
+      <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipmentAdd.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCNotif.Designer.vb">
       <DependentUpon>UCNotif.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCEquipment.resx">
       <DependentUpon>UCEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCEquipmentAdd.resx">
+      <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCNotif.resx">
       <DependentUpon>UCNotif.vb</DependentUpon>
