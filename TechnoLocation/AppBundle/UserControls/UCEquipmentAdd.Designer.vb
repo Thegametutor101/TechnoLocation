@@ -33,13 +33,18 @@ Partial Class UCEquipmentAdd
         Me.btCancelNewEquip = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.numEquipAdd = New System.Windows.Forms.NumericUpDown()
+        Me.gridEquipmentAdd = New System.Windows.Forms.DataGridView()
+        Me.labEquipmentAddKit = New System.Windows.Forms.Label()
+        Me.btKitAdd = New System.Windows.Forms.Button()
+        Me.btKitNull = New System.Windows.Forms.Button()
         CType(Me.numEquipAdd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridEquipmentAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'labNameEquipmentAdd
         '
         Me.labNameEquipmentAdd.AutoSize = True
-        Me.labNameEquipmentAdd.Location = New System.Drawing.Point(184, 113)
+        Me.labNameEquipmentAdd.Location = New System.Drawing.Point(33, 87)
         Me.labNameEquipmentAdd.Name = "labNameEquipmentAdd"
         Me.labNameEquipmentAdd.Size = New System.Drawing.Size(95, 13)
         Me.labNameEquipmentAdd.TabIndex = 0
@@ -47,14 +52,14 @@ Partial Class UCEquipmentAdd
         '
         'tbNameEquipmentAdd
         '
-        Me.tbNameEquipmentAdd.Location = New System.Drawing.Point(331, 110)
+        Me.tbNameEquipmentAdd.Location = New System.Drawing.Point(180, 84)
         Me.tbNameEquipmentAdd.Name = "tbNameEquipmentAdd"
         Me.tbNameEquipmentAdd.Size = New System.Drawing.Size(273, 20)
         Me.tbNameEquipmentAdd.TabIndex = 1
         '
         'tbComment
         '
-        Me.tbComment.Location = New System.Drawing.Point(331, 136)
+        Me.tbComment.Location = New System.Drawing.Point(180, 110)
         Me.tbComment.Name = "tbComment"
         Me.tbComment.Size = New System.Drawing.Size(273, 176)
         Me.tbComment.TabIndex = 3
@@ -63,7 +68,7 @@ Partial Class UCEquipmentAdd
         'labComment
         '
         Me.labComment.AutoSize = True
-        Me.labComment.Location = New System.Drawing.Point(184, 139)
+        Me.labComment.Location = New System.Drawing.Point(33, 113)
         Me.labComment.Name = "labComment"
         Me.labComment.Size = New System.Drawing.Size(68, 13)
         Me.labComment.TabIndex = 4
@@ -74,7 +79,7 @@ Partial Class UCEquipmentAdd
         Me.checkAvailableEquipAdd.AutoSize = True
         Me.checkAvailableEquipAdd.Checked = True
         Me.checkAvailableEquipAdd.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.checkAvailableEquipAdd.Location = New System.Drawing.Point(331, 344)
+        Me.checkAvailableEquipAdd.Location = New System.Drawing.Point(180, 318)
         Me.checkAvailableEquipAdd.Name = "checkAvailableEquipAdd"
         Me.checkAvailableEquipAdd.Size = New System.Drawing.Size(106, 17)
         Me.checkAvailableEquipAdd.TabIndex = 6
@@ -83,7 +88,7 @@ Partial Class UCEquipmentAdd
         '
         'tbState
         '
-        Me.tbState.Location = New System.Drawing.Point(331, 318)
+        Me.tbState.Location = New System.Drawing.Point(180, 292)
         Me.tbState.Name = "tbState"
         Me.tbState.Size = New System.Drawing.Size(273, 20)
         Me.tbState.TabIndex = 7
@@ -91,7 +96,7 @@ Partial Class UCEquipmentAdd
         'labStateEquipAdd
         '
         Me.labStateEquipAdd.AutoSize = True
-        Me.labStateEquipAdd.Location = New System.Drawing.Point(184, 321)
+        Me.labStateEquipAdd.Location = New System.Drawing.Point(33, 295)
         Me.labStateEquipAdd.Name = "labStateEquipAdd"
         Me.labStateEquipAdd.Size = New System.Drawing.Size(103, 13)
         Me.labStateEquipAdd.TabIndex = 8
@@ -99,7 +104,7 @@ Partial Class UCEquipmentAdd
         '
         'btAddNewEquip
         '
-        Me.btAddNewEquip.Location = New System.Drawing.Point(187, 393)
+        Me.btAddNewEquip.Location = New System.Drawing.Point(36, 367)
         Me.btAddNewEquip.Name = "btAddNewEquip"
         Me.btAddNewEquip.Size = New System.Drawing.Size(209, 23)
         Me.btAddNewEquip.TabIndex = 9
@@ -108,7 +113,7 @@ Partial Class UCEquipmentAdd
         '
         'btCancelNewEquip
         '
-        Me.btCancelNewEquip.Location = New System.Drawing.Point(395, 393)
+        Me.btCancelNewEquip.Location = New System.Drawing.Point(244, 367)
         Me.btCancelNewEquip.Name = "btCancelNewEquip"
         Me.btCancelNewEquip.Size = New System.Drawing.Size(209, 23)
         Me.btCancelNewEquip.TabIndex = 10
@@ -118,7 +123,7 @@ Partial Class UCEquipmentAdd
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(184, 369)
+        Me.Label1.Location = New System.Drawing.Point(33, 343)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 11
@@ -126,17 +131,56 @@ Partial Class UCEquipmentAdd
         '
         'numEquipAdd
         '
-        Me.numEquipAdd.Location = New System.Drawing.Point(331, 367)
+        Me.numEquipAdd.Location = New System.Drawing.Point(180, 341)
         Me.numEquipAdd.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.numEquipAdd.Name = "numEquipAdd"
         Me.numEquipAdd.Size = New System.Drawing.Size(120, 20)
         Me.numEquipAdd.TabIndex = 12
         Me.numEquipAdd.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
+        'gridEquipmentAdd
+        '
+        Me.gridEquipmentAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridEquipmentAdd.Location = New System.Drawing.Point(524, 110)
+        Me.gridEquipmentAdd.Name = "gridEquipmentAdd"
+        Me.gridEquipmentAdd.Size = New System.Drawing.Size(417, 251)
+        Me.gridEquipmentAdd.TabIndex = 13
+        '
+        'labEquipmentAddKit
+        '
+        Me.labEquipmentAddKit.AutoSize = True
+        Me.labEquipmentAddKit.Location = New System.Drawing.Point(521, 87)
+        Me.labEquipmentAddKit.Name = "labEquipmentAddKit"
+        Me.labEquipmentAddKit.Size = New System.Drawing.Size(148, 13)
+        Me.labEquipmentAddKit.TabIndex = 14
+        Me.labEquipmentAddKit.Text = "Choix de kit pour l'équipement"
+        '
+        'btKitAdd
+        '
+        Me.btKitAdd.Location = New System.Drawing.Point(524, 367)
+        Me.btKitAdd.Name = "btKitAdd"
+        Me.btKitAdd.Size = New System.Drawing.Size(209, 23)
+        Me.btKitAdd.TabIndex = 15
+        Me.btKitAdd.Text = "Nouveau kit"
+        Me.btKitAdd.UseVisualStyleBackColor = True
+        '
+        'btKitNull
+        '
+        Me.btKitNull.Location = New System.Drawing.Point(732, 367)
+        Me.btKitNull.Name = "btKitNull"
+        Me.btKitNull.Size = New System.Drawing.Size(209, 23)
+        Me.btKitNull.TabIndex = 16
+        Me.btKitNull.Text = "Désélectionner kit"
+        Me.btKitNull.UseVisualStyleBackColor = True
+        '
         'UCEquipmentAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btKitNull)
+        Me.Controls.Add(Me.btKitAdd)
+        Me.Controls.Add(Me.labEquipmentAddKit)
+        Me.Controls.Add(Me.gridEquipmentAdd)
         Me.Controls.Add(Me.numEquipAdd)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btCancelNewEquip)
@@ -151,6 +195,7 @@ Partial Class UCEquipmentAdd
         Me.Name = "UCEquipmentAdd"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.numEquipAdd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridEquipmentAdd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,4 +212,8 @@ Partial Class UCEquipmentAdd
     Friend WithEvents btCancelNewEquip As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents numEquipAdd As NumericUpDown
+    Friend WithEvents gridEquipmentAdd As DataGridView
+    Friend WithEvents labEquipmentAddKit As Label
+    Friend WithEvents btKitAdd As Button
+    Friend WithEvents btKitNull As Button
 End Class

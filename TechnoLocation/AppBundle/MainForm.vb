@@ -43,6 +43,12 @@
         iEquipmentAdd.BringToFront()
     End Sub
 
+    Public Sub bringToFrontEquipment()
+        Dim iEquipment As New UCEquipment()
+        iEquipment.Dock = DockStyle.Fill
+        p_Main.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
+    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions
@@ -129,10 +135,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment()
-        iEquipment.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iEquipment)
-        iEquipment.BringToFront()
+        bringToFrontEquipment()
     End Sub
 
     ''' <summary>

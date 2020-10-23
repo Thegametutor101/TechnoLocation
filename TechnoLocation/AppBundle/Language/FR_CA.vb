@@ -7,6 +7,9 @@
     Dim MsgEmptyName = "Vous devez mettre un nom!"
     Dim MsgEmptyComment = "Vous devez mettre des commentaires!"
     Dim MsgEmptyState = "Vous devez mettre un état à l'équipement!"
+    Dim MsgSuccessAddEquip = "L'ajout a bien été effectuer!"
+    Dim MsgSuccessAddTitle = "Ajout effectuer"
+    Dim MsgKitNull = "Voulez-vous vraiment ajouter l'équipement sans kit?"
 
     Public ReadOnly Property getMsgQuit() As String
         Get
@@ -53,6 +56,22 @@
     Public ReadOnly Property getMsgEmptyState() As String
         Get
             Return MsgEmptyState
+        End Get
+    End Property
+
+    Public ReadOnly Property getMsgSuccessAddEquip() As String
+        Get
+            Return MsgSuccessAddEquip
+        End Get
+    End Property
+    Public ReadOnly Property getMsgSuccessAddTitle() As String
+        Get
+            Return MsgSuccessAddTitle
+        End Get
+    End Property
+    Public ReadOnly Property getMsgKitNull() As String
+        Get
+            Return MsgKitNull
         End Get
     End Property
 End Class
