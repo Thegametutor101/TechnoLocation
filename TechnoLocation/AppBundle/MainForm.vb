@@ -36,7 +36,12 @@
     '__________________________________________________________________________________________________________
     'Methods
     '__________________________________________________________________________________________________________
-
+    Public Sub bringToFrontAddEquipment()
+        Dim iEquipmentAdd As New UCEquipmentAdd()
+        iEquipmentAdd.Dock = DockStyle.Fill
+        p_Main.Controls.Add(iEquipmentAdd)
+        iEquipmentAdd.BringToFront()
+    End Sub
 
 
     '__________________________________________________________________________________________________________
@@ -49,6 +54,7 @@
         End If
         Return instance
     End Function
+
 
     '__________________________________________________________________________________________________________
     'Validation Functions
@@ -180,6 +186,10 @@
             Connection.Show()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub p_Main_Paint(sender As Object, e As PaintEventArgs) Handles p_Main.Paint
+
     End Sub
 
     '__________________________________________________________________________________________________________

@@ -34,56 +34,50 @@ Partial Class Connection
         'labUserName
         '
         Me.labUserName.AutoSize = True
-        Me.labUserName.Location = New System.Drawing.Point(75, 73)
-        Me.labUserName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labUserName.Location = New System.Drawing.Point(56, 59)
         Me.labUserName.Name = "labUserName"
-        Me.labUserName.Size = New System.Drawing.Size(69, 17)
+        Me.labUserName.Size = New System.Drawing.Size(53, 13)
         Me.labUserName.TabIndex = 0
         Me.labUserName.Text = "Identifiant"
         '
         'tbUsername
         '
-        Me.tbUsername.Location = New System.Drawing.Point(180, 69)
-        Me.tbUsername.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbUsername.Location = New System.Drawing.Point(135, 56)
         Me.tbUsername.Name = "tbUsername"
-        Me.tbUsername.Size = New System.Drawing.Size(155, 22)
+        Me.tbUsername.Size = New System.Drawing.Size(117, 20)
         Me.tbUsername.TabIndex = 1
         '
         'labPassword
         '
         Me.labPassword.AutoSize = True
-        Me.labPassword.Location = New System.Drawing.Point(75, 117)
-        Me.labPassword.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labPassword.Location = New System.Drawing.Point(56, 95)
         Me.labPassword.Name = "labPassword"
-        Me.labPassword.Size = New System.Drawing.Size(93, 17)
+        Me.labPassword.Size = New System.Drawing.Size(71, 13)
         Me.labPassword.TabIndex = 2
         Me.labPassword.Text = "Mot de passe"
         '
         'tbPassword
         '
-        Me.tbPassword.Location = New System.Drawing.Point(180, 113)
-        Me.tbPassword.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbPassword.Location = New System.Drawing.Point(135, 92)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tbPassword.Size = New System.Drawing.Size(155, 22)
+        Me.tbPassword.Size = New System.Drawing.Size(117, 20)
         Me.tbPassword.TabIndex = 3
         '
         'btConnection
         '
-        Me.btConnection.Location = New System.Drawing.Point(79, 193)
-        Me.btConnection.Margin = New System.Windows.Forms.Padding(4)
+        Me.btConnection.Location = New System.Drawing.Point(59, 157)
         Me.btConnection.Name = "btConnection"
-        Me.btConnection.Size = New System.Drawing.Size(125, 28)
+        Me.btConnection.Size = New System.Drawing.Size(94, 23)
         Me.btConnection.TabIndex = 4
-        Me.btConnection.Text = "Connecter"
+        Me.btConnection.Text = "Connexion"
         Me.btConnection.UseVisualStyleBackColor = True
         '
         'btQuitConnection
         '
-        Me.btQuitConnection.Location = New System.Drawing.Point(212, 193)
-        Me.btQuitConnection.Margin = New System.Windows.Forms.Padding(4)
+        Me.btQuitConnection.Location = New System.Drawing.Point(159, 157)
         Me.btQuitConnection.Name = "btQuitConnection"
-        Me.btQuitConnection.Size = New System.Drawing.Size(124, 28)
+        Me.btQuitConnection.Size = New System.Drawing.Size(93, 23)
         Me.btQuitConnection.TabIndex = 5
         Me.btQuitConnection.Text = "Quitter"
         Me.btQuitConnection.UseVisualStyleBackColor = True
@@ -91,19 +85,18 @@ Partial Class Connection
         'linklabPasswordForget
         '
         Me.linklabPasswordForget.AutoSize = True
-        Me.linklabPasswordForget.Location = New System.Drawing.Point(75, 158)
-        Me.linklabPasswordForget.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.linklabPasswordForget.Location = New System.Drawing.Point(56, 128)
         Me.linklabPasswordForget.Name = "linklabPasswordForget"
-        Me.linklabPasswordForget.Size = New System.Drawing.Size(148, 17)
+        Me.linklabPasswordForget.Size = New System.Drawing.Size(108, 13)
         Me.linklabPasswordForget.TabIndex = 7
         Me.linklabPasswordForget.TabStop = True
-        Me.linklabPasswordForget.Text = "Mot de passe oublier?"
+        Me.linklabPasswordForget.Text = "Mot de passe oublié?"
         '
         'Connection
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(419, 270)
+        Me.ClientSize = New System.Drawing.Size(314, 219)
         Me.Controls.Add(Me.linklabPasswordForget)
         Me.Controls.Add(Me.btQuitConnection)
         Me.Controls.Add(Me.btConnection)
@@ -111,7 +104,6 @@ Partial Class Connection
         Me.Controls.Add(Me.labPassword)
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.labUserName)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Connection"
         Me.Text = "Connection"
         Me.ResumeLayout(False)
