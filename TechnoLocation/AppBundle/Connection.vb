@@ -19,12 +19,9 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-<<<<<<< Updated upstream
         Me.CenterToScreen()
         testConnection()
-=======
         'testConnection()
->>>>>>> Stashed changes
     End Sub
 
 

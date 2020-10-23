@@ -64,3 +64,4 @@ D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\Techno
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.exe
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
