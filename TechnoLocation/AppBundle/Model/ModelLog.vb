@@ -1,19 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class ModelEquipment
+Public Class ModelLog
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
-    Shared instance As ModelEquipment = Nothing
+    Shared instance As ModelLog = Nothing
 
-    Public Shared Function getInstance() As ModelEquipment
+    Public Shared Function getInstance() As ModelLog
         If IsNothing(instance) Then
-            instance = New ModelEquipment()
+            instance = New ModelLog()
         End If
         Return instance
     End Function
 
-    Public Function updateEquipment(code As Integer, name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function updateLog(code As Integer, admin As Integer, action As String, dateModified As DateTime, tableName As String)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"update equipment set code='{code}',name='{name}',kit='{kit}',state='{state}', available='{available}', comments='{comments}' where code='{code}'"
+        command.CommandText = $"update log set code='{code}',admin='{admin}',action='{action}',dateModified='{dateModified}', tableName='{tableName}' where code='{code}'"
         connection.Open()
         Dim add As Integer = command.ExecuteNonQuery()
         connection.Close()
@@ -23,7 +23,7 @@ Public Class ModelEquipment
         Dim command As New MySqlCommand
         Dim code As Integer
         command.Connection = connection
-        command.CommandText = "select max(code) from equipment"
+        command.CommandText = "select max(code) from log"
         connection.Open()
         Dim reader = command.ExecuteReader()
         reader.Read()
@@ -32,19 +32,19 @@ Public Class ModelEquipment
         Return (code + 1)
     End Function
 
-    Public Function addEquipment(name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function addLog(admin As Integer, action As String, dateModified As DateTime, tableName As String)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"insert into equipment values ('{name}','{kit}','{state}','{available}', '{comments}')"
+        command.CommandText = $"insert into log values ('{admin}','{action}','{dateModified}', '{tableName}')"
         connection.Open()
         Dim add As Integer = command.ExecuteNonQuery()
         connection.Close()
     End Function
 
-    Public Function delEquipment(code As Integer)
+    Public Function delLog(code As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Delete from equipment where code = '{code}'"
+        command.CommandText = $"Delete from log where code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         connection.Close()

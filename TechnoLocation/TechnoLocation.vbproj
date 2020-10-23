@@ -130,7 +130,12 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppBundle\Model\ModelKit.vb" />
+    <Compile Include="AppBundle\Model\ModelHistory.vb" />
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
+    <Compile Include="AppBundle\Model\ModelLog.vb" />
+    <Compile Include="AppBundle\Model\ModelRent.vb" />
+    <Compile Include="AppBundle\Model\ModelUser.vb" />
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
     <Compile Include="AppBundle\Translators\StringFormatterTranslator.vb" />
     <Compile Include="AppBundle\UserControls\UCEquipmentAdd.Designer.vb">

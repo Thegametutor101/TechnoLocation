@@ -1,19 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class ModelEquipment
+Public Class ModelKit
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
-    Shared instance As ModelEquipment = Nothing
+    Shared instance As ModelKit = Nothing
 
-    Public Shared Function getInstance() As ModelEquipment
+    Public Shared Function getInstance() As ModelKit
         If IsNothing(instance) Then
-            instance = New ModelEquipment()
+            instance = New ModelKit()
         End If
         Return instance
     End Function
 
-    Public Function updateEquipment(code As Integer, name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function updateKit(code As Integer, name As String)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"update equipment set code='{code}',name='{name}',kit='{kit}',state='{state}', available='{available}', comments='{comments}' where code='{code}'"
+        command.CommandText = $"update kit set code='{code}', name='{name}' where code='{code}'"
         connection.Open()
         Dim add As Integer = command.ExecuteNonQuery()
         connection.Close()
@@ -23,7 +23,7 @@ Public Class ModelEquipment
         Dim command As New MySqlCommand
         Dim code As Integer
         command.Connection = connection
-        command.CommandText = "select max(code) from equipment"
+        command.CommandText = "select max(code) from kit"
         connection.Open()
         Dim reader = command.ExecuteReader()
         reader.Read()
@@ -32,19 +32,19 @@ Public Class ModelEquipment
         Return (code + 1)
     End Function
 
-    Public Function addEquipment(name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function addKit(name As String)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"insert into equipment values ('{name}','{kit}','{state}','{available}', '{comments}')"
+        command.CommandText = $"insert into kit values ('{name}')"
         connection.Open()
         Dim add As Integer = command.ExecuteNonQuery()
         connection.Close()
     End Function
 
-    Public Function delEquipment(code As Integer)
+    Public Function delKit(code As Integer)
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Delete from equipment where code = '{code}'"
+        command.CommandText = $"Delete from kit where code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         connection.Close()
