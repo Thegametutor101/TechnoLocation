@@ -121,7 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
+    <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityCharacters.vb" />
+    <Compile Include="AppBundle\Entity\EntityHistory.vb" />
+    <Compile Include="AppBundle\Entity\EntityKit.vb" />
+    <Compile Include="AppBundle\Entity\EntityLog.vb" />
+    <Compile Include="AppBundle\Entity\EntityRent.vb" />
     <Compile Include="AppBundle\Entity\EntityUser.vb" />
     <Compile Include="AppBundle\Language\FR_CA.vb" />
     <Compile Include="AppBundle\MainForm.vb">
