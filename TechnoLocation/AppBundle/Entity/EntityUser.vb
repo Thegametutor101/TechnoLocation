@@ -41,28 +41,13 @@ Public Class EntityUser
         Return table
     End Function
 
-    Public Function getUserCodes() As DataTable
+    Public Function getUserAccounts() As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code from user U order by U.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getUserPasswords() As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select password from user U order by U.code"
+        command.CommandText = $"Select code, password from user"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")

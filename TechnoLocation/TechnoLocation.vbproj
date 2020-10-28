@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
+    <Compile Include="AppBundle\Entity\EntityCharacters.vb" />
     <Compile Include="AppBundle\Entity\EntityUser.vb" />
     <Compile Include="AppBundle\Language\FR_CA.vb" />
     <Compile Include="AppBundle\MainForm.vb">
@@ -130,6 +131,7 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppBundle\Model\ModelCharacters.vb" />
     <Compile Include="AppBundle\Model\ModelKit.vb" />
     <Compile Include="AppBundle\Model\ModelHistory.vb" />
     <Compile Include="AppBundle\Model\ModelEquipment.vb" />
@@ -137,7 +139,6 @@
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
-    <Compile Include="AppBundle\Translators\StringFormatterTranslator.vb" />
     <Compile Include="AppBundle\UserControls\UCEquipmentAdd.Designer.vb">
       <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
     </Compile>
@@ -269,8 +270,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppBundle\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

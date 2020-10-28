@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 09, 2020 at 02:18 PM
+-- Generation Time: Oct 23, 2020 at 03:54 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -39,6 +39,19 @@ RETURN LTRIM(CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(x,1,1)),LOWER(SUBSTRING(x,
 END$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `characters`
+--
+
+DROP TABLE IF EXISTS `characters`;
+CREATE TABLE IF NOT EXISTS `characters` (
+  `passChar` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `value` varchar(200) NOT NULL,
+  PRIMARY KEY (`passChar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -143,9 +156,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `phone2` varchar(14) NOT NULL,
   `job` int(1) NOT NULL,
   `permissions` int(1) NOT NULL,
-  `balance` int(10) NOT NULL,
+  `balance` double NOT NULL,
   PRIMARY KEY (`code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1763238 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`code`, `password`, `firstName`, `lastName`, `email`, `phoneMain`, `phone2`, `job`, `permissions`, `balance`) VALUES
+(1763237, '', 'Daniel', 'Navarro', 'theendercraftgaming@gmail.com', '(819) 944-9576', '', 0, 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
