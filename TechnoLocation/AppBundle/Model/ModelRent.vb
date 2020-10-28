@@ -1,27 +1,29 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class ModelEquipment
+Public Class ModelRent
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
-    Shared instance As ModelEquipment = Nothing
+    Shared instance As ModelRent = Nothing
 
-    Public Shared Function getInstance() As ModelEquipment
+    Public Shared Function getInstance() As ModelRent
         If IsNothing(instance) Then
-            instance = New ModelEquipment()
+            instance = New ModelRent()
         End If
         Return instance
     End Function
 
-    Public Function updateEquipment(code As Integer, name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function updateRent(code As Integer, renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"update equipment set name='{name}',
-                                                        kit='{kit}',
-                                                        state='{state}',
-                                                        available='{available}',
-                                                        comments='{comments}' where code='{code}'"
+            command.CommandText = $"update rent set renter='{renter}',
+                                                    lender='{lender}',
+                                                    equipment='{equipment}',
+                                                    rentDate='{rentDate}',
+                                                    returnDate='{returnDate}',
+                                                    deposit='{deposit}',
+                                                    comments='{comments}'"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
@@ -38,7 +40,7 @@ Public Class ModelEquipment
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = "select max(code) from equipment"
+            command.CommandText = "select max(code) from rent"
             connection.Open()
             Dim reader = command.ExecuteReader()
             reader.Read()
@@ -50,18 +52,20 @@ Public Class ModelEquipment
         Return (code + 1)
     End Function
 
-    Public Function addEquipment(name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function addRent(renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into equipment values ('{name}',
-                                                                '{kit}',
-                                                                '{state}',
-                                                                '{available}',
-                                                                '{comments}')"
+            command.CommandText = $"insert into rent values ('{renter}',
+                                                            '{lender}',
+                                                            '{equipment}',
+                                                            '{rentDate}',
+                                                            '{returnDate}',
+                                                            '{deposit}',
+                                                            '{comments}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
@@ -70,14 +74,14 @@ Public Class ModelEquipment
         End Try
     End Function
 
-    Public Function delEquipment(code As Integer)
+    Public Function delRent(code As Integer)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Delete from equipment where code = '{code}'"
+            command.CommandText = $"Delete from rent where code = '{code}'"
             connection.Open()
             Dim reader = command.ExecuteReader()
             connection.Close()
