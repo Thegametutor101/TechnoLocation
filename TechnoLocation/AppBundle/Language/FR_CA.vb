@@ -10,6 +10,8 @@
     Dim MsgSuccessAddEquip = "L'ajout a bien été effectuer!"
     Dim MsgSuccessAddTitle = "Ajout effectuer"
     Dim MsgKitNull = "Voulez-vous vraiment ajouter l'équipement sans kit?"
+    Dim MsgKitNameEmpty = "Vous devez mettre un nom!"
+    Dim MsgErrorAddEquip = "Un erreure c'est produit durant l'ajout d'équipement! Le nombre d'équipement ajouter est de: "
 
     Public ReadOnly Property getMsgQuit() As String
         Get
@@ -72,6 +74,17 @@
     Public ReadOnly Property getMsgKitNull() As String
         Get
             Return MsgKitNull
+        End Get
+    End Property
+
+    Public ReadOnly Property getMsgKitNameEmpty() As String
+        Get
+            Return MSgKitNameEmpty
+        End Get
+    End Property
+    Public ReadOnly Property getMsgErrorAddEEquip() As String
+        Get
+            Return MsgErrorAddEquip
         End Get
     End Property
 End Class

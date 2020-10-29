@@ -53,12 +53,12 @@ Public Class ModelKit
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into kit values ('{name}')"
+            command.CommandText = $"insert into kit (name) values ('{name}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show(ex.Message)
         End Try
     End Function
 

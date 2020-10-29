@@ -140,9 +140,15 @@ Partial Class UCEquipmentAdd
         '
         'gridEquipmentAdd
         '
+        Me.gridEquipmentAdd.AllowUserToAddRows = False
+        Me.gridEquipmentAdd.AllowUserToDeleteRows = False
+        Me.gridEquipmentAdd.AllowUserToResizeRows = False
         Me.gridEquipmentAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridEquipmentAdd.Location = New System.Drawing.Point(524, 110)
+        Me.gridEquipmentAdd.MultiSelect = False
         Me.gridEquipmentAdd.Name = "gridEquipmentAdd"
+        Me.gridEquipmentAdd.ReadOnly = True
+        Me.gridEquipmentAdd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gridEquipmentAdd.Size = New System.Drawing.Size(417, 251)
         Me.gridEquipmentAdd.TabIndex = 13
         '

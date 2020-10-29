@@ -21,7 +21,6 @@ Public Class Connection
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         testConnection()
-        'testConnection()
     End Sub
 
 
