@@ -22,7 +22,7 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.p_Main = New System.Windows.Forms.Panel()
+        Me.panelMain = New System.Windows.Forms.Panel()
         Me.pb_logo = New System.Windows.Forms.PictureBox()
         Me.btHome = New System.Windows.Forms.Button()
         Me.btAlert = New System.Windows.Forms.Button()
@@ -37,12 +37,12 @@ Partial Class MainForm
         CType(Me.pb_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'p_Main
+        'panelMain
         '
-        Me.p_Main.Location = New System.Drawing.Point(198, 1)
-        Me.p_Main.Name = "p_Main"
-        Me.p_Main.Size = New System.Drawing.Size(956, 647)
-        Me.p_Main.TabIndex = 0
+        Me.panelMain.Location = New System.Drawing.Point(198, 1)
+        Me.panelMain.Name = "panelMain"
+        Me.panelMain.Size = New System.Drawing.Size(956, 647)
+        Me.panelMain.TabIndex = 0
         '
         'pb_logo
         '
@@ -158,7 +158,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.btAlert)
         Me.Controls.Add(Me.btHome)
         Me.Controls.Add(Me.pb_logo)
-        Me.Controls.Add(Me.p_Main)
+        Me.Controls.Add(Me.panelMain)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
         Me.Text = "MainForm"
@@ -167,7 +167,7 @@ Partial Class MainForm
 
     End Sub
 
-    Friend WithEvents p_Main As Panel
+    Friend WithEvents panelMain As Panel
     Friend WithEvents pb_logo As PictureBox
     Friend WithEvents btHome As Button
     Friend WithEvents btAlert As Button

@@ -3,14 +3,6 @@ Public Class UCEquipmentAdd
     Dim Msg As FR_CA = New FR_CA
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
-    Shared instance As UCEquipmentAdd = Nothing
-
-    Public Shared Function getInstance() As UCEquipmentAdd
-        If IsNothing(instance) Then
-            instance = New UCEquipmentAdd()
-        End If
-        Return instance
-    End Function
 
     Private Sub btAddNewEquip_Click(sender As Object, e As EventArgs) Handles btAddNewEquip.Click
         Dim check = 0
@@ -60,7 +52,7 @@ Public Class UCEquipmentAdd
     End Function
 
     Private Sub btCancelNewEquip_Click(sender As Object, e As EventArgs) Handles btCancelNewEquip.Click
-        MainForm.bringToFrontEquipment()
+        Me.SendToBack()
     End Sub
 
     Private Sub AddToDb(check As Integer)

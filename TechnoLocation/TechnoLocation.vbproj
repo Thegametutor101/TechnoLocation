@@ -156,6 +156,12 @@
     <Compile Include="AppBundle\UserControls\UCEquipmentAdd.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipmentMod.Designer.vb">
+      <DependentUpon>UCEquipmentMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipmentMod.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCNotif.Designer.vb">
       <DependentUpon>UCNotif.vb</DependentUpon>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCEquipmentAdd.resx">
       <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCEquipmentMod.resx">
+      <DependentUpon>UCEquipmentMod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCNotif.resx">
       <DependentUpon>UCNotif.vb</DependentUpon>

@@ -29,26 +29,13 @@
         Me.CenterToScreen()
         Dim dashboard As New UCDashboard()
         dashboard.Dock = DockStyle.Fill
-        p_Main.Controls.Add(dashboard)
+        panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
     End Sub
 
     '__________________________________________________________________________________________________________
     'Methods
     '__________________________________________________________________________________________________________
-    Public Sub bringToFrontAddEquipment()
-        Dim iEquipmentAdd As New UCEquipmentAdd()
-        iEquipmentAdd.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iEquipmentAdd)
-        iEquipmentAdd.BringToFront()
-    End Sub
-
-    Public Sub bringToFrontEquipment()
-        Dim iEquipment As New UCEquipment()
-        iEquipment.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iEquipment)
-        iEquipment.BringToFront()
-    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions
@@ -80,7 +67,7 @@
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
         Dim iDashboard As New UCDashboard()
         iDashboard.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iDashboard)
+        panelMain.Controls.Add(iDashboard)
         iDashboard.BringToFront()
     End Sub
 
@@ -101,7 +88,7 @@
     Private Sub btBorrow_Click(sender As Object, e As EventArgs) Handles btBorrow.Click
         Dim iRent As New UCRent()
         iRent.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iRent)
+        panelMain.Controls.Add(iRent)
         iRent.BringToFront()
     End Sub
 
@@ -113,7 +100,7 @@
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
         Dim iReturn As New UCReturn()
         iReturn.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iReturn)
+        panelMain.Controls.Add(iReturn)
         iReturn.BringToFront()
     End Sub
 
@@ -125,7 +112,7 @@
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
         Dim iUser As New UCUser()
         iUser.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iUser)
+        panelMain.Controls.Add(iUser)
         iUser.BringToFront()
     End Sub
 
@@ -135,7 +122,10 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        bringToFrontEquipment()
+        Dim iEquipment As New UCEquipment()
+        iEquipment.Dock = DockStyle.Fill
+        panelMain.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
     End Sub
 
     ''' <summary>
@@ -146,7 +136,7 @@
     Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
         Dim iHistory As New UCHistory()
         iHistory.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iHistory)
+        panelMain.Controls.Add(iHistory)
         iHistory.BringToFront()
     End Sub
 
@@ -158,7 +148,7 @@
     Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
         Dim iRestriction As New UCRestriction()
         iRestriction.Dock = DockStyle.Fill
-        p_Main.Controls.Add(iRestriction)
+        panelMain.Controls.Add(iRestriction)
         iRestriction.BringToFront()
     End Sub
 
@@ -191,7 +181,7 @@
         End If
     End Sub
 
-    Private Sub p_Main_Paint(sender As Object, e As PaintEventArgs) Handles p_Main.Paint
+    Private Sub p_Main_Paint(sender As Object, e As PaintEventArgs) Handles panelMain.Paint
 
     End Sub
 
