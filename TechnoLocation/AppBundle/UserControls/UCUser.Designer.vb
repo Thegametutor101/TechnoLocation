@@ -52,15 +52,19 @@ Partial Class UCUser
         '
         'gridUser
         '
+        Me.gridUser.AllowUserToAddRows = False
         Me.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridUser.Location = New System.Drawing.Point(3, 78)
         Me.gridUser.Name = "gridUser"
+        Me.gridUser.ReadOnly = True
         Me.gridUser.Size = New System.Drawing.Size(953, 569)
         Me.gridUser.TabIndex = 7
         '
         'dropUserSearch
         '
+        Me.dropUserSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.dropUserSearch.FormattingEnabled = True
+        Me.dropUserSearch.Items.AddRange(New Object() {"Code", "Prénom", "Nom de famille", "Email", "Téléphone", "Job"})
         Me.dropUserSearch.Location = New System.Drawing.Point(336, 18)
         Me.dropUserSearch.Name = "dropUserSearch"
         Me.dropUserSearch.Size = New System.Drawing.Size(135, 21)
