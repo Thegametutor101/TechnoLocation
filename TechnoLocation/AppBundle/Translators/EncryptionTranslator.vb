@@ -18,7 +18,7 @@
 
     Private Sub addCharacter(passChar As Char)
         If Not arrayCharacters.ContainsKey(passChar) Then
-            Dim number As Integer = CInt(Math.Ceiling(rand.Next(100) * 1482)) + 1
+            Dim number As Integer = CInt(Math.Ceiling(rand.Next(1000) * 1482)) + 1
             Dim hashValue = Math.Sqrt(((number + 13) * 17) / 5)
             arrayCharacters.Add(passChar, hashValue.ToString())
             ModelCharacters.getInstance().addCharacter(passChar, hashValue.ToString())

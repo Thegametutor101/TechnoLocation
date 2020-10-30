@@ -66,3 +66,4 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ex
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\Guna.UI2.dll

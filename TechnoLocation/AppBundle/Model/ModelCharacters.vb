@@ -24,7 +24,7 @@ Public Class ModelCharacters
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show("Une erreur s'est produite lors de la connexion.", ex.Message)
         End Try
     End Function
 End Class
