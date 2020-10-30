@@ -1,13 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
-
-Public Class EntityUser
+Public Class EntityRent
 
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
-    Shared instance As EntityUser = Nothing
+    Shared instance As EntityRent = Nothing
 
-    Public Shared Function getInstance() As EntityUser
+    Public Shared Function getInstance() As EntityRent
         If IsNothing(instance) Then
-            instance = New EntityUser()
+            instance = New EntityRent()
         End If
         Return instance
     End Function
@@ -26,124 +25,108 @@ Public Class EntityUser
         Return exists = "Y"
     End Function
 
-    Public Function getUsers() As DataTable
+    Public Function getRent() As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U order by U.code"
+        command.CommandText = $"Select * from rent R order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUserAccounts() As DataTable
+    Public Function getRentCode(code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, password from user"
+        command.CommandText = $"Select * from rent R where code = '{code}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUsersCode(code As Integer) As DataTable
+    Public Function getRentRenter(renter As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where code = '{code}' order by U.code"
+        command.CommandText = $"Select * from rent R where renter = '{renter}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUsersFirstName(firstName As String) As DataTable
+    Public Function getRentLender(lender As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where firstName like '{firstName}%' order by U.code"
+        command.CommandText = $"Select * from rent R where lender = '{lender}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUsersLastName(lastName As String) As DataTable
+    Public Function getRentEquipment(equipment As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where lastName like '{lastName}%' order by U.code"
+        command.CommandText = $"Select * from rent R where equipment = '{equipment}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUsersEmail(email As String) As DataTable
+    Public Function getRentDate(rentDate As Date) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where email like '{email}%' order by U.code"
+        command.CommandText = $"Select * from rent R where rentDate = '{rentDate}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getUsersPhone(phone As String) As DataTable
+    Public Function getRentReturnDate(returnDate As Date) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where phoneMain like '{phone}%' || phone2 like '{phone}%' order by U.code"
+        command.CommandText = $"Select * from rent R where returnDate = '{returnDate}'order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
+        Dim table As New DataTable("rents")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
-
-    Public Function getUsersJob(job As String) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where job like '{job}' order by U.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("users")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
 End Class

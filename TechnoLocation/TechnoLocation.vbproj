@@ -124,7 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
+    <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityCharacters.vb" />
+    <Compile Include="AppBundle\Entity\EntityHistory.vb" />
+    <Compile Include="AppBundle\Entity\EntityKit.vb" />
+    <Compile Include="AppBundle\Entity\EntityLog.vb" />
+    <Compile Include="AppBundle\Entity\EntityRent.vb" />
     <Compile Include="AppBundle\Entity\EntityUser.vb" />
     <Compile Include="AppBundle\Language\FR_CA.vb" />
     <Compile Include="AppBundle\MainForm.vb">
@@ -142,10 +147,28 @@
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
+    <Compile Include="AppBundle\UserControls\UCAddUser.Designer.vb">
+      <DependentUpon>UCAddUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCAddUser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\AddKit.Designer.vb">
+      <DependentUpon>AddKit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\AddKit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCEquipmentAdd.Designer.vb">
       <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
     </Compile>
     <Compile Include="AppBundle\UserControls\UCEquipmentAdd.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipmentMod.Designer.vb">
+      <DependentUpon>UCEquipmentMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCEquipmentMod.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\UserControls\UCNotif.Designer.vb">
@@ -220,11 +243,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppBundle\AddKit.resx">
+      <DependentUpon>AddKit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\Connection.resx">
       <DependentUpon>Connection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCAddUser.resx">
+      <DependentUpon>UCAddUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCDashboard.resx">
       <DependentUpon>UCDashboard.vb</DependentUpon>
@@ -234,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCEquipmentAdd.resx">
       <DependentUpon>UCEquipmentAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCEquipmentMod.resx">
+      <DependentUpon>UCEquipmentMod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCNotif.resx">
       <DependentUpon>UCNotif.vb</DependentUpon>

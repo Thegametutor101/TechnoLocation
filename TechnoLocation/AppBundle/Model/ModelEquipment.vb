@@ -50,23 +50,25 @@ Public Class ModelEquipment
         Return (code + 1)
     End Function
 
-    Public Function addEquipment(name As String, kit As Integer, state As String, available As Integer, comments As String)
+    Public Function addEquipment(name As String, kit As Integer, state As String, available As Integer, comments As String) As Boolean
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into equipment values ('{name}',
-                                                                '{kit}',
-                                                                '{state}',
-                                                                '{available}',
-                                                                '{comments}')"
+            command.CommandText = $"insert into equipment (name,kit,state,available,comments) values ('{name}',
+                                                                                                        '{kit}',
+                                                                                                        '{state}',
+                                                                                                        '{available}',
+                                                                                                        '{comments}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
+            Return True
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show(ex.Message)
+            Return False
         End Try
     End Function
 
