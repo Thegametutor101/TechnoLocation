@@ -7,6 +7,8 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Dim Msg As FR_CA = New FR_CA
+    Private isMouseDown As Boolean = False
+    Private mouseOffset As Point
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -19,8 +21,8 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.CenterToScreen()
         testConnection()
+        tbUsername.Select()
     End Sub
 
 
@@ -28,7 +30,49 @@ Public Class Connection
     'Methods
     '__________________________________________________________________________________________________________
 
+    Private Sub HeaderBar_MouseDown(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ' Window Position
+            mouseOffset = New Point(-e.X, -e.Y)
+            ' Left Mouse Button has been pressed
+            isMouseDown = True
+        End If
+    End Sub
 
+    Private Sub HeaderBar_MouseMove(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseMove
+        If isMouseDown Then
+            Dim mousePos As Point = Control.MousePosition
+            ' Obtain new Window Position
+            mousePos.Offset(mouseOffset.X, mouseOffset.Y)
+            Me.Location = mousePos
+        End If
+    End Sub
+
+    Private Sub HeaderBar_MouseUp(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseUp
+        If e.Button = MouseButtons.Left Then
+            'Left Mouse Button has been released
+            isMouseDown = False
+        End If
+    End Sub
+
+    Private Sub EnterPressed(sender As Object, e As KeyEventArgs) Handles tbPassword.KeyDown, tbUsername.KeyDown, MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            login()
+        End If
+    End Sub
+
+    Private Sub login()
+        Dim loginController = New LoginController
+        Dim username As String = Regex.Replace(tbUsername.Text, "[^A-Za-z0-9]", String.Empty)
+        Dim password As String = Replace(tbPassword.Text, " ", "")
+        If Not IsNothing(username) Then
+            Dim result As Boolean = loginController.login(username, password)
+            If result Then
+                MainForm.getInstance().Show()
+                Me.Close()
+            End If
+        End If
+    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions
@@ -51,8 +95,8 @@ Public Class Connection
     'Buttons
     '__________________________________________________________________________________________________________
 
-    Private Sub btQuitConnection_Click(sender As Object, e As EventArgs) Handles btQuitConnection.Click
-        If MessageBox.Show("Voulez-vous quitter le programme ?",
+    Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
+        If MessageBox.Show("Voulez-vous quitter l'application?",
                            "Attention",
                            MessageBoxButtons.YesNo,
                            MessageBoxIcon.Warning) = DialogResult.Yes Then
@@ -60,19 +104,12 @@ Public Class Connection
         End If
     End Sub
 
-    Private Sub btConnection_Click(sender As Object, e As EventArgs) Handles btConnection.Click
-        Dim loginController = New LoginController
-        Dim username As String = Regex.Replace(tbUsername.Text, "[^A-Za-z0-9]", String.Empty)
-        Dim password As String = Replace(tbPassword.Text, " ", "")
-        If Not IsNothing(username) Then
-            Dim result As Boolean = loginController.login(username, password)
-            If result Then
-                MainForm.getInstance().Show()
-                Me.Close()
-            End If
-        End If
-        tbUsername.BackColor = Color.FromArgb(255, 107, 107)
-        tbPassword.BackColor = Color.FromArgb(255, 107, 107)
+    Private Sub MinimizeButton_Click(sender As Object, e As EventArgs) Handles btHeaderMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub btConnect_Click(sender As Object, e As EventArgs) Handles btConnect.Click
+        login()
     End Sub
 
     '__________________________________________________________________________________________________________

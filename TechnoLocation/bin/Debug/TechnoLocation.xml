@@ -22,6 +22,106 @@ TechnoLocation
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_dark_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_white_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_dark_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_white_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_dark_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_light_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_white_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_dark_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_main_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_white_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="M:TechnoLocation.MainForm.MainForm_Load(System.Object,System.EventArgs)">
  <summary>
  Au chargement nous voulons voir le Dashboard
@@ -36,14 +136,7 @@ TechnoLocation
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:TechnoLocation.MainForm.btAlert_Click(System.Object,System.EventArgs)">
- <summary>
- 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
-</member>
-<member name="M:TechnoLocation.MainForm.btBorrow_Click(System.Object,System.EventArgs)">
+<member name="M:TechnoLocation.MainForm.btRent_Click(System.Object,System.EventArgs)">
  <summary>
  
  </summary>
