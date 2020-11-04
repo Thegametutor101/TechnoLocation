@@ -23,31 +23,31 @@ Partial Class Connection
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Connection))
-        Me.labUserName = New System.Windows.Forms.Label()
+        Me.labUsername = New System.Windows.Forms.Label()
         Me.labPassword = New System.Windows.Forms.Label()
         Me.linklabPasswordForget = New System.Windows.Forms.LinkLabel()
         Me.panelHeaderBar = New System.Windows.Forms.Panel()
+        Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.btHeaderMinimize = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btHeaderClose = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btConnect = New Guna.UI2.WinForms.Guna2Button()
         Me.tbUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'labUserName
+        'labUsername
         '
-        Me.labUserName.AutoSize = True
-        Me.labUserName.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labUserName.Location = New System.Drawing.Point(87, 115)
-        Me.labUserName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labUserName.Name = "labUserName"
-        Me.labUserName.Size = New System.Drawing.Size(98, 25)
-        Me.labUserName.TabIndex = 6
-        Me.labUserName.Text = "Identifiant"
+        Me.labUsername.AutoSize = True
+        Me.labUsername.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labUsername.Location = New System.Drawing.Point(87, 115)
+        Me.labUsername.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labUsername.Name = "labUsername"
+        Me.labUsername.Size = New System.Drawing.Size(98, 25)
+        Me.labUsername.TabIndex = 6
+        Me.labUsername.Text = "Identifiant"
         '
         'labPassword
         '
@@ -64,6 +64,7 @@ Partial Class Connection
         '
         Me.linklabPasswordForget.AutoSize = True
         Me.linklabPasswordForget.Font = New System.Drawing.Font("Segoe UI Symbol", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linklabPasswordForget.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.linklabPasswordForget.Location = New System.Drawing.Point(89, 206)
         Me.linklabPasswordForget.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.linklabPasswordForget.Name = "linklabPasswordForget"
@@ -84,6 +85,14 @@ Partial Class Connection
         Me.panelHeaderBar.Name = "panelHeaderBar"
         Me.panelHeaderBar.Size = New System.Drawing.Size(536, 55)
         Me.panelHeaderBar.TabIndex = 8
+        '
+        'Guna2VSeparator1
+        '
+        Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(65, 12)
+        Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 33)
+        Me.Guna2VSeparator1.TabIndex = 9
         '
         'btHeaderMinimize
         '
@@ -203,14 +212,6 @@ Partial Class Connection
         Me.tbPassword.Size = New System.Drawing.Size(200, 36)
         Me.tbPassword.TabIndex = 1
         '
-        'Guna2VSeparator1
-        '
-        Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(65, 12)
-        Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
-        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 33)
-        Me.Guna2VSeparator1.TabIndex = 9
-        '
         'Connection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -223,8 +224,9 @@ Partial Class Connection
         Me.Controls.Add(Me.panelHeaderBar)
         Me.Controls.Add(Me.linklabPasswordForget)
         Me.Controls.Add(Me.labPassword)
-        Me.Controls.Add(Me.labUserName)
+        Me.Controls.Add(Me.labUsername)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Connection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -236,7 +238,7 @@ Partial Class Connection
 
     End Sub
 
-    Friend WithEvents labUserName As Label
+    Friend WithEvents labUsername As Label
     Friend WithEvents labPassword As Label
     Friend WithEvents linklabPasswordForget As LinkLabel
     Friend WithEvents panelHeaderBar As Panel

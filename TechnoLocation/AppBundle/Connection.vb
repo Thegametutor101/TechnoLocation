@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json.Linq
 
 Public Class Connection
 
@@ -6,9 +7,9 @@ Public Class Connection
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim Msg As FR_CA = New FR_CA
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
+    Private json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -22,6 +23,8 @@ Public Class Connection
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         testConnection()
+        json = Lang.getInstance("fr_ca").ListProperty
+        loadLanguage()
         tbUsername.Select()
     End Sub
 
@@ -65,6 +68,7 @@ Public Class Connection
         Dim loginController = New LoginController
         Dim username As String = Regex.Replace(tbUsername.Text, "[^A-Za-z0-9]", String.Empty)
         Dim password As String = Replace(tbPassword.Text, " ", "")
+        'loginController.createAccount(username, password)
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
@@ -116,5 +120,11 @@ Public Class Connection
     'Other
     '__________________________________________________________________________________________________________
 
-
+    Public Sub loadLanguage()
+        labUsername.Text = json("ConnectionlabUsername")
+        labPassword.Text = json("ConnectionlabPassword")
+        tbUsername.PlaceholderText = json("ConnectiontbUsernamePlaceholder")
+        linklabPasswordForget.Text = json("ConnectionlabPasswordForget")
+        btConnect.Text = json("ConnectionbtConnect")
+    End Sub
 End Class

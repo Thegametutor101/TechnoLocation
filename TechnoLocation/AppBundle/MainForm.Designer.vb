@@ -30,18 +30,17 @@ Partial Class MainForm
         Me.btHeaderClose = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelOptions = New Guna.UI2.WinForms.Guna2ShadowPanel()
-        Me.btUser = New Guna.UI2.WinForms.Guna2Button()
-        Me.btReturn = New Guna.UI2.WinForms.Guna2Button()
-        Me.btRent = New Guna.UI2.WinForms.Guna2Button()
-        Me.btAlert = New Guna.UI2.WinForms.Guna2Button()
-        Me.btHome = New Guna.UI2.WinForms.Guna2Button()
-        Me.labPersonConnected = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btDisconnection = New System.Windows.Forms.Button()
-        Me.btQuit = New System.Windows.Forms.Button()
-        Me.btCalendar = New System.Windows.Forms.Button()
-        Me.btHistory = New System.Windows.Forms.Button()
-        Me.btEquipment = New System.Windows.Forms.Button()
         Me.panelMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.labPersonConnected = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btHome = New Guna.UI2.WinForms.Guna2Button()
+        Me.btAlert = New Guna.UI2.WinForms.Guna2Button()
+        Me.btRent = New Guna.UI2.WinForms.Guna2Button()
+        Me.btReturn = New Guna.UI2.WinForms.Guna2Button()
+        Me.btUser = New Guna.UI2.WinForms.Guna2Button()
+        Me.btEquipment = New Guna.UI2.WinForms.Guna2Button()
+        Me.btHistory = New Guna.UI2.WinForms.Guna2Button()
+        Me.btCalendar = New Guna.UI2.WinForms.Guna2Button()
+        Me.labAccount = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelOptions.SuspendLayout()
@@ -50,6 +49,7 @@ Partial Class MainForm
         'panelHeaderBar
         '
         Me.panelHeaderBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.panelHeaderBar.Controls.Add(Me.labAccount)
         Me.panelHeaderBar.Controls.Add(Me.Guna2VSeparator1)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderMinimize)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderMaximize)
@@ -65,10 +65,9 @@ Partial Class MainForm
         'Guna2VSeparator1
         '
         Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(49, 10)
-        Me.Guna2VSeparator1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(65, 12)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
-        Me.Guna2VSeparator1.Size = New System.Drawing.Size(8, 27)
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 33)
         Me.Guna2VSeparator1.TabIndex = 3
         '
         'btHeaderMinimize
@@ -146,17 +145,15 @@ Partial Class MainForm
         'panelOptions
         '
         Me.panelOptions.BackColor = System.Drawing.Color.Transparent
+        Me.panelOptions.Controls.Add(Me.btCalendar)
+        Me.panelOptions.Controls.Add(Me.btHistory)
+        Me.panelOptions.Controls.Add(Me.btEquipment)
         Me.panelOptions.Controls.Add(Me.btUser)
         Me.panelOptions.Controls.Add(Me.btReturn)
         Me.panelOptions.Controls.Add(Me.btRent)
         Me.panelOptions.Controls.Add(Me.btAlert)
         Me.panelOptions.Controls.Add(Me.btHome)
         Me.panelOptions.Controls.Add(Me.labPersonConnected)
-        Me.panelOptions.Controls.Add(Me.btDisconnection)
-        Me.panelOptions.Controls.Add(Me.btQuit)
-        Me.panelOptions.Controls.Add(Me.btCalendar)
-        Me.panelOptions.Controls.Add(Me.btHistory)
-        Me.panelOptions.Controls.Add(Me.btEquipment)
         Me.panelOptions.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
         Me.panelOptions.Location = New System.Drawing.Point(0, 45)
@@ -169,101 +166,30 @@ Partial Class MainForm
         Me.panelOptions.Size = New System.Drawing.Size(208, 604)
         Me.panelOptions.TabIndex = 13
         '
-        'btUser
+        'panelMain
         '
-        Me.btUser.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btUser.BorderRadius = 4
-        Me.btUser.BorderThickness = 1
-        Me.btUser.CheckedState.Parent = Me.btUser
-        Me.btUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btUser.CustomImages.Parent = Me.btUser
-        Me.btUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.btUser.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btUser.ForeColor = System.Drawing.Color.White
-        Me.btUser.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btUser.HoverState.Parent = Me.btUser
-        Me.btUser.Location = New System.Drawing.Point(6, 207)
-        Me.btUser.Margin = New System.Windows.Forms.Padding(2, 11, 8, 2)
-        Me.btUser.MaximumSize = New System.Drawing.Size(202, 37)
-        Me.btUser.Name = "btUser"
-        Me.btUser.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.btUser.PressedDepth = 45
-        Me.btUser.ShadowDecoration.Parent = Me.btUser
-        Me.btUser.Size = New System.Drawing.Size(190, 37)
-        Me.btUser.TabIndex = 26
-        Me.btUser.Text = "Utilisateurs"
+        Me.panelMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelMain.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.panelMain.Location = New System.Drawing.Point(277, 55)
+        Me.panelMain.Name = "panelMain"
+        Me.panelMain.ShadowDecoration.Parent = Me.panelMain
+        Me.panelMain.Size = New System.Drawing.Size(1263, 744)
+        Me.panelMain.TabIndex = 14
         '
-        'btReturn
+        'labPersonConnected
         '
-        Me.btReturn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btReturn.BorderRadius = 4
-        Me.btReturn.BorderThickness = 1
-        Me.btReturn.CheckedState.Parent = Me.btReturn
-        Me.btReturn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btReturn.CustomImages.Parent = Me.btReturn
-        Me.btReturn.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.btReturn.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btReturn.ForeColor = System.Drawing.Color.White
-        Me.btReturn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btReturn.HoverState.Parent = Me.btReturn
-        Me.btReturn.Location = New System.Drawing.Point(6, 167)
-        Me.btReturn.Margin = New System.Windows.Forms.Padding(2, 11, 8, 2)
-        Me.btReturn.MaximumSize = New System.Drawing.Size(202, 37)
-        Me.btReturn.Name = "btReturn"
-        Me.btReturn.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.btReturn.PressedDepth = 45
-        Me.btReturn.ShadowDecoration.Parent = Me.btReturn
-        Me.btReturn.Size = New System.Drawing.Size(190, 37)
-        Me.btReturn.TabIndex = 25
-        Me.btReturn.Text = "Retours"
-        '
-        'btRent
-        '
-        Me.btRent.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btRent.BorderRadius = 4
-        Me.btRent.BorderThickness = 1
-        Me.btRent.CheckedState.Parent = Me.btRent
-        Me.btRent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btRent.CustomImages.Parent = Me.btRent
-        Me.btRent.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.btRent.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRent.ForeColor = System.Drawing.Color.White
-        Me.btRent.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btRent.HoverState.Parent = Me.btRent
-        Me.btRent.Location = New System.Drawing.Point(6, 126)
-        Me.btRent.Margin = New System.Windows.Forms.Padding(2, 11, 8, 2)
-        Me.btRent.MaximumSize = New System.Drawing.Size(202, 37)
-        Me.btRent.Name = "btRent"
-        Me.btRent.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.btRent.PressedDepth = 45
-        Me.btRent.ShadowDecoration.Parent = Me.btRent
-        Me.btRent.Size = New System.Drawing.Size(190, 37)
-        Me.btRent.TabIndex = 24
-        Me.btRent.Text = "Prêts"
-        '
-        'btAlert
-        '
-        Me.btAlert.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btAlert.BorderRadius = 4
-        Me.btAlert.BorderThickness = 1
-        Me.btAlert.CheckedState.Parent = Me.btAlert
-        Me.btAlert.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btAlert.CustomImages.Parent = Me.btAlert
-        Me.btAlert.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.btAlert.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAlert.ForeColor = System.Drawing.Color.White
-        Me.btAlert.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btAlert.HoverState.Parent = Me.btAlert
-        Me.btAlert.Location = New System.Drawing.Point(6, 85)
-        Me.btAlert.Margin = New System.Windows.Forms.Padding(2, 11, 8, 2)
-        Me.btAlert.MaximumSize = New System.Drawing.Size(202, 37)
-        Me.btAlert.Name = "btAlert"
-        Me.btAlert.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.btAlert.PressedDepth = 45
-        Me.btAlert.ShadowDecoration.Parent = Me.btAlert
-        Me.btAlert.Size = New System.Drawing.Size(190, 37)
-        Me.btAlert.TabIndex = 23
-        Me.btAlert.Text = "Notifications"
+        Me.labPersonConnected.AutoSize = False
+        Me.labPersonConnected.BackColor = System.Drawing.Color.Transparent
+        Me.labPersonConnected.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPersonConnected.ForeColor = System.Drawing.Color.White
+        Me.labPersonConnected.Location = New System.Drawing.Point(12, 0)
+        Me.labPersonConnected.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
+        Me.labPersonConnected.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.labPersonConnected.Name = "labPersonConnected"
+        Me.labPersonConnected.Padding = New System.Windows.Forms.Padding(3)
+        Me.labPersonConnected.Size = New System.Drawing.Size(246, 45)
+        Me.labPersonConnected.TabIndex = 22
+        Me.labPersonConnected.Text = "Bonjour, "
         '
         'btHome
         '
@@ -289,76 +215,186 @@ Partial Class MainForm
         Me.btHome.TabIndex = 0
         Me.btHome.Text = "Acceuil"
         '
-        'labPersonConnected
+        'btAlert
         '
-        Me.labPersonConnected.AutoSize = False
-        Me.labPersonConnected.BackColor = System.Drawing.Color.Transparent
-        Me.labPersonConnected.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPersonConnected.ForeColor = System.Drawing.Color.White
-        Me.labPersonConnected.Location = New System.Drawing.Point(9, 0)
-        Me.labPersonConnected.Margin = New System.Windows.Forms.Padding(2, 2, 2, 8)
-        Me.labPersonConnected.MaximumSize = New System.Drawing.Size(202, 37)
-        Me.labPersonConnected.Name = "labPersonConnected"
-        Me.labPersonConnected.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.labPersonConnected.Size = New System.Drawing.Size(184, 37)
-        Me.labPersonConnected.TabIndex = 22
-        Me.labPersonConnected.Text = "Bonjour, "
+        Me.btAlert.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btAlert.BorderRadius = 4
+        Me.btAlert.BorderThickness = 1
+        Me.btAlert.CheckedState.Parent = Me.btAlert
+        Me.btAlert.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAlert.CustomImages.Parent = Me.btAlert
+        Me.btAlert.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btAlert.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAlert.ForeColor = System.Drawing.Color.White
+        Me.btAlert.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btAlert.HoverState.Parent = Me.btAlert
+        Me.btAlert.Location = New System.Drawing.Point(8, 105)
+        Me.btAlert.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btAlert.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btAlert.Name = "btAlert"
+        Me.btAlert.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btAlert.PressedDepth = 45
+        Me.btAlert.ShadowDecoration.Parent = Me.btAlert
+        Me.btAlert.Size = New System.Drawing.Size(253, 45)
+        Me.btAlert.TabIndex = 23
+        Me.btAlert.Text = "Notifications"
         '
-        'btDisconnection
+        'btRent
         '
-        Me.btDisconnection.Location = New System.Drawing.Point(14, 445)
-        Me.btDisconnection.Name = "btDisconnection"
-        Me.btDisconnection.Size = New System.Drawing.Size(180, 36)
-        Me.btDisconnection.TabIndex = 21
-        Me.btDisconnection.Text = "Déconnexion"
-        Me.btDisconnection.UseVisualStyleBackColor = True
+        Me.btRent.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btRent.BorderRadius = 4
+        Me.btRent.BorderThickness = 1
+        Me.btRent.CheckedState.Parent = Me.btRent
+        Me.btRent.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btRent.CustomImages.Parent = Me.btRent
+        Me.btRent.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btRent.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRent.ForeColor = System.Drawing.Color.White
+        Me.btRent.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btRent.HoverState.Parent = Me.btRent
+        Me.btRent.Location = New System.Drawing.Point(8, 155)
+        Me.btRent.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btRent.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btRent.Name = "btRent"
+        Me.btRent.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btRent.PressedDepth = 45
+        Me.btRent.ShadowDecoration.Parent = Me.btRent
+        Me.btRent.Size = New System.Drawing.Size(253, 45)
+        Me.btRent.TabIndex = 24
+        Me.btRent.Text = "Prêts"
         '
-        'btQuit
+        'btReturn
         '
-        Me.btQuit.Location = New System.Drawing.Point(14, 488)
-        Me.btQuit.Name = "btQuit"
-        Me.btQuit.Size = New System.Drawing.Size(180, 36)
-        Me.btQuit.TabIndex = 20
-        Me.btQuit.Text = "Quitter"
-        Me.btQuit.UseVisualStyleBackColor = True
+        Me.btReturn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btReturn.BorderRadius = 4
+        Me.btReturn.BorderThickness = 1
+        Me.btReturn.CheckedState.Parent = Me.btReturn
+        Me.btReturn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btReturn.CustomImages.Parent = Me.btReturn
+        Me.btReturn.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btReturn.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btReturn.ForeColor = System.Drawing.Color.White
+        Me.btReturn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btReturn.HoverState.Parent = Me.btReturn
+        Me.btReturn.Location = New System.Drawing.Point(8, 205)
+        Me.btReturn.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btReturn.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btReturn.Name = "btReturn"
+        Me.btReturn.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btReturn.PressedDepth = 45
+        Me.btReturn.ShadowDecoration.Parent = Me.btReturn
+        Me.btReturn.Size = New System.Drawing.Size(253, 45)
+        Me.btReturn.TabIndex = 25
+        Me.btReturn.Text = "Retours"
         '
-        'btCalendar
+        'btUser
         '
-        Me.btCalendar.Location = New System.Drawing.Point(14, 389)
-        Me.btCalendar.Name = "btCalendar"
-        Me.btCalendar.Size = New System.Drawing.Size(180, 36)
-        Me.btCalendar.TabIndex = 19
-        Me.btCalendar.Text = "Calendrier de Restrictions"
-        Me.btCalendar.UseVisualStyleBackColor = True
-        '
-        'btHistory
-        '
-        Me.btHistory.Location = New System.Drawing.Point(14, 347)
-        Me.btHistory.Name = "btHistory"
-        Me.btHistory.Size = New System.Drawing.Size(180, 36)
-        Me.btHistory.TabIndex = 18
-        Me.btHistory.Text = "Historique"
-        Me.btHistory.UseVisualStyleBackColor = True
+        Me.btUser.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btUser.BorderRadius = 4
+        Me.btUser.BorderThickness = 1
+        Me.btUser.CheckedState.Parent = Me.btUser
+        Me.btUser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btUser.CustomImages.Parent = Me.btUser
+        Me.btUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btUser.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btUser.ForeColor = System.Drawing.Color.White
+        Me.btUser.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btUser.HoverState.Parent = Me.btUser
+        Me.btUser.Location = New System.Drawing.Point(8, 255)
+        Me.btUser.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btUser.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btUser.Name = "btUser"
+        Me.btUser.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btUser.PressedDepth = 45
+        Me.btUser.ShadowDecoration.Parent = Me.btUser
+        Me.btUser.Size = New System.Drawing.Size(253, 45)
+        Me.btUser.TabIndex = 26
+        Me.btUser.Text = "Utilisateurs"
         '
         'btEquipment
         '
-        Me.btEquipment.Location = New System.Drawing.Point(14, 305)
+        Me.btEquipment.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btEquipment.BorderRadius = 4
+        Me.btEquipment.BorderThickness = 1
+        Me.btEquipment.CheckedState.Parent = Me.btEquipment
+        Me.btEquipment.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEquipment.CustomImages.Parent = Me.btEquipment
+        Me.btEquipment.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEquipment.ForeColor = System.Drawing.Color.White
+        Me.btEquipment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btEquipment.HoverState.Parent = Me.btEquipment
+        Me.btEquipment.Location = New System.Drawing.Point(8, 305)
+        Me.btEquipment.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btEquipment.MaximumSize = New System.Drawing.Size(269, 45)
         Me.btEquipment.Name = "btEquipment"
-        Me.btEquipment.Size = New System.Drawing.Size(180, 36)
-        Me.btEquipment.TabIndex = 17
-        Me.btEquipment.Text = "Équipement"
-        Me.btEquipment.UseVisualStyleBackColor = True
+        Me.btEquipment.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btEquipment.PressedDepth = 45
+        Me.btEquipment.ShadowDecoration.Parent = Me.btEquipment
+        Me.btEquipment.Size = New System.Drawing.Size(253, 45)
+        Me.btEquipment.TabIndex = 27
+        Me.btEquipment.Text = "Equipement"
         '
-        'panelMain
+        'btHistory
         '
-        Me.panelMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelMain.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.panelMain.Location = New System.Drawing.Point(208, 45)
-        Me.panelMain.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.panelMain.Name = "panelMain"
-        Me.panelMain.ShadowDecoration.Parent = Me.panelMain
-        Me.panelMain.Size = New System.Drawing.Size(947, 604)
-        Me.panelMain.TabIndex = 14
+        Me.btHistory.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btHistory.BorderRadius = 4
+        Me.btHistory.BorderThickness = 1
+        Me.btHistory.CheckedState.Parent = Me.btHistory
+        Me.btHistory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btHistory.CustomImages.Parent = Me.btHistory
+        Me.btHistory.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btHistory.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btHistory.ForeColor = System.Drawing.Color.White
+        Me.btHistory.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btHistory.HoverState.Parent = Me.btHistory
+        Me.btHistory.Location = New System.Drawing.Point(8, 355)
+        Me.btHistory.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btHistory.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btHistory.Name = "btHistory"
+        Me.btHistory.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btHistory.PressedDepth = 45
+        Me.btHistory.ShadowDecoration.Parent = Me.btHistory
+        Me.btHistory.Size = New System.Drawing.Size(253, 45)
+        Me.btHistory.TabIndex = 28
+        Me.btHistory.Text = "Historique"
+        '
+        'btCalendar
+        '
+        Me.btCalendar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btCalendar.BorderRadius = 4
+        Me.btCalendar.BorderThickness = 1
+        Me.btCalendar.CheckedState.Parent = Me.btCalendar
+        Me.btCalendar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCalendar.CustomImages.Parent = Me.btCalendar
+        Me.btCalendar.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btCalendar.Font = New System.Drawing.Font("Segoe UI Symbol", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCalendar.ForeColor = System.Drawing.Color.White
+        Me.btCalendar.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btCalendar.HoverState.Parent = Me.btCalendar
+        Me.btCalendar.Location = New System.Drawing.Point(8, 405)
+        Me.btCalendar.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
+        Me.btCalendar.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btCalendar.Name = "btCalendar"
+        Me.btCalendar.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btCalendar.PressedDepth = 45
+        Me.btCalendar.ShadowDecoration.Parent = Me.btCalendar
+        Me.btCalendar.Size = New System.Drawing.Size(253, 45)
+        Me.btCalendar.TabIndex = 29
+        Me.btCalendar.Text = "Calendrier de Restrictions"
+        '
+        'labAccount
+        '
+        Me.labAccount.AutoSize = False
+        Me.labAccount.BackColor = System.Drawing.Color.Transparent
+        Me.labAccount.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labAccount.ForeColor = System.Drawing.Color.White
+        Me.labAccount.Location = New System.Drawing.Point(85, 3)
+        Me.labAccount.Name = "labAccount"
+        Me.labAccount.Size = New System.Drawing.Size(85, 52)
+        Me.labAccount.TabIndex = 4
+        Me.labAccount.Text = "Compte"
+        Me.labAccount.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'MainForm
         '
@@ -370,7 +406,8 @@ Partial Class MainForm
         Me.Controls.Add(Me.panelOptions)
         Me.Controls.Add(Me.panelHeaderBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
@@ -386,17 +423,16 @@ Partial Class MainForm
     Friend WithEvents btHeaderClose As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents panelOptions As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents btDisconnection As Button
-    Friend WithEvents btQuit As Button
-    Friend WithEvents btCalendar As Button
-    Friend WithEvents btHistory As Button
-    Friend WithEvents btEquipment As Button
     Friend WithEvents panelMain As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents labPersonConnected As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents btHome As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btAlert As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
+    Friend WithEvents btCalendar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btHistory As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btEquipment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btReturn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btRent As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btAlert As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btHome As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents labPersonConnected As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labAccount As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
