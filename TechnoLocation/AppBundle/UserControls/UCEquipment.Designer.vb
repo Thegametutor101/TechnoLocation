@@ -22,34 +22,30 @@ Partial Class UCEquipment
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.cbAll = New System.Windows.Forms.CheckBox()
         Me.gridEquipment = New System.Windows.Forms.DataGridView()
         Me.dropSearch = New System.Windows.Forms.ComboBox()
         Me.tbSearch = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btPrintBarcodeEquip = New System.Windows.Forms.Button()
         Me.btNewEquipment = New System.Windows.Forms.Button()
         Me.btDelEquipment = New System.Windows.Forms.Button()
-        Me.btPrintBarcodeEquip = New System.Windows.Forms.Button()
+        Me.btSelectAllEquipment = New System.Windows.Forms.Button()
         CType(Me.gridEquipment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'cbAll
-        '
-        Me.cbAll.AutoSize = True
-        Me.cbAll.Location = New System.Drawing.Point(3, 88)
-        Me.cbAll.Name = "cbAll"
-        Me.cbAll.Size = New System.Drawing.Size(81, 17)
-        Me.cbAll.TabIndex = 2
-        Me.cbAll.Text = "Cocher tout"
-        Me.cbAll.UseVisualStyleBackColor = True
-        '
         'gridEquipment
         '
+        Me.gridEquipment.AllowUserToAddRows = False
+        Me.gridEquipment.AllowUserToDeleteRows = False
+        Me.gridEquipment.AllowUserToResizeColumns = False
+        Me.gridEquipment.AllowUserToResizeRows = False
         Me.gridEquipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridEquipment.Location = New System.Drawing.Point(3, 123)
         Me.gridEquipment.Name = "gridEquipment"
-        Me.gridEquipment.Size = New System.Drawing.Size(953, 580)
+        Me.gridEquipment.ReadOnly = True
+        Me.gridEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridEquipment.Size = New System.Drawing.Size(953, 524)
         Me.gridEquipment.TabIndex = 3
         '
         'dropSearch
@@ -79,6 +75,15 @@ Partial Class UCEquipment
         Me.Panel1.Size = New System.Drawing.Size(956, 54)
         Me.Panel1.TabIndex = 6
         '
+        'btPrintBarcodeEquip
+        '
+        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(309, -1)
+        Me.btPrintBarcodeEquip.Name = "btPrintBarcodeEquip"
+        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(147, 54)
+        Me.btPrintBarcodeEquip.TabIndex = 3
+        Me.btPrintBarcodeEquip.Text = "Imprimer les codes barres"
+        Me.btPrintBarcodeEquip.UseVisualStyleBackColor = True
+        '
         'btNewEquipment
         '
         Me.btNewEquipment.Location = New System.Drawing.Point(3, -1)
@@ -97,24 +102,24 @@ Partial Class UCEquipment
         Me.btDelEquipment.Text = "Supprimer"
         Me.btDelEquipment.UseVisualStyleBackColor = True
         '
-        'btPrintBarcodeEquip
+        'btSelectAllEquipment
         '
-        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(309, -1)
-        Me.btPrintBarcodeEquip.Name = "btPrintBarcodeEquip"
-        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(147, 54)
-        Me.btPrintBarcodeEquip.TabIndex = 3
-        Me.btPrintBarcodeEquip.Text = "Imprimer les codes barres"
-        Me.btPrintBarcodeEquip.UseVisualStyleBackColor = True
+        Me.btSelectAllEquipment.Location = New System.Drawing.Point(4, 94)
+        Me.btSelectAllEquipment.Name = "btSelectAllEquipment"
+        Me.btSelectAllEquipment.Size = New System.Drawing.Size(95, 23)
+        Me.btSelectAllEquipment.TabIndex = 4
+        Me.btSelectAllEquipment.Text = "Sélectionner tout"
+        Me.btSelectAllEquipment.UseVisualStyleBackColor = True
         '
         'UCEquipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btSelectAllEquipment)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dropSearch)
         Me.Controls.Add(Me.tbSearch)
         Me.Controls.Add(Me.gridEquipment)
-        Me.Controls.Add(Me.cbAll)
         Me.Name = "UCEquipment"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.gridEquipment, System.ComponentModel.ISupportInitialize).EndInit()
@@ -123,7 +128,6 @@ Partial Class UCEquipment
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cbAll As CheckBox
     Friend WithEvents gridEquipment As DataGridView
     Friend WithEvents dropSearch As ComboBox
     Friend WithEvents tbSearch As TextBox
@@ -131,4 +135,5 @@ Partial Class UCEquipment
     Friend WithEvents btNewEquipment As Button
     Friend WithEvents btDelEquipment As Button
     Friend WithEvents btPrintBarcodeEquip As Button
+    Friend WithEvents btSelectAllEquipment As Button
 End Class
