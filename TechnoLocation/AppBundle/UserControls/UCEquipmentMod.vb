@@ -1,37 +1,65 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class UCEquipmentMod
     Dim row As DataGridViewRow
-    Sub New(iCode As DataGridViewRow)
+    Dim Msg As New FR_CA
+    Dim kit As Integer
+    Dim equipment As UCEquipment
+    Sub New(iCode As DataGridViewRow, equip As UCEquipment)
         InitializeComponent()
         row = iCode
+        equipment = equip
     End Sub
 
     Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btModEquip.Click
+        Dim check As Integer
+        If MsgBox(Msg.getMsgEditEquipment, vbYesNo) = vbYes Then
+            If verificationMod() Then
+                If checkAvailableEquipMod.Checked Then
+                    check = 1
+                Else
+                    check = 0
+                End If
 
+                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text)
+                Me.SendToBack()
+                equipment.loadDataGridView()
+            End If
+        End If
     End Sub
+
+    Private Function verificationMod() As Boolean
+        Dim complete As Boolean = True
+        If String.IsNullOrEmpty(Trim(tbNameEquipmentMod.Text)) Then
+            complete = False
+            MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
+        End If
+
+        If String.IsNullOrEmpty(Trim(tbCommentMod.Text)) And complete Then
+            complete = False
+            MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
+        End If
+
+        If String.IsNullOrEmpty(Trim(tbStateEquipMod.Text)) And complete Then
+            complete = False
+            MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
+        End If
+
+        Return complete
+    End Function
 
     Private Sub UCEquipmentMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
         tbNameEquipmentMod.Text = row.Cells(1).Value
         tbCommentMod.Text = row.Cells(5).Value
         tbStateEquipMod.Text = row.Cells(3).Value
-        If row.Cells(4).Value = 1 Then
+        If row.Cells(4).Value = True Then
             checkAvailableEquipMod.Checked = True
         End If
+        kit = row.Cells(2).Value
     End Sub
 
     Public Sub loadDataGridView()
-        gridEquipmentMod.DataSource = Nothing
-        gridEquipmentMod.Rows.Clear()
-        Dim con As New MySqlConnection(MainForm.getInstance().connectionString)
-        Dim ds As DataSet
-        Dim da As MySqlDataAdapter
-
-        da = New MySqlDataAdapter("Select * from kit order by code", con)
-        ds = New DataSet("technolocation")
-        da.Fill(ds, "Kit")
-
-        gridEquipmentMod.DataSource = ds.Tables("kit")
+        gridEquipmentMod.DataSource = EntityKit.getInstance.getKit
     End Sub
 
     Private Sub btKitMod_Click(sender As Object, e As EventArgs) Handles btKitMod.Click
@@ -41,14 +69,23 @@ Public Class UCEquipmentMod
 
     Private Sub btKitNullMod_Click(sender As Object, e As EventArgs) Handles btKitNullMod.Click
         gridEquipmentMod.ClearSelection()
+        kit = 0
     End Sub
 
     Private Sub gridEquipmentMod_DataBindingComplete(sender As Object, e As DataGridViewBindingCompleteEventArgs) Handles gridEquipmentMod.DataBindingComplete
         gridEquipmentMod.ClearSelection()
-        For Each rowtest As DataGridViewRow In gridEquipmentMod.Rows
-            If rowtest.Cells(0).Value = row.Cells(2).Value Then
-                gridEquipmentMod.Rows(row.Index - 1).Selected = True
+        For Each rowKit As DataGridViewRow In gridEquipmentMod.Rows
+            If rowKit.Cells(0).Value = row.Cells(2).Value Then
+                gridEquipmentMod.Rows(rowKit.Index).Selected = True
             End If
         Next
+    End Sub
+
+    Private Sub btCancelModEquip_Click(sender As Object, e As EventArgs) Handles btCancelModEquip.Click
+        Me.SendToBack()
+    End Sub
+
+    Private Sub gridEquipmentMod_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipmentMod.CellClick
+        kit = gridEquipmentMod.CurrentRow.Cells(0).Value
     End Sub
 End Class

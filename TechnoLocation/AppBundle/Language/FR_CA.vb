@@ -13,6 +13,8 @@
     Dim MsgKitNameEmpty = "Vous devez mettre un nom!"
     Dim MsgErrorAddEquip = "Un erreure c'est produit durant l'ajout d'équipement! Certain équipement ne se sont pas ajouter correctement"
     Dim MsgDeleteEquipment = "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après."
+    Dim MsgEditEquipment = "Vouslez-vous vraiment modifier cette Équipement?"
+    Dim MsgSuccessEditEquip = "L'équipement à belle et bien été modifier avec succès"
 
     Public ReadOnly Property getMsgQuit() As String
         Get
@@ -91,6 +93,18 @@
     Public ReadOnly Property getMsgDeleteEquipment() As String
         Get
             Return MsgDeleteEquipment
+        End Get
+    End Property
+
+    Public ReadOnly Property getMsgEditEquipment() As String
+        Get
+            Return MsgEditEquipment
+        End Get
+    End Property
+
+    Public ReadOnly Property getMsgSuccessEditEquip() As String
+        Get
+            Return MsgSuccessEditEquip
         End Get
     End Property
 End Class
