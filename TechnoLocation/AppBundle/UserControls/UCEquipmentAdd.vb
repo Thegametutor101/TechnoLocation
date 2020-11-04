@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class UCEquipmentAdd
-    Dim Msg As FR_CA = New FR_CA
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
 
@@ -19,9 +18,9 @@ Public Class UCEquipmentAdd
                 End If
 
                 If kit = 0 Then
-                    If MsgBox(Msg.getMsgKitNull, vbYesNo, Msg.getMsgWarning) = vbYes Then
-                        AddToDb(check)
-                    End If
+                    'If MsgBox(Msg.getMsgKitNull, vbYesNo, Msg.getMsgWarning) = vbYes Then
+                    '    AddToDb(check)
+                    'End If
                 Else
                     AddToDb(check)
                 End If
@@ -33,20 +32,20 @@ Public Class UCEquipmentAdd
 
     Private Function verificationAdd() As Boolean
         Dim complete As Boolean = True
-        If String.IsNullOrEmpty(Trim(tbNameEquipmentAdd.Text)) Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'If String.IsNullOrEmpty(Trim(tbNameEquipmentAdd.Text)) Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
-        If String.IsNullOrEmpty(Trim(tbComment.Text)) And complete Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'If String.IsNullOrEmpty(Trim(tbComment.Text)) And complete Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
-        If String.IsNullOrEmpty(Trim(tbState.Text)) And complete Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'If String.IsNullOrEmpty(Trim(tbState.Text)) And complete Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
         Return complete
     End Function
@@ -63,14 +62,14 @@ Public Class UCEquipmentAdd
             End If
         Next
         If numAdd = numEquipAdd.Value Then
-            MsgBox(Msg.getMsgSuccessAddEquip, vbOKOnly, Msg.getMsgSuccessAddTitle)
+            'MsgBox(Msg.getMsgSuccessAddEquip, vbOKOnly, Msg.getMsgSuccessAddTitle)
             tbNameEquipmentAdd.Clear()
             tbComment.Clear()
             tbState.Clear()
             checkAvailableEquipAdd.Checked = True
             numEquipAdd.Value = 1
         Else
-            MsgBox(Msg.getMsgErrorAddEEquip, vbOKOnly, Msg.getMsgWarning)
+            'MsgBox(Msg.getMsgErrorAddEEquip, vbOKOnly, Msg.getMsgWarning)
         End If
     End Sub
 

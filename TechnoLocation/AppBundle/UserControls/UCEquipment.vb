@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class UCEquipment
-    Dim Msg As FR_CA = New FR_CA
     Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
         Dim iEquipmentAdd As New UCEquipmentAdd()
         iEquipmentAdd.Dock = DockStyle.Fill
@@ -32,14 +31,14 @@ Public Class UCEquipment
     End Sub
 
     Private Sub btDelEquipment_Click(sender As Object, e As EventArgs) Handles btDelEquipment.Click
-        Dim response = MsgBox(Msg.getMsgDeleteEquipment, vbYesNo, Msg.getMsgWarning)
+        'Dim response = MsgBox(Msg.getMsgDeleteEquipment, vbYesNo, Msg.getMsgWarning)
 
-        If response = vbYes Then
-            For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
-                ModelEquipment.getInstance.delEquipment(selectedItem.Cells(0).Value)
-            Next
-            loadDataGridView()
-        End If
+        'If response = vbYes Then
+        '    For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+        '        ModelEquipment.getInstance.delEquipment(selectedItem.Cells(0).Value)
+        '    Next
+        '    loadDataGridView()
+        'End If
     End Sub
 
     Private Sub gridEquipment_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridEquipment.CellMouseDoubleClick

@@ -1,5 +1,4 @@
 ﻿Public Class AddKit
-    Dim Msg As FR_CA = New FR_CA
 
     Private Sub btKitCancel_Click(sender As Object, e As EventArgs) Handles btKitCancel.Click
         Me.Close()
@@ -10,7 +9,7 @@
             ModelKit.getInstance().addKit(tbNameKitAdd.Text)
             Me.Close()
         Else
-            MsgBox(Msg.getMsgKitNameEmpty, vbOKOnly, Msg.getMsgWarning)
+            'MsgBox(Msg.getMsgKitNameEmpty, vbOKOnly, Msg.getMsgWarning)
         End If
     End Sub
 End Class
