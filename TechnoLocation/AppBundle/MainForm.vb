@@ -4,7 +4,6 @@
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim Msg As FR_CA = New FR_CA
     Public connectionString = "Server='localhost';Database='technolocation';Uid='root';Pwd='';Port=3308;"
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
@@ -92,7 +91,7 @@
     'Buttons
     '__________________________________________________________________________________________________________
 
-    Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click, btQuit.Click
+    Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
         If MessageBox.Show("Voulez-vous quitter l'application?",
                            "Attention",
                            MessageBoxButtons.YesNo,
@@ -213,12 +212,12 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btQuit_Click(sender As Object, e As EventArgs)
-        Dim style = vbYesNo + vbDefaultButton2
-        Dim response = MsgBox(Msg.getMsgQuit, style, Msg.getMsgQuitTitle)
+        'Dim style = vbYesNo + vbDefaultButton2
+        'Dim response = MsgBox(Msg.getMsgQuit, style, Msg.getMsgQuitTitle)
 
-        If response = vbYes Then
-            Application.Exit()
-        End If
+        'If response = vbYes Then
+        '    Application.Exit()
+        'End If
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
@@ -228,19 +227,27 @@
         iUser.BringToFront()
     End Sub
 
+    Private Sub btEquipment_Click_1(sender As Object, e As EventArgs) Handles btEquipment.Click
+        Dim iEquipment As New UCEquipment()
+        iEquipment.Dock = DockStyle.Fill
+        panelMain.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
+    End Sub
+
+
     ''' <summary>
     ''' 
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btDisconnection_Click(sender As Object, e As EventArgs)
-        Dim style = vbYesNo + vbDefaultButton2
-        Dim response = MsgBox(Msg.getMsgDisconnection, style, Msg.getMsgDisconnecTitle)
+        'Dim style = vbYesNo + vbDefaultButton2
+        'Dim response = MsgBox(Msg.getMsgDisconnection, style, Msg.getMsgDisconnecTitle)
 
-        If response = vbYes Then
-            Connection.Show()
-            Me.Close()
-        End If
+        'If response = vbYes Then
+        '    Connection.Show()
+        '    Me.Close()
+        'End If
     End Sub
 
     '__________________________________________________________________________________________________________

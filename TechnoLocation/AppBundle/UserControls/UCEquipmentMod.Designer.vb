@@ -26,8 +26,6 @@ Partial Class UCEquipmentMod
         Me.btKitMod = New System.Windows.Forms.Button()
         Me.labEquipmentModKit = New System.Windows.Forms.Label()
         Me.gridEquipmentMod = New System.Windows.Forms.DataGridView()
-        Me.numEquipMod = New System.Windows.Forms.NumericUpDown()
-        Me.labNumberEquipMod = New System.Windows.Forms.Label()
         Me.btCancelModEquip = New System.Windows.Forms.Button()
         Me.btModEquip = New System.Windows.Forms.Button()
         Me.labStateEquipMod = New System.Windows.Forms.Label()
@@ -38,7 +36,6 @@ Partial Class UCEquipmentMod
         Me.tbNameEquipmentMod = New System.Windows.Forms.TextBox()
         Me.labNameEquipmentMod = New System.Windows.Forms.Label()
         CType(Me.gridEquipmentMod, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.numEquipMod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btKitNullMod
@@ -81,24 +78,6 @@ Partial Class UCEquipmentMod
         Me.gridEquipmentMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gridEquipmentMod.Size = New System.Drawing.Size(417, 251)
         Me.gridEquipmentMod.TabIndex = 28
-        '
-        'numEquipMod
-        '
-        Me.numEquipMod.Location = New System.Drawing.Point(192, 347)
-        Me.numEquipMod.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.numEquipMod.Name = "numEquipMod"
-        Me.numEquipMod.Size = New System.Drawing.Size(120, 20)
-        Me.numEquipMod.TabIndex = 27
-        Me.numEquipMod.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'labNumberEquipMod
-        '
-        Me.labNumberEquipMod.AutoSize = True
-        Me.labNumberEquipMod.Location = New System.Drawing.Point(45, 349)
-        Me.labNumberEquipMod.Name = "labNumberEquipMod"
-        Me.labNumberEquipMod.Size = New System.Drawing.Size(134, 13)
-        Me.labNumberEquipMod.TabIndex = 26
-        Me.labNumberEquipMod.Text = "Nombre d'équipement créé"
         '
         'btCancelModEquip
         '
@@ -185,8 +164,6 @@ Partial Class UCEquipmentMod
         Me.Controls.Add(Me.btKitMod)
         Me.Controls.Add(Me.labEquipmentModKit)
         Me.Controls.Add(Me.gridEquipmentMod)
-        Me.Controls.Add(Me.numEquipMod)
-        Me.Controls.Add(Me.labNumberEquipMod)
         Me.Controls.Add(Me.btCancelModEquip)
         Me.Controls.Add(Me.btModEquip)
         Me.Controls.Add(Me.labStateEquipMod)
@@ -199,7 +176,6 @@ Partial Class UCEquipmentMod
         Me.Name = "UCEquipmentMod"
         Me.Size = New System.Drawing.Size(956, 647)
         CType(Me.gridEquipmentMod, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.numEquipMod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,8 +185,6 @@ Partial Class UCEquipmentMod
     Friend WithEvents btKitMod As Button
     Friend WithEvents labEquipmentModKit As Label
     Friend WithEvents gridEquipmentMod As DataGridView
-    Friend WithEvents numEquipMod As NumericUpDown
-    Friend WithEvents labNumberEquipMod As Label
     Friend WithEvents btCancelModEquip As Button
     Friend WithEvents btModEquip As Button
     Friend WithEvents labStateEquipMod As Label
