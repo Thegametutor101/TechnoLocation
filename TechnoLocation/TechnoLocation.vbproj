@@ -147,10 +147,10 @@
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
-    <Compile Include="AppBundle\UserControls\UCAddUser.Designer.vb">
-      <DependentUpon>UCAddUser.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\UCUserAdd.Designer.vb">
+      <DependentUpon>UCUserAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\UCAddUser.vb">
+    <Compile Include="AppBundle\UserControls\UCUserAdd.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\AddKit.Designer.vb">
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\UCAddUser.resx">
-      <DependentUpon>UCAddUser.vb</DependentUpon>
+    <EmbeddedResource Include="AppBundle\UserControls\UCUserAdd.resx">
+      <DependentUpon>UCUserAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCDashboard.resx">
       <DependentUpon>UCDashboard.vb</DependentUpon>
