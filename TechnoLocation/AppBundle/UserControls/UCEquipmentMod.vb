@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class UCEquipmentMod
     Dim row As DataGridViewRow
-    Dim Msg As New FR_CA
+    'Dim Msg As New FR_CA
     Dim kit As Integer
     Dim equipment As UCEquipment
     Sub New(iCode As DataGridViewRow, equip As UCEquipment)
@@ -12,39 +12,39 @@ Public Class UCEquipmentMod
 
     Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btModEquip.Click
         Dim check As Integer
-        If MsgBox(Msg.getMsgEditEquipment, vbYesNo) = vbYes Then
-            If verificationMod() Then
-                If checkAvailableEquipMod.Checked Then
-                    check = 1
-                Else
-                    check = 0
-                End If
+        'If MsgBox(Msg.getMsgEditEquipment, vbYesNo) = vbYes Then
+        'If verificationMod() Then
+        '        If checkAvailableEquipMod.Checked Then
+        '            check = 1
+        '        Else
+        '            check = 0
+        '        End If
 
-                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text)
-                Me.SendToBack()
-                equipment.loadDataGridView()
-            End If
-        End If
+        '        ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text)
+        '        Me.SendToBack()
+        '        equipment.loadDataGridView()
+        '    End If
+        'End If
     End Sub
 
     Private Function verificationMod() As Boolean
-        Dim complete As Boolean = True
-        If String.IsNullOrEmpty(Trim(tbNameEquipmentMod.Text)) Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'Dim complete As Boolean = True
+        'If String.IsNullOrEmpty(Trim(tbNameEquipmentMod.Text)) Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
-        If String.IsNullOrEmpty(Trim(tbCommentMod.Text)) And complete Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'If String.IsNullOrEmpty(Trim(tbCommentMod.Text)) And complete Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
-        If String.IsNullOrEmpty(Trim(tbStateEquipMod.Text)) And complete Then
-            complete = False
-            MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
-        End If
+        'If String.IsNullOrEmpty(Trim(tbStateEquipMod.Text)) And complete Then
+        '    complete = False
+        '    MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
+        'End If
 
-        Return complete
+        'Return complete
     End Function
 
     Private Sub UCEquipmentMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -1,4 +1,6 @@
-﻿Public Class MainForm
+﻿Imports Newtonsoft.Json.Linq
+
+Public Class MainForm
 
     '__________________________________________________________________________________________________________
     'Attributes
@@ -9,6 +11,7 @@
     Private mouseOffset As Point
     Shared instance As MainForm = Nothing
     Private baseHeight, baseWidth As Integer
+    Private json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -32,6 +35,8 @@
         dashboard.BringToFront()
         baseHeight = Me.Height
         baseWidth = Me.Width
+        json = New Lang("fr_ca").ListProperty
+        loadLanguage()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -234,7 +239,6 @@
         iEquipment.BringToFront()
     End Sub
 
-
     ''' <summary>
     ''' 
     ''' </summary>
@@ -254,5 +258,29 @@
     'Other
     '__________________________________________________________________________________________________________
 
+    Public Sub loadLanguage()
+        labAccount.Text = json("MainlabAccount")
+        labPersonConnected.Text = json("MainlabPersonConnected")
+        btHome.Text = json("MainbtHome")
+        btAlert.Text = json("MainbtAlert")
+        btRent.Text = json("MainbtRent")
+        btReturn.Text = json("MainbtReturn")
+        btUser.Text = json("MainbtUser")
+        btEquipment.Text = json("MainbtEquipment")
+        btHistory.Text = json("MainbtHistory")
+        btCalendar.Text = json("MainbtCalendar")
+    End Sub
+
+    Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click
+        If labLang.Text = "EN" Then
+            labLang.Text = "FR"
+            json = New Lang("en_us").ListProperty
+            loadLanguage()
+        ElseIf labLang.Text = "FR" Then
+            labLang.Text = "EN"
+            json = New Lang("fr_ca").ListProperty
+            loadLanguage()
+        End If
+    End Sub
 
 End Class

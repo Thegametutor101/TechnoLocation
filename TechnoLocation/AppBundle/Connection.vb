@@ -23,7 +23,7 @@ Public Class Connection
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         testConnection()
-        json = Lang.getInstance("fr_ca").ListProperty
+        json = New Lang("fr_ca").ListProperty
         loadLanguage()
         tbUsername.Select()
     End Sub
@@ -126,5 +126,17 @@ Public Class Connection
         tbUsername.PlaceholderText = json("ConnectiontbUsernamePlaceholder")
         linklabPasswordForget.Text = json("ConnectionlabPasswordForget")
         btConnect.Text = json("ConnectionbtConnect")
+    End Sub
+
+    Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click
+        If labLang.Text = "EN" Then
+            labLang.Text = "FR"
+            json = New Lang("en_us").ListProperty
+            loadLanguage()
+        ElseIf labLang.Text = "FR" Then
+            labLang.Text = "EN"
+            json = New Lang("fr_ca").ListProperty
+            loadLanguage()
+        End If
     End Sub
 End Class

@@ -2,7 +2,6 @@
 Public Class ModelEquipment
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelEquipment = Nothing
-    Dim Msg As New FR_CA
     Public Shared Function getInstance() As ModelEquipment
         If IsNothing(instance) Then
             instance = New ModelEquipment()
@@ -25,7 +24,7 @@ Public Class ModelEquipment
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
-            MsgBox(Msg.getMsgSuccessEditEquip, vbOKOnly)
+            'MsgBox(Msg.getMsgSuccessEditEquip, vbOKOnly)
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la connexion.")
         End Try

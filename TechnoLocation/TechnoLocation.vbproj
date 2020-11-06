@@ -137,6 +137,7 @@
     <Compile Include="AppBundle\Entity\EntityLog.vb" />
     <Compile Include="AppBundle\Entity\EntityRent.vb" />
     <Compile Include="AppBundle\Entity\EntityUser.vb" />
+    <None Include="AppBundle\Language\EN_US.json" />
     <None Include="AppBundle\Language\FR_CA.json" />
     <Compile Include="AppBundle\Language\loadLang.vb" />
     <Compile Include="AppBundle\MainForm.vb">

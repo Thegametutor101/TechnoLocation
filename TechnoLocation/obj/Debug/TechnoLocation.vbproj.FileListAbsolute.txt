@@ -148,7 +148,7 @@ D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\Techno
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Guna.UI2.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.AddKit.resources
-C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCAddUser.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentMod.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
