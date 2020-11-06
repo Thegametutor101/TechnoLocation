@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UCAddUser
+Partial Class UCUserAdd
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -206,7 +206,7 @@ Partial Class UCAddUser
         Me.labPermissionsUser.TabIndex = 20
         Me.labPermissionsUser.Text = "Permissions:"
         '
-        'UCAddUser
+        'UCUserAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -230,7 +230,7 @@ Partial Class UCAddUser
         Me.Controls.Add(Me.tbCode)
         Me.Controls.Add(Me.btCancelUser)
         Me.Controls.Add(Me.btAddUser)
-        Me.Name = "UCAddUser"
+        Me.Name = "UCUserAdd"
         Me.Size = New System.Drawing.Size(956, 647)
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -30,6 +30,7 @@ Partial Class UCEquipment
         Me.btNewEquipment = New System.Windows.Forms.Button()
         Me.btDelEquipment = New System.Windows.Forms.Button()
         Me.btSelectAllEquipment = New System.Windows.Forms.Button()
+        Me.checkAvailableEquip = New System.Windows.Forms.CheckBox()
         CType(Me.gridEquipment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class UCEquipment
         'dropSearch
         '
         Me.dropSearch.FormattingEnabled = True
+        Me.dropSearch.Items.AddRange(New Object() {"Code", "Nom", "Kit", "État", "Commentaire"})
         Me.dropSearch.Location = New System.Drawing.Point(337, 57)
         Me.dropSearch.Name = "dropSearch"
         Me.dropSearch.Size = New System.Drawing.Size(135, 21)
@@ -111,10 +113,21 @@ Partial Class UCEquipment
         Me.btSelectAllEquipment.Text = "Sélectionner tout"
         Me.btSelectAllEquipment.UseVisualStyleBackColor = True
         '
+        'checkAvailableEquip
+        '
+        Me.checkAvailableEquip.AutoSize = True
+        Me.checkAvailableEquip.Location = New System.Drawing.Point(505, 59)
+        Me.checkAvailableEquip.Name = "checkAvailableEquip"
+        Me.checkAvailableEquip.Size = New System.Drawing.Size(133, 17)
+        Me.checkAvailableEquip.TabIndex = 7
+        Me.checkAvailableEquip.Text = "Disponible uniquement"
+        Me.checkAvailableEquip.UseVisualStyleBackColor = True
+        '
         'UCEquipment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.checkAvailableEquip)
         Me.Controls.Add(Me.btSelectAllEquipment)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dropSearch)
@@ -136,4 +149,5 @@ Partial Class UCEquipment
     Friend WithEvents btDelEquipment As Button
     Friend WithEvents btPrintBarcodeEquip As Button
     Friend WithEvents btSelectAllEquipment As Button
+    Friend WithEvents checkAvailableEquip As CheckBox
 End Class

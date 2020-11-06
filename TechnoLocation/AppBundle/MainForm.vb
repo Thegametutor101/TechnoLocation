@@ -169,12 +169,6 @@
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub btUser_Click(sender As Object, e As EventArgs)
-        Dim iUser As New UCUser()
-        iUser.Dock = DockStyle.Fill
-        panelMain.Controls.Add(iUser)
-        iUser.BringToFront()
-    End Sub
 
     ''' <summary>
     ''' 
@@ -225,6 +219,21 @@
         '    Application.Exit()
         'End If
     End Sub
+
+    Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
+        Dim iUser As New UCUser()
+        iUser.Dock = DockStyle.Fill
+        panelMain.Controls.Add(iUser)
+        iUser.BringToFront()
+    End Sub
+
+    Private Sub btEquipment_Click_1(sender As Object, e As EventArgs) Handles btEquipment.Click
+        Dim iEquipment As New UCEquipment()
+        iEquipment.Dock = DockStyle.Fill
+        panelMain.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
+    End Sub
+
 
     ''' <summary>
     ''' 

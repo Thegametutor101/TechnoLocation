@@ -57,8 +57,9 @@ Partial Class MainForm
         Me.panelHeaderBar.Controls.Add(Me.PictureBox1)
         Me.panelHeaderBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelHeaderBar.Location = New System.Drawing.Point(0, 0)
+        Me.panelHeaderBar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.panelHeaderBar.Name = "panelHeaderBar"
-        Me.panelHeaderBar.Size = New System.Drawing.Size(1540, 55)
+        Me.panelHeaderBar.Size = New System.Drawing.Size(1155, 45)
         Me.panelHeaderBar.TabIndex = 12
         '
         'Guna2VSeparator1
@@ -80,12 +81,13 @@ Partial Class MainForm
         Me.btHeaderMinimize.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.ImageRotate = 0!
         Me.btHeaderMinimize.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderMinimize.Location = New System.Drawing.Point(1366, 0)
+        Me.btHeaderMinimize.Location = New System.Drawing.Point(1023, 0)
+        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btHeaderMinimize.Name = "btHeaderMinimize"
         Me.btHeaderMinimize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderMinimize.PressedState.Parent = Me.btHeaderMinimize
-        Me.btHeaderMinimize.Size = New System.Drawing.Size(58, 55)
+        Me.btHeaderMinimize.Size = New System.Drawing.Size(44, 45)
         Me.btHeaderMinimize.TabIndex = 0
         '
         'btHeaderMaximize
@@ -99,12 +101,13 @@ Partial Class MainForm
         Me.btHeaderMaximize.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.ImageRotate = 0!
         Me.btHeaderMaximize.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderMaximize.Location = New System.Drawing.Point(1424, 0)
+        Me.btHeaderMaximize.Location = New System.Drawing.Point(1067, 0)
+        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btHeaderMaximize.Name = "btHeaderMaximize"
         Me.btHeaderMaximize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderMaximize.PressedState.Parent = Me.btHeaderMaximize
-        Me.btHeaderMaximize.Size = New System.Drawing.Size(58, 55)
+        Me.btHeaderMaximize.Size = New System.Drawing.Size(44, 45)
         Me.btHeaderMaximize.TabIndex = 1
         '
         'btHeaderClose
@@ -119,20 +122,22 @@ Partial Class MainForm
         Me.btHeaderClose.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.ImageRotate = 0!
         Me.btHeaderClose.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderClose.Location = New System.Drawing.Point(1482, 0)
+        Me.btHeaderClose.Location = New System.Drawing.Point(1111, 0)
+        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btHeaderClose.Name = "btHeaderClose"
         Me.btHeaderClose.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderClose.PressedState.Parent = Me.btHeaderClose
-        Me.btHeaderClose.Size = New System.Drawing.Size(58, 55)
+        Me.btHeaderClose.Size = New System.Drawing.Size(44, 45)
         Me.btHeaderClose.TabIndex = 2
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(47, 48)
+        Me.PictureBox1.Size = New System.Drawing.Size(35, 39)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -151,13 +156,14 @@ Partial Class MainForm
         Me.panelOptions.Controls.Add(Me.labPersonConnected)
         Me.panelOptions.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.panelOptions.Location = New System.Drawing.Point(0, 55)
+        Me.panelOptions.Location = New System.Drawing.Point(0, 45)
+        Me.panelOptions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.panelOptions.Name = "panelOptions"
         Me.panelOptions.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(123, Byte), Integer))
         Me.panelOptions.ShadowDepth = 200
         Me.panelOptions.ShadowShift = 6
         Me.panelOptions.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.panelOptions.Size = New System.Drawing.Size(277, 744)
+        Me.panelOptions.Size = New System.Drawing.Size(208, 604)
         Me.panelOptions.TabIndex = 13
         '
         'panelMain
@@ -198,14 +204,14 @@ Partial Class MainForm
         Me.btHome.ForeColor = System.Drawing.Color.White
         Me.btHome.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btHome.HoverState.Parent = Me.btHome
-        Me.btHome.Location = New System.Drawing.Point(8, 55)
-        Me.btHome.Margin = New System.Windows.Forms.Padding(3, 13, 10, 3)
-        Me.btHome.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btHome.Location = New System.Drawing.Point(6, 45)
+        Me.btHome.Margin = New System.Windows.Forms.Padding(2, 11, 8, 2)
+        Me.btHome.MaximumSize = New System.Drawing.Size(202, 37)
         Me.btHome.Name = "btHome"
         Me.btHome.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btHome.PressedDepth = 45
         Me.btHome.ShadowDecoration.Parent = Me.btHome
-        Me.btHome.Size = New System.Drawing.Size(253, 45)
+        Me.btHome.Size = New System.Drawing.Size(190, 37)
         Me.btHome.TabIndex = 0
         Me.btHome.Text = "Acceuil"
         '
@@ -392,10 +398,10 @@ Partial Class MainForm
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1540, 799)
+        Me.ClientSize = New System.Drawing.Size(1155, 649)
         Me.Controls.Add(Me.panelMain)
         Me.Controls.Add(Me.panelOptions)
         Me.Controls.Add(Me.panelHeaderBar)

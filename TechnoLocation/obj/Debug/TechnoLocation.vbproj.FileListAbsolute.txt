@@ -66,7 +66,87 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ex
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\TechnoLocation.exe.config
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\TechnoLocation.exe
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\TechnoLocation.pdb
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\TechnoLocation.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\BouncyCastle.Crypto.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Hash.xxHash.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\MySql.Data.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Renci.SshNet.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Buffers.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Memory.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Numerics.Vectors.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Ubiety.Dns.Core.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Zstandard.Net.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.pdb
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\K4os.Hash.xxHash.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\MySql.Data.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Renci.SshNet.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Buffers.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Memory.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Numerics.Vectors.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbprojAssemblyReference.cache
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Connection.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.MainForm.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCDashboard.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Resources.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbproj.GenerateResource.cache
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbproj.CopyComplete
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.exe
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\MySql.Data.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Renci.SshNet.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Buffers.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Memory.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Zstandard.Net.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.pdb
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Google.Protobuf.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\MySql.Data.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Renci.SshNet.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Buffers.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Memory.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbproj.CopyComplete
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.AddKit.resources
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentMod.resources
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCAddUser.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\Guna.UI2.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Guna.UI2.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.AddKit.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentMod.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\Guna.UI2.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.AddKit.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCAddUser.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentMod.resources

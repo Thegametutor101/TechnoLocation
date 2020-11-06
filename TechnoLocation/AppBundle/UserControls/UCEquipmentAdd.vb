@@ -2,12 +2,21 @@
 Public Class UCEquipmentAdd
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
+    Dim equipment As UCEquipment
+
+    Sub New(equip As UCEquipment)
+
+        ' Cet appel est requis par le concepteur.
+        InitializeComponent()
+        equipment = equip
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+
+    End Sub
 
     Private Sub btAddNewEquip_Click(sender As Object, e As EventArgs) Handles btAddNewEquip.Click
         Dim check = 0
 
         If rowSelected Then
-            MsgBox(gridEquipmentAdd.CurrentRow.Cells(0).Value)
             kit = gridEquipmentAdd.CurrentRow.Cells(0).Value
         End If
 
@@ -68,27 +77,15 @@ Public Class UCEquipmentAdd
             tbState.Clear()
             checkAvailableEquipAdd.Checked = True
             numEquipAdd.Value = 1
+            Me.SendToBack()
+            equipment.loadDataGridView()
         Else
             'MsgBox(Msg.getMsgErrorAddEEquip, vbOKOnly, Msg.getMsgWarning)
         End If
     End Sub
 
-    Private Sub gridEquipmentAdd_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipmentAdd.CellContentClick
-
-    End Sub
-
     Public Sub loadDataGridView()
-        gridEquipmentAdd.DataSource = Nothing
-        gridEquipmentAdd.Rows.Clear()
-        Dim con As New MySqlConnection(MainForm.getInstance().connectionString)
-        Dim ds As DataSet
-        Dim da As MySqlDataAdapter
-
-        da = New MySqlDataAdapter("Select * from kit order by code", con)
-        ds = New DataSet("technolocation")
-        da.Fill(ds, "Kit")
-
-        gridEquipmentAdd.DataSource = ds.Tables("kit")
+        gridEquipmentAdd.DataSource = EntityKit.getInstance.getKit
     End Sub
 
     Private Sub UCEquipmentAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load

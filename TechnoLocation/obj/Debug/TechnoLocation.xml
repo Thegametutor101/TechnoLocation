@@ -150,13 +150,6 @@ TechnoLocation
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:TechnoLocation.MainForm.btUser_Click(System.Object,System.EventArgs)">
- <summary>
- 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
-</member>
 <member name="M:TechnoLocation.MainForm.btEquipment_Click(System.Object,System.EventArgs)">
  <summary>
  
