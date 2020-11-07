@@ -42,27 +42,31 @@ Partial Class UCEquipment
         Me.gridEquipment.AllowUserToResizeColumns = False
         Me.gridEquipment.AllowUserToResizeRows = False
         Me.gridEquipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridEquipment.Location = New System.Drawing.Point(3, 123)
+        Me.gridEquipment.Location = New System.Drawing.Point(4, 151)
+        Me.gridEquipment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gridEquipment.Name = "gridEquipment"
         Me.gridEquipment.ReadOnly = True
+        Me.gridEquipment.RowHeadersWidth = 51
         Me.gridEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridEquipment.Size = New System.Drawing.Size(953, 524)
+        Me.gridEquipment.Size = New System.Drawing.Size(1271, 645)
         Me.gridEquipment.TabIndex = 3
         '
         'dropSearch
         '
         Me.dropSearch.FormattingEnabled = True
         Me.dropSearch.Items.AddRange(New Object() {"Code", "Nom", "Kit", "État", "Commentaire"})
-        Me.dropSearch.Location = New System.Drawing.Point(337, 57)
+        Me.dropSearch.Location = New System.Drawing.Point(449, 70)
+        Me.dropSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dropSearch.Name = "dropSearch"
-        Me.dropSearch.Size = New System.Drawing.Size(135, 21)
+        Me.dropSearch.Size = New System.Drawing.Size(179, 24)
         Me.dropSearch.TabIndex = 5
         '
         'tbSearch
         '
-        Me.tbSearch.Location = New System.Drawing.Point(4, 57)
+        Me.tbSearch.Location = New System.Drawing.Point(5, 70)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbSearch.Name = "tbSearch"
-        Me.tbSearch.Size = New System.Drawing.Size(281, 20)
+        Me.tbSearch.Size = New System.Drawing.Size(373, 22)
         Me.tbSearch.TabIndex = 4
         Me.tbSearch.Text = "Recherche"
         '
@@ -73,42 +77,47 @@ Partial Class UCEquipment
         Me.Panel1.Controls.Add(Me.btNewEquipment)
         Me.Panel1.Controls.Add(Me.btDelEquipment)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(956, 54)
+        Me.Panel1.Size = New System.Drawing.Size(1274, 66)
         Me.Panel1.TabIndex = 6
         '
         'btPrintBarcodeEquip
         '
-        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(309, -1)
+        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(412, -1)
+        Me.btPrintBarcodeEquip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btPrintBarcodeEquip.Name = "btPrintBarcodeEquip"
-        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(147, 54)
+        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(196, 66)
         Me.btPrintBarcodeEquip.TabIndex = 3
         Me.btPrintBarcodeEquip.Text = "Imprimer les codes barres"
         Me.btPrintBarcodeEquip.UseVisualStyleBackColor = True
         '
         'btNewEquipment
         '
-        Me.btNewEquipment.Location = New System.Drawing.Point(3, -1)
+        Me.btNewEquipment.Location = New System.Drawing.Point(4, -1)
+        Me.btNewEquipment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btNewEquipment.Name = "btNewEquipment"
-        Me.btNewEquipment.Size = New System.Drawing.Size(147, 54)
+        Me.btNewEquipment.Size = New System.Drawing.Size(196, 66)
         Me.btNewEquipment.TabIndex = 0
         Me.btNewEquipment.Text = "Nouveau"
         Me.btNewEquipment.UseVisualStyleBackColor = True
         '
         'btDelEquipment
         '
-        Me.btDelEquipment.Location = New System.Drawing.Point(156, -1)
+        Me.btDelEquipment.Location = New System.Drawing.Point(208, -1)
+        Me.btDelEquipment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btDelEquipment.Name = "btDelEquipment"
-        Me.btDelEquipment.Size = New System.Drawing.Size(147, 54)
+        Me.btDelEquipment.Size = New System.Drawing.Size(196, 66)
         Me.btDelEquipment.TabIndex = 2
         Me.btDelEquipment.Text = "Supprimer"
         Me.btDelEquipment.UseVisualStyleBackColor = True
         '
         'btSelectAllEquipment
         '
-        Me.btSelectAllEquipment.Location = New System.Drawing.Point(4, 94)
+        Me.btSelectAllEquipment.Location = New System.Drawing.Point(5, 116)
+        Me.btSelectAllEquipment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btSelectAllEquipment.Name = "btSelectAllEquipment"
-        Me.btSelectAllEquipment.Size = New System.Drawing.Size(95, 23)
+        Me.btSelectAllEquipment.Size = New System.Drawing.Size(127, 28)
         Me.btSelectAllEquipment.TabIndex = 4
         Me.btSelectAllEquipment.Text = "Sélectionner tout"
         Me.btSelectAllEquipment.UseVisualStyleBackColor = True
@@ -116,16 +125,17 @@ Partial Class UCEquipment
         'checkAvailableEquip
         '
         Me.checkAvailableEquip.AutoSize = True
-        Me.checkAvailableEquip.Location = New System.Drawing.Point(505, 59)
+        Me.checkAvailableEquip.Location = New System.Drawing.Point(673, 73)
+        Me.checkAvailableEquip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.checkAvailableEquip.Name = "checkAvailableEquip"
-        Me.checkAvailableEquip.Size = New System.Drawing.Size(133, 17)
+        Me.checkAvailableEquip.Size = New System.Drawing.Size(174, 21)
         Me.checkAvailableEquip.TabIndex = 7
         Me.checkAvailableEquip.Text = "Disponible uniquement"
         Me.checkAvailableEquip.UseVisualStyleBackColor = True
         '
         'UCEquipment
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.checkAvailableEquip)
         Me.Controls.Add(Me.btSelectAllEquipment)
@@ -133,8 +143,9 @@ Partial Class UCEquipment
         Me.Controls.Add(Me.dropSearch)
         Me.Controls.Add(Me.tbSearch)
         Me.Controls.Add(Me.gridEquipment)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCEquipment"
-        Me.Size = New System.Drawing.Size(956, 647)
+        Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridEquipment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)

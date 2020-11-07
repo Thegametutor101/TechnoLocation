@@ -50,7 +50,7 @@ Partial Class UCRestriction
         Me.Panel1.Controls.Add(Me.checkRestriontion)
         Me.Panel1.Controls.Add(Me.tbRestrictionSearch)
         Me.Panel1.Location = New System.Drawing.Point(65, 190)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(514, 452)
         Me.Panel1.TabIndex = 0
@@ -58,7 +58,7 @@ Partial Class UCRestriction
         'dateEnd
         '
         Me.dateEnd.Location = New System.Drawing.Point(145, 85)
-        Me.dateEnd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dateEnd.Margin = New System.Windows.Forms.Padding(4)
         Me.dateEnd.Name = "dateEnd"
         Me.dateEnd.Size = New System.Drawing.Size(265, 22)
         Me.dateEnd.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class UCRestriction
         'dateBegin
         '
         Me.dateBegin.Location = New System.Drawing.Point(145, 57)
-        Me.dateBegin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dateBegin.Margin = New System.Windows.Forms.Padding(4)
         Me.dateBegin.Name = "dateBegin"
         Me.dateBegin.Size = New System.Drawing.Size(265, 22)
         Me.dateBegin.TabIndex = 3
@@ -75,7 +75,7 @@ Partial Class UCRestriction
         '
         Me.gridRestriction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridRestriction.Location = New System.Drawing.Point(0, 155)
-        Me.gridRestriction.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.gridRestriction.Name = "gridRestriction"
         Me.gridRestriction.RowHeadersWidth = 51
         Me.gridRestriction.Size = New System.Drawing.Size(515, 298)
@@ -104,7 +104,7 @@ Partial Class UCRestriction
         'btDeleteRestriction
         '
         Me.btDeleteRestriction.Location = New System.Drawing.Point(145, 119)
-        Me.btDeleteRestriction.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btDeleteRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.btDeleteRestriction.Name = "btDeleteRestriction"
         Me.btDeleteRestriction.Size = New System.Drawing.Size(148, 28)
         Me.btDeleteRestriction.TabIndex = 2
@@ -115,7 +115,7 @@ Partial Class UCRestriction
         '
         Me.checkRestriontion.AutoSize = True
         Me.checkRestriontion.Location = New System.Drawing.Point(29, 124)
-        Me.checkRestriontion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.checkRestriontion.Margin = New System.Windows.Forms.Padding(4)
         Me.checkRestriontion.Name = "checkRestriontion"
         Me.checkRestriontion.Size = New System.Drawing.Size(103, 21)
         Me.checkRestriontion.TabIndex = 1
@@ -125,7 +125,7 @@ Partial Class UCRestriction
         'tbRestrictionSearch
         '
         Me.tbRestrictionSearch.Location = New System.Drawing.Point(29, 25)
-        Me.tbRestrictionSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbRestrictionSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.tbRestrictionSearch.Name = "tbRestrictionSearch"
         Me.tbRestrictionSearch.Size = New System.Drawing.Size(215, 22)
         Me.tbRestrictionSearch.TabIndex = 0
@@ -141,7 +141,7 @@ Partial Class UCRestriction
         'btSaveRestriction
         '
         Me.btSaveRestriction.Location = New System.Drawing.Point(812, 727)
-        Me.btSaveRestriction.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btSaveRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.btSaveRestriction.Name = "btSaveRestriction"
         Me.btSaveRestriction.Size = New System.Drawing.Size(180, 53)
         Me.btSaveRestriction.TabIndex = 2
@@ -151,7 +151,7 @@ Partial Class UCRestriction
         'btCancelRestriction
         '
         Me.btCancelRestriction.Location = New System.Drawing.Point(1000, 727)
-        Me.btCancelRestriction.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btCancelRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.btCancelRestriction.Name = "btCancelRestriction"
         Me.btCancelRestriction.Size = New System.Drawing.Size(180, 53)
         Me.btCancelRestriction.TabIndex = 3
@@ -166,9 +166,9 @@ Partial Class UCRestriction
         Me.Controls.Add(Me.btSaveRestriction)
         Me.Controls.Add(Me.calendarRestriction)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCRestriction"
-        Me.Size = New System.Drawing.Size(1275, 796)
+        Me.Size = New System.Drawing.Size(1263, 744)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.gridRestriction, System.ComponentModel.ISupportInitialize).EndInit()

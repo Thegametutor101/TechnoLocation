@@ -47,7 +47,6 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\System.Buffers.xm
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\System.Memory.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbprojAssemblyReference.cache
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Connection.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.MainForm.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCDashboard.resources

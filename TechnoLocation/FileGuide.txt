@@ -1,5 +1,4 @@
-﻿Public Class UCDashboard
-
+﻿
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
@@ -16,12 +15,7 @@
     'Load
     '__________________________________________________________________________________________________________
 
-    Private Sub UCDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        labRentCountName.TextAlignment = ContentAlignment.MiddleCenter
-        labRentCountNumber.TextAlignment = ContentAlignment.BottomCenter
-        labTotalUserName.TextAlignment = ContentAlignment.MiddleCenter
-        labTotalUserNumber.TextAlignment = ContentAlignment.BottomCenter
-    End Sub
+
 
     '__________________________________________________________________________________________________________
     'Methods
@@ -50,5 +44,3 @@
     '__________________________________________________________________________________________________________
     'Other
     '__________________________________________________________________________________________________________
-
-End Class

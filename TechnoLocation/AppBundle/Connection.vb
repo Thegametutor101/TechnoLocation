@@ -72,7 +72,9 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                MainForm.getInstance().Show()
+                Dim main As New MainForm
+                main.Show()
+                main.setLanguage(labLang.Text)
                 Me.Close()
             End If
         End If
@@ -84,7 +86,7 @@ Public Class Connection
 
     Public Function testConnection()
         If Not EntityUser.getInstance().testConnection() Then
-            MessageBox.Show($"Impossible de trouver la base de donnée associée à: {Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
+            MessageBox.Show($"{json("DatabaseNotFound")}{Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
             Me.Close()
         End If
     End Function
@@ -100,8 +102,10 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
-        If MessageBox.Show("Voulez-vous quitter l'application?",
-                           "Attention",
+        Dim title As String = json("MsgQuitTitle")
+        Dim message As String = json("MsgQuit")
+        If MessageBox.Show(message,
+                           title,
                            MessageBoxButtons.YesNo,
                            MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()

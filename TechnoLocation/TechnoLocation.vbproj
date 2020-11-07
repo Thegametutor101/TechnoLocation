@@ -130,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
+    <Compile Include="AppBundle\Controllers\TechnoLocationCustomCalendar.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityCharacters.vb" />
     <Compile Include="AppBundle\Entity\EntityHistory.vb" />
@@ -314,6 +317,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FileGuide.txt" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>
