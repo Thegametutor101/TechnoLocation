@@ -11,7 +11,8 @@ Public Class MainForm
     Private mouseOffset As Point
     Shared instance As MainForm = Nothing
     Private baseHeight, baseWidth As Integer
-    Private json As JObject
+    Public json As JObject
+    Public panelBaseWidth, panelBaseHeight As Integer
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -29,7 +30,7 @@ Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dashboard As New UCDashboard()
+        Dim dashboard As New UCDashboard(Me)
         dashboard.Dock = DockStyle.Fill
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
@@ -41,6 +42,8 @@ Public Class MainForm
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
         labSettings.TextAlignment = ContentAlignment.MiddleCenter
         panelAccountOptions.Visible = False
+        panelBaseHeight = panelMain.Height
+        panelBaseWidth = panelMain.Width
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -146,7 +149,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
-        Dim iDashboard As New UCDashboard()
+        Dim iDashboard As New UCDashboard(Me)
         iDashboard.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iDashboard)

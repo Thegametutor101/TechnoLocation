@@ -24,34 +24,44 @@ Partial Class UCDashboard
     Private Sub InitializeComponent()
         Me.panelUC = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelMiddle = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lab_late = New System.Windows.Forms.Label()
         Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelBottom = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridLate = New System.Windows.Forms.DataGridView()
-        Me.lab_late = New System.Windows.Forms.Label()
         Me.panelTop = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labAmount = New System.Windows.Forms.Label()
-        Me.labInactive = New System.Windows.Forms.Label()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
-        Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelDepositCount = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labDepositCount = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labDepositName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelBetweenTop3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelInactiveUsers = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labInactiveUserCount = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labInactiveUserName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelBetweenTop2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelTotalUsers = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labTotalUserCount = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labTotalUserName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelBetweenTop1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelRentCount = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labRentCountNumber = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labRentCountCount = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.labRentCountName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labTotalUserNumber = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labTotalUserName = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
         Me.panelUC.SuspendLayout()
         Me.panelMiddle.SuspendLayout()
         CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTop.SuspendLayout()
+        Me.panelDepositCount.SuspendLayout()
+        Me.panelInactiveUsers.SuspendLayout()
+        Me.panelTotalUsers.SuspendLayout()
         Me.panelRentCount.SuspendLayout()
-        Me.Guna2Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelUC
@@ -69,6 +79,7 @@ Partial Class UCDashboard
         'panelMiddle
         '
         Me.panelMiddle.Controls.Add(Me.TechnoLocationCustomCalendar1)
+        Me.panelMiddle.Controls.Add(Me.lab_late)
         Me.panelMiddle.Controls.Add(Me.pbGraph)
         Me.panelMiddle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelMiddle.Location = New System.Drawing.Point(0, 180)
@@ -76,6 +87,16 @@ Partial Class UCDashboard
         Me.panelMiddle.ShadowDecoration.Parent = Me.panelMiddle
         Me.panelMiddle.Size = New System.Drawing.Size(1263, 381)
         Me.panelMiddle.TabIndex = 2
+        '
+        'lab_late
+        '
+        Me.lab_late.AutoSize = True
+        Me.lab_late.Location = New System.Drawing.Point(572, 361)
+        Me.lab_late.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lab_late.Name = "lab_late"
+        Me.lab_late.Size = New System.Drawing.Size(106, 17)
+        Me.lab_late.TabIndex = 15
+        Me.lab_late.Text = "Alertes Retards"
         '
         'pbGraph
         '
@@ -89,7 +110,6 @@ Partial Class UCDashboard
         'panelBottom
         '
         Me.panelBottom.Controls.Add(Me.gridLate)
-        Me.panelBottom.Controls.Add(Me.lab_late)
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.panelBottom.Location = New System.Drawing.Point(0, 561)
         Me.panelBottom.Name = "panelBottom"
@@ -100,32 +120,25 @@ Partial Class UCDashboard
         'gridLate
         '
         Me.gridLate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridLate.Location = New System.Drawing.Point(61, 29)
+        Me.gridLate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridLate.Location = New System.Drawing.Point(0, 0)
         Me.gridLate.Margin = New System.Windows.Forms.Padding(4)
         Me.gridLate.Name = "gridLate"
         Me.gridLate.RowHeadersWidth = 51
-        Me.gridLate.Size = New System.Drawing.Size(1087, 127)
+        Me.gridLate.Size = New System.Drawing.Size(1263, 183)
         Me.gridLate.TabIndex = 14
-        '
-        'lab_late
-        '
-        Me.lab_late.AutoSize = True
-        Me.lab_late.Location = New System.Drawing.Point(576, 8)
-        Me.lab_late.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lab_late.Name = "lab_late"
-        Me.lab_late.Size = New System.Drawing.Size(106, 17)
-        Me.lab_late.TabIndex = 15
-        Me.lab_late.Text = "Alertes Retards"
         '
         'panelTop
         '
-        Me.panelTop.Controls.Add(Me.Guna2Panel6)
-        Me.panelTop.Controls.Add(Me.Guna2Panel5)
+        Me.panelTop.Controls.Add(Me.panelDepositCount)
+        Me.panelTop.Controls.Add(Me.panelBetweenTop3)
+        Me.panelTop.Controls.Add(Me.panelInactiveUsers)
+        Me.panelTop.Controls.Add(Me.panelBetweenTop2)
+        Me.panelTop.Controls.Add(Me.panelTotalUsers)
+        Me.panelTop.Controls.Add(Me.panelBetweenTop1)
         Me.panelTop.Controls.Add(Me.panelRentCount)
         Me.panelTop.Controls.Add(Me.Guna2Panel2)
         Me.panelTop.Controls.Add(Me.Guna2Panel4)
-        Me.panelTop.Controls.Add(Me.labAmount)
-        Me.panelTop.Controls.Add(Me.labInactive)
         Me.panelTop.Controls.Add(Me.Guna2Panel1)
         Me.panelTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelTop.Location = New System.Drawing.Point(0, 0)
@@ -134,62 +147,193 @@ Partial Class UCDashboard
         Me.panelTop.Size = New System.Drawing.Size(1263, 180)
         Me.panelTop.TabIndex = 0
         '
-        'labAmount
+        'panelDepositCount
         '
-        Me.labAmount.AutoSize = True
-        Me.labAmount.BackColor = System.Drawing.Color.White
-        Me.labAmount.Location = New System.Drawing.Point(908, 29)
-        Me.labAmount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labAmount.MinimumSize = New System.Drawing.Size(267, 148)
-        Me.labAmount.Name = "labAmount"
-        Me.labAmount.Size = New System.Drawing.Size(267, 148)
-        Me.labAmount.TabIndex = 16
-        Me.labAmount.Text = "Montant dépôt"
-        Me.labAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.panelDepositCount.BackColor = System.Drawing.Color.White
+        Me.panelDepositCount.Controls.Add(Me.labDepositCount)
+        Me.panelDepositCount.Controls.Add(Me.labDepositName)
+        Me.panelDepositCount.Controls.Add(Me.Guna2Panel13)
+        Me.panelDepositCount.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelDepositCount.Location = New System.Drawing.Point(937, 20)
+        Me.panelDepositCount.Name = "panelDepositCount"
+        Me.panelDepositCount.ShadowDecoration.Parent = Me.panelDepositCount
+        Me.panelDepositCount.Size = New System.Drawing.Size(275, 160)
+        Me.panelDepositCount.TabIndex = 27
         '
-        'labInactive
+        'labDepositCount
         '
-        Me.labInactive.AutoSize = True
-        Me.labInactive.BackColor = System.Drawing.Color.White
-        Me.labInactive.Location = New System.Drawing.Point(633, 29)
-        Me.labInactive.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labInactive.MinimumSize = New System.Drawing.Size(267, 148)
-        Me.labInactive.Name = "labInactive"
-        Me.labInactive.Size = New System.Drawing.Size(267, 148)
-        Me.labInactive.TabIndex = 15
-        Me.labInactive.Text = "# Utilisateurs Inactifs"
-        Me.labInactive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labDepositCount.BackColor = System.Drawing.Color.Transparent
+        Me.labDepositCount.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDepositCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.labDepositCount.Location = New System.Drawing.Point(30, 18)
+        Me.labDepositCount.Margin = New System.Windows.Forms.Padding(0)
+        Me.labDepositCount.Name = "labDepositCount"
+        Me.labDepositCount.Size = New System.Drawing.Size(278, 91)
+        Me.labDepositCount.TabIndex = 10
+        Me.labDepositCount.Text = "9999.99$"
+        Me.labDepositCount.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Guna2Panel1
+        'labDepositName
         '
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(52, 180)
-        Me.Guna2Panel1.TabIndex = 0
+        Me.labDepositName.BackColor = System.Drawing.Color.Transparent
+        Me.labDepositName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDepositName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.labDepositName.Location = New System.Drawing.Point(30, 123)
+        Me.labDepositName.Name = "labDepositName"
+        Me.labDepositName.Size = New System.Drawing.Size(175, 25)
+        Me.labDepositName.TabIndex = 9
+        Me.labDepositName.Text = "Montant des dépots"
+        Me.labDepositName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TechnoLocationCustomCalendar1
+        'Guna2Panel13
         '
-        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
-        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
-        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
-        Me.TechnoLocationCustomCalendar1.TabIndex = 16
-        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
+        Me.Guna2Panel13.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel13.BorderColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Guna2Panel13.BorderRadius = 5
+        Me.Guna2Panel13.BorderThickness = 1
+        Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel13.FillColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Guna2Panel13.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel13.Name = "Guna2Panel13"
+        Me.Guna2Panel13.ShadowDecoration.Parent = Me.Guna2Panel13
+        Me.Guna2Panel13.Size = New System.Drawing.Size(10, 160)
+        Me.Guna2Panel13.TabIndex = 8
         '
-        'Guna2Panel4
+        'panelBetweenTop3
         '
-        Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel4.Location = New System.Drawing.Point(1212, 0)
-        Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(51, 180)
-        Me.Guna2Panel4.TabIndex = 19
+        Me.panelBetweenTop3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelBetweenTop3.Location = New System.Drawing.Point(917, 20)
+        Me.panelBetweenTop3.Name = "panelBetweenTop3"
+        Me.panelBetweenTop3.ShadowDecoration.Parent = Me.panelBetweenTop3
+        Me.panelBetweenTop3.Size = New System.Drawing.Size(20, 160)
+        Me.panelBetweenTop3.TabIndex = 26
+        '
+        'panelInactiveUsers
+        '
+        Me.panelInactiveUsers.BackColor = System.Drawing.Color.White
+        Me.panelInactiveUsers.Controls.Add(Me.labInactiveUserCount)
+        Me.panelInactiveUsers.Controls.Add(Me.labInactiveUserName)
+        Me.panelInactiveUsers.Controls.Add(Me.Guna2Panel10)
+        Me.panelInactiveUsers.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelInactiveUsers.Location = New System.Drawing.Point(642, 20)
+        Me.panelInactiveUsers.Name = "panelInactiveUsers"
+        Me.panelInactiveUsers.ShadowDecoration.Parent = Me.panelInactiveUsers
+        Me.panelInactiveUsers.Size = New System.Drawing.Size(275, 160)
+        Me.panelInactiveUsers.TabIndex = 25
+        '
+        'labInactiveUserCount
+        '
+        Me.labInactiveUserCount.BackColor = System.Drawing.Color.Transparent
+        Me.labInactiveUserCount.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labInactiveUserCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.labInactiveUserCount.Location = New System.Drawing.Point(50, 18)
+        Me.labInactiveUserCount.Margin = New System.Windows.Forms.Padding(0)
+        Me.labInactiveUserCount.Name = "labInactiveUserCount"
+        Me.labInactiveUserCount.Size = New System.Drawing.Size(40, 91)
+        Me.labInactiveUserCount.TabIndex = 10
+        Me.labInactiveUserCount.Text = "9"
+        Me.labInactiveUserCount.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'labInactiveUserName
+        '
+        Me.labInactiveUserName.BackColor = System.Drawing.Color.Transparent
+        Me.labInactiveUserName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labInactiveUserName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.labInactiveUserName.Location = New System.Drawing.Point(31, 123)
+        Me.labInactiveUserName.Name = "labInactiveUserName"
+        Me.labInactiveUserName.Size = New System.Drawing.Size(167, 25)
+        Me.labInactiveUserName.TabIndex = 9
+        Me.labInactiveUserName.Text = "Utilisateurs Inactifs"
+        Me.labInactiveUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2Panel10
+        '
+        Me.Guna2Panel10.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel10.BorderColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Guna2Panel10.BorderRadius = 5
+        Me.Guna2Panel10.BorderThickness = 1
+        Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel10.FillColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Guna2Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel10.Name = "Guna2Panel10"
+        Me.Guna2Panel10.ShadowDecoration.Parent = Me.Guna2Panel10
+        Me.Guna2Panel10.Size = New System.Drawing.Size(10, 160)
+        Me.Guna2Panel10.TabIndex = 8
+        '
+        'panelBetweenTop2
+        '
+        Me.panelBetweenTop2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelBetweenTop2.Location = New System.Drawing.Point(622, 20)
+        Me.panelBetweenTop2.Name = "panelBetweenTop2"
+        Me.panelBetweenTop2.ShadowDecoration.Parent = Me.panelBetweenTop2
+        Me.panelBetweenTop2.Size = New System.Drawing.Size(20, 160)
+        Me.panelBetweenTop2.TabIndex = 24
+        '
+        'panelTotalUsers
+        '
+        Me.panelTotalUsers.BackColor = System.Drawing.Color.White
+        Me.panelTotalUsers.Controls.Add(Me.labTotalUserCount)
+        Me.panelTotalUsers.Controls.Add(Me.labTotalUserName)
+        Me.panelTotalUsers.Controls.Add(Me.Guna2Panel7)
+        Me.panelTotalUsers.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelTotalUsers.Location = New System.Drawing.Point(347, 20)
+        Me.panelTotalUsers.Name = "panelTotalUsers"
+        Me.panelTotalUsers.ShadowDecoration.Parent = Me.panelTotalUsers
+        Me.panelTotalUsers.Size = New System.Drawing.Size(275, 160)
+        Me.panelTotalUsers.TabIndex = 23
+        '
+        'labTotalUserCount
+        '
+        Me.labTotalUserCount.BackColor = System.Drawing.Color.Transparent
+        Me.labTotalUserCount.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTotalUserCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.labTotalUserCount.Location = New System.Drawing.Point(48, 18)
+        Me.labTotalUserCount.Margin = New System.Windows.Forms.Padding(0)
+        Me.labTotalUserCount.Name = "labTotalUserCount"
+        Me.labTotalUserCount.Size = New System.Drawing.Size(77, 91)
+        Me.labTotalUserCount.TabIndex = 7
+        Me.labTotalUserCount.Text = "99"
+        Me.labTotalUserCount.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'labTotalUserName
+        '
+        Me.labTotalUserName.BackColor = System.Drawing.Color.Transparent
+        Me.labTotalUserName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTotalUserName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.labTotalUserName.Location = New System.Drawing.Point(28, 123)
+        Me.labTotalUserName.Name = "labTotalUserName"
+        Me.labTotalUserName.Size = New System.Drawing.Size(199, 25)
+        Me.labTotalUserName.TabIndex = 6
+        Me.labTotalUserName.Text = "Utilisateurs enregistrés"
+        Me.labTotalUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2Panel7
+        '
+        Me.Guna2Panel7.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.Guna2Panel7.BorderRadius = 5
+        Me.Guna2Panel7.BorderThickness = 1
+        Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel7.FillColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.ShadowDecoration.Parent = Me.Guna2Panel7
+        Me.Guna2Panel7.Size = New System.Drawing.Size(10, 160)
+        Me.Guna2Panel7.TabIndex = 5
+        '
+        'panelBetweenTop1
+        '
+        Me.panelBetweenTop1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelBetweenTop1.Location = New System.Drawing.Point(327, 20)
+        Me.panelBetweenTop1.Name = "panelBetweenTop1"
+        Me.panelBetweenTop1.ShadowDecoration.Parent = Me.panelBetweenTop1
+        Me.panelBetweenTop1.Size = New System.Drawing.Size(20, 160)
+        Me.panelBetweenTop1.TabIndex = 5
         '
         'panelRentCount
         '
         Me.panelRentCount.BackColor = System.Drawing.Color.White
-        Me.panelRentCount.Controls.Add(Me.labRentCountNumber)
+        Me.panelRentCount.Controls.Add(Me.labRentCountCount)
         Me.panelRentCount.Controls.Add(Me.labRentCountName)
         Me.panelRentCount.Controls.Add(Me.Guna2Panel3)
         Me.panelRentCount.Dock = System.Windows.Forms.DockStyle.Left
@@ -199,29 +343,29 @@ Partial Class UCDashboard
         Me.panelRentCount.Size = New System.Drawing.Size(275, 160)
         Me.panelRentCount.TabIndex = 21
         '
-        'labRentCountNumber
+        'labRentCountCount
         '
-        Me.labRentCountNumber.BackColor = System.Drawing.Color.Transparent
-        Me.labRentCountNumber.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRentCountNumber.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer))
-        Me.labRentCountNumber.Location = New System.Drawing.Point(38, 18)
-        Me.labRentCountNumber.Margin = New System.Windows.Forms.Padding(0)
-        Me.labRentCountNumber.Name = "labRentCountNumber"
-        Me.labRentCountNumber.Size = New System.Drawing.Size(188, 91)
-        Me.labRentCountNumber.TabIndex = 4
-        Me.labRentCountNumber.Text = "99999"
-        Me.labRentCountNumber.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
+        Me.labRentCountCount.BackColor = System.Drawing.Color.Transparent
+        Me.labRentCountCount.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRentCountCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.labRentCountCount.Location = New System.Drawing.Point(38, 18)
+        Me.labRentCountCount.Margin = New System.Windows.Forms.Padding(0)
+        Me.labRentCountCount.Name = "labRentCountCount"
+        Me.labRentCountCount.Size = New System.Drawing.Size(188, 91)
+        Me.labRentCountCount.TabIndex = 4
+        Me.labRentCountCount.Text = "99999"
+        Me.labRentCountCount.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
         '
         'labRentCountName
         '
         Me.labRentCountName.BackColor = System.Drawing.Color.Transparent
-        Me.labRentCountName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRentCountName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labRentCountName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer))
-        Me.labRentCountName.Location = New System.Drawing.Point(20, 124)
+        Me.labRentCountName.Location = New System.Drawing.Point(26, 123)
         Me.labRentCountName.Name = "labRentCountName"
-        Me.labRentCountName.Size = New System.Drawing.Size(228, 25)
+        Me.labRentCountName.Size = New System.Drawing.Size(163, 25)
         Me.labRentCountName.TabIndex = 2
-        Me.labRentCountName.Text = "Nombre d'emprunts en cours"
+        Me.labRentCountName.Text = "Emprunts en cours"
         Me.labRentCountName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2Panel3
@@ -247,66 +391,31 @@ Partial Class UCDashboard
         Me.Guna2Panel2.Size = New System.Drawing.Size(1160, 20)
         Me.Guna2Panel2.TabIndex = 20
         '
-        'Guna2Panel5
+        'Guna2Panel4
         '
-        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel5.Location = New System.Drawing.Point(327, 20)
-        Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(20, 160)
-        Me.Guna2Panel5.TabIndex = 5
+        Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel4.Location = New System.Drawing.Point(1212, 0)
+        Me.Guna2Panel4.Name = "Guna2Panel4"
+        Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
+        Me.Guna2Panel4.Size = New System.Drawing.Size(51, 180)
+        Me.Guna2Panel4.TabIndex = 19
         '
-        'Guna2Panel6
+        'Guna2Panel1
         '
-        Me.Guna2Panel6.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel6.Controls.Add(Me.labTotalUserNumber)
-        Me.Guna2Panel6.Controls.Add(Me.labTotalUserName)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2Panel7)
-        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel6.Location = New System.Drawing.Point(347, 20)
-        Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
-        Me.Guna2Panel6.Size = New System.Drawing.Size(275, 160)
-        Me.Guna2Panel6.TabIndex = 23
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(52, 180)
+        Me.Guna2Panel1.TabIndex = 0
         '
-        'labTotalUserNumber
+        'TechnoLocationCustomCalendar1
         '
-        Me.labTotalUserNumber.BackColor = System.Drawing.Color.Transparent
-        Me.labTotalUserNumber.Font = New System.Drawing.Font("Segoe UI Symbol", 40.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTotalUserNumber.ForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
-        Me.labTotalUserNumber.Location = New System.Drawing.Point(48, 18)
-        Me.labTotalUserNumber.Margin = New System.Windows.Forms.Padding(0)
-        Me.labTotalUserNumber.Name = "labTotalUserNumber"
-        Me.labTotalUserNumber.Size = New System.Drawing.Size(77, 91)
-        Me.labTotalUserNumber.TabIndex = 7
-        Me.labTotalUserNumber.Text = "99"
-        Me.labTotalUserNumber.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'labTotalUserName
-        '
-        Me.labTotalUserName.BackColor = System.Drawing.Color.Transparent
-        Me.labTotalUserName.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTotalUserName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
-        Me.labTotalUserName.Location = New System.Drawing.Point(33, 124)
-        Me.labTotalUserName.Name = "labTotalUserName"
-        Me.labTotalUserName.Size = New System.Drawing.Size(167, 25)
-        Me.labTotalUserName.TabIndex = 6
-        Me.labTotalUserName.Text = "Nombre d'utilisateurs"
-        Me.labTotalUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Guna2Panel7
-        '
-        Me.Guna2Panel7.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
-        Me.Guna2Panel7.BorderRadius = 5
-        Me.Guna2Panel7.BorderThickness = 1
-        Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel7.FillColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(215, Byte), Integer))
-        Me.Guna2Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.ShadowDecoration.Parent = Me.Guna2Panel7
-        Me.Guna2Panel7.Size = New System.Drawing.Size(10, 160)
-        Me.Guna2Panel7.TabIndex = 5
+        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
+        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
+        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
+        Me.TechnoLocationCustomCalendar1.TabIndex = 16
+        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
         '
         'UCDashboard
         '
@@ -319,16 +428,19 @@ Partial Class UCDashboard
         Me.Size = New System.Drawing.Size(1263, 744)
         Me.panelUC.ResumeLayout(False)
         Me.panelMiddle.ResumeLayout(False)
+        Me.panelMiddle.PerformLayout()
         CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBottom.ResumeLayout(False)
-        Me.panelBottom.PerformLayout()
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTop.ResumeLayout(False)
-        Me.panelTop.PerformLayout()
+        Me.panelDepositCount.ResumeLayout(False)
+        Me.panelDepositCount.PerformLayout()
+        Me.panelInactiveUsers.ResumeLayout(False)
+        Me.panelInactiveUsers.PerformLayout()
+        Me.panelTotalUsers.ResumeLayout(False)
+        Me.panelTotalUsers.PerformLayout()
         Me.panelRentCount.ResumeLayout(False)
         Me.panelRentCount.PerformLayout()
-        Me.Guna2Panel6.ResumeLayout(False)
-        Me.Guna2Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -341,18 +453,26 @@ Partial Class UCDashboard
     Friend WithEvents gridLate As DataGridView
     Friend WithEvents lab_late As Label
     Friend WithEvents panelTop As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents labAmount As Label
-    Friend WithEvents labInactive As Label
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents labTotalUserNumber As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents panelTotalUsers As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labTotalUserCount As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labTotalUserName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelBetweenTop1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelRentCount As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents labRentCountNumber As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labRentCountCount As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labRentCountName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelInactiveUsers As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labInactiveUserCount As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labInactiveUserName As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel10 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelBetweenTop2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelDepositCount As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labDepositCount As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labDepositName As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelBetweenTop3 As Guna.UI2.WinForms.Guna2Panel
 End Class
