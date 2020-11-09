@@ -11,7 +11,6 @@ Public Class MainForm
     Private mouseOffset As Point
     Shared instance As MainForm = Nothing
     Private baseHeight, baseWidth As Integer
-    Public json As JObject
     Public panelBaseWidth, panelBaseHeight As Integer
 
     '__________________________________________________________________________________________________________
@@ -111,8 +110,8 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
-        Dim title As String = json("MsgQuitTitle")
-        Dim message As String = json("MsgQuit")
+        Dim title As String = Lang.getInstance().getLang()("MsgQuitTitle")
+        Dim message As String = Lang.getInstance().getLang()("MsgQuit")
         If MessageBox.Show(message,
                            title,
                            MessageBoxButtons.YesNo,
@@ -132,13 +131,16 @@ Public Class MainForm
     Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click
         If labLang.Text = "EN" Then
             labLang.Text = "FR"
-            json = New Lang("en_us").ListProperty
+            Lang.getInstance().setLang("en_us")
             loadLanguage()
         ElseIf labLang.Text = "FR" Then
             labLang.Text = "EN"
-            json = New Lang("fr_ca").ListProperty
+            Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
+        For Each o As Control In panelMain.Controls
+            o.Refresh()
+        Next
     End Sub
 
     Private Sub labAccount_Click(sender As Object, e As EventArgs) Handles labAccount.Click
@@ -223,17 +225,9 @@ Public Class MainForm
         iUser.BringToFront()
     End Sub
 
-    Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
-
-    End Sub
-
-    Private Sub labSettings_Click(sender As Object, e As EventArgs) Handles labSettings.Click
-
-    End Sub
-
     Private Sub labDisconnect_Click(sender As Object, e As EventArgs) Handles labDisconnect.Click
-        Dim title As String = json("MsgDisconnecTitle")
-        Dim message As String = json("MsgDisconnection")
+        Dim title As String = Lang.getInstance().getLang()("MsgDisconnecTitle")
+        Dim message As String = Lang.getInstance().getLang()("MsgDisconnection")
         If MessageBox.Show(message,
                            title,
                            MessageBoxButtons.YesNo,
@@ -249,19 +243,19 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        labAccount.Text = json("MainlabAccount")
-        labPersonConnected.Text = json("MainlabPersonConnected")
-        btHome.Text = json("MainbtHome")
-        btAlert.Text = json("MainbtAlert")
-        btRent.Text = json("MainbtRent")
-        btReturn.Text = json("MainbtReturn")
-        btUser.Text = json("MainbtUser")
-        btEquipment.Text = json("MainbtEquipment")
-        btHistory.Text = json("MainbtHistory")
-        btCalendar.Text = json("MainbtCalendar")
-        labProfile.Text = json("MainlabProfile")
-        labSettings.Text = json("MainlabSettings")
-        labDisconnect.Text = json("MainlabDisconnect")
+        labAccount.Text = Lang.getInstance().getLang()("MainlabAccount")
+        labPersonConnected.Text = Lang.getInstance().getLang()("MainlabPersonConnected")
+        btHome.Text = Lang.getInstance().getLang()("MainbtHome")
+        btAlert.Text = Lang.getInstance().getLang()("MainbtAlert")
+        btRent.Text = Lang.getInstance().getLang()("MainbtRent")
+        btReturn.Text = Lang.getInstance().getLang()("MainbtReturn")
+        btUser.Text = Lang.getInstance().getLang()("MainbtUser")
+        btEquipment.Text = Lang.getInstance().getLang()("MainbtEquipment")
+        btHistory.Text = Lang.getInstance().getLang()("MainbtHistory")
+        btCalendar.Text = Lang.getInstance().getLang()("MainbtCalendar")
+        labProfile.Text = Lang.getInstance().getLang()("MainlabProfile")
+        labSettings.Text = Lang.getInstance().getLang()("MainlabSettings")
+        labDisconnect.Text = Lang.getInstance().getLang()("MainlabDisconnect")
     End Sub
 
     Private Sub panelAccountOptions_MouseLeave(sender As Object, e As EventArgs) Handles panelAccountOptions.MouseLeave,
@@ -294,10 +288,10 @@ Public Class MainForm
     Public Sub setLanguage(language As String)
         If language = "FR" Then
             labLang.Text = "FR"
-            json = New Lang("en_us").ListProperty
+            Lang.getInstance().setLang("en_us")
         ElseIf language = "EN" Then
             labLang.Text = "EN"
-            json = New Lang("fr_ca").ListProperty
+            Lang.getInstance().setLang("fr_ca")
         End If
         loadLanguage()
     End Sub

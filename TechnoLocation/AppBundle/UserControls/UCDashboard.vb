@@ -33,6 +33,7 @@
         labInactiveUserCount.TextAlignment = ContentAlignment.BottomCenter
         labDepositName.TextAlignment = ContentAlignment.MiddleCenter
         labDepositCount.TextAlignment = ContentAlignment.BottomCenter
+        loadLanguage()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -95,5 +96,9 @@
         Else
             labDepositCount.Font = New Font("Segoe UI Symbol", 40, FontStyle.Bold)
         End If
+    End Sub
+
+    Public Sub loadLanguage()
+        labRentCountName.Text = Lang.getInstance().getLang()("MainlabAccount")
     End Sub
 End Class

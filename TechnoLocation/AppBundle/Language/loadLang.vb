@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Runtime.InteropServices.WindowsRuntime
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
@@ -18,16 +19,21 @@ Module loadLang
     Public Class Lang
 
         Dim list As JObject
+        Shared instance As Lang = Nothing
 
-        Sub New(type As String)
+        Public Shared Function getInstance() As Lang
+            If IsNothing(instance) Then
+                instance = New Lang()
+            End If
+            Return instance
+        End Function
+
+        Public Function getLang() As JObject
+            Return list
+        End Function
+
+        Public Sub setLang(type As String)
             list = Load(type)
         End Sub
-
-        Public ReadOnly Property ListProperty As JObject
-            Get
-                Return list
-            End Get
-        End Property
-
     End Class
 End Module
