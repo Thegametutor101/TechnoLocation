@@ -40,18 +40,20 @@ Partial Class UCEquipmentMod
         '
         'btKitNullMod
         '
-        Me.btKitNullMod.Location = New System.Drawing.Point(744, 373)
+        Me.btKitNullMod.Location = New System.Drawing.Point(992, 459)
+        Me.btKitNullMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btKitNullMod.Name = "btKitNullMod"
-        Me.btKitNullMod.Size = New System.Drawing.Size(209, 23)
+        Me.btKitNullMod.Size = New System.Drawing.Size(279, 28)
         Me.btKitNullMod.TabIndex = 31
         Me.btKitNullMod.Text = "Désélectionner kit"
         Me.btKitNullMod.UseVisualStyleBackColor = True
         '
         'btKitMod
         '
-        Me.btKitMod.Location = New System.Drawing.Point(536, 373)
+        Me.btKitMod.Location = New System.Drawing.Point(715, 459)
+        Me.btKitMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btKitMod.Name = "btKitMod"
-        Me.btKitMod.Size = New System.Drawing.Size(209, 23)
+        Me.btKitMod.Size = New System.Drawing.Size(279, 28)
         Me.btKitMod.TabIndex = 30
         Me.btKitMod.Text = "Nouveau kit"
         Me.btKitMod.UseVisualStyleBackColor = True
@@ -59,9 +61,10 @@ Partial Class UCEquipmentMod
         'labEquipmentModKit
         '
         Me.labEquipmentModKit.AutoSize = True
-        Me.labEquipmentModKit.Location = New System.Drawing.Point(533, 93)
+        Me.labEquipmentModKit.Location = New System.Drawing.Point(711, 114)
+        Me.labEquipmentModKit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labEquipmentModKit.Name = "labEquipmentModKit"
-        Me.labEquipmentModKit.Size = New System.Drawing.Size(148, 13)
+        Me.labEquipmentModKit.Size = New System.Drawing.Size(197, 17)
         Me.labEquipmentModKit.TabIndex = 29
         Me.labEquipmentModKit.Text = "Choix de kit pour l'équipement"
         '
@@ -71,28 +74,32 @@ Partial Class UCEquipmentMod
         Me.gridEquipmentMod.AllowUserToDeleteRows = False
         Me.gridEquipmentMod.AllowUserToResizeRows = False
         Me.gridEquipmentMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridEquipmentMod.Location = New System.Drawing.Point(536, 116)
+        Me.gridEquipmentMod.Location = New System.Drawing.Point(715, 143)
+        Me.gridEquipmentMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gridEquipmentMod.MultiSelect = False
         Me.gridEquipmentMod.Name = "gridEquipmentMod"
         Me.gridEquipmentMod.ReadOnly = True
+        Me.gridEquipmentMod.RowHeadersWidth = 51
         Me.gridEquipmentMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridEquipmentMod.Size = New System.Drawing.Size(417, 251)
+        Me.gridEquipmentMod.Size = New System.Drawing.Size(556, 309)
         Me.gridEquipmentMod.TabIndex = 28
         '
         'btCancelModEquip
         '
-        Me.btCancelModEquip.Location = New System.Drawing.Point(256, 373)
+        Me.btCancelModEquip.Location = New System.Drawing.Point(341, 459)
+        Me.btCancelModEquip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btCancelModEquip.Name = "btCancelModEquip"
-        Me.btCancelModEquip.Size = New System.Drawing.Size(209, 23)
+        Me.btCancelModEquip.Size = New System.Drawing.Size(279, 28)
         Me.btCancelModEquip.TabIndex = 25
         Me.btCancelModEquip.Text = "Annuler"
         Me.btCancelModEquip.UseVisualStyleBackColor = True
         '
         'btModEquip
         '
-        Me.btModEquip.Location = New System.Drawing.Point(48, 373)
+        Me.btModEquip.Location = New System.Drawing.Point(64, 459)
+        Me.btModEquip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btModEquip.Name = "btModEquip"
-        Me.btModEquip.Size = New System.Drawing.Size(209, 23)
+        Me.btModEquip.Size = New System.Drawing.Size(279, 28)
         Me.btModEquip.TabIndex = 24
         Me.btModEquip.Text = "Sauvegarder modification"
         Me.btModEquip.UseVisualStyleBackColor = True
@@ -100,25 +107,28 @@ Partial Class UCEquipmentMod
         'labStateEquipMod
         '
         Me.labStateEquipMod.AutoSize = True
-        Me.labStateEquipMod.Location = New System.Drawing.Point(45, 301)
+        Me.labStateEquipMod.Location = New System.Drawing.Point(60, 370)
+        Me.labStateEquipMod.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labStateEquipMod.Name = "labStateEquipMod"
-        Me.labStateEquipMod.Size = New System.Drawing.Size(103, 13)
+        Me.labStateEquipMod.Size = New System.Drawing.Size(137, 17)
         Me.labStateEquipMod.TabIndex = 23
         Me.labStateEquipMod.Text = "État de l'équipement"
         '
         'tbStateEquipMod
         '
-        Me.tbStateEquipMod.Location = New System.Drawing.Point(192, 298)
+        Me.tbStateEquipMod.Location = New System.Drawing.Point(256, 367)
+        Me.tbStateEquipMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbStateEquipMod.Name = "tbStateEquipMod"
-        Me.tbStateEquipMod.Size = New System.Drawing.Size(273, 20)
+        Me.tbStateEquipMod.Size = New System.Drawing.Size(363, 22)
         Me.tbStateEquipMod.TabIndex = 22
         '
         'checkAvailableEquipMod
         '
         Me.checkAvailableEquipMod.AutoSize = True
-        Me.checkAvailableEquipMod.Location = New System.Drawing.Point(192, 324)
+        Me.checkAvailableEquipMod.Location = New System.Drawing.Point(256, 399)
+        Me.checkAvailableEquipMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.checkAvailableEquipMod.Name = "checkAvailableEquipMod"
-        Me.checkAvailableEquipMod.Size = New System.Drawing.Size(106, 17)
+        Me.checkAvailableEquipMod.Size = New System.Drawing.Size(138, 21)
         Me.checkAvailableEquipMod.TabIndex = 21
         Me.checkAvailableEquipMod.Text = "Mettre disponible"
         Me.checkAvailableEquipMod.UseVisualStyleBackColor = True
@@ -126,39 +136,43 @@ Partial Class UCEquipmentMod
         'labCommentMod
         '
         Me.labCommentMod.AutoSize = True
-        Me.labCommentMod.Location = New System.Drawing.Point(45, 119)
+        Me.labCommentMod.Location = New System.Drawing.Point(60, 146)
+        Me.labCommentMod.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labCommentMod.Name = "labCommentMod"
-        Me.labCommentMod.Size = New System.Drawing.Size(68, 13)
+        Me.labCommentMod.Size = New System.Drawing.Size(91, 17)
         Me.labCommentMod.TabIndex = 20
         Me.labCommentMod.Text = "Commentaire"
         '
         'tbCommentMod
         '
-        Me.tbCommentMod.Location = New System.Drawing.Point(192, 116)
+        Me.tbCommentMod.Location = New System.Drawing.Point(256, 143)
+        Me.tbCommentMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbCommentMod.Name = "tbCommentMod"
-        Me.tbCommentMod.Size = New System.Drawing.Size(273, 176)
+        Me.tbCommentMod.Size = New System.Drawing.Size(363, 216)
         Me.tbCommentMod.TabIndex = 19
         Me.tbCommentMod.Text = ""
         '
         'tbNameEquipmentMod
         '
-        Me.tbNameEquipmentMod.Location = New System.Drawing.Point(192, 90)
+        Me.tbNameEquipmentMod.Location = New System.Drawing.Point(256, 111)
+        Me.tbNameEquipmentMod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbNameEquipmentMod.Name = "tbNameEquipmentMod"
-        Me.tbNameEquipmentMod.Size = New System.Drawing.Size(273, 20)
+        Me.tbNameEquipmentMod.Size = New System.Drawing.Size(363, 22)
         Me.tbNameEquipmentMod.TabIndex = 18
         '
         'labNameEquipmentMod
         '
         Me.labNameEquipmentMod.AutoSize = True
-        Me.labNameEquipmentMod.Location = New System.Drawing.Point(45, 93)
+        Me.labNameEquipmentMod.Location = New System.Drawing.Point(60, 114)
+        Me.labNameEquipmentMod.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labNameEquipmentMod.Name = "labNameEquipmentMod"
-        Me.labNameEquipmentMod.Size = New System.Drawing.Size(95, 13)
+        Me.labNameEquipmentMod.Size = New System.Drawing.Size(126, 17)
         Me.labNameEquipmentMod.TabIndex = 17
         Me.labNameEquipmentMod.Text = "Nom d'équipement"
         '
         'UCEquipmentMod
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btKitNullMod)
         Me.Controls.Add(Me.btKitMod)
@@ -173,8 +187,9 @@ Partial Class UCEquipmentMod
         Me.Controls.Add(Me.tbCommentMod)
         Me.Controls.Add(Me.tbNameEquipmentMod)
         Me.Controls.Add(Me.labNameEquipmentMod)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCEquipmentMod"
-        Me.Size = New System.Drawing.Size(956, 647)
+        Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridEquipmentMod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

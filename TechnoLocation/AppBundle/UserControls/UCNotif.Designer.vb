@@ -172,9 +172,9 @@ Partial Class UCNotif
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.labNot1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCNotif"
-        Me.Size = New System.Drawing.Size(333, 796)
+        Me.Size = New System.Drawing.Size(333, 744)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -11,9 +11,9 @@ Public Class UCEquipmentMod
     End Sub
 
     Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btModEquip.Click
-        'Dim check As Integer
+        Dim check As Integer
         'If MsgBox(Msg.getMsgEditEquipment, vbYesNo) = vbYes Then
-        '    If verificationMod() Then
+        'If verificationMod() Then
         '        If checkAvailableEquipMod.Checked Then
         '            check = 1
         '        Else

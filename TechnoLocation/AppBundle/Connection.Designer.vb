@@ -34,6 +34,7 @@ Partial Class Connection
         Me.btConnect = New Guna.UI2.WinForms.Guna2Button()
         Me.tbUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.labLang = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,6 +77,7 @@ Partial Class Connection
         'panelHeaderBar
         '
         Me.panelHeaderBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.panelHeaderBar.Controls.Add(Me.labLang)
         Me.panelHeaderBar.Controls.Add(Me.Guna2VSeparator1)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderMinimize)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderClose)
@@ -212,6 +214,20 @@ Partial Class Connection
         Me.tbPassword.Size = New System.Drawing.Size(200, 36)
         Me.tbPassword.TabIndex = 1
         '
+        'labLang
+        '
+        Me.labLang.AutoSize = False
+        Me.labLang.BackColor = System.Drawing.Color.Transparent
+        Me.labLang.Dock = System.Windows.Forms.DockStyle.Right
+        Me.labLang.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labLang.ForeColor = System.Drawing.Color.White
+        Me.labLang.Location = New System.Drawing.Point(374, 0)
+        Me.labLang.Name = "labLang"
+        Me.labLang.Size = New System.Drawing.Size(46, 55)
+        Me.labLang.TabIndex = 10
+        Me.labLang.Text = "EN"
+        Me.labLang.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Connection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -249,4 +265,5 @@ Partial Class Connection
     Friend WithEvents tbUsername As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents tbPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
+    Friend WithEvents labLang As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
