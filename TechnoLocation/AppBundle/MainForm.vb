@@ -218,7 +218,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
-        Dim iUser As New UCUser()
+        Dim iUser As New UCUser(Me)
         iUser.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iUser)

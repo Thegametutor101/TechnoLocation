@@ -33,10 +33,9 @@ Partial Class UCUser
         '
         'btAddUser
         '
-        Me.btAddUser.Location = New System.Drawing.Point(120, 63)
-        Me.btAddUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btAddUser.Location = New System.Drawing.Point(90, 51)
         Me.btAddUser.Name = "btAddUser"
-        Me.btAddUser.Size = New System.Drawing.Size(189, 28)
+        Me.btAddUser.Size = New System.Drawing.Size(142, 23)
         Me.btAddUser.TabIndex = 9
         Me.btAddUser.Text = "Ajouter nouvel utilisateur"
         Me.btAddUser.UseVisualStyleBackColor = True
@@ -44,10 +43,9 @@ Partial Class UCUser
         'checkUser
         '
         Me.checkUser.AutoSize = True
-        Me.checkUser.Location = New System.Drawing.Point(4, 68)
-        Me.checkUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.checkUser.Location = New System.Drawing.Point(3, 55)
         Me.checkUser.Name = "checkUser"
-        Me.checkUser.Size = New System.Drawing.Size(103, 21)
+        Me.checkUser.Size = New System.Drawing.Size(81, 17)
         Me.checkUser.TabIndex = 8
         Me.checkUser.Text = "Cocher tout"
         Me.checkUser.UseVisualStyleBackColor = True
@@ -56,12 +54,11 @@ Partial Class UCUser
         '
         Me.gridUser.AllowUserToAddRows = False
         Me.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridUser.Location = New System.Drawing.Point(4, 96)
-        Me.gridUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridUser.Location = New System.Drawing.Point(3, 78)
         Me.gridUser.Name = "gridUser"
         Me.gridUser.ReadOnly = True
         Me.gridUser.RowHeadersWidth = 51
-        Me.gridUser.Size = New System.Drawing.Size(1271, 700)
+        Me.gridUser.Size = New System.Drawing.Size(953, 569)
         Me.gridUser.TabIndex = 7
         '
         'dropUserSearch
@@ -69,34 +66,31 @@ Partial Class UCUser
         Me.dropUserSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.dropUserSearch.FormattingEnabled = True
         Me.dropUserSearch.Items.AddRange(New Object() {"Code", "Prénom", "Nom de famille", "Email", "Téléphone", "Job"})
-        Me.dropUserSearch.Location = New System.Drawing.Point(448, 22)
-        Me.dropUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dropUserSearch.Location = New System.Drawing.Point(336, 18)
         Me.dropUserSearch.Name = "dropUserSearch"
-        Me.dropUserSearch.Size = New System.Drawing.Size(179, 24)
+        Me.dropUserSearch.Size = New System.Drawing.Size(135, 21)
         Me.dropUserSearch.TabIndex = 6
         '
         'tbUserSearch
         '
-        Me.tbUserSearch.Location = New System.Drawing.Point(4, 22)
-        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbUserSearch.Location = New System.Drawing.Point(3, 18)
         Me.tbUserSearch.Name = "tbUserSearch"
-        Me.tbUserSearch.Size = New System.Drawing.Size(373, 22)
+        Me.tbUserSearch.Size = New System.Drawing.Size(281, 20)
         Me.tbUserSearch.TabIndex = 5
         Me.tbUserSearch.Text = "Recherche"
         '
         'btDeleteUser
         '
-        Me.btDeleteUser.Location = New System.Drawing.Point(317, 63)
-        Me.btDeleteUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btDeleteUser.Location = New System.Drawing.Point(238, 51)
         Me.btDeleteUser.Name = "btDeleteUser"
-        Me.btDeleteUser.Size = New System.Drawing.Size(189, 28)
+        Me.btDeleteUser.Size = New System.Drawing.Size(142, 23)
         Me.btDeleteUser.TabIndex = 10
         Me.btDeleteUser.Text = "Supprimer les utilisateurs"
         Me.btDeleteUser.UseVisualStyleBackColor = True
         '
         'UCUser
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btDeleteUser)
         Me.Controls.Add(Me.btAddUser)
@@ -104,9 +98,8 @@ Partial Class UCUser
         Me.Controls.Add(Me.gridUser)
         Me.Controls.Add(Me.dropUserSearch)
         Me.Controls.Add(Me.tbUserSearch)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCUser"
-        Me.Size = New System.Drawing.Size(1263, 744)
+        Me.Size = New System.Drawing.Size(947, 604)
         CType(Me.gridUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

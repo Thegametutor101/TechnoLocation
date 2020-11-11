@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 23, 2020 at 03:54 PM
+-- Generation Time: Nov 11, 2020 at 09:19 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -53,6 +53,21 @@ CREATE TABLE IF NOT EXISTS `characters` (
   PRIMARY KEY (`passChar`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `characters`
+--
+
+INSERT INTO `characters` (`passChar`, `value`) VALUES
+('4', '1857.85510737517'),
+('3', '2104.55524992812'),
+('2', '1430.3147905269'),
+('1', '618.867029336674'),
+('t', '465.527657610157'),
+('r', '680.89441178497'),
+('c', '1593.61312745597'),
+('e', '2065.89234956713'),
+('S', '878.056945761492');
+
 -- --------------------------------------------------------
 
 --
@@ -81,12 +96,21 @@ DROP TABLE IF EXISTS `history`;
 CREATE TABLE IF NOT EXISTS `history` (
   `code` int(10) NOT NULL,
   `date` datetime NOT NULL,
+  `renter` int(20) NOT NULL,
   `admin` int(20) NOT NULL,
   `broken` tinyint(1) NOT NULL,
   `comments` text NOT NULL,
   PRIMARY KEY (`code`),
-  KEY `admin` (`admin`)
+  KEY `admin` (`admin`),
+  KEY `renter` (`renter`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `history`
+--
+
+INSERT INTO `history` (`code`, `date`, `renter`, `admin`, `broken`, `comments`) VALUES
+(123, '2019-08-13 00:00:00', 222, 2345, 0, 'this is fake');
 
 -- --------------------------------------------------------
 
@@ -137,7 +161,15 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `renter` (`renter`),
   KEY `lender` (`lender`),
   KEY `equipment` (`equipment`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6679 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `rent`
+--
+
+INSERT INTO `rent` (`code`, `renter`, `lender`, `equipment`, `rentDate`, `returnDate`, `deposit`, `comments`) VALUES
+(111, 111, 111, 11, '2020-11-06 00:00:00', '2020-11-09 00:00:00', 10.57, 'test'),
+(6678, 852, 111, 664, '2018-03-15 00:00:00', '2020-11-25 00:00:00', 27.33, 'gaga gaga');
 
 -- --------------------------------------------------------
 
@@ -165,7 +197,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`code`, `password`, `firstName`, `lastName`, `email`, `phoneMain`, `phone2`, `job`, `permissions`, `balance`) VALUES
-(1763237, '', 'Daniel', 'Navarro', 'theendercraftgaming@gmail.com', '(819) 944-9576', '', 0, 0, 0);
+(1763237, '3179708354712418707216942329509073896552', 'Daniel', 'Navarro', 'theendercraftgaming@gmail.com', '(819) 944-9576', '', 0, 0, 0),
+(222, 'gvtevyctrgvffnhtrdf', 'bgrs', 'vgrsfg', 'vtvresger', 'vfref', 're', 0, 0, 0),
+(111, 'bhsrgfgf', 'xvfefdsvef', 'dvefrfdsg', 'vsrfd', 'fr', '', 0, 0, 0),
+(852, 'gaga', 'gaga', 'gaga', 'gaga', 'gaga', '', 0, 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
