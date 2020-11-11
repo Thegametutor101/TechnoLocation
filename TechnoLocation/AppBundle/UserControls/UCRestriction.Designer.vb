@@ -140,7 +140,7 @@ Partial Class UCRestriction
         '
         'btSaveRestriction
         '
-        Me.btSaveRestriction.Location = New System.Drawing.Point(812, 727)
+        Me.btSaveRestriction.Location = New System.Drawing.Point(761, 648)
         Me.btSaveRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.btSaveRestriction.Name = "btSaveRestriction"
         Me.btSaveRestriction.Size = New System.Drawing.Size(180, 53)
@@ -150,7 +150,7 @@ Partial Class UCRestriction
         '
         'btCancelRestriction
         '
-        Me.btCancelRestriction.Location = New System.Drawing.Point(1000, 727)
+        Me.btCancelRestriction.Location = New System.Drawing.Point(949, 648)
         Me.btCancelRestriction.Margin = New System.Windows.Forms.Padding(4)
         Me.btCancelRestriction.Name = "btCancelRestriction"
         Me.btCancelRestriction.Size = New System.Drawing.Size(180, 53)

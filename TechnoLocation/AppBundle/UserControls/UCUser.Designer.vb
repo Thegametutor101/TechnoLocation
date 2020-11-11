@@ -34,7 +34,7 @@ Partial Class UCUser
         'btAddUser
         '
         Me.btAddUser.Location = New System.Drawing.Point(120, 63)
-        Me.btAddUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(4)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.Size = New System.Drawing.Size(189, 28)
         Me.btAddUser.TabIndex = 9
@@ -45,7 +45,7 @@ Partial Class UCUser
         '
         Me.checkUser.AutoSize = True
         Me.checkUser.Location = New System.Drawing.Point(4, 68)
-        Me.checkUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.checkUser.Margin = New System.Windows.Forms.Padding(4)
         Me.checkUser.Name = "checkUser"
         Me.checkUser.Size = New System.Drawing.Size(103, 21)
         Me.checkUser.TabIndex = 8
@@ -56,12 +56,12 @@ Partial Class UCUser
         '
         Me.gridUser.AllowUserToAddRows = False
         Me.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridUser.Location = New System.Drawing.Point(4, 96)
-        Me.gridUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridUser.Location = New System.Drawing.Point(35, 122)
+        Me.gridUser.Margin = New System.Windows.Forms.Padding(4)
         Me.gridUser.Name = "gridUser"
         Me.gridUser.ReadOnly = True
         Me.gridUser.RowHeadersWidth = 51
-        Me.gridUser.Size = New System.Drawing.Size(1271, 700)
+        Me.gridUser.Size = New System.Drawing.Size(1209, 583)
         Me.gridUser.TabIndex = 7
         '
         'dropUserSearch
@@ -70,7 +70,7 @@ Partial Class UCUser
         Me.dropUserSearch.FormattingEnabled = True
         Me.dropUserSearch.Items.AddRange(New Object() {"Code", "Prénom", "Nom de famille", "Email", "Téléphone", "Job"})
         Me.dropUserSearch.Location = New System.Drawing.Point(448, 22)
-        Me.dropUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dropUserSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.dropUserSearch.Name = "dropUserSearch"
         Me.dropUserSearch.Size = New System.Drawing.Size(179, 24)
         Me.dropUserSearch.TabIndex = 6
@@ -78,7 +78,7 @@ Partial Class UCUser
         'tbUserSearch
         '
         Me.tbUserSearch.Location = New System.Drawing.Point(4, 22)
-        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.tbUserSearch.Name = "tbUserSearch"
         Me.tbUserSearch.Size = New System.Drawing.Size(373, 22)
         Me.tbUserSearch.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class UCUser
         'btDeleteUser
         '
         Me.btDeleteUser.Location = New System.Drawing.Point(317, 63)
-        Me.btDeleteUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btDeleteUser.Margin = New System.Windows.Forms.Padding(4)
         Me.btDeleteUser.Name = "btDeleteUser"
         Me.btDeleteUser.Size = New System.Drawing.Size(189, 28)
         Me.btDeleteUser.TabIndex = 10
@@ -104,7 +104,7 @@ Partial Class UCUser
         Me.Controls.Add(Me.gridUser)
         Me.Controls.Add(Me.dropUserSearch)
         Me.Controls.Add(Me.tbUserSearch)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCUser"
         Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridUser, System.ComponentModel.ISupportInitialize).EndInit()

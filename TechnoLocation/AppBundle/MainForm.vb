@@ -138,9 +138,11 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
-        For Each o As Control In panelMain.Controls
-            o.Refresh()
-        Next
+        panelMain.Controls.Clear()
+        Dim dashboard As New UCDashboard(Me)
+        dashboard.Dock = DockStyle.Fill
+        panelMain.Controls.Add(dashboard)
+        dashboard.BringToFront()
     End Sub
 
     Private Sub labAccount_Click(sender As Object, e As EventArgs) Handles labAccount.Click
