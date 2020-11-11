@@ -2,7 +2,7 @@
 Public Class ModelEquipment
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
     Shared instance As ModelEquipment = Nothing
-    Dim Msg As New FR_CA
+    'Dim Msg As New FR_CA
     Public Shared Function getInstance() As ModelEquipment
         If IsNothing(instance) Then
             instance = New ModelEquipment()
@@ -11,24 +11,24 @@ Public Class ModelEquipment
     End Function
 
     Public Function updateEquipment(code As Integer, name As String, kit As Integer, state As String, available As Integer, comments As String)
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = $"update equipment set name='{name}',
-                                                        kit='{kit}',
-                                                        state='{state}',
-                                                        available='{available}',
-                                                        comments='{comments}' where code='{code}'"
-            connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
-            connection.Close()
-            MsgBox(Msg.getMsgSuccessEditEquip, vbOKOnly)
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
+        'Try
+        '    If connection.State = ConnectionState.Open Then
+        '        connection.Close()
+        '    End If
+        '    Dim command As New MySqlCommand
+        '    command.Connection = connection
+        '    command.CommandText = $"update equipment set name='{name}',
+        '                                                kit='{kit}',
+        '                                                state='{state}',
+        '                                                available='{available}',
+        '                                                comments='{comments}' where code='{code}'"
+        '    connection.Open()
+        '    Dim add As Integer = command.ExecuteNonQuery()
+        '    connection.Close()
+        '    MsgBox(Msg.getMsgSuccessEditEquip, vbOKOnly)
+        'Catch ex As Exception
+        '    MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+        'End Try
     End Function
 
     Public Function nextId() As Integer

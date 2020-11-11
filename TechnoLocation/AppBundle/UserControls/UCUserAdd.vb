@@ -5,4 +5,11 @@ Public Class UCUserAdd
             ModelUser.getInstance().addUser(tbCode.Text, tbPassword.Text, tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPhone1.Text, tbPhone2.Text, tbJob.Text, tbPermissions.Text, 0, False)
         End If
     End Sub
+
+    Private Sub btCancelUser_Click(sender As Object, e As EventArgs) Handles btCancelUser.Click
+        Dim iUserAdd As New UCUserAdd()
+        iUserAdd.Dock = DockStyle.Fill
+        MainForm.getInstance.panelMain.Controls.Add(iUserAdd)
+        iUserAdd.BringToFront()
+    End Sub
 End Class
