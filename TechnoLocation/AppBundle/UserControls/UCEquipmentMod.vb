@@ -1,7 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipmentMod
     Dim row As DataGridViewRow
-    Dim Msg As New FR_CA
+    Dim json As JObject
     Dim kit As Integer
     Dim equipment As UCEquipment
     Sub New(iCode As DataGridViewRow, equip As UCEquipment)
@@ -12,7 +12,7 @@ Public Class UCEquipmentMod
 
     Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btModEquip.Click
         Dim check As Integer
-        If MsgBox(Msg.getMsgEditEquipment, vbYesNo) = vbYes Then
+        If MsgBox(json("MsgEditEquipment"), vbYesNo) = vbYes Then
             If verificationMod() Then
                 If checkAvailableEquipMod.Checked Then
                     check = 1
@@ -20,7 +20,7 @@ Public Class UCEquipmentMod
                     check = 0
                 End If
 
-                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text)
+                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text, tbDepositEquipMod.Text)
                 Me.SendToBack()
                 equipment.loadDataGridView()
             End If
@@ -31,23 +31,24 @@ Public Class UCEquipmentMod
         Dim complete As Boolean = True
         If String.IsNullOrEmpty(Trim(tbNameEquipmentMod.Text)) Then
             complete = False
-            MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
+            MsgBox(json("MsgEmptyName"), vbOKOnly, json("MsgWarning"))
         End If
 
         If String.IsNullOrEmpty(Trim(tbCommentMod.Text)) And complete Then
             complete = False
-            MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
+            MsgBox(json("MsgEmptyComment"), vbOKOnly, json("MsgWarning"))
         End If
 
         If String.IsNullOrEmpty(Trim(tbStateEquipMod.Text)) And complete Then
             complete = False
-            MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
+            MsgBox(json("MsgEmptyState"), vbOKOnly, json("MsgWarning"))
         End If
 
         Return complete
     End Function
 
     Private Sub UCEquipmentMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        json = Lang.getInstance("fr_ca").ListProperty
         loadDataGridView()
         tbNameEquipmentMod.Text = row.Cells(1).Value
         tbCommentMod.Text = row.Cells(5).Value

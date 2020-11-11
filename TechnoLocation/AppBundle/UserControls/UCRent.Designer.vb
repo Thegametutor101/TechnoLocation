@@ -26,7 +26,7 @@ Partial Class UCRent
         Me.btModRent = New System.Windows.Forms.Button()
         Me.btDelRent = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btBarCode = New System.Windows.Forms.Button()
+        Me.btBarCodeUser = New System.Windows.Forms.Button()
         Me.btAddUser = New System.Windows.Forms.Button()
         Me.tbUserSearch = New System.Windows.Forms.TextBox()
         Me.gridUserSearch = New System.Windows.Forms.DataGridView()
@@ -35,20 +35,22 @@ Partial Class UCRent
         Me.tbBeginDate = New System.Windows.Forms.TextBox()
         Me.tbEndDate = New System.Windows.Forms.TextBox()
         Me.labEndDate = New System.Windows.Forms.Label()
-        Me.gridItemSeach = New System.Windows.Forms.DataGridView()
+        Me.gridItemSearch = New System.Windows.Forms.DataGridView()
         Me.tbItemSearch = New System.Windows.Forms.TextBox()
         Me.tbSuggDeposit = New System.Windows.Forms.TextBox()
         Me.tbRealDeposit = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.gridItemAdd = New System.Windows.Forms.DataGridView()
         Me.labSuggDeposit = New System.Windows.Forms.Label()
         Me.labReelDeposit = New System.Windows.Forms.Label()
         Me.btSavNewRent = New System.Windows.Forms.Button()
         Me.btCancelRent = New System.Windows.Forms.Button()
         Me.btResetRent = New System.Windows.Forms.Button()
+        Me.dropSearchEquip = New System.Windows.Forms.ComboBox()
+        Me.dropSearchUser = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.gridUserSearch, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gridItemSeach, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridItemSearch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridItemAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btNewRent
@@ -89,14 +91,14 @@ Partial Class UCRent
         Me.Panel1.Size = New System.Drawing.Size(956, 54)
         Me.Panel1.TabIndex = 3
         '
-        'btBarCode
+        'btBarCodeUser
         '
-        Me.btBarCode.Location = New System.Drawing.Point(4, 60)
-        Me.btBarCode.Name = "btBarCode"
-        Me.btBarCode.Size = New System.Drawing.Size(120, 23)
-        Me.btBarCode.TabIndex = 4
-        Me.btBarCode.Text = "Code barre article"
-        Me.btBarCode.UseVisualStyleBackColor = True
+        Me.btBarCodeUser.Location = New System.Drawing.Point(4, 60)
+        Me.btBarCodeUser.Name = "btBarCodeUser"
+        Me.btBarCodeUser.Size = New System.Drawing.Size(120, 23)
+        Me.btBarCodeUser.TabIndex = 4
+        Me.btBarCodeUser.Text = "Code barre utilisateur"
+        Me.btBarCodeUser.UseVisualStyleBackColor = True
         '
         'btAddUser
         '
@@ -117,22 +119,27 @@ Partial Class UCRent
         '
         'gridUserSearch
         '
+        Me.gridUserSearch.AllowUserToAddRows = False
+        Me.gridUserSearch.AllowUserToDeleteRows = False
+        Me.gridUserSearch.AllowUserToResizeColumns = False
+        Me.gridUserSearch.AllowUserToResizeRows = False
         Me.gridUserSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridUserSearch.Location = New System.Drawing.Point(4, 118)
         Me.gridUserSearch.Name = "gridUserSearch"
-        Me.gridUserSearch.Size = New System.Drawing.Size(455, 231)
+        Me.gridUserSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridUserSearch.Size = New System.Drawing.Size(418, 231)
         Me.gridUserSearch.TabIndex = 7
         '
         'calendarRent
         '
-        Me.calendarRent.Location = New System.Drawing.Point(121, 361)
+        Me.calendarRent.Location = New System.Drawing.Point(90, 361)
         Me.calendarRent.Name = "calendarRent"
         Me.calendarRent.TabIndex = 8
         '
         'labBeginDate
         '
         Me.labBeginDate.AutoSize = True
-        Me.labBeginDate.Location = New System.Drawing.Point(127, 538)
+        Me.labBeginDate.Location = New System.Drawing.Point(96, 538)
         Me.labBeginDate.Name = "labBeginDate"
         Me.labBeginDate.Size = New System.Drawing.Size(27, 13)
         Me.labBeginDate.TabIndex = 9
@@ -140,7 +147,7 @@ Partial Class UCRent
         '
         'tbBeginDate
         '
-        Me.tbBeginDate.Location = New System.Drawing.Point(160, 531)
+        Me.tbBeginDate.Location = New System.Drawing.Point(129, 531)
         Me.tbBeginDate.Name = "tbBeginDate"
         Me.tbBeginDate.ReadOnly = True
         Me.tbBeginDate.Size = New System.Drawing.Size(153, 20)
@@ -148,7 +155,7 @@ Partial Class UCRent
         '
         'tbEndDate
         '
-        Me.tbEndDate.Location = New System.Drawing.Point(160, 569)
+        Me.tbEndDate.Location = New System.Drawing.Point(129, 569)
         Me.tbEndDate.Name = "tbEndDate"
         Me.tbEndDate.ReadOnly = True
         Me.tbEndDate.Size = New System.Drawing.Size(153, 20)
@@ -157,19 +164,25 @@ Partial Class UCRent
         'labEndDate
         '
         Me.labEndDate.AutoSize = True
-        Me.labEndDate.Location = New System.Drawing.Point(127, 576)
+        Me.labEndDate.Location = New System.Drawing.Point(96, 576)
         Me.labEndDate.Name = "labEndDate"
         Me.labEndDate.Size = New System.Drawing.Size(20, 13)
         Me.labEndDate.TabIndex = 11
         Me.labEndDate.Text = "À :"
         '
-        'gridItemSeach
+        'gridItemSearch
         '
-        Me.gridItemSeach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridItemSeach.Location = New System.Drawing.Point(498, 92)
-        Me.gridItemSeach.Name = "gridItemSeach"
-        Me.gridItemSeach.Size = New System.Drawing.Size(455, 231)
-        Me.gridItemSeach.TabIndex = 14
+        Me.gridItemSearch.AllowUserToAddRows = False
+        Me.gridItemSearch.AllowUserToDeleteRows = False
+        Me.gridItemSearch.AllowUserToResizeColumns = False
+        Me.gridItemSearch.AllowUserToResizeRows = False
+        Me.gridItemSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridItemSearch.Location = New System.Drawing.Point(498, 92)
+        Me.gridItemSearch.Name = "gridItemSearch"
+        Me.gridItemSearch.ReadOnly = True
+        Me.gridItemSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridItemSearch.Size = New System.Drawing.Size(455, 231)
+        Me.gridItemSearch.TabIndex = 14
         '
         'tbItemSearch
         '
@@ -177,7 +190,7 @@ Partial Class UCRent
         Me.tbItemSearch.Name = "tbItemSearch"
         Me.tbItemSearch.Size = New System.Drawing.Size(246, 20)
         Me.tbItemSearch.TabIndex = 13
-        Me.tbItemSearch.Text = "Rechercher un utilisateur"
+        Me.tbItemSearch.Text = "Rechercher un équipement"
         '
         'tbSuggDeposit
         '
@@ -194,13 +207,19 @@ Partial Class UCRent
         Me.tbRealDeposit.Size = New System.Drawing.Size(171, 20)
         Me.tbRealDeposit.TabIndex = 16
         '
-        'DataGridView1
+        'gridItemAdd
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(498, 329)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(455, 198)
-        Me.DataGridView1.TabIndex = 17
+        Me.gridItemAdd.AllowUserToAddRows = False
+        Me.gridItemAdd.AllowUserToDeleteRows = False
+        Me.gridItemAdd.AllowUserToResizeColumns = False
+        Me.gridItemAdd.AllowUserToResizeRows = False
+        Me.gridItemAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gridItemAdd.Location = New System.Drawing.Point(498, 329)
+        Me.gridItemAdd.Name = "gridItemAdd"
+        Me.gridItemAdd.ReadOnly = True
+        Me.gridItemAdd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridItemAdd.Size = New System.Drawing.Size(455, 198)
+        Me.gridItemAdd.TabIndex = 17
         '
         'labSuggDeposit
         '
@@ -247,19 +266,38 @@ Partial Class UCRent
         Me.btResetRent.Text = "Réinitialiser"
         Me.btResetRent.UseVisualStyleBackColor = True
         '
+        'dropSearchEquip
+        '
+        Me.dropSearchEquip.FormattingEnabled = True
+        Me.dropSearchEquip.Items.AddRange(New Object() {"Code", "Nom", "Kit", "État", "Commentaire"})
+        Me.dropSearchEquip.Location = New System.Drawing.Point(806, 62)
+        Me.dropSearchEquip.Name = "dropSearchEquip"
+        Me.dropSearchEquip.Size = New System.Drawing.Size(147, 21)
+        Me.dropSearchEquip.TabIndex = 20
+        '
+        'dropSearchUser
+        '
+        Me.dropSearchUser.FormattingEnabled = True
+        Me.dropSearchUser.Location = New System.Drawing.Point(276, 92)
+        Me.dropSearchUser.Name = "dropSearchUser"
+        Me.dropSearchUser.Size = New System.Drawing.Size(146, 21)
+        Me.dropSearchUser.TabIndex = 21
+        '
         'UCRent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.dropSearchUser)
+        Me.Controls.Add(Me.dropSearchEquip)
         Me.Controls.Add(Me.btSavNewRent)
         Me.Controls.Add(Me.labReelDeposit)
         Me.Controls.Add(Me.btCancelRent)
         Me.Controls.Add(Me.labSuggDeposit)
         Me.Controls.Add(Me.btResetRent)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.gridItemAdd)
         Me.Controls.Add(Me.tbRealDeposit)
         Me.Controls.Add(Me.tbSuggDeposit)
-        Me.Controls.Add(Me.gridItemSeach)
+        Me.Controls.Add(Me.gridItemSearch)
         Me.Controls.Add(Me.tbItemSearch)
         Me.Controls.Add(Me.tbEndDate)
         Me.Controls.Add(Me.labEndDate)
@@ -269,14 +307,14 @@ Partial Class UCRent
         Me.Controls.Add(Me.gridUserSearch)
         Me.Controls.Add(Me.tbUserSearch)
         Me.Controls.Add(Me.btAddUser)
-        Me.Controls.Add(Me.btBarCode)
+        Me.Controls.Add(Me.btBarCodeUser)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "UCRent"
         Me.Size = New System.Drawing.Size(956, 647)
         Me.Panel1.ResumeLayout(False)
         CType(Me.gridUserSearch, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gridItemSeach, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridItemSearch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridItemAdd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -286,7 +324,7 @@ Partial Class UCRent
     Friend WithEvents btModRent As Button
     Friend WithEvents btDelRent As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btBarCode As Button
+    Friend WithEvents btBarCodeUser As Button
     Friend WithEvents btAddUser As Button
     Friend WithEvents tbUserSearch As TextBox
     Friend WithEvents gridUserSearch As DataGridView
@@ -295,14 +333,17 @@ Partial Class UCRent
     Friend WithEvents tbBeginDate As TextBox
     Friend WithEvents tbEndDate As TextBox
     Friend WithEvents labEndDate As Label
-    Friend WithEvents gridItemSeach As DataGridView
+    Friend WithEvents gridItemSearch As DataGridView
     Friend WithEvents tbItemSearch As TextBox
     Friend WithEvents tbSuggDeposit As TextBox
     Friend WithEvents tbRealDeposit As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents gridItemAdd As DataGridView
     Friend WithEvents labSuggDeposit As Label
     Friend WithEvents labReelDeposit As Label
     Friend WithEvents btSavNewRent As Button
     Friend WithEvents btCancelRent As Button
     Friend WithEvents btResetRent As Button
+    Friend WithEvents dropSearchEquip As ComboBox
+    Friend WithEvents dropSearchUser As ComboBox
+    Friend WithEvents Button1 As Button
 End Class

@@ -35,6 +35,8 @@ Partial Class UCEquipmentMod
         Me.tbCommentMod = New System.Windows.Forms.RichTextBox()
         Me.tbNameEquipmentMod = New System.Windows.Forms.TextBox()
         Me.labNameEquipmentMod = New System.Windows.Forms.Label()
+        Me.labDepositEquipMod = New System.Windows.Forms.Label()
+        Me.tbDepositEquipMod = New System.Windows.Forms.TextBox()
         CType(Me.gridEquipmentMod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -156,10 +158,28 @@ Partial Class UCEquipmentMod
         Me.labNameEquipmentMod.TabIndex = 17
         Me.labNameEquipmentMod.Text = "Nom d'équipement"
         '
+        'labDepositEquipMod
+        '
+        Me.labDepositEquipMod.AutoSize = True
+        Me.labDepositEquipMod.Location = New System.Drawing.Point(45, 350)
+        Me.labDepositEquipMod.Name = "labDepositEquipMod"
+        Me.labDepositEquipMod.Size = New System.Drawing.Size(132, 13)
+        Me.labDepositEquipMod.TabIndex = 32
+        Me.labDepositEquipMod.Text = "Montant de base du dépôt"
+        '
+        'tbDepositEquipMod
+        '
+        Me.tbDepositEquipMod.Location = New System.Drawing.Point(192, 347)
+        Me.tbDepositEquipMod.Name = "tbDepositEquipMod"
+        Me.tbDepositEquipMod.Size = New System.Drawing.Size(273, 20)
+        Me.tbDepositEquipMod.TabIndex = 33
+        '
         'UCEquipmentMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.tbDepositEquipMod)
+        Me.Controls.Add(Me.labDepositEquipMod)
         Me.Controls.Add(Me.btKitNullMod)
         Me.Controls.Add(Me.btKitMod)
         Me.Controls.Add(Me.labEquipmentModKit)
@@ -194,4 +214,6 @@ Partial Class UCEquipmentMod
     Friend WithEvents tbCommentMod As RichTextBox
     Friend WithEvents tbNameEquipmentMod As TextBox
     Friend WithEvents labNameEquipmentMod As Label
+    Friend WithEvents labDepositEquipMod As Label
+    Friend WithEvents tbDepositEquipMod As TextBox
 End Class

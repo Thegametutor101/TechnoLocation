@@ -17,5 +17,7 @@
     "MsgKitNull": "Voulez-vous vraiment ajouter l'équipement sans kit?",
     "MsgKitNameEmpty": "Vous devez mettre un nom!",
     "MsgErrorAddEquip": "Un erreure c'est produit durant l'ajout d'équipement! Certain équipement ne se sont pas ajouter correctement",
-    "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après."
+    "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après.",
+    "MsgDeleteKit1": "Voulez-vous supprimer le kit ",
+    "MsgDeleteKit2": " il n'y a plus d'équipement associé a ce kit!"
 }

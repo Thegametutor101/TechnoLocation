@@ -233,7 +233,6 @@
         iEquipment.BringToFront()
     End Sub
 
-
     ''' <summary>
     ''' 
     ''' </summary>

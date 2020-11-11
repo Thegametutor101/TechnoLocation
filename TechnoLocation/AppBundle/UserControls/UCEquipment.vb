@@ -1,5 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipment
+    Dim json As JObject
     Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
         Dim iEquipmentAdd As New UCEquipmentAdd(Me)
         iEquipmentAdd.Dock = DockStyle.Fill
@@ -8,6 +9,7 @@ Public Class UCEquipment
     End Sub
 
     Private Sub UCEquipment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        json = Lang.getInstance("fr_ca").ListProperty
         loadDataGridView()
         dropSearch.SelectedIndex() = 0
     End Sub
@@ -25,14 +27,31 @@ Public Class UCEquipment
     End Sub
 
     Private Sub btDelEquipment_Click(sender As Object, e As EventArgs) Handles btDelEquipment.Click
-        'Dim response = MsgBox(Msg.getMsgDeleteEquipment, vbYesNo, Msg.getMsgWarning)
+        Dim kitDelete As New ArrayList
+        Dim lastKit As Boolean
 
-        'If response = vbYes Then
-        '    For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
-        '        ModelEquipment.getInstance.delEquipment(selectedItem.Cells(0).Value)
-        '    Next
-        '    loadDataGridView()
-        'End If
+        If MsgBox(json("MsgDeleteEquipment"), vbYesNo, json("MsgWarning")) = vbYes Then
+            For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+                kitDelete.Add(selectedItem.Cells(2).Value)
+                ModelEquipment.getInstance.delEquipment(selectedItem.Cells(0).Value)
+            Next
+            loadDataGridView()
+            gridEquipment.SelectAll()
+
+            For Each i In kitDelete
+                lastKit = True
+                For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+                    If selectedItem.Cells(2).Value = kitDelete(i) Then
+                        lastKit = False
+                    End If
+                Next
+                If lastKit Then
+                    If MsgBox(json("MsgDeleteKit1") + kitDelete(i) + json("MsgDeleteKit2"), vbYesNo, json("MsgWarning")) = vbYes Then
+                        ModelKit.getInstance.delKit(kitDelete(i))
+                    End If
+                End If
+            Next
+        End If
     End Sub
 
     Private Sub gridEquipment_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridEquipment.CellMouseDoubleClick
