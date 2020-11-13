@@ -196,7 +196,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment()
+        Dim iEquipment As New UCEquipment(Me)
         iEquipment.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iEquipment)
