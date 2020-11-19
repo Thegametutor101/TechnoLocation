@@ -49,13 +49,6 @@ Public Class MainForm
     'Methods
     '__________________________________________________________________________________________________________
 
-    '* Only highlights 1 control on the form
-    'Private Sub MainForm_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-    '    If Me.WindowState = FormWindowState.Normal Then
-    '        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.DodgerBlue, ButtonBorderStyle.Solid)
-    '    End If
-    'End Sub
-
     Private Sub HeaderBar_MouseDown(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseDown
         If e.Button = MouseButtons.Left Then
             ' Window Position

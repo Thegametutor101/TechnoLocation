@@ -122,6 +122,21 @@ TechnoLocation
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_click_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_hover_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="M:TechnoLocation.MainForm.MainForm_Load(System.Object,System.EventArgs)">
  <summary>
  Au chargement nous voulons voir le Dashboard
