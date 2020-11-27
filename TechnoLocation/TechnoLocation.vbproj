@@ -236,6 +236,12 @@
     <Compile Include="AppBundle\UserControls\UCUser.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCUserModify.Designer.vb">
+      <DependentUpon>UCUserModify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCUserModify.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCUser.resx">
       <DependentUpon>UCUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCUserModify.resx">
+      <DependentUpon>UCUserModify.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

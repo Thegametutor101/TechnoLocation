@@ -60,6 +60,7 @@ Public Class UCUser
         For Each row As DataGridViewRow In gridUser.SelectedRows
             ModelUser.getInstance().delUser(row.Cells(0).Value)
         Next
+        gridUser.DataSource = EntityUser.getInstance.getUsers()
         userSearch()
     End Sub
 
@@ -68,9 +69,14 @@ Public Class UCUser
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
+        gridUser.DataSource = EntityUser.getInstance.getUsers()
     End Sub
 
     Private Sub gridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridUser.CellContentClick
-
+        Dim code As Integer = gridUser.Rows(e.RowIndex).Cells(0).Value
+        Dim iUserModify As New UCUserModify(code)
+        iUserModify.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(iUserModify)
+        iUserModify.BringToFront()
     End Sub
 End Class

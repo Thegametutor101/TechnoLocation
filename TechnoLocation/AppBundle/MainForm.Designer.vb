@@ -120,7 +120,7 @@ Partial Class MainForm
         Me.btHeaderMinimize.ImageRotate = 0!
         Me.btHeaderMinimize.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderMinimize.Location = New System.Drawing.Point(1023, 0)
-        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderMinimize.Name = "btHeaderMinimize"
         Me.btHeaderMinimize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -140,7 +140,7 @@ Partial Class MainForm
         Me.btHeaderMaximize.ImageRotate = 0!
         Me.btHeaderMaximize.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderMaximize.Location = New System.Drawing.Point(1067, 0)
-        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderMaximize.Name = "btHeaderMaximize"
         Me.btHeaderMaximize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -161,7 +161,7 @@ Partial Class MainForm
         Me.btHeaderClose.ImageRotate = 0!
         Me.btHeaderClose.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderClose.Location = New System.Drawing.Point(1111, 0)
-        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderClose.Name = "btHeaderClose"
         Me.btHeaderClose.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -173,7 +173,7 @@ Partial Class MainForm
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(9, 3)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(35, 39)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -215,7 +215,7 @@ Partial Class MainForm
         Me.panelAccountOptions.Controls.Add(Me.labProfile)
         Me.panelAccountOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.panelAccountOptions.Location = New System.Drawing.Point(56, 0)
-        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(2)
         Me.panelAccountOptions.Name = "panelAccountOptions"
         Me.panelAccountOptions.ShadowColor = System.Drawing.Color.Black
         Me.panelAccountOptions.Size = New System.Drawing.Size(140, 119)
@@ -226,7 +226,7 @@ Partial Class MainForm
         Me.Guna2Separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Guna2Separator2.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.Guna2Separator2.Location = New System.Drawing.Point(10, 70)
-        Me.Guna2Separator2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Separator2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Separator2.Name = "Guna2Separator2"
         Me.Guna2Separator2.Size = New System.Drawing.Size(121, 8)
         Me.Guna2Separator2.TabIndex = 4
@@ -236,7 +236,7 @@ Partial Class MainForm
         Me.Guna2Separator1.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Guna2Separator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.Guna2Separator1.Location = New System.Drawing.Point(10, 36)
-        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Separator1.Name = "Guna2Separator1"
         Me.Guna2Separator1.Size = New System.Drawing.Size(121, 8)
         Me.Guna2Separator1.TabIndex = 3

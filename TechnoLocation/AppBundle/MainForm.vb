@@ -285,6 +285,10 @@ Public Class MainForm
         End If
     End Sub
 
+    Private Sub panelMain_Paint(sender As Object, e As PaintEventArgs) Handles panelMain.Paint
+
+    End Sub
+
     Public Sub setLanguage(language As String)
         If language = "FR" Then
             labLang.Text = "FR"
