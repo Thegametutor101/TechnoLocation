@@ -27,10 +27,8 @@ Public Class UCUser
             Dim entityUser As EntityUser = EntityUser.getInstance()
             Select Case dropUserSearch.SelectedIndex
                 Case 0
-                    If (Regex.IsMatch(recherche, "^[0-9]")) Then
-                        If recherche.Length <= 10 Then
-                            gridUser.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-                        End If
+                    If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
+                        gridUser.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
                     Else
                         gridUser.DataSource = entityUser.getUsers()
                     End If
