@@ -27,6 +27,7 @@ Partial Class Connection
         Me.labPassword = New System.Windows.Forms.Label()
         Me.linklabPasswordForget = New System.Windows.Forms.LinkLabel()
         Me.panelHeaderBar = New System.Windows.Forms.Panel()
+        Me.labLang = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.btHeaderMinimize = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btHeaderClose = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -76,6 +77,7 @@ Partial Class Connection
         'panelHeaderBar
         '
         Me.panelHeaderBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.panelHeaderBar.Controls.Add(Me.labLang)
         Me.panelHeaderBar.Controls.Add(Me.Guna2VSeparator1)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderMinimize)
         Me.panelHeaderBar.Controls.Add(Me.btHeaderClose)
@@ -85,6 +87,20 @@ Partial Class Connection
         Me.panelHeaderBar.Name = "panelHeaderBar"
         Me.panelHeaderBar.Size = New System.Drawing.Size(536, 55)
         Me.panelHeaderBar.TabIndex = 8
+        '
+        'labLang
+        '
+        Me.labLang.AutoSize = False
+        Me.labLang.BackColor = System.Drawing.Color.Transparent
+        Me.labLang.Dock = System.Windows.Forms.DockStyle.Right
+        Me.labLang.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labLang.ForeColor = System.Drawing.Color.White
+        Me.labLang.Location = New System.Drawing.Point(374, 0)
+        Me.labLang.Name = "labLang"
+        Me.labLang.Size = New System.Drawing.Size(46, 55)
+        Me.labLang.TabIndex = 10
+        Me.labLang.Text = "EN"
+        Me.labLang.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2VSeparator1
         '
@@ -168,6 +184,7 @@ Partial Class Connection
         '
         'tbUsername
         '
+        Me.tbUsername.BorderRadius = 2
         Me.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbUsername.DefaultText = ""
         Me.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -191,6 +208,7 @@ Partial Class Connection
         '
         'tbPassword
         '
+        Me.tbPassword.BorderRadius = 2
         Me.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbPassword.DefaultText = ""
         Me.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -249,4 +267,5 @@ Partial Class Connection
     Friend WithEvents tbUsername As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents tbPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
+    Friend WithEvents labLang As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

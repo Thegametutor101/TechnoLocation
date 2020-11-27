@@ -129,4 +129,34 @@ Public Class EntityRent
         connection.Close()
         Return table
     End Function
+
+    Public Function getRentCount() As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select count(code) from rent"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("rents")
+        table.Load(reader)
+        connection.Close()
+        Return table.Rows.Item(0).Item(0)
+    End Function
+
+    Public Function getRentDeposits() As Double
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select sum(deposit) from rent"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("rents")
+        table.Load(reader)
+        connection.Close()
+        Return table.Rows.Item(0).Item(0)
+    End Function
 End Class

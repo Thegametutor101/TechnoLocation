@@ -32,47 +32,53 @@ Partial Class UCHistory
         'gridHistory
         '
         Me.gridHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridHistory.Location = New System.Drawing.Point(2, 67)
+        Me.gridHistory.Location = New System.Drawing.Point(3, 82)
+        Me.gridHistory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gridHistory.Name = "gridHistory"
-        Me.gridHistory.Size = New System.Drawing.Size(953, 569)
+        Me.gridHistory.RowHeadersWidth = 51
+        Me.gridHistory.Size = New System.Drawing.Size(1271, 700)
         Me.gridHistory.TabIndex = 7
         '
         'dropHistory
         '
         Me.dropHistory.FormattingEnabled = True
-        Me.dropHistory.Location = New System.Drawing.Point(335, 10)
+        Me.dropHistory.Location = New System.Drawing.Point(447, 12)
+        Me.dropHistory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dropHistory.Name = "dropHistory"
-        Me.dropHistory.Size = New System.Drawing.Size(135, 21)
+        Me.dropHistory.Size = New System.Drawing.Size(179, 24)
         Me.dropHistory.TabIndex = 6
         '
         'tbHistory
         '
-        Me.tbHistory.Location = New System.Drawing.Point(2, 10)
+        Me.tbHistory.Location = New System.Drawing.Point(3, 12)
+        Me.tbHistory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbHistory.Name = "tbHistory"
-        Me.tbHistory.Size = New System.Drawing.Size(281, 20)
+        Me.tbHistory.Size = New System.Drawing.Size(373, 22)
         Me.tbHistory.TabIndex = 5
         Me.tbHistory.Text = "Recherche"
         '
         'cbAll
         '
         Me.cbAll.AutoSize = True
-        Me.cbAll.Location = New System.Drawing.Point(3, 44)
+        Me.cbAll.Location = New System.Drawing.Point(4, 54)
+        Me.cbAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbAll.Name = "cbAll"
-        Me.cbAll.Size = New System.Drawing.Size(81, 17)
+        Me.cbAll.Size = New System.Drawing.Size(103, 21)
         Me.cbAll.TabIndex = 8
         Me.cbAll.Text = "Cocher tout"
         Me.cbAll.UseVisualStyleBackColor = True
         '
         'UCHistory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.cbAll)
         Me.Controls.Add(Me.gridHistory)
         Me.Controls.Add(Me.dropHistory)
         Me.Controls.Add(Me.tbHistory)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCHistory"
-        Me.Size = New System.Drawing.Size(956, 647)
+        Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

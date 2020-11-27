@@ -9,7 +9,6 @@ Public Class Connection
 
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
-    Private json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -23,7 +22,7 @@ Public Class Connection
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         testConnection()
-        json = Lang.getInstance("fr_ca").ListProperty
+        Lang.getInstance().setLang("fr_ca")
         loadLanguage()
         tbUsername.Select()
     End Sub
@@ -72,7 +71,9 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                MainForm.getInstance().Show()
+                Dim main As New MainForm
+                main.Show()
+                main.setLanguage(labLang.Text)
                 Me.Close()
             End If
         End If
@@ -84,7 +85,7 @@ Public Class Connection
 
     Public Function testConnection()
         If Not EntityUser.getInstance().testConnection() Then
-            MessageBox.Show($"Impossible de trouver la base de donnée associée à: {Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
+            MessageBox.Show($"{Lang.getInstance().getLang()("DatabaseNotFound")}{Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
             Me.Close()
         End If
     End Function
@@ -100,8 +101,10 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
-        If MessageBox.Show("Voulez-vous quitter l'application?",
-                           "Attention",
+        Dim title As String = Lang.getInstance().getLang()("MsgQuitTitle")
+        Dim message As String = Lang.getInstance().getLang()("MsgQuit")
+        If MessageBox.Show(message,
+                           title,
                            MessageBoxButtons.YesNo,
                            MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
@@ -121,10 +124,22 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        labUsername.Text = json("ConnectionlabUsername")
-        labPassword.Text = json("ConnectionlabPassword")
-        tbUsername.PlaceholderText = json("ConnectiontbUsernamePlaceholder")
-        linklabPasswordForget.Text = json("ConnectionlabPasswordForget")
-        btConnect.Text = json("ConnectionbtConnect")
+        labUsername.Text = Lang.getInstance().getLang()("ConnectionlabUsername")
+        labPassword.Text = Lang.getInstance().getLang()("ConnectionlabPassword")
+        tbUsername.PlaceholderText = Lang.getInstance().getLang()("ConnectiontbUsernamePlaceholder")
+        linklabPasswordForget.Text = Lang.getInstance().getLang()("ConnectionlabPasswordForget")
+        btConnect.Text = Lang.getInstance().getLang()("ConnectionbtConnect")
+    End Sub
+
+    Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click
+        If labLang.Text = "EN" Then
+            labLang.Text = "FR"
+            Lang.getInstance().setLang("en_us")
+            loadLanguage()
+        ElseIf labLang.Text = "FR" Then
+            labLang.Text = "EN"
+            Lang.getInstance().setLang("fr_ca")
+            loadLanguage()
+        End If
     End Sub
 End Class

@@ -1,47 +1,91 @@
 ﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipmentMod
+
+
+    '__________________________________________________________________________________________________________
+    'Attributes
+    '__________________________________________________________________________________________________________
+
     Dim row As DataGridViewRow
-    Dim json As JObject
     Dim kit As Integer
     Dim equipment As UCEquipment
+
+    '__________________________________________________________________________________________________________
+    'Constructor
+    '__________________________________________________________________________________________________________
+
     Sub New(iCode As DataGridViewRow, equip As UCEquipment)
         InitializeComponent()
         row = iCode
         equipment = equip
     End Sub
 
-    Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btModEquip.Click
-        Dim check As Integer
-        If MsgBox(json("MsgEditEquipment"), vbYesNo) = vbYes Then
-            If verificationMod() Then
-                If checkAvailableEquipMod.Checked Then
-                    check = 1
-                Else
-                    check = 0
-                End If
+    '__________________________________________________________________________________________________________
+    'Load
+    '__________________________________________________________________________________________________________
 
-                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbNameEquipmentMod.Text, kit, tbStateEquipMod.Text, check, tbCommentMod.Text, tbDepositEquipMod.Text)
-                Me.SendToBack()
-                equipment.loadDataGridView()
-            End If
+    Private Sub UCEquipmentMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadDataGridView()
+        tbName.Text = row.Cells(1).Value
+        tbComment.Text = row.Cells(5).Value
+        tbState.Text = row.Cells(3).Value
+        If row.Cells(4).Value = True Then
+            checkAvailable.Checked = True
         End If
+        kit = row.Cells(2).Value
+        loadLanguage()
     End Sub
+
+    '__________________________________________________________________________________________________________
+    'Methods
+    '__________________________________________________________________________________________________________
+
+    Private Sub gridEquipMod_DataBindComplete(sender As Object,
+                    e As DataGridViewBindingCompleteEventArgs) Handles gridKit.DataBindingComplete
+        gridKit.ClearSelection()
+        For Each rowKit As DataGridViewRow In gridKit.Rows
+            If rowKit.Cells(0).Value = row.Cells(2).Value Then
+                gridKit.Rows(rowKit.Index).Selected = True
+            End If
+        Next
+    End Sub
+
+    Private Sub gridEquipmentMod_CellClick(sender As Object,
+                                           e As DataGridViewCellEventArgs) Handles gridKit.CellClick
+        kit = gridKit.CurrentRow.Cells(0).Value
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'General Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Validation Functions
+    '__________________________________________________________________________________________________________
 
     Private Function verificationMod() As Boolean
         Dim complete As Boolean = True
-        If String.IsNullOrEmpty(Trim(tbNameEquipmentMod.Text)) Then
+        If String.IsNullOrEmpty(Trim(tbName.Text)) Then
             complete = False
-            MsgBox(json("MsgEmptyName"), vbOKOnly, json("MsgWarning"))
+            MsgBox(Lang.getInstance().getLang()("MsgEmptyName"),
+                   vbOKOnly,
+                   Lang.getInstance().getLang()("MsgWarning"))
         End If
 
-        If String.IsNullOrEmpty(Trim(tbCommentMod.Text)) And complete Then
+        If String.IsNullOrEmpty(Trim(tbComment.Text)) And complete Then
             complete = False
-            MsgBox(json("MsgEmptyComment"), vbOKOnly, json("MsgWarning"))
+            MsgBox(Lang.getInstance().getLang()("MsgEmptyComment"),
+                   vbOKOnly,
+                   Lang.getInstance().getLang()("MsgWarning"))
         End If
 
-        If String.IsNullOrEmpty(Trim(tbStateEquipMod.Text)) And complete Then
+        If String.IsNullOrEmpty(Trim(tbState.Text)) And complete Then
             complete = False
-            MsgBox(json("MsgEmptyState"), vbOKOnly, json("MsgWarning"))
+            MsgBox(Lang.getInstance().getLang()("MsgEmptyState"),
+                   vbOKOnly,
+                   Lang.getInstance().getLang()("MsgWarning"))
         End If
 
         If String.IsNullOrEmpty(Trim(tbDepositEquipMod.Text)) Or Not IsNumeric(tbDepositEquipMod.Text) And complete Then
@@ -57,47 +101,72 @@ Public Class UCEquipmentMod
         Return complete
     End Function
 
-    Private Sub UCEquipmentMod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        json = Lang.getInstance("fr_ca").ListProperty
-        loadDataGridView()
-        tbNameEquipmentMod.Text = row.Cells(1).Value
-        tbCommentMod.Text = row.Cells(5).Value
-        tbStateEquipMod.Text = row.Cells(3).Value
-        If row.Cells(4).Value = True Then
-            checkAvailableEquipMod.Checked = True
+    '__________________________________________________________________________________________________________
+    'Buttons
+    '__________________________________________________________________________________________________________
+
+    Private Sub btModEquip_Click(sender As Object, e As EventArgs) Handles btSave.Click
+        Dim check As Integer
+        If MsgBox(Lang.getInstance().getLang()("MsgSubmit"), vbYesNo) = vbYes Then
+            If verificationMod() Then
+                If checkAvailable.Checked Then
+                    check = 1
+                Else
+                    check = 0
+                End If
+
+                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbName.Text, kit, tbState.Text, check, tbComment.Text)
+                Me.SendToBack()
+                equipment.loadDataGridView()
+            End If
         End If
-        kit = row.Cells(2).Value
-        tbDepositEquipMod.Text = row.Cells(6).Value
     End Sub
 
-    Public Sub loadDataGridView()
-        gridEquipmentMod.DataSource = EntityKit.getInstance.getKit
-    End Sub
-
-    Private Sub btKitMod_Click(sender As Object, e As EventArgs) Handles btKitMod.Click
+    Private Sub btKitMod_Click(sender As Object, e As EventArgs) Handles btAddKit.Click
         AddKit.ShowDialog()
         loadDataGridView()
     End Sub
 
-    Private Sub btKitNullMod_Click(sender As Object, e As EventArgs) Handles btKitNullMod.Click
-        gridEquipmentMod.ClearSelection()
+    Private Sub btKitNullMod_Click(sender As Object, e As EventArgs) Handles btNoKit.Click
+        gridKit.ClearSelection()
         kit = 0
     End Sub
 
-    Private Sub gridEquipmentMod_DataBindingComplete(sender As Object, e As DataGridViewBindingCompleteEventArgs) Handles gridEquipmentMod.DataBindingComplete
-        gridEquipmentMod.ClearSelection()
-        For Each rowKit As DataGridViewRow In gridEquipmentMod.Rows
-            If rowKit.Cells(0).Value = row.Cells(2).Value Then
-                gridEquipmentMod.Rows(rowKit.Index).Selected = True
+    Private Sub btCancelModEquip_Click(sender As Object, e As EventArgs) Handles btCancel.Click, btBack.Click
+        Dim title As String = Lang.getInstance().getLang()("MsgCancelTitle")
+        Dim message As String = Lang.getInstance().getLang()("MsgCancel")
+        If Not tbName.Text = row.Cells(1).Value Or
+            Not tbComment.Text = row.Cells(5).Value Or
+            Not tbState.Text = row.Cells(3).Value Then
+            If MessageBox.Show(message,
+                               title,
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Warning) = DialogResult.Yes Then
+                Me.SendToBack()
             End If
-        Next
+        Else
+            Me.SendToBack()
+        End If
     End Sub
 
-    Private Sub btCancelModEquip_Click(sender As Object, e As EventArgs) Handles btCancelModEquip.Click
-        Me.SendToBack()
+    '__________________________________________________________________________________________________________
+    'Other
+    '__________________________________________________________________________________________________________
+
+    Public Sub loadDataGridView()
+        gridKit.DataSource = EntityKit.getInstance.getKit
     End Sub
 
-    Private Sub gridEquipmentMod_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipmentMod.CellClick
-        kit = gridEquipmentMod.CurrentRow.Cells(0).Value
+    Private Sub loadLanguage()
+        btSave.Text = Lang.getInstance().getLang()("SaveItem")
+        btCancel.Text = Lang.getInstance().getLang()("CancelButton")
+        btAddKit.Text = Lang.getInstance().getLang()("EquipmentModbtAddKit")
+        btNoKit.Text = Lang.getInstance().getLang()("EquipmentModbtNoKit")
+        labKitName.Text = Lang.getInstance().getLang()("EquipmentModlabKitName")
+        labAvailable.Text = Lang.getInstance().getLang()("EquipmentModlabAvailable")
+        labName.Text = Lang.getInstance().getLang()("EquipmentModlabName")
+        labState.Text = Lang.getInstance().getLang()("EquipmentModlabState")
+        labComment.Text = Lang.getInstance().getLang()("EquipmentModlabComment")
+        tbState.PlaceholderText = Lang.getInstance().getLang()("EquipmentModtbStatePlaceholder")
     End Sub
 End Class

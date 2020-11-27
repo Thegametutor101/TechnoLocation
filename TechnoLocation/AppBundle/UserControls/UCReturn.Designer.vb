@@ -32,58 +32,65 @@ Partial Class UCReturn
         '
         'tbReturnSearch
         '
-        Me.tbReturnSearch.Location = New System.Drawing.Point(3, 18)
+        Me.tbReturnSearch.Location = New System.Drawing.Point(4, 22)
+        Me.tbReturnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.tbReturnSearch.Name = "tbReturnSearch"
-        Me.tbReturnSearch.Size = New System.Drawing.Size(281, 20)
+        Me.tbReturnSearch.Size = New System.Drawing.Size(373, 22)
         Me.tbReturnSearch.TabIndex = 0
         Me.tbReturnSearch.Text = "Recherche"
         '
         'dropReturnSearch
         '
         Me.dropReturnSearch.FormattingEnabled = True
-        Me.dropReturnSearch.Location = New System.Drawing.Point(336, 18)
+        Me.dropReturnSearch.Location = New System.Drawing.Point(448, 22)
+        Me.dropReturnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.dropReturnSearch.Name = "dropReturnSearch"
-        Me.dropReturnSearch.Size = New System.Drawing.Size(135, 21)
+        Me.dropReturnSearch.Size = New System.Drawing.Size(179, 24)
         Me.dropReturnSearch.TabIndex = 1
         '
         'gridReturn
         '
         Me.gridReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridReturn.Location = New System.Drawing.Point(3, 78)
+        Me.gridReturn.Location = New System.Drawing.Point(32, 143)
+        Me.gridReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.gridReturn.Name = "gridReturn"
-        Me.gridReturn.Size = New System.Drawing.Size(953, 569)
+        Me.gridReturn.RowHeadersWidth = 51
+        Me.gridReturn.Size = New System.Drawing.Size(1190, 559)
         Me.gridReturn.TabIndex = 2
         '
         'checkReturn
         '
         Me.checkReturn.AutoSize = True
-        Me.checkReturn.Location = New System.Drawing.Point(3, 55)
+        Me.checkReturn.Location = New System.Drawing.Point(4, 68)
+        Me.checkReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.checkReturn.Name = "checkReturn"
-        Me.checkReturn.Size = New System.Drawing.Size(81, 17)
+        Me.checkReturn.Size = New System.Drawing.Size(103, 21)
         Me.checkReturn.TabIndex = 3
         Me.checkReturn.Text = "Cocher tout"
         Me.checkReturn.UseVisualStyleBackColor = True
         '
         'btReturn
         '
-        Me.btReturn.Location = New System.Drawing.Point(90, 51)
+        Me.btReturn.Location = New System.Drawing.Point(120, 63)
+        Me.btReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.btReturn.Name = "btReturn"
-        Me.btReturn.Size = New System.Drawing.Size(104, 23)
+        Me.btReturn.Size = New System.Drawing.Size(139, 28)
         Me.btReturn.TabIndex = 4
         Me.btReturn.Text = "Confirmer retour"
         Me.btReturn.UseVisualStyleBackColor = True
         '
         'UCReturn
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btReturn)
         Me.Controls.Add(Me.checkReturn)
         Me.Controls.Add(Me.gridReturn)
         Me.Controls.Add(Me.dropReturnSearch)
         Me.Controls.Add(Me.tbReturnSearch)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCReturn"
-        Me.Size = New System.Drawing.Size(956, 647)
+        Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridReturn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

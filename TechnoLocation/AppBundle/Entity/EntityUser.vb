@@ -146,4 +146,48 @@ Public Class EntityUser
         Return table
     End Function
 
+    Public Function getUsersCount() As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select count(code) from user"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("users")
+        table.Load(reader)
+        connection.Close()
+        Return table.Rows.Item(0).Item(0)
+    End Function
+
+    Public Function getUsersInactive() As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim currentDay = Today
+        'Select * From dbo.March2010 A Where A.Date >= Convert(DateTime, '2010-04-01')
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"(Select count(distinct U.code) 
+                                from user U 
+                                inner join rent R on R.renter = U.code 
+                                where (DATE(R.rentDate) < (str_to_date('{currentDay.Year},{currentDay.Month},{currentDay.Day}', '%Y,%m,%d') - 120)))
+                                UNION
+                                (Select count(distinct U.code) 
+                                from user U 
+                                inner join history H on H.renter = U.code 
+                                WHERE (DATE(H.date) < (str_to_date('{currentDay.Year},{currentDay.Month},{currentDay.Day}', '%Y,%m,%d') - 120)))"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("users")
+        table.Load(reader)
+        connection.Close()
+        Dim count As Integer
+        For Each row As DataRow In table.Rows
+            count += row.Item(0)
+        Next
+        Return count
+    End Function
+
 End Class

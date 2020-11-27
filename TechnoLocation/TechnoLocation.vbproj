@@ -130,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
+    <Compile Include="AppBundle\Controllers\TechnoLocationCustomCalendar.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AppBundle\Entity\EntityEquipment.vb" />
     <Compile Include="AppBundle\Entity\EntityCharacters.vb" />
     <Compile Include="AppBundle\Entity\EntityHistory.vb" />
@@ -137,6 +140,7 @@
     <Compile Include="AppBundle\Entity\EntityLog.vb" />
     <Compile Include="AppBundle\Entity\EntityRent.vb" />
     <Compile Include="AppBundle\Entity\EntityUser.vb" />
+    <None Include="AppBundle\Language\EN_US.json" />
     <None Include="AppBundle\Language\FR_CA.json" />
     <Compile Include="AppBundle\Language\loadLang.vb" />
     <Compile Include="AppBundle\MainForm.vb">
@@ -154,10 +158,10 @@
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
     <Compile Include="AppBundle\Translators\EncryptionTranslator.vb" />
-    <Compile Include="AppBundle\UserControls\UCAddUser.Designer.vb">
-      <DependentUpon>UCAddUser.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\UCUserAdd.Designer.vb">
+      <DependentUpon>UCUserAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\UCAddUser.vb">
+    <Compile Include="AppBundle\UserControls\UCUserAdd.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AppBundle\AddKit.Designer.vb">
@@ -259,8 +263,8 @@
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\UCAddUser.resx">
-      <DependentUpon>UCAddUser.vb</DependentUpon>
+    <EmbeddedResource Include="AppBundle\UserControls\UCUserAdd.resx">
+      <DependentUpon>UCUserAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCDashboard.resx">
       <DependentUpon>UCDashboard.vb</DependentUpon>
@@ -313,6 +317,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FileGuide.txt" />
+    <None Include="Resources\baseline_navigate_before_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_before_click_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_before_hover_black_18dp.png" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>
