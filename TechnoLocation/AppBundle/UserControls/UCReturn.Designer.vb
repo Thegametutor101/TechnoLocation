@@ -33,7 +33,7 @@ Partial Class UCReturn
         'tbReturnSearch
         '
         Me.tbReturnSearch.Location = New System.Drawing.Point(4, 22)
-        Me.tbReturnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbReturnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.tbReturnSearch.Name = "tbReturnSearch"
         Me.tbReturnSearch.Size = New System.Drawing.Size(373, 22)
         Me.tbReturnSearch.TabIndex = 0
@@ -43,7 +43,7 @@ Partial Class UCReturn
         '
         Me.dropReturnSearch.FormattingEnabled = True
         Me.dropReturnSearch.Location = New System.Drawing.Point(448, 22)
-        Me.dropReturnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dropReturnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.dropReturnSearch.Name = "dropReturnSearch"
         Me.dropReturnSearch.Size = New System.Drawing.Size(179, 24)
         Me.dropReturnSearch.TabIndex = 1
@@ -51,18 +51,18 @@ Partial Class UCReturn
         'gridReturn
         '
         Me.gridReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridReturn.Location = New System.Drawing.Point(4, 96)
-        Me.gridReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridReturn.Location = New System.Drawing.Point(32, 143)
+        Me.gridReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.gridReturn.Name = "gridReturn"
         Me.gridReturn.RowHeadersWidth = 51
-        Me.gridReturn.Size = New System.Drawing.Size(1271, 700)
+        Me.gridReturn.Size = New System.Drawing.Size(1190, 559)
         Me.gridReturn.TabIndex = 2
         '
         'checkReturn
         '
         Me.checkReturn.AutoSize = True
         Me.checkReturn.Location = New System.Drawing.Point(4, 68)
-        Me.checkReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.checkReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.checkReturn.Name = "checkReturn"
         Me.checkReturn.Size = New System.Drawing.Size(103, 21)
         Me.checkReturn.TabIndex = 3
@@ -72,7 +72,7 @@ Partial Class UCReturn
         'btReturn
         '
         Me.btReturn.Location = New System.Drawing.Point(120, 63)
-        Me.btReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.btReturn.Name = "btReturn"
         Me.btReturn.Size = New System.Drawing.Size(139, 28)
         Me.btReturn.TabIndex = 4
@@ -88,7 +88,7 @@ Partial Class UCReturn
         Me.Controls.Add(Me.gridReturn)
         Me.Controls.Add(Me.dropReturnSearch)
         Me.Controls.Add(Me.tbReturnSearch)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCReturn"
         Me.Size = New System.Drawing.Size(1263, 744)
         CType(Me.gridReturn, System.ComponentModel.ISupportInitialize).EndInit()

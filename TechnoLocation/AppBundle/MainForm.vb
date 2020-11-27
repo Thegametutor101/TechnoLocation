@@ -49,13 +49,6 @@ Public Class MainForm
     'Methods
     '__________________________________________________________________________________________________________
 
-    '* Only highlights 1 control on the form
-    'Private Sub MainForm_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-    '    If Me.WindowState = FormWindowState.Normal Then
-    '        ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.DodgerBlue, ButtonBorderStyle.Solid)
-    '    End If
-    'End Sub
-
     Private Sub HeaderBar_MouseDown(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseDown
         If e.Button = MouseButtons.Left Then
             ' Window Position
@@ -138,9 +131,11 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
-        For Each o As Control In panelMain.Controls
-            o.Refresh()
-        Next
+        panelMain.Controls.Clear()
+        Dim dashboard As New UCDashboard(Me)
+        dashboard.Dock = DockStyle.Fill
+        panelMain.Controls.Add(dashboard)
+        dashboard.BringToFront()
     End Sub
 
     Private Sub labAccount_Click(sender As Object, e As EventArgs) Handles labAccount.Click
@@ -194,7 +189,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment()
+        Dim iEquipment As New UCEquipment(Me)
         iEquipment.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iEquipment)

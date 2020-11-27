@@ -327,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FileGuide.txt" />
+    <None Include="Resources\baseline_navigate_before_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_before_click_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_before_hover_black_18dp.png" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>

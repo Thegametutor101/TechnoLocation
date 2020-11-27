@@ -99,6 +99,9 @@
     End Sub
 
     Public Sub loadLanguage()
-        labRentCountName.Text = Lang.getInstance().getLang()("MainlabAccount")
+        labRentCountName.Text = Lang.getInstance().getLang()("DashboardlabRentCountName")
+        labTotalUserName.Text = Lang.getInstance().getLang()("DashboardlabTotalUserName")
+        labInactiveUserName.Text = Lang.getInstance().getLang()("DashboardlabInactiveUserName")
+        labDepositName.Text = Lang.getInstance().getLang()("DashboardlabDepositName")
     End Sub
 End Class
