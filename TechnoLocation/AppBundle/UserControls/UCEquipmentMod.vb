@@ -44,6 +44,16 @@ Public Class UCEquipmentMod
             MsgBox(json("MsgEmptyState"), vbOKOnly, json("MsgWarning"))
         End If
 
+        If String.IsNullOrEmpty(Trim(tbDepositEquipMod.Text)) Or Not IsNumeric(tbDepositEquipMod.Text) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
+        Else
+            If tbDepositEquipMod.Text < 0 And complete Then
+                complete = False
+                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
+            End If
+        End If
+
         Return complete
     End Function
 
@@ -57,6 +67,7 @@ Public Class UCEquipmentMod
             checkAvailableEquipMod.Checked = True
         End If
         kit = row.Cells(2).Value
+        tbDepositEquipMod.Text = row.Cells(6).Value
     End Sub
 
     Public Sub loadDataGridView()

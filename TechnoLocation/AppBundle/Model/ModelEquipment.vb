@@ -78,7 +78,7 @@ Public Class ModelEquipment
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into equipment (name,kit,state,available,comments) values ('{name}',
+            command.CommandText = $"insert into equipment (name,kit,state,available,comments,deposit) values ('{name}',
                                                                                                         '{kit}',
                                                                                                         '{state}',
                                                                                                         '{available}',

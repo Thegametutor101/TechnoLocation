@@ -1,8 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Newtonsoft.Json.Linq
 Public Class UCEquipmentAdd
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
     Dim equipment As UCEquipment
+    Private json As JObject
 
     Sub New(equip As UCEquipment)
 
@@ -27,11 +29,11 @@ Public Class UCEquipmentAdd
                 End If
 
                 If kit = 0 Then
-                    'If MsgBox(Msg.getMsgKitNull, vbYesNo, Msg.getMsgWarning) = vbYes Then
-                    '    AddToDb(check)
-                    'End If
+                    If MsgBox(json("MsgKitNull"), vbYesNo, json("MsgWarning")) = vbYes Then
+                        AddToDb(check)
+                    End If
                 Else
-                    AddToDb(check)
+                        AddToDb(check)
                 End If
             End If
         Catch ex As Exception
@@ -41,20 +43,30 @@ Public Class UCEquipmentAdd
 
     Private Function verificationAdd() As Boolean
         Dim complete As Boolean = True
-        'If String.IsNullOrEmpty(Trim(tbNameEquipmentAdd.Text)) Then
-        '    complete = False
-        '    MsgBox(Msg.getMsgEmptyName, vbOKOnly, Msg.getMsgWarning)
-        'End If
+        If String.IsNullOrEmpty(Trim(tbNameEquipmentAdd.Text)) Then
+            complete = False
+            MsgBox(json("MsgEmptyName"), vbOKOnly, json("MsgWarning"))
+        End If
 
-        'If String.IsNullOrEmpty(Trim(tbComment.Text)) And complete Then
-        '    complete = False
-        '    MsgBox(Msg.getMsgEmptyComment, vbOKOnly, Msg.getMsgWarning)
-        'End If
+        If String.IsNullOrEmpty(Trim(tbComment.Text)) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyComment"), vbOKOnly, json("MsgWarning"))
+        End If
 
-        'If String.IsNullOrEmpty(Trim(tbState.Text)) And complete Then
-        '    complete = False
-        '    MsgBox(Msg.getMsgEmptyState, vbOKOnly, Msg.getMsgWarning)
-        'End If
+        If String.IsNullOrEmpty(Trim(tbState.Text)) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyState"), vbOKOnly, json("MsgWarning"))
+        End If
+
+        If String.IsNullOrEmpty(Trim(tbDepositEquipAdd.Text)) Or Not IsNumeric(tbDepositEquipAdd.Text) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
+        Else
+            If tbDepositEquipAdd.Text < 0 And complete Then
+                complete = False
+                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
+            End If
+        End If
 
         Return complete
     End Function
@@ -66,12 +78,12 @@ Public Class UCEquipmentAdd
     Private Sub AddToDb(check As Integer)
         Dim numAdd As Integer = 0
         For index As Integer = 1 To numEquipAdd.Value
-            If ModelEquipment.getInstance().addEquipment(tbNameEquipmentAdd.Text, kit, tbState.Text, check, tbComment.Text) Then
+            If ModelEquipment.getInstance().addEquipment(tbNameEquipmentAdd.Text, kit, tbState.Text, check, tbComment.Text, tbDepositEquipAdd.Text) Then
                 numAdd += 1
             End If
         Next
         If numAdd = numEquipAdd.Value Then
-            'MsgBox(Msg.getMsgSuccessAddEquip, vbOKOnly, Msg.getMsgSuccessAddTitle)
+            MsgBox(json("MsgSuccessAddEquip"), vbOKOnly, json("MsgSuccessAddTitle"))
             tbNameEquipmentAdd.Clear()
             tbComment.Clear()
             tbState.Clear()
@@ -80,7 +92,7 @@ Public Class UCEquipmentAdd
             Me.SendToBack()
             equipment.loadDataGridView()
         Else
-            'MsgBox(Msg.getMsgErrorAddEEquip, vbOKOnly, Msg.getMsgWarning)
+            MsgBox(json("MsgErrorAddEEquip"), vbOKOnly, json("MsgWarning"))
         End If
     End Sub
 
@@ -89,6 +101,7 @@ Public Class UCEquipmentAdd
     End Sub
 
     Private Sub UCEquipmentAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        json = Lang.getInstance("fr_ca").ListProperty
         loadDataGridView()
     End Sub
 

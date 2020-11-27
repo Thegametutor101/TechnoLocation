@@ -133,6 +133,7 @@ Partial Class UCRent
         'calendarRent
         '
         Me.calendarRent.Location = New System.Drawing.Point(90, 361)
+        Me.calendarRent.MaxSelectionCount = 1
         Me.calendarRent.Name = "calendarRent"
         Me.calendarRent.TabIndex = 8
         '
@@ -190,7 +191,6 @@ Partial Class UCRent
         Me.tbItemSearch.Name = "tbItemSearch"
         Me.tbItemSearch.Size = New System.Drawing.Size(246, 20)
         Me.tbItemSearch.TabIndex = 13
-        Me.tbItemSearch.Text = "Rechercher un équipement"
         '
         'tbSuggDeposit
         '

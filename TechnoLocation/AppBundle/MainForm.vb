@@ -233,6 +233,10 @@
         iEquipment.BringToFront()
     End Sub
 
+    Private Sub btHome_Click_1(sender As Object, e As EventArgs) Handles btHome.Click
+
+    End Sub
+
     ''' <summary>
     ''' 
     ''' </summary>

@@ -1,17 +1,23 @@
-﻿Public Class UCRent
+﻿Imports Newtonsoft.Json.Linq
+Public Class UCRent
+    Dim json As JObject
+    Dim datePick As Boolean = True
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        json = Lang.getInstance("fr_ca").ListProperty
         gridUserSearch.DataSource = EntityUser.getInstance.getUsers
-        loadDataGridViewEquip()
-        gridItemAdd.ColumnCount = 5
+        gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
+        gridItemAdd.ColumnCount = 6
         gridItemAdd.Columns(0).Name = "Code"
         gridItemAdd.Columns(1).Name = "Nom"
         gridItemAdd.Columns(2).Name = "kit"
         gridItemAdd.Columns(3).Name = "État"
         gridItemAdd.Columns(4).Name = "Commentaire"
+        gridItemAdd.Columns(5).Name = "Dépôt sugéré"
     End Sub
 
     Public Sub loadDataGridViewEquip()
-        gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
+
+
     End Sub
 
     Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
@@ -42,11 +48,68 @@
     End Sub
 
     Private Sub gridItemSearch_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridItemSearch.CellDoubleClick
-        gridItemAdd.Rows.Add(New String() {gridItemSearch.CurrentRow.Cells(0).Value, gridItemSearch.CurrentRow.Cells(1).Value, gridItemSearch.CurrentRow.Cells(2).Value, gridItemSearch.CurrentRow.Cells(3).Value, gridItemSearch.CurrentRow.Cells(5).Value})
-        gridItemSearch.Rows.Remove(gridItemSearch.CurrentRow)
+        If gridItemSearch.CurrentRow.Cells(4).Value = True Then
+            gridItemAdd.Rows.Add(New String() {gridItemSearch.CurrentRow.Cells(0).Value, gridItemSearch.CurrentRow.Cells(1).Value, gridItemSearch.CurrentRow.Cells(2).Value, gridItemSearch.CurrentRow.Cells(3).Value, gridItemSearch.CurrentRow.Cells(5).Value, gridItemSearch.CurrentRow.Cells(6).Value})
+            gridItemSearch.CurrentRow.Cells(4).Value = 0
+        End If
+        changeDeposit()
     End Sub
 
     Private Sub gridItemAdd_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridItemAdd.CellDoubleClick
+        For Each row As DataGridViewRow In gridItemSearch.Rows
+            If row.Cells(0).Value = gridItemAdd.CurrentRow.Cells(0).Value Then
+                row.Cells(4).Value = 1
+            End If
+        Next
         gridItemAdd.Rows.Remove(gridItemAdd.CurrentRow)
+        changeDeposit()
+    End Sub
+
+    Private Sub changeDeposit()
+        Dim deposit As Integer = 0
+        For Each row As DataGridViewRow In gridItemAdd.Rows
+            deposit += row.Cells(5).Value
+        Next
+        tbSuggDeposit.Text = deposit
+    End Sub
+
+    Private Sub btSavNewRent_Click(sender As Object, e As EventArgs) Handles btSavNewRent.Click
+        Dim complete As Boolean = True
+        If gridItemAdd.Rows.Count < 0 Then
+            complete = False
+            MsgBox(json("MsgNoEquipementSelected"), vbOKOnly, json("MsgWarning"))
+        End If
+        If String.IsNullOrEmpty(Trim(tbRealDeposit.Text)) Or Not IsNumeric(tbRealDeposit) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
+        Else
+            If tbRealDeposit.Text < 0 And complete Then
+                complete = False
+                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
+            End If
+        End If
+        If complete Then
+            If MsgBox(json("MsgAddRent"), vbYesNo) = vbYes Then
+                For Each row As DataGridViewRow In gridItemAdd.Rows
+                    ''Faire l'ajout dans la bd
+                Next
+            End If
+        End If
+    End Sub
+
+    Private Sub tbBeginDate_Click(sender As Object, e As EventArgs) Handles tbBeginDate.Click
+        datePick = True
+    End Sub
+
+    Private Sub tbEndDate_Click(sender As Object, e As EventArgs) Handles tbEndDate.Click
+        datePick = False
+    End Sub
+
+    Private Sub calendarRent_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calendarRent.DateChanged
+        If datePick Then
+            tbBeginDate.Text = calendarRent.SelectionStart
+        Else
+            tbEndDate.Text = calendarRent.SelectionStart
+        End If
     End Sub
 End Class
