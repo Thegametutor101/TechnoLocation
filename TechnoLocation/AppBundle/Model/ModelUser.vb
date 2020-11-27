@@ -17,14 +17,35 @@ Public Class ModelUser
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"update user set password='{password}',
-                                                    firstName='{firstName}',
+            command.CommandText = $"update user set firstName='{firstName}',
                                                     lastName='{lastName}',
                                                     email='{email}',
                                                     phoneMain='{phoneMain}',
                                                     phone2='{phone2}',
                                                     job='{job}',
-                                                    permission='{permissions}',
+                                                    permissions='{permissions}',
+                                                    balance='{balance}' where code = '{code}'"
+            connection.Open()
+            Dim add As Integer = command.ExecuteNonQuery()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+        End Try
+    End Function
+
+    Public Function updateUser1Phone(code As Integer, password As String, firstName As String, lastName As String, email As String, phoneMain As String, job As Integer, permissions As Integer, balance As Integer)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"update user set firstName='{firstName}',
+                                                    lastName='{lastName}',
+                                                    email='{email}',
+                                                    phoneMain='{phoneMain}',
+                                                    job='{job}',
+                                                    permissions='{permissions}',
                                                     balance='{balance}' where code = '{code}'"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
@@ -72,12 +93,58 @@ Public Class ModelUser
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"insert into user values ('{code}',
-                                                            null,
+                                                            '{password}',
                                                             '{firstName}',
                                                             '{lastName}',
                                                             '{email}',
                                                             '{phoneMain}',
                                                             '{phone2}',
+                                                            '{job}',
+                                                            '{permissions}',
+                                                            '{balance}')"
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+            If genAccount Then
+                Dim loginController = New LoginController
+                loginController.createAccount(code, password)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+        End Try
+    End Function
+
+    Public Function addUser1Phone(code As Integer,
+                            password As String,
+                            firstName As String,
+                            lastName As String,
+                            email As String,
+                            phoneMain As String,
+                            job As Integer,
+                            permissions As Integer,
+                            balance As Double,
+                            genAccount As Boolean)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"insert into user (code,
+                                                      password,
+                                                      firstName,
+                                                      lastName,
+                                                      email,
+                                                      phoneMain,
+                                                      job,
+                                                      permissions,
+                                                      balance) 
+                                                            values ('{code}',
+                                                            '{password}',
+                                                            '{firstName}',
+                                                            '{lastName}',
+                                                            '{email}',
+                                                            '{phoneMain}',
                                                             '{job}',
                                                             '{permissions}',
                                                             '{balance}')"
