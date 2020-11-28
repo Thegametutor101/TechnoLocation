@@ -1,17 +1,12 @@
 ﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipment
-    Dim json As JObject
-    Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
-        Dim iEquipmentAdd As New UCEquipmentAdd(Me)
-        iEquipmentAdd.Dock = DockStyle.Fill
-        MainForm.panelMain.Controls.Add(iEquipmentAdd)
-        iEquipmentAdd.BringToFront()
 
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
 
     Dim mainForm As New MainForm
+    Dim json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -29,7 +24,6 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Private Sub UCEquipment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        json = Lang.getInstance("fr_ca").ListProperty
         loadDataGridView()
         dropSearch.SelectedIndex() = 0
         loadLanguage()

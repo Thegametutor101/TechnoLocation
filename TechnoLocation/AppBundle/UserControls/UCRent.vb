@@ -1,9 +1,32 @@
-﻿Imports Newtonsoft.Json.Linq
+﻿Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json.Linq
+
 Public Class UCRent
+
     Dim json As JObject
     Dim datePick As Boolean = True
+    Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
+        Dim iUserAdd As New UCUserAdd()
+        iUserAdd.Dock = DockStyle.Fill
+        MainForm.panelMain.Controls.Add(iUserAdd)
+        iUserAdd.BringToFront()
+        gridUserSearch.DataSource = EntityUser.getInstance.getUsers()
+    End Sub
+
+    Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
+        If (Not String.IsNullOrEmpty(tbUserSearch.Text)) Then
+            Dim recherche As String = tbUserSearch.Text
+            Dim entityUser As EntityUser = EntityUser.getInstance()
+            If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
+                If recherche.Length <= 10 Then
+                    gridUserSearch.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
+                End If
+            Else
+                gridUserSearch.DataSource = entityUser.getUsers()
+            End If
+        End If
+    End Sub
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        json = Lang.getInstance("fr_ca").ListProperty
         gridUserSearch.DataSource = EntityUser.getInstance.getUsers
         gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
         gridItemAdd.ColumnCount = 6
@@ -13,15 +36,6 @@ Public Class UCRent
         gridItemAdd.Columns(3).Name = "État"
         gridItemAdd.Columns(4).Name = "Commentaire"
         gridItemAdd.Columns(5).Name = "Dépôt sugéré"
-    End Sub
-
-    Public Sub loadDataGridViewEquip()
-
-
-    End Sub
-
-    Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
-
     End Sub
 
     Private Sub tbItemSearch_TextChanged(sender As Object, e As EventArgs) Handles tbItemSearch.TextChanged

@@ -50,6 +50,8 @@ Partial Class UCEquipmentMod
         Me.labKitName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btNoKit = New Guna.UI2.WinForms.Guna2Button()
         Me.btAddKit = New Guna.UI2.WinForms.Guna2Button()
+        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.tbDepositEquipMod = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
@@ -58,6 +60,7 @@ Partial Class UCEquipmentMod
         Me.Guna2Panel9.SuspendLayout()
         CType(Me.gridKit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel8.SuspendLayout()
+        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -116,6 +119,8 @@ Partial Class UCEquipmentMod
         '
         'Guna2Panel6
         '
+        Me.Guna2Panel6.Controls.Add(Me.tbDepositEquipMod)
+        Me.Guna2Panel6.Controls.Add(Me.labDeposit)
         Me.Guna2Panel6.Controls.Add(Me.tbComment)
         Me.Guna2Panel6.Controls.Add(Me.tbState)
         Me.Guna2Panel6.Controls.Add(Me.tbName)
@@ -237,7 +242,7 @@ Partial Class UCEquipmentMod
         'labAvailable
         '
         Me.labAvailable.BackColor = System.Drawing.Color.Transparent
-        Me.labAvailable.Location = New System.Drawing.Point(257, 456)
+        Me.labAvailable.Location = New System.Drawing.Point(254, 526)
         Me.labAvailable.Name = "labAvailable"
         Me.labAvailable.Size = New System.Drawing.Size(106, 18)
         Me.labAvailable.TabIndex = 43
@@ -250,7 +255,7 @@ Partial Class UCEquipmentMod
         Me.checkAvailable.CheckedState.BorderThickness = 2
         Me.checkAvailable.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkAvailable.CheckedState.Parent = Me.checkAvailable
-        Me.checkAvailable.Location = New System.Drawing.Point(231, 455)
+        Me.checkAvailable.Location = New System.Drawing.Point(228, 525)
         Me.checkAvailable.Name = "checkAvailable"
         Me.checkAvailable.ShadowDecoration.Parent = Me.checkAvailable
         Me.checkAvailable.Size = New System.Drawing.Size(20, 20)
@@ -455,6 +460,37 @@ Partial Class UCEquipmentMod
         Me.btAddKit.TabIndex = 3
         Me.btAddKit.Text = "Ajouter un nouveau kit"
         '
+        'labDeposit
+        '
+        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
+        Me.labDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDeposit.Location = New System.Drawing.Point(30, 461)
+        Me.labDeposit.Name = "labDeposit"
+        Me.labDeposit.Size = New System.Drawing.Size(114, 27)
+        Me.labDeposit.TabIndex = 50
+        Me.labDeposit.Text = "Dépot recquis"
+        '
+        'tbDepositEquipMod
+        '
+        Me.tbDepositEquipMod.BackColor = System.Drawing.Color.Transparent
+        Me.tbDepositEquipMod.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbDepositEquipMod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.tbDepositEquipMod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbDepositEquipMod.FocusedState.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbDepositEquipMod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.tbDepositEquipMod.Location = New System.Drawing.Point(231, 457)
+        Me.tbDepositEquipMod.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.tbDepositEquipMod.Name = "tbDepositEquipMod"
+        Me.tbDepositEquipMod.ShadowDecoration.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.Size = New System.Drawing.Size(356, 36)
+        Me.tbDepositEquipMod.TabIndex = 52
+        '
         'UCEquipmentMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -478,6 +514,7 @@ Partial Class UCEquipmentMod
         CType(Me.gridKit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel8.ResumeLayout(False)
         Me.Guna2Panel8.PerformLayout()
+        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -505,4 +542,6 @@ Partial Class UCEquipmentMod
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents gridKit As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents btBack As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents labDeposit As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents tbDepositEquipMod As Guna.UI2.WinForms.Guna2NumericUpDown
 End Class

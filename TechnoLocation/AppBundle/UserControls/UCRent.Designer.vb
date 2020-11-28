@@ -55,7 +55,7 @@ Partial Class UCRent
         'btModRent
         '
         Me.btModRent.Location = New System.Drawing.Point(208, -1)
-        Me.btModRent.Margin = New System.Windows.Forms.Padding(4)
+        Me.btModRent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btModRent.Name = "btModRent"
         Me.btModRent.Size = New System.Drawing.Size(199, 66)
         Me.btModRent.TabIndex = 1
@@ -65,7 +65,7 @@ Partial Class UCRent
         'btDelRent
         '
         Me.btDelRent.Location = New System.Drawing.Point(415, -1)
-        Me.btDelRent.Margin = New System.Windows.Forms.Padding(4)
+        Me.btDelRent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btDelRent.Name = "btDelRent"
         Me.btDelRent.Size = New System.Drawing.Size(196, 66)
         Me.btDelRent.TabIndex = 2
@@ -78,25 +78,23 @@ Partial Class UCRent
         Me.Panel1.Controls.Add(Me.btDelRent)
         Me.Panel1.Controls.Add(Me.btModRent)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1274, 66)
         Me.Panel1.TabIndex = 3
         '
         'btBarCodeUser
         '
-        Me.btBarCode.Location = New System.Drawing.Point(5, 74)
-        Me.btBarCode.Margin = New System.Windows.Forms.Padding(4)
-        Me.btBarCode.Name = "btBarCode"
-        Me.btBarCode.Size = New System.Drawing.Size(160, 28)
-        Me.btBarCode.TabIndex = 4
-        Me.btBarCode.Text = "Code barre article"
-        Me.btBarCode.UseVisualStyleBackColor = True
+        Me.btBarCodeUser.Location = New System.Drawing.Point(0, 0)
+        Me.btBarCodeUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btBarCodeUser.Name = "btBarCodeUser"
+        Me.btBarCodeUser.Size = New System.Drawing.Size(100, 28)
+        Me.btBarCodeUser.TabIndex = 24
         '
         'btAddUser
         '
         Me.btAddUser.Location = New System.Drawing.Point(173, 74)
-        Me.btAddUser.Margin = New System.Windows.Forms.Padding(4)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.Size = New System.Drawing.Size(160, 28)
         Me.btAddUser.TabIndex = 5
@@ -106,7 +104,7 @@ Partial Class UCRent
         'tbUserSearch
         '
         Me.tbUserSearch.Location = New System.Drawing.Point(5, 113)
-        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbUserSearch.Name = "tbUserSearch"
         Me.tbUserSearch.Size = New System.Drawing.Size(327, 22)
         Me.tbUserSearch.TabIndex = 6
@@ -120,7 +118,7 @@ Partial Class UCRent
         Me.gridUserSearch.AllowUserToResizeRows = False
         Me.gridUserSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridUserSearch.Location = New System.Drawing.Point(5, 145)
-        Me.gridUserSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.gridUserSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gridUserSearch.Name = "gridUserSearch"
         Me.gridUserSearch.RowHeadersWidth = 51
         Me.gridUserSearch.Size = New System.Drawing.Size(607, 284)
@@ -128,8 +126,8 @@ Partial Class UCRent
         '
         'calendarRent
         '
-        Me.calendarRent.Location = New System.Drawing.Point(161, 444)
-        Me.calendarRent.Margin = New System.Windows.Forms.Padding(12, 11, 12, 11)
+        Me.calendarRent.Location = New System.Drawing.Point(299, 447)
+        Me.calendarRent.Margin = New System.Windows.Forms.Padding(16, 14, 16, 14)
         Me.calendarRent.MaxSelectionCount = 1
         Me.calendarRent.Name = "calendarRent"
         Me.calendarRent.TabIndex = 8
@@ -137,7 +135,7 @@ Partial Class UCRent
         'labBeginDate
         '
         Me.labBeginDate.AutoSize = True
-        Me.labBeginDate.Location = New System.Drawing.Point(169, 662)
+        Me.labBeginDate.Location = New System.Drawing.Point(22, 471)
         Me.labBeginDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labBeginDate.Name = "labBeginDate"
         Me.labBeginDate.Size = New System.Drawing.Size(34, 17)
@@ -146,8 +144,8 @@ Partial Class UCRent
         '
         'tbBeginDate
         '
-        Me.tbBeginDate.Location = New System.Drawing.Point(213, 654)
-        Me.tbBeginDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbBeginDate.Location = New System.Drawing.Point(66, 463)
+        Me.tbBeginDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbBeginDate.Name = "tbBeginDate"
         Me.tbBeginDate.ReadOnly = True
         Me.tbBeginDate.Size = New System.Drawing.Size(203, 22)
@@ -155,8 +153,8 @@ Partial Class UCRent
         '
         'tbEndDate
         '
-        Me.tbEndDate.Location = New System.Drawing.Point(213, 700)
-        Me.tbEndDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbEndDate.Location = New System.Drawing.Point(66, 509)
+        Me.tbEndDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbEndDate.Name = "tbEndDate"
         Me.tbEndDate.ReadOnly = True
         Me.tbEndDate.Size = New System.Drawing.Size(203, 22)
@@ -165,7 +163,7 @@ Partial Class UCRent
         'labEndDate
         '
         Me.labEndDate.AutoSize = True
-        Me.labEndDate.Location = New System.Drawing.Point(169, 709)
+        Me.labEndDate.Location = New System.Drawing.Point(22, 518)
         Me.labEndDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labEndDate.Name = "labEndDate"
         Me.labEndDate.Size = New System.Drawing.Size(25, 17)
@@ -174,32 +172,33 @@ Partial Class UCRent
         '
         'gridItemSearch
         '
-        Me.gridItemSeach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridItemSeach.Location = New System.Drawing.Point(664, 113)
-        Me.gridItemSeach.Margin = New System.Windows.Forms.Padding(4)
-        Me.gridItemSeach.Name = "gridItemSeach"
-        Me.gridItemSeach.RowHeadersWidth = 51
-        Me.gridItemSeach.Size = New System.Drawing.Size(577, 249)
-        Me.gridItemSeach.TabIndex = 14
         Me.gridItemSearch.AllowUserToAddRows = False
         Me.gridItemSearch.AllowUserToDeleteRows = False
         Me.gridItemSearch.AllowUserToResizeColumns = False
         Me.gridItemSearch.AllowUserToResizeRows = False
+        Me.gridItemSearch.ColumnHeadersHeight = 29
+        Me.gridItemSearch.Location = New System.Drawing.Point(610, 113)
+        Me.gridItemSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridItemSearch.Name = "gridItemSearch"
         Me.gridItemSearch.ReadOnly = True
+        Me.gridItemSearch.RowHeadersWidth = 51
         Me.gridItemSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridItemSearch.Size = New System.Drawing.Size(320, 185)
+        Me.gridItemSearch.TabIndex = 23
         '
         'tbItemSearch
         '
         Me.tbItemSearch.Location = New System.Drawing.Point(664, 76)
-        Me.tbItemSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbItemSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbItemSearch.Name = "tbItemSearch"
         Me.tbItemSearch.Size = New System.Drawing.Size(327, 22)
         Me.tbItemSearch.TabIndex = 13
+        Me.tbItemSearch.Text = "Rechercher un Objet"
         '
         'tbSuggDeposit
         '
-        Me.tbSuggDeposit.Location = New System.Drawing.Point(663, 618)
-        Me.tbSuggDeposit.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbSuggDeposit.Location = New System.Drawing.Point(628, 565)
+        Me.tbSuggDeposit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbSuggDeposit.Name = "tbSuggDeposit"
         Me.tbSuggDeposit.ReadOnly = True
         Me.tbSuggDeposit.Size = New System.Drawing.Size(227, 22)
@@ -207,32 +206,32 @@ Partial Class UCRent
         '
         'tbRealDeposit
         '
-        Me.tbRealDeposit.Location = New System.Drawing.Point(1014, 618)
-        Me.tbRealDeposit.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbRealDeposit.Location = New System.Drawing.Point(978, 565)
+        Me.tbRealDeposit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbRealDeposit.Name = "tbRealDeposit"
         Me.tbRealDeposit.Size = New System.Drawing.Size(227, 22)
         Me.tbRealDeposit.TabIndex = 16
         '
         'gridItemAdd
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(664, 370)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(577, 209)
-        Me.DataGridView1.TabIndex = 17
         Me.gridItemAdd.AllowUserToAddRows = False
         Me.gridItemAdd.AllowUserToDeleteRows = False
         Me.gridItemAdd.AllowUserToResizeColumns = False
         Me.gridItemAdd.AllowUserToResizeRows = False
+        Me.gridItemAdd.ColumnHeadersHeight = 29
+        Me.gridItemAdd.Location = New System.Drawing.Point(887, 264)
+        Me.gridItemAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridItemAdd.Name = "gridItemAdd"
         Me.gridItemAdd.ReadOnly = True
+        Me.gridItemAdd.RowHeadersWidth = 51
         Me.gridItemAdd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridItemAdd.Size = New System.Drawing.Size(320, 185)
+        Me.gridItemAdd.TabIndex = 22
         '
         'labSuggDeposit
         '
         Me.labSuggDeposit.AutoSize = True
-        Me.labSuggDeposit.Location = New System.Drawing.Point(659, 598)
+        Me.labSuggDeposit.Location = New System.Drawing.Point(624, 545)
         Me.labSuggDeposit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labSuggDeposit.Name = "labSuggDeposit"
         Me.labSuggDeposit.Size = New System.Drawing.Size(110, 17)
@@ -242,7 +241,7 @@ Partial Class UCRent
         'labReelDeposit
         '
         Me.labReelDeposit.AutoSize = True
-        Me.labReelDeposit.Location = New System.Drawing.Point(1010, 598)
+        Me.labReelDeposit.Location = New System.Drawing.Point(976, 545)
         Me.labReelDeposit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labReelDeposit.Name = "labReelDeposit"
         Me.labReelDeposit.Size = New System.Drawing.Size(117, 17)
@@ -251,8 +250,8 @@ Partial Class UCRent
         '
         'btSavNewRent
         '
-        Me.btSavNewRent.Location = New System.Drawing.Point(663, 661)
-        Me.btSavNewRent.Margin = New System.Windows.Forms.Padding(4)
+        Me.btSavNewRent.Location = New System.Drawing.Point(628, 608)
+        Me.btSavNewRent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btSavNewRent.Name = "btSavNewRent"
         Me.btSavNewRent.Size = New System.Drawing.Size(149, 66)
         Me.btSavNewRent.TabIndex = 3
@@ -261,8 +260,8 @@ Partial Class UCRent
         '
         'btCancelRent
         '
-        Me.btCancelRent.Location = New System.Drawing.Point(1032, 660)
-        Me.btCancelRent.Margin = New System.Windows.Forms.Padding(4)
+        Me.btCancelRent.Location = New System.Drawing.Point(997, 607)
+        Me.btCancelRent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btCancelRent.Name = "btCancelRent"
         Me.btCancelRent.Size = New System.Drawing.Size(149, 66)
         Me.btCancelRent.TabIndex = 5
@@ -271,8 +270,8 @@ Partial Class UCRent
         '
         'btResetRent
         '
-        Me.btResetRent.Location = New System.Drawing.Point(839, 660)
-        Me.btResetRent.Margin = New System.Windows.Forms.Padding(4)
+        Me.btResetRent.Location = New System.Drawing.Point(804, 607)
+        Me.btResetRent.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btResetRent.Name = "btResetRent"
         Me.btResetRent.Size = New System.Drawing.Size(152, 66)
         Me.btResetRent.TabIndex = 4
@@ -283,17 +282,19 @@ Partial Class UCRent
         '
         Me.dropSearchEquip.FormattingEnabled = True
         Me.dropSearchEquip.Items.AddRange(New Object() {"Code", "Nom", "Kit", "État", "Commentaire"})
-        Me.dropSearchEquip.Location = New System.Drawing.Point(806, 62)
+        Me.dropSearchEquip.Location = New System.Drawing.Point(1022, 76)
+        Me.dropSearchEquip.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dropSearchEquip.Name = "dropSearchEquip"
-        Me.dropSearchEquip.Size = New System.Drawing.Size(147, 21)
+        Me.dropSearchEquip.Size = New System.Drawing.Size(195, 24)
         Me.dropSearchEquip.TabIndex = 20
         '
         'dropSearchUser
         '
         Me.dropSearchUser.FormattingEnabled = True
-        Me.dropSearchUser.Location = New System.Drawing.Point(276, 92)
+        Me.dropSearchUser.Location = New System.Drawing.Point(368, 113)
+        Me.dropSearchUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dropSearchUser.Name = "dropSearchUser"
-        Me.dropSearchUser.Size = New System.Drawing.Size(146, 21)
+        Me.dropSearchUser.Size = New System.Drawing.Size(193, 24)
         Me.dropSearchUser.TabIndex = 21
         '
         'UCRent
@@ -322,9 +323,9 @@ Partial Class UCRent
         Me.Controls.Add(Me.btAddUser)
         Me.Controls.Add(Me.btBarCodeUser)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCRent"
-        Me.Size = New System.Drawing.Size(1263, 744)
+        Me.Size = New System.Drawing.Size(1263, 743)
         Me.Panel1.ResumeLayout(False)
         CType(Me.gridUserSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridItemSearch, System.ComponentModel.ISupportInitialize).EndInit()

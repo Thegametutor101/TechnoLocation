@@ -101,7 +101,6 @@ Public Class UCEquipmentAdd
     End Sub
 
     Private Sub UCEquipmentAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        json = Lang.getInstance("fr_ca").ListProperty
         loadDataGridView()
     End Sub
 

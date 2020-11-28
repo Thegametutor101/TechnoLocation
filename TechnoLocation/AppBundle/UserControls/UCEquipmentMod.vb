@@ -88,16 +88,6 @@ Public Class UCEquipmentMod
                    Lang.getInstance().getLang()("MsgWarning"))
         End If
 
-        If String.IsNullOrEmpty(Trim(tbDepositEquipMod.Text)) Or Not IsNumeric(tbDepositEquipMod.Text) And complete Then
-            complete = False
-            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
-        Else
-            If tbDepositEquipMod.Text < 0 And complete Then
-                complete = False
-                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
-            End If
-        End If
-
         Return complete
     End Function
 
@@ -115,7 +105,13 @@ Public Class UCEquipmentMod
                     check = 0
                 End If
 
-                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbName.Text, kit, tbState.Text, check, tbComment.Text)
+                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value,
+                                                           tbName.Text,
+                                                           kit,
+                                                           tbState.Text,
+                                                           check,
+                                                           tbComment.Text,
+                                                           tbDepositEquipMod.Value)
                 Me.SendToBack()
                 equipment.loadDataGridView()
             End If
