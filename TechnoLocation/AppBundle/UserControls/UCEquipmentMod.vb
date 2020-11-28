@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipmentMod
 
 
@@ -86,6 +86,16 @@ Public Class UCEquipmentMod
             MsgBox(Lang.getInstance().getLang()("MsgEmptyState"),
                    vbOKOnly,
                    Lang.getInstance().getLang()("MsgWarning"))
+        End If
+
+        If String.IsNullOrEmpty(Trim(tbDepositEquipMod.Text)) Or Not IsNumeric(tbDepositEquipMod.Text) And complete Then
+            complete = False
+            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
+        Else
+            If tbDepositEquipMod.Text < 0 And complete Then
+                complete = False
+                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
+            End If
         End If
 
         Return complete

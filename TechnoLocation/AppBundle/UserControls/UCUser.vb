@@ -1,9 +1,18 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class UCUser
+    Dim mainForm As New MainForm
     Private Sub UCUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gridUser.DataSource = EntityUser.getInstance.getUsers()
 
+    End Sub
+    Public Sub New(main As MainForm)
+
+        ' Cet appel est requis par le concepteur.
+        InitializeComponent()
+
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        mainForm = main
     End Sub
     Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
         userSearch()
@@ -23,7 +32,7 @@ Public Class UCUser
                             gridUser.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
                         End If
                     Else
-                            gridUser.DataSource = entityUser.getUsers()
+                        gridUser.DataSource = entityUser.getUsers()
                     End If
                 Case 1
                     gridUser.DataSource = entityUser.getUsersFirstName(recherche)
@@ -51,13 +60,23 @@ Public Class UCUser
         For Each row As DataGridViewRow In gridUser.SelectedRows
             ModelUser.getInstance().delUser(row.Cells(0).Value)
         Next
+        gridUser.DataSource = EntityUser.getInstance.getUsers()
         userSearch()
     End Sub
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
         Dim iUserAdd As New UCUserAdd()
         iUserAdd.Dock = DockStyle.Fill
-        MainForm.panelMain.Controls.Add(iUserAdd)
+        mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
+        gridUser.DataSource = EntityUser.getInstance.getUsers()
+    End Sub
+
+    Private Sub gridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridUser.CellContentClick
+        Dim code As Integer = gridUser.Rows(e.RowIndex).Cells(0).Value
+        Dim iUserModify As New UCUserModify(code)
+        iUserModify.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(iUserModify)
+        iUserModify.BringToFront()
     End Sub
 End Class

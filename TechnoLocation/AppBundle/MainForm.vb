@@ -213,7 +213,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
-        Dim iUser As New UCUser()
+        Dim iUser As New UCUser(Me)
         iUser.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iUser)
@@ -278,6 +278,10 @@ Public Class MainForm
                     (mouseY <= labelLocation.Y + labelHeight)) Then
             panelAccountOptions.Visible = False
         End If
+    End Sub
+
+    Private Sub panelMain_Paint(sender As Object, e As PaintEventArgs) Handles panelMain.Paint
+
     End Sub
 
     Public Sub setLanguage(language As String)

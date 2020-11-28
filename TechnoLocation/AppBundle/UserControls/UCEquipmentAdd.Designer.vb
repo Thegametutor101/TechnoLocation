@@ -37,6 +37,8 @@ Partial Class UCEquipmentAdd
         Me.labEquipmentAddKit = New System.Windows.Forms.Label()
         Me.btKitAdd = New System.Windows.Forms.Button()
         Me.btKitNull = New System.Windows.Forms.Button()
+        Me.labDepositEquipAdd = New System.Windows.Forms.Label()
+        Me.tbDepositEquipAdd = New System.Windows.Forms.TextBox()
         CType(Me.numEquipAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridEquipmentAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -195,10 +197,28 @@ Partial Class UCEquipmentAdd
         Me.btKitNull.Text = "Désélectionner kit"
         Me.btKitNull.UseVisualStyleBackColor = True
         '
+        'labDepositEquipAdd
+        '
+        Me.labDepositEquipAdd.AutoSize = True
+        Me.labDepositEquipAdd.Location = New System.Drawing.Point(45, 352)
+        Me.labDepositEquipAdd.Name = "labDepositEquipAdd"
+        Me.labDepositEquipAdd.Size = New System.Drawing.Size(132, 13)
+        Me.labDepositEquipAdd.TabIndex = 17
+        Me.labDepositEquipAdd.Text = "Montant de base du dépôt"
+        '
+        'tbDepositEquipAdd
+        '
+        Me.tbDepositEquipAdd.Location = New System.Drawing.Point(192, 349)
+        Me.tbDepositEquipAdd.Name = "tbDepositEquipAdd"
+        Me.tbDepositEquipAdd.Size = New System.Drawing.Size(273, 20)
+        Me.tbDepositEquipAdd.TabIndex = 18
+        '
         'UCEquipmentAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.tbDepositEquipAdd)
+        Me.Controls.Add(Me.labDepositEquipAdd)
         Me.Controls.Add(Me.btKitNull)
         Me.Controls.Add(Me.btKitAdd)
         Me.Controls.Add(Me.labEquipmentAddKit)
@@ -239,4 +259,6 @@ Partial Class UCEquipmentAdd
     Friend WithEvents labEquipmentAddKit As Label
     Friend WithEvents btKitAdd As Button
     Friend WithEvents btKitNull As Button
+    Friend WithEvents labDepositEquipAdd As Label
+    Friend WithEvents tbDepositEquipAdd As TextBox
 End Class
