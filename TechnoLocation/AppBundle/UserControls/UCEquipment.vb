@@ -115,7 +115,6 @@ Public Class UCEquipment
         gridEquipment.Columns("available").HeaderText = Lang.getInstance().getLang()("EquipGridAvailable")
         gridEquipment.Columns("comments").HeaderText = Lang.getInstance().getLang()("EquipGridComments")
         gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
     End Sub
 
     Private Sub search()
@@ -176,4 +175,5 @@ Public Class UCEquipment
         labAvailableOnlyName.Text = Lang.getInstance().getLang()("AvailableOnly")
         tbSearch.PlaceholderText = Lang.getInstance().getLang()("SearchPlaceholder")
     End Sub
+
 End Class

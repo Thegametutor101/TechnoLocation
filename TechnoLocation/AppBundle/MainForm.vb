@@ -136,6 +136,7 @@ Public Class MainForm
         dashboard.Dock = DockStyle.Fill
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
+        dashboard.resizeLabels()
     End Sub
 
     Private Sub labAccount_Click(sender As Object, e As EventArgs) Handles labAccount.Click

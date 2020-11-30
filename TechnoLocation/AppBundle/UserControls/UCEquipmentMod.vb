@@ -34,6 +34,7 @@ Public Class UCEquipmentMod
         End If
         kit = row.Cells(2).Value
         loadLanguage()
+        tbName.Focus()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -151,6 +152,8 @@ Public Class UCEquipmentMod
 
     Public Sub loadDataGridView()
         gridKit.DataSource = EntityKit.getInstance.getKit
+        gridKit.Columns("code").HeaderText = Lang.getInstance().getLang()("EquipGridCode")
+        gridKit.Columns("name").HeaderText = Lang.getInstance().getLang()("EquipGridName")
     End Sub
 
     Private Sub loadLanguage()
@@ -163,6 +166,7 @@ Public Class UCEquipmentMod
         labName.Text = Lang.getInstance().getLang()("EquipmentModlabName")
         labState.Text = Lang.getInstance().getLang()("EquipmentModlabState")
         labComment.Text = Lang.getInstance().getLang()("EquipmentModlabComment")
+        labDeposit.Text = Lang.getInstance().getLang()("EquipmentModlabDeposit")
         tbState.PlaceholderText = Lang.getInstance().getLang()("EquipmentModtbStatePlaceholder")
     End Sub
 End Class

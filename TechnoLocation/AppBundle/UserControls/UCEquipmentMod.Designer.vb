@@ -22,16 +22,18 @@ Partial Class UCEquipmentMod
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btBack = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.tbDepositEquipMod = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbComment = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbState = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbName = New Guna.UI2.WinForms.Guna2TextBox()
@@ -50,17 +52,15 @@ Partial Class UCEquipmentMod
         Me.labKitName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btNoKit = New Guna.UI2.WinForms.Guna2Button()
         Me.btAddKit = New Guna.UI2.WinForms.Guna2Button()
-        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.tbDepositEquipMod = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
+        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         CType(Me.gridKit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel8.SuspendLayout()
-        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -135,6 +135,39 @@ Partial Class UCEquipmentMod
         Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
         Me.Guna2Panel6.Size = New System.Drawing.Size(646, 589)
         Me.Guna2Panel6.TabIndex = 1
+        '
+        'tbDepositEquipMod
+        '
+        Me.tbDepositEquipMod.BackColor = System.Drawing.Color.Transparent
+        Me.tbDepositEquipMod.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbDepositEquipMod.DecimalPlaces = 2
+        Me.tbDepositEquipMod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.tbDepositEquipMod.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.tbDepositEquipMod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbDepositEquipMod.FocusedState.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbDepositEquipMod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.tbDepositEquipMod.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.tbDepositEquipMod.Location = New System.Drawing.Point(231, 457)
+        Me.tbDepositEquipMod.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.tbDepositEquipMod.Name = "tbDepositEquipMod"
+        Me.tbDepositEquipMod.ShadowDecoration.Parent = Me.tbDepositEquipMod
+        Me.tbDepositEquipMod.Size = New System.Drawing.Size(356, 36)
+        Me.tbDepositEquipMod.TabIndex = 52
+        '
+        'labDeposit
+        '
+        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
+        Me.labDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDeposit.Location = New System.Drawing.Point(30, 461)
+        Me.labDeposit.Name = "labDeposit"
+        Me.labDeposit.Size = New System.Drawing.Size(114, 27)
+        Me.labDeposit.TabIndex = 50
+        Me.labDeposit.Text = "Dépot recquis"
         '
         'tbComment
         '
@@ -338,31 +371,31 @@ Partial Class UCEquipmentMod
         '
         Me.gridKit.AllowUserToAddRows = False
         Me.gridKit.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridKit.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridKit.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.gridKit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.gridKit.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.gridKit.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gridKit.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridKit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridKit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.gridKit.ColumnHeadersHeight = 30
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridKit.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridKit.DefaultCellStyle = DataGridViewCellStyle3
         Me.gridKit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridKit.EnableHeadersVisualStyles = False
         Me.gridKit.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
@@ -372,9 +405,9 @@ Partial Class UCEquipmentMod
         Me.gridKit.ReadOnly = True
         Me.gridKit.RowHeadersVisible = False
         Me.gridKit.RowHeadersWidth = 10
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridKit.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridKit.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridKit.RowTemplate.Height = 24
         Me.gridKit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gridKit.Size = New System.Drawing.Size(490, 553)
@@ -460,37 +493,6 @@ Partial Class UCEquipmentMod
         Me.btAddKit.TabIndex = 3
         Me.btAddKit.Text = "Ajouter un nouveau kit"
         '
-        'labDeposit
-        '
-        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
-        Me.labDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDeposit.Location = New System.Drawing.Point(30, 461)
-        Me.labDeposit.Name = "labDeposit"
-        Me.labDeposit.Size = New System.Drawing.Size(114, 27)
-        Me.labDeposit.TabIndex = 50
-        Me.labDeposit.Text = "Dépot recquis"
-        '
-        'tbDepositEquipMod
-        '
-        Me.tbDepositEquipMod.BackColor = System.Drawing.Color.Transparent
-        Me.tbDepositEquipMod.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbDepositEquipMod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tbDepositEquipMod.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tbDepositEquipMod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbDepositEquipMod.DisabledState.Parent = Me.tbDepositEquipMod
-        Me.tbDepositEquipMod.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
-        Me.tbDepositEquipMod.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
-        Me.tbDepositEquipMod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbDepositEquipMod.FocusedState.Parent = Me.tbDepositEquipMod
-        Me.tbDepositEquipMod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.tbDepositEquipMod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.tbDepositEquipMod.Location = New System.Drawing.Point(231, 457)
-        Me.tbDepositEquipMod.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.tbDepositEquipMod.Name = "tbDepositEquipMod"
-        Me.tbDepositEquipMod.ShadowDecoration.Parent = Me.tbDepositEquipMod
-        Me.tbDepositEquipMod.Size = New System.Drawing.Size(356, 36)
-        Me.tbDepositEquipMod.TabIndex = 52
-        '
         'UCEquipmentMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -508,13 +510,13 @@ Partial Class UCEquipmentMod
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel6.ResumeLayout(False)
         Me.Guna2Panel6.PerformLayout()
+        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel7.ResumeLayout(False)
         Me.Guna2Panel9.ResumeLayout(False)
         CType(Me.gridKit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel8.ResumeLayout(False)
         Me.Guna2Panel8.PerformLayout()
-        CType(Me.tbDepositEquipMod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

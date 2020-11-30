@@ -14,10 +14,10 @@ Public Class UCUser
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
     End Sub
-    Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
+    Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs)
         userSearch()
     End Sub
-    Private Sub dropUserSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropUserSearch.SelectedIndexChanged
+    Private Sub dropUserSearch_SelectedIndexChanged(sender As Object, e As EventArgs)
         userSearch()
     End Sub
 
@@ -46,7 +46,7 @@ Public Class UCUser
         End If
     End Function
 
-    Private Sub checkUser_CheckedChanged(sender As Object, e As EventArgs) Handles checkUser.CheckedChanged
+    Private Sub checkUser_CheckedChanged(sender As Object, e As EventArgs)
         If checkUser.Checked Then
             gridUser.SelectAll()
         Else
@@ -54,7 +54,7 @@ Public Class UCUser
         End If
     End Sub
 
-    Private Sub btDeleteUser_Click(sender As Object, e As EventArgs) Handles btDeleteUser.Click
+    Private Sub btDeleteUser_Click(sender As Object, e As EventArgs)
         For Each row As DataGridViewRow In gridUser.SelectedRows
             ModelUser.getInstance().delUser(row.Cells(0).Value)
         Next
@@ -62,7 +62,7 @@ Public Class UCUser
         userSearch()
     End Sub
 
-    Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
+    Private Sub btAddUser_Click(sender As Object, e As EventArgs)
         Dim iUserAdd As New UCUserAdd()
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
@@ -70,7 +70,7 @@ Public Class UCUser
         gridUser.DataSource = EntityUser.getInstance.getUsers()
     End Sub
 
-    Private Sub gridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridUser.CellContentClick
+    Private Sub gridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim code As Integer = gridUser.Rows(e.RowIndex).Cells(0).Value
         Dim iUserModify As New UCUserModify(code)
         iUserModify.Dock = DockStyle.Fill
