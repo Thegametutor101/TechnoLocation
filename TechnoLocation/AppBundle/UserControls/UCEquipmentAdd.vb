@@ -10,16 +10,18 @@ Public Class UCEquipmentAdd
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
     Dim equipment As UCEquipment
+    Dim mainForm As New MainForm
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(equip As UCEquipment)
+    Sub New(equip As UCEquipment, main As MainForm)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         equipment = equip
+        mainForm = main
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -52,6 +54,7 @@ Public Class UCEquipmentAdd
             MsgBox(Lang.getInstance().getLang()("MsgSuccessAdd"),
                    vbOKOnly,
                    Lang.getInstance().getLang()("MsgSuccessAddTitle"))
+            mainForm.isEditing = False
             tbName.Clear()
             tbComment.Clear()
             tbState.Clear()
@@ -73,6 +76,14 @@ Public Class UCEquipmentAdd
 
     Private Sub gridKit_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridKit.CellClick
         rowSelected = True
+    End Sub
+
+    Private Sub valuesChanges(sender As Object, e As EventArgs) Handles tbName.TextChanged,
+                                                                        tbState.TextChanged,
+                                                                        tbComment.TextChanged,
+                                                                        numDeposit.ValueChanged,
+                                                                        numCount.ValueChanged
+        mainForm.isEditing = True
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -149,9 +160,11 @@ Public Class UCEquipmentAdd
                                title,
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Warning) = DialogResult.Yes Then
+                mainForm.isEditing = False
                 Me.SendToBack()
             End If
         Else
+            mainForm.isEditing = False
             Me.SendToBack()
         End If
     End Sub

@@ -25,8 +25,8 @@ Public Class UCEquipment
 
     Private Sub UCEquipment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
-        dropSearch.SelectedIndex() = 0
         loadLanguage()
+        dropSearch.SelectedIndex() = 0
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -34,7 +34,7 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Private Sub gridEquipment_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridEquipment.CellMouseDoubleClick
-        Dim iEquipmentMod = New UCEquipmentMod(gridEquipment.CurrentRow, Me)
+        Dim iEquipmentMod = New UCEquipmentMod(gridEquipment.CurrentRow, Me, mainForm)
         iEquipmentMod.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iEquipmentMod)
         iEquipmentMod.BringToFront()
@@ -69,7 +69,7 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
-        Dim iEquipmentAdd As New UCEquipmentAdd(Me)
+        Dim iEquipmentAdd As New UCEquipmentAdd(Me, mainForm)
         iEquipmentAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iEquipmentAdd)
         iEquipmentAdd.BringToFront()
@@ -174,6 +174,11 @@ Public Class UCEquipment
         btPrintBarcodeEquip.Text = Lang.getInstance().getLang()("PrintBarCode")
         labAvailableOnlyName.Text = Lang.getInstance().getLang()("AvailableOnly")
         tbSearch.PlaceholderText = Lang.getInstance().getLang()("SearchPlaceholder")
+        dropSearch.Items.Add(Lang.getInstance().getLang()("DropCode"))
+        dropSearch.Items.Add(Lang.getInstance().getLang()("DropNote"))
+        dropSearch.Items.Add(Lang.getInstance().getLang()("DropState"))
+        dropSearch.Items.Add(Lang.getInstance().getLang()("DropKit"))
+        dropSearch.Items.Add(Lang.getInstance().getLang()("DropName"))
     End Sub
 
 End Class

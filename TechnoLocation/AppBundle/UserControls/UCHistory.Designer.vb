@@ -22,12 +22,13 @@ Partial Class UCHistory
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCHistory))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCHistory))
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.dropHistory = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tbHistory = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -35,7 +36,6 @@ Partial Class UCHistory
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         CType(Me.gridHistory, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +53,19 @@ Partial Class UCHistory
         Me.Guna2Panel3.Size = New System.Drawing.Size(1263, 102)
         Me.Guna2Panel3.TabIndex = 3
         '
+        'checkAll
+        '
+        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
+        Me.checkAll.CheckedState.Parent = Me.checkAll
+        Me.checkAll.HoverState.Parent = Me.checkAll
+        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
+        Me.checkAll.IndicateFocus = False
+        Me.checkAll.Location = New System.Drawing.Point(60, 72)
+        Me.checkAll.Name = "checkAll"
+        Me.checkAll.PressedState.Parent = Me.checkAll
+        Me.checkAll.Size = New System.Drawing.Size(29, 24)
+        Me.checkAll.TabIndex = 50
+        '
         'dropHistory
         '
         Me.dropHistory.BackColor = System.Drawing.Color.Transparent
@@ -66,7 +79,6 @@ Partial Class UCHistory
         Me.dropHistory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.dropHistory.HoverState.Parent = Me.dropHistory
         Me.dropHistory.ItemHeight = 30
-        Me.dropHistory.Items.AddRange(New Object() {"Code", "Commentaire", "État", "Kit", "Nom"})
         Me.dropHistory.ItemsAppearance.Parent = Me.dropHistory
         Me.dropHistory.Location = New System.Drawing.Point(422, 18)
         Me.dropHistory.Name = "dropHistory"
@@ -203,19 +215,6 @@ Partial Class UCHistory
         Me.Guna2CustomGradientPanel1.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel1
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(60, 642)
         Me.Guna2CustomGradientPanel1.TabIndex = 6
-        '
-        'checkAll
-        '
-        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkSelectAllEquipment.CheckedState.Image"), System.Drawing.Image)
-        Me.checkAll.CheckedState.Parent = Me.checkAll
-        Me.checkAll.HoverState.Parent = Me.checkAll
-        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
-        Me.checkAll.IndicateFocus = False
-        Me.checkAll.Location = New System.Drawing.Point(60, 72)
-        Me.checkAll.Name = "checkAll"
-        Me.checkAll.PressedState.Parent = Me.checkAll
-        Me.checkAll.Size = New System.Drawing.Size(29, 24)
-        Me.checkAll.TabIndex = 50
         '
         'UCHistory
         '

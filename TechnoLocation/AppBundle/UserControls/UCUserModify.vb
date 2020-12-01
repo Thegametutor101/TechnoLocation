@@ -10,14 +10,12 @@
         tbPhone1.Text = entityUser.getUsersCode(code).Rows(0).Item("phoneMain")
         tbPhone2.Text = entityUser.getUsersCode(code).Rows(0).Item("phone2")
         tbJob.Text = entityUser.getUsersCode(code).Rows(0).Item("job")
-        tbPermissions.Text = entityUser.getUsersCode(code).Rows(0).Item("permissions")
+        'tbPermissions.Text = entityUser.getUsersCode(code).Rows(0).Item("permissions")
     End Sub
 
     Public Sub New(id As Integer)
-
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
-
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         code = id
     End Sub

@@ -9,15 +9,19 @@ Public Class UCEquipmentMod
     Dim row As DataGridViewRow
     Dim kit As Integer
     Dim equipment As UCEquipment
+    Dim mainForm As New MainForm
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(iCode As DataGridViewRow, equip As UCEquipment)
+    Sub New(iCode As DataGridViewRow, equip As UCEquipment, main As MainForm)
+        ' This call is required by the designer.
         InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
         row = iCode
         equipment = equip
+        mainForm = main
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -54,6 +58,13 @@ Public Class UCEquipmentMod
     Private Sub gridEquipmentMod_CellClick(sender As Object,
                                            e As DataGridViewCellEventArgs) Handles gridKit.CellClick
         kit = gridKit.CurrentRow.Cells(0).Value
+    End Sub
+
+    Private Sub valuesChanged(sender As Object, e As EventArgs) Handles tbName.TextChanged,
+                                                                        tbState.TextChanged,
+                                                                        tbComment.TextChanged,
+                                                                        tbDepositEquipMod.ValueChanged
+        mainForm.isEditing = True
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -105,7 +116,6 @@ Public Class UCEquipmentMod
                 Else
                     check = 0
                 End If
-
                 ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value,
                                                            tbName.Text,
                                                            kit,
@@ -113,6 +123,7 @@ Public Class UCEquipmentMod
                                                            check,
                                                            tbComment.Text,
                                                            tbDepositEquipMod.Value)
+                mainForm.isEditing = False
                 Me.SendToBack()
                 equipment.loadDataGridView()
             End If
@@ -139,9 +150,11 @@ Public Class UCEquipmentMod
                                title,
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Warning) = DialogResult.Yes Then
+                mainForm.isEditing = False
                 Me.SendToBack()
             End If
         Else
+            mainForm.isEditing = False
             Me.SendToBack()
         End If
     End Sub

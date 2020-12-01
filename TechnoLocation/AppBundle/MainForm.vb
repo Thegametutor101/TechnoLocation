@@ -12,6 +12,7 @@ Public Class MainForm
     Shared instance As MainForm = Nothing
     Private baseHeight, baseWidth As Integer
     Public panelBaseWidth, panelBaseHeight As Integer
+    Public isEditing As Boolean = False
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -122,21 +123,18 @@ Public Class MainForm
     End Sub
 
     Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click
-        If labLang.Text = "EN" Then
-            labLang.Text = "FR"
-            Lang.getInstance().setLang("en_us")
-            loadLanguage()
-        ElseIf labLang.Text = "FR" Then
-            labLang.Text = "EN"
-            Lang.getInstance().setLang("fr_ca")
-            loadLanguage()
+        If isEditing Then
+            Dim title As String = Lang.getInstance().getLang()("MsgWarning")
+            Dim message As String = Lang.getInstance().getLang()("MsgLoseChanges")
+            If MessageBox.Show(message,
+                               title,
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Warning) = DialogResult.Yes Then
+                changeLang()
+            End If
+        Else
+            changeLang()
         End If
-        panelMain.Controls.Clear()
-        Dim dashboard As New UCDashboard(Me)
-        dashboard.Dock = DockStyle.Fill
-        panelMain.Controls.Add(dashboard)
-        dashboard.BringToFront()
-        dashboard.resizeLabels()
     End Sub
 
     Private Sub labAccount_Click(sender As Object, e As EventArgs) Handles labAccount.Click
@@ -321,5 +319,23 @@ Public Class MainForm
             btHeaderMaximize.PressedState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_2_light_main_18dp")
             btHeaderMaximize.HoverState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_2_light_main_18dp")
         End If
+    End Sub
+
+    Public Sub changeLang()
+        If labLang.Text = "EN" Then
+            labLang.Text = "FR"
+            Lang.getInstance().setLang("en_us")
+            loadLanguage()
+        ElseIf labLang.Text = "FR" Then
+            labLang.Text = "EN"
+            Lang.getInstance().setLang("fr_ca")
+            loadLanguage()
+        End If
+        panelMain.Controls.Clear()
+        Dim dashboard As New UCDashboard(Me)
+        dashboard.Dock = DockStyle.Fill
+        panelMain.Controls.Add(dashboard)
+        dashboard.BringToFront()
+        dashboard.resizeLabels()
     End Sub
 End Class
