@@ -18,7 +18,7 @@ Public Class EntityUser
         End If
         Dim cmd As New MySqlCommand("SELECT IF(EXISTS (SELECT SCHEMA_NAME " &
                                     "FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = @DbName), 'Y','N')", connection)
-        cmd.Parameters.AddWithValue("@DbName", "projetsession")
+        cmd.Parameters.AddWithValue("@DbName", "technolocation")
         connection.Open()
         Dim exists As String = cmd.ExecuteScalar().ToString()
         Console.WriteLine(exists)
