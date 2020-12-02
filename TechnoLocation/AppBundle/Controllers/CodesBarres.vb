@@ -178,7 +178,7 @@ Public Class CodesBarres
                 path += "\" + words(word)
             End If
         Next
-        path += "\barCodeFolder\barcode"
+        path += "\Resources\barCodeFolder\barcode"
     End Function
 
 
