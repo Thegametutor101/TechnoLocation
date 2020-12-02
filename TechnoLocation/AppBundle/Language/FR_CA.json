@@ -62,13 +62,14 @@
   "MsgKitNull": "Voulez-vous vraiment ajouter l'équipement sans kit?",
   "MsgKitNameEmpty": "Vous devez mettre un nom!",
   "MsgErrorAddEquip": "Un erreure c'est produit durant l'ajout d'équipement! Certain équipement ne se sont pas ajouter correctement",
-  "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après."
-    "MsgDeleteKit1": "Voulez-vous supprimer le kit ",
-    "MsgDeleteKit2": " il n'y a plus d'équipement associé a ce kit!",
-    "MsgEmptyDeposit": "Le montant du dépôt est vide ou comporte des caratère autre que des nombres",
-    "MsgNegatifDeposit": "Le dépôt ne doit pas être négatif!",
-    "MsgEditEquipment": "Voulez-vous vraiment modifier cette équipement?",
-    "MsgSuccessEditEquip": "La modification a été effectuer!",
-    "MsgNoEquipSelected": "Vous devez sélectionner au moins un équipement pour faire un prêt",
-    "MsgAddRent": "Voulez-vous vraiment faire ce prêt?"
+  "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après.",
+  "MsgDeleteKit1": "Voulez-vous supprimer le kit ",
+  "MsgDeleteKit2": " il n'y a plus d'équipement associé a ce kit!",
+  "MsgEmptyDeposit": "Le montant du dépôt est vide ou comporte des caratère autre que des nombres",
+  "MsgNegatifDeposit": "Le dépôt ne doit pas être négatif!",
+  "MsgEditEquipment": "Voulez-vous vraiment modifier cette équipement?",
+  "MsgSuccessEditEquip": "La modification a été effectuer!",
+  "MsgNoEquipSelected": "Vous devez sélectionner au moins un équipement pour faire un prêt",
+  "MsgAddRent": "Voulez-vous vraiment faire ce prêt?",
+  "MsgEquimentAlreadyUse": "L'équipement que vous tentez de sélectionner est soi déja sélectionner ou n'est pas disponible."
 }

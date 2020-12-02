@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Imports Newtonsoft.Json.Linq
+﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipmentAdd
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False

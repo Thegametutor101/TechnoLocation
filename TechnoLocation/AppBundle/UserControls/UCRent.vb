@@ -2,8 +2,9 @@
 Public Class UCRent
     Dim json As JObject
     Dim datePick As Boolean = True
+    Dim table As DataTable
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        json = Lang.getInstance("fr_ca").ListProperty
+        json = Lang.getInstance().getLang
         gridUserSearch.DataSource = EntityUser.getInstance.getUsers
         gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
         gridItemAdd.ColumnCount = 6
@@ -13,11 +14,6 @@ Public Class UCRent
         gridItemAdd.Columns(3).Name = "État"
         gridItemAdd.Columns(4).Name = "Commentaire"
         gridItemAdd.Columns(5).Name = "Dépôt sugéré"
-    End Sub
-
-    Public Sub loadDataGridViewEquip()
-
-
     End Sub
 
     Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
@@ -45,12 +41,24 @@ Public Class UCRent
             Case 4
                 gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentComment(tbItemSearch.Text, 1)
         End Select
+
+        If Not IsNothing(table) Then
+            For Each rowRent As DataRow In table.Rows
+                For Each rowEquip As DataGridViewRow In gridItemSearch.Rows
+                    If rowRent.Item(0) = rowEquip.Cells(0) Then
+                        rowEquip.Cells(4).Value = 0
+                    End If
+                Next
+            Next
+        End If
     End Sub
 
     Private Sub gridItemSearch_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridItemSearch.CellDoubleClick
         If gridItemSearch.CurrentRow.Cells(4).Value = True Then
             gridItemAdd.Rows.Add(New String() {gridItemSearch.CurrentRow.Cells(0).Value, gridItemSearch.CurrentRow.Cells(1).Value, gridItemSearch.CurrentRow.Cells(2).Value, gridItemSearch.CurrentRow.Cells(3).Value, gridItemSearch.CurrentRow.Cells(5).Value, gridItemSearch.CurrentRow.Cells(6).Value})
             gridItemSearch.CurrentRow.Cells(4).Value = 0
+        Else
+            MsgBox(json("MsgEquimentAlreadyUse"), vbOKOnly, json("MsgWarning"))
         End If
         changeDeposit()
     End Sub
@@ -110,6 +118,10 @@ Public Class UCRent
             tbBeginDate.Text = calendarRent.SelectionStart
         Else
             tbEndDate.Text = calendarRent.SelectionStart
+        End If
+
+        If Not (String.IsNullOrEmpty(tbBeginDate.Text) Or String.IsNullOrEmpty(tbEndDate.Text)) Then
+            table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
         End If
     End Sub
 End Class

@@ -1,12 +1,6 @@
 ﻿Imports Newtonsoft.Json.Linq
 Public Class UCEquipment
     Dim json As JObject
-    Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
-        Dim iEquipmentAdd As New UCEquipmentAdd(Me)
-        iEquipmentAdd.Dock = DockStyle.Fill
-        MainForm.panelMain.Controls.Add(iEquipmentAdd)
-        iEquipmentAdd.BringToFront()
-
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
