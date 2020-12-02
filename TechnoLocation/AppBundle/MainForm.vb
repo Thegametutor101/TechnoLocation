@@ -172,7 +172,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btRent_Click(sender As Object, e As EventArgs) Handles btRent.Click
-        Dim iRent As New UCRent()
+        Dim iRent As New UCRent(Me)
         iRent.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iRent)

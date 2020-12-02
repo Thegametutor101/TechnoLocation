@@ -3,10 +3,17 @@ Imports Newtonsoft.Json.Linq
 
 Public Class UCRent
 
-    Dim json As JObject
     Dim datePick As Boolean = True
+    Dim mainForm As New MainForm
+
+    Sub New(main As MainForm)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        mainForm = main
+    End Sub
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        Dim iUserAdd As New UCUserAdd()
+        Dim iUserAdd As New UCUserAdd(mainForm)
         iUserAdd.Dock = DockStyle.Fill
         MainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
@@ -91,23 +98,23 @@ Public Class UCRent
         Dim complete As Boolean = True
         If gridItemAdd.Rows.Count < 0 Then
             complete = False
-            MsgBox(json("MsgNoEquipementSelected"), vbOKOnly, json("MsgWarning"))
+            'MsgBox(json("MsgNoEquipementSelected"), vbOKOnly, json("MsgWarning"))
         End If
         If String.IsNullOrEmpty(Trim(tbRealDeposit.Text)) Or Not IsNumeric(tbRealDeposit) And complete Then
             complete = False
-            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
+            'MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
         Else
             If tbRealDeposit.Text < 0 And complete Then
                 complete = False
-                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
+                'MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
             End If
         End If
         If complete Then
-            If MsgBox(json("MsgAddRent"), vbYesNo) = vbYes Then
-                For Each row As DataGridViewRow In gridItemAdd.Rows
-                    ''Faire l'ajout dans la bd
-                Next
-            End If
+            'If MsgBox(json("MsgAddRent"), vbYesNo) = vbYes Then
+            '    For Each row As DataGridViewRow In gridItemAdd.Rows
+            '        ''Faire l'ajout dans la bd
+            '    Next
+            'End If
         End If
     End Sub
 
