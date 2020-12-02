@@ -179,7 +179,7 @@ Partial Class AddKit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(357, 217)
         Me.Controls.Add(Me.btKitCancel)
         Me.Controls.Add(Me.btKitAdd)

@@ -41,20 +41,7 @@
     '__________________________________________________________________________________________________________
 
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
-        If mainForm.Height = Screen.GetWorkingArea(mainForm.Location).Height And
-           mainForm.Width = Screen.GetWorkingArea(mainForm.Location).Width Then
-            Dim increaseWidth = Me.Width / mainForm.panelBaseWidth
-            Dim increaseHeight = Me.Height / mainForm.panelBaseHeight
-            panelRentCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
-            panelTotalUsers.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
-            panelInactiveUsers.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
-            panelDepositCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
-        Else
-            panelRentCount.Size = New Size(topPanelBaseWidth, 160)
-            panelTotalUsers.Size = New Size(topPanelBaseWidth, 160)
-            panelInactiveUsers.Size = New Size(topPanelBaseWidth, 160)
-            panelDepositCount.Size = New Size(topPanelBaseWidth, 160)
-        End If
+        resizeLabels()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -104,4 +91,22 @@
         labInactiveUserName.Text = Lang.getInstance().getLang()("DashboardlabInactiveUserName")
         labDepositName.Text = Lang.getInstance().getLang()("DashboardlabDepositName")
     End Sub
+
+    Public Sub resizeLabels()
+        If mainForm.Height = Screen.GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.GetWorkingArea(mainForm.Location).Width Then
+            Dim increaseWidth = Me.Width / mainForm.panelBaseWidth
+            Dim increaseHeight = Me.Height / mainForm.panelBaseHeight
+            panelRentCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
+            panelTotalUsers.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
+            panelInactiveUsers.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
+            panelDepositCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)
+        Else
+            panelRentCount.Size = New Size(topPanelBaseWidth, 160)
+            panelTotalUsers.Size = New Size(topPanelBaseWidth, 160)
+            panelInactiveUsers.Size = New Size(topPanelBaseWidth, 160)
+            panelDepositCount.Size = New Size(topPanelBaseWidth, 160)
+        End If
+    End Sub
+
 End Class

@@ -24,6 +24,7 @@ Partial Class UCDashboard
     Private Sub InitializeComponent()
         Me.panelUC = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelMiddle = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
         Me.lab_late = New System.Windows.Forms.Label()
         Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelBottom = New Guna.UI2.WinForms.Guna2Panel()
@@ -51,7 +52,6 @@ Partial Class UCDashboard
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
         Me.panelUC.SuspendLayout()
         Me.panelMiddle.SuspendLayout()
         CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +87,14 @@ Partial Class UCDashboard
         Me.panelMiddle.ShadowDecoration.Parent = Me.panelMiddle
         Me.panelMiddle.Size = New System.Drawing.Size(1263, 381)
         Me.panelMiddle.TabIndex = 2
+        '
+        'TechnoLocationCustomCalendar1
+        '
+        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
+        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
+        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
+        Me.TechnoLocationCustomCalendar1.TabIndex = 16
+        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
         '
         'lab_late
         '
@@ -408,14 +416,6 @@ Partial Class UCDashboard
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(52, 180)
         Me.Guna2Panel1.TabIndex = 0
-        '
-        'TechnoLocationCustomCalendar1
-        '
-        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
-        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
-        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
-        Me.TechnoLocationCustomCalendar1.TabIndex = 16
-        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
         '
         'UCDashboard
         '

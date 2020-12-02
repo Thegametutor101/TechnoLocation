@@ -23,10 +23,10 @@ Partial Class UCEquipment
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCEquipment))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btPrintBarcodeEquip = New Guna.UI2.WinForms.Guna2Button()
         Me.btDelEquipment = New Guna.UI2.WinForms.Guna2Button()
@@ -125,7 +125,7 @@ Partial Class UCEquipment
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 100)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 84)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 80)
         Me.Guna2Panel1.TabIndex = 12
         '
         'labAvailableOnlyName
@@ -144,7 +144,7 @@ Partial Class UCEquipment
         Me.checkSelectAllEquipment.HoverState.Parent = Me.checkSelectAllEquipment
         Me.checkSelectAllEquipment.Image = CType(resources.GetObject("checkSelectAllEquipment.Image"), System.Drawing.Image)
         Me.checkSelectAllEquipment.IndicateFocus = False
-        Me.checkSelectAllEquipment.Location = New System.Drawing.Point(60, 57)
+        Me.checkSelectAllEquipment.Location = New System.Drawing.Point(60, 53)
         Me.checkSelectAllEquipment.Name = "checkSelectAllEquipment"
         Me.checkSelectAllEquipment.PressedState.Parent = Me.checkSelectAllEquipment
         Me.checkSelectAllEquipment.Size = New System.Drawing.Size(29, 24)
@@ -181,7 +181,6 @@ Partial Class UCEquipment
         Me.dropSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.dropSearch.HoverState.Parent = Me.dropSearch
         Me.dropSearch.ItemHeight = 30
-        Me.dropSearch.Items.AddRange(New Object() {"Code", "Commentaire", "État", "Kit", "Nom"})
         Me.dropSearch.ItemsAppearance.Parent = Me.dropSearch
         Me.dropSearch.Location = New System.Drawing.Point(371, 7)
         Me.dropSearch.Name = "dropSearch"
@@ -222,41 +221,41 @@ Partial Class UCEquipment
         Me.Guna2CustomGradientPanel2.Controls.Add(Me.Guna2Panel2)
         Me.Guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 184)
+        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 180)
         Me.Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
         Me.Guna2CustomGradientPanel2.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel2
-        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(1263, 560)
+        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(1263, 564)
         Me.Guna2CustomGradientPanel2.TabIndex = 13
         '
         'gridEquipment
         '
         Me.gridEquipment.AllowUserToAddRows = False
         Me.gridEquipment.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridEquipment.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipment.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.gridEquipment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.gridEquipment.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.gridEquipment.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gridEquipment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridEquipment.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipment.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.gridEquipment.ColumnHeadersHeight = 30
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridEquipment.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridEquipment.DefaultCellStyle = DataGridViewCellStyle3
         Me.gridEquipment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridEquipment.EnableHeadersVisualStyles = False
         Me.gridEquipment.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
@@ -265,12 +264,12 @@ Partial Class UCEquipment
         Me.gridEquipment.ReadOnly = True
         Me.gridEquipment.RowHeadersVisible = False
         Me.gridEquipment.RowHeadersWidth = 10
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridEquipment.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipment.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridEquipment.RowTemplate.Height = 24
         Me.gridEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridEquipment.Size = New System.Drawing.Size(1143, 500)
+        Me.gridEquipment.Size = New System.Drawing.Size(1143, 504)
         Me.gridEquipment.TabIndex = 16
         Me.gridEquipment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridEquipment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -299,7 +298,7 @@ Partial Class UCEquipment
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 500)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 504)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
         Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 60)
@@ -312,7 +311,7 @@ Partial Class UCEquipment
         Me.Guna2Panel3.Location = New System.Drawing.Point(1203, 0)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 560)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 564)
         Me.Guna2Panel3.TabIndex = 1
         '
         'Guna2Panel2
@@ -322,7 +321,7 @@ Partial Class UCEquipment
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(60, 560)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(60, 564)
         Me.Guna2Panel2.TabIndex = 0
         '
         'UCEquipment

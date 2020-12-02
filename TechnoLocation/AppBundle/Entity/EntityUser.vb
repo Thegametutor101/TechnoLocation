@@ -32,7 +32,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -77,7 +77,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where code = '{code}' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where code = '{code}' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -92,7 +92,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where firstName like '{firstName}%' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where firstName like '{firstName}%' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -107,7 +107,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where lastName like '{lastName}%' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where lastName like '{lastName}%' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -122,7 +122,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where email like '{email}%' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where email like '{email}%' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -137,7 +137,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where phoneMain like '{phone}%' || phone2 like '{phone}%' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where phoneMain like '{phone}%' || phone2 like '{phone}%' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -152,7 +152,7 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, permissions, balance from user U where job like '{job}' order by U.code"
+        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U where job like '{job}' order by U.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")

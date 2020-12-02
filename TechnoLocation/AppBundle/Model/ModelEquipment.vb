@@ -2,7 +2,6 @@
 Imports Newtonsoft.Json.Linq
 Public Class ModelEquipment
     Dim connection As New MySqlConnection(MainForm.getInstance().connectionString)
-    Dim json As JObject = Lang.getInstance("fr_ca").ListProperty
     Shared instance As ModelEquipment = Nothing
     Public Shared Function getInstance() As ModelEquipment
         If IsNothing(instance) Then
@@ -11,7 +10,13 @@ Public Class ModelEquipment
         Return instance
     End Function
 
-    Public Function updateEquipment(code As Integer, name As String, kit As Integer, state As String, available As Integer, comments As String, deposit As Integer)
+    Public Function updateEquipment(code As Integer,
+                                    name As String,
+                                    kit As Integer,
+                                    state As String,
+                                    available As Integer,
+                                    comments As String,
+                                    deposit As Double)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
@@ -28,7 +33,6 @@ Public Class ModelEquipment
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
-            MsgBox(json("MsgSuccessEditEquip"), vbOKOnly)
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la connexion.")
         End Try

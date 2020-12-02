@@ -9,15 +9,19 @@ Public Class UCEquipmentMod
     Dim row As DataGridViewRow
     Dim kit As Integer
     Dim equipment As UCEquipment
+    Dim mainForm As New MainForm
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(iCode As DataGridViewRow, equip As UCEquipment)
+    Sub New(iCode As DataGridViewRow, equip As UCEquipment, main As MainForm)
+        ' This call is required by the designer.
         InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
         row = iCode
         equipment = equip
+        mainForm = main
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -34,6 +38,7 @@ Public Class UCEquipmentMod
         End If
         kit = row.Cells(2).Value
         loadLanguage()
+        tbName.Focus()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -53,6 +58,13 @@ Public Class UCEquipmentMod
     Private Sub gridEquipmentMod_CellClick(sender As Object,
                                            e As DataGridViewCellEventArgs) Handles gridKit.CellClick
         kit = gridKit.CurrentRow.Cells(0).Value
+    End Sub
+
+    Private Sub valuesChanged(sender As Object, e As EventArgs) Handles tbName.TextChanged,
+                                                                        tbState.TextChanged,
+                                                                        tbComment.TextChanged,
+                                                                        tbDepositEquipMod.ValueChanged
+        mainForm.isEditing = True
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -88,16 +100,6 @@ Public Class UCEquipmentMod
                    Lang.getInstance().getLang()("MsgWarning"))
         End If
 
-        If String.IsNullOrEmpty(Trim(tbDepositEquipMod.Text)) Or Not IsNumeric(tbDepositEquipMod.Text) And complete Then
-            complete = False
-            MsgBox(json("MsgEmptyDeposit"), vbOKOnly, json("MsgWarning"))
-        Else
-            If tbDepositEquipMod.Text < 0 And complete Then
-                complete = False
-                MsgBox(json("MsgNegatifDeposit"), vbOKOnly, json("MsgWarning"))
-            End If
-        End If
-
         Return complete
     End Function
 
@@ -114,8 +116,14 @@ Public Class UCEquipmentMod
                 Else
                     check = 0
                 End If
-
-                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value, tbName.Text, kit, tbState.Text, check, tbComment.Text)
+                ModelEquipment.getInstance.updateEquipment(row.Cells(0).Value,
+                                                           tbName.Text,
+                                                           kit,
+                                                           tbState.Text,
+                                                           check,
+                                                           tbComment.Text,
+                                                           tbDepositEquipMod.Value)
+                mainForm.isEditing = False
                 Me.SendToBack()
                 equipment.loadDataGridView()
             End If
@@ -142,9 +150,11 @@ Public Class UCEquipmentMod
                                title,
                                MessageBoxButtons.YesNo,
                                MessageBoxIcon.Warning) = DialogResult.Yes Then
+                mainForm.isEditing = False
                 Me.SendToBack()
             End If
         Else
+            mainForm.isEditing = False
             Me.SendToBack()
         End If
     End Sub
@@ -155,6 +165,8 @@ Public Class UCEquipmentMod
 
     Public Sub loadDataGridView()
         gridKit.DataSource = EntityKit.getInstance.getKit
+        gridKit.Columns("code").HeaderText = Lang.getInstance().getLang()("EquipGridCode")
+        gridKit.Columns("name").HeaderText = Lang.getInstance().getLang()("EquipGridName")
     End Sub
 
     Private Sub loadLanguage()
@@ -167,6 +179,7 @@ Public Class UCEquipmentMod
         labName.Text = Lang.getInstance().getLang()("EquipmentModlabName")
         labState.Text = Lang.getInstance().getLang()("EquipmentModlabState")
         labComment.Text = Lang.getInstance().getLang()("EquipmentModlabComment")
+        labDeposit.Text = Lang.getInstance().getLang()("EquipmentModlabDeposit")
         tbState.PlaceholderText = Lang.getInstance().getLang()("EquipmentModtbStatePlaceholder")
     End Sub
 End Class
