@@ -30,19 +30,21 @@ Partial Class UCUserAdd
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSetPassword = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.checkPassword = New Guna.UI2.WinForms.Guna2CustomCheckBox()
         Me.tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dropPermissions = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.dropStatus = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.labPasswordUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labPermissionsUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labJobUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labPassword = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labPermissions = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labStatus = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbPhone2 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.labPhone2User = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labPhone2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbPhone1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.labPhoneUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labPhone = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.numCode = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.tbEmail = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.labEmailUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labEmail = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labName = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -136,27 +138,29 @@ Partial Class UCUserAdd
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 684)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 709)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 60)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 35)
         Me.Guna2Panel4.TabIndex = 3
         '
         'Guna2Panel5
         '
+        Me.Guna2Panel5.Controls.Add(Me.labSetPassword)
+        Me.Guna2Panel5.Controls.Add(Me.checkPassword)
         Me.Guna2Panel5.Controls.Add(Me.tbPassword)
         Me.Guna2Panel5.Controls.Add(Me.dropPermissions)
         Me.Guna2Panel5.Controls.Add(Me.dropStatus)
-        Me.Guna2Panel5.Controls.Add(Me.labPasswordUser)
-        Me.Guna2Panel5.Controls.Add(Me.labPermissionsUser)
-        Me.Guna2Panel5.Controls.Add(Me.labJobUser)
+        Me.Guna2Panel5.Controls.Add(Me.labPassword)
+        Me.Guna2Panel5.Controls.Add(Me.labPermissions)
+        Me.Guna2Panel5.Controls.Add(Me.labStatus)
         Me.Guna2Panel5.Controls.Add(Me.tbPhone2)
-        Me.Guna2Panel5.Controls.Add(Me.labPhone2User)
+        Me.Guna2Panel5.Controls.Add(Me.labPhone2)
         Me.Guna2Panel5.Controls.Add(Me.tbPhone1)
-        Me.Guna2Panel5.Controls.Add(Me.labPhoneUser)
+        Me.Guna2Panel5.Controls.Add(Me.labPhone)
         Me.Guna2Panel5.Controls.Add(Me.numCode)
         Me.Guna2Panel5.Controls.Add(Me.tbEmail)
-        Me.Guna2Panel5.Controls.Add(Me.labEmailUser)
+        Me.Guna2Panel5.Controls.Add(Me.labEmail)
         Me.Guna2Panel5.Controls.Add(Me.tbLastName)
         Me.Guna2Panel5.Controls.Add(Me.tbFirstName)
         Me.Guna2Panel5.Controls.Add(Me.labName)
@@ -165,8 +169,35 @@ Partial Class UCUserAdd
         Me.Guna2Panel5.Location = New System.Drawing.Point(60, 100)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 584)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 609)
         Me.Guna2Panel5.TabIndex = 4
+        '
+        'labSetPassword
+        '
+        Me.labSetPassword.BackColor = System.Drawing.Color.Transparent
+        Me.labSetPassword.Location = New System.Drawing.Point(503, 519)
+        Me.labSetPassword.Name = "labSetPassword"
+        Me.labSetPassword.Size = New System.Drawing.Size(170, 18)
+        Me.labSetPassword.TabIndex = 67
+        Me.labSetPassword.Text = "Enregistrer un mot de passe"
+        '
+        'checkPassword
+        '
+        Me.checkPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkPassword.CheckedState.BorderRadius = 2
+        Me.checkPassword.CheckedState.BorderThickness = 2
+        Me.checkPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkPassword.CheckedState.Parent = Me.checkPassword
+        Me.checkPassword.Location = New System.Drawing.Point(477, 518)
+        Me.checkPassword.Name = "checkPassword"
+        Me.checkPassword.ShadowDecoration.Parent = Me.checkPassword
+        Me.checkPassword.Size = New System.Drawing.Size(20, 20)
+        Me.checkPassword.TabIndex = 66
+        Me.checkPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.checkPassword.UncheckedState.BorderRadius = 2
+        Me.checkPassword.UncheckedState.BorderThickness = 2
+        Me.checkPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.checkPassword.UncheckedState.Parent = Me.checkPassword
         '
         'tbPassword
         '
@@ -183,7 +214,7 @@ Partial Class UCUserAdd
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.HoverState.Parent = Me.tbPassword
-        Me.tbPassword.Location = New System.Drawing.Point(468, 539)
+        Me.tbPassword.Location = New System.Drawing.Point(468, 551)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPassword.PlaceholderText = ""
@@ -234,35 +265,35 @@ Partial Class UCUserAdd
         Me.dropStatus.Sorted = True
         Me.dropStatus.TabIndex = 63
         '
-        'labPasswordUser
+        'labPassword
         '
-        Me.labPasswordUser.BackColor = System.Drawing.Color.Transparent
-        Me.labPasswordUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPasswordUser.Location = New System.Drawing.Point(267, 539)
-        Me.labPasswordUser.Name = "labPasswordUser"
-        Me.labPasswordUser.Size = New System.Drawing.Size(111, 27)
-        Me.labPasswordUser.TabIndex = 62
-        Me.labPasswordUser.Text = "Mot de passe"
+        Me.labPassword.BackColor = System.Drawing.Color.Transparent
+        Me.labPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPassword.Location = New System.Drawing.Point(267, 551)
+        Me.labPassword.Name = "labPassword"
+        Me.labPassword.Size = New System.Drawing.Size(111, 27)
+        Me.labPassword.TabIndex = 62
+        Me.labPassword.Text = "Mot de passe"
         '
-        'labPermissionsUser
+        'labPermissions
         '
-        Me.labPermissionsUser.BackColor = System.Drawing.Color.Transparent
-        Me.labPermissionsUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPermissionsUser.Location = New System.Drawing.Point(267, 470)
-        Me.labPermissionsUser.Name = "labPermissionsUser"
-        Me.labPermissionsUser.Size = New System.Drawing.Size(97, 27)
-        Me.labPermissionsUser.TabIndex = 61
-        Me.labPermissionsUser.Text = "Permissions"
+        Me.labPermissions.BackColor = System.Drawing.Color.Transparent
+        Me.labPermissions.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPermissions.Location = New System.Drawing.Point(267, 470)
+        Me.labPermissions.Name = "labPermissions"
+        Me.labPermissions.Size = New System.Drawing.Size(97, 27)
+        Me.labPermissions.TabIndex = 61
+        Me.labPermissions.Text = "Permissions"
         '
-        'labJobUser
+        'labStatus
         '
-        Me.labJobUser.BackColor = System.Drawing.Color.Transparent
-        Me.labJobUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labJobUser.Location = New System.Drawing.Point(267, 408)
-        Me.labJobUser.Name = "labJobUser"
-        Me.labJobUser.Size = New System.Drawing.Size(50, 27)
-        Me.labJobUser.TabIndex = 60
-        Me.labJobUser.Text = "Statut"
+        Me.labStatus.BackColor = System.Drawing.Color.Transparent
+        Me.labStatus.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labStatus.Location = New System.Drawing.Point(267, 408)
+        Me.labStatus.Name = "labStatus"
+        Me.labStatus.Size = New System.Drawing.Size(50, 27)
+        Me.labStatus.TabIndex = 60
+        Me.labStatus.Text = "Statut"
         '
         'tbPhone2
         '
@@ -288,15 +319,15 @@ Partial Class UCUserAdd
         Me.tbPhone2.Size = New System.Drawing.Size(356, 36)
         Me.tbPhone2.TabIndex = 59
         '
-        'labPhone2User
+        'labPhone2
         '
-        Me.labPhone2User.BackColor = System.Drawing.Color.Transparent
-        Me.labPhone2User.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPhone2User.Location = New System.Drawing.Point(267, 339)
-        Me.labPhone2User.Name = "labPhone2User"
-        Me.labPhone2User.Size = New System.Drawing.Size(100, 27)
-        Me.labPhone2User.TabIndex = 58
-        Me.labPhone2User.Text = "Téléphone 2"
+        Me.labPhone2.BackColor = System.Drawing.Color.Transparent
+        Me.labPhone2.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPhone2.Location = New System.Drawing.Point(267, 339)
+        Me.labPhone2.Name = "labPhone2"
+        Me.labPhone2.Size = New System.Drawing.Size(100, 27)
+        Me.labPhone2.TabIndex = 58
+        Me.labPhone2.Text = "Téléphone 2"
         '
         'tbPhone1
         '
@@ -322,15 +353,15 @@ Partial Class UCUserAdd
         Me.tbPhone1.Size = New System.Drawing.Size(356, 36)
         Me.tbPhone1.TabIndex = 57
         '
-        'labPhoneUser
+        'labPhone
         '
-        Me.labPhoneUser.BackColor = System.Drawing.Color.Transparent
-        Me.labPhoneUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPhoneUser.Location = New System.Drawing.Point(267, 270)
-        Me.labPhoneUser.Name = "labPhoneUser"
-        Me.labPhoneUser.Size = New System.Drawing.Size(100, 27)
-        Me.labPhoneUser.TabIndex = 56
-        Me.labPhoneUser.Text = "Téléphone 1"
+        Me.labPhone.BackColor = System.Drawing.Color.Transparent
+        Me.labPhone.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPhone.Location = New System.Drawing.Point(267, 270)
+        Me.labPhone.Name = "labPhone"
+        Me.labPhone.Size = New System.Drawing.Size(100, 27)
+        Me.labPhone.TabIndex = 56
+        Me.labPhone.Text = "Téléphone 1"
         '
         'numCode
         '
@@ -379,15 +410,15 @@ Partial Class UCUserAdd
         Me.tbEmail.Size = New System.Drawing.Size(356, 36)
         Me.tbEmail.TabIndex = 54
         '
-        'labEmailUser
+        'labEmail
         '
-        Me.labEmailUser.BackColor = System.Drawing.Color.Transparent
-        Me.labEmailUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labEmailUser.Location = New System.Drawing.Point(267, 199)
-        Me.labEmailUser.Name = "labEmailUser"
-        Me.labEmailUser.Size = New System.Drawing.Size(45, 27)
-        Me.labEmailUser.TabIndex = 53
-        Me.labEmailUser.Text = "Email"
+        Me.labEmail.BackColor = System.Drawing.Color.Transparent
+        Me.labEmail.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labEmail.Location = New System.Drawing.Point(267, 199)
+        Me.labEmail.Name = "labEmail"
+        Me.labEmail.Size = New System.Drawing.Size(45, 27)
+        Me.labEmail.TabIndex = 53
+        Me.labEmail.Text = "Email"
         '
         'tbLastName
         '
@@ -486,21 +517,23 @@ Partial Class UCUserAdd
     Friend WithEvents btCancelUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btAddUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btBack As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents labJobUser As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labStatus As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents tbPhone2 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents labPhone2User As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labPhone2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents tbPhone1 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents labPhoneUser As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labPhone As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents numCode As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents tbEmail As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents labEmailUser As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labEmail As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents tbLastName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents tbFirstName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents labName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labCodeUser As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents labPasswordUser As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents labPermissionsUser As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labPassword As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labPermissions As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents tbPassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents dropPermissions As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents dropStatus As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents labSetPassword As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents checkPassword As Guna.UI2.WinForms.Guna2CustomCheckBox
 End Class

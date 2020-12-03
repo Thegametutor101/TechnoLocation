@@ -150,6 +150,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iDashboard)
         iDashboard.BringToFront()
+        iDashboard.resizeLabels()
     End Sub
 
     Private Sub btAlert_Click(sender As Object, e As EventArgs) Handles btAlert.Click
@@ -331,6 +332,7 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
+        isEditing = False
         panelMain.Controls.Clear()
         Dim dashboard As New UCDashboard(Me)
         dashboard.Dock = DockStyle.Fill
