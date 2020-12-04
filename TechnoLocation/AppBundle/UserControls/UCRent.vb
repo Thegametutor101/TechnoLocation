@@ -24,13 +24,24 @@ Public Class UCRent
         If (Not String.IsNullOrEmpty(tbUserSearch.Text)) Then
             Dim recherche As String = tbUserSearch.Text
             Dim entityUser As EntityUser = EntityUser.getInstance()
-            If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
-                If recherche.Length <= 10 Then
-                    gridUserSearch.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-                End If
-            Else
-                gridUserSearch.DataSource = entityUser.getUsers()
-            End If
+            Select Case dropSearchUser.SelectedIndex
+                Case 0
+                    If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
+                        gridUserSearch.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
+                    Else
+                        gridUserSearch.DataSource = entityUser.getUsers()
+                    End If
+                Case 1
+                    gridUserSearch.DataSource = entityUser.getUsersFirstName(recherche)
+                Case 2
+                    gridUserSearch.DataSource = entityUser.getUsersLastName(recherche)
+                Case 3
+                    gridUserSearch.DataSource = entityUser.getUsersEmail(recherche)
+                Case 4
+                    gridUserSearch.DataSource = entityUser.getUsersPhone(recherche)
+                Case 5
+                    gridUserSearch.DataSource = entityUser.getUsersJob(recherche)
+            End Select
         End If
     End Sub
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -132,5 +143,9 @@ Public Class UCRent
         Else
             tbEndDate.Text = calendarRent.SelectionStart
         End If
+    End Sub
+
+    Private Sub dropSearchUser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropSearchUser.SelectedIndexChanged
+
     End Sub
 End Class

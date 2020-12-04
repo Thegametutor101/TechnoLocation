@@ -242,10 +242,10 @@
     <Compile Include="AppBundle\UserControls\UCUserModify.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\UCProfil.Designer.vb">
-      <DependentUpon>UCProfil.vb</DependentUpon>
+    <Compile Include="AppBundle\UserControls\UCProfile.Designer.vb">
+      <DependentUpon>UCProfile.vb</DependentUpon>
     </Compile>
-    <Compile Include="AppBundle\UserControls\UCProfil.vb">
+    <Compile Include="AppBundle\UserControls\UCProfile.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -311,8 +311,8 @@
     <EmbeddedResource Include="AppBundle\UserControls\UCUserModify.resx">
       <DependentUpon>UCUserModify.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\UCProfil.resx">
-      <DependentUpon>UCProfil.vb</DependentUpon>
+    <EmbeddedResource Include="AppBundle\UserControls\UCProfile.resx">
+      <DependentUpon>UCProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

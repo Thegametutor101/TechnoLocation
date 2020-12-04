@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UCProfil
+Partial Class UCProfile
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.

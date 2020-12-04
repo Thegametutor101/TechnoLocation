@@ -301,11 +301,11 @@ Public Class MainForm
     End Sub
 
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
-        Dim iUser As New UCUser(Me)
-        iUser.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iUser)
-        iUser.BringToFront()
+        'Dim iProfile As New UCProfile()
+        'iProfile.Dock = DockStyle.Fill
+        'panelMain.Controls.Clear()
+        'panelMain.Controls.Add(iProfile)
+        'iProfile.BringToFront()
     End Sub
 
     Public Sub maximize()

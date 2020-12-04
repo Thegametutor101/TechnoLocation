@@ -71,7 +71,7 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                Dim main As New MainForm(username)
+                Dim main As New MainForm
                 main.Show()
                 main.setLanguage(labLang.Text)
                 Me.Close()

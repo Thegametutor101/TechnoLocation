@@ -1,4 +1,4 @@
-﻿Public Class UCProfil
+﻿Public Class UCProfile
     Dim code As Integer
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim entityUser As EntityUser = EntityUser.getInstance()
