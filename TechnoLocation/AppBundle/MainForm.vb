@@ -155,6 +155,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iDashboard)
         iDashboard.BringToFront()
+        iDashboard.resizeLabels()
     End Sub
 
     Private Sub btAlert_Click(sender As Object, e As EventArgs) Handles btAlert.Click
@@ -314,14 +315,14 @@ Public Class MainForm
            Not Me.Location = topCorner Then
             'This changes the position and size of the window to be full screen while showing the task bar
             Me.Location = New Point(0, 0)
-            Me.Height = Screen.GetWorkingArea(Me.Location).Height
-            Me.Width = Screen.GetWorkingArea(Me.Location).Width
+            Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height
+            Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width
             'Changes the maximise icon according to it's state
             btHeaderMaximize.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
             btHeaderMaximize.PressedState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
             btHeaderMaximize.HoverState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
-        ElseIf Me.Height = Screen.GetWorkingArea(Me.Location).Height And
-               Me.Width = Screen.GetWorkingArea(Me.Location).Width And
+        ElseIf Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
+               Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
                Me.Location = topCorner Then
             'This changes the position and size of the window to be centered and back to it's original size
             Me.Height = baseHeight
@@ -344,6 +345,7 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
+        isEditing = False
         panelMain.Controls.Clear()
         Dim dashboard As New UCDashboard(Me)
         dashboard.Dock = DockStyle.Fill
