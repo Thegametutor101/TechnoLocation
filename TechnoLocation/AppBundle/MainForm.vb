@@ -1,7 +1,7 @@
 ﻿Imports Newtonsoft.Json.Linq
 
 Public Class MainForm
-
+    Dim code As Integer
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
@@ -18,7 +18,12 @@ Public Class MainForm
     'Constructor
     '__________________________________________________________________________________________________________
 
-
+    'Public Sub New(id As Integer)
+    ' Cet appel est requis par le concepteur.
+    '   InitializeComponent()
+    ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+    '   code = id
+    'End Sub
 
     '__________________________________________________________________________________________________________
     'Load
@@ -88,7 +93,7 @@ Public Class MainForm
 
     Public Shared Function getInstance() As MainForm
         If IsNothing(instance) Then
-            instance = New MainForm()
+            instance = New MainForm '(code)
         End If
         Return instance
     End Function
@@ -292,6 +297,14 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
         End If
         loadLanguage()
+    End Sub
+
+    Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
+        Dim iUser As New UCUser(Me)
+        iUser.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iUser)
+        iUser.BringToFront()
     End Sub
 
     Public Sub maximize()

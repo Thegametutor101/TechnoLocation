@@ -21,8 +21,8 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        testConnection()
         Lang.getInstance().setLang("fr_ca")
+        testConnection()
         loadLanguage()
         tbUsername.Select()
     End Sub
@@ -71,7 +71,7 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                Dim main As New MainForm
+                Dim main As New MainForm(username)
                 main.Show()
                 main.setLanguage(labLang.Text)
                 Me.Close()
