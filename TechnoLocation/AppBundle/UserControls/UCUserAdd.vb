@@ -7,6 +7,7 @@ Public Class UCUserAdd
     '__________________________________________________________________________________________________________
 
     Dim WithEvents mainForm As New MainForm
+    Dim interfaceUser As UCUser
     Dim baseInputWidth As Integer
     Dim baseLastNameLocation As Point
 
@@ -14,11 +15,12 @@ Public Class UCUserAdd
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(main As MainForm)
+    Sub New(main As MainForm, user As UCUser)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
+        interfaceUser = user
         baseInputWidth = tbPassword.Width
     End Sub
 
@@ -32,6 +34,8 @@ Public Class UCUserAdd
         dropPermissions.SelectedIndex = 0
         dropStatus.SelectedIndex = 0
         baseLastNameLocation = tbLastName.Location
+        resizeInputs()
+        numCode.Focus()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -77,6 +81,8 @@ Public Class UCUserAdd
                                         dropStatus.SelectedIndex,
                                         dropPermissions.SelectedIndex,
                                         0)
+        interfaceUser.loadDataGridView()
+        Me.SendToBack()
     End Sub
 
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
@@ -201,13 +207,15 @@ Public Class UCUserAdd
     End Sub
 
     Private Sub resizeInputs()
-        If mainForm.Height = Screen.GetWorkingArea(mainForm.Location).Height And
-           mainForm.Width = Screen.GetWorkingArea(mainForm.Location).Width Then
+        If mainForm.Height = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Width Then
             Dim increaseWidth = (Me.Width / mainForm.panelBaseWidth) + 0.4
             Dim increaseHeight = (Me.Height / mainForm.panelBaseHeight) + 0.4
             numCode.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
             tbFirstName.Size = New Size(CInt(((baseInputWidth * increaseWidth) / 2) - 3), 36)
-            tbLastName.Location = New Point(tbLastName.Location.X + (CInt(((baseInputWidth * increaseWidth) / 2) + 3) - (baseInputWidth / 2) - 3),
+            tbLastName.Location = New Point(tbLastName.Location.X +
+                                            (CInt(((baseInputWidth * increaseWidth) / 2) + 3) -
+                                             (baseInputWidth / 2) - 3),
                                             tbLastName.Location.Y)
             tbLastName.Size = New Size(CInt(((baseInputWidth * increaseWidth) / 2) - 3), 36)
             tbEmail.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)

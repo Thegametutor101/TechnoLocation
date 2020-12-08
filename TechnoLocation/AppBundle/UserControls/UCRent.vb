@@ -13,7 +13,7 @@ Public Class UCRent
         mainForm = main
     End Sub
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        Dim iUserAdd As New UCUserAdd(mainForm)
+        Dim iUserAdd As New UCUserAdd(mainForm, New UCUser(mainForm))
         iUserAdd.Dock = DockStyle.Fill
         MainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()

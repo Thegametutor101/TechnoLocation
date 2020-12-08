@@ -67,6 +67,7 @@
   "UserAddLabPermissions": "Permissions",
   "UserAddLabPassword": "Mot de passe",
   "UserAddLabSetPassword": "Enregistrer un mot de passe",
+  "UserAddLabBalance": "Solde",
   "UserAddDropPermissions0": "0 - Utilisateur de base",
   "UserAddDropPermissions1": "1 - Utilisateur pouvant prêter",
   "UserAddDropPermissions2": "2 - Professeur",

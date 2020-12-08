@@ -51,7 +51,7 @@ Public Class UCUser
 
     Private Sub gridUser_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridUser.CellDoubleClick
         Dim code As Integer = gridUser.Rows(e.RowIndex).Cells(0).Value
-        Dim iUserModify As New UCUserModify(code)
+        Dim iUserModify As New UCUserModify(code, mainForm, Me)
         iUserModify.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserModify)
         iUserModify.BringToFront()
@@ -105,7 +105,7 @@ Public Class UCUser
     End Sub
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        Dim iUserAdd As New UCUserAdd(mainForm)
+        Dim iUserAdd As New UCUserAdd(mainForm, Me)
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()

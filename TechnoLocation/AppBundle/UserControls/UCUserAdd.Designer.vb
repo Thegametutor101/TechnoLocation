@@ -138,10 +138,10 @@ Partial Class UCUserAdd
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 709)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 715)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 35)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 29)
         Me.Guna2Panel4.TabIndex = 3
         '
         'Guna2Panel5
@@ -169,13 +169,13 @@ Partial Class UCUserAdd
         Me.Guna2Panel5.Location = New System.Drawing.Point(60, 100)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 609)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 615)
         Me.Guna2Panel5.TabIndex = 4
         '
         'labSetPassword
         '
         Me.labSetPassword.BackColor = System.Drawing.Color.Transparent
-        Me.labSetPassword.Location = New System.Drawing.Point(503, 519)
+        Me.labSetPassword.Location = New System.Drawing.Point(503, 527)
         Me.labSetPassword.Name = "labSetPassword"
         Me.labSetPassword.Size = New System.Drawing.Size(170, 18)
         Me.labSetPassword.TabIndex = 67
@@ -188,11 +188,11 @@ Partial Class UCUserAdd
         Me.checkPassword.CheckedState.BorderThickness = 2
         Me.checkPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkPassword.CheckedState.Parent = Me.checkPassword
-        Me.checkPassword.Location = New System.Drawing.Point(477, 518)
+        Me.checkPassword.Location = New System.Drawing.Point(477, 526)
         Me.checkPassword.Name = "checkPassword"
         Me.checkPassword.ShadowDecoration.Parent = Me.checkPassword
         Me.checkPassword.Size = New System.Drawing.Size(20, 20)
-        Me.checkPassword.TabIndex = 66
+        Me.checkPassword.TabIndex = 39
         Me.checkPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkPassword.UncheckedState.BorderRadius = 2
         Me.checkPassword.UncheckedState.BorderThickness = 2
@@ -214,14 +214,14 @@ Partial Class UCUserAdd
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.HoverState.Parent = Me.tbPassword
-        Me.tbPassword.Location = New System.Drawing.Point(468, 551)
+        Me.tbPassword.Location = New System.Drawing.Point(468, 560)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPassword.PlaceholderText = ""
         Me.tbPassword.SelectedText = ""
         Me.tbPassword.ShadowDecoration.Parent = Me.tbPassword
         Me.tbPassword.Size = New System.Drawing.Size(356, 36)
-        Me.tbPassword.TabIndex = 65
+        Me.tbPassword.TabIndex = 40
         '
         'dropPermissions
         '
@@ -242,7 +242,7 @@ Partial Class UCUserAdd
         Me.dropPermissions.ShadowDecoration.Parent = Me.dropPermissions
         Me.dropPermissions.Size = New System.Drawing.Size(356, 36)
         Me.dropPermissions.Sorted = True
-        Me.dropPermissions.TabIndex = 64
+        Me.dropPermissions.TabIndex = 38
         '
         'dropStatus
         '
@@ -263,13 +263,13 @@ Partial Class UCUserAdd
         Me.dropStatus.ShadowDecoration.Parent = Me.dropStatus
         Me.dropStatus.Size = New System.Drawing.Size(356, 36)
         Me.dropStatus.Sorted = True
-        Me.dropStatus.TabIndex = 63
+        Me.dropStatus.TabIndex = 37
         '
         'labPassword
         '
         Me.labPassword.BackColor = System.Drawing.Color.Transparent
         Me.labPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPassword.Location = New System.Drawing.Point(267, 551)
+        Me.labPassword.Location = New System.Drawing.Point(267, 560)
         Me.labPassword.Name = "labPassword"
         Me.labPassword.Size = New System.Drawing.Size(111, 27)
         Me.labPassword.TabIndex = 62
@@ -317,7 +317,7 @@ Partial Class UCUserAdd
         Me.tbPhone2.SelectedText = ""
         Me.tbPhone2.ShadowDecoration.Parent = Me.tbPhone2
         Me.tbPhone2.Size = New System.Drawing.Size(356, 36)
-        Me.tbPhone2.TabIndex = 59
+        Me.tbPhone2.TabIndex = 36
         '
         'labPhone2
         '
@@ -351,7 +351,7 @@ Partial Class UCUserAdd
         Me.tbPhone1.SelectedText = ""
         Me.tbPhone1.ShadowDecoration.Parent = Me.tbPhone1
         Me.tbPhone1.Size = New System.Drawing.Size(356, 36)
-        Me.tbPhone1.TabIndex = 57
+        Me.tbPhone1.TabIndex = 35
         '
         'labPhone
         '
@@ -383,7 +383,7 @@ Partial Class UCUserAdd
         Me.numCode.Name = "numCode"
         Me.numCode.ShadowDecoration.Parent = Me.numCode
         Me.numCode.Size = New System.Drawing.Size(356, 36)
-        Me.numCode.TabIndex = 55
+        Me.numCode.TabIndex = 31
         Me.numCode.Value = New Decimal(New Integer() {1000, 0, 0, 0})
         '
         'tbEmail
@@ -408,7 +408,7 @@ Partial Class UCUserAdd
         Me.tbEmail.SelectedText = ""
         Me.tbEmail.ShadowDecoration.Parent = Me.tbEmail
         Me.tbEmail.Size = New System.Drawing.Size(356, 36)
-        Me.tbEmail.TabIndex = 54
+        Me.tbEmail.TabIndex = 34
         '
         'labEmail
         '
@@ -442,7 +442,7 @@ Partial Class UCUserAdd
         Me.tbLastName.SelectedText = ""
         Me.tbLastName.ShadowDecoration.Parent = Me.tbLastName
         Me.tbLastName.Size = New System.Drawing.Size(175, 36)
-        Me.tbLastName.TabIndex = 52
+        Me.tbLastName.TabIndex = 33
         '
         'tbFirstName
         '
@@ -466,7 +466,7 @@ Partial Class UCUserAdd
         Me.tbFirstName.SelectedText = ""
         Me.tbFirstName.ShadowDecoration.Parent = Me.tbFirstName
         Me.tbFirstName.Size = New System.Drawing.Size(175, 36)
-        Me.tbFirstName.TabIndex = 51
+        Me.tbFirstName.TabIndex = 32
         '
         'labName
         '

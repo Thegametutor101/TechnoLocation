@@ -93,8 +93,8 @@
     End Sub
 
     Public Sub resizeLabels()
-        If mainForm.Height = Screen.GetWorkingArea(mainForm.Location).Height And
-           mainForm.Width = Screen.GetWorkingArea(mainForm.Location).Width Then
+        If mainForm.Height = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Width Then
             Dim increaseWidth = Me.Width / mainForm.panelBaseWidth
             Dim increaseHeight = Me.Height / mainForm.panelBaseHeight
             panelRentCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)

@@ -297,8 +297,8 @@ Public Class MainForm
 
     Public Sub maximize()
         Dim topCorner = New Point(0, 0)
-        If Not Me.Height = Screen.GetWorkingArea(Me.Location).Height And
-           Not Me.Width = Screen.GetWorkingArea(Me.Location).Width And
+        If Not Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
+           Not Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
            Not Me.Location = topCorner Then
             'This changes the position and size of the window to be full screen while showing the task bar
             Me.Location = New Point(0, 0)

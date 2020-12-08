@@ -67,6 +67,7 @@
   "UserAddLabPermissions": "Permissions",
   "UserAddLabPassword": "Password",
   "UserAddLabSetPassword": "Register a password",
+  "UserAddLabBalance": "Balance",
   "UserAddDropPermissions0": "0 - Standard user",
   "UserAddDropPermissions1": "1 - User that can lend",
   "UserAddDropPermissions2": "2 - Teacher",
