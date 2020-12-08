@@ -225,6 +225,14 @@ Public Class MainForm
         iUser.BringToFront()
     End Sub
 
+    Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
+        'Dim iProfile As New UCProfile()
+        'iProfile.Dock = DockStyle.Fill
+        'panelMain.Controls.Clear()
+        'panelMain.Controls.Add(iProfile)
+        'iProfile.BringToFront()
+    End Sub
+
     Private Sub labDisconnect_Click(sender As Object, e As EventArgs) Handles labDisconnect.Click
         Dim title As String = Lang.getInstance().getLang()("MsgDisconnecTitle")
         Dim message As String = Lang.getInstance().getLang()("MsgDisconnection")
@@ -298,14 +306,6 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
         End If
         loadLanguage()
-    End Sub
-
-    Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
-        'Dim iProfile As New UCProfile()
-        'iProfile.Dock = DockStyle.Fill
-        'panelMain.Controls.Clear()
-        'panelMain.Controls.Add(iProfile)
-        'iProfile.BringToFront()
     End Sub
 
     Public Sub maximize()
