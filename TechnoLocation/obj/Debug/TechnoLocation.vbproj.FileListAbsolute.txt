@@ -155,3 +155,7 @@ C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocati
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbprojAssemblyReference.cache
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
