@@ -102,12 +102,13 @@
   "MsgSuccessAddTitle": "Ajout effectué",
   "MsgKitNull": "Voulez-vous vraiment ajouter l'équipement sans kit?",
   "MsgKitNameEmpty": "Vous devez mettre un nom!",
-  "MsgErrorAdd": "Un erreure c'est produit durant l'ajout! Certains items peuvent n'avoir été ajoutés correctement",
-  "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements? Cette action est définitive et ne peut pas être annuler après.",
-  "MsgDeleteKit1": "Voulez-vous supprimer le kit?",
-  "MsgDeleteKit2": "Il n'y a plus d'équipement associé a ce kit!",
+  "MsgErrorAdd": "Un erreur c'est produit durant l'ajout d'équipement!\nCertain équipement ne se sont pas ajouter correctement",
+  "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements?\nCette action est définitive et ne peut pas être annuler après.",
+  "MsgDeleteKit1": "Voulez-vous supprimer le kit ",
+  "MsgDeleteKit2": " il n'y a plus d'équipement associé a ce kit!",
   "MsgEditEquipment": "Voulez-vous vraiment modifier cette équipement?",
-  "MsgSuccessEditEquip": "La modification a été effectué!",
-  "MsgNoEquipSelected": "Vous devez sélectionner au moins un équipement pour faire un prêt",
-  "MsgAddRent": "Voulez-vous vraiment faire ce prêt?"
+  "MsgSuccessEditEquip": "La modification a été effectuer!",
+  "MsgNoEquipSelected": "Veuillez choisir au moins un équipement pour faire un prêt.",
+  "MsgAddRent": "Voulez-vous vraiment faire ce prêt?",
+  "MsgEquimentAlreadyUse": "Cet équipement est déjà sélectionné ou est indisponible."
 }

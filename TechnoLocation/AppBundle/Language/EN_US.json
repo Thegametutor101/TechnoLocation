@@ -102,12 +102,13 @@
   "MsgSuccessAddTitle": "Information added",
   "MsgKitNull": "This item does not have an associated kit, do you wish to proceed?",
   "MsgKitNameEmpty": "You must enter a name!",
-  "MsgErrorAdd": "An error occured during the process, some items may not have been added.",
-  "MsgDeleteEquipment": "Do you wish to delete this equipment? This action is not reversable.",
+  "MsgErrorAdd": "An error occured during the process.\nSome items may not have been added.",
+  "MsgDeleteEquipment": "Do you wish to delete this equipment?\nThis action is not reversable.",
   "MsgDeleteKit1": "Do you wish to delete this kit?",
   "MsgDeleteKit2": "No equipment is associated to this kit!",
   "MsgEditEquipment": "Do you wish to modify this equipment?",
   "MsgSuccessEditEquip": "Modifications have been made!",
   "MsgNoEquipSelected": "Please select at least 1 equipment to rent",
-  "MsgAddRent": "Are you sure you want to rent these items?"
+  "MsgAddRent": "Are you sure you want to rent these items?",
+  "MsgEquimentAlreadyUse": "This equipment has already been selected or is unavailable."
 }
