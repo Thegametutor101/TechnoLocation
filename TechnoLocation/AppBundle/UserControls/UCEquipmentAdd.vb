@@ -30,7 +30,7 @@ Public Class UCEquipmentAdd
     Private Sub UCEquipmentAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
         loadLanguage()
-        tbName.Focus()
+        tbName.Select()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -189,18 +189,19 @@ Public Class UCEquipmentAdd
     End Sub
 
     Private Sub loadLanguage()
-        btSave.Text = Lang.getInstance().getLang()("SaveItem")
-        btCancel.Text = Lang.getInstance().getLang()("CancelButton")
-        btAddKit.Text = Lang.getInstance().getLang()("EquipmentModbtAddKit")
-        btNoKit.Text = Lang.getInstance().getLang()("EquipmentModbtNoKit")
-        labKitName.Text = Lang.getInstance().getLang()("EquipmentModlabKitName")
-        labAvailable.Text = Lang.getInstance().getLang()("EquipmentModlabAvailable")
-        labName.Text = Lang.getInstance().getLang()("EquipmentModlabName")
-        labState.Text = Lang.getInstance().getLang()("EquipmentModlabState")
-        labComment.Text = Lang.getInstance().getLang()("EquipmentModlabComment")
-        labDeposit.Text = Lang.getInstance().getLang()("EquipmentModlabDeposit")
-        labAddCount.Text = Lang.getInstance().getLang()("EquipmentlabCount")
-        tbState.PlaceholderText = Lang.getInstance().getLang()("EquipmentModtbStatePlaceholder")
+        Dim json = Lang.getInstance().getLang()
+        btSave.Text = json("SaveItem")
+        btCancel.Text = json("CancelButton")
+        btAddKit.Text = json("EquipmentModbtAddKit")
+        btNoKit.Text = json("EquipmentModbtNoKit")
+        labKitName.Text = json("EquipmentModlabKitName")
+        labAvailable.Text = json("EquipmentModlabAvailable")
+        labName.Text = json("EquipmentModlabName")
+        labState.Text = json("EquipmentModlabState")
+        labComment.Text = json("EquipmentModlabComment")
+        labDeposit.Text = json("EquipmentModlabDeposit")
+        labAddCount.Text = json("EquipmentlabCount")
+        tbState.PlaceholderText = json("EquipmentModtbStatePlaceholder")
     End Sub
 
 End Class

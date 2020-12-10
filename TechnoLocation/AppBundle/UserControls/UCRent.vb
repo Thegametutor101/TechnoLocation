@@ -3,7 +3,11 @@ Imports Newtonsoft.Json.Linq
 
 Public Class UCRent
 
-    Dim json As JObject
+
+    '__________________________________________________________________________________________________________
+    'Attributes
+    '__________________________________________________________________________________________________________
+
     Dim datePick As Boolean = True
     Dim table As DataTable
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
@@ -12,19 +16,62 @@ Public Class UCRent
         MainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
         gridUserSearch.DataSource = EntityUser.getInstance.getUsers()
+    Dim WithEvents mainForm As MainForm
+    Dim table As DataTable
+
+    '__________________________________________________________________________________________________________
+    'Constructor
+    '__________________________________________________________________________________________________________
+
+    Sub New(main As MainForm)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        mainForm = main
     End Sub
 
-    Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
-        If (Not String.IsNullOrEmpty(tbUserSearch.Text)) Then
-            Dim recherche As String = tbUserSearch.Text
+    '__________________________________________________________________________________________________________
+    'Load
+    '__________________________________________________________________________________________________________
+
+    Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        gridUsers.DataSource = EntityUser.getInstance.getUsers
+        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
+        gridSelectedEquipment.ColumnCount = 6
+        gridSelectedEquipment.Columns(0).Name = "Code"
+        gridSelectedEquipment.Columns(1).Name = "Nom"
+        gridSelectedEquipment.Columns(2).Name = "kit"
+        gridSelectedEquipment.Columns(3).Name = "État"
+        gridSelectedEquipment.Columns(4).Name = "Commentaire"
+        gridSelectedEquipment.Columns(5).Name = "Dépôt sugéré"
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'Methods
+    '__________________________________________________________________________________________________________
+
+    Private Sub tbSearchUser_TextChanged(sender As Object, e As EventArgs) Handles tbSearchUser.TextChanged
+        If (Not String.IsNullOrEmpty(tbSearchUser.Text)) Then
+            Dim recherche As String = tbSearchUser.Text
             Dim entityUser As EntityUser = EntityUser.getInstance()
-            If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
-                If recherche.Length <= 10 Then
-                    gridUserSearch.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-                End If
-            Else
-                gridUserSearch.DataSource = entityUser.getUsers()
-            End If
+            Select Case dropSearchUser.SelectedIndex
+                Case 0
+                    If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
+                        gridUsers.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
+                    Else
+                        gridUsers.DataSource = entityUser.getUsers()
+                    End If
+                Case 1
+                    gridUsers.DataSource = entityUser.getUsersFirstName(recherche)
+                Case 2
+                    gridUsers.DataSource = entityUser.getUsersLastName(recherche)
+                Case 3
+                    gridUsers.DataSource = entityUser.getUsersEmail(recherche)
+                Case 4
+                    gridUsers.DataSource = entityUser.getUsersPhone(recherche)
+                Case 5
+                    gridUsers.DataSource = entityUser.getUsersJob(recherche)
+            End Select
         End If
     End Sub
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -66,25 +113,60 @@ Public Class UCRent
         searchEquipment()
     End Sub
 
-    Private Sub changeDeposit()
-        Dim deposit As Integer = 0
-        For Each row As DataGridViewRow In gridItemAdd.Rows
-            deposit += row.Cells(5).Value
-        Next
-        tbSuggDeposit.Text = deposit
+    Private Sub tbBeginDate_Click(sender As Object, e As EventArgs)
+        datePick = True
     End Sub
 
-    Private Sub btSavNewRent_Click(sender As Object, e As EventArgs) Handles btSavNewRent.Click
+    Private Sub tbEndDate_Click(sender As Object, e As EventArgs)
+        datePick = False
+    End Sub
+
+    Private Sub calendarRent_DateChanged(sender As Object, e As DateRangeEventArgs)
+        'If datePick Then
+        '    tbBeginDate.Text = calendarRent.SelectionStart
+        'Else
+        '    tbEndDate.Text = calendarRent.SelectionStart
+        'End If
+        'If Not (String.IsNullOrEmpty(tbBeginDate.Text) Or String.IsNullOrEmpty(tbEndDate.Text)) Then
+        '    table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
+        'End If
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'General Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Validation Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Buttons
+    '__________________________________________________________________________________________________________
+
+    Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
+        Dim iUserAdd As New UCUserAdd(mainForm, New UCUser(mainForm))
+        iUserAdd.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(iUserAdd)
+        iUserAdd.BringToFront()
+        gridUsers.DataSource = EntityUser.getInstance.getUsers()
+    End Sub
+
+    Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click
         Dim complete As Boolean = True
         If gridItemAdd.Rows.Count < 1 Then
             complete = False
             MsgBox(Lang.getInstance().getLang()("MsgNoEquipementSelected"), vbOKOnly, Lang.getInstance().getLang()("MsgWarning"))
         End If
-        If String.IsNullOrEmpty(Trim(tbRealDeposit.Text)) Or Not IsNumeric(tbRealDeposit) And complete Then
+        If String.IsNullOrEmpty(Trim(numRealDeposit.Value)) And complete Then
             complete = False
             MsgBox(Lang.getInstance().getLang()("MsgEmptyDeposit"), vbOKOnly, Lang.getInstance().getLang()("MsgWarning"))
         Else
-            If tbRealDeposit.Text < 0 And complete Then
+            If numRealDeposit.Text < 0 And complete Then
                 complete = False
                 MsgBox(Lang.getInstance().getLang()("MsgNegatifDeposit"), vbOKOnly, Lang.getInstance().getLang()("MsgWarning"))
             End If
@@ -98,12 +180,16 @@ Public Class UCRent
         End If
     End Sub
 
-    Private Sub tbBeginDate_Click(sender As Object, e As EventArgs) Handles tbBeginDate.Click
-        datePick = True
-    End Sub
+    '__________________________________________________________________________________________________________
+    'Other
+    '__________________________________________________________________________________________________________
 
-    Private Sub tbEndDate_Click(sender As Object, e As EventArgs) Handles tbEndDate.Click
-        datePick = False
+    Private Sub changeDeposit()
+        Dim deposit As Integer = 0
+        For Each row As DataGridViewRow In gridSelectedEquipment.Rows
+            deposit += row.Cells(5).Value
+        Next
+        tbSuggestedDeposit.Text = deposit
     End Sub
 
     Private Sub calendarRent_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calendarRent.DateChanged

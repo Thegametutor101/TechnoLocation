@@ -10,7 +10,16 @@ Public Class ModelUser
         Return instance
     End Function
 
-    Public Function updateUser(code As Integer, password As String, firstName As String, lastName As String, email As String, phoneMain As String, phone2 As String, job As Integer, permissions As Integer, balance As Integer)
+    Public Function updateUser(code As Integer,
+                               password As String,
+                               firstName As String,
+                               lastName As String,
+                               email As String,
+                               phoneMain As String,
+                               phone2 As String,
+                               job As Integer,
+                               permissions As Integer,
+                               balance As Double)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
@@ -24,32 +33,15 @@ Public Class ModelUser
                                                     phone2='{phone2}',
                                                     job='{job}',
                                                     permissions='{permissions}',
-                                                    balance='{balance}' where code = '{code}'"
+                                                    balance='{balance}' 
+                                                    where code = '{code}'"
             connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-    End Function
-
-    Public Function updateUser1Phone(code As Integer, password As String, firstName As String, lastName As String, email As String, phoneMain As String, job As Integer, permissions As Integer, balance As Integer)
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
+            If Not String.IsNullOrEmpty(password) Then
+                Dim loginController As New LoginController
+                loginController.createAccount(code, password)
             End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = $"update user set firstName='{firstName}',
-                                                    lastName='{lastName}',
-                                                    email='{email}',
-                                                    phoneMain='{phoneMain}',
-                                                    job='{job}',
-                                                    permissions='{permissions}',
-                                                    balance='{balance}' where code = '{code}'"
-            connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
-            connection.Close()
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la connexion.")
         End Try
@@ -84,8 +76,7 @@ Public Class ModelUser
                             phone2 As String,
                             job As Integer,
                             permissions As Integer,
-                            balance As Double,
-                            genAccount As Boolean)
+                            balance As Double)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
@@ -93,7 +84,7 @@ Public Class ModelUser
             Dim command As New MySqlCommand
             command.Connection = connection
             command.CommandText = $"insert into user values ('{code}',
-                                                            '{password}',
+                                                            '',
                                                             '{firstName}',
                                                             '{lastName}',
                                                             '{email}',
@@ -105,54 +96,8 @@ Public Class ModelUser
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()
-            If genAccount Then
-                Dim loginController = New LoginController
-                loginController.createAccount(code, password)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-    End Function
-
-    Public Function addUser1Phone(code As Integer,
-                            password As String,
-                            firstName As String,
-                            lastName As String,
-                            email As String,
-                            phoneMain As String,
-                            job As Integer,
-                            permissions As Integer,
-                            balance As Double,
-                            genAccount As Boolean)
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = $"insert into user (code,
-                                                      password,
-                                                      firstName,
-                                                      lastName,
-                                                      email,
-                                                      phoneMain,
-                                                      job,
-                                                      permissions,
-                                                      balance) 
-                                                            values ('{code}',
-                                                            '{password}',
-                                                            '{firstName}',
-                                                            '{lastName}',
-                                                            '{email}',
-                                                            '{phoneMain}',
-                                                            '{job}',
-                                                            '{permissions}',
-                                                            '{balance}')"
-            connection.Open()
-            command.ExecuteNonQuery()
-            connection.Close()
-            If genAccount Then
-                Dim loginController = New LoginController
+            If Not String.IsNullOrEmpty(password) Then
+                Dim loginController As New LoginController
                 loginController.createAccount(code, password)
             End If
         Catch ex As Exception

@@ -25,13 +25,13 @@ Public Class EntityRent
         Return exists = "Y"
     End Function
 
-    Public Function getRent() As DataTable
+    Public Function getRentals() As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R order by R.code"
+        command.CommandText = $"Select * from rent"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -46,7 +46,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where code = '{code}'order by R.code"
+        command.CommandText = $"Select * from rent R where code = '{code}' order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -61,7 +61,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where renter = '{renter}'order by R.code"
+        command.CommandText = $"Select * from rent R where renter = '{renter}' order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -76,7 +76,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where lender = '{lender}'order by R.code"
+        command.CommandText = $"Select * from rent R where lender = '{lender}' order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -91,7 +91,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where equipment = '{equipment}'order by R.code"
+        command.CommandText = $"Select * from rent R where equipment = '{equipment}' order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -121,7 +121,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where returnDate = '{returnDate}'order by R.code"
+        command.CommandText = $"Select * from rent R where returnDate = '{returnDate}' order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -166,7 +166,10 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where (rentDate between '{dateBegin}' and '{dateEnd}') and (returnDate between '{dateBegin}' and '{dateEnd}') order by R.code"
+        command.CommandText = $"Select * from rent R 
+                                where (rentDate between '{dateBegin}' and '{dateEnd}') and 
+                                (returnDate between '{dateBegin}' and '{dateEnd}') 
+                                order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
