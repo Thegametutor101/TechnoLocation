@@ -4,7 +4,7 @@
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim WithEvents mainForm As New MainForm
+    Dim WithEvents mainForm As MainForm
     Dim topPanelBaseWidth As Integer
 
     '__________________________________________________________________________________________________________

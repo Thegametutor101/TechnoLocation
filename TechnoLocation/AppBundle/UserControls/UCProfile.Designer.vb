@@ -23,7 +23,6 @@ Partial Class UCProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.labCode = New System.Windows.Forms.Label()
-        Me.tbCode = New System.Windows.Forms.TextBox()
         Me.tbName = New System.Windows.Forms.TextBox()
         Me.labName = New System.Windows.Forms.Label()
         Me.tbPhone = New System.Windows.Forms.TextBox()
@@ -35,6 +34,7 @@ Partial Class UCProfile
         Me.tbJob = New System.Windows.Forms.TextBox()
         Me.labJob = New System.Windows.Forms.Label()
         Me.labTitre = New System.Windows.Forms.Label()
+        Me.tbCode = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'labCode
@@ -45,13 +45,6 @@ Partial Class UCProfile
         Me.labCode.Size = New System.Drawing.Size(35, 13)
         Me.labCode.TabIndex = 0
         Me.labCode.Text = "Code:"
-        '
-        'tbCode
-        '
-        Me.tbCode.Location = New System.Drawing.Point(394, 144)
-        Me.tbCode.Name = "tbCode"
-        Me.tbCode.Size = New System.Drawing.Size(173, 20)
-        Me.tbCode.TabIndex = 1
         '
         'tbName
         '
@@ -142,7 +135,14 @@ Partial Class UCProfile
         Me.labTitre.TabIndex = 12
         Me.labTitre.Text = "Profil"
         '
-        'UCProfil
+        'tbCode
+        '
+        Me.tbCode.Location = New System.Drawing.Point(394, 144)
+        Me.tbCode.Name = "tbCode"
+        Me.tbCode.Size = New System.Drawing.Size(173, 20)
+        Me.tbCode.TabIndex = 1
+        '
+        'UCProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -159,7 +159,7 @@ Partial Class UCProfile
         Me.Controls.Add(Me.labName)
         Me.Controls.Add(Me.tbCode)
         Me.Controls.Add(Me.labCode)
-        Me.Name = "UCProfil"
+        Me.Name = "UCProfile"
         Me.Size = New System.Drawing.Size(947, 604)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -167,7 +167,6 @@ Partial Class UCProfile
     End Sub
 
     Friend WithEvents labCode As Label
-    Friend WithEvents tbCode As TextBox
     Friend WithEvents tbName As TextBox
     Friend WithEvents labName As Label
     Friend WithEvents tbPhone As TextBox
@@ -179,4 +178,5 @@ Partial Class UCProfile
     Friend WithEvents tbJob As TextBox
     Friend WithEvents labJob As Label
     Friend WithEvents labTitre As Label
+    Friend WithEvents tbCode As TextBox
 End Class

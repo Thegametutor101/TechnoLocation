@@ -1,20 +1,65 @@
 ﻿Public Class UCProfile
-    Dim code As Integer
-    Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim entityUser As EntityUser = EntityUser.getInstance()
 
-        tbCode.Text = code
-        tbName.Text = entityUser.getUsersCode(code).Rows(0).Item("firstName") + " " + entityUser.getUsersCode(code).Rows(0).Item("lastName")
-        tbEmail.Text = entityUser.getUsersCode(code).Rows(0).Item("email")
-        tbPhone.Text = entityUser.getUsersCode(code).Rows(0).Item("phoneMain")
-        tbPhone2.Text = entityUser.getUsersCode(code).Rows(0).Item("phone2")
-        tbJob.Text = entityUser.getUsersCode(code).Rows(0).Item("job")
-    End Sub
 
-    Public Sub New(id As Integer)
+    '__________________________________________________________________________________________________________
+    'Attributes
+    '__________________________________________________________________________________________________________
+
+    Dim WithEvents mainForm As MainForm
+
+    '__________________________________________________________________________________________________________
+    'Constructor
+    '__________________________________________________________________________________________________________
+
+    Public Sub New(main As MainForm)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
-        code = id
+        mainForm = main
     End Sub
+
+    '__________________________________________________________________________________________________________
+    'Load
+    '__________________________________________________________________________________________________________
+
+    Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim data As DataRow = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
+        tbCode.Text = mainForm.code
+        tbName.Text = data.Item("firstName") + " " + data.Item("lastName")
+        tbEmail.Text = data.Item("email")
+        tbPhone.Text = data.Item("phoneMain")
+        tbPhone2.Text = data.Item("phone2")
+        tbJob.Text = data.Item("job")
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'Methods
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'General Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Validation Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Buttons
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Other
+    '__________________________________________________________________________________________________________
+
+
+
 End Class
