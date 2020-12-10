@@ -114,14 +114,11 @@
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Core, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\ZXing.Net.Mobile.Core.dll</HintPath>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
     </Reference>
-    <Reference Include="zxing.portable, Version=0.16.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\zxing.portable.dll</HintPath>
-    </Reference>
-    <Reference Include="ZXingNetMobile, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZXing.Net.Mobile.2.4.1\lib\netstandard1.0\ZXingNetMobile.dll</HintPath>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -222,12 +219,6 @@
     <Compile Include="AppBundle\UserControls\UCEquipment.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AppBundle\UserControls\UCRestriction.Designer.vb">
-      <DependentUpon>UCRestriction.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AppBundle\UserControls\UCRestriction.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="AppBundle\UserControls\UCReturn.Designer.vb">
       <DependentUpon>UCReturn.vb</DependentUpon>
     </Compile>
@@ -305,9 +296,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRent.resx">
       <DependentUpon>UCRent.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppBundle\UserControls\UCRestriction.resx">
-      <DependentUpon>UCRestriction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCReturn.resx">
       <DependentUpon>UCReturn.vb</DependentUpon>

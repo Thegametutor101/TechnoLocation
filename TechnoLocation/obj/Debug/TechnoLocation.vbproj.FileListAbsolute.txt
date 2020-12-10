@@ -53,7 +53,6 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UC
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -157,3 +156,7 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UC
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml

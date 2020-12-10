@@ -46,7 +46,6 @@ Public Class MainForm
         labAccount.TextAlignment = ContentAlignment.MiddleLeft
         labDisconnect.TextAlignment = ContentAlignment.MiddleCenter
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
-        labSettings.TextAlignment = ContentAlignment.MiddleCenter
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
@@ -226,15 +225,6 @@ Public Class MainForm
         selectOptionButton(6)
     End Sub
 
-    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
-        Dim iRestriction As New UCRestriction()
-        iRestriction.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRestriction)
-        iRestriction.BringToFront()
-        selectOptionButton(7)
-    End Sub
-
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
         Dim iProfile As New UCProfile(Me)
         iProfile.Dock = DockStyle.Fill
@@ -271,9 +261,7 @@ Public Class MainForm
         btUser.Text = json("MainbtUser")
         btEquipment.Text = json("MainbtEquipment")
         btHistory.Text = json("MainbtHistory")
-        btCalendar.Text = json("MainbtCalendar")
         labProfile.Text = json("MainlabProfile")
-        labSettings.Text = json("MainlabSettings")
         labDisconnect.Text = json("MainlabDisconnect")
     End Sub
 
@@ -370,7 +358,6 @@ Public Class MainForm
         labSide4.Visible = False
         labSide5.Visible = False
         labSide6.Visible = False
-        labSide7.Visible = False
         Select Case number
             Case 0
                 labSide0.Visible = True
@@ -386,8 +373,6 @@ Public Class MainForm
                 labSide5.Visible = True
             Case 6
                 labSide6.Visible = True
-            Case 7
-                labSide7.Visible = True
         End Select
     End Sub
 End Class
