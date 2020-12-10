@@ -242,6 +242,12 @@
     <Compile Include="AppBundle\UserControls\UCUserModify.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCProfile.Designer.vb">
+      <DependentUpon>UCProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCProfile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -305,6 +311,9 @@
     <EmbeddedResource Include="AppBundle\UserControls\UCUserModify.resx">
       <DependentUpon>UCUserModify.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCProfile.resx">
+      <DependentUpon>UCProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -330,6 +339,14 @@
     <None Include="Resources\baseline_navigate_before_black_18dp.png" />
     <None Include="Resources\baseline_navigate_before_click_black_18dp.png" />
     <None Include="Resources\baseline_navigate_before_hover_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_next_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_next_click_black_18dp.png" />
+    <None Include="Resources\baseline_navigate_next_hover_black_18dp.png" />
+    <None Include="Resources\baseline_add_black_18dp.png" />
+    <None Include="Resources\baseline_add_dark_main_18dp.png" />
+    <None Include="Resources\baseline_add_light_main_18dp.png" />
+    <None Include="Resources\baseline_add_main_18dp.png" />
+    <None Include="Resources\baseline_add_white_18dp.png" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>

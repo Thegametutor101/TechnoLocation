@@ -24,9 +24,7 @@ Partial Class UCDashboard
     Private Sub InitializeComponent()
         Me.panelUC = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelMiddle = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
         Me.lab_late = New System.Windows.Forms.Label()
-        Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelBottom = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridLate = New System.Windows.Forms.DataGridView()
         Me.panelTop = New Guna.UI2.WinForms.Guna2Panel()
@@ -52,9 +50,10 @@ Partial Class UCDashboard
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
+        Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelUC.SuspendLayout()
         Me.panelMiddle.SuspendLayout()
-        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTop.SuspendLayout()
@@ -62,6 +61,7 @@ Partial Class UCDashboard
         Me.panelInactiveUsers.SuspendLayout()
         Me.panelTotalUsers.SuspendLayout()
         Me.panelRentCount.SuspendLayout()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelUC
@@ -88,14 +88,6 @@ Partial Class UCDashboard
         Me.panelMiddle.Size = New System.Drawing.Size(1263, 381)
         Me.panelMiddle.TabIndex = 2
         '
-        'TechnoLocationCustomCalendar1
-        '
-        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
-        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
-        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
-        Me.TechnoLocationCustomCalendar1.TabIndex = 16
-        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
-        '
         'lab_late
         '
         Me.lab_late.AutoSize = True
@@ -105,15 +97,6 @@ Partial Class UCDashboard
         Me.lab_late.Size = New System.Drawing.Size(106, 17)
         Me.lab_late.TabIndex = 15
         Me.lab_late.Text = "Alertes Retards"
-        '
-        'pbGraph
-        '
-        Me.pbGraph.Location = New System.Drawing.Point(90, 86)
-        Me.pbGraph.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbGraph.Name = "pbGraph"
-        Me.pbGraph.Size = New System.Drawing.Size(664, 207)
-        Me.pbGraph.TabIndex = 13
-        Me.pbGraph.TabStop = False
         '
         'panelBottom
         '
@@ -417,11 +400,28 @@ Partial Class UCDashboard
         Me.Guna2Panel1.Size = New System.Drawing.Size(52, 180)
         Me.Guna2Panel1.TabIndex = 0
         '
+        'TechnoLocationCustomCalendar1
+        '
+        Me.TechnoLocationCustomCalendar1.CurrentDayColor = System.Drawing.Color.SpringGreen
+        Me.TechnoLocationCustomCalendar1.Location = New System.Drawing.Point(833, 86)
+        Me.TechnoLocationCustomCalendar1.Name = "TechnoLocationCustomCalendar1"
+        Me.TechnoLocationCustomCalendar1.TabIndex = 16
+        Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
+        '
+        'pbGraph
+        '
+        Me.pbGraph.Location = New System.Drawing.Point(90, 86)
+        Me.pbGraph.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbGraph.Name = "pbGraph"
+        Me.pbGraph.Size = New System.Drawing.Size(664, 207)
+        Me.pbGraph.TabIndex = 13
+        Me.pbGraph.TabStop = False
+        '
         'UCDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.panelUC)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCDashboard"
@@ -429,7 +429,6 @@ Partial Class UCDashboard
         Me.panelUC.ResumeLayout(False)
         Me.panelMiddle.ResumeLayout(False)
         Me.panelMiddle.PerformLayout()
-        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBottom.ResumeLayout(False)
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTop.ResumeLayout(False)
@@ -441,14 +440,13 @@ Partial Class UCDashboard
         Me.panelTotalUsers.PerformLayout()
         Me.panelRentCount.ResumeLayout(False)
         Me.panelRentCount.PerformLayout()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents panelUC As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelMiddle As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents TechnoLocationCustomCalendar1 As TechnoLocationCustomCalendar
-    Friend WithEvents pbGraph As PictureBox
     Friend WithEvents panelBottom As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents gridLate As DataGridView
     Friend WithEvents lab_late As Label
@@ -475,4 +473,6 @@ Partial Class UCDashboard
     Friend WithEvents labDepositName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelBetweenTop3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents TechnoLocationCustomCalendar1 As TechnoLocationCustomCalendar
+    Friend WithEvents pbGraph As PictureBox
 End Class

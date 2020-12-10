@@ -1,7 +1,7 @@
 ﻿Imports Newtonsoft.Json.Linq
 
 Public Class MainForm
-
+    Dim code As Integer
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
@@ -18,7 +18,12 @@ Public Class MainForm
     'Constructor
     '__________________________________________________________________________________________________________
 
-
+    'Public Sub New(id As Integer)
+    ' Cet appel est requis par le concepteur.
+    '   InitializeComponent()
+    ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+    '   code = id
+    'End Sub
 
     '__________________________________________________________________________________________________________
     'Load
@@ -44,6 +49,7 @@ Public Class MainForm
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
+        selectOptionButton(0)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -88,7 +94,7 @@ Public Class MainForm
 
     Public Shared Function getInstance() As MainForm
         If IsNothing(instance) Then
-            instance = New MainForm()
+            instance = New MainForm '(code)
         End If
         Return instance
     End Function
@@ -150,6 +156,8 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iDashboard)
         iDashboard.BringToFront()
+        iDashboard.resizeLabels()
+        selectOptionButton(0)
     End Sub
 
     Private Sub btAlert_Click(sender As Object, e As EventArgs) Handles btAlert.Click
@@ -168,6 +176,7 @@ Public Class MainForm
             notifications.Dock = DockStyle.Left
             panelMain.Controls.Add(notifications)
             notifications.BringToFront()
+            selectOptionButton(1)
         End If
     End Sub
 
@@ -177,6 +186,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iRent)
         iRent.BringToFront()
+        selectOptionButton(2)
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
@@ -185,30 +195,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iReturn)
         iReturn.BringToFront()
-    End Sub
-
-    Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment(Me)
-        iEquipment.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iEquipment)
-        iEquipment.BringToFront()
-    End Sub
-
-    Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
-        Dim iHistory As New UCHistory()
-        iHistory.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iHistory)
-        iHistory.BringToFront()
-    End Sub
-
-    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
-        Dim iRestriction As New UCRestriction()
-        iRestriction.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRestriction)
-        iRestriction.BringToFront()
+        selectOptionButton(3)
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
@@ -217,6 +204,42 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iUser)
         iUser.BringToFront()
+        selectOptionButton(4)
+    End Sub
+
+    Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
+        Dim iEquipment As New UCEquipment(Me)
+        iEquipment.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
+        selectOptionButton(5)
+    End Sub
+
+    Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
+        Dim iHistory As New UCHistory()
+        iHistory.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iHistory)
+        iHistory.BringToFront()
+        selectOptionButton(6)
+    End Sub
+
+    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
+        Dim iRestriction As New UCRestriction()
+        iRestriction.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iRestriction)
+        iRestriction.BringToFront()
+        selectOptionButton(7)
+    End Sub
+
+    Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
+        'Dim iProfile As New UCProfile()
+        'iProfile.Dock = DockStyle.Fill
+        'panelMain.Controls.Clear()
+        'panelMain.Controls.Add(iProfile)
+        'iProfile.BringToFront()
     End Sub
 
     Private Sub labDisconnect_Click(sender As Object, e As EventArgs) Handles labDisconnect.Click
@@ -237,19 +260,20 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        labAccount.Text = Lang.getInstance().getLang()("MainlabAccount")
-        labPersonConnected.Text = Lang.getInstance().getLang()("MainlabPersonConnected")
-        btHome.Text = Lang.getInstance().getLang()("MainbtHome")
-        btAlert.Text = Lang.getInstance().getLang()("MainbtAlert")
-        btRent.Text = Lang.getInstance().getLang()("MainbtRent")
-        btReturn.Text = Lang.getInstance().getLang()("MainbtReturn")
-        btUser.Text = Lang.getInstance().getLang()("MainbtUser")
-        btEquipment.Text = Lang.getInstance().getLang()("MainbtEquipment")
-        btHistory.Text = Lang.getInstance().getLang()("MainbtHistory")
-        btCalendar.Text = Lang.getInstance().getLang()("MainbtCalendar")
-        labProfile.Text = Lang.getInstance().getLang()("MainlabProfile")
-        labSettings.Text = Lang.getInstance().getLang()("MainlabSettings")
-        labDisconnect.Text = Lang.getInstance().getLang()("MainlabDisconnect")
+        Dim json = Lang.getInstance().getLang()
+        labAccount.Text = json("MainlabAccount")
+        labPersonConnected.Text = json("MainlabPersonConnected")
+        btHome.Text = json("MainbtHome")
+        btAlert.Text = json("MainbtAlert")
+        btRent.Text = json("MainbtRent")
+        btReturn.Text = json("MainbtReturn")
+        btUser.Text = json("MainbtUser")
+        btEquipment.Text = json("MainbtEquipment")
+        btHistory.Text = json("MainbtHistory")
+        btCalendar.Text = json("MainbtCalendar")
+        labProfile.Text = json("MainlabProfile")
+        labSettings.Text = json("MainlabSettings")
+        labDisconnect.Text = json("MainlabDisconnect")
     End Sub
 
     Private Sub panelAccountOptions_MouseLeave(sender As Object, e As EventArgs) Handles panelAccountOptions.MouseLeave,
@@ -296,19 +320,19 @@ Public Class MainForm
 
     Public Sub maximize()
         Dim topCorner = New Point(0, 0)
-        If Not Me.Height = Screen.GetWorkingArea(Me.Location).Height And
-           Not Me.Width = Screen.GetWorkingArea(Me.Location).Width And
+        If Not Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
+           Not Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
            Not Me.Location = topCorner Then
             'This changes the position and size of the window to be full screen while showing the task bar
             Me.Location = New Point(0, 0)
-            Me.Height = Screen.GetWorkingArea(Me.Location).Height
-            Me.Width = Screen.GetWorkingArea(Me.Location).Width
+            Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height
+            Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width
             'Changes the maximise icon according to it's state
             btHeaderMaximize.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
             btHeaderMaximize.PressedState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
             btHeaderMaximize.HoverState.Image = My.Resources.ResourceManager.GetObject("baseline_maximize_light_main_18dp")
-        ElseIf Me.Height = Screen.GetWorkingArea(Me.Location).Height And
-               Me.Width = Screen.GetWorkingArea(Me.Location).Width And
+        ElseIf Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
+               Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
                Me.Location = topCorner Then
             'This changes the position and size of the window to be centered and back to it's original size
             Me.Height = baseHeight
@@ -331,11 +355,41 @@ Public Class MainForm
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
         End If
+        isEditing = False
         panelMain.Controls.Clear()
         Dim dashboard As New UCDashboard(Me)
         dashboard.Dock = DockStyle.Fill
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
         dashboard.resizeLabels()
+    End Sub
+
+    Public Sub selectOptionButton(number As Integer)
+        labSide0.Visible = False
+        labSide1.Visible = False
+        labSide2.Visible = False
+        labSide3.Visible = False
+        labSide4.Visible = False
+        labSide5.Visible = False
+        labSide6.Visible = False
+        labSide7.Visible = False
+        Select Case number
+            Case 0
+                labSide0.Visible = True
+            Case 1
+                labSide1.Visible = True
+            Case 2
+                labSide2.Visible = True
+            Case 3
+                labSide3.Visible = True
+            Case 4
+                labSide4.Visible = True
+            Case 5
+                labSide5.Visible = True
+            Case 6
+                labSide6.Visible = True
+            Case 7
+                labSide7.Visible = True
+        End Select
     End Sub
 End Class

@@ -70,7 +70,14 @@
         labRentCountCount.Text = EntityRent.getInstance().getRentCount()
         labTotalUserCount.Text = EntityUser.getInstance().getUsersCount()
         labInactiveUserCount.Text = EntityUser.getInstance().getUsersInactive()
-        labDepositCount.Text = Format(EntityRent.getInstance().getRentDeposits(), "0.00$")
+        If mainForm.labLang.Text = "FR" Then
+            labDepositCount.Text = Format(EntityRent.getInstance().getRentDeposits(), "0.00$")
+
+        Else
+            labDepositCount.Text = Replace(Format(EntityRent.getInstance().getRentDeposits(), "0.00$"),
+                                           ".",
+                                           ",")
+        End If
         If labDepositCount.Text.Length = 7 Then
             labDepositCount.Font = New Font("Segoe UI Symbol", 35, FontStyle.Bold)
             labDepositCount.Location = New Point(labDepositCount.Location.X, labDepositCount.Location.Y + 5)
@@ -86,15 +93,16 @@
     End Sub
 
     Public Sub loadLanguage()
-        labRentCountName.Text = Lang.getInstance().getLang()("DashboardlabRentCountName")
-        labTotalUserName.Text = Lang.getInstance().getLang()("DashboardlabTotalUserName")
-        labInactiveUserName.Text = Lang.getInstance().getLang()("DashboardlabInactiveUserName")
-        labDepositName.Text = Lang.getInstance().getLang()("DashboardlabDepositName")
+        Dim json = Lang.getInstance().getLang()
+        labRentCountName.Text = json("DashboardlabRentCountName")
+        labTotalUserName.Text = json("DashboardlabTotalUserName")
+        labInactiveUserName.Text = json("DashboardlabInactiveUserName")
+        labDepositName.Text = json("DashboardlabDepositName")
     End Sub
 
     Public Sub resizeLabels()
-        If mainForm.Height = Screen.GetWorkingArea(mainForm.Location).Height And
-           mainForm.Width = Screen.GetWorkingArea(mainForm.Location).Width Then
+        If mainForm.Height = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Width Then
             Dim increaseWidth = Me.Width / mainForm.panelBaseWidth
             Dim increaseHeight = Me.Height / mainForm.panelBaseHeight
             panelRentCount.Size = New Size(CInt(topPanelBaseWidth * increaseWidth), 160)

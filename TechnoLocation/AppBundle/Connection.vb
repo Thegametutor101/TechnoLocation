@@ -20,7 +20,11 @@ Public Class Connection
     'Load
     '__________________________________________________________________________________________________________
 
+<<<<<<< HEAD
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+=======
+    Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+>>>>>>> Daniel-Navarro
         Lang.getInstance().setLang("fr_ca")
         testConnection()
         loadLanguage()
@@ -101,14 +105,7 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
-        Dim title As String = Lang.getInstance().getLang()("MsgQuitTitle")
-        Dim message As String = Lang.getInstance().getLang()("MsgQuit")
-        If MessageBox.Show(message,
-                           title,
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Me.Close()
-        End If
+        Me.Close()
     End Sub
 
     Private Sub MinimizeButton_Click(sender As Object, e As EventArgs) Handles btHeaderMinimize.Click
@@ -124,11 +121,12 @@ Public Class Connection
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        labUsername.Text = Lang.getInstance().getLang()("ConnectionlabUsername")
-        labPassword.Text = Lang.getInstance().getLang()("ConnectionlabPassword")
-        tbUsername.PlaceholderText = Lang.getInstance().getLang()("ConnectiontbUsernamePlaceholder")
-        linklabPasswordForget.Text = Lang.getInstance().getLang()("ConnectionlabPasswordForget")
-        btConnect.Text = Lang.getInstance().getLang()("ConnectionbtConnect")
+        Dim json = Lang.getInstance().getLang()
+        labUsername.Text = json("ConnectionlabUsername")
+        labPassword.Text = json("ConnectionlabPassword")
+        tbUsername.PlaceholderText = json("ConnectiontbUsernamePlaceholder")
+        linklabPasswordForget.Text = json("ConnectionlabPasswordForget")
+        btConnect.Text = json("ConnectionbtConnect")
     End Sub
 
     Private Sub labLang_Click(sender As Object, e As EventArgs) Handles labLang.Click

@@ -1,48 +1,259 @@
-﻿Public Class UCUserModify
-    Dim code As Integer
-    Private Sub UCUserModify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim entityUser As EntityUser = EntityUser.getInstance()
+﻿Imports System.Text.RegularExpressions
 
-        tbCode.Text = code
-        tbFirstName.Text = entityUser.getUsersCode(code).Rows(0).Item("firstName")
-        tbLastName.Text = entityUser.getUsersCode(code).Rows(0).Item("lastName")
-        tbEmail.Text = entityUser.getUsersCode(code).Rows(0).Item("email")
-        tbPhone1.Text = entityUser.getUsersCode(code).Rows(0).Item("phoneMain")
-        tbPhone2.Text = entityUser.getUsersCode(code).Rows(0).Item("phone2")
-        tbJob.Text = entityUser.getUsersCode(code).Rows(0).Item("job")
-        'tbPermissions.Text = entityUser.getUsersCode(code).Rows(0).Item("permissions")
-    End Sub
+Public Class UCUserModify
 
-    Public Sub New(id As Integer)
+
+    '__________________________________________________________________________________________________________
+    'Attributes
+    '__________________________________________________________________________________________________________
+
+    Dim WithEvents mainForm As New MainForm
+    Dim interfaceUser As UCUser
+    Dim baseInputWidth As Integer
+    Dim baseLastNameLocation As Point
+    Dim baseRow As DataRow
+
+    '__________________________________________________________________________________________________________
+    'Constructor
+    '__________________________________________________________________________________________________________
+
+    Public Sub New(id As Integer, main As MainForm, user As UCUser)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
-        code = id
+        mainForm = main
+        interfaceUser = user
+        baseRow = EntityUser.getInstance().getUserByCode(id).Rows(0)
+        baseInputWidth = tbPassword.Width
     End Sub
 
-    Private Sub btCancelUser_Click(sender As Object, e As EventArgs) Handles btCancelUser.Click
+    '__________________________________________________________________________________________________________
+    'Load
+    '__________________________________________________________________________________________________________
+
+    Private Sub UCUserModify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadLanguages()
+        checkPassword.Checked = False
+        dropPermissions.SelectedIndex = 0
+        dropStatus.SelectedIndex = 0
+        baseLastNameLocation = tbLastName.Location
+        resizeInputs()
+        numCode.Value = baseRow.Item("code")
+        tbFirstName.Text = baseRow.Item("firstName")
+        tbLastName.Text = baseRow.Item("lastName")
+        tbEmail.Text = baseRow.Item("email")
+        tbPhone1.Text = baseRow.Item("phoneMain")
+        tbPhone2.Text = baseRow.Item("phone2")
+        dropStatus.SelectedIndex = baseRow.Item("job")
+        dropPermissions.SelectedIndex = baseRow.Item("permissions")
+        numBalance.Value = baseRow.Item("balance")
+        numCode.Select()
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'Methods
+    '__________________________________________________________________________________________________________
+
+    Private Sub checkPassword_CheckedChanged(sender As Object, e As EventArgs) Handles checkPassword.CheckedChanged
+        mainForm.isEditing = True
+        If checkPassword.Checked Then
+            tbPassword.Text = ""
+            labPassword.Visible = True
+            tbPassword.Visible = True
+        Else
+            tbPassword.Text = ""
+            labPassword.Visible = False
+            tbPassword.Visible = False
+        End If
+    End Sub
+
+    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles numCode.ValueChanged,
+                                                                        tbFirstName.TextChanged,
+                                                                        tbLastName.TextChanged,
+                                                                        tbEmail.TextChanged,
+                                                                        tbPhone1.TextChanged,
+                                                                        tbPhone2.TextChanged
+        mainForm.isEditing = True
+    End Sub
+
+    Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
+        resizeInputs()
+    End Sub
+
+    Private Sub submit(password As String,
+                       firstName As String,
+                       lastName As String,
+                       email As String,
+                       phone1 As String,
+                       phone2 As String)
+        mainForm.isEditing = False
+        ModelUser.getInstance().updateUser(CInt(numCode.Value),
+                                        password,
+                                        firstName,
+                                        lastName,
+                                        email,
+                                        phone1,
+                                        phone2,
+                                        dropStatus.SelectedIndex,
+                                        dropPermissions.SelectedIndex,
+                                        CDbl(numBalance.Value))
+        interfaceUser.loadDataGridView()
         Me.SendToBack()
     End Sub
 
-    Private Sub btModifyUser_Click(sender As Object, e As EventArgs) Handles btModifyUser.Click
-        If (tbCode.Text.Equals("") Or tbEmail.Text.Equals("") Or tbFirstName.Equals("") Or tbLastName.Text.Equals("") Or tbPhone1.Text.Equals("") Or tbJob.Text.Equals("") Or tbPermissions.Text.Equals("")) Then
-            MessageBox.Show("Veuillez remplir tous les emplacements obligatoires")
-        ElseIf Not System.Text.RegularExpressions.Regex.IsMatch(tbFirstName.Text, "^[a-zA-Z-]+") Or Not System.Text.RegularExpressions.Regex.IsMatch(tbLastName.Text, "^[a-zA-Z-]+") Then
-            MessageBox.Show("Veuillez entrer un nom valide")
-        ElseIf Not System.Text.RegularExpressions.Regex.IsMatch(tbPhone1.Text, "^[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$") Or (Not System.Text.RegularExpressions.Regex.IsMatch(tbPhone2.Text, "^[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$") And Not tbPhone2.text.equals("")) Then
-            MessageBox.Show("Veuillez Entrer un numéro de téléphone valide")
-        ElseIf (Not IsNumeric(tbJob.Text) Or Not tbJob.Text.Length <= 1 Or Not IsNumeric(tbPermissions.Text) Or Not tbPermissions.Text.Length <= 1) Then
-            MessageBox.Show("Veuillez entrer un chiffre pour Job et Permission")
-        ElseIf tbPassword.Text.Equals(EntityUser.getInstance.getUsersPassword(code).rows(0).Item("password")) Then
-            If tbPhone2.Text.Equals("") Then
-                ModelUser.getInstance.updateUser1Phone(code, EntityUser.getInstance.getUsersPassword(code).Rows(0).Item("password"), tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPhone1.Text, tbJob.Text, tbPermissions.Text, EntityUser.getInstance.getUsersCode(code).Rows(0).Item("balance"))
-            Else
-                ModelUser.getInstance.updateUser(code, EntityUser.getInstance.getUsersPassword(code).Rows(0).Item("password"), tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPhone1.Text, tbPhone2.Text, tbJob.Text, tbPermissions.Text, EntityUser.getInstance.getUsersCode(code).Rows(0).Item("balance"))
+    '__________________________________________________________________________________________________________
+    'General Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Validation Functions
+    '__________________________________________________________________________________________________________
+
+
+
+    '__________________________________________________________________________________________________________
+    'Buttons
+    '__________________________________________________________________________________________________________
+
+    Private Sub btCancelUser_Click(sender As Object, e As EventArgs) Handles btCancelUser.Click, btBack.Click
+        Dim title As String = Lang.getInstance().getLang()("MsgCancelTitle")
+        Dim message As String = Lang.getInstance().getLang()("MsgCancel")
+        If Not numCode.Value.Equals(baseRow.Item("code")) Or
+           Not tbFirstName.Text.Equals(baseRow.Item("firstName")) Or
+           Not String.IsNullOrEmpty(tbLastName.Text) Or
+           Not String.IsNullOrEmpty(tbEmail.Text) Or
+           Not String.IsNullOrEmpty(tbPhone1.Text) Or
+           Not String.IsNullOrEmpty(tbPhone2.Text) Or
+           (Not numCode.Value = numCode.Minimum) Then
+            If MessageBox.Show(message,
+                               title,
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Warning) = DialogResult.Yes Then
+                mainForm.isEditing = False
+                Me.SendToBack()
             End If
-            MessageBox.Show("Modifications sauvegardées")
+        Else
+            mainForm.isEditing = False
             Me.SendToBack()
-            ElseIf Not tbPassword.Text.Equals(EntityUser.getInstance.getUsersPassword(code).Rows(0).Item("password")) Then
-                MessageBox.Show("Mot de passe non valide, veuillez réessayer")
         End If
     End Sub
+
+    Private Sub btModifyUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
+        tbFirstName.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        tbLastName.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        tbEmail.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        tbPhone1.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        tbPhone2.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        Dim firstName, lastName, email, phone1, phone2, password As String
+        firstName = Trim(tbFirstName.Text)
+        lastName = Trim(tbLastName.Text)
+        email = Trim(tbEmail.Text)
+        phone1 = Trim(tbPhone1.Text)
+        phone2 = Trim(tbPhone2.Text)
+        password = Trim(tbPassword.Text)
+        If Regex.IsMatch(firstName, "^[a-zA-Z-' éèêâôîûçàëäöïüÉÈÊÂÔÎÛÇÀËÄÖÏÜ]+") Then
+            If Regex.IsMatch(lastName, "^[a-zA-Z-' éèêâôîûçàëäöïüÉÈÊÂÔÎÛÇÀËÄÖÏÜ]+") Then
+                If Regex.IsMatch(email, "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$") Then
+                    If (Regex.IsMatch(phone1, "^\([\d]{3}\)\s[\d]{3}-[\d]{4}$") Or
+                   Regex.IsMatch(phone1, "^[\d]{10}$")) Then
+                        If (Regex.IsMatch(phone2, "^\([\d]{3}\)\s[\d]{3}-[\d]{4}$") Or
+                        Regex.IsMatch(phone2, "^[\d]{10}$") Or
+                        phone2 = "") Then
+                            If checkPassword.Checked And Not String.IsNullOrEmpty(password) Then
+                                submit(password, firstName, lastName, email, phone1, phone2)
+                            ElseIf checkPassword.Checked And String.IsNullOrEmpty(password) Then
+                                Dim title As String = Lang.getInstance().getLang()("MsgWarning")
+                                Dim message As String = Lang.getInstance().getLang()("MsgSubmitNoPassword")
+                                If MessageBox.Show(message,
+                                               title,
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Warning) = DialogResult.Yes Then
+                                    submit(password, firstName, lastName, email, phone1, phone2)
+                                End If
+                            Else
+                                submit(password, firstName, lastName, email, phone1, phone2)
+                            End If
+                        Else
+                            tbPhone2.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                        End If
+                    Else
+                        tbPhone1.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                    End If
+                Else
+                    tbEmail.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                End If
+            Else
+                tbLastName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+            End If
+        Else
+            tbFirstName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+        End If
+    End Sub
+
+    '__________________________________________________________________________________________________________
+    'Other
+    '__________________________________________________________________________________________________________
+
+
+    Public Sub loadLanguages()
+        Dim json = Lang.getInstance().getLang()
+        btAddUser.Text = json("SaveItem")
+        btCancelUser.Text = json("CancelButton")
+        labCodeUser.Text = json("UserAddLabMatricula")
+        labName.Text = json("UserAddLabName")
+        tbFirstName.PlaceholderText = json("UserAddLabFirstNamePlaceholder")
+        tbLastName.PlaceholderText = json("UserAddLabLastNamePlaceholder")
+        labEmail.Text = json("UserAddLabEmail")
+        labPhone.Text = json("UserAddLabPhone1")
+        labPhone2.Text = json("UserAddLabPhone2")
+        labStatus.Text = json("UserAddLabStatus")
+        labPermissions.Text = json("UserAddLabPermissions")
+        labPassword.Text = json("UserAddLabPassword")
+        labSetPassword.Text = json("UserAddLabSetPassword")
+        labBalance.Text = json("UserAddLabBalance")
+        dropPermissions.Items.Add(json("UserAddDropPermissions0"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions1"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions2"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions3"))
+        dropStatus.Items.Add(json("UserAddDropStatus0"))
+        dropStatus.Items.Add(json("UserAddDropStatus1"))
+        dropStatus.Items.Add(json("UserAddDropStatus2"))
+    End Sub
+
+    Private Sub resizeInputs()
+        If mainForm.Height = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Width Then
+            Dim increaseWidth = (Me.Width / mainForm.panelBaseWidth) + 0.4
+            Dim increaseHeight = (Me.Height / mainForm.panelBaseHeight) + 0.4
+            numCode.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            tbFirstName.Size = New Size(CInt(((baseInputWidth * increaseWidth) / 2) - 3), 36)
+            tbLastName.Location = New Point(tbLastName.Location.X +
+                                            (CInt(((baseInputWidth * increaseWidth) / 2) + 3) -
+                                             (baseInputWidth / 2) - 3),
+                                            tbLastName.Location.Y)
+            tbLastName.Size = New Size(CInt(((baseInputWidth * increaseWidth) / 2) - 3), 36)
+            tbEmail.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            tbPhone1.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            tbPhone2.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            dropStatus.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            dropPermissions.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            tbPassword.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            numBalance.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+        Else
+            numCode.Size = New Size(baseInputWidth, 36)
+            tbFirstName.Size = New Size((baseInputWidth / 2) - 3, 36)
+            tbLastName.Location = baseLastNameLocation
+            tbLastName.Size = New Size((baseInputWidth / 2) - 3, 36)
+            tbEmail.Size = New Size(baseInputWidth, 36)
+            tbPhone1.Size = New Size(baseInputWidth, 36)
+            tbPhone2.Size = New Size(baseInputWidth, 36)
+            dropStatus.Size = New Size(baseInputWidth, 36)
+            dropPermissions.Size = New Size(baseInputWidth, 36)
+            tbPassword.Size = New Size(baseInputWidth, 36)
+            numBalance.Size = New Size(baseInputWidth, 36)
+        End If
+    End Sub
+
 End Class
