@@ -6,21 +6,19 @@ Public Class UCEquipmentAdd
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim code As String
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
     Dim equipment As UCEquipment
-    Dim mainForm As New MainForm(code)
+    Dim mainForm As MainForm
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(equip As UCEquipment, main As MainForm, matricule As String)
+    Sub New(equip As UCEquipment, main As MainForm)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        code = matricule
         equipment = equip
         mainForm = main
     End Sub

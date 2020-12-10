@@ -32,6 +32,14 @@ Partial Class MainForm
         Me.btHeaderClose = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelOptions = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.labSide7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide0 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelAccountOptions = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
@@ -48,14 +56,6 @@ Partial Class MainForm
         Me.btHome = New Guna.UI2.WinForms.Guna2Button()
         Me.labPersonConnected = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.labSide0 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.labSide7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelOptions.SuspendLayout()
@@ -112,7 +112,7 @@ Partial Class MainForm
         '
         Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.Guna2VSeparator1.Location = New System.Drawing.Point(67, 11)
-        Me.Guna2VSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2VSeparator1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
         Me.Guna2VSeparator1.Size = New System.Drawing.Size(13, 38)
         Me.Guna2VSeparator1.TabIndex = 3
@@ -221,6 +221,118 @@ Partial Class MainForm
         Me.panelOptions.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
         Me.panelOptions.Size = New System.Drawing.Size(277, 744)
         Me.panelOptions.TabIndex = 13
+        '
+        'labSide7
+        '
+        Me.labSide7.BackColor = System.Drawing.Color.Transparent
+        Me.labSide7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide7.BorderRadius = 5
+        Me.labSide7.BorderThickness = 1
+        Me.labSide7.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide7.Location = New System.Drawing.Point(8, 475)
+        Me.labSide7.Name = "labSide7"
+        Me.labSide7.ShadowDecoration.Parent = Me.labSide7
+        Me.labSide7.Size = New System.Drawing.Size(10, 55)
+        Me.labSide7.TabIndex = 36
+        Me.labSide7.Visible = False
+        '
+        'labSide6
+        '
+        Me.labSide6.BackColor = System.Drawing.Color.Transparent
+        Me.labSide6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide6.BorderRadius = 5
+        Me.labSide6.BorderThickness = 1
+        Me.labSide6.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide6.Location = New System.Drawing.Point(8, 414)
+        Me.labSide6.Name = "labSide6"
+        Me.labSide6.ShadowDecoration.Parent = Me.labSide6
+        Me.labSide6.Size = New System.Drawing.Size(10, 55)
+        Me.labSide6.TabIndex = 32
+        Me.labSide6.Visible = False
+        '
+        'labSide5
+        '
+        Me.labSide5.BackColor = System.Drawing.Color.Transparent
+        Me.labSide5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide5.BorderRadius = 5
+        Me.labSide5.BorderThickness = 1
+        Me.labSide5.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide5.Location = New System.Drawing.Point(8, 352)
+        Me.labSide5.Name = "labSide5"
+        Me.labSide5.ShadowDecoration.Parent = Me.labSide5
+        Me.labSide5.Size = New System.Drawing.Size(10, 55)
+        Me.labSide5.TabIndex = 35
+        Me.labSide5.Visible = False
+        '
+        'labSide4
+        '
+        Me.labSide4.BackColor = System.Drawing.Color.Transparent
+        Me.labSide4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide4.BorderRadius = 5
+        Me.labSide4.BorderThickness = 1
+        Me.labSide4.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide4.Location = New System.Drawing.Point(8, 290)
+        Me.labSide4.Name = "labSide4"
+        Me.labSide4.ShadowDecoration.Parent = Me.labSide4
+        Me.labSide4.Size = New System.Drawing.Size(10, 55)
+        Me.labSide4.TabIndex = 34
+        Me.labSide4.Visible = False
+        '
+        'labSide3
+        '
+        Me.labSide3.BackColor = System.Drawing.Color.Transparent
+        Me.labSide3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide3.BorderRadius = 5
+        Me.labSide3.BorderThickness = 1
+        Me.labSide3.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide3.Location = New System.Drawing.Point(8, 229)
+        Me.labSide3.Name = "labSide3"
+        Me.labSide3.ShadowDecoration.Parent = Me.labSide3
+        Me.labSide3.Size = New System.Drawing.Size(10, 55)
+        Me.labSide3.TabIndex = 33
+        Me.labSide3.Visible = False
+        '
+        'labSide2
+        '
+        Me.labSide2.BackColor = System.Drawing.Color.Transparent
+        Me.labSide2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide2.BorderRadius = 5
+        Me.labSide2.BorderThickness = 1
+        Me.labSide2.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide2.Location = New System.Drawing.Point(8, 167)
+        Me.labSide2.Name = "labSide2"
+        Me.labSide2.ShadowDecoration.Parent = Me.labSide2
+        Me.labSide2.Size = New System.Drawing.Size(10, 55)
+        Me.labSide2.TabIndex = 32
+        Me.labSide2.Visible = False
+        '
+        'labSide1
+        '
+        Me.labSide1.BackColor = System.Drawing.Color.Transparent
+        Me.labSide1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide1.BorderRadius = 5
+        Me.labSide1.BorderThickness = 1
+        Me.labSide1.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide1.Location = New System.Drawing.Point(8, 106)
+        Me.labSide1.Name = "labSide1"
+        Me.labSide1.ShadowDecoration.Parent = Me.labSide1
+        Me.labSide1.Size = New System.Drawing.Size(10, 55)
+        Me.labSide1.TabIndex = 31
+        Me.labSide1.Visible = False
+        '
+        'labSide0
+        '
+        Me.labSide0.BackColor = System.Drawing.Color.Transparent
+        Me.labSide0.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide0.BorderRadius = 5
+        Me.labSide0.BorderThickness = 1
+        Me.labSide0.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide0.Location = New System.Drawing.Point(8, 55)
+        Me.labSide0.Name = "labSide0"
+        Me.labSide0.ShadowDecoration.Parent = Me.labSide0
+        Me.labSide0.Size = New System.Drawing.Size(10, 46)
+        Me.labSide0.TabIndex = 30
+        Me.labSide0.Visible = False
         '
         'panelAccountOptions
         '
@@ -513,118 +625,6 @@ Partial Class MainForm
         Me.panelMain.ShadowDecoration.Parent = Me.panelMain
         Me.panelMain.Size = New System.Drawing.Size(1263, 744)
         Me.panelMain.TabIndex = 14
-        '
-        'labSide0
-        '
-        Me.labSide0.BackColor = System.Drawing.Color.Transparent
-        Me.labSide0.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide0.BorderRadius = 5
-        Me.labSide0.BorderThickness = 1
-        Me.labSide0.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide0.Location = New System.Drawing.Point(8, 55)
-        Me.labSide0.Name = "labSide0"
-        Me.labSide0.ShadowDecoration.Parent = Me.labSide0
-        Me.labSide0.Size = New System.Drawing.Size(10, 46)
-        Me.labSide0.TabIndex = 30
-        Me.labSide0.Visible = False
-        '
-        'labSide1
-        '
-        Me.labSide1.BackColor = System.Drawing.Color.Transparent
-        Me.labSide1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide1.BorderRadius = 5
-        Me.labSide1.BorderThickness = 1
-        Me.labSide1.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide1.Location = New System.Drawing.Point(8, 106)
-        Me.labSide1.Name = "labSide1"
-        Me.labSide1.ShadowDecoration.Parent = Me.labSide1
-        Me.labSide1.Size = New System.Drawing.Size(10, 55)
-        Me.labSide1.TabIndex = 31
-        Me.labSide1.Visible = False
-        '
-        'labSide2
-        '
-        Me.labSide2.BackColor = System.Drawing.Color.Transparent
-        Me.labSide2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide2.BorderRadius = 5
-        Me.labSide2.BorderThickness = 1
-        Me.labSide2.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide2.Location = New System.Drawing.Point(8, 167)
-        Me.labSide2.Name = "labSide2"
-        Me.labSide2.ShadowDecoration.Parent = Me.labSide2
-        Me.labSide2.Size = New System.Drawing.Size(10, 55)
-        Me.labSide2.TabIndex = 32
-        Me.labSide2.Visible = False
-        '
-        'labSide3
-        '
-        Me.labSide3.BackColor = System.Drawing.Color.Transparent
-        Me.labSide3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide3.BorderRadius = 5
-        Me.labSide3.BorderThickness = 1
-        Me.labSide3.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide3.Location = New System.Drawing.Point(8, 229)
-        Me.labSide3.Name = "labSide3"
-        Me.labSide3.ShadowDecoration.Parent = Me.labSide3
-        Me.labSide3.Size = New System.Drawing.Size(10, 55)
-        Me.labSide3.TabIndex = 33
-        Me.labSide3.Visible = False
-        '
-        'labSide4
-        '
-        Me.labSide4.BackColor = System.Drawing.Color.Transparent
-        Me.labSide4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide4.BorderRadius = 5
-        Me.labSide4.BorderThickness = 1
-        Me.labSide4.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide4.Location = New System.Drawing.Point(8, 290)
-        Me.labSide4.Name = "labSide4"
-        Me.labSide4.ShadowDecoration.Parent = Me.labSide4
-        Me.labSide4.Size = New System.Drawing.Size(10, 55)
-        Me.labSide4.TabIndex = 34
-        Me.labSide4.Visible = False
-        '
-        'labSide5
-        '
-        Me.labSide5.BackColor = System.Drawing.Color.Transparent
-        Me.labSide5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide5.BorderRadius = 5
-        Me.labSide5.BorderThickness = 1
-        Me.labSide5.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide5.Location = New System.Drawing.Point(8, 352)
-        Me.labSide5.Name = "labSide5"
-        Me.labSide5.ShadowDecoration.Parent = Me.labSide5
-        Me.labSide5.Size = New System.Drawing.Size(10, 55)
-        Me.labSide5.TabIndex = 35
-        Me.labSide5.Visible = False
-        '
-        'labSide6
-        '
-        Me.labSide6.BackColor = System.Drawing.Color.Transparent
-        Me.labSide6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide6.BorderRadius = 5
-        Me.labSide6.BorderThickness = 1
-        Me.labSide6.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide6.Location = New System.Drawing.Point(8, 414)
-        Me.labSide6.Name = "labSide6"
-        Me.labSide6.ShadowDecoration.Parent = Me.labSide6
-        Me.labSide6.Size = New System.Drawing.Size(10, 55)
-        Me.labSide6.TabIndex = 32
-        Me.labSide6.Visible = False
-        '
-        'labSide7
-        '
-        Me.labSide7.BackColor = System.Drawing.Color.Transparent
-        Me.labSide7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.labSide7.BorderRadius = 5
-        Me.labSide7.BorderThickness = 1
-        Me.labSide7.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.labSide7.Location = New System.Drawing.Point(8, 475)
-        Me.labSide7.Name = "labSide7"
-        Me.labSide7.ShadowDecoration.Parent = Me.labSide7
-        Me.labSide7.Size = New System.Drawing.Size(10, 55)
-        Me.labSide7.TabIndex = 36
-        Me.labSide7.Visible = False
         '
         'MainForm
         '

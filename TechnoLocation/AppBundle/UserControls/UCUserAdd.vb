@@ -6,8 +6,7 @@ Public Class UCUserAdd
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim code As String
-    Dim WithEvents mainForm As New MainForm(code)
+    Dim WithEvents mainForm As MainForm
     Dim interfaceUser As UCUser
     Dim baseInputWidth As Integer
     Dim baseLastNameLocation As Point
@@ -16,11 +15,10 @@ Public Class UCUserAdd
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(main As MainForm, user As UCUser, matricule As String)
+    Sub New(main As MainForm, user As UCUser)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        code = matricule
         mainForm = main
         interfaceUser = user
         baseInputWidth = tbPassword.Width
