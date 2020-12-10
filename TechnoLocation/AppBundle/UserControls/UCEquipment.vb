@@ -5,17 +5,19 @@ Public Class UCEquipment
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim mainForm As New MainForm
+    Dim code As String
+    Dim mainForm As New MainForm(code)
     Dim json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Public Sub New(main As MainForm)
+    Public Sub New(main As MainForm, matricule As String)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+        code = matricule
         mainForm = main
     End Sub
 
@@ -34,7 +36,7 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Private Sub gridEquipment_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridEquipment.CellMouseDoubleClick
-        Dim iEquipmentMod = New UCEquipmentMod(gridEquipment.CurrentRow, Me, mainForm)
+        Dim iEquipmentMod = New UCEquipmentMod(gridEquipment.CurrentRow, Me, mainForm, code)
         iEquipmentMod.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iEquipmentMod)
         iEquipmentMod.BringToFront()
@@ -69,7 +71,7 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Private Sub btNewEquipment_Click(sender As Object, e As EventArgs) Handles btNewEquipment.Click
-        Dim iEquipmentAdd As New UCEquipmentAdd(Me, mainForm)
+        Dim iEquipmentAdd As New UCEquipmentAdd(Me, mainForm, code)
         iEquipmentAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iEquipmentAdd)
         iEquipmentAdd.BringToFront()

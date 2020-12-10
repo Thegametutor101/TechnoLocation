@@ -1,7 +1,7 @@
 ﻿Imports Newtonsoft.Json.Linq
 
 Public Class MainForm
-    Dim code As Integer
+    Dim code As String
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
@@ -18,12 +18,12 @@ Public Class MainForm
     'Constructor
     '__________________________________________________________________________________________________________
 
-    'Public Sub New(id As Integer)
-    ' Cet appel est requis par le concepteur.
-    '   InitializeComponent()
-    ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
-    '   code = id
-    'End Sub
+    Public Sub New(matricule As String)
+        ' Cet appel est requis par le concepteur.
+        InitializeComponent()
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        code = matricule
+    End Sub
 
     '__________________________________________________________________________________________________________
     'Load
@@ -35,7 +35,7 @@ Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dashboard As New UCDashboard(Me)
+        Dim dashboard As New UCDashboard(Me, code)
         dashboard.Dock = DockStyle.Fill
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
@@ -93,7 +93,7 @@ Public Class MainForm
 
     Public Shared Function getInstance() As MainForm
         If IsNothing(instance) Then
-            instance = New MainForm '(code)
+            instance = New MainForm("0")
         End If
         Return instance
     End Function
@@ -150,7 +150,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
-        Dim iDashboard As New UCDashboard(Me)
+        Dim iDashboard As New UCDashboard(Me, code)
         iDashboard.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iDashboard)
@@ -178,7 +178,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btRent_Click(sender As Object, e As EventArgs) Handles btRent.Click
-        Dim iRent As New UCRent(Me)
+        Dim iRent As New UCRent(Me, code)
         iRent.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iRent)
@@ -194,7 +194,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment(Me)
+        Dim iEquipment As New UCEquipment(Me, code)
         iEquipment.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iEquipment)
@@ -218,7 +218,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
-        Dim iUser As New UCUser(Me)
+        Dim iUser As New UCUser(Me, code)
         iUser.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iUser)
@@ -226,11 +226,15 @@ Public Class MainForm
     End Sub
 
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
-        'Dim iProfile As New UCProfile()
-        'iProfile.Dock = DockStyle.Fill
-        'panelMain.Controls.Clear()
-        'panelMain.Controls.Add(iProfile)
-        'iProfile.BringToFront()
+        If (Not (code.Equals("admin"))) Then
+            Dim iProfile As New UCProfile(code)
+            iProfile.Dock = DockStyle.Fill
+            panelMain.Controls.Clear()
+            panelMain.Controls.Add(iProfile)
+            iProfile.BringToFront()
+        Else
+            MessageBox.Show("En tant qu'administrateur, vous n'avez pas de profil")
+        End If
     End Sub
 
     Private Sub labDisconnect_Click(sender As Object, e As EventArgs) Handles labDisconnect.Click
@@ -293,10 +297,6 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub panelMain_Paint(sender As Object, e As PaintEventArgs) Handles panelMain.Paint
-
-    End Sub
-
     Public Sub setLanguage(language As String)
         If language = "FR" Then
             labLang.Text = "FR"
@@ -307,6 +307,7 @@ Public Class MainForm
         End If
         loadLanguage()
     End Sub
+
 
     Public Sub maximize()
         Dim topCorner = New Point(0, 0)
@@ -347,7 +348,7 @@ Public Class MainForm
         End If
         isEditing = False
         panelMain.Controls.Clear()
-        Dim dashboard As New UCDashboard(Me)
+        Dim dashboard As New UCDashboard(Me, code)
         dashboard.Dock = DockStyle.Fill
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()

@@ -6,19 +6,21 @@ Public Class UCEquipmentMod
     'Attributes
     '__________________________________________________________________________________________________________
 
+    Dim code As String
     Dim row As DataGridViewRow
     Dim kit As Integer
     Dim equipment As UCEquipment
-    Dim mainForm As New MainForm
+    Dim mainForm As New MainForm(code)
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(iCode As DataGridViewRow, equip As UCEquipment, main As MainForm)
+    Sub New(iCode As DataGridViewRow, equip As UCEquipment, main As MainForm, matricule As String)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+        code = matricule
         row = iCode
         equipment = equip
         mainForm = main

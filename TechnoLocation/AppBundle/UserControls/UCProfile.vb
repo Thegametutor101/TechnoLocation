@@ -1,5 +1,5 @@
 ﻿Public Class UCProfile
-    Dim code As Integer
+    Dim code As String
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim entityUser As EntityUser = EntityUser.getInstance()
 
@@ -11,7 +11,7 @@
         tbJob.Text = entityUser.getUsersCode(code).Rows(0).Item("job")
     End Sub
 
-    Public Sub New(id As Integer)
+    Public Sub New(id As String)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
