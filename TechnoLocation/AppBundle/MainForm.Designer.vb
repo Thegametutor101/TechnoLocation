@@ -48,6 +48,14 @@ Partial Class MainForm
         Me.btHome = New Guna.UI2.WinForms.Guna2Button()
         Me.labPersonConnected = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.panelMain = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.labSide0 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labSide7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelOptions.SuspendLayout()
@@ -68,7 +76,7 @@ Partial Class MainForm
         Me.panelHeaderBar.Location = New System.Drawing.Point(0, 0)
         Me.panelHeaderBar.Margin = New System.Windows.Forms.Padding(0)
         Me.panelHeaderBar.Name = "panelHeaderBar"
-        Me.panelHeaderBar.Size = New System.Drawing.Size(1155, 45)
+        Me.panelHeaderBar.Size = New System.Drawing.Size(1540, 55)
         Me.panelHeaderBar.TabIndex = 12
         '
         'labLang
@@ -78,10 +86,10 @@ Partial Class MainForm
         Me.labLang.Dock = System.Windows.Forms.DockStyle.Right
         Me.labLang.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labLang.ForeColor = System.Drawing.Color.White
-        Me.labLang.Location = New System.Drawing.Point(989, 0)
+        Me.labLang.Location = New System.Drawing.Point(1318, 0)
         Me.labLang.Margin = New System.Windows.Forms.Padding(0)
         Me.labLang.Name = "labLang"
-        Me.labLang.Size = New System.Drawing.Size(34, 45)
+        Me.labLang.Size = New System.Drawing.Size(45, 55)
         Me.labLang.TabIndex = 11
         Me.labLang.Text = "EN"
         Me.labLang.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -92,10 +100,10 @@ Partial Class MainForm
         Me.labAccount.BackColor = System.Drawing.Color.Transparent
         Me.labAccount.Font = New System.Drawing.Font("Segoe UI Symbol", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labAccount.ForeColor = System.Drawing.Color.White
-        Me.labAccount.Location = New System.Drawing.Point(62, 0)
+        Me.labAccount.Location = New System.Drawing.Point(83, 0)
         Me.labAccount.Margin = New System.Windows.Forms.Padding(0)
         Me.labAccount.Name = "labAccount"
-        Me.labAccount.Size = New System.Drawing.Size(90, 63)
+        Me.labAccount.Size = New System.Drawing.Size(120, 78)
         Me.labAccount.TabIndex = 4
         Me.labAccount.Text = "Compte"
         Me.labAccount.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -103,9 +111,10 @@ Partial Class MainForm
         'Guna2VSeparator1
         '
         Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(50, 9)
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(67, 11)
+        Me.Guna2VSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
-        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 31)
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(13, 38)
         Me.Guna2VSeparator1.TabIndex = 3
         '
         'btHeaderMinimize
@@ -119,13 +128,13 @@ Partial Class MainForm
         Me.btHeaderMinimize.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.ImageRotate = 0!
         Me.btHeaderMinimize.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderMinimize.Location = New System.Drawing.Point(1023, 0)
-        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMinimize.Location = New System.Drawing.Point(1363, 0)
+        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btHeaderMinimize.Name = "btHeaderMinimize"
         Me.btHeaderMinimize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderMinimize.PressedState.Parent = Me.btHeaderMinimize
-        Me.btHeaderMinimize.Size = New System.Drawing.Size(44, 45)
+        Me.btHeaderMinimize.Size = New System.Drawing.Size(59, 55)
         Me.btHeaderMinimize.TabIndex = 0
         '
         'btHeaderMaximize
@@ -139,13 +148,13 @@ Partial Class MainForm
         Me.btHeaderMaximize.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.ImageRotate = 0!
         Me.btHeaderMaximize.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderMaximize.Location = New System.Drawing.Point(1067, 0)
-        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMaximize.Location = New System.Drawing.Point(1422, 0)
+        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btHeaderMaximize.Name = "btHeaderMaximize"
         Me.btHeaderMaximize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderMaximize.PressedState.Parent = Me.btHeaderMaximize
-        Me.btHeaderMaximize.Size = New System.Drawing.Size(44, 45)
+        Me.btHeaderMaximize.Size = New System.Drawing.Size(59, 55)
         Me.btHeaderMaximize.TabIndex = 1
         '
         'btHeaderClose
@@ -160,22 +169,22 @@ Partial Class MainForm
         Me.btHeaderClose.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.ImageRotate = 0!
         Me.btHeaderClose.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderClose.Location = New System.Drawing.Point(1111, 0)
-        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderClose.Location = New System.Drawing.Point(1481, 0)
+        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btHeaderClose.Name = "btHeaderClose"
         Me.btHeaderClose.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderClose.PressedState.Parent = Me.btHeaderClose
-        Me.btHeaderClose.Size = New System.Drawing.Size(44, 45)
+        Me.btHeaderClose.Size = New System.Drawing.Size(59, 55)
         Me.btHeaderClose.TabIndex = 2
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 3)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(35, 39)
+        Me.PictureBox1.Size = New System.Drawing.Size(47, 48)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -183,6 +192,14 @@ Partial Class MainForm
         'panelOptions
         '
         Me.panelOptions.BackColor = System.Drawing.Color.Transparent
+        Me.panelOptions.Controls.Add(Me.labSide7)
+        Me.panelOptions.Controls.Add(Me.labSide6)
+        Me.panelOptions.Controls.Add(Me.labSide5)
+        Me.panelOptions.Controls.Add(Me.labSide4)
+        Me.panelOptions.Controls.Add(Me.labSide3)
+        Me.panelOptions.Controls.Add(Me.labSide2)
+        Me.panelOptions.Controls.Add(Me.labSide1)
+        Me.panelOptions.Controls.Add(Me.labSide0)
         Me.panelOptions.Controls.Add(Me.panelAccountOptions)
         Me.panelOptions.Controls.Add(Me.btCalendar)
         Me.panelOptions.Controls.Add(Me.btHistory)
@@ -195,14 +212,14 @@ Partial Class MainForm
         Me.panelOptions.Controls.Add(Me.labPersonConnected)
         Me.panelOptions.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.panelOptions.Location = New System.Drawing.Point(0, 45)
+        Me.panelOptions.Location = New System.Drawing.Point(0, 55)
         Me.panelOptions.Margin = New System.Windows.Forms.Padding(0)
         Me.panelOptions.Name = "panelOptions"
         Me.panelOptions.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(123, Byte), Integer))
         Me.panelOptions.ShadowDepth = 200
         Me.panelOptions.ShadowShift = 6
         Me.panelOptions.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.panelOptions.Size = New System.Drawing.Size(208, 604)
+        Me.panelOptions.Size = New System.Drawing.Size(277, 744)
         Me.panelOptions.TabIndex = 13
         '
         'panelAccountOptions
@@ -214,31 +231,31 @@ Partial Class MainForm
         Me.panelAccountOptions.Controls.Add(Me.labSettings)
         Me.panelAccountOptions.Controls.Add(Me.labProfile)
         Me.panelAccountOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.panelAccountOptions.Location = New System.Drawing.Point(56, 0)
-        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelAccountOptions.Location = New System.Drawing.Point(75, 0)
+        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panelAccountOptions.Name = "panelAccountOptions"
         Me.panelAccountOptions.ShadowColor = System.Drawing.Color.Black
-        Me.panelAccountOptions.Size = New System.Drawing.Size(140, 119)
+        Me.panelAccountOptions.Size = New System.Drawing.Size(187, 146)
         Me.panelAccountOptions.TabIndex = 0
         '
         'Guna2Separator2
         '
         Me.Guna2Separator2.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Guna2Separator2.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.Guna2Separator2.Location = New System.Drawing.Point(10, 70)
-        Me.Guna2Separator2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Separator2.Location = New System.Drawing.Point(13, 86)
+        Me.Guna2Separator2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Separator2.Name = "Guna2Separator2"
-        Me.Guna2Separator2.Size = New System.Drawing.Size(121, 8)
+        Me.Guna2Separator2.Size = New System.Drawing.Size(161, 10)
         Me.Guna2Separator2.TabIndex = 4
         '
         'Guna2Separator1
         '
         Me.Guna2Separator1.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Guna2Separator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.Guna2Separator1.Location = New System.Drawing.Point(10, 36)
-        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Separator1.Location = New System.Drawing.Point(13, 44)
+        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Guna2Separator1.Name = "Guna2Separator1"
-        Me.Guna2Separator1.Size = New System.Drawing.Size(121, 8)
+        Me.Guna2Separator1.Size = New System.Drawing.Size(161, 10)
         Me.Guna2Separator1.TabIndex = 3
         '
         'labDisconnect
@@ -246,10 +263,10 @@ Partial Class MainForm
         Me.labDisconnect.BackColor = System.Drawing.Color.Transparent
         Me.labDisconnect.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labDisconnect.ForeColor = System.Drawing.Color.Black
-        Me.labDisconnect.Location = New System.Drawing.Point(10, 85)
+        Me.labDisconnect.Location = New System.Drawing.Point(13, 105)
         Me.labDisconnect.Margin = New System.Windows.Forms.Padding(0)
         Me.labDisconnect.Name = "labDisconnect"
-        Me.labDisconnect.Size = New System.Drawing.Size(72, 17)
+        Me.labDisconnect.Size = New System.Drawing.Size(90, 22)
         Me.labDisconnect.TabIndex = 2
         Me.labDisconnect.Text = "Déconnexion"
         Me.labDisconnect.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -259,10 +276,10 @@ Partial Class MainForm
         Me.labSettings.BackColor = System.Drawing.Color.Transparent
         Me.labSettings.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labSettings.ForeColor = System.Drawing.Color.Black
-        Me.labSettings.Location = New System.Drawing.Point(10, 48)
+        Me.labSettings.Location = New System.Drawing.Point(13, 59)
         Me.labSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.labSettings.Name = "labSettings"
-        Me.labSettings.Size = New System.Drawing.Size(62, 17)
+        Me.labSettings.Size = New System.Drawing.Size(77, 22)
         Me.labSettings.TabIndex = 1
         Me.labSettings.Text = "Paramètres"
         Me.labSettings.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -272,10 +289,10 @@ Partial Class MainForm
         Me.labProfile.BackColor = System.Drawing.Color.Transparent
         Me.labProfile.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labProfile.ForeColor = System.Drawing.Color.Black
-        Me.labProfile.Location = New System.Drawing.Point(10, 13)
+        Me.labProfile.Location = New System.Drawing.Point(13, 16)
         Me.labProfile.Margin = New System.Windows.Forms.Padding(0)
         Me.labProfile.Name = "labProfile"
-        Me.labProfile.Size = New System.Drawing.Size(31, 17)
+        Me.labProfile.Size = New System.Drawing.Size(38, 22)
         Me.labProfile.TabIndex = 0
         Me.labProfile.Text = "Profil"
         Me.labProfile.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -293,14 +310,14 @@ Partial Class MainForm
         Me.btCalendar.ForeColor = System.Drawing.Color.White
         Me.btCalendar.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btCalendar.HoverState.Parent = Me.btCalendar
-        Me.btCalendar.Location = New System.Drawing.Point(6, 386)
+        Me.btCalendar.Location = New System.Drawing.Point(8, 475)
         Me.btCalendar.Margin = New System.Windows.Forms.Padding(0)
-        Me.btCalendar.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btCalendar.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btCalendar.Name = "btCalendar"
         Me.btCalendar.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btCalendar.PressedDepth = 45
         Me.btCalendar.ShadowDecoration.Parent = Me.btCalendar
-        Me.btCalendar.Size = New System.Drawing.Size(190, 45)
+        Me.btCalendar.Size = New System.Drawing.Size(253, 55)
         Me.btCalendar.TabIndex = 29
         Me.btCalendar.Text = "Calendrier de Restrictions"
         '
@@ -317,14 +334,14 @@ Partial Class MainForm
         Me.btHistory.ForeColor = System.Drawing.Color.White
         Me.btHistory.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btHistory.HoverState.Parent = Me.btHistory
-        Me.btHistory.Location = New System.Drawing.Point(6, 336)
+        Me.btHistory.Location = New System.Drawing.Point(8, 414)
         Me.btHistory.Margin = New System.Windows.Forms.Padding(0)
-        Me.btHistory.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btHistory.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btHistory.Name = "btHistory"
         Me.btHistory.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btHistory.PressedDepth = 45
         Me.btHistory.ShadowDecoration.Parent = Me.btHistory
-        Me.btHistory.Size = New System.Drawing.Size(190, 45)
+        Me.btHistory.Size = New System.Drawing.Size(253, 55)
         Me.btHistory.TabIndex = 28
         Me.btHistory.Text = "Historique"
         '
@@ -341,14 +358,14 @@ Partial Class MainForm
         Me.btEquipment.ForeColor = System.Drawing.Color.White
         Me.btEquipment.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btEquipment.HoverState.Parent = Me.btEquipment
-        Me.btEquipment.Location = New System.Drawing.Point(6, 286)
+        Me.btEquipment.Location = New System.Drawing.Point(8, 352)
         Me.btEquipment.Margin = New System.Windows.Forms.Padding(0)
-        Me.btEquipment.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btEquipment.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btEquipment.Name = "btEquipment"
         Me.btEquipment.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btEquipment.PressedDepth = 45
         Me.btEquipment.ShadowDecoration.Parent = Me.btEquipment
-        Me.btEquipment.Size = New System.Drawing.Size(190, 45)
+        Me.btEquipment.Size = New System.Drawing.Size(253, 55)
         Me.btEquipment.TabIndex = 27
         Me.btEquipment.Text = "Equipement"
         '
@@ -365,14 +382,14 @@ Partial Class MainForm
         Me.btUser.ForeColor = System.Drawing.Color.White
         Me.btUser.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btUser.HoverState.Parent = Me.btUser
-        Me.btUser.Location = New System.Drawing.Point(6, 236)
+        Me.btUser.Location = New System.Drawing.Point(8, 290)
         Me.btUser.Margin = New System.Windows.Forms.Padding(0)
-        Me.btUser.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btUser.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btUser.Name = "btUser"
         Me.btUser.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btUser.PressedDepth = 45
         Me.btUser.ShadowDecoration.Parent = Me.btUser
-        Me.btUser.Size = New System.Drawing.Size(190, 45)
+        Me.btUser.Size = New System.Drawing.Size(253, 55)
         Me.btUser.TabIndex = 26
         Me.btUser.Text = "Utilisateurs"
         '
@@ -389,14 +406,14 @@ Partial Class MainForm
         Me.btReturn.ForeColor = System.Drawing.Color.White
         Me.btReturn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btReturn.HoverState.Parent = Me.btReturn
-        Me.btReturn.Location = New System.Drawing.Point(6, 186)
+        Me.btReturn.Location = New System.Drawing.Point(8, 229)
         Me.btReturn.Margin = New System.Windows.Forms.Padding(0)
-        Me.btReturn.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btReturn.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btReturn.Name = "btReturn"
         Me.btReturn.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btReturn.PressedDepth = 45
         Me.btReturn.ShadowDecoration.Parent = Me.btReturn
-        Me.btReturn.Size = New System.Drawing.Size(190, 45)
+        Me.btReturn.Size = New System.Drawing.Size(253, 55)
         Me.btReturn.TabIndex = 25
         Me.btReturn.Text = "Retours"
         '
@@ -413,14 +430,14 @@ Partial Class MainForm
         Me.btRent.ForeColor = System.Drawing.Color.White
         Me.btRent.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btRent.HoverState.Parent = Me.btRent
-        Me.btRent.Location = New System.Drawing.Point(6, 136)
+        Me.btRent.Location = New System.Drawing.Point(8, 167)
         Me.btRent.Margin = New System.Windows.Forms.Padding(0)
-        Me.btRent.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btRent.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btRent.Name = "btRent"
         Me.btRent.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btRent.PressedDepth = 45
         Me.btRent.ShadowDecoration.Parent = Me.btRent
-        Me.btRent.Size = New System.Drawing.Size(190, 45)
+        Me.btRent.Size = New System.Drawing.Size(253, 55)
         Me.btRent.TabIndex = 24
         Me.btRent.Text = "Prêts"
         '
@@ -437,14 +454,14 @@ Partial Class MainForm
         Me.btAlert.ForeColor = System.Drawing.Color.White
         Me.btAlert.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btAlert.HoverState.Parent = Me.btAlert
-        Me.btAlert.Location = New System.Drawing.Point(6, 86)
+        Me.btAlert.Location = New System.Drawing.Point(8, 106)
         Me.btAlert.Margin = New System.Windows.Forms.Padding(0)
-        Me.btAlert.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.btAlert.MaximumSize = New System.Drawing.Size(359, 55)
         Me.btAlert.Name = "btAlert"
         Me.btAlert.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btAlert.PressedDepth = 45
         Me.btAlert.ShadowDecoration.Parent = Me.btAlert
-        Me.btAlert.Size = New System.Drawing.Size(190, 45)
+        Me.btAlert.Size = New System.Drawing.Size(253, 55)
         Me.btAlert.TabIndex = 23
         Me.btAlert.Text = "Notifications"
         '
@@ -461,14 +478,14 @@ Partial Class MainForm
         Me.btHome.ForeColor = System.Drawing.Color.White
         Me.btHome.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btHome.HoverState.Parent = Me.btHome
-        Me.btHome.Location = New System.Drawing.Point(6, 45)
+        Me.btHome.Location = New System.Drawing.Point(8, 55)
         Me.btHome.Margin = New System.Windows.Forms.Padding(0)
-        Me.btHome.MaximumSize = New System.Drawing.Size(202, 37)
+        Me.btHome.MaximumSize = New System.Drawing.Size(269, 46)
         Me.btHome.Name = "btHome"
         Me.btHome.PressedColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btHome.PressedDepth = 45
         Me.btHome.ShadowDecoration.Parent = Me.btHome
-        Me.btHome.Size = New System.Drawing.Size(190, 37)
+        Me.btHome.Size = New System.Drawing.Size(253, 46)
         Me.btHome.TabIndex = 0
         Me.btHome.Text = "Acceuil"
         '
@@ -478,11 +495,11 @@ Partial Class MainForm
         Me.labPersonConnected.BackColor = System.Drawing.Color.Transparent
         Me.labPersonConnected.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labPersonConnected.ForeColor = System.Drawing.Color.White
-        Me.labPersonConnected.Location = New System.Drawing.Point(6, 0)
+        Me.labPersonConnected.Location = New System.Drawing.Point(8, 0)
         Me.labPersonConnected.Margin = New System.Windows.Forms.Padding(0)
-        Me.labPersonConnected.MaximumSize = New System.Drawing.Size(269, 45)
+        Me.labPersonConnected.MaximumSize = New System.Drawing.Size(359, 55)
         Me.labPersonConnected.Name = "labPersonConnected"
-        Me.labPersonConnected.Size = New System.Drawing.Size(190, 45)
+        Me.labPersonConnected.Size = New System.Drawing.Size(253, 55)
         Me.labPersonConnected.TabIndex = 22
         Me.labPersonConnected.Text = "Bonjour, "
         '
@@ -490,25 +507,137 @@ Partial Class MainForm
         '
         Me.panelMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelMain.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.panelMain.Location = New System.Drawing.Point(208, 45)
+        Me.panelMain.Location = New System.Drawing.Point(277, 55)
         Me.panelMain.Margin = New System.Windows.Forms.Padding(0)
         Me.panelMain.Name = "panelMain"
         Me.panelMain.ShadowDecoration.Parent = Me.panelMain
-        Me.panelMain.Size = New System.Drawing.Size(947, 604)
+        Me.panelMain.Size = New System.Drawing.Size(1263, 744)
         Me.panelMain.TabIndex = 14
+        '
+        'labSide0
+        '
+        Me.labSide0.BackColor = System.Drawing.Color.Transparent
+        Me.labSide0.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide0.BorderRadius = 5
+        Me.labSide0.BorderThickness = 1
+        Me.labSide0.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide0.Location = New System.Drawing.Point(8, 55)
+        Me.labSide0.Name = "labSide0"
+        Me.labSide0.ShadowDecoration.Parent = Me.labSide0
+        Me.labSide0.Size = New System.Drawing.Size(10, 46)
+        Me.labSide0.TabIndex = 30
+        Me.labSide0.Visible = False
+        '
+        'labSide1
+        '
+        Me.labSide1.BackColor = System.Drawing.Color.Transparent
+        Me.labSide1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide1.BorderRadius = 5
+        Me.labSide1.BorderThickness = 1
+        Me.labSide1.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide1.Location = New System.Drawing.Point(8, 106)
+        Me.labSide1.Name = "labSide1"
+        Me.labSide1.ShadowDecoration.Parent = Me.labSide1
+        Me.labSide1.Size = New System.Drawing.Size(10, 55)
+        Me.labSide1.TabIndex = 31
+        Me.labSide1.Visible = False
+        '
+        'labSide2
+        '
+        Me.labSide2.BackColor = System.Drawing.Color.Transparent
+        Me.labSide2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide2.BorderRadius = 5
+        Me.labSide2.BorderThickness = 1
+        Me.labSide2.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide2.Location = New System.Drawing.Point(8, 167)
+        Me.labSide2.Name = "labSide2"
+        Me.labSide2.ShadowDecoration.Parent = Me.labSide2
+        Me.labSide2.Size = New System.Drawing.Size(10, 55)
+        Me.labSide2.TabIndex = 32
+        Me.labSide2.Visible = False
+        '
+        'labSide3
+        '
+        Me.labSide3.BackColor = System.Drawing.Color.Transparent
+        Me.labSide3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide3.BorderRadius = 5
+        Me.labSide3.BorderThickness = 1
+        Me.labSide3.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide3.Location = New System.Drawing.Point(8, 229)
+        Me.labSide3.Name = "labSide3"
+        Me.labSide3.ShadowDecoration.Parent = Me.labSide3
+        Me.labSide3.Size = New System.Drawing.Size(10, 55)
+        Me.labSide3.TabIndex = 33
+        Me.labSide3.Visible = False
+        '
+        'labSide4
+        '
+        Me.labSide4.BackColor = System.Drawing.Color.Transparent
+        Me.labSide4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide4.BorderRadius = 5
+        Me.labSide4.BorderThickness = 1
+        Me.labSide4.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide4.Location = New System.Drawing.Point(8, 290)
+        Me.labSide4.Name = "labSide4"
+        Me.labSide4.ShadowDecoration.Parent = Me.labSide4
+        Me.labSide4.Size = New System.Drawing.Size(10, 55)
+        Me.labSide4.TabIndex = 34
+        Me.labSide4.Visible = False
+        '
+        'labSide5
+        '
+        Me.labSide5.BackColor = System.Drawing.Color.Transparent
+        Me.labSide5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide5.BorderRadius = 5
+        Me.labSide5.BorderThickness = 1
+        Me.labSide5.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide5.Location = New System.Drawing.Point(8, 352)
+        Me.labSide5.Name = "labSide5"
+        Me.labSide5.ShadowDecoration.Parent = Me.labSide5
+        Me.labSide5.Size = New System.Drawing.Size(10, 55)
+        Me.labSide5.TabIndex = 35
+        Me.labSide5.Visible = False
+        '
+        'labSide6
+        '
+        Me.labSide6.BackColor = System.Drawing.Color.Transparent
+        Me.labSide6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide6.BorderRadius = 5
+        Me.labSide6.BorderThickness = 1
+        Me.labSide6.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide6.Location = New System.Drawing.Point(8, 414)
+        Me.labSide6.Name = "labSide6"
+        Me.labSide6.ShadowDecoration.Parent = Me.labSide6
+        Me.labSide6.Size = New System.Drawing.Size(10, 55)
+        Me.labSide6.TabIndex = 32
+        Me.labSide6.Visible = False
+        '
+        'labSide7
+        '
+        Me.labSide7.BackColor = System.Drawing.Color.Transparent
+        Me.labSide7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.labSide7.BorderRadius = 5
+        Me.labSide7.BorderThickness = 1
+        Me.labSide7.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.labSide7.Location = New System.Drawing.Point(8, 475)
+        Me.labSide7.Name = "labSide7"
+        Me.labSide7.ShadowDecoration.Parent = Me.labSide7
+        Me.labSide7.Size = New System.Drawing.Size(10, 55)
+        Me.labSide7.TabIndex = 36
+        Me.labSide7.Visible = False
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1155, 649)
+        Me.ClientSize = New System.Drawing.Size(1540, 799)
         Me.Controls.Add(Me.panelMain)
         Me.Controls.Add(Me.panelOptions)
         Me.Controls.Add(Me.panelHeaderBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
@@ -545,4 +674,12 @@ Partial Class MainForm
     Friend WithEvents labDisconnect As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labSettings As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labProfile As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labSide7 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide4 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents labSide0 As Guna.UI2.WinForms.Guna2Panel
 End Class

@@ -49,6 +49,7 @@ Public Class MainForm
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
+        selectOptionButton(0)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -156,6 +157,7 @@ Public Class MainForm
         panelMain.Controls.Add(iDashboard)
         iDashboard.BringToFront()
         iDashboard.resizeLabels()
+        selectOptionButton(0)
     End Sub
 
     Private Sub btAlert_Click(sender As Object, e As EventArgs) Handles btAlert.Click
@@ -174,6 +176,7 @@ Public Class MainForm
             notifications.Dock = DockStyle.Left
             panelMain.Controls.Add(notifications)
             notifications.BringToFront()
+            selectOptionButton(1)
         End If
     End Sub
 
@@ -183,6 +186,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iRent)
         iRent.BringToFront()
+        selectOptionButton(2)
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
@@ -191,30 +195,7 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iReturn)
         iReturn.BringToFront()
-    End Sub
-
-    Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment(Me)
-        iEquipment.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iEquipment)
-        iEquipment.BringToFront()
-    End Sub
-
-    Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
-        Dim iHistory As New UCHistory()
-        iHistory.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iHistory)
-        iHistory.BringToFront()
-    End Sub
-
-    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
-        Dim iRestriction As New UCRestriction()
-        iRestriction.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRestriction)
-        iRestriction.BringToFront()
+        selectOptionButton(3)
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
@@ -223,6 +204,34 @@ Public Class MainForm
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iUser)
         iUser.BringToFront()
+        selectOptionButton(4)
+    End Sub
+
+    Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
+        Dim iEquipment As New UCEquipment(Me)
+        iEquipment.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iEquipment)
+        iEquipment.BringToFront()
+        selectOptionButton(5)
+    End Sub
+
+    Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
+        Dim iHistory As New UCHistory()
+        iHistory.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iHistory)
+        iHistory.BringToFront()
+        selectOptionButton(6)
+    End Sub
+
+    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
+        Dim iRestriction As New UCRestriction()
+        iRestriction.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iRestriction)
+        iRestriction.BringToFront()
+        selectOptionButton(7)
     End Sub
 
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
@@ -251,19 +260,20 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        labAccount.Text = Lang.getInstance().getLang()("MainlabAccount")
-        labPersonConnected.Text = Lang.getInstance().getLang()("MainlabPersonConnected")
-        btHome.Text = Lang.getInstance().getLang()("MainbtHome")
-        btAlert.Text = Lang.getInstance().getLang()("MainbtAlert")
-        btRent.Text = Lang.getInstance().getLang()("MainbtRent")
-        btReturn.Text = Lang.getInstance().getLang()("MainbtReturn")
-        btUser.Text = Lang.getInstance().getLang()("MainbtUser")
-        btEquipment.Text = Lang.getInstance().getLang()("MainbtEquipment")
-        btHistory.Text = Lang.getInstance().getLang()("MainbtHistory")
-        btCalendar.Text = Lang.getInstance().getLang()("MainbtCalendar")
-        labProfile.Text = Lang.getInstance().getLang()("MainlabProfile")
-        labSettings.Text = Lang.getInstance().getLang()("MainlabSettings")
-        labDisconnect.Text = Lang.getInstance().getLang()("MainlabDisconnect")
+        Dim json = Lang.getInstance().getLang()
+        labAccount.Text = json("MainlabAccount")
+        labPersonConnected.Text = json("MainlabPersonConnected")
+        btHome.Text = json("MainbtHome")
+        btAlert.Text = json("MainbtAlert")
+        btRent.Text = json("MainbtRent")
+        btReturn.Text = json("MainbtReturn")
+        btUser.Text = json("MainbtUser")
+        btEquipment.Text = json("MainbtEquipment")
+        btHistory.Text = json("MainbtHistory")
+        btCalendar.Text = json("MainbtCalendar")
+        labProfile.Text = json("MainlabProfile")
+        labSettings.Text = json("MainlabSettings")
+        labDisconnect.Text = json("MainlabDisconnect")
     End Sub
 
     Private Sub panelAccountOptions_MouseLeave(sender As Object, e As EventArgs) Handles panelAccountOptions.MouseLeave,
@@ -352,5 +362,34 @@ Public Class MainForm
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
         dashboard.resizeLabels()
+    End Sub
+
+    Public Sub selectOptionButton(number As Integer)
+        labSide0.Visible = False
+        labSide1.Visible = False
+        labSide2.Visible = False
+        labSide3.Visible = False
+        labSide4.Visible = False
+        labSide5.Visible = False
+        labSide6.Visible = False
+        labSide7.Visible = False
+        Select Case number
+            Case 0
+                labSide0.Visible = True
+            Case 1
+                labSide1.Visible = True
+            Case 2
+                labSide2.Visible = True
+            Case 3
+                labSide3.Visible = True
+            Case 4
+                labSide4.Visible = True
+            Case 5
+                labSide5.Visible = True
+            Case 6
+                labSide6.Visible = True
+            Case 7
+                labSide7.Visible = True
+        End Select
     End Sub
 End Class

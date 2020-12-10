@@ -35,7 +35,7 @@ Public Class UCUserAdd
         dropStatus.SelectedIndex = 0
         baseLastNameLocation = tbLastName.Location
         resizeInputs()
-        numCode.Focus()
+        numCode.Select()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -106,11 +106,13 @@ Public Class UCUserAdd
     '__________________________________________________________________________________________________________
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        tbFirstName.BorderColor = Color.FromArgb(1, 213, 218, 223)
-        tbLastName.BorderColor = Color.FromArgb(1, 213, 218, 223)
-        tbEmail.BorderColor = Color.FromArgb(1, 213, 218, 223)
-        tbPhone1.BorderColor = Color.FromArgb(1, 213, 218, 223)
-        tbPhone2.BorderColor = Color.FromArgb(1, 213, 218, 223)
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
+        tbFirstName.BorderColor = grey
+        tbLastName.BorderColor = grey
+        tbEmail.BorderColor = grey
+        tbPhone1.BorderColor = grey
+        tbPhone2.BorderColor = grey
         Dim firstName, lastName, email, phone1, phone2, password As String
         firstName = Trim(tbFirstName.Text)
         lastName = Trim(tbLastName.Text)
@@ -141,19 +143,19 @@ Public Class UCUserAdd
                                 submit(password, firstName, lastName, email, phone1, phone2)
                             End If
                         Else
-                            tbPhone2.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                            tbPhone2.BorderColor = red
                         End If
                     Else
-                        tbPhone1.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                        tbPhone1.BorderColor = red
                     End If
                 Else
-                    tbEmail.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                    tbEmail.BorderColor = red
                 End If
             Else
-                tbLastName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+                tbLastName.BorderColor = red
             End If
         Else
-            tbFirstName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+            tbFirstName.BorderColor = red
         End If
     End Sub
 
@@ -184,26 +186,27 @@ Public Class UCUserAdd
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguages()
-        btAddUser.Text = Lang.getInstance().getLang()("SaveItem")
-        btCancelUser.Text = Lang.getInstance().getLang()("CancelButton")
-        labCodeUser.Text = Lang.getInstance().getLang()("UserAddLabMatricula")
-        labName.Text = Lang.getInstance().getLang()("UserAddLabName")
-        tbFirstName.PlaceholderText = Lang.getInstance().getLang()("UserAddLabFirstNamePlaceholder")
-        tbLastName.PlaceholderText = Lang.getInstance().getLang()("UserAddLabLastNamePlaceholder")
-        labEmail.Text = Lang.getInstance().getLang()("UserAddLabEmail")
-        labPhone.Text = Lang.getInstance().getLang()("UserAddLabPhone1")
-        labPhone2.Text = Lang.getInstance().getLang()("UserAddLabPhone2")
-        labStatus.Text = Lang.getInstance().getLang()("UserAddLabStatus")
-        labPermissions.Text = Lang.getInstance().getLang()("UserAddLabPermissions")
-        labPassword.Text = Lang.getInstance().getLang()("UserAddLabPassword")
-        labSetPassword.Text = Lang.getInstance().getLang()("UserAddLabSetPassword")
-        dropPermissions.Items.Add(Lang.getInstance().getLang()("UserAddDropPermissions0"))
-        dropPermissions.Items.Add(Lang.getInstance().getLang()("UserAddDropPermissions1"))
-        dropPermissions.Items.Add(Lang.getInstance().getLang()("UserAddDropPermissions2"))
-        dropPermissions.Items.Add(Lang.getInstance().getLang()("UserAddDropPermissions3"))
-        dropStatus.Items.Add(Lang.getInstance().getLang()("UserAddDropStatus0"))
-        dropStatus.Items.Add(Lang.getInstance().getLang()("UserAddDropStatus1"))
-        dropStatus.Items.Add(Lang.getInstance().getLang()("UserAddDropStatus2"))
+        Dim json = Lang.getInstance().getLang()
+        btAddUser.Text = json("SaveItem")
+        btCancelUser.Text = json("CancelButton")
+        labCodeUser.Text = json("UserAddLabMatricula")
+        labName.Text = json("UserAddLabName")
+        tbFirstName.PlaceholderText = json("UserAddLabFirstNamePlaceholder")
+        tbLastName.PlaceholderText = json("UserAddLabLastNamePlaceholder")
+        labEmail.Text = json("UserAddLabEmail")
+        labPhone.Text = json("UserAddLabPhone1")
+        labPhone2.Text = json("UserAddLabPhone2")
+        labStatus.Text = json("UserAddLabStatus")
+        labPermissions.Text = json("UserAddLabPermissions")
+        labPassword.Text = json("UserAddLabPassword")
+        labSetPassword.Text = json("UserAddLabSetPassword")
+        dropPermissions.Items.Add(json("UserAddDropPermissions0"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions1"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions2"))
+        dropPermissions.Items.Add(json("UserAddDropPermissions3"))
+        dropStatus.Items.Add(json("UserAddDropStatus0"))
+        dropStatus.Items.Add(json("UserAddDropStatus1"))
+        dropStatus.Items.Add(json("UserAddDropStatus2"))
     End Sub
 
     Private Sub resizeInputs()

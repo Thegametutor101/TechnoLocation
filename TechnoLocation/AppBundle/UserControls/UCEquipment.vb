@@ -6,7 +6,6 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Dim mainForm As New MainForm
-    Dim json As JObject
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -27,6 +26,7 @@ Public Class UCEquipment
         loadDataGridView()
         loadLanguage()
         dropSearch.SelectedIndex() = 0
+        tbSearch.Select()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -102,19 +102,34 @@ Public Class UCEquipment
 
     End Sub
 
+    Private Sub availableChange(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipment.CellClick
+        If gridEquipment.CurrentCell.ColumnIndex = 4 Then
+            Dim code = gridEquipment.CurrentRow.Cells(0).Value
+            If gridEquipment.CurrentRow.Cells(4).Value Then
+                ModelEquipment.getInstance().setAvailable(code, 0)
+            Else
+                ModelEquipment.getInstance().setAvailable(code, 1)
+            End If
+            loadDataGridView()
+        End If
+    End Sub
+
     '__________________________________________________________________________________________________________
     'Other
     '__________________________________________________________________________________________________________
 
     Public Sub loadDataGridView()
+        Dim json = Lang.getInstance().getLang()
         gridEquipment.DataSource = EntityEquipment.getInstance().getEquipment()
-        gridEquipment.Columns("code").HeaderText = Lang.getInstance().getLang()("EquipGridCode")
-        gridEquipment.Columns("name").HeaderText = Lang.getInstance().getLang()("EquipGridName")
-        gridEquipment.Columns("kit").HeaderText = Lang.getInstance().getLang()("EquipGridKit")
-        gridEquipment.Columns("state").HeaderText = Lang.getInstance().getLang()("EquipGridState")
-        gridEquipment.Columns("available").HeaderText = Lang.getInstance().getLang()("EquipGridAvailable")
-        gridEquipment.Columns("comments").HeaderText = Lang.getInstance().getLang()("EquipGridComments")
+        gridEquipment.Columns("code").HeaderText = json("EquipGridCode")
+        gridEquipment.Columns("name").HeaderText = json("EquipGridName")
+        gridEquipment.Columns("kit").HeaderText = json("EquipGridKit")
+        gridEquipment.Columns("state").HeaderText = json("EquipGridState")
+        gridEquipment.Columns("available").HeaderText = json("EquipGridAvailable")
+        gridEquipment.Columns("comments").HeaderText = json("EquipGridComments")
+        gridEquipment.Columns("deposit").HeaderText = json("EquipGridDeposit")
         gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gridEquipment.Columns("available").ReadOnly = False
     End Sub
 
     Private Sub search()
@@ -169,16 +184,17 @@ Public Class UCEquipment
     End Sub
 
     Private Sub loadLanguage()
-        btNewEquipment.Text = Lang.getInstance().getLang()("NewItem")
-        btDelEquipment.Text = Lang.getInstance().getLang()("DeleteItem")
-        btPrintBarcodeEquip.Text = Lang.getInstance().getLang()("PrintBarCode")
-        labAvailableOnlyName.Text = Lang.getInstance().getLang()("AvailableOnly")
-        tbSearch.PlaceholderText = Lang.getInstance().getLang()("SearchPlaceholder")
-        dropSearch.Items.Add(Lang.getInstance().getLang()("DropCode"))
-        dropSearch.Items.Add(Lang.getInstance().getLang()("DropNote"))
-        dropSearch.Items.Add(Lang.getInstance().getLang()("DropState"))
-        dropSearch.Items.Add(Lang.getInstance().getLang()("DropKit"))
-        dropSearch.Items.Add(Lang.getInstance().getLang()("DropName"))
+        Dim json = Lang.getInstance().getLang()
+        btNewEquipment.Text = json("NewItem")
+        btDelEquipment.Text = json("DeleteItem")
+        btPrintBarcodeEquip.Text = json("PrintBarCode")
+        labAvailableOnlyName.Text = json("AvailableOnly")
+        tbSearch.PlaceholderText = json("SearchPlaceholder")
+        dropSearch.Items.Add(json("DropCode"))
+        dropSearch.Items.Add(json("DropNote"))
+        dropSearch.Items.Add(json("DropState"))
+        dropSearch.Items.Add(json("DropKit"))
+        dropSearch.Items.Add(json("DropName"))
     End Sub
 
 End Class

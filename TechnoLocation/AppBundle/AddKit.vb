@@ -5,6 +5,7 @@
 
     Private Sub AddKit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tbNameKitAdd.Select()
+        loadLanguage()
     End Sub
 
     Private Sub HeaderBar_MouseDown(sender As Object, e As MouseEventArgs) Handles panelHeaderBar.MouseDown

@@ -31,14 +31,14 @@ Public Class ModelEquipment
                                                         deposit='{deposit}'
                                                         where code='{code}'"
             connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
         End Try
     End Function
 
-    Public Function AvailableEquipment(code As Integer, available As Integer)
+    Public Function setAvailable(code As Integer, available As Integer)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
@@ -48,7 +48,7 @@ Public Class ModelEquipment
             command.CommandText = $"update equipment set available='{available}'
                                                          where code='{code}'"
             connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
