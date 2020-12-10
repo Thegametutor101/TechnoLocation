@@ -20,7 +20,11 @@ Public Class Connection
     'Load
     '__________________________________________________________________________________________________________
 
+<<<<<<< HEAD
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+=======
+    Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+>>>>>>> Daniel-Navarro
         Lang.getInstance().setLang("fr_ca")
         testConnection()
         loadLanguage()
