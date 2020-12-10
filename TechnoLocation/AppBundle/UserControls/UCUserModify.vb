@@ -7,7 +7,8 @@ Public Class UCUserModify
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim WithEvents mainForm As New MainForm
+    Dim code As String
+    Dim WithEvents mainForm As New MainForm(code)
     Dim interfaceUser As UCUser
     Dim baseInputWidth As Integer
     Dim baseLastNameLocation As Point
@@ -17,10 +18,11 @@ Public Class UCUserModify
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Public Sub New(id As Integer, main As MainForm, user As UCUser)
+    Public Sub New(id As Integer, main As MainForm, user As UCUser, matricule As String)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        code = matricule
         mainForm = main
         interfaceUser = user
         baseRow = EntityUser.getInstance().getUserByCode(id).Rows(0)

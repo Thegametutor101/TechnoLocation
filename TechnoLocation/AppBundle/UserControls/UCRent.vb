@@ -8,7 +8,9 @@ Public Class UCRent
     'Attributes
     '__________________________________________________________________________________________________________
 
+    Dim code As String
     Dim datePick As Boolean = True
+    Dim mainForm As New MainForm(code)
     Dim table As DataTable
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
         Dim iUserAdd As New UCUserAdd()
@@ -24,9 +26,11 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Sub New(main As MainForm)
+    Sub New(main As MainForm, matricule As String)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+        code = matricule
         mainForm = main
     End Sub
 
@@ -44,6 +48,12 @@ Public Class UCRent
         gridSelectedEquipment.Columns(3).Name = "État"
         gridSelectedEquipment.Columns(4).Name = "Commentaire"
         gridSelectedEquipment.Columns(5).Name = "Dépôt sugéré"
+    Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
+        Dim iUserAdd As New UCUserAdd(mainForm, New UCUser(mainForm, code), code)
+        iUserAdd.Dock = DockStyle.Fill
+        MainForm.panelMain.Controls.Add(iUserAdd)
+        iUserAdd.BringToFront()
+        gridUserSearch.DataSource = EntityUser.getInstance.getUsers()
     End Sub
 
     '__________________________________________________________________________________________________________

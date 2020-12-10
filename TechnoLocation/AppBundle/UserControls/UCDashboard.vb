@@ -4,17 +4,19 @@
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim WithEvents mainForm As New MainForm
+    Dim code As String
+    Dim WithEvents mainForm As New MainForm(code)
     Dim topPanelBaseWidth As Integer
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Public Sub New(main As MainForm)
+    Public Sub New(main As MainForm, matricule As String)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+        code = matricule
         mainForm = main
         topPanelBaseWidth = panelTotalUsers.Width
         setValues()

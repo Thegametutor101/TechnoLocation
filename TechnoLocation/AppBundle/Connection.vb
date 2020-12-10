@@ -1,6 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 
+
+
 Public Class Connection
 
     '__________________________________________________________________________________________________________
@@ -75,7 +77,7 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                Dim main As New MainForm
+                Dim main As New MainForm(username)
                 main.Show()
                 main.setLanguage(labLang.Text)
                 Me.Close()

@@ -7,16 +7,18 @@ Public Class UCUser
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim mainForm As New MainForm
+    Dim code As String
+    Dim mainForm As New MainForm(code)
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Public Sub New(main As MainForm)
+    Public Sub New(main As MainForm, matricule As String)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        code = matricule
         mainForm = main
     End Sub
 
@@ -52,7 +54,7 @@ Public Class UCUser
 
     Private Sub gridUser_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridUser.CellDoubleClick
         Dim code As Integer = gridUser.Rows(e.RowIndex).Cells(0).Value
-        Dim iUserModify As New UCUserModify(code, mainForm, Me)
+        Dim iUserModify As New UCUserModify(code, mainForm, Me, code)
         iUserModify.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserModify)
         iUserModify.BringToFront()
@@ -106,7 +108,7 @@ Public Class UCUser
     End Sub
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        Dim iUserAdd As New UCUserAdd(mainForm, Me)
+        Dim iUserAdd As New UCUserAdd(mainForm, Me, code)
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
