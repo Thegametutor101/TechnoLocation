@@ -92,5 +92,8 @@
   "MsgSuccessEditEquip": "La modification a été effectuer!",
   "MsgNoEquipSelected": "Vous devez sélectionner au moins un équipement pour faire un prêt",
   "MsgAddRent": "Voulez-vous vraiment faire ce prêt?",
-  "MsgEquimentAlreadyUse": "L'équipement que vous tentez de sélectionner est soi déja sélectionner ou n'est pas disponible."
+  "MsgEquimentAlreadyUse": "L'équipement que vous tentez de sélectionner n'est pas disponible pour ces dates.",
+  "MsgNoDateBeginRent": "Vous devez choisir une date de début pour sélectionner un équipement.",
+  "MsgNoDateEndRent": "Vous devez choisir une date de fin pour sélectionner un équipement.",
+  "MsgEquipmentDateChange": "Un équipement que vous avez sélectionné à du être retiré, car il n'est plus diponible pour les dates sélectionner!"
 }

@@ -166,7 +166,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where (rentDate between '{dateBegin}' and '{dateEnd}') and (returnDate between '{dateBegin}' and '{dateEnd}' order by R.code"
+        command.CommandText = $"Select * from rent R where (rentDate between '{dateBegin}' and '{dateEnd}') and (returnDate between '{dateBegin}' and '{dateEnd}') order by R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
