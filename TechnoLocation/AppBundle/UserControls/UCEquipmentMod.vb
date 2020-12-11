@@ -9,7 +9,7 @@ Public Class UCEquipmentMod
     Dim row As DataGridViewRow
     Dim kit As Integer
     Dim equipment As UCEquipment
-    Dim mainForm As New MainForm
+    Dim mainForm As New MainForm(0)
 
     '__________________________________________________________________________________________________________
     'Constructor

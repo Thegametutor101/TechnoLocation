@@ -9,7 +9,7 @@ Public Class UCEquipmentAdd
     Dim kit As Integer = 0
     Dim rowSelected As Boolean = False
     Dim equipment As UCEquipment
-    Dim mainForm As New MainForm
+    Dim mainForm As New MainForm(0)
 
     '__________________________________________________________________________________________________________
     'Constructor

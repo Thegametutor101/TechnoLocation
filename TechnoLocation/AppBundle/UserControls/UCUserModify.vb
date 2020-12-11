@@ -7,7 +7,7 @@ Public Class UCUserModify
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim WithEvents mainForm As New MainForm
+    Dim WithEvents mainForm As New MainForm(0)
     Dim interfaceUser As UCUser
     Dim baseInputWidth As Integer
     Dim baseLastNameLocation As Point

@@ -71,7 +71,7 @@ Public Class EntityUser
         Return table
     End Function
 
-    Public Function getUsersCode(code As Integer) As DataTable
+    Public Function getUsersCode(code As String) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
@@ -86,7 +86,7 @@ Public Class EntityUser
         Return table
     End Function
 
-    Public Function getUserByCode(code As Integer) As DataTable
+    Public Function getUserByCode(code As String) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If

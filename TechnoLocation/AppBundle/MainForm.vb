@@ -1,7 +1,7 @@
 ﻿Imports Newtonsoft.Json.Linq
 
 Public Class MainForm
-    Dim code As Integer
+
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
@@ -13,17 +13,18 @@ Public Class MainForm
     Private baseHeight, baseWidth As Integer
     Public panelBaseWidth, panelBaseHeight As Integer
     Public isEditing As Boolean = False
+    Public code As Integer
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    'Public Sub New(id As Integer)
-    ' Cet appel est requis par le concepteur.
-    '   InitializeComponent()
-    ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
-    '   code = id
-    'End Sub
+    Public Sub New(matricule As Integer)
+        ' Cet appel est requis par le concepteur.
+        InitializeComponent()
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        code = matricule
+    End Sub
 
     '__________________________________________________________________________________________________________
     'Load
@@ -45,7 +46,6 @@ Public Class MainForm
         labAccount.TextAlignment = ContentAlignment.MiddleLeft
         labDisconnect.TextAlignment = ContentAlignment.MiddleCenter
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
-        labSettings.TextAlignment = ContentAlignment.MiddleCenter
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
@@ -94,7 +94,7 @@ Public Class MainForm
 
     Public Shared Function getInstance() As MainForm
         If IsNothing(instance) Then
-            instance = New MainForm '(code)
+            instance = New MainForm(0)
         End If
         Return instance
     End Function
@@ -225,21 +225,12 @@ Public Class MainForm
         selectOptionButton(6)
     End Sub
 
-    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
-        Dim iRestriction As New UCRestriction()
-        iRestriction.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRestriction)
-        iRestriction.BringToFront()
-        selectOptionButton(7)
-    End Sub
-
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
-        'Dim iProfile As New UCProfile()
-        'iProfile.Dock = DockStyle.Fill
-        'panelMain.Controls.Clear()
-        'panelMain.Controls.Add(iProfile)
-        'iProfile.BringToFront()
+        Dim iProfile As New UCProfile(Me)
+        iProfile.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iProfile)
+        iProfile.BringToFront()
     End Sub
 
     Private Sub labDisconnect_Click(sender As Object, e As EventArgs) Handles labDisconnect.Click
@@ -270,9 +261,7 @@ Public Class MainForm
         btUser.Text = json("MainbtUser")
         btEquipment.Text = json("MainbtEquipment")
         btHistory.Text = json("MainbtHistory")
-        btCalendar.Text = json("MainbtCalendar")
         labProfile.Text = json("MainlabProfile")
-        labSettings.Text = json("MainlabSettings")
         labDisconnect.Text = json("MainlabDisconnect")
     End Sub
 
@@ -303,10 +292,6 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub panelMain_Paint(sender As Object, e As PaintEventArgs) Handles panelMain.Paint
-
-    End Sub
-
     Public Sub setLanguage(language As String)
         If language = "FR" Then
             labLang.Text = "FR"
@@ -317,6 +302,7 @@ Public Class MainForm
         End If
         loadLanguage()
     End Sub
+
 
     Public Sub maximize()
         Dim topCorner = New Point(0, 0)
@@ -372,7 +358,6 @@ Public Class MainForm
         labSide4.Visible = False
         labSide5.Visible = False
         labSide6.Visible = False
-        labSide7.Visible = False
         Select Case number
             Case 0
                 labSide0.Visible = True
@@ -388,8 +373,6 @@ Public Class MainForm
                 labSide5.Visible = True
             Case 6
                 labSide6.Visible = True
-            Case 7
-                labSide7.Visible = True
         End Select
     End Sub
 End Class

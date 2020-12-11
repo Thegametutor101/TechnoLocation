@@ -20,11 +20,7 @@ Public Class Connection
     'Load
     '__________________________________________________________________________________________________________
 
-<<<<<<< HEAD
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-=======
-    Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
->>>>>>> Daniel-Navarro
         Lang.getInstance().setLang("fr_ca")
         testConnection()
         loadLanguage()
@@ -75,7 +71,12 @@ Public Class Connection
         If Not IsNothing(username) Then
             Dim result As Boolean = loginController.login(username, password)
             If result Then
-                Dim main As New MainForm
+                Dim main As MainForm
+                If username = "admin" Then
+                    main = New MainForm(0)
+                Else
+                    main = New MainForm(CInt(username))
+                End If
                 main.Show()
                 main.setLanguage(labLang.Text)
                 Me.Close()
@@ -89,7 +90,8 @@ Public Class Connection
 
     Public Function testConnection()
         If Not EntityUser.getInstance().testConnection() Then
-            MessageBox.Show($"{Lang.getInstance().getLang()("DatabaseNotFound")}{Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
+            MessageBox.Show($"{Lang.getInstance().getLang()("DatabaseNotFound")}
+                            {Environment.NewLine}{Environment.NewLine}{MainForm.getInstance().connectionString}")
             Me.Close()
         End If
     End Function
