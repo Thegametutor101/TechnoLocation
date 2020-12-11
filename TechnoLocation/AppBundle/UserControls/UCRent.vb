@@ -10,7 +10,7 @@ Public Class UCRent
 
     Dim datePick As Boolean = True
     Dim table As DataTable
-    Dim WithEvents mainForm As MainForm
+    Dim WithEvents mainForm As New MainForm(0)
 
     '__________________________________________________________________________________________________________
     'Constructor
