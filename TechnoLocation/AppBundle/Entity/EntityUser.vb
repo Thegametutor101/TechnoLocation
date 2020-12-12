@@ -32,7 +32,19 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U order by U.code"
+        command.CommandText = $"Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        U.phoneMain, 
+                                        U.phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")

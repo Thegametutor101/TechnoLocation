@@ -190,7 +190,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        Dim iReturn As New UCReturn()
+        Dim iReturn As New UCReturn(Me)
         iReturn.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iReturn)

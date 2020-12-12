@@ -31,7 +31,15 @@ Public Class EntityEquipment
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from equipment E order by E.code"
+        command.CommandText = $"Select E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state, 
+                                    available, 
+                                    comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                from equipment E
+                                INNER JOIN kit K on K.code = E.kit"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -40,7 +48,7 @@ Public Class EntityEquipment
         Return table
     End Function
 
-    Public Function getEquipmentCode(code As Integer) As DataTable
+    Public Function getEquipmentByCode(code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If

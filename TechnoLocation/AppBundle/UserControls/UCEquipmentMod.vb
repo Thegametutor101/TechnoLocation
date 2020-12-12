@@ -36,7 +36,7 @@ Public Class UCEquipmentMod
         If row.Cells(4).Value = True Then
             checkAvailable.Checked = True
         End If
-        kit = row.Cells(2).Value
+        kit = gridKit.SelectedRows.Item(0).Cells.Item(0).Value
         loadLanguage()
         tbName.Select()
     End Sub
@@ -49,7 +49,7 @@ Public Class UCEquipmentMod
                     e As DataGridViewBindingCompleteEventArgs) Handles gridKit.DataBindingComplete
         gridKit.ClearSelection()
         For Each rowKit As DataGridViewRow In gridKit.Rows
-            If rowKit.Cells(0).Value = row.Cells(2).Value Then
+            If rowKit.Cells(1).Value = row.Cells(2).Value Then
                 gridKit.Rows(rowKit.Index).Selected = True
             End If
         Next

@@ -31,22 +31,44 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent"
+        command.CommandText = $"Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        DATE_FORMAT(R.rentDate, '%d/%m/%Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d/%m/%Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                GROUP BY R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("rents")
+        Dim table As New DataTable("rentals")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getRentCode(code As Integer) As DataTable
+    Public Function getRentalByCode(code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where code = '{code}' order by R.code"
+        command.CommandText = $"Select * from rent where code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
