@@ -19,7 +19,7 @@ Public Class ModelCharacters
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into characters values('{passChar}', '{value}')"
+            command.CommandText = $"insert into characters(passChar, value) values('{passChar}', '{value}')"
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()

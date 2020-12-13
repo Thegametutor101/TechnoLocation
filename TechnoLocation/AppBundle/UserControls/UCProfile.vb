@@ -23,13 +23,15 @@
     '__________________________________________________________________________________________________________
 
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim data As DataRow = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
-        tbCode.Text = mainForm.code
-        tbName.Text = data.Item("firstName") + " " + data.Item("lastName")
-        tbEmail.Text = data.Item("email")
-        tbPhone.Text = data.Item("phoneMain")
-        tbPhone2.Text = data.Item("phone2")
-        tbJob.Text = data.Item("job")
+        If Not mainForm.code = 0 Then
+            Dim data As DataRow = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
+            tbCode.Text = mainForm.code
+            tbName.Text = data.Item("firstName") + " " + data.Item("lastName")
+            tbEmail.Text = data.Item("email")
+            tbPhone.Text = data.Item("phoneMain")
+            tbPhone2.Text = data.Item("phone2")
+            tbJob.Text = data.Item("job")
+        End If
     End Sub
 
     '__________________________________________________________________________________________________________

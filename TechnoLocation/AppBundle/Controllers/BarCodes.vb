@@ -13,8 +13,6 @@ Public Class BarCodes
     Dim path As String = ""
     Dim type As String = ".jpeg"
 
-
-
     Private Const scaleh = 100
     Private Const scalew = 140
     Private Const offset = 10

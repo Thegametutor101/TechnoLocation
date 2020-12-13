@@ -10,6 +10,12 @@ Public Class UCUserAdd
     Dim interfaceUser As UCUser
     Dim baseInputWidth As Integer
     Dim baseLastNameLocation As Point
+    Dim baseNumExt1Location As Point
+    Dim baseNumExt2Location As Point
+    Dim basecheckExt1Location As Point
+    Dim basecheckExt2Location As Point
+    Dim baselabExt1Location As Point
+    Dim baselabExt2Location As Point
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -34,8 +40,16 @@ Public Class UCUserAdd
         dropPermissions.SelectedIndex = 0
         dropStatus.SelectedIndex = 0
         baseLastNameLocation = tbLastName.Location
+        baseNumExt1Location = numExtension1.Location
+        baseNumExt2Location = numExtension2.Location
+        basecheckExt1Location = checkExt1.Location
+        basecheckExt2Location = checkExt2.Location
+        baselabExt1Location = labExt1.Location
+        baselabExt2Location = labExt2.Location
         resizeInputs()
         numCode.Select()
+        numExtension1.Enabled = False
+        numExtension2.Enabled = False
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -64,6 +78,22 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
+    Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
+        If checkExt1.Checked Then
+            numExtension1.Enabled = True
+        Else
+            numExtension1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub checkExt2_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt2.CheckedChanged
+        If checkExt2.Checked Then
+            numExtension2.Enabled = True
+        Else
+            numExtension2.Enabled = False
+        End If
+    End Sub
+
     Private Sub submit(password As String,
                        firstName As String,
                        lastName As String,
@@ -71,13 +101,26 @@ Public Class UCUserAdd
                        phone1 As String,
                        phone2 As String)
         mainForm.isEditing = False
+        Dim ext1, ext2 As Integer
+        If numExtension1.Enabled Then
+            ext1 = numExtension1.Value
+        Else
+            ext1 = -1
+        End If
+        If numExtension2.Enabled Then
+            ext2 = numExtension2.Value
+        Else
+            ext2 = -1
+        End If
         ModelUser.getInstance().addUser(CInt(numCode.Value),
                                         password,
                                         firstName,
                                         lastName,
                                         email,
                                         phone1,
+                                        ext1,
                                         phone2,
+                                        ext2,
                                         dropStatus.SelectedIndex,
                                         dropPermissions.SelectedIndex,
                                         0)
@@ -207,6 +250,8 @@ Public Class UCUserAdd
         dropStatus.Items.Add(json("UserAddDropStatus0"))
         dropStatus.Items.Add(json("UserAddDropStatus1"))
         dropStatus.Items.Add(json("UserAddDropStatus2"))
+        labExt1.Text = json("UserLabCheckExtension")
+        labExt2.Text = json("UserLabCheckExtension")
     End Sub
 
     Private Sub resizeInputs()
@@ -227,6 +272,24 @@ Public Class UCUserAdd
             dropStatus.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
             dropPermissions.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
             tbPassword.Size = New Size(CInt(baseInputWidth * increaseWidth), 36)
+            numExtension1.Location = New Point(numExtension1.Location.X +
+                                               CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                               numExtension1.Location.Y)
+            numExtension2.Location = New Point(numExtension2.Location.X +
+                                               CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                               numExtension2.Location.Y)
+            checkExt1.Location = New Point(checkExt1.Location.X +
+                                           CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                           checkExt1.Location.Y)
+            checkExt2.Location = New Point(checkExt2.Location.X +
+                                           CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                           checkExt2.Location.Y)
+            labExt1.Location = New Point(labExt1.Location.X +
+                                         CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                         labExt1.Location.Y)
+            labExt2.Location = New Point(labExt2.Location.X +
+                                         CInt(baseInputWidth * increaseWidth) - baseInputWidth,
+                                         labExt2.Location.Y)
         Else
             numCode.Size = New Size(baseInputWidth, 36)
             tbFirstName.Size = New Size((baseInputWidth / 2) - 3, 36)
@@ -238,6 +301,12 @@ Public Class UCUserAdd
             dropStatus.Size = New Size(baseInputWidth, 36)
             dropPermissions.Size = New Size(baseInputWidth, 36)
             tbPassword.Size = New Size(baseInputWidth, 36)
+            numExtension1.Location = baseNumExt1Location
+            numExtension2.Location = baseNumExt2Location
+            checkExt1.Location = basecheckExt1Location
+            checkExt2.Location = basecheckExt2Location
+            labExt1.Location = baselabExt1Location
+            labExt2.Location = baselabExt2Location
         End If
     End Sub
 

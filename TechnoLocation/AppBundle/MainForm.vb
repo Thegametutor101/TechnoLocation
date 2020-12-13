@@ -171,6 +171,7 @@ Public Class MainForm
         Next
         If open Then
             panelMain.Controls.Remove(notifications)
+            selectOptionButton(10)
         Else
 
             notifications.Dock = DockStyle.Left
@@ -348,6 +349,7 @@ Public Class MainForm
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
         dashboard.resizeLabels()
+        selectOptionButton(0)
     End Sub
 
     Public Sub selectOptionButton(number As Integer)

@@ -222,6 +222,8 @@ Partial Class MainForm
         Me.labSide6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide6.BorderRadius = 5
         Me.labSide6.BorderThickness = 1
+        Me.labSide6.CustomizableEdges.BottomRight = False
+        Me.labSide6.CustomizableEdges.TopRight = False
         Me.labSide6.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide6.Location = New System.Drawing.Point(8, 414)
         Me.labSide6.Name = "labSide6"
@@ -236,6 +238,8 @@ Partial Class MainForm
         Me.labSide5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide5.BorderRadius = 5
         Me.labSide5.BorderThickness = 1
+        Me.labSide5.CustomizableEdges.BottomRight = False
+        Me.labSide5.CustomizableEdges.TopRight = False
         Me.labSide5.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide5.Location = New System.Drawing.Point(8, 352)
         Me.labSide5.Name = "labSide5"
@@ -250,6 +254,8 @@ Partial Class MainForm
         Me.labSide4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide4.BorderRadius = 5
         Me.labSide4.BorderThickness = 1
+        Me.labSide4.CustomizableEdges.BottomRight = False
+        Me.labSide4.CustomizableEdges.TopRight = False
         Me.labSide4.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide4.Location = New System.Drawing.Point(8, 290)
         Me.labSide4.Name = "labSide4"
@@ -264,6 +270,8 @@ Partial Class MainForm
         Me.labSide3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide3.BorderRadius = 5
         Me.labSide3.BorderThickness = 1
+        Me.labSide3.CustomizableEdges.BottomRight = False
+        Me.labSide3.CustomizableEdges.TopRight = False
         Me.labSide3.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide3.Location = New System.Drawing.Point(8, 229)
         Me.labSide3.Name = "labSide3"
@@ -278,6 +286,8 @@ Partial Class MainForm
         Me.labSide2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide2.BorderRadius = 5
         Me.labSide2.BorderThickness = 1
+        Me.labSide2.CustomizableEdges.BottomRight = False
+        Me.labSide2.CustomizableEdges.TopRight = False
         Me.labSide2.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide2.Location = New System.Drawing.Point(8, 167)
         Me.labSide2.Name = "labSide2"
@@ -292,6 +302,8 @@ Partial Class MainForm
         Me.labSide1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide1.BorderRadius = 5
         Me.labSide1.BorderThickness = 1
+        Me.labSide1.CustomizableEdges.BottomRight = False
+        Me.labSide1.CustomizableEdges.TopRight = False
         Me.labSide1.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide1.Location = New System.Drawing.Point(8, 106)
         Me.labSide1.Name = "labSide1"
@@ -306,6 +318,8 @@ Partial Class MainForm
         Me.labSide0.BorderColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.labSide0.BorderRadius = 5
         Me.labSide0.BorderThickness = 1
+        Me.labSide0.CustomizableEdges.BottomRight = False
+        Me.labSide0.CustomizableEdges.TopRight = False
         Me.labSide0.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide0.Location = New System.Drawing.Point(8, 55)
         Me.labSide0.Name = "labSide0"
