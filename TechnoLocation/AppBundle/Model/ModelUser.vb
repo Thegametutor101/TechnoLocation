@@ -29,8 +29,8 @@ Public Class ModelUser
             Dim command As New MySqlCommand
             command.Connection = connection
             If Not ext1 = -1 And Not ext2 = -1 Then
-                command.CommandText = $"update user set firstName='{firstName}',
-                                                    lastName='{lastName}',
+                command.CommandText = $"update user set firstName=initcap('{firstName}'),
+                                                    lastName=initcap('{lastName}'),
                                                     email='{email}',
                                                     phoneMain='{phoneMain}',
                                                     extensionMain='{ext1}',
@@ -41,8 +41,8 @@ Public Class ModelUser
                                                     balance='{balance}' 
                                                     where code = '{code}'"
             ElseIf Not ext1 = -1 And ext2 = -1 Then
-                command.CommandText = $"update user set firstName='{firstName}',
-                                                    lastName='{lastName}',
+                command.CommandText = $"update user set firstName=initcap('{firstName}'),
+                                                    lastName=initcap('{lastName}'),
                                                     email='{email}',
                                                     phoneMain='{phoneMain}',
                                                     extensionMain='{ext1}',
@@ -53,8 +53,8 @@ Public Class ModelUser
                                                     balance='{balance}' 
                                                     where code = '{code}'"
             ElseIf ext1 = -1 And Not ext2 = -1 Then
-                command.CommandText = $"update user set firstName='{firstName}',
-                                                    lastName='{lastName}',
+                command.CommandText = $"update user set firstName=initcap('{firstName}'),
+                                                    lastName=initcap('{lastName}'),
                                                     email='{email}',
                                                     phoneMain='{phoneMain}',
                                                     extensionMain=null,
@@ -65,8 +65,8 @@ Public Class ModelUser
                                                     balance='{balance}' 
                                                     where code = '{code}'"
             Else
-                command.CommandText = $"update user set firstName='{firstName}',
-                                                    lastName='{lastName}',
+                command.CommandText = $"update user set firstName=initcap('{firstName}'),
+                                                    lastName=initcap('{lastName}'),
                                                     email='{email}',
                                                     phoneMain='{phoneMain}',
                                                     extensionMain=null,
@@ -130,8 +130,8 @@ Public Class ModelUser
             If Not ext1 = -1 And Not ext2 = -1 Then
                 command.CommandText = $"insert into user values ('{code}',
                                                             '',
-                                                            '{firstName}',
-                                                            '{lastName}',
+                                                            initcap('{firstName}'),
+                                                            initcap('{lastName}'),
                                                             '{email}',
                                                             '{phoneMain}',
                                                             '{ext1}',
@@ -143,8 +143,8 @@ Public Class ModelUser
             ElseIf Not ext1 = -1 And ext2 = -1 Then
                 command.CommandText = $"insert into user values ('{code}',
                                                             '',
-                                                            '{firstName}',
-                                                            '{lastName}',
+                                                            initcap('{firstName}'),
+                                                            initcap('{lastName}'),
                                                             '{email}',
                                                             '{phoneMain}',
                                                             '{ext1}',
@@ -156,8 +156,8 @@ Public Class ModelUser
             ElseIf ext1 = -1 And Not ext2 = -1 Then
                 command.CommandText = $"insert into user values ('{code}',
                                                             '',
-                                                            '{firstName}',
-                                                            '{lastName}',
+                                                            initcap('{firstName}'),
+                                                            initcap('{lastName}'),
                                                             '{email}',
                                                             '{phoneMain}',
                                                             null,
@@ -169,8 +169,8 @@ Public Class ModelUser
             Else
                 command.CommandText = $"insert into user values ('{code}',
                                                             '',
-                                                            '{firstName}',
-                                                            '{lastName}',
+                                                            initcap('{firstName}'),
+                                                            initcap('{lastName}'),
                                                             '{email}',
                                                             '{phoneMain}',
                                                             null,

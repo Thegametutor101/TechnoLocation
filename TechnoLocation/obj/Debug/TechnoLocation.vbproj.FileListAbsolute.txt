@@ -160,3 +160,5 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources

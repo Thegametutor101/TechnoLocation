@@ -85,7 +85,13 @@ Public Class UCReturn
     'Buttons
     '__________________________________________________________________________________________________________
 
-
+    Private Sub gridReturn_CellContentClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridReturn.CellMouseDoubleClick
+        Dim rental = gridReturn.SelectedRows.Item(0).Cells(0).Value
+        Dim rentalDetails = New UCRentalDetails(mainForm, rental)
+        rentalDetails.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(rentalDetails)
+        rentalDetails.BringToFront()
+    End Sub
 
     '__________________________________________________________________________________________________________
     'Other
@@ -109,5 +115,7 @@ Public Class UCReturn
         gridReturn.Columns("equipmentAmount").Width = 100
         tbSearch.PlaceholderText = json("SearchPlaceholder")
         labLate.Text = json("ReturnLabLate")
+        btReturnAll.Text = json("ReturnbtReturnAll")
     End Sub
+
 End Class

@@ -107,7 +107,10 @@ Public Class UCUserModify
     End Sub
 
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
-        If checkExt1.Checked Then
+        Dim phone1 = Trim(tbPhone1.Text)
+        If checkExt1.Checked And
+           (Regex.IsMatch(phone1, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+            Regex.IsMatch(phone1, "^[\d]{10}$")) Then
             numExtension1.Enabled = True
         Else
             numExtension1.Enabled = False
@@ -115,7 +118,10 @@ Public Class UCUserModify
     End Sub
 
     Private Sub checkExt2_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt2.CheckedChanged
-        If checkExt2.Checked Then
+        Dim phone2 = Trim(tbPhone2.Text)
+        If checkExt2.Checked And
+           (Regex.IsMatch(phone2, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+            Regex.IsMatch(phone2, "^[\d]{10}$")) Then
             numExtension2.Enabled = True
         Else
             numExtension2.Enabled = False
@@ -211,11 +217,11 @@ Public Class UCUserModify
         If Regex.IsMatch(firstName, "^[a-zA-Z-' éèêâôîûçàëäöïüÉÈÊÂÔÎÛÇÀËÄÖÏÜ]+") Then
             If Regex.IsMatch(lastName, "^[a-zA-Z-' éèêâôîûçàëäöïüÉÈÊÂÔÎÛÇÀËÄÖÏÜ]+") Then
                 If Regex.IsMatch(email, "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$") Then
-                    If (Regex.IsMatch(phone1, "^\([\d]{3}\)\s[\d]{3}-[\d]{4}$") Or
-                   Regex.IsMatch(phone1, "^[\d]{10}$")) Then
-                        If (Regex.IsMatch(phone2, "^\([\d]{3}\)\s[\d]{3}-[\d]{4}$") Or
-                        Regex.IsMatch(phone2, "^[\d]{10}$") Or
-                        phone2 = "") Then
+                    If (Regex.IsMatch(phone1, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+                        Regex.IsMatch(phone1, "^[\d]{10}$")) Then
+                        If (Regex.IsMatch(phone2, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+                            Regex.IsMatch(phone2, "^[\d]{10}$") Or
+                            phone2 = "") Then
                             If checkPassword.Checked And Not String.IsNullOrEmpty(password) Then
                                 submit(password, firstName, lastName, email, phone1, phone2)
                             ElseIf checkPassword.Checked And String.IsNullOrEmpty(password) Then

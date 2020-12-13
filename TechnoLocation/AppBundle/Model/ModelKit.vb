@@ -17,7 +17,7 @@ Public Class ModelKit
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"update kit set name='{name}' where code='{code}'"
+            command.CommandText = $"update kit set name=inctap('{name}') where code='{code}'"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
@@ -53,7 +53,7 @@ Public Class ModelKit
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into kit (name) values ('{name}')"
+            command.CommandText = $"insert into kit (name) values (initcap('{name}'))"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()

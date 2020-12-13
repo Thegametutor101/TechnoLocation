@@ -239,13 +239,48 @@ Public Class EntityRent
         Return table
     End Function
 
-    Public Function getRentalByCode(code As Integer) As DataTable
+    Public Function getRentalDetails(lang As String, code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent where code = '{code}'"
+        If lang = "EN" Then
+            lang = "fr_CA"
+        Else
+            lang = "en_US"
+        End If
+        command.CommandText = $"SET lc_time_names = '{lang}';
+                                    Select U.firstName,
+                                        U.lastName,
+                                        U.email,
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                INNER JOIN user U on U.code = R.renter
+                                WHERE R.code = {code}
+                                GROUP BY R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")

@@ -81,6 +81,31 @@ Public Class EntityEquipment
         Return table
     End Function
 
+    Public Function getEquipmentsByRental(rental As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"SELECT E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    E.state, 
+                                    R.comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(R.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                INNER JOIN rent R on R.equipment = E.code
+                                WHERE R.code = {rental}
+                                ORDER BY E.code"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("equipments")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
     Public Function getEquipmentCodeSearch(code As Integer, available As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()

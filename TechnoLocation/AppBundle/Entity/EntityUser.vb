@@ -175,6 +175,27 @@ Public Class EntityUser
         Return table
     End Function
 
+    Public Function getUserByRental(rental As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"SELECT U.code, 
+                                    U.firstName, 
+                                    U.lastName, 
+                                    U.balance
+                                FROM user U
+                                INNER JOIN rent R on R.renter = U.code
+                                WHERE R.code = {rental}"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("users")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
     Public Function getUsersPassword(code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
