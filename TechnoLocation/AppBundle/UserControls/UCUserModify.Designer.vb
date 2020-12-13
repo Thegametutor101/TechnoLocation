@@ -600,6 +600,7 @@ Partial Class UCUserModify
         Me.numBalance.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.numBalance.Location = New System.Drawing.Point(527, 479)
         Me.numBalance.Maximum = New Decimal(New Integer() {9999999, 0, 0, 0})
+        Me.numBalance.Minimum = New Decimal(New Integer() {9999999, 0, 0, -2147483648})
         Me.numBalance.Name = "numBalance"
         Me.numBalance.ShadowDecoration.Parent = Me.numBalance
         Me.numBalance.Size = New System.Drawing.Size(356, 36)

@@ -25,7 +25,6 @@ Public Class UCEquipment
     Private Sub UCEquipment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
         loadLanguage()
-        dropSearch.SelectedIndex() = 0
         tbSearch.Select()
     End Sub
 
@@ -40,15 +39,8 @@ Public Class UCEquipment
         iEquipmentMod.BringToFront()
     End Sub
 
-    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        search()
-    End Sub
-
-    Private Sub dropSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropSearch.SelectedIndexChanged
-        loadDataGridView()
-    End Sub
-
-    Private Sub checkAvailableEquip_CheckedChanged(sender As Object, e As EventArgs) Handles checkAvailableEquip.CheckedChanged
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged,
+                                                                               checkAvailableEquip.CheckedChanged
         search()
     End Sub
 
@@ -119,68 +111,27 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Public Sub loadDataGridView()
-        Dim json = Lang.getInstance().getLang()
         gridEquipment.DataSource = EntityEquipment.getInstance().getEquipment()
-        gridEquipment.Columns("code").HeaderText = json("EquipGridCode")
-        gridEquipment.Columns("name").HeaderText = json("EquipGridName")
-        gridEquipment.Columns("kit").HeaderText = json("EquipGridKit")
-        gridEquipment.Columns("state").HeaderText = json("EquipGridState")
-        gridEquipment.Columns("available").HeaderText = json("EquipGridAvailable")
-        gridEquipment.Columns("comments").HeaderText = json("EquipGridComments")
-        gridEquipment.Columns("deposit").HeaderText = json("EquipGridDeposit")
-        gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        gridEquipment.Columns("available").ReadOnly = False
     End Sub
 
     Private Sub search()
-        Select Case dropSearch.SelectedIndex
-            Case 0
-                If IsNumeric(tbSearch.Text) Then
-                    If checkAvailableEquip.Checked Then
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentCodeSearch(tbSearch.Text, 1)
-                    Else
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentCodeSearch(tbSearch.Text)
-                    End If
-                Else
-                    If checkAvailableEquip.Checked Then
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentAvailable(1)
-                    Else
-                        loadDataGridView()
-                    End If
-                End If
-            Case 1
-                If checkAvailableEquip.Checked Then
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentName(tbSearch.Text, 1)
-                Else
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentName(tbSearch.Text)
-                End If
-            Case 2
-                If IsNumeric(tbSearch.Text) Then
-                    If checkAvailableEquip.Checked Then
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentKit(tbSearch.Text, 1)
-                    Else
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentKit(tbSearch.Text)
-                    End If
-                Else
-                    If checkAvailableEquip.Checked Then
-                        gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentAvailable(1)
-                    Else
-                        loadDataGridView()
-                    End If
-                End If
-            Case 3
-                If checkAvailableEquip.Checked Then
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentState(tbSearch.Text, 1)
-                Else
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentState(tbSearch.Text)
-                End If
-            Case 4
-                If checkAvailableEquip.Checked Then
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentComment(tbSearch.Text, 1)
-                Else
-                    gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentComment(tbSearch.Text)
-                End If
-        End Select
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
+        Dim blue = Color.FromArgb(0.8, 94, 148, 255)
+        tbSearch.BorderColor = grey
+        tbSearch.FocusedState.BorderColor = blue
+        tbSearch.Text = tbSearch.Text.Trim()
+        If tbSearch.Text.Length > 0 Then
+            gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearch(tbSearch.Text,
+                                                                                           checkAvailableEquip.Checked)
+            If gridEquipment.Rows.Count = 0 Then
+                tbSearch.BorderColor = red
+                tbSearch.FocusedState.BorderColor = red
+                loadDataGridView()
+            End If
+        Else
+            loadDataGridView()
+        End If
     End Sub
 
     Private Sub loadLanguage()
@@ -190,11 +141,15 @@ Public Class UCEquipment
         btPrintBarcodeEquip.Text = json("PrintBarCode")
         labAvailableOnlyName.Text = json("AvailableOnly")
         tbSearch.PlaceholderText = json("SearchPlaceholder")
-        dropSearch.Items.Add(json("DropCode"))
-        dropSearch.Items.Add(json("DropNote"))
-        dropSearch.Items.Add(json("DropState"))
-        dropSearch.Items.Add(json("DropKit"))
-        dropSearch.Items.Add(json("DropName"))
+        gridEquipment.Columns("code").HeaderText = json("EquipGridCode")
+        gridEquipment.Columns("name").HeaderText = json("EquipGridName")
+        gridEquipment.Columns("kit").HeaderText = json("EquipGridKit")
+        gridEquipment.Columns("state").HeaderText = json("EquipGridState")
+        gridEquipment.Columns("available").HeaderText = json("EquipGridAvailable")
+        gridEquipment.Columns("comments").HeaderText = json("EquipGridComments")
+        gridEquipment.Columns("deposit").HeaderText = json("EquipGridDeposit")
+        gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gridEquipment.Columns("available").ReadOnly = False
     End Sub
 
 End Class

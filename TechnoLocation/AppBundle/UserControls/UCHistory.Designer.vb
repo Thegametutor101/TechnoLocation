@@ -29,7 +29,6 @@ Partial Class UCHistory
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
-        Me.dropHistory = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridHistory = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -44,7 +43,6 @@ Partial Class UCHistory
         'Guna2Panel3
         '
         Me.Guna2Panel3.Controls.Add(Me.checkAll)
-        Me.Guna2Panel3.Controls.Add(Me.dropHistory)
         Me.Guna2Panel3.Controls.Add(Me.tbSearch)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
@@ -65,27 +63,6 @@ Partial Class UCHistory
         Me.checkAll.PressedState.Parent = Me.checkAll
         Me.checkAll.Size = New System.Drawing.Size(29, 24)
         Me.checkAll.TabIndex = 50
-        '
-        'dropHistory
-        '
-        Me.dropHistory.BackColor = System.Drawing.Color.Transparent
-        Me.dropHistory.BorderRadius = 2
-        Me.dropHistory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.dropHistory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropHistory.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropHistory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropHistory.FocusedState.Parent = Me.dropHistory
-        Me.dropHistory.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
-        Me.dropHistory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.dropHistory.HoverState.Parent = Me.dropHistory
-        Me.dropHistory.ItemHeight = 30
-        Me.dropHistory.ItemsAppearance.Parent = Me.dropHistory
-        Me.dropHistory.Location = New System.Drawing.Point(422, 18)
-        Me.dropHistory.Name = "dropHistory"
-        Me.dropHistory.ShadowDecoration.Parent = Me.dropHistory
-        Me.dropHistory.Size = New System.Drawing.Size(229, 36)
-        Me.dropHistory.Sorted = True
-        Me.dropHistory.TabIndex = 49
         '
         'tbSearch
         '
@@ -237,7 +214,6 @@ Partial Class UCHistory
     End Sub
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents dropHistory As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents gridHistory As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel

@@ -117,5 +117,13 @@
   "MsgNoDateEndRent": "Vous devez choisir une date de fin pour sélectionner un équipement.",
   "MsgEquipmentDateChange": "Un ou plusieurs équipements sélectionné ne sont\npas disponibles pour les nouvelles dates choisies.",
   "MsgNoSearchResults": "Aucun résultat ne correspond à votre recherche.",
-  "UserLabCheckExtension": "Cochez pour ajouter extension"
+  "UserLabCheckExtension": "Cochez pour ajouter extension",
+  "ReturnLabLate": "Afficher les emprunts en retard",
+  "ReturnGridCode": "Numéro",
+  "ReturnGridRenter": "Emprunteur",
+  "ReturnGridLender": "Prêteur",
+  "ReturnGridEquipments": "Équipements",
+  "ReturnGridRentDate": "Date d'emprunt",
+  "ReturnGridReturnDate": "Date de retour",
+  "ReturnGridDeposit": "Dépot (CAD)"
 }

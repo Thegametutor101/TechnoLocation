@@ -33,6 +33,11 @@ Public Class UCEquipmentMod
         tbName.Text = row.Cells(1).Value
         tbComment.Text = row.Cells(5).Value
         tbState.Text = row.Cells(3).Value
+        tbDepositEquipMod.Value = Replace(Replace(row.Cells(6).Value,
+                                                  "$ ",
+                                                  ""),
+                                          ",",
+                                          ".")
         If row.Cells(4).Value = True Then
             checkAvailable.Checked = True
         End If

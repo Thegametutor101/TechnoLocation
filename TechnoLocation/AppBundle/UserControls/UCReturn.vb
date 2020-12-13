@@ -25,6 +25,7 @@ Public Class UCReturn
 
     Private Sub UCReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
+        loadLanguages()
         tbSearch.Select()
     End Sub
 
@@ -34,7 +35,16 @@ Public Class UCReturn
 
     Private Sub checkAll_CheckedChanged(sender As Object, e As EventArgs) Handles checkAll.CheckedChanged
         If checkAll.Checked Then
-            gridReturn.DataSource = EntityRent.getInstance().getLateRentals()
+            gridReturn.SelectAll()
+        Else
+            gridReturn.ClearSelection()
+            gridReturn.Rows(0).Selected = True
+        End If
+    End Sub
+
+    Private Sub checkLate_CheckedChanged(sender As Object, e As EventArgs) Handles checkLate.CheckedChanged
+        If checkLate.Checked Then
+            gridReturn.DataSource = EntityRent.getInstance().getLateRentals(mainForm.labLang.Text)
         Else
             loadDataGridView()
         End If
@@ -48,7 +58,7 @@ Public Class UCReturn
         tbSearch.FocusedState.BorderColor = blue
         tbSearch.Text = tbSearch.Text.Trim()
         If tbSearch.Text.Length > 0 Then
-            gridReturn.DataSource = EntityRent.getInstance().getRentalsBySearch(tbSearch.Text)
+            gridReturn.DataSource = EntityRent.getInstance().getRentalsBySearch(mainForm.labLang.Text, tbSearch.Text)
             If gridReturn.Rows.Count = 0 Then
                 tbSearch.BorderColor = red
                 tbSearch.FocusedState.BorderColor = red
@@ -82,7 +92,22 @@ Public Class UCReturn
     '__________________________________________________________________________________________________________
 
     Private Sub loadDataGridView()
-        gridReturn.DataSource = EntityRent.getInstance().getRentals()
+        gridReturn.DataSource = EntityRent.getInstance().getRentals(mainForm.labLang.Text)
     End Sub
 
+    Private Sub loadLanguages()
+        Dim json = Lang.getInstance().getLang()
+        gridReturn.Columns("code").HeaderText = json("ReturnGridCode")
+        gridReturn.Columns("renterName").HeaderText = json("ReturnGridRenter")
+        gridReturn.Columns("lenderName").HeaderText = json("ReturnGridLender")
+        gridReturn.Columns("equipmentAmount").HeaderText = json("ReturnGridEquipments")
+        gridReturn.Columns("rentDate").HeaderText = json("ReturnGridRentDate")
+        gridReturn.Columns("returnDate").HeaderText = json("ReturnGridReturnDate")
+        gridReturn.Columns("depositAmount").HeaderText = json("ReturnGridDeposit")
+        gridReturn.Columns("code").Width = 80
+        gridReturn.Columns("depositAmount").Width = 90
+        gridReturn.Columns("equipmentAmount").Width = 100
+        tbSearch.PlaceholderText = json("SearchPlaceholder")
+        labLate.Text = json("ReturnLabLate")
+    End Sub
 End Class

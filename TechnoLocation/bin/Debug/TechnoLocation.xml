@@ -72,6 +72,11 @@ TechnoLocation
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_delete_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_black_18dp">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

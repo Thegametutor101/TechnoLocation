@@ -28,7 +28,7 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gridUsers.DataSource = EntityUser.getInstance.getUsers
+        gridUsers.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
         gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
         gridSelectedEquipment.ColumnCount = 6
         gridSelectedEquipment.Columns(0).Name = "Code"
@@ -52,7 +52,7 @@ Public Class UCRent
                     If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
                         gridUsers.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
                     Else
-                        gridUsers.DataSource = entityUser.getUsers()
+                        gridUsers.DataSource = entityUser.getUsers(mainForm.labLang.Text)
                     End If
                 Case 1
                     gridUsers.DataSource = entityUser.getUsersFirstName(recherche)
@@ -160,7 +160,7 @@ Public Class UCRent
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
-        gridUsers.DataSource = EntityUser.getInstance.getUsers()
+        gridUsers.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
     End Sub
 
     Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click

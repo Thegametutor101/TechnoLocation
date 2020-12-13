@@ -22,19 +22,22 @@ Partial Class UCReturn
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCReturn))
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCReturn))
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridReturn = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.labLate = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.checkLate = New Guna.UI2.WinForms.Guna2CustomCheckBox()
+        Me.btReturnAll = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         CType(Me.gridReturn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,6 +45,9 @@ Partial Class UCReturn
         '
         'Guna2Panel3
         '
+        Me.Guna2Panel3.Controls.Add(Me.btReturnAll)
+        Me.Guna2Panel3.Controls.Add(Me.labLate)
+        Me.Guna2Panel3.Controls.Add(Me.checkLate)
         Me.Guna2Panel3.Controls.Add(Me.checkAll)
         Me.Guna2Panel3.Controls.Add(Me.tbSearch)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
@@ -50,19 +56,6 @@ Partial Class UCReturn
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
         Me.Guna2Panel3.Size = New System.Drawing.Size(1263, 102)
         Me.Guna2Panel3.TabIndex = 9
-        '
-        'checkAll
-        '
-        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
-        Me.checkAll.CheckedState.Parent = Me.checkAll
-        Me.checkAll.HoverState.Parent = Me.checkAll
-        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
-        Me.checkAll.IndicateFocus = False
-        Me.checkAll.Location = New System.Drawing.Point(60, 72)
-        Me.checkAll.Name = "checkAll"
-        Me.checkAll.PressedState.Parent = Me.checkAll
-        Me.checkAll.Size = New System.Drawing.Size(29, 24)
-        Me.checkAll.TabIndex = 50
         '
         'tbSearch
         '
@@ -158,7 +151,6 @@ Partial Class UCReturn
         Me.gridReturn.EnableHeadersVisualStyles = False
         Me.gridReturn.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridReturn.Location = New System.Drawing.Point(0, 0)
-        Me.gridReturn.MultiSelect = False
         Me.gridReturn.Name = "gridReturn"
         Me.gridReturn.ReadOnly = True
         Me.gridReturn.RowHeadersVisible = False
@@ -193,6 +185,66 @@ Partial Class UCReturn
         Me.gridReturn.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gridReturn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'labLate
+        '
+        Me.labLate.BackColor = System.Drawing.Color.Transparent
+        Me.labLate.Location = New System.Drawing.Point(541, 28)
+        Me.labLate.Name = "labLate"
+        Me.labLate.Size = New System.Drawing.Size(182, 18)
+        Me.labLate.TabIndex = 71
+        Me.labLate.Text = "Afficher les emprunts en retard"
+        '
+        'checkLate
+        '
+        Me.checkLate.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkLate.CheckedState.BorderRadius = 2
+        Me.checkLate.CheckedState.BorderThickness = 2
+        Me.checkLate.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkLate.CheckedState.Parent = Me.checkLate
+        Me.checkLate.Location = New System.Drawing.Point(515, 27)
+        Me.checkLate.Name = "checkLate"
+        Me.checkLate.ShadowDecoration.Parent = Me.checkLate
+        Me.checkLate.Size = New System.Drawing.Size(20, 20)
+        Me.checkLate.TabIndex = 70
+        Me.checkLate.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.checkLate.UncheckedState.BorderRadius = 2
+        Me.checkLate.UncheckedState.BorderThickness = 2
+        Me.checkLate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.checkLate.UncheckedState.Parent = Me.checkLate
+        '
+        'btReturnAll
+        '
+        Me.btReturnAll.BorderColor = System.Drawing.Color.Transparent
+        Me.btReturnAll.BorderThickness = 2
+        Me.btReturnAll.CheckedState.Parent = Me.btReturnAll
+        Me.btReturnAll.CustomImages.Parent = Me.btReturnAll
+        Me.btReturnAll.FillColor = System.Drawing.Color.Transparent
+        Me.btReturnAll.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btReturnAll.ForeColor = System.Drawing.Color.White
+        Me.btReturnAll.HoverState.Parent = Me.btReturnAll
+        Me.btReturnAll.Image = Global.TechnoLocation.My.Resources.Resources.baseline_delete_black_18dp
+        Me.btReturnAll.IndicateFocus = True
+        Me.btReturnAll.Location = New System.Drawing.Point(93, 68)
+        Me.btReturnAll.Name = "btReturnAll"
+        Me.btReturnAll.PressedColor = System.Drawing.Color.WhiteSmoke
+        Me.btReturnAll.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btReturnAll.ShadowDecoration.Parent = Me.btReturnAll
+        Me.btReturnAll.Size = New System.Drawing.Size(30, 30)
+        Me.btReturnAll.TabIndex = 74
+        '
+        'checkAll
+        '
+        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
+        Me.checkAll.CheckedState.Parent = Me.checkAll
+        Me.checkAll.HoverState.Parent = Me.checkAll
+        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
+        Me.checkAll.IndicateFocus = False
+        Me.checkAll.Location = New System.Drawing.Point(60, 72)
+        Me.checkAll.Name = "checkAll"
+        Me.checkAll.PressedState.Parent = Me.checkAll
+        Me.checkAll.Size = New System.Drawing.Size(29, 24)
+        Me.checkAll.TabIndex = 50
+        '
         'UCReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -207,6 +259,7 @@ Partial Class UCReturn
         Me.Name = "UCReturn"
         Me.Size = New System.Drawing.Size(1263, 744)
         Me.Guna2Panel3.ResumeLayout(False)
+        Me.Guna2Panel3.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
         CType(Me.gridReturn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -221,4 +274,7 @@ Partial Class UCReturn
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents gridReturn As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents labLate As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents checkLate As Guna.UI2.WinForms.Guna2CustomCheckBox
+    Friend WithEvents btReturnAll As Guna.UI2.WinForms.Guna2CircleButton
 End Class

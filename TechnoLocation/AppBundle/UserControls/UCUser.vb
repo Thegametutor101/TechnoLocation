@@ -27,7 +27,6 @@ Public Class UCUser
     Private Sub UCUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataGridView()
         loadLanguages()
-        dropUserSearch.SelectedIndex = 0
         tbUserSearch.Select()
     End Sub
 
@@ -36,9 +35,6 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
-        userSearch()
-    End Sub
-    Private Sub dropUserSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropUserSearch.SelectedIndexChanged
         userSearch()
     End Sub
 
@@ -63,27 +59,21 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Private Function userSearch()
-        If (Not String.IsNullOrEmpty(tbUserSearch.Text)) Then
-            Dim recherche As String = tbUserSearch.Text
-            Dim entityUser As EntityUser = EntityUser.getInstance()
-            Select Case dropUserSearch.SelectedIndex
-                Case 0
-                    If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
-                        gridUser.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-                    Else
-                        gridUser.DataSource = entityUser.getUsers()
-                    End If
-                Case 1
-                    gridUser.DataSource = entityUser.getUsersFirstName(recherche)
-                Case 2
-                    gridUser.DataSource = entityUser.getUsersLastName(recherche)
-                Case 3
-                    gridUser.DataSource = entityUser.getUsersEmail(recherche)
-                Case 4
-                    gridUser.DataSource = entityUser.getUsersPhone(recherche)
-                Case 5
-                    gridUser.DataSource = entityUser.getUsersJob(recherche)
-            End Select
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
+        Dim blue = Color.FromArgb(0.8, 94, 148, 255)
+        tbUserSearch.BorderColor = grey
+        tbUserSearch.FocusedState.BorderColor = blue
+        tbUserSearch.Text = tbUserSearch.Text.Trim()
+        If tbUserSearch.Text.Length > 0 Then
+            gridUser.DataSource = EntityUser.getInstance().getUsersBySearch(mainForm.labLang.Text, tbUserSearch.Text)
+            If gridUser.Rows.Count = 0 Then
+                tbUserSearch.BorderColor = red
+                tbUserSearch.FocusedState.BorderColor = red
+                loadDataGridView()
+            End If
+        Else
+            loadDataGridView()
         End If
     End Function
 
@@ -101,7 +91,7 @@ Public Class UCUser
         For Each row As DataGridViewRow In gridUser.SelectedRows
             ModelUser.getInstance().delUser(row.Cells(0).Value)
         Next
-        gridUser.DataSource = EntityUser.getInstance.getUsers()
+        gridUser.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
         userSearch()
     End Sub
 
@@ -110,7 +100,7 @@ Public Class UCUser
         iUserAdd.Dock = DockStyle.Fill
         mainForm.panelMain.Controls.Add(iUserAdd)
         iUserAdd.BringToFront()
-        gridUser.DataSource = EntityUser.getInstance.getUsers()
+        gridUser.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -118,8 +108,14 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Public Sub loadDataGridView()
+        gridUser.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
+    End Sub
+
+    Private Sub loadLanguages()
         Dim json = Lang.getInstance().getLang()
-        gridUser.DataSource = EntityUser.getInstance.getUsers()
+        btAddUser.Text = json("NewItem")
+        btDeleteUser.Text = json("DeleteItem")
+        tbUserSearch.PlaceholderText = json("SearchPlaceholder")
         gridUser.Columns("code").HeaderText = json("UserGridCode")
         gridUser.Columns("firstName").HeaderText = json("UserGridFirstName")
         gridUser.Columns("lastName").HeaderText = json("UserGridLastName")
@@ -128,19 +124,9 @@ Public Class UCUser
         gridUser.Columns("phone2").HeaderText = json("UserGridPhone2")
         gridUser.Columns("job").HeaderText = json("UserGridJob")
         gridUser.Columns("balance").HeaderText = json("UserGridBalance")
-    End Sub
-
-    Private Sub loadLanguages()
-        Dim json = Lang.getInstance().getLang()
-        btAddUser.Text = json("NewItem")
-        btDeleteUser.Text = json("DeleteItem")
-        tbUserSearch.PlaceholderText = json("SearchPlaceholder")
-        dropUserSearch.Items.Add(json("DropMatricule"))
-        dropUserSearch.Items.Add(json("DropFirstName"))
-        dropUserSearch.Items.Add(json("DropLastName"))
-        dropUserSearch.Items.Add(json("DropEmail"))
-        dropUserSearch.Items.Add(json("DropPhone"))
-        dropUserSearch.Items.Add(json("DropJob"))
+        gridUser.Columns("code").Width = 70
+        gridUser.Columns("job").Width = 70
+        gridUser.Columns("balance").Width = 80
     End Sub
 
 End Class

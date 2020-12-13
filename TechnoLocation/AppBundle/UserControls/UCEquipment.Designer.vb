@@ -35,7 +35,6 @@ Partial Class UCEquipment
         Me.labAvailableOnlyName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.checkSelectAllEquipment = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.checkAvailableEquip = New Guna.UI2.WinForms.Guna2CustomCheckBox()
-        Me.dropSearch = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.gridEquipment = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -119,7 +118,6 @@ Partial Class UCEquipment
         Me.Guna2Panel1.Controls.Add(Me.labAvailableOnlyName)
         Me.Guna2Panel1.Controls.Add(Me.checkSelectAllEquipment)
         Me.Guna2Panel1.Controls.Add(Me.checkAvailableEquip)
-        Me.Guna2Panel1.Controls.Add(Me.dropSearch)
         Me.Guna2Panel1.Controls.Add(Me.tbSearch)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 100)
@@ -131,7 +129,7 @@ Partial Class UCEquipment
         'labAvailableOnlyName
         '
         Me.labAvailableOnlyName.BackColor = System.Drawing.Color.Transparent
-        Me.labAvailableOnlyName.Location = New System.Drawing.Point(652, 13)
+        Me.labAvailableOnlyName.Location = New System.Drawing.Point(481, 15)
         Me.labAvailableOnlyName.Name = "labAvailableOnlyName"
         Me.labAvailableOnlyName.Size = New System.Drawing.Size(135, 18)
         Me.labAvailableOnlyName.TabIndex = 23
@@ -157,7 +155,7 @@ Partial Class UCEquipment
         Me.checkAvailableEquip.CheckedState.BorderThickness = 2
         Me.checkAvailableEquip.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkAvailableEquip.CheckedState.Parent = Me.checkAvailableEquip
-        Me.checkAvailableEquip.Location = New System.Drawing.Point(626, 12)
+        Me.checkAvailableEquip.Location = New System.Drawing.Point(455, 14)
         Me.checkAvailableEquip.Name = "checkAvailableEquip"
         Me.checkAvailableEquip.ShadowDecoration.Parent = Me.checkAvailableEquip
         Me.checkAvailableEquip.Size = New System.Drawing.Size(20, 20)
@@ -167,27 +165,6 @@ Partial Class UCEquipment
         Me.checkAvailableEquip.UncheckedState.BorderThickness = 2
         Me.checkAvailableEquip.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.checkAvailableEquip.UncheckedState.Parent = Me.checkAvailableEquip
-        '
-        'dropSearch
-        '
-        Me.dropSearch.BackColor = System.Drawing.Color.Transparent
-        Me.dropSearch.BorderRadius = 2
-        Me.dropSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.dropSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropSearch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropSearch.FocusedState.Parent = Me.dropSearch
-        Me.dropSearch.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
-        Me.dropSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.dropSearch.HoverState.Parent = Me.dropSearch
-        Me.dropSearch.ItemHeight = 30
-        Me.dropSearch.ItemsAppearance.Parent = Me.dropSearch
-        Me.dropSearch.Location = New System.Drawing.Point(371, 7)
-        Me.dropSearch.Name = "dropSearch"
-        Me.dropSearch.ShadowDecoration.Parent = Me.dropSearch
-        Me.dropSearch.Size = New System.Drawing.Size(229, 36)
-        Me.dropSearch.Sorted = True
-        Me.dropSearch.TabIndex = 20
         '
         'tbSearch
         '
@@ -210,7 +187,7 @@ Partial Class UCEquipment
         Me.tbSearch.PlaceholderText = "Recherche"
         Me.tbSearch.SelectedText = ""
         Me.tbSearch.ShadowDecoration.Parent = Me.tbSearch
-        Me.tbSearch.Size = New System.Drawing.Size(329, 36)
+        Me.tbSearch.Size = New System.Drawing.Size(413, 36)
         Me.tbSearch.TabIndex = 19
         '
         'Guna2CustomGradientPanel2
@@ -354,7 +331,6 @@ Partial Class UCEquipment
     Friend WithEvents btPrintBarcodeEquip As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btDelEquipment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents dropSearch As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents labAvailableOnlyName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents checkSelectAllEquipment As Guna.UI2.WinForms.Guna2ImageCheckBox
     Friend WithEvents checkAvailableEquip As Guna.UI2.WinForms.Guna2CustomCheckBox

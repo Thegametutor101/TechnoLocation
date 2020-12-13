@@ -306,12 +306,14 @@ Public Class MainForm
 
 
     Public Sub maximize()
-        Dim topCorner = New Point(0, 0)
+        Dim topCorner = New Point(Screen.FromControl(Me).GetWorkingArea(Me.Location).X,
+                                  Screen.FromControl(Me).GetWorkingArea(Me.Location).Y)
         If Not Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
            Not Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
            Not Me.Location = topCorner Then
             'This changes the position and size of the window to be full screen while showing the task bar
-            Me.Location = New Point(0, 0)
+            Me.Location = New Point(Screen.FromControl(Me).GetWorkingArea(Me.Location).X,
+                                    Screen.FromControl(Me).GetWorkingArea(Me.Location).Y)
             Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height
             Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width
             'Changes the maximise icon according to it's state

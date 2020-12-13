@@ -17,15 +17,16 @@ Public Class EntityEquipment
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select E.code, 
+        command.CommandText = $"SELECT E.code, 
                                     E.name, 
                                     K.name AS kit, 
                                     state, 
                                     available, 
                                     comments, 
                                     CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
-                                from equipment E
-                                INNER JOIN kit K on K.code = E.kit"
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                ORDER BY E.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -34,13 +35,44 @@ Public Class EntityEquipment
         Return table
     End Function
 
-    Public Function getEquipmentByCode(code As Integer) As DataTable
+    Public Function getEquipmentsBySearch(value As String, available As Boolean) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from equipment E where code = '{code}'order by E.code"
+        If available Then
+            command.CommandText = $"SELECT E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state, 
+                                    available, 
+                                    comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                WHERE (E.name LIKE '%{value}%' OR
+                                    K.name LIKE '%{value}%' OR
+                                    state LIKE '%{value}%' OR
+                                    comments LIKE '%{value}%') AND
+                                    available = 1
+                                ORDER BY E.code"
+        Else
+            command.CommandText = $"SELECT E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state, 
+                                    available, 
+                                    comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                WHERE (E.name LIKE '%{value}%' OR
+                                    K.name LIKE '%{value}%' OR
+                                    state LIKE '%{value}%' OR
+                                    comments LIKE '%{value}%')
+                                ORDER BY E.code"
+        End If
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -55,37 +87,7 @@ Public Class EntityEquipment
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from equipment E where code like '%{code}%' and available = '{available}'order by E.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getEquipmentCodeSearch(code As Integer) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from equipment E where code like '%{code}%' order by E.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getEquipmentName(name As String) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from equipment E where name like '%{name}%'order by E.code"
+        command.CommandText = $"Select * from equipment E where code like '%{code}%' and available = '{available}' order by E.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -109,21 +111,6 @@ Public Class EntityEquipment
         Return table
     End Function
 
-    Public Function getEquipmentKit(kit As Integer) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from equipment E where kit = '%{kit}%'order by E.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
     Public Function getEquipmentKit(kit As Integer, available As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
@@ -131,21 +118,6 @@ Public Class EntityEquipment
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from equipment E where kit = '%{kit}%' and available = '{available}' order by E.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getEquipmentState(state As String) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from equipment E where state like '%{state}%'order by E.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -176,21 +148,6 @@ Public Class EntityEquipment
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select * from equipment E where available = '{availability}'order by E.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getEquipmentComment(comment As Integer) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from equipment E where comments like '%{comment}%'order by E.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")

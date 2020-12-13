@@ -345,6 +345,7 @@
     <None Include="Resources\baseline_add_light_main_18dp.png" />
     <None Include="Resources\baseline_add_main_18dp.png" />
     <None Include="Resources\baseline_add_white_18dp.png" />
+    <None Include="Resources\baseline_delete_black_18dp.png" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>
