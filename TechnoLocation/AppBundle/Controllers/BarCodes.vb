@@ -30,7 +30,7 @@ Public Class BarCodes
             barCode = writer.Write(input)
             barCode = ResizeImage(barCode)
         Else
-            MessageBox.Show("L'entree pour le code barre n'est pas valide")
+            MessageBox.Show("L'entrée pour le code barre n'est pas valide")
         End If
     End Sub
 
