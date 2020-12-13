@@ -108,8 +108,6 @@
   "MsgDeleteEquipment": "Do you wish to delete this equipment?\nThis action is not reversable.",
   "MsgDeleteKit1": "Do you wish to delete this kit?",
   "MsgDeleteKit2": "No equipment is associated to this kit!",
-  "MsgEmptyDeposit": "The deposit amount is empty or contains characters other than numbers",
-  "MsgNegatifDeposit": "The deposit must not be negative!",
   "MsgEditEquipment": "Do you wish to modify this equipment?",
   "MsgSuccessEditEquip": "Modifications have been made!",
   "MsgNoEquipSelected": "Please select at least 1 equipment to rent",
@@ -117,5 +115,7 @@
   "MsgEquimentAlreadyUse": "The equipment you are trying to select is not available for this date.",
   "MsgNoDateBeginRent": "You must choose a start date to select equipment.",
   "MsgNoDateEndRent": "You must choose an end date to select a device.",
-  "MsgEquipmentDateChange": "A equipment that you have selected must have been withdrawn because it is no longer available for the dates selected!"
+  "MsgEquipmentDateChange": "One or more equipments you had previously selected\nare not available for the new dates you have chosen.",
+  "MsgNoSearchResults": "There are no results for your current search request.",
+  "UserLabCheckExtension": "Check to add extension"
 }

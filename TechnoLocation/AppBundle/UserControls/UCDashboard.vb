@@ -74,7 +74,7 @@
             labDepositCount.Text = Format(EntityRent.getInstance().getRentDeposits(), "0.00$")
 
         Else
-            labDepositCount.Text = Replace(Format(EntityRent.getInstance().getRentDeposits(), "0.00$"),
+            labDepositCount.Text = Replace(Format(EntityRent.getInstance().getRentDeposits(), "$0.00"),
                                            ".",
                                            ",")
         End If

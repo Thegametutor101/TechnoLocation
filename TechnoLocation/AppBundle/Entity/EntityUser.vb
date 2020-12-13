@@ -32,7 +32,25 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U order by U.code"
+        command.CommandText = $"Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -92,7 +110,26 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from user U where code = '{code}'"
+        command.CommandText = $"Select code, 
+                                    password, 
+                                    firstName, 
+                                    lastName, 
+                                    email, 
+                                    phoneMain, 
+                                    CASE
+                                    	WHEN extensionMain Is NULL THEN -1
+                                        WHEN extensionMain IS NOT NULL THEN extensionMain
+                                    END AS extensionMain, 
+                                    phone2, 
+                                    CASE
+                                    	WHEN extension2 Is NULL THEN -1
+                                        WHEN extension2 IS NOT NULL THEN extension2
+                                    END AS extension2,
+                                    job, 
+                                    permissions, 
+                                    balance 
+                                from user 
+                                where code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("user")

@@ -171,6 +171,7 @@ Public Class MainForm
         Next
         If open Then
             panelMain.Controls.Remove(notifications)
+            selectOptionButton(10)
         Else
 
             notifications.Dock = DockStyle.Left
@@ -190,7 +191,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        Dim iReturn As New UCReturn()
+        Dim iReturn As New UCReturn(Me)
         iReturn.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iReturn)
@@ -348,6 +349,7 @@ Public Class MainForm
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
         dashboard.resizeLabels()
+        selectOptionButton(0)
     End Sub
 
     Public Sub selectOptionButton(number As Integer)
