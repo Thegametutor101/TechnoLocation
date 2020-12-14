@@ -24,7 +24,7 @@ Public Class ModelCharacters
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.", ex.Message)
+            MessageBox.Show("Erreur lors de la sélection d'encription de mot de passe.", ex.Message)
         End Try
     End Function
 End Class

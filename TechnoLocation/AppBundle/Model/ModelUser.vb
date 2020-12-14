@@ -85,28 +85,8 @@ Public Class ModelUser
                 loginController.createAccount(code, password)
             End If
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Erreur lord de la modification de l'utilisateur{Environment.NewLine}Veuillez contacter un développeur.")
         End Try
-    End Function
-
-    Public Function nextId() As Integer
-        Dim code As Integer = 0
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = "select max(code) from user"
-            connection.Open()
-            Dim reader = command.ExecuteReader()
-            reader.Read()
-            code = reader(0)
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-        Return (code + 1)
     End Function
 
     Public Function addUser(code As Integer,
@@ -188,7 +168,7 @@ Public Class ModelUser
                 loginController.createAccount(code, password)
             End If
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Echec de l'ajout de l'utilisateur.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -204,7 +184,7 @@ Public Class ModelUser
             Dim reader = command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Erreur lors de la suppression d'utilisateur.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -220,7 +200,7 @@ Public Class ModelUser
             Dim reader = command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Echec de la modification du mot de passe de l'utilisateur.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -238,7 +218,7 @@ Public Class ModelUser
             command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("erreur lors de la modification du solde de l'utilisateur.")
+            MessageBox.Show($"erreur lors de la modification du solde de l'utilisateur.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -256,7 +236,7 @@ Public Class ModelUser
             command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("erreur lors de la modification du solde de l'utilisateur.")
+            MessageBox.Show($"erreur lors de la modification du solde de l'utilisateur.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 

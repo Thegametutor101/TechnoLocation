@@ -209,28 +209,28 @@ Public Class UCUserModify
         Else
             matricule = numCode.Value
         End If
-        If Not EntityUser.getInstance().checkUserMatriculeExists(numCode.Value) Then
-            ModelUser.getInstance().addUser(CInt(numCode.Value),
-                                            password,
-                                            firstName,
-                                            lastName,
-                                            email,
-                                            phone1,
-                                            ext1,
-                                            phone2,
-                                            ext2,
-                                            dropStatus.SelectedIndex,
-                                            dropPermissions.SelectedIndex,
-                                            0)
+        Try
+            ModelUser.getInstance().updateUser(CInt(numCode.Value),
+                                               password,
+                                               firstName,
+                                               lastName,
+                                               email,
+                                               phone1,
+                                               ext1,
+                                               phone2,
+                                               ext2,
+                                               dropStatus.SelectedIndex,
+                                               dropPermissions.SelectedIndex,
+                                               0)
             interfaceUser.loadDataGridView()
             Me.SendToBack()
-        Else
+        Catch ex As Exception
             MsgBox(Lang.getInstance().getLang()("SameMatricula"),
                    vbOKOnly,
                    Lang.getInstance().getLang()("SameMatriculaTitle"))
             numCode.BorderColor = Color.LightCoral
             numCode.FocusedState.BorderColor = Color.LightCoral
-        End If
+        End Try
     End Sub
 
     '__________________________________________________________________________________________________________

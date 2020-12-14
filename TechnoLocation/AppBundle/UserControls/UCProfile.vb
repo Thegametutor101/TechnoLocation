@@ -8,7 +8,7 @@ Public Class UCProfile
     '__________________________________________________________________________________________________________
 
     Dim WithEvents mainForm As New MainForm(0)
-    Dim data As DataRow = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
+    Dim data As DataRow
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
@@ -26,7 +26,7 @@ Public Class UCProfile
 
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not mainForm.code = 0 Then
-
+            data = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
             tbCode.Text = mainForm.code
             tbFirstName.Text = data.Item("firstName")
             tbLastName.Text = data.Item("lastName")

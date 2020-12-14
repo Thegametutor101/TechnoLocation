@@ -12,47 +12,22 @@ Public Class EntityHistory
     End Function
 
     Public Function getHistory() As DataTable
-        If connection.State = ConnectionState.Open Then
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select * from history"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim table As New DataTable("history")
+            table.Load(reader)
             connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from history"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("history")
-        table.Load(reader)
-        connection.Close()
-        Return table
+            Return table
+        Catch ex As Exception
+            MessageBox.Show($"Impossible de récupérer l'historique.{Environment.NewLine}" + ex.Message)
+        End Try
     End Function
 
-    Public Function getHistoryCode(code As Integer) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from history where code = '{code}'"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("history")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getHistoryDate(day As Date) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from history where date = '{day}'"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("history")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
 End Class
