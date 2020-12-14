@@ -70,8 +70,7 @@ Public Class UCUserAdd
         End If
     End Sub
 
-    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles numCode.ValueChanged,
-                                                                        tbFirstName.TextChanged,
+    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles tbFirstName.TextChanged,
                                                                         tbLastName.TextChanged,
                                                                         tbEmail.TextChanged,
                                                                         tbPhone1.TextChanged,
@@ -79,15 +78,38 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
-    Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp
-        If e.KeyCode = Keys.V Then
-            Try
-                numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
-            Catch ex As Exception
 
-            End Try
+
+    Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
+
+        mainForm.isEditing = True
+
+
+
+        If numCode.Value >= 10000000 Then
+
+            numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+
         End If
+
     End Sub
+
+
+
+    Private Sub numCode_GotFocus(sender As Object, e As EventArgs) Handles numCode.GotFocus
+
+        numCode.Text = ""
+
+    End Sub
+
+
+
+    Private Sub numCode_LostFocus(sender As Object, e As EventArgs) Handles numCode.LostFocus
+
+        numCode.Text = numCode.Value
+
+    End Sub
+
 
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
         Dim grey = Color.FromArgb(1, 213, 218, 223)
@@ -354,4 +376,9 @@ Public Class UCUserAdd
             labExt2.Location = baselabExt2Location
         End If
     End Sub
+
+
+
+
+
 End Class

@@ -95,13 +95,44 @@ Public Class UCUserModify
         End If
     End Sub
 
-    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles numCode.ValueChanged,
-                                                                        tbFirstName.TextChanged,
+    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles tbFirstName.TextChanged,
                                                                         tbLastName.TextChanged,
                                                                         tbEmail.TextChanged,
                                                                         tbPhone1.TextChanged,
                                                                         tbPhone2.TextChanged
         mainForm.isEditing = True
+    End Sub
+
+
+
+    Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
+
+        mainForm.isEditing = True
+
+
+
+        If numCode.Value >= 10000000 Then
+
+            numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+
+        End If
+
+    End Sub
+
+
+
+    Private Sub numCode_GotFocus(sender As Object, e As EventArgs) Handles numCode.GotFocus
+
+        numCode.Text = ""
+
+    End Sub
+
+
+
+    Private Sub numCode_LostFocus(sender As Object, e As EventArgs) Handles numCode.LostFocus
+
+        numCode.Text = numCode.Value
+
     End Sub
 
     Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp

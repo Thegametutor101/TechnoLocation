@@ -123,7 +123,7 @@ Public Class UCEquipment
 
     Public Sub loadDataGridView()
         gridEquipment.DataSource = EntityEquipment.getInstance().getEquipment()
-        For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+        For Each selectedItem As DataGridViewRow In gridEquipment.Rows
             codesBarres.generateSaveBC(selectedItem.Cells(0).Value.ToString)
         Next
     End Sub
@@ -166,5 +166,8 @@ Public Class UCEquipment
         gridEquipment.Columns("available").ReadOnly = False
     End Sub
 
+    Private Sub gridEquipment_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipment.CellContentClick
+
+    End Sub
 
 End Class
