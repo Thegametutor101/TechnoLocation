@@ -14,6 +14,7 @@ Public Class UCRent
     Dim showAllEquipment As Integer = 1
     Dim dateBegin As Date
     Dim dateFinish As Date
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -264,6 +265,13 @@ Public Class UCRent
 
     Private Sub checkShowAllEquipment_CheckedChanged(sender As Object, e As EventArgs) Handles checkShowAllEquipment.CheckedChanged
         searchEquipment()
+    End Sub
+
+
+    Private Sub tbCodeRenter_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tbCodeRenter.KeyUp
+        If e.KeyCode = Keys.V Then
+            tbCodeRenter.Text = codesBarres.isBarcodeUser(tbCodeRenter.Text)
+        End If
     End Sub
 
 End Class

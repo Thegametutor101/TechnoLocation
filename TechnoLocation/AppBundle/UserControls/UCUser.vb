@@ -8,6 +8,7 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Dim mainForm As New MainForm(0)
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -36,6 +37,12 @@ Public Class UCUser
 
     Private Sub tbUserSearch_TextChanged(sender As Object, e As EventArgs) Handles tbUserSearch.TextChanged
         userSearch()
+    End Sub
+
+    Private Sub tbUserSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles tbUserSearch.KeyUp
+        If e.KeyCode = Keys.V Then
+            tbUserSearch.Text = codesBarres.isBarcodeUser(tbUserSearch.Text)
+        End If
     End Sub
 
     Private Sub checkUser_CheckedChanged(sender As Object, e As EventArgs) Handles checkUser.CheckedChanged

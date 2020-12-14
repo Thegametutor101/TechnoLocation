@@ -6,6 +6,7 @@ Public Class UCEquipment
     '__________________________________________________________________________________________________________
 
     Dim mainForm As New MainForm(0)
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -42,6 +43,11 @@ Public Class UCEquipment
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged,
                                                                                checkAvailableEquip.CheckedChanged
         search()
+    End Sub
+    Private Sub tbSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles tbSearch.KeyUp
+        If e.KeyCode = Keys.V Then
+            tbSearch.Text = codesBarres.isBarcodeEquip(tbSearch.Text)
+        End If
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -91,7 +97,12 @@ Public Class UCEquipment
     End Sub
 
     Private Sub btPrintBarcodeEquip_Click(sender As Object, e As EventArgs) Handles btPrintBarcodeEquip.Click
-
+        Dim listeEquip As New List(Of String)
+        For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+            listeEquip.Add(selectedItem.Cells(0).Value.ToString())
+        Next
+        codesBarres.mergeImages(listeEquip)
+        codesBarres.PrintBCFromFile("merge")
     End Sub
 
     Private Sub availableChange(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipment.CellClick
@@ -112,6 +123,9 @@ Public Class UCEquipment
 
     Public Sub loadDataGridView()
         gridEquipment.DataSource = EntityEquipment.getInstance().getEquipment()
+        For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
+            codesBarres.generateSaveBC(selectedItem.Cells(0).Value.ToString)
+        Next
     End Sub
 
     Private Sub search()
@@ -151,5 +165,6 @@ Public Class UCEquipment
         gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         gridEquipment.Columns("available").ReadOnly = False
     End Sub
+
 
 End Class

@@ -69,9 +69,10 @@ Partial Class UCUserAdd
         Me.Guna2Panel1.Controls.Add(Me.btBack)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 100)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(947, 81)
         Me.Guna2Panel1.TabIndex = 0
         '
         'btCancelUser
@@ -85,10 +86,11 @@ Partial Class UCUserAdd
         Me.btCancelUser.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btCancelUser.ForeColor = System.Drawing.Color.Black
         Me.btCancelUser.HoverState.Parent = Me.btCancelUser
-        Me.btCancelUser.Location = New System.Drawing.Point(293, 10)
+        Me.btCancelUser.Location = New System.Drawing.Point(220, 8)
+        Me.btCancelUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btCancelUser.Name = "btCancelUser"
         Me.btCancelUser.ShadowDecoration.Parent = Me.btCancelUser
-        Me.btCancelUser.Size = New System.Drawing.Size(184, 80)
+        Me.btCancelUser.Size = New System.Drawing.Size(138, 65)
         Me.btCancelUser.TabIndex = 25
         Me.btCancelUser.Text = "Annuler"
         '
@@ -103,10 +105,11 @@ Partial Class UCUserAdd
         Me.btAddUser.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btAddUser.ForeColor = System.Drawing.Color.Black
         Me.btAddUser.HoverState.Parent = Me.btAddUser
-        Me.btAddUser.Location = New System.Drawing.Point(92, 10)
+        Me.btAddUser.Location = New System.Drawing.Point(69, 8)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.ShadowDecoration.Parent = Me.btAddUser
-        Me.btAddUser.Size = New System.Drawing.Size(184, 80)
+        Me.btAddUser.Size = New System.Drawing.Size(138, 65)
         Me.btAddUser.TabIndex = 24
         Me.btAddUser.Text = "Sauvegarder"
         '
@@ -118,38 +121,42 @@ Partial Class UCUserAdd
         Me.btBack.HoverState.Parent = Me.btBack
         Me.btBack.Image = Global.TechnoLocation.My.Resources.Resources.baseline_navigate_before_black_18dp
         Me.btBack.ImageRotate = 0!
-        Me.btBack.Location = New System.Drawing.Point(14, 21)
+        Me.btBack.Location = New System.Drawing.Point(10, 17)
+        Me.btBack.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btBack.Name = "btBack"
         Me.btBack.PressedState.ImageSize = New System.Drawing.Size(64, 64)
         Me.btBack.PressedState.Parent = Me.btBack
-        Me.btBack.Size = New System.Drawing.Size(64, 54)
+        Me.btBack.Size = New System.Drawing.Size(48, 44)
         Me.btBack.TabIndex = 23
         '
         'Guna2Panel2
         '
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 100)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 81)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(60, 644)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(45, 523)
         Me.Guna2Panel2.TabIndex = 1
         '
         'Guna2Panel3
         '
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel3.Location = New System.Drawing.Point(1203, 100)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(902, 81)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 644)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 523)
         Me.Guna2Panel3.TabIndex = 2
         '
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 715)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(45, 580)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 29)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(857, 24)
         Me.Guna2Panel4.TabIndex = 3
         '
         'Guna2Panel5
@@ -180,18 +187,20 @@ Partial Class UCUserAdd
         Me.Guna2Panel5.Controls.Add(Me.labName)
         Me.Guna2Panel5.Controls.Add(Me.labCodeUser)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel5.Location = New System.Drawing.Point(60, 100)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(45, 81)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 615)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(857, 499)
         Me.Guna2Panel5.TabIndex = 4
         '
         'labExt2
         '
         Me.labExt2.BackColor = System.Drawing.Color.Transparent
-        Me.labExt2.Location = New System.Drawing.Point(873, 310)
+        Me.labExt2.Location = New System.Drawing.Point(655, 252)
+        Me.labExt2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labExt2.Name = "labExt2"
-        Me.labExt2.Size = New System.Drawing.Size(138, 18)
+        Me.labExt2.Size = New System.Drawing.Size(111, 15)
         Me.labExt2.TabIndex = 71
         Me.labExt2.Text = "Cochez pour extension"
         '
@@ -202,10 +211,11 @@ Partial Class UCUserAdd
         Me.checkExt2.CheckedState.BorderThickness = 2
         Me.checkExt2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkExt2.CheckedState.Parent = Me.checkExt2
-        Me.checkExt2.Location = New System.Drawing.Point(847, 309)
+        Me.checkExt2.Location = New System.Drawing.Point(635, 251)
+        Me.checkExt2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkExt2.Name = "checkExt2"
         Me.checkExt2.ShadowDecoration.Parent = Me.checkExt2
-        Me.checkExt2.Size = New System.Drawing.Size(20, 20)
+        Me.checkExt2.Size = New System.Drawing.Size(15, 16)
         Me.checkExt2.TabIndex = 70
         Me.checkExt2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkExt2.UncheckedState.BorderRadius = 2
@@ -216,9 +226,10 @@ Partial Class UCUserAdd
         'labExt1
         '
         Me.labExt1.BackColor = System.Drawing.Color.Transparent
-        Me.labExt1.Location = New System.Drawing.Point(873, 233)
+        Me.labExt1.Location = New System.Drawing.Point(655, 189)
+        Me.labExt1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labExt1.Name = "labExt1"
-        Me.labExt1.Size = New System.Drawing.Size(138, 18)
+        Me.labExt1.Size = New System.Drawing.Size(111, 15)
         Me.labExt1.TabIndex = 69
         Me.labExt1.Text = "Cochez pour extension"
         '
@@ -229,10 +240,11 @@ Partial Class UCUserAdd
         Me.checkExt1.CheckedState.BorderThickness = 2
         Me.checkExt1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkExt1.CheckedState.Parent = Me.checkExt1
-        Me.checkExt1.Location = New System.Drawing.Point(847, 232)
+        Me.checkExt1.Location = New System.Drawing.Point(635, 188)
+        Me.checkExt1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkExt1.Name = "checkExt1"
         Me.checkExt1.ShadowDecoration.Parent = Me.checkExt1
-        Me.checkExt1.Size = New System.Drawing.Size(20, 20)
+        Me.checkExt1.Size = New System.Drawing.Size(15, 16)
         Me.checkExt1.TabIndex = 68
         Me.checkExt1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkExt1.UncheckedState.BorderRadius = 2
@@ -254,11 +266,12 @@ Partial Class UCUserAdd
         Me.numExtension2.FocusedState.Parent = Me.numExtension2
         Me.numExtension2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.numExtension2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.numExtension2.Location = New System.Drawing.Point(844, 335)
+        Me.numExtension2.Location = New System.Drawing.Point(633, 272)
+        Me.numExtension2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.numExtension2.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.numExtension2.Name = "numExtension2"
         Me.numExtension2.ShadowDecoration.Parent = Me.numExtension2
-        Me.numExtension2.Size = New System.Drawing.Size(146, 36)
+        Me.numExtension2.Size = New System.Drawing.Size(110, 29)
         Me.numExtension2.TabIndex = 48
         '
         'numExtension1
@@ -275,19 +288,21 @@ Partial Class UCUserAdd
         Me.numExtension1.FocusedState.Parent = Me.numExtension1
         Me.numExtension1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.numExtension1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.numExtension1.Location = New System.Drawing.Point(844, 266)
+        Me.numExtension1.Location = New System.Drawing.Point(633, 216)
+        Me.numExtension1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.numExtension1.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.numExtension1.Name = "numExtension1"
         Me.numExtension1.ShadowDecoration.Parent = Me.numExtension1
-        Me.numExtension1.Size = New System.Drawing.Size(146, 36)
+        Me.numExtension1.Size = New System.Drawing.Size(110, 29)
         Me.numExtension1.TabIndex = 46
         '
         'labSetPassword
         '
         Me.labSetPassword.BackColor = System.Drawing.Color.Transparent
-        Me.labSetPassword.Location = New System.Drawing.Point(503, 527)
+        Me.labSetPassword.Location = New System.Drawing.Point(377, 428)
+        Me.labSetPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labSetPassword.Name = "labSetPassword"
-        Me.labSetPassword.Size = New System.Drawing.Size(170, 18)
+        Me.labSetPassword.Size = New System.Drawing.Size(134, 15)
         Me.labSetPassword.TabIndex = 67
         Me.labSetPassword.Text = "Enregistrer un mot de passe"
         '
@@ -298,10 +313,11 @@ Partial Class UCUserAdd
         Me.checkPassword.CheckedState.BorderThickness = 2
         Me.checkPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkPassword.CheckedState.Parent = Me.checkPassword
-        Me.checkPassword.Location = New System.Drawing.Point(477, 526)
+        Me.checkPassword.Location = New System.Drawing.Point(358, 427)
+        Me.checkPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkPassword.Name = "checkPassword"
         Me.checkPassword.ShadowDecoration.Parent = Me.checkPassword
-        Me.checkPassword.Size = New System.Drawing.Size(20, 20)
+        Me.checkPassword.Size = New System.Drawing.Size(15, 16)
         Me.checkPassword.TabIndex = 51
         Me.checkPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkPassword.UncheckedState.BorderRadius = 2
@@ -324,13 +340,14 @@ Partial Class UCUserAdd
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.HoverState.Parent = Me.tbPassword
-        Me.tbPassword.Location = New System.Drawing.Point(468, 560)
+        Me.tbPassword.Location = New System.Drawing.Point(351, 455)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbPassword.PlaceholderText = ""
         Me.tbPassword.SelectedText = ""
         Me.tbPassword.ShadowDecoration.Parent = Me.tbPassword
-        Me.tbPassword.Size = New System.Drawing.Size(356, 36)
+        Me.tbPassword.Size = New System.Drawing.Size(267, 29)
         Me.tbPassword.TabIndex = 52
         '
         'dropPermissions
@@ -347,10 +364,11 @@ Partial Class UCUserAdd
         Me.dropPermissions.HoverState.Parent = Me.dropPermissions
         Me.dropPermissions.ItemHeight = 30
         Me.dropPermissions.ItemsAppearance.Parent = Me.dropPermissions
-        Me.dropPermissions.Location = New System.Drawing.Point(468, 470)
+        Me.dropPermissions.Location = New System.Drawing.Point(351, 382)
+        Me.dropPermissions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dropPermissions.Name = "dropPermissions"
         Me.dropPermissions.ShadowDecoration.Parent = Me.dropPermissions
-        Me.dropPermissions.Size = New System.Drawing.Size(356, 36)
+        Me.dropPermissions.Size = New System.Drawing.Size(268, 36)
         Me.dropPermissions.Sorted = True
         Me.dropPermissions.TabIndex = 50
         '
@@ -368,10 +386,11 @@ Partial Class UCUserAdd
         Me.dropStatus.HoverState.Parent = Me.dropStatus
         Me.dropStatus.ItemHeight = 30
         Me.dropStatus.ItemsAppearance.Parent = Me.dropStatus
-        Me.dropStatus.Location = New System.Drawing.Point(468, 401)
+        Me.dropStatus.Location = New System.Drawing.Point(351, 326)
+        Me.dropStatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dropStatus.Name = "dropStatus"
         Me.dropStatus.ShadowDecoration.Parent = Me.dropStatus
-        Me.dropStatus.Size = New System.Drawing.Size(356, 36)
+        Me.dropStatus.Size = New System.Drawing.Size(268, 36)
         Me.dropStatus.Sorted = True
         Me.dropStatus.TabIndex = 49
         '
@@ -379,9 +398,10 @@ Partial Class UCUserAdd
         '
         Me.labPassword.BackColor = System.Drawing.Color.Transparent
         Me.labPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPassword.Location = New System.Drawing.Point(267, 560)
+        Me.labPassword.Location = New System.Drawing.Point(200, 455)
+        Me.labPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labPassword.Name = "labPassword"
-        Me.labPassword.Size = New System.Drawing.Size(111, 27)
+        Me.labPassword.Size = New System.Drawing.Size(92, 22)
         Me.labPassword.TabIndex = 62
         Me.labPassword.Text = "Mot de passe"
         '
@@ -389,9 +409,10 @@ Partial Class UCUserAdd
         '
         Me.labPermissions.BackColor = System.Drawing.Color.Transparent
         Me.labPermissions.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPermissions.Location = New System.Drawing.Point(267, 470)
+        Me.labPermissions.Location = New System.Drawing.Point(200, 382)
+        Me.labPermissions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labPermissions.Name = "labPermissions"
-        Me.labPermissions.Size = New System.Drawing.Size(97, 27)
+        Me.labPermissions.Size = New System.Drawing.Size(80, 22)
         Me.labPermissions.TabIndex = 61
         Me.labPermissions.Text = "Permissions"
         '
@@ -399,9 +420,10 @@ Partial Class UCUserAdd
         '
         Me.labStatus.BackColor = System.Drawing.Color.Transparent
         Me.labStatus.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labStatus.Location = New System.Drawing.Point(267, 408)
+        Me.labStatus.Location = New System.Drawing.Point(200, 332)
+        Me.labStatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labStatus.Name = "labStatus"
-        Me.labStatus.Size = New System.Drawing.Size(50, 27)
+        Me.labStatus.Size = New System.Drawing.Size(42, 22)
         Me.labStatus.TabIndex = 60
         Me.labStatus.Text = "Statut"
         '
@@ -420,22 +442,24 @@ Partial Class UCUserAdd
         Me.tbPhone2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPhone2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPhone2.HoverState.Parent = Me.tbPhone2
-        Me.tbPhone2.Location = New System.Drawing.Point(468, 335)
+        Me.tbPhone2.Location = New System.Drawing.Point(351, 272)
+        Me.tbPhone2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbPhone2.Name = "tbPhone2"
         Me.tbPhone2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPhone2.PlaceholderText = "(819) 995-5566"
         Me.tbPhone2.SelectedText = ""
         Me.tbPhone2.ShadowDecoration.Parent = Me.tbPhone2
-        Me.tbPhone2.Size = New System.Drawing.Size(356, 36)
+        Me.tbPhone2.Size = New System.Drawing.Size(267, 29)
         Me.tbPhone2.TabIndex = 47
         '
         'labPhone2
         '
         Me.labPhone2.BackColor = System.Drawing.Color.Transparent
         Me.labPhone2.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPhone2.Location = New System.Drawing.Point(267, 339)
+        Me.labPhone2.Location = New System.Drawing.Point(200, 275)
+        Me.labPhone2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labPhone2.Name = "labPhone2"
-        Me.labPhone2.Size = New System.Drawing.Size(100, 27)
+        Me.labPhone2.Size = New System.Drawing.Size(85, 22)
         Me.labPhone2.TabIndex = 58
         Me.labPhone2.Text = "Téléphone 2"
         '
@@ -454,22 +478,24 @@ Partial Class UCUserAdd
         Me.tbPhone1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPhone1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPhone1.HoverState.Parent = Me.tbPhone1
-        Me.tbPhone1.Location = New System.Drawing.Point(468, 266)
+        Me.tbPhone1.Location = New System.Drawing.Point(351, 216)
+        Me.tbPhone1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbPhone1.Name = "tbPhone1"
         Me.tbPhone1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPhone1.PlaceholderText = "(819) 995-5566"
         Me.tbPhone1.SelectedText = ""
         Me.tbPhone1.ShadowDecoration.Parent = Me.tbPhone1
-        Me.tbPhone1.Size = New System.Drawing.Size(356, 36)
+        Me.tbPhone1.Size = New System.Drawing.Size(267, 29)
         Me.tbPhone1.TabIndex = 45
         '
         'labPhone
         '
         Me.labPhone.BackColor = System.Drawing.Color.Transparent
         Me.labPhone.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPhone.Location = New System.Drawing.Point(267, 270)
+        Me.labPhone.Location = New System.Drawing.Point(200, 219)
+        Me.labPhone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labPhone.Name = "labPhone"
-        Me.labPhone.Size = New System.Drawing.Size(100, 27)
+        Me.labPhone.Size = New System.Drawing.Size(85, 22)
         Me.labPhone.TabIndex = 56
         Me.labPhone.Text = "Téléphone 1"
         '
@@ -487,12 +513,13 @@ Partial Class UCUserAdd
         Me.numCode.FocusedState.Parent = Me.numCode
         Me.numCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.numCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.numCode.Location = New System.Drawing.Point(468, 50)
-        Me.numCode.Maximum = New Decimal(New Integer() {9999999, 0, 0, 0})
+        Me.numCode.Location = New System.Drawing.Point(351, 41)
+        Me.numCode.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.numCode.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.numCode.Minimum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.numCode.Name = "numCode"
         Me.numCode.ShadowDecoration.Parent = Me.numCode
-        Me.numCode.Size = New System.Drawing.Size(356, 36)
+        Me.numCode.Size = New System.Drawing.Size(267, 29)
         Me.numCode.TabIndex = 41
         Me.numCode.Value = New Decimal(New Integer() {1000, 0, 0, 0})
         '
@@ -511,22 +538,24 @@ Partial Class UCUserAdd
         Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEmail.HoverState.Parent = Me.tbEmail
-        Me.tbEmail.Location = New System.Drawing.Point(468, 195)
+        Me.tbEmail.Location = New System.Drawing.Point(351, 158)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbEmail.Name = "tbEmail"
         Me.tbEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbEmail.PlaceholderText = "example@gmail.com"
         Me.tbEmail.SelectedText = ""
         Me.tbEmail.ShadowDecoration.Parent = Me.tbEmail
-        Me.tbEmail.Size = New System.Drawing.Size(356, 36)
+        Me.tbEmail.Size = New System.Drawing.Size(267, 29)
         Me.tbEmail.TabIndex = 44
         '
         'labEmail
         '
         Me.labEmail.BackColor = System.Drawing.Color.Transparent
         Me.labEmail.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labEmail.Location = New System.Drawing.Point(267, 199)
+        Me.labEmail.Location = New System.Drawing.Point(200, 162)
+        Me.labEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labEmail.Name = "labEmail"
-        Me.labEmail.Size = New System.Drawing.Size(45, 27)
+        Me.labEmail.Size = New System.Drawing.Size(40, 22)
         Me.labEmail.TabIndex = 53
         Me.labEmail.Text = "Email"
         '
@@ -545,13 +574,14 @@ Partial Class UCUserAdd
         Me.tbLastName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbLastName.HoverState.Parent = Me.tbLastName
-        Me.tbLastName.Location = New System.Drawing.Point(649, 124)
+        Me.tbLastName.Location = New System.Drawing.Point(487, 101)
+        Me.tbLastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbLastName.Name = "tbLastName"
         Me.tbLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbLastName.PlaceholderText = "Nom de famille"
         Me.tbLastName.SelectedText = ""
         Me.tbLastName.ShadowDecoration.Parent = Me.tbLastName
-        Me.tbLastName.Size = New System.Drawing.Size(175, 36)
+        Me.tbLastName.Size = New System.Drawing.Size(131, 29)
         Me.tbLastName.TabIndex = 43
         '
         'tbFirstName
@@ -569,22 +599,24 @@ Partial Class UCUserAdd
         Me.tbFirstName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbFirstName.HoverState.Parent = Me.tbFirstName
-        Me.tbFirstName.Location = New System.Drawing.Point(468, 124)
+        Me.tbFirstName.Location = New System.Drawing.Point(351, 101)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbFirstName.Name = "tbFirstName"
         Me.tbFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbFirstName.PlaceholderText = "Prénom"
         Me.tbFirstName.SelectedText = ""
         Me.tbFirstName.ShadowDecoration.Parent = Me.tbFirstName
-        Me.tbFirstName.Size = New System.Drawing.Size(175, 36)
+        Me.tbFirstName.Size = New System.Drawing.Size(131, 29)
         Me.tbFirstName.TabIndex = 42
         '
         'labName
         '
         Me.labName.BackColor = System.Drawing.Color.Transparent
         Me.labName.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labName.Location = New System.Drawing.Point(267, 128)
+        Me.labName.Location = New System.Drawing.Point(200, 104)
+        Me.labName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labName.Name = "labName"
-        Me.labName.Size = New System.Drawing.Size(43, 27)
+        Me.labName.Size = New System.Drawing.Size(36, 22)
         Me.labName.TabIndex = 50
         Me.labName.Text = "Nom"
         '
@@ -592,15 +624,16 @@ Partial Class UCUserAdd
         '
         Me.labCodeUser.BackColor = System.Drawing.Color.Transparent
         Me.labCodeUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labCodeUser.Location = New System.Drawing.Point(267, 50)
+        Me.labCodeUser.Location = New System.Drawing.Point(200, 41)
+        Me.labCodeUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labCodeUser.Name = "labCodeUser"
-        Me.labCodeUser.Size = New System.Drawing.Size(75, 27)
+        Me.labCodeUser.Size = New System.Drawing.Size(65, 22)
         Me.labCodeUser.TabIndex = 48
         Me.labCodeUser.Text = "Matricule"
         '
         'UCUserAdd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2Panel5)
@@ -608,9 +641,8 @@ Partial Class UCUserAdd
         Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCUserAdd"
-        Me.Size = New System.Drawing.Size(1263, 744)
+        Me.Size = New System.Drawing.Size(947, 604)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()

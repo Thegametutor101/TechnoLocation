@@ -46,9 +46,10 @@ Partial Class UCHistory
         Me.Guna2Panel3.Controls.Add(Me.tbSearch)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1263, 102)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(947, 83)
         Me.Guna2Panel3.TabIndex = 3
         '
         'checkAll
@@ -58,10 +59,11 @@ Partial Class UCHistory
         Me.checkAll.HoverState.Parent = Me.checkAll
         Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
         Me.checkAll.IndicateFocus = False
-        Me.checkAll.Location = New System.Drawing.Point(60, 72)
+        Me.checkAll.Location = New System.Drawing.Point(45, 58)
+        Me.checkAll.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkAll.Name = "checkAll"
         Me.checkAll.PressedState.Parent = Me.checkAll
-        Me.checkAll.Size = New System.Drawing.Size(29, 24)
+        Me.checkAll.Size = New System.Drawing.Size(22, 20)
         Me.checkAll.TabIndex = 50
         '
         'tbSearch
@@ -79,23 +81,25 @@ Partial Class UCHistory
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.HoverState.Parent = Me.tbSearch
-        Me.tbSearch.Location = New System.Drawing.Point(29, 18)
+        Me.tbSearch.Location = New System.Drawing.Point(22, 15)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbSearch.PlaceholderText = "Recherche"
         Me.tbSearch.SelectedText = ""
         Me.tbSearch.ShadowDecoration.Parent = Me.tbSearch
-        Me.tbSearch.Size = New System.Drawing.Size(356, 36)
+        Me.tbSearch.Size = New System.Drawing.Size(267, 29)
         Me.tbSearch.TabIndex = 48
         '
         'Guna2Panel4
         '
         Me.Guna2Panel4.Controls.Add(Me.gridHistory)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 102)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(45, 83)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 582)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(857, 472)
         Me.Guna2Panel4.TabIndex = 8
         '
         'gridHistory
@@ -131,6 +135,7 @@ Partial Class UCHistory
         Me.gridHistory.EnableHeadersVisualStyles = False
         Me.gridHistory.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridHistory.Location = New System.Drawing.Point(0, 0)
+        Me.gridHistory.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gridHistory.MultiSelect = False
         Me.gridHistory.Name = "gridHistory"
         Me.gridHistory.ReadOnly = True
@@ -141,7 +146,7 @@ Partial Class UCHistory
         Me.gridHistory.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridHistory.RowTemplate.Height = 24
         Me.gridHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridHistory.Size = New System.Drawing.Size(1143, 582)
+        Me.gridHistory.Size = New System.Drawing.Size(857, 472)
         Me.gridHistory.TabIndex = 39
         Me.gridHistory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -169,33 +174,36 @@ Partial Class UCHistory
         'Guna2Panel1
         '
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 102)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 83)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(60, 582)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(45, 472)
         Me.Guna2Panel1.TabIndex = 5
         '
         'Guna2Panel2
         '
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 684)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 555)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1203, 60)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(902, 49)
         Me.Guna2Panel2.TabIndex = 7
         '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(1203, 102)
+        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(902, 83)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel1
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(60, 642)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(45, 521)
         Me.Guna2CustomGradientPanel1.TabIndex = 6
         '
         'UCHistory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2Panel4)
@@ -203,9 +211,8 @@ Partial Class UCHistory
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.Controls.Add(Me.Guna2Panel3)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCHistory"
-        Me.Size = New System.Drawing.Size(1263, 744)
+        Me.Size = New System.Drawing.Size(947, 604)
         Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2Panel4.ResumeLayout(False)
         CType(Me.gridHistory, System.ComponentModel.ISupportInitialize).EndInit()

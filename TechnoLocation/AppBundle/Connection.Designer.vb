@@ -43,10 +43,9 @@ Partial Class Connection
         '
         Me.labUsername.AutoSize = True
         Me.labUsername.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labUsername.Location = New System.Drawing.Point(87, 115)
-        Me.labUsername.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labUsername.Location = New System.Drawing.Point(65, 93)
         Me.labUsername.Name = "labUsername"
-        Me.labUsername.Size = New System.Drawing.Size(98, 25)
+        Me.labUsername.Size = New System.Drawing.Size(77, 20)
         Me.labUsername.TabIndex = 6
         Me.labUsername.Text = "Identifiant"
         '
@@ -54,10 +53,9 @@ Partial Class Connection
         '
         Me.labPassword.AutoSize = True
         Me.labPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labPassword.Location = New System.Drawing.Point(87, 166)
-        Me.labPassword.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labPassword.Location = New System.Drawing.Point(65, 135)
         Me.labPassword.Name = "labPassword"
-        Me.labPassword.Size = New System.Drawing.Size(124, 25)
+        Me.labPassword.Size = New System.Drawing.Size(98, 20)
         Me.labPassword.TabIndex = 6
         Me.labPassword.Text = "Mot de passe"
         '
@@ -66,10 +64,9 @@ Partial Class Connection
         Me.linklabPasswordForget.AutoSize = True
         Me.linklabPasswordForget.Font = New System.Drawing.Font("Segoe UI Symbol", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.linklabPasswordForget.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.linklabPasswordForget.Location = New System.Drawing.Point(89, 206)
-        Me.linklabPasswordForget.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.linklabPasswordForget.Location = New System.Drawing.Point(67, 167)
         Me.linklabPasswordForget.Name = "linklabPasswordForget"
-        Me.linklabPasswordForget.Size = New System.Drawing.Size(118, 15)
+        Me.linklabPasswordForget.Size = New System.Drawing.Size(98, 12)
         Me.linklabPasswordForget.TabIndex = 2
         Me.linklabPasswordForget.TabStop = True
         Me.linklabPasswordForget.Text = "Mot de passe oublié?"
@@ -84,8 +81,9 @@ Partial Class Connection
         Me.panelHeaderBar.Controls.Add(Me.PictureBox1)
         Me.panelHeaderBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelHeaderBar.Location = New System.Drawing.Point(0, 0)
+        Me.panelHeaderBar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.panelHeaderBar.Name = "panelHeaderBar"
-        Me.panelHeaderBar.Size = New System.Drawing.Size(536, 55)
+        Me.panelHeaderBar.Size = New System.Drawing.Size(402, 45)
         Me.panelHeaderBar.TabIndex = 8
         '
         'labLang
@@ -95,9 +93,10 @@ Partial Class Connection
         Me.labLang.Dock = System.Windows.Forms.DockStyle.Right
         Me.labLang.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labLang.ForeColor = System.Drawing.Color.White
-        Me.labLang.Location = New System.Drawing.Point(374, 0)
+        Me.labLang.Location = New System.Drawing.Point(280, 0)
+        Me.labLang.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labLang.Name = "labLang"
-        Me.labLang.Size = New System.Drawing.Size(46, 55)
+        Me.labLang.Size = New System.Drawing.Size(34, 45)
         Me.labLang.TabIndex = 10
         Me.labLang.Text = "EN"
         Me.labLang.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -105,9 +104,10 @@ Partial Class Connection
         'Guna2VSeparator1
         '
         Me.Guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(178, Byte), Integer))
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(65, 12)
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(49, 10)
+        Me.Guna2VSeparator1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
-        Me.Guna2VSeparator1.Size = New System.Drawing.Size(10, 33)
+        Me.Guna2VSeparator1.Size = New System.Drawing.Size(8, 27)
         Me.Guna2VSeparator1.TabIndex = 9
         '
         'btHeaderMinimize
@@ -121,12 +121,13 @@ Partial Class Connection
         Me.btHeaderMinimize.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.ImageRotate = 0!
         Me.btHeaderMinimize.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderMinimize.Location = New System.Drawing.Point(420, 0)
+        Me.btHeaderMinimize.Location = New System.Drawing.Point(314, 0)
+        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btHeaderMinimize.Name = "btHeaderMinimize"
         Me.btHeaderMinimize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderMinimize.PressedState.Parent = Me.btHeaderMinimize
-        Me.btHeaderMinimize.Size = New System.Drawing.Size(58, 55)
+        Me.btHeaderMinimize.Size = New System.Drawing.Size(44, 45)
         Me.btHeaderMinimize.TabIndex = 4
         '
         'btHeaderClose
@@ -141,20 +142,22 @@ Partial Class Connection
         Me.btHeaderClose.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.ImageRotate = 0!
         Me.btHeaderClose.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btHeaderClose.Location = New System.Drawing.Point(478, 0)
+        Me.btHeaderClose.Location = New System.Drawing.Point(358, 0)
+        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btHeaderClose.Name = "btHeaderClose"
         Me.btHeaderClose.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btHeaderClose.PressedState.Parent = Me.btHeaderClose
-        Me.btHeaderClose.Size = New System.Drawing.Size(58, 55)
+        Me.btHeaderClose.Size = New System.Drawing.Size(44, 45)
         Me.btHeaderClose.TabIndex = 5
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(47, 48)
+        Me.PictureBox1.Size = New System.Drawing.Size(35, 39)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -173,12 +176,13 @@ Partial Class Connection
         Me.btConnect.ForeColor = System.Drawing.Color.White
         Me.btConnect.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(147, Byte), Integer))
         Me.btConnect.HoverState.Parent = Me.btConnect
-        Me.btConnect.Location = New System.Drawing.Point(164, 254)
+        Me.btConnect.Location = New System.Drawing.Point(123, 206)
+        Me.btConnect.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btConnect.Name = "btConnect"
         Me.btConnect.PressedColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.btConnect.PressedDepth = 45
         Me.btConnect.ShadowDecoration.Parent = Me.btConnect
-        Me.btConnect.Size = New System.Drawing.Size(180, 45)
+        Me.btConnect.Size = New System.Drawing.Size(135, 37)
         Me.btConnect.TabIndex = 3
         Me.btConnect.Text = "Connexion"
         '
@@ -197,13 +201,14 @@ Partial Class Connection
         Me.tbUsername.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
         Me.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbUsername.HoverState.Parent = Me.tbUsername
-        Me.tbUsername.Location = New System.Drawing.Point(241, 104)
+        Me.tbUsername.Location = New System.Drawing.Point(181, 84)
+        Me.tbUsername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbUsername.Name = "tbUsername"
         Me.tbUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbUsername.PlaceholderText = "Matricule"
         Me.tbUsername.SelectedText = ""
         Me.tbUsername.ShadowDecoration.Parent = Me.tbUsername
-        Me.tbUsername.Size = New System.Drawing.Size(200, 36)
+        Me.tbUsername.Size = New System.Drawing.Size(150, 29)
         Me.tbUsername.TabIndex = 0
         '
         'tbPassword
@@ -221,21 +226,22 @@ Partial Class Connection
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.HoverState.Parent = Me.tbPassword
-        Me.tbPassword.Location = New System.Drawing.Point(241, 155)
+        Me.tbPassword.Location = New System.Drawing.Point(181, 126)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbPassword.PlaceholderText = ""
         Me.tbPassword.SelectedText = ""
         Me.tbPassword.ShadowDecoration.Parent = Me.tbPassword
-        Me.tbPassword.Size = New System.Drawing.Size(200, 36)
+        Me.tbPassword.Size = New System.Drawing.Size(150, 29)
         Me.tbPassword.TabIndex = 1
         '
         'Connection
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(536, 342)
+        Me.ClientSize = New System.Drawing.Size(402, 278)
         Me.Controls.Add(Me.tbPassword)
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.btConnect)
@@ -245,7 +251,6 @@ Partial Class Connection
         Me.Controls.Add(Me.labUsername)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Connection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Connection"

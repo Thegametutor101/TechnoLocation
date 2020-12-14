@@ -54,9 +54,10 @@ Partial Class UCEquipment
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btNewEquipment)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel1
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(1263, 100)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(947, 81)
         Me.Guna2CustomGradientPanel1.TabIndex = 11
         '
         'btPrintBarcodeEquip
@@ -70,10 +71,11 @@ Partial Class UCEquipment
         Me.btPrintBarcodeEquip.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btPrintBarcodeEquip.ForeColor = System.Drawing.Color.Black
         Me.btPrintBarcodeEquip.HoverState.Parent = Me.btPrintBarcodeEquip
-        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(454, 10)
+        Me.btPrintBarcodeEquip.Location = New System.Drawing.Point(340, 8)
+        Me.btPrintBarcodeEquip.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btPrintBarcodeEquip.Name = "btPrintBarcodeEquip"
         Me.btPrintBarcodeEquip.ShadowDecoration.Parent = Me.btPrintBarcodeEquip
-        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(298, 80)
+        Me.btPrintBarcodeEquip.Size = New System.Drawing.Size(224, 65)
         Me.btPrintBarcodeEquip.TabIndex = 2
         Me.btPrintBarcodeEquip.Text = "Imprimer codes barres"
         '
@@ -88,10 +90,11 @@ Partial Class UCEquipment
         Me.btDelEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btDelEquipment.ForeColor = System.Drawing.Color.Black
         Me.btDelEquipment.HoverState.Parent = Me.btDelEquipment
-        Me.btDelEquipment.Location = New System.Drawing.Point(239, 10)
+        Me.btDelEquipment.Location = New System.Drawing.Point(179, 8)
+        Me.btDelEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btDelEquipment.Name = "btDelEquipment"
         Me.btDelEquipment.ShadowDecoration.Parent = Me.btDelEquipment
-        Me.btDelEquipment.Size = New System.Drawing.Size(184, 80)
+        Me.btDelEquipment.Size = New System.Drawing.Size(138, 65)
         Me.btDelEquipment.TabIndex = 1
         Me.btDelEquipment.Text = "Supprimer"
         '
@@ -106,10 +109,11 @@ Partial Class UCEquipment
         Me.btNewEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btNewEquipment.ForeColor = System.Drawing.Color.Black
         Me.btNewEquipment.HoverState.Parent = Me.btNewEquipment
-        Me.btNewEquipment.Location = New System.Drawing.Point(24, 10)
+        Me.btNewEquipment.Location = New System.Drawing.Point(18, 8)
+        Me.btNewEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btNewEquipment.Name = "btNewEquipment"
         Me.btNewEquipment.ShadowDecoration.Parent = Me.btNewEquipment
-        Me.btNewEquipment.Size = New System.Drawing.Size(184, 80)
+        Me.btNewEquipment.Size = New System.Drawing.Size(138, 65)
         Me.btNewEquipment.TabIndex = 0
         Me.btNewEquipment.Text = "Nouveau"
         '
@@ -120,18 +124,20 @@ Partial Class UCEquipment
         Me.Guna2Panel1.Controls.Add(Me.checkAvailableEquip)
         Me.Guna2Panel1.Controls.Add(Me.tbSearch)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 100)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 81)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 80)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(947, 65)
         Me.Guna2Panel1.TabIndex = 12
         '
         'labAvailableOnlyName
         '
         Me.labAvailableOnlyName.BackColor = System.Drawing.Color.Transparent
-        Me.labAvailableOnlyName.Location = New System.Drawing.Point(481, 15)
+        Me.labAvailableOnlyName.Location = New System.Drawing.Point(361, 12)
+        Me.labAvailableOnlyName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labAvailableOnlyName.Name = "labAvailableOnlyName"
-        Me.labAvailableOnlyName.Size = New System.Drawing.Size(135, 18)
+        Me.labAvailableOnlyName.Size = New System.Drawing.Size(105, 15)
         Me.labAvailableOnlyName.TabIndex = 23
         Me.labAvailableOnlyName.Text = "Disponible Seulement"
         '
@@ -142,10 +148,11 @@ Partial Class UCEquipment
         Me.checkSelectAllEquipment.HoverState.Parent = Me.checkSelectAllEquipment
         Me.checkSelectAllEquipment.Image = CType(resources.GetObject("checkSelectAllEquipment.Image"), System.Drawing.Image)
         Me.checkSelectAllEquipment.IndicateFocus = False
-        Me.checkSelectAllEquipment.Location = New System.Drawing.Point(60, 53)
+        Me.checkSelectAllEquipment.Location = New System.Drawing.Point(45, 43)
+        Me.checkSelectAllEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkSelectAllEquipment.Name = "checkSelectAllEquipment"
         Me.checkSelectAllEquipment.PressedState.Parent = Me.checkSelectAllEquipment
-        Me.checkSelectAllEquipment.Size = New System.Drawing.Size(29, 24)
+        Me.checkSelectAllEquipment.Size = New System.Drawing.Size(22, 20)
         Me.checkSelectAllEquipment.TabIndex = 22
         '
         'checkAvailableEquip
@@ -155,10 +162,11 @@ Partial Class UCEquipment
         Me.checkAvailableEquip.CheckedState.BorderThickness = 2
         Me.checkAvailableEquip.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkAvailableEquip.CheckedState.Parent = Me.checkAvailableEquip
-        Me.checkAvailableEquip.Location = New System.Drawing.Point(455, 14)
+        Me.checkAvailableEquip.Location = New System.Drawing.Point(341, 11)
+        Me.checkAvailableEquip.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkAvailableEquip.Name = "checkAvailableEquip"
         Me.checkAvailableEquip.ShadowDecoration.Parent = Me.checkAvailableEquip
-        Me.checkAvailableEquip.Size = New System.Drawing.Size(20, 20)
+        Me.checkAvailableEquip.Size = New System.Drawing.Size(15, 16)
         Me.checkAvailableEquip.TabIndex = 21
         Me.checkAvailableEquip.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkAvailableEquip.UncheckedState.BorderRadius = 2
@@ -181,13 +189,14 @@ Partial Class UCEquipment
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.HoverState.Parent = Me.tbSearch
-        Me.tbSearch.Location = New System.Drawing.Point(24, 7)
+        Me.tbSearch.Location = New System.Drawing.Point(18, 6)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbSearch.PlaceholderText = "Recherche"
         Me.tbSearch.SelectedText = ""
         Me.tbSearch.ShadowDecoration.Parent = Me.tbSearch
-        Me.tbSearch.Size = New System.Drawing.Size(413, 36)
+        Me.tbSearch.Size = New System.Drawing.Size(310, 29)
         Me.tbSearch.TabIndex = 19
         '
         'Guna2CustomGradientPanel2
@@ -198,10 +207,11 @@ Partial Class UCEquipment
         Me.Guna2CustomGradientPanel2.Controls.Add(Me.Guna2Panel2)
         Me.Guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 180)
+        Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 146)
+        Me.Guna2CustomGradientPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
         Me.Guna2CustomGradientPanel2.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel2
-        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(1263, 564)
+        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(947, 458)
         Me.Guna2CustomGradientPanel2.TabIndex = 13
         '
         'gridEquipment
@@ -236,7 +246,8 @@ Partial Class UCEquipment
         Me.gridEquipment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridEquipment.EnableHeadersVisualStyles = False
         Me.gridEquipment.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.gridEquipment.Location = New System.Drawing.Point(60, 0)
+        Me.gridEquipment.Location = New System.Drawing.Point(45, 0)
+        Me.gridEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gridEquipment.Name = "gridEquipment"
         Me.gridEquipment.ReadOnly = True
         Me.gridEquipment.RowHeadersVisible = False
@@ -246,7 +257,7 @@ Partial Class UCEquipment
         Me.gridEquipment.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridEquipment.RowTemplate.Height = 24
         Me.gridEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridEquipment.Size = New System.Drawing.Size(1143, 504)
+        Me.gridEquipment.Size = New System.Drawing.Size(857, 409)
         Me.gridEquipment.TabIndex = 16
         Me.gridEquipment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridEquipment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -275,20 +286,22 @@ Partial Class UCEquipment
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 504)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(45, 409)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 60)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(857, 49)
         Me.Guna2Panel4.TabIndex = 2
         '
         'Guna2Panel3
         '
         Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel3.Location = New System.Drawing.Point(1203, 0)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(902, 0)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 564)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 458)
         Me.Guna2Panel3.TabIndex = 1
         '
         'Guna2Panel2
@@ -296,22 +309,22 @@ Partial Class UCEquipment
         Me.Guna2Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(60, 564)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(45, 458)
         Me.Guna2Panel2.TabIndex = 0
         '
         'UCEquipment
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2CustomGradientPanel2)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCEquipment"
-        Me.Size = New System.Drawing.Size(1263, 744)
+        Me.Size = New System.Drawing.Size(947, 604)
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()

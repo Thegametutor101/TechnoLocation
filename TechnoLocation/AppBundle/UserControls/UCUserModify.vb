@@ -18,6 +18,7 @@ Public Class UCUserModify
     Dim baselabExt1Location As Point
     Dim baselabExt2Location As Point
     Dim baseRow As DataRow
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -29,6 +30,7 @@ Public Class UCUserModify
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
         interfaceUser = user
+
         baseRow = EntityUser.getInstance().getUserByCode(id).Rows(0)
         baseInputWidth = tbPassword.Width
     End Sub
@@ -100,6 +102,16 @@ Public Class UCUserModify
                                                                         tbPhone1.TextChanged,
                                                                         tbPhone2.TextChanged
         mainForm.isEditing = True
+    End Sub
+
+    Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp
+        If e.KeyCode = Keys.V Then
+            Try
+                numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged

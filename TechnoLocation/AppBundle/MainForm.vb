@@ -358,6 +358,7 @@ Public Class MainForm
         selectOptionButton(0)
     End Sub
 
+
     Public Sub selectOptionButton(number As Integer)
         labSide0.Visible = False
         labSide1.Visible = False

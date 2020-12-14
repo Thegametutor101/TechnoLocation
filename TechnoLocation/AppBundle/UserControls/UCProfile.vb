@@ -102,9 +102,9 @@ Public Class UCProfile
             Else
             ' tbLastName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
         End If
-        Else
-        'tbFirstName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
-        End If
+        'Else
+        ''tbFirstName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
+        'End If
     End Sub
 
     Private Sub btDeleteAccount_Click(sender As Object, e As EventArgs) Handles btDeleteAccount.Click
