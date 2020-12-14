@@ -50,9 +50,10 @@ Partial Class UCUser
         Me.Guna2Panel1.Controls.Add(Me.btAddUser)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 100)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(947, 81)
         Me.Guna2Panel1.TabIndex = 0
         '
         'btDeleteUser
@@ -66,10 +67,11 @@ Partial Class UCUser
         Me.btDeleteUser.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btDeleteUser.ForeColor = System.Drawing.Color.Black
         Me.btDeleteUser.HoverState.Parent = Me.btDeleteUser
-        Me.btDeleteUser.Location = New System.Drawing.Point(239, 10)
+        Me.btDeleteUser.Location = New System.Drawing.Point(179, 8)
+        Me.btDeleteUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btDeleteUser.Name = "btDeleteUser"
         Me.btDeleteUser.ShadowDecoration.Parent = Me.btDeleteUser
-        Me.btDeleteUser.Size = New System.Drawing.Size(184, 80)
+        Me.btDeleteUser.Size = New System.Drawing.Size(138, 65)
         Me.btDeleteUser.TabIndex = 18
         Me.btDeleteUser.Text = "Supprimer"
         '
@@ -84,10 +86,11 @@ Partial Class UCUser
         Me.btAddUser.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btAddUser.ForeColor = System.Drawing.Color.Black
         Me.btAddUser.HoverState.Parent = Me.btAddUser
-        Me.btAddUser.Location = New System.Drawing.Point(24, 10)
+        Me.btAddUser.Location = New System.Drawing.Point(18, 8)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.ShadowDecoration.Parent = Me.btAddUser
-        Me.btAddUser.Size = New System.Drawing.Size(184, 80)
+        Me.btAddUser.Size = New System.Drawing.Size(138, 65)
         Me.btAddUser.TabIndex = 17
         Me.btAddUser.Text = "Nouveau"
         '
@@ -96,10 +99,11 @@ Partial Class UCUser
         Me.Guna2Panel2.Controls.Add(Me.tbUserSearch)
         Me.Guna2Panel2.Controls.Add(Me.checkUser)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 100)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 81)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1263, 80)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(947, 65)
         Me.Guna2Panel2.TabIndex = 1
         '
         'tbUserSearch
@@ -117,13 +121,14 @@ Partial Class UCUser
         Me.tbUserSearch.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
         Me.tbUserSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbUserSearch.HoverState.Parent = Me.tbUserSearch
-        Me.tbUserSearch.Location = New System.Drawing.Point(24, 7)
+        Me.tbUserSearch.Location = New System.Drawing.Point(18, 6)
+        Me.tbUserSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbUserSearch.Name = "tbUserSearch"
         Me.tbUserSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbUserSearch.PlaceholderText = "Recherche"
         Me.tbUserSearch.SelectedText = ""
         Me.tbUserSearch.ShadowDecoration.Parent = Me.tbUserSearch
-        Me.tbUserSearch.Size = New System.Drawing.Size(472, 36)
+        Me.tbUserSearch.Size = New System.Drawing.Size(354, 29)
         Me.tbUserSearch.TabIndex = 24
         '
         'checkUser
@@ -133,47 +138,52 @@ Partial Class UCUser
         Me.checkUser.HoverState.Parent = Me.checkUser
         Me.checkUser.Image = CType(resources.GetObject("checkUser.Image"), System.Drawing.Image)
         Me.checkUser.IndicateFocus = False
-        Me.checkUser.Location = New System.Drawing.Point(60, 53)
+        Me.checkUser.Location = New System.Drawing.Point(45, 43)
+        Me.checkUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkUser.Name = "checkUser"
         Me.checkUser.PressedState.Parent = Me.checkUser
-        Me.checkUser.Size = New System.Drawing.Size(29, 24)
+        Me.checkUser.Size = New System.Drawing.Size(22, 20)
         Me.checkUser.TabIndex = 23
         '
         'Guna2Panel3
         '
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 180)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 146)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 563)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 458)
         Me.Guna2Panel3.TabIndex = 2
         '
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel4.Location = New System.Drawing.Point(1203, 180)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(902, 146)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(60, 563)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(45, 458)
         Me.Guna2Panel4.TabIndex = 3
         '
         'Guna2Panel5
         '
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel5.Location = New System.Drawing.Point(60, 683)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(45, 555)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 60)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(857, 49)
         Me.Guna2Panel5.TabIndex = 4
         '
         'Guna2Panel6
         '
         Me.Guna2Panel6.Controls.Add(Me.gridUser)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel6.Location = New System.Drawing.Point(60, 180)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(45, 146)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
-        Me.Guna2Panel6.Size = New System.Drawing.Size(1143, 503)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(857, 409)
         Me.Guna2Panel6.TabIndex = 5
         '
         'gridUser
@@ -209,6 +219,7 @@ Partial Class UCUser
         Me.gridUser.EnableHeadersVisualStyles = False
         Me.gridUser.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridUser.Location = New System.Drawing.Point(0, 0)
+        Me.gridUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gridUser.Name = "gridUser"
         Me.gridUser.ReadOnly = True
         Me.gridUser.RowHeadersVisible = False
@@ -218,7 +229,7 @@ Partial Class UCUser
         Me.gridUser.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridUser.RowTemplate.Height = 24
         Me.gridUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridUser.Size = New System.Drawing.Size(1143, 503)
+        Me.gridUser.Size = New System.Drawing.Size(857, 409)
         Me.gridUser.TabIndex = 17
         Me.gridUser.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridUser.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -245,7 +256,7 @@ Partial Class UCUser
         '
         'UCUser
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2Panel6)
@@ -254,9 +265,9 @@ Partial Class UCUser
         Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UCUser"
-        Me.Size = New System.Drawing.Size(1263, 743)
+        Me.Size = New System.Drawing.Size(947, 604)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel6.ResumeLayout(False)

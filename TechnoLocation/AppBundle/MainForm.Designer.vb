@@ -124,7 +124,7 @@ Partial Class MainForm
         Me.btHeaderMinimize.ImageRotate = 0!
         Me.btHeaderMinimize.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderMinimize.Location = New System.Drawing.Point(1023, 0)
-        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMinimize.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderMinimize.Name = "btHeaderMinimize"
         Me.btHeaderMinimize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp
         Me.btHeaderMinimize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -144,7 +144,7 @@ Partial Class MainForm
         Me.btHeaderMaximize.ImageRotate = 0!
         Me.btHeaderMaximize.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderMaximize.Location = New System.Drawing.Point(1067, 0)
-        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderMaximize.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderMaximize.Name = "btHeaderMaximize"
         Me.btHeaderMaximize.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp
         Me.btHeaderMaximize.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -165,7 +165,7 @@ Partial Class MainForm
         Me.btHeaderClose.ImageRotate = 0!
         Me.btHeaderClose.ImageSize = New System.Drawing.Size(30, 30)
         Me.btHeaderClose.Location = New System.Drawing.Point(1111, 0)
-        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btHeaderClose.Margin = New System.Windows.Forms.Padding(2)
         Me.btHeaderClose.Name = "btHeaderClose"
         Me.btHeaderClose.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp
         Me.btHeaderClose.PressedState.ImageSize = New System.Drawing.Size(28, 28)
@@ -177,7 +177,7 @@ Partial Class MainForm
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(9, 3)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(35, 39)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -225,7 +225,7 @@ Partial Class MainForm
         Me.labSide6.CustomizableEdges.TopRight = False
         Me.labSide6.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide6.Location = New System.Drawing.Point(6, 336)
-        Me.labSide6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide6.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide6.Name = "labSide6"
         Me.labSide6.ShadowDecoration.Parent = Me.labSide6
         Me.labSide6.Size = New System.Drawing.Size(8, 45)
@@ -242,7 +242,7 @@ Partial Class MainForm
         Me.labSide5.CustomizableEdges.TopRight = False
         Me.labSide5.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide5.Location = New System.Drawing.Point(6, 286)
-        Me.labSide5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide5.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide5.Name = "labSide5"
         Me.labSide5.ShadowDecoration.Parent = Me.labSide5
         Me.labSide5.Size = New System.Drawing.Size(8, 45)
@@ -259,7 +259,7 @@ Partial Class MainForm
         Me.labSide4.CustomizableEdges.TopRight = False
         Me.labSide4.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide4.Location = New System.Drawing.Point(6, 236)
-        Me.labSide4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide4.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide4.Name = "labSide4"
         Me.labSide4.ShadowDecoration.Parent = Me.labSide4
         Me.labSide4.Size = New System.Drawing.Size(8, 45)
@@ -276,7 +276,7 @@ Partial Class MainForm
         Me.labSide3.CustomizableEdges.TopRight = False
         Me.labSide3.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide3.Location = New System.Drawing.Point(6, 186)
-        Me.labSide3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide3.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide3.Name = "labSide3"
         Me.labSide3.ShadowDecoration.Parent = Me.labSide3
         Me.labSide3.Size = New System.Drawing.Size(8, 45)
@@ -293,7 +293,7 @@ Partial Class MainForm
         Me.labSide2.CustomizableEdges.TopRight = False
         Me.labSide2.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide2.Location = New System.Drawing.Point(6, 136)
-        Me.labSide2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide2.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide2.Name = "labSide2"
         Me.labSide2.ShadowDecoration.Parent = Me.labSide2
         Me.labSide2.Size = New System.Drawing.Size(8, 45)
@@ -310,7 +310,7 @@ Partial Class MainForm
         Me.labSide1.CustomizableEdges.TopRight = False
         Me.labSide1.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide1.Location = New System.Drawing.Point(6, 86)
-        Me.labSide1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide1.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide1.Name = "labSide1"
         Me.labSide1.ShadowDecoration.Parent = Me.labSide1
         Me.labSide1.Size = New System.Drawing.Size(8, 45)
@@ -327,7 +327,7 @@ Partial Class MainForm
         Me.labSide0.CustomizableEdges.TopRight = False
         Me.labSide0.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.labSide0.Location = New System.Drawing.Point(6, 45)
-        Me.labSide0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labSide0.Margin = New System.Windows.Forms.Padding(2)
         Me.labSide0.Name = "labSide0"
         Me.labSide0.ShadowDecoration.Parent = Me.labSide0
         Me.labSide0.Size = New System.Drawing.Size(8, 37)
@@ -342,7 +342,7 @@ Partial Class MainForm
         Me.panelAccountOptions.Controls.Add(Me.labProfile)
         Me.panelAccountOptions.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.panelAccountOptions.Location = New System.Drawing.Point(56, 0)
-        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelAccountOptions.Margin = New System.Windows.Forms.Padding(2)
         Me.panelAccountOptions.Name = "panelAccountOptions"
         Me.panelAccountOptions.ShadowColor = System.Drawing.Color.Black
         Me.panelAccountOptions.Size = New System.Drawing.Size(140, 82)
@@ -353,7 +353,7 @@ Partial Class MainForm
         Me.Guna2Separator1.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.Guna2Separator1.FillColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(140, Byte), Integer))
         Me.Guna2Separator1.Location = New System.Drawing.Point(10, 36)
-        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Separator1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Separator1.Name = "Guna2Separator1"
         Me.Guna2Separator1.Size = New System.Drawing.Size(121, 8)
         Me.Guna2Separator1.TabIndex = 3

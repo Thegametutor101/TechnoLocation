@@ -16,6 +16,7 @@ Public Class UCUserAdd
     Dim basecheckExt2Location As Point
     Dim baselabExt1Location As Point
     Dim baselabExt2Location As Point
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -78,6 +79,16 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
+    Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp
+        If e.KeyCode = Keys.V Then
+            Try
+                numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
         Dim phone1 = Trim(tbPhone1.Text)
         If checkExt1.Checked And
@@ -107,6 +118,7 @@ Public Class UCUserAdd
                        phone1 As String,
                        phone2 As String)
         mainForm.isEditing = False
+        Dim matricule As Integer
         Dim ext1, ext2 As Integer
         If numExtension1.Enabled Then
             ext1 = numExtension1.Value
@@ -118,7 +130,14 @@ Public Class UCUserAdd
         Else
             ext2 = -1
         End If
-        ModelUser.getInstance().addUser(CInt(numCode.Value),
+
+        If numCode.Value >= 10000000 Then
+            matricule = Math.Floor(numCode.Value / 10)
+        Else
+            matricule = numCode.Value
+        End If
+
+        ModelUser.getInstance().addUser(matricule,
                                         password,
                                         firstName,
                                         lastName,
@@ -315,5 +334,4 @@ Public Class UCUserAdd
             labExt2.Location = baselabExt2Location
         End If
     End Sub
-
 End Class

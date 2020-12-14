@@ -9,6 +9,7 @@ Public Class Connection
 
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
+    Dim codesbarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -140,6 +141,12 @@ Public Class Connection
             labLang.Text = "EN"
             Lang.getInstance().setLang("fr_ca")
             loadLanguage()
+        End If
+    End Sub
+
+    Private Sub tbUsername_KeyUp(sender As Object, e As KeyEventArgs) Handles tbUsername.KeyUp
+        If e.KeyCode = Keys.V Then
+            tbUsername.Text = codesbarres.isBarcodeUser(tbUsername.Text)
         End If
     End Sub
 End Class

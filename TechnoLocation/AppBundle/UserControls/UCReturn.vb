@@ -7,6 +7,7 @@ Public Class UCReturn
     '__________________________________________________________________________________________________________
 
     Dim WithEvents mainForm As New MainForm(0)
+    Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -69,6 +70,16 @@ Public Class UCReturn
         End If
     End Sub
 
+    Private Sub tbSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles tbSearch.KeyUp
+        If e.KeyCode = Keys.V Then
+            If tbSearch.Text.Length = 8 Then
+                tbSearch.Text = codesBarres.isBarcodeEquip(tbSearch.Text)
+            Else
+                tbSearch.Text = codesBarres.isBarcodeUser(tbSearch.Text)
+            End If
+        End If
+    End Sub
+
     '__________________________________________________________________________________________________________
     'General Functions
     '__________________________________________________________________________________________________________
@@ -117,5 +128,6 @@ Public Class UCReturn
         labLate.Text = json("ReturnLabLate")
         btReturnAll.Text = json("ReturnbtReturnAll")
     End Sub
+
 
 End Class

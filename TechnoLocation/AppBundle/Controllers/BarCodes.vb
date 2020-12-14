@@ -23,7 +23,7 @@ Public Class BarCodes
     '--méthodes----------------------------
 
     '--genere un code barre en tant que image et le stocke dans la variable globale barCode
-    Private Sub generateBC(input As String)
+    Public Sub generateBC(input As String)
         Dim writer As New BarcodeWriter
         writer.Format = BarcodeFormat.CODE_39
         If Not input = Nothing Then
@@ -77,7 +77,6 @@ Public Class BarCodes
 
         generateBC(input)
         barCode.Save(path + input + type, System.Drawing.Imaging.ImageFormat.Jpeg)
-        MessageBox.Show("Code Barre sauvegarder")
     End Sub
 
     '--crée une image qui fusionne tout les codes barres indiqués dans la liste
@@ -138,6 +137,46 @@ Public Class BarCodes
 
 
     '--fonctions---------------------------
+
+
+    '--Lecture--
+    Public Function isBarcodeUser(texte As String)
+        If texte = "Demo - please subscribe to full version" Then
+            texte = ""
+            MessageBox.Show("Veuillez scanner le code de nouveau")
+            Return texte
+        End If
+        Try
+            Dim number As Integer
+            number = Integer.Parse(texte)
+            If number >= 10000000 Then
+                number = Math.Floor(number / 10)
+            End If
+            texte = number.ToString
+        Catch ex As Exception
+
+        End Try
+
+        Return texte
+    End Function
+
+    Public Function isBarcodeEquip(texte As String)
+        If texte = "Demo - please subscribe to full version" Then
+            texte = ""
+            MessageBox.Show("Veuillez scanner le code de nouveau")
+            Return texte
+        End If
+        Try
+            Dim number As Integer
+            number = Integer.Parse(texte)
+            texte = number.ToString
+        Catch ex As Exception
+
+        End Try
+
+        Return texte
+    End Function
+
 
     Public Function getBarCode()
         Return barCode

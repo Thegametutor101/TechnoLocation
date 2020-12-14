@@ -3,7 +3,7 @@
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
-
+    Dim codesBarres As New BarCodes
 
 
     '__________________________________________________________________________________________________________
@@ -26,6 +26,19 @@
 
     Private Sub checkAll_CheckedChanged(sender As Object, e As EventArgs) Handles checkAll.CheckedChanged
 
+    End Sub
+
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
+
+    End Sub
+    Private Sub tbSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles tbSearch.KeyUp
+        If e.KeyCode = Keys.V Then
+            If tbSearch.Text.Length = 8 Then
+                tbSearch.Text = codesBarres.isBarcodeEquip(tbSearch.Text)
+            Else
+                tbSearch.Text = codesBarres.isBarcodeUser(tbSearch.Text)
+            End If
+        End If
     End Sub
 
     '__________________________________________________________________________________________________________
