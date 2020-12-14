@@ -191,12 +191,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        Dim iReturn As New UCReturn(Me)
-        iReturn.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iReturn)
-        iReturn.BringToFront()
-        selectOptionButton(3)
+        loadReturns()
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
@@ -383,4 +378,14 @@ Public Class MainForm
     Public Function getLabSide2()
         Return labSide2
     End Function
+
+    Friend Sub loadReturns()
+        Dim iReturn As New UCReturn(Me)
+        iReturn.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iReturn)
+        iReturn.BringToFront()
+        selectOptionButton(3)
+    End Sub
+
 End Class

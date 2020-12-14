@@ -142,11 +142,18 @@
   "MsgCegepDette2": " to ",
   "MsgStudentDette1": " must return ",
   "MsgStudentDette2": " to the Cegep.",
-  "MsgNoDette": "No transaction is required for this exchange."
+  "MsgNoDette": "No transaction is required for this exchange.",
   "TBCodeFill": "Matricula",
   "TBNameFill": "Name",
   "TBEmailFill": "Email",
   "TBPhoneFill": "Phone number",
   "TBBalanceFill": "Balance",
   "CheckAllEquipmentShow": "Display rental equipment",
+  "Submit": "Submit",
+  "MsgReturnedTitle": "Returning equipments",
+  "MsgReturned": "The return has been registered.\nHave a good day!",
+  "MsgPromptReturn1": "Out of ",
+  "MsgPromptReturn2": " how much was given?",
+  "MsgChangeComment": "Do you have changes to\nthe notes of ",
+  "labSetAsAvailable": "Set available?"
 }

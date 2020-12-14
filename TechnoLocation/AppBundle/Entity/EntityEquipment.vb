@@ -106,16 +106,18 @@ Public Class EntityEquipment
         Return table
     End Function
 
-    Public Function getEquipmentCodeSearch(code As Integer, available As Integer) As DataTable
+    Public Function getEquipmentByCode(code As Integer) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from equipment E where code like '%{code}%' and available = '{available}' order by E.code"
+        command.CommandText = $"SELECT * 
+                                FROM equipment
+                                WHERE code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("equipments")
+        Dim table As New DataTable("equipment")
         table.Load(reader)
         connection.Close()
         Return table

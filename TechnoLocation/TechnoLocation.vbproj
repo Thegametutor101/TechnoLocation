@@ -170,6 +170,18 @@
     <Compile Include="AppBundle\Model\ModelLog.vb" />
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
+    <Compile Include="AppBundle\PromptReturnAmount.Designer.vb">
+      <DependentUpon>PromptReturnAmount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\PromptReturnAmount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppBundle\PromptReturnEquipmentComment.Designer.vb">
+      <DependentUpon>PromptReturnEquipmentComment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\PromptReturnEquipmentComment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppBundle\ReturnEquipment.Designer.vb">
       <DependentUpon>ReturnEquipment.vb</DependentUpon>
     </Compile>
@@ -296,6 +308,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\PromptReturnAmount.resx">
+      <DependentUpon>PromptReturnAmount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\PromptReturnEquipmentComment.resx">
+      <DependentUpon>PromptReturnEquipmentComment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\ReturnEquipment.resx">
       <DependentUpon>ReturnEquipment.vb</DependentUpon>

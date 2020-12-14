@@ -26,6 +26,7 @@ Partial Class UCRentalDetails
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCRentalDetails))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbAuthorized = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labAuthorized = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -62,6 +63,7 @@ Partial Class UCRentalDetails
         Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
@@ -273,6 +275,7 @@ Partial Class UCRentalDetails
         '
         'Guna2Panel11
         '
+        Me.Guna2Panel11.Controls.Add(Me.checkAll)
         Me.Guna2Panel11.Controls.Add(Me.LabEquipmentList)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel11.Location = New System.Drawing.Point(0, 0)
@@ -285,7 +288,7 @@ Partial Class UCRentalDetails
         '
         Me.LabEquipmentList.BackColor = System.Drawing.Color.Transparent
         Me.LabEquipmentList.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabEquipmentList.Location = New System.Drawing.Point(22, 6)
+        Me.LabEquipmentList.Location = New System.Drawing.Point(60, 6)
         Me.LabEquipmentList.Name = "LabEquipmentList"
         Me.LabEquipmentList.Size = New System.Drawing.Size(325, 33)
         Me.LabEquipmentList.TabIndex = 60
@@ -692,6 +695,19 @@ Partial Class UCRentalDetails
         Me.labName.TabIndex = 57
         Me.labName.Text = "Nom"
         '
+        'checkAll
+        '
+        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
+        Me.checkAll.CheckedState.Parent = Me.checkAll
+        Me.checkAll.HoverState.Parent = Me.checkAll
+        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
+        Me.checkAll.IndicateFocus = False
+        Me.checkAll.Location = New System.Drawing.Point(6, 15)
+        Me.checkAll.Name = "checkAll"
+        Me.checkAll.PressedState.Parent = Me.checkAll
+        Me.checkAll.Size = New System.Drawing.Size(29, 24)
+        Me.checkAll.TabIndex = 61
+        '
         'UCRentalDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -756,4 +772,5 @@ Partial Class UCRentalDetails
     Friend WithEvents gridEquipments As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents tbAuthorized As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents labAuthorized As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents checkAll As Guna.UI2.WinForms.Guna2ImageCheckBox
 End Class

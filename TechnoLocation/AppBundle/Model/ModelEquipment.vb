@@ -45,8 +45,28 @@ Public Class ModelEquipment
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"update equipment set available='{available}'
-                                                         where code='{code}'"
+            command.CommandText = $"UPDATE equipment 
+                                    SET available='{available}'
+                                    WHERE code='{code}'"
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Function
+
+    Public Function setCommentAndAvailable(code As Integer, comment As String, available As Integer)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"UPDATE equipment 
+                                    SET available='{available}',
+                                        comments = '{comment}'
+                                    WHERE code='{code}'"
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()
