@@ -154,7 +154,11 @@
                     row.Cells(1).Value + "."
         End With
         card.Controls.Add(label)
-        adjustBalance(Replace(Replace(row.Cells(5).Value, "$ ", ""), ",", "."))
+        Try
+            adjustBalance(Replace(Replace(row.Cells(5).Value, "$ ", ""), ",", "."))
+        Catch ex As Exception
+            adjustBalance(Replace(row.Cells(5).Value, "$ ", ""))
+        End Try
     End Sub
 
     Private Sub getUser(rental As Integer)

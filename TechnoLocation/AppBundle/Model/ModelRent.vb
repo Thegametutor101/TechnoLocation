@@ -59,13 +59,19 @@ Public Class ModelRent
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into rent values ('{renter}',
-                                                            '{lender}',
-                                                            '{equipment}',
-                                                            '{rentDate}',
-                                                            '{returnDate}',
-                                                            '{deposit}',
-                                                            '{comments}')"
+            command.CommandText = $"insert into rent(renter,
+                                                     lender,
+                                                     equipment,
+                                                     rentDate,
+                                                     returnDate,
+                                                     deposit,
+                                                     comments) values ('{renter}',
+                                                                       '{lender}',
+                                                                       '{equipment}',
+                                                                       '{rentDate}',
+                                                                       '{returnDate}',
+                                                                       '{deposit}',
+                                                                       '{comments}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()

@@ -148,5 +148,6 @@
   "MsgCegepDette2": " à ", 
   "MsgStudentDette1": " doit redonner ", 
   "MsgStudentDette2": " au Cégep.", 
-  "MsgNoDette": "Aucune transaction n'est requise." 
+  "MsgNoDette": "Aucune transaction n'est requise.",
+  "MsgNoUserSelected": "Aucun utilisateur choisies pour faire l'emprunt"
 }
