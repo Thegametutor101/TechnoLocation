@@ -455,5 +455,8 @@
   <ItemGroup>
     <None Include="Resources\baseline_minimize_white_18dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\barCodeFolder\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

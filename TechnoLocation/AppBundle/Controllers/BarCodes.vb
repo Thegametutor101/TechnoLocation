@@ -73,6 +73,7 @@ Public Class BarCodes
 
     '--genere et sauvegarde un code barre en tand que .jpeg
     Public Sub generateSaveBC(input As String)
+
         pathOk()
 
         generateBC(input)
@@ -207,16 +208,19 @@ Public Class BarCodes
     Public Function makePath()
         Dim s As String = path
 
+        s = System.IO.Directory.GetCurrentDirectory
+
         Dim words As String() = s.Split("\")
 
         path = words(0)
 
-        For word As Integer = 1 To words.Length - 4
+        For word As Integer = 1 To words.Length - 3
             If (words(word) IsNot "") Then
                 path += "\" + words(word)
             End If
         Next
         path += "\Resources\barCodeFolder\barcode"
+        Return path
     End Function
 
 
@@ -244,6 +248,5 @@ Public Class BarCodes
             makePath()
         End If
     End Sub
-
 
 End Class

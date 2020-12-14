@@ -70,8 +70,7 @@ Public Class UCUserAdd
         End If
     End Sub
 
-    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles numCode.ValueChanged,
-                                                                        tbFirstName.TextChanged,
+    Private Sub ChangedValues(sender As Object, e As EventArgs) Handles tbFirstName.TextChanged,
                                                                         tbLastName.TextChanged,
                                                                         tbEmail.TextChanged,
                                                                         tbPhone1.TextChanged,
@@ -79,15 +78,7 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
-    Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp
-        If e.KeyCode = Keys.V Then
-            Try
-                numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
-            Catch ex As Exception
 
-            End Try
-        End If
-    End Sub
 
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
         Dim phone1 = Trim(tbPhone1.Text)
@@ -333,5 +324,9 @@ Public Class UCUserAdd
             labExt1.Location = baselabExt1Location
             labExt2.Location = baselabExt2Location
         End If
+    End Sub
+
+    Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
+
     End Sub
 End Class
