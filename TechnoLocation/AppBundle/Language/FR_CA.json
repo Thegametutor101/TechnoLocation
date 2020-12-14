@@ -155,5 +155,8 @@
   "MsgPromptReturn1": "Sur ",
   "MsgPromptReturn2": " combien à été donné?",
   "MsgChangeComment": "Avez-vous un changement à\napporter aux commentaires de ",
-  "labSetAsAvailable": "Mettre disponible?" 
+  "labSetAsAvailable": "Mettre disponible?",
+  "MsgNoUserSelected": "Aucun utilisateur choisies pour faire l'emprunt",
+  "SameMatriculaTitle": "Matricule identique.",
+  "SameMatricula": "Vérifiez le champ matricule car il semble être\nutilisé par un autre utilisateur."
 }

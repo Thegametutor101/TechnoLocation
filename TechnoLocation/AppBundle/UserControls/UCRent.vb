@@ -14,6 +14,7 @@ Public Class UCRent
     Dim showAllEquipment As Integer = 1
     Dim dateBegin As Date
     Dim dateFinish As Date
+    Dim code As Integer
     Dim codesBarres As New BarCodes
 
     '__________________________________________________________________________________________________________
@@ -33,13 +34,22 @@ Public Class UCRent
 
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        gridSelectedEquipment.ColumnCount = 6
+        gridSelectedEquipment.ColumnCount = 7
         gridSelectedEquipment.Columns(0).Name = "Code"
+        gridSelectedEquipment.Columns(0).ReadOnly = True
         gridSelectedEquipment.Columns(1).Name = "Nom"
+        gridSelectedEquipment.Columns(1).ReadOnly = True
         gridSelectedEquipment.Columns(2).Name = "kit"
+        gridSelectedEquipment.Columns(2).ReadOnly = True
         gridSelectedEquipment.Columns(3).Name = "État"
+        gridSelectedEquipment.Columns(3).ReadOnly = True
         gridSelectedEquipment.Columns(4).Name = "Commentaire"
+        gridSelectedEquipment.Columns(4).ReadOnly = False
+        'Regarder pour voir si on change le commentaire pour un nouveau commentaire pour les prets
         gridSelectedEquipment.Columns(5).Name = "Dépôt sugéré"
+        gridSelectedEquipment.Columns(5).ReadOnly = True
+        gridSelectedEquipment.Columns(6).Name = "Dépôt réel"
+        gridSelectedEquipment.Columns(6).ReadOnly = False
         tbCodeRenter.Text = Lang.getInstance().getLang()("TBCodeFill")
         tbNameRenter.Text = Lang.getInstance().getLang()("TBNameFill")
         tbEmailRenter.Text = Lang.getInstance().getLang()("TBEmailFill")
@@ -47,37 +57,14 @@ Public Class UCRent
         tbBalanceRenter.Text = Lang.getInstance().getLang()("TBBalanceFill")
         checkShowAllEquipment.Text = Lang.getInstance().getLang()("CheckAllEquipmentShow")
         dateBegin = dateStart.Value
-        DateFinish = dateEnd.Value
+        dateFinish = dateEnd.Value
+        code = mainForm.code
+        searchEquipment()
     End Sub
 
     '__________________________________________________________________________________________________________
     'Methods
     '__________________________________________________________________________________________________________
-
-    'Private Sub tbSearchUser_TextChanged(sender As Object, e As EventArgs)
-    '    If (Not String.IsNullOrEmpty(tbSearchUser.Text)) Then
-    '        Dim recherche As String = tbSearchUser.Text
-    '        Dim entityUser As EntityUser = EntityUser.getInstance()
-    '        Select Case dropSearchUser.SelectedIndex
-    '            Case 0
-    '                If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
-    '                    gridUsers.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-    '                Else
-    '                    gridUsers.DataSource = entityUser.getUsers()
-    '                End If
-    '            Case 1
-    '                gridUsers.DataSource = entityUser.getUsersFirstName(recherche)
-    '            Case 2
-    '                gridUsers.DataSource = entityUser.getUsersLastName(recherche)
-    '            Case 3
-    '                gridUsers.DataSource = entityUser.getUsersEmail(recherche)
-    '            Case 4
-    '                gridUsers.DataSource = entityUser.getUsersPhone(recherche)
-    '            Case 5
-    '                gridUsers.DataSource = entityUser.getUsersJob(recherche)
-    '        End Select
-    '    End If
-    'End Sub
 
     Private Sub tbSearchEquipment_TextChanged(sender As Object, e As EventArgs) Handles tbSearchEquipment.TextChanged
         searchEquipment()
@@ -90,11 +77,13 @@ Public Class UCRent
                                                          gridAllEquipment.CurrentRow.Cells(2).Value,
                                                          gridAllEquipment.CurrentRow.Cells(3).Value,
                                                          gridAllEquipment.CurrentRow.Cells(4).Value,
-                                                         gridAllEquipment.CurrentRow.Cells(5).Value})
+                                                         gridAllEquipment.CurrentRow.Cells(5).Value,
+                                                         "$ 0,00"})
             gridAllEquipment.CurrentRow.Cells(4).Value = 0
             ModelEquipment.getInstance().setAvailable(gridAllEquipment.CurrentRow.Cells(0).Value, 0)
             searchEquipment()
             changeDeposit()
+            changeDepositReel()
         Else
             MsgBox(Lang.getInstance().getLang()("MsgEquimentAlreadyUse"))
         End If
@@ -104,6 +93,7 @@ Public Class UCRent
         ModelEquipment.getInstance().setAvailable(gridSelectedEquipment.CurrentRow.Cells(0).Value, 1)
         gridSelectedEquipment.Rows.Remove(gridSelectedEquipment.CurrentRow)
         changeDeposit()
+        changeDepositReel()
         searchEquipment()
     End Sub
 
@@ -116,6 +106,7 @@ Public Class UCRent
                 searchEquipment()
                 checkEquipmentSelected()
                 changeDeposit()
+                changeDepositReel()
             End If
         End If
 
@@ -134,8 +125,25 @@ Public Class UCRent
                 searchEquipment()
                 checkEquipmentSelected()
                 changeDeposit()
+                changeDepositReel()
             End If
         End If
+    End Sub
+
+    Private Sub changeDeposit()
+        Dim deposit As Double = 0
+        For Each row As DataGridViewRow In gridSelectedEquipment.Rows
+            deposit += row.Cells(5).Value
+        Next
+        tbSuggestedDeposit.Text = checkNumberMoney(deposit)
+    End Sub
+
+    Private Sub changeDepositReel()
+        Dim deposit As Double = 0
+        For Each row As DataGridViewRow In gridSelectedEquipment.Rows
+            deposit += row.Cells(6).Value
+        Next
+        tbReelDeposit.Text = checkNumberMoney(deposit)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -170,42 +178,120 @@ Public Class UCRent
         End If
     End Sub
 
+    Private Sub gridSelectedEquipment_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellEndEdit
+        Dim str As String
+        Dim strBegin As String
+        Dim strEnd As String
+
+        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([0-9]{0,4})([.,][0-9]{0,2})*$") Then
+            Try
+                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
+                changeDepositReel()
+            Catch
+                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ",", "."))
+                changeDepositReel()
+            End Try
+        Else
+            gridSelectedEquipment.CurrentCell.Value = "$ 0,00"
+            changeDepositReel()
+        End If
+    End Sub
+
+    Private Function checkNumberMoney(deposit As Double) As String
+        Dim str As String
+        Dim strBegin As String
+        Dim strEnd As String
+
+        Try
+            str = Replace(deposit, ".", ",")
+            If Not str.IndexOf(",") = -1 Then
+                strBegin = str.Substring(0, str.IndexOf(","))
+                strEnd = str.Substring(str.IndexOf(",") + 1, str.Length - strBegin.Length - 1)
+                If strBegin = "" Then
+                    strBegin = "0"
+                End If
+                While Not strEnd.Length = 2
+                    strEnd = strEnd + "0"
+                End While
+                str = "$ " + strBegin + "," + strEnd
+                Return str
+            Else
+                str = "$ " + str + ",00"
+                Return str
+            End If
+        Catch
+            str = Replace(gridSelectedEquipment.CurrentCell.Value, ",", ".")
+            If Not str.IndexOf(".") = -1 Then
+                strBegin = str.Substring(0, str.IndexOf("."))
+                strEnd = str.Substring(str.IndexOf(".") + 1, str.Length - strBegin.Length - 1)
+                If strBegin = "" Then
+                    strBegin = "0"
+                End If
+                While Not strEnd.Length = 2
+                    strEnd = strEnd + "0"
+                End While
+                str = "$" + strBegin + "." + strEnd
+                Return str
+            Else
+                str = "$ " + str + ".00"
+                Return str
+            End If
+        End Try
+    End Function
+
     '__________________________________________________________________________________________________________
     'Buttons
     '__________________________________________________________________________________________________________
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        'Faire l'ouverture d'un nouveau form pour la recherche de user
+        Dim user = New ChooseUser(mainForm, Me)
+        user.ShowDialog()
     End Sub
 
     Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click
         Dim complete As Boolean = True
         If gridSelectedEquipment.Rows.Count < 1 Then
             complete = False
-            MsgBox(Lang.getInstance().getLang()("MsgNoEquipementSelected"),
+            MsgBox(Lang.getInstance().getLang()("MsgNoEquipSelected"),
                    vbOKOnly,
                    Lang.getInstance().getLang()("MsgWarning"))
+        End If
+        If tbCodeRenter.Text = "Matricule" Or tbCodeRenter.Text = "Matricula" And complete Then
+            complete = False
+            MsgBox(Lang.getInstance().getLang()("MsgNoUserSelected"),
+                   vbOKOnly,
+                    Lang.getInstance.getLang()("MsgWarning"))
         End If
         If complete Then
             If MsgBox(Lang.getInstance().getLang()("MsgAddRent"), vbYesNo) = vbYes Then
                 For Each row As DataGridViewRow In gridSelectedEquipment.Rows
-                    ''Faire l'ajout dans la bd
+                    ModelRent.getInstance().addRent(tbCodeRenter.Text,
+                                                    code,
+                                                    row.Cells(0).Value,
+                                                    dateStart.Value,
+                                                    dateEnd.Value,
+                                                    row.Cells(6).Value,
+                                                    row.Cells(4).Value)
+                Next
+                For Each row As DataGridViewRow In gridSelectedEquipment.Rows
+                    ModelEquipment.getInstance().setAvailable(row.Cells(0).Value, 1)
+                Next
+                For i As Integer = gridSelectedEquipment.Rows.Count - 1 To 0 Step -1
+                    gridSelectedEquipment.Rows.RemoveAt(i)
                 Next
             End If
         End If
+    End Sub
+
+    Private Sub btViewRentals_Click(sender As Object, e As EventArgs) Handles btViewRentals.Click
+
     End Sub
 
     '__________________________________________________________________________________________________________
     'Other
     '__________________________________________________________________________________________________________
 
-    Private Sub changeDeposit()
-        Dim deposit As Integer = 0
-        For Each row As DataGridViewRow In gridSelectedEquipment.Rows
-            deposit += row.Cells(5).Value
-        Next
-        tbSuggestedDeposit.Text = deposit
-    End Sub
+
 
 
 
@@ -258,20 +344,19 @@ Public Class UCRent
 
     Private Sub UCRent_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged, Me.HandleDestroyed
         For Each row As DataGridViewRow In gridSelectedEquipment.Rows
-            ModelEquipment.getInstance().setAvailable(gridSelectedEquipment.CurrentRow.Cells(0).Value, 1)
-            gridSelectedEquipment.Rows.Remove(gridSelectedEquipment.CurrentRow)
+            ModelEquipment.getInstance().setAvailable(row.Cells(0).Value, 1)
         Next
     End Sub
 
     Private Sub checkShowAllEquipment_CheckedChanged(sender As Object, e As EventArgs) Handles checkShowAllEquipment.CheckedChanged
         searchEquipment()
-    End Sub
-
-
-    Private Sub tbCodeRenter_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tbCodeRenter.KeyUp
-        If e.KeyCode = Keys.V Then
-            tbCodeRenter.Text = codesBarres.isBarcodeUser(tbCodeRenter.Text)
-        End If
-    End Sub
-
+    End Sub
+
+
+    Private Sub tbCodeRenter_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tbCodeRenter.KeyUp
+        If e.KeyCode = Keys.V Then
+            tbCodeRenter.Text = codesBarres.isBarcodeUser(tbCodeRenter.Text)
+        End If
+    End Sub
+
 End Class

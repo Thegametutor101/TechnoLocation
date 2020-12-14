@@ -56,6 +56,8 @@ Partial Class ChooseUser
         '
         'gridUserSearch
         '
+        Me.gridUserSearch.AllowUserToAddRows = False
+        Me.gridUserSearch.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.gridUserSearch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.gridUserSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -83,7 +85,9 @@ Partial Class ChooseUser
         Me.gridUserSearch.EnableHeadersVisualStyles = False
         Me.gridUserSearch.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gridUserSearch.Location = New System.Drawing.Point(12, 54)
+        Me.gridUserSearch.MultiSelect = False
         Me.gridUserSearch.Name = "gridUserSearch"
+        Me.gridUserSearch.ReadOnly = True
         Me.gridUserSearch.RowHeadersVisible = False
         Me.gridUserSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gridUserSearch.Size = New System.Drawing.Size(834, 439)
@@ -102,7 +106,7 @@ Partial Class ChooseUser
         Me.gridUserSearch.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.gridUserSearch.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.gridUserSearch.ThemeStyle.HeaderStyle.Height = 4
-        Me.gridUserSearch.ThemeStyle.ReadOnly = False
+        Me.gridUserSearch.ThemeStyle.ReadOnly = True
         Me.gridUserSearch.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.gridUserSearch.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.gridUserSearch.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)

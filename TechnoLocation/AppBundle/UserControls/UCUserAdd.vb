@@ -78,42 +78,72 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
+
+
     Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
+
         mainForm.isEditing = True
 
+
+
         If numCode.Value >= 10000000 Then
+
             numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+
         End If
+
     End Sub
+
+
 
     Private Sub numCode_GotFocus(sender As Object, e As EventArgs) Handles numCode.GotFocus
+
         numCode.Text = ""
+
     End Sub
 
+
+
     Private Sub numCode_LostFocus(sender As Object, e As EventArgs) Handles numCode.LostFocus
+
         numCode.Text = numCode.Value
+
     End Sub
 
 
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
         Dim phone1 = Trim(tbPhone1.Text)
         If checkExt1.Checked And
            (Regex.IsMatch(phone1, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
             Regex.IsMatch(phone1, "^[\d]{10}$")) Then
             numExtension1.Enabled = True
+        ElseIf checkExt1.Checked And
+               Not (Regex.IsMatch(phone1, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+                    Regex.IsMatch(phone1, "^[\d]{10}$")) Then
+            tbPhone1.BorderColor = red
         Else
             numExtension1.Enabled = False
+            tbPhone1.BorderColor = grey
         End If
     End Sub
 
     Private Sub checkExt2_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt2.CheckedChanged
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
         Dim phone2 = Trim(tbPhone2.Text)
         If checkExt2.Checked And
            (Regex.IsMatch(phone2, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
             Regex.IsMatch(phone2, "^[\d]{10}$")) Then
             numExtension2.Enabled = True
+        ElseIf checkExt2.Checked And
+               Not (Regex.IsMatch(phone2, "^(\([\d]{3}\)|[\d]{3})(\s|-)[\d]{3}-[\d]{4}$") Or
+                    Regex.IsMatch(phone2, "^[\d]{10}$")) Then
+            tbPhone2.BorderColor = red
         Else
             numExtension2.Enabled = False
+            tbPhone2.BorderColor = grey
         End If
     End Sub
 
@@ -136,27 +166,33 @@ Public Class UCUserAdd
         Else
             ext2 = -1
         End If
-
         If numCode.Value >= 10000000 Then
             matricule = Math.Floor(numCode.Value / 10)
         Else
             matricule = numCode.Value
         End If
-
-        ModelUser.getInstance().addUser(matricule,
-                                        password,
-                                        firstName,
-                                        lastName,
-                                        email,
-                                        phone1,
-                                        ext1,
-                                        phone2,
-                                        ext2,
-                                        dropStatus.SelectedIndex,
-                                        dropPermissions.SelectedIndex,
-                                        0)
-        interfaceUser.loadDataGridView()
-        Me.SendToBack()
+        If Not EntityUser.getInstance().checkUserMatriculeExists(numCode.Value) Then
+            ModelUser.getInstance().addUser(CInt(numCode.Value),
+                                            password,
+                                            firstName,
+                                            lastName,
+                                            email,
+                                            phone1,
+                                            ext1,
+                                            phone2,
+                                            ext2,
+                                            dropStatus.SelectedIndex,
+                                            dropPermissions.SelectedIndex,
+                                            0)
+            interfaceUser.loadDataGridView()
+            Me.SendToBack()
+        Else
+            MsgBox(Lang.getInstance().getLang()("SameMatricula"),
+                   vbOKOnly,
+                   Lang.getInstance().getLang()("SameMatriculaTitle"))
+            numCode.BorderColor = Color.LightCoral
+            numCode.FocusedState.BorderColor = Color.LightCoral
+        End If
     End Sub
 
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
@@ -340,6 +376,9 @@ Public Class UCUserAdd
             labExt2.Location = baselabExt2Location
         End If
     End Sub
+
+
+
 
 
 End Class
