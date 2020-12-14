@@ -72,6 +72,16 @@ TechnoLocation
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_delete_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_keyboard_return_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_black_18dp">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -173,6 +183,11 @@ TechnoLocation
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_next_hover_black_18dp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_person_black_18dp">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

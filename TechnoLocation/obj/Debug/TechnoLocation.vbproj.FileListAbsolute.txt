@@ -8,7 +8,6 @@ C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocati
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCDashboard.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -53,7 +52,6 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UC
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -101,7 +99,6 @@ D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\Techno
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -157,26 +154,20 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UC
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbprojAssemblyReference.cache
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.AddKit.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Connection.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.MainForm.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserAdd.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCDashboard.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentMod.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Resources.resources
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbproj.GenerateResource.cache
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.vbproj.CoreCompileInputs.cache
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.exe
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ChooseUser.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources

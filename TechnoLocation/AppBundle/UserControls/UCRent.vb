@@ -10,7 +10,10 @@ Public Class UCRent
 
     Dim datePick As Boolean = True
     Dim table As DataTable
-    Dim WithEvents mainForm As MainForm
+    Dim WithEvents mainForm As New MainForm(0)
+    Dim showAllEquipment As Integer = 1
+    Dim dateBegin As Date
+    Dim dateFinish As Date
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -28,8 +31,7 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gridUsers.DataSource = EntityUser.getInstance.getUsers
-        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
+
         gridSelectedEquipment.ColumnCount = 6
         gridSelectedEquipment.Columns(0).Name = "Code"
         gridSelectedEquipment.Columns(1).Name = "Nom"
@@ -37,60 +39,64 @@ Public Class UCRent
         gridSelectedEquipment.Columns(3).Name = "État"
         gridSelectedEquipment.Columns(4).Name = "Commentaire"
         gridSelectedEquipment.Columns(5).Name = "Dépôt sugéré"
+        tbCodeRenter.Text = Lang.getInstance().getLang()("TBCodeFill")
+        tbNameRenter.Text = Lang.getInstance().getLang()("TBNameFill")
+        tbEmailRenter.Text = Lang.getInstance().getLang()("TBEmailFill")
+        tbPhoneRenter.Text = Lang.getInstance().getLang()("TBPhoneFill")
+        tbBalanceRenter.Text = Lang.getInstance().getLang()("TBBalanceFill")
+        checkShowAllEquipment.Text = Lang.getInstance().getLang()("CheckAllEquipmentShow")
+        dateBegin = dateStart.Value
+        DateFinish = dateEnd.Value
     End Sub
 
     '__________________________________________________________________________________________________________
     'Methods
     '__________________________________________________________________________________________________________
 
-    Private Sub tbSearchUser_TextChanged(sender As Object, e As EventArgs) Handles tbSearchUser.TextChanged
-        If (Not String.IsNullOrEmpty(tbSearchUser.Text)) Then
-            Dim recherche As String = tbSearchUser.Text
-            Dim entityUser As EntityUser = EntityUser.getInstance()
-            Select Case dropSearchUser.SelectedIndex
-                Case 0
-                    If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
-                        gridUsers.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
-                    Else
-                        gridUsers.DataSource = entityUser.getUsers()
-                    End If
-                Case 1
-                    gridUsers.DataSource = entityUser.getUsersFirstName(recherche)
-                Case 2
-                    gridUsers.DataSource = entityUser.getUsersLastName(recherche)
-                Case 3
-                    gridUsers.DataSource = entityUser.getUsersEmail(recherche)
-                Case 4
-                    gridUsers.DataSource = entityUser.getUsersPhone(recherche)
-                Case 5
-                    gridUsers.DataSource = entityUser.getUsersJob(recherche)
-            End Select
-        End If
-    End Sub
+    'Private Sub tbSearchUser_TextChanged(sender As Object, e As EventArgs)
+    '    If (Not String.IsNullOrEmpty(tbSearchUser.Text)) Then
+    '        Dim recherche As String = tbSearchUser.Text
+    '        Dim entityUser As EntityUser = EntityUser.getInstance()
+    '        Select Case dropSearchUser.SelectedIndex
+    '            Case 0
+    '                If (Regex.IsMatch(recherche, "^[0-9]*$")) Then
+    '                    gridUsers.DataSource = entityUser.getUsersCode(Convert.ToInt32(recherche))
+    '                Else
+    '                    gridUsers.DataSource = entityUser.getUsers()
+    '                End If
+    '            Case 1
+    '                gridUsers.DataSource = entityUser.getUsersFirstName(recherche)
+    '            Case 2
+    '                gridUsers.DataSource = entityUser.getUsersLastName(recherche)
+    '            Case 3
+    '                gridUsers.DataSource = entityUser.getUsersEmail(recherche)
+    '            Case 4
+    '                gridUsers.DataSource = entityUser.getUsersPhone(recherche)
+    '            Case 5
+    '                gridUsers.DataSource = entityUser.getUsersJob(recherche)
+    '        End Select
+    '    End If
+    'End Sub
 
     Private Sub tbSearchEquipment_TextChanged(sender As Object, e As EventArgs) Handles tbSearchEquipment.TextChanged
         searchEquipment()
     End Sub
 
     Private Sub gridItemSearch_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridAllEquipment.CellDoubleClick
-        If gridAllEquipment.CurrentRow.Cells(4).Value = True Then
+        If EntityEquipment.getInstance.getAvailability(gridAllEquipment.CurrentRow.Cells(0).Value) Then
             gridSelectedEquipment.Rows.Add(New String() {gridAllEquipment.CurrentRow.Cells(0).Value,
                                                          gridAllEquipment.CurrentRow.Cells(1).Value,
                                                          gridAllEquipment.CurrentRow.Cells(2).Value,
                                                          gridAllEquipment.CurrentRow.Cells(3).Value,
-                                                         gridAllEquipment.CurrentRow.Cells(5).Value,
-                                                         gridAllEquipment.CurrentRow.Cells(6).Value})
-            '==================================================
-            gridSelectedEquipment.Rows.Add(gridAllEquipment.CurrentRow)
+                                                         gridAllEquipment.CurrentRow.Cells(4).Value,
+                                                         gridAllEquipment.CurrentRow.Cells(5).Value})
             gridAllEquipment.CurrentRow.Cells(4).Value = 0
             ModelEquipment.getInstance().setAvailable(gridAllEquipment.CurrentRow.Cells(0).Value, 0)
             searchEquipment()
+            changeDeposit()
         Else
-            MsgBox(Lang.getInstance().getLang()("MsgEquimentAlreadyUse"),
-                   vbOKOnly,
-                   Lang.getInstance().getLang()("MsgWarning"))
+            MsgBox(Lang.getInstance().getLang()("MsgEquimentAlreadyUse"))
         End If
-        changeDeposit()
     End Sub
 
     Private Sub gridItemAdd_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellDoubleClick
@@ -99,55 +105,67 @@ Public Class UCRent
         changeDeposit()
         searchEquipment()
     End Sub
-    'TODO
-    'Private Sub tbBeginDate_TextChanged(sender As Object, e As EventArgs) Handles tbBeginDate.TextChanged
-    '    If loadEquipment() Then
-    '        gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
-    '        table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
-    '    End If
-    '    checkEquipmentAvailable()
-    '    checkEquipmentSelected()
-    'End Sub
-    'TODO
-    'Private Sub tbEndDate_TextChanged(sender As Object, e As EventArgs) Handles tbEndDate.TextChanged
-    '    If loadEquipment() Then
-    '        gridItemSearch.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
-    '        table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
-    '    End If
-    '    checkEquipmentAvailable()
-    '    checkEquipmentSelected()
-    'End Sub
-    'TODO
-    'Private Sub calendarRent_DateChanged(sender As Object, e As DateRangeEventArgs)
-    '    If datePick Then
-    '        tbBeginDate.Text = calendarRent.SelectionStart
-    '    Else
-    '        tbEndDate.Text = calendarRent.SelectionStart
-    '    End If
-    '    If Not (String.IsNullOrEmpty(tbBeginDate.Text) Or String.IsNullOrEmpty(tbEndDate.Text)) Then
-    '        table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
-    '    End If
-    'End Sub
+
+    Private Sub dateStart_ValueChanged(sender As Object, e As EventArgs) Handles dateStart.ValueChanged
+        If Not dateBegin = "0001-01-01" Then
+            If dateStart.Value > dateEnd.Value Then
+                dateStart.Value = dateBegin
+            Else
+                dateBegin = dateStart.Value
+                searchEquipment()
+                checkEquipmentSelected()
+                changeDeposit()
+            End If
+        End If
+
+    End Sub
+
+    Private Sub loadDataGridView()
+        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentsBySearchRent("", True, dateStart.Value, dateEnd.Value)
+    End Sub
+
+    Private Sub dateEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateEnd.ValueChanged
+        If Not dateFinish = "0001-01-01" Then
+            If dateEnd.Value < dateStart.Value Then
+                dateEnd.Value = dateFinish
+            Else
+                dateFinish = dateEnd.Value
+                searchEquipment()
+                checkEquipmentSelected()
+                changeDeposit()
+            End If
+        End If
+    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions
     '__________________________________________________________________________________________________________
 
 
-
     '__________________________________________________________________________________________________________
     'Validation Functions
     '__________________________________________________________________________________________________________
-
-    Private Sub checkEquipmentAvailable()
-        If loadEquipment() Then
+    Private Sub checkEquipmentSelected() 'Il faut que je change sa vu qu'on a enlever le check available
+        Dim i As Integer
+        Dim getMsg As Boolean = False
+        If Not IsNothing(table) Then
             For Each rowRent As DataRow In table.Rows
-                For Each rowEquip As DataGridViewRow In gridAllEquipment.Rows
-                    If rowRent.Item(3).ToString = rowEquip.Cells(0).Value Then
-                        rowEquip.Cells(4).Value = 0
+                i = -1
+                For Each rowEquip As DataGridViewRow In gridSelectedEquipment.Rows
+                    i += 1
+                    If rowRent.Item(0).ToString = rowEquip.Cells(0).Value Then
+                        getMsg = True
+                        ModelEquipment.getInstance().setAvailable(gridSelectedEquipment.Rows(i).Cells(0).Value, 1)
+                        gridSelectedEquipment.Rows.RemoveAt(i)
+                        searchEquipment()
                     End If
                 Next
             Next
+            If getMsg Then
+                MsgBox(Lang.getInstance().getLang()("MsgEquipmentDateChange"),
+                               vbOKOnly,
+                               Lang.getInstance().getLang()("MsgWarning"))
+            End If
         End If
     End Sub
 
@@ -156,11 +174,7 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
-        Dim iUserAdd As New UCUserAdd(mainForm, New UCUser(mainForm))
-        iUserAdd.Dock = DockStyle.Fill
-        mainForm.panelMain.Controls.Add(iUserAdd)
-        iUserAdd.BringToFront()
-        gridUsers.DataSource = EntityUser.getInstance.getUsers()
+        'Faire l'ouverture d'un nouveau form pour la recherche de user
     End Sub
 
     Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click
@@ -192,67 +206,64 @@ Public Class UCRent
         tbSuggestedDeposit.Text = deposit
     End Sub
 
-    Private Function loadEquipment() As Boolean
-        'If Not String.IsNullOrEmpty(tbBeginDate.Text) Then
-        '    If Not String.IsNullOrEmpty(tbEndDate.Text) Then
-        '        Return True
-        '    Else
-        '        Return False
-        '    End If
-        'Else
-        '    Return False
-        'End If
-    End Function
 
-    Private Sub checkEquipmentSelected()
-        Dim i As Integer = -1
-        If Not IsNothing(table) Then
-            For Each rowRent As DataRow In table.Rows
-                For Each rowEquip As DataGridViewRow In gridSelectedEquipment.Rows
-                    i += 1
-                    If rowRent.Item(3).ToString = rowEquip.Cells(0).Value Then
-                        MsgBox(Lang.getInstance().getLang()("MsgEquipmentDateChange"),
-                               vbOKOnly,
-                               Lang.getInstance().getLang()("MsgWarning"))
-                        ModelEquipment.getInstance().setAvailable(gridSelectedEquipment.Rows(i).Cells(0).Value, 1)
-                        gridSelectedEquipment.Rows.RemoveAt(i)
-                        searchEquipment()
-                    End If
-                Next
-            Next
-        End If
-    End Sub
 
 
     Private Sub searchEquipment()
-        If loadEquipment() Then
-            Select Case dropSearchEquipment.SelectedIndex
-                Case 0
-                    If IsNumeric(tbSearchEquipment.Text) Then
-                        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentCodeSearch(tbSearchEquipment.Text, 1)
-                    Else
-                        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
-                    End If
-                Case 1
-                    gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentName(tbSearchEquipment.Text, 1)
-                Case 2
-                    If IsNumeric(tbSearchEquipment.Text) Then
-                        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentKit(tbSearchEquipment.Text, 1)
-                    Else
-                        gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
-                    End If
-                Case 3
-                    gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentState(tbSearchEquipment.Text, 1)
-                Case 4
-                    gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentComment(tbSearchEquipment.Text, 1)
-                Case Else
-                    gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentAvailable(1)
-            End Select
-
-            'table = EntityRent.getInstance.getRentBetweenDate(tbBeginDate.Text, tbEndDate.Text)
-
-            checkEquipmentAvailable()
+        Dim grey = Color.FromArgb(1, 213, 218, 223)
+        Dim red = Color.FromArgb(0.8, 224, 70, 70)
+        Dim blue = Color.FromArgb(0.8, 94, 148, 255)
+        tbSearchEquipment.BorderColor = grey
+        tbSearchEquipment.FocusedState.BorderColor = blue
+        tbSearchEquipment.Text = tbSearchEquipment.Text.Trim()
+        If tbSearchEquipment.Text.Length > 0 Then
+            If checkShowAllEquipment.Checked Then
+                gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
+                                                                                           False,
+                                                                                           dateStart.Value,
+                                                                                           dateEnd.Value)
+            Else
+                gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
+                                                                                           True,
+                                                                                           dateStart.Value,
+                                                                                           dateEnd.Value)
+            End If
+            If gridAllEquipment.Rows.Count = 0 Then
+                tbSearchEquipment.BorderColor = red
+                tbSearchEquipment.FocusedState.BorderColor = red
+                loadDataGridView()
+            End If
+        Else
+            If checkShowAllEquipment.Checked Then
+                gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
+                                                                                           False,
+                                                                                           dateStart.Value,
+                                                                                           dateEnd.Value)
+            Else
+                gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
+                                                                                           True,
+                                                                                           dateStart.Value,
+                                                                                           dateEnd.Value)
+            End If
         End If
+
+        table = EntityRent.getInstance.getRentBetweenDate(dateStart.Value.ToString, dateEnd.Value.ToString)
+
+    End Sub
+
+    Private Sub gridAllEquipment_DragDrop(sender As Object, e As DragEventArgs) Handles gridAllEquipment.DragDrop
+
+    End Sub
+
+    Private Sub UCRent_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged, Me.HandleDestroyed
+        For Each row As DataGridViewRow In gridSelectedEquipment.Rows
+            ModelEquipment.getInstance().setAvailable(gridSelectedEquipment.CurrentRow.Cells(0).Value, 1)
+            gridSelectedEquipment.Rows.Remove(gridSelectedEquipment.CurrentRow)
+        Next
+    End Sub
+
+    Private Sub checkShowAllEquipment_CheckedChanged(sender As Object, e As EventArgs) Handles checkShowAllEquipment.CheckedChanged
+        searchEquipment()
     End Sub
 
 End Class

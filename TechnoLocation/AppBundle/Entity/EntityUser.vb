@@ -26,13 +26,132 @@ Public Class EntityUser
         Return exists = "Y"
     End Function
 
-    Public Function getUsers() As DataTable
+    Public Function getUsers(lang As String) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select code, firstName, lastName, email, phoneMain, phone2, job, balance from user U order by U.code"
+        If lang = "EN" Then
+            command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    ORDER BY code"
+        Else
+            command.CommandText = $"SET lc_time_names = 'en_US';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Student'
+                                            WHEN U.job = 1 THEN 'Teacher'
+                                            WHEN U.job = 2 THEN 'Employee'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    ORDER BY code"
+        End If
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("users")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getUsersBySearch(lang As String, value As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        If lang = "EN" Then
+            command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    WHERE upper(firstName) LIKE upper('%{value}%') OR
+                                        upper(lastName) LIKE upper('%{value}%') OR
+                                        upper(email) LIKE upper('%{value}%') OR
+                                        (CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END) LIKE upper('%{value}%')
+                                    ORDER BY code"
+        Else
+            command.CommandText = $"SET lc_time_names = 'en_US';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Student'
+                                            WHEN U.job = 1 THEN 'Teacher'
+                                            WHEN U.job = 2 THEN 'Employee'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    WHERE upper(firstName) LIKE upper('%{value}%') OR
+                                        upper(lastName) LIKE upper('%{value}%') OR
+                                        upper(email) LIKE upper('%{value}%') OR
+                                        (CASE
+                                            WHEN U.job = 0 THEN 'Student'
+                                            WHEN U.job = 1 THEN 'Teacher'
+                                            WHEN U.job = 2 THEN 'Employee'
+                                        END) LIKE upper('%{value}%')
+                                    ORDER BY code"
+        End If
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -48,6 +167,27 @@ Public Class EntityUser
         Dim command As New MySqlCommand
         command.Connection = connection
         command.CommandText = $"Select code, password from user"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("users")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getUserByRental(rental As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"SELECT U.code, 
+                                    U.firstName, 
+                                    U.lastName, 
+                                    U.balance
+                                FROM user U
+                                INNER JOIN rent R on R.renter = U.code
+                                WHERE R.code = {rental}"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
@@ -92,7 +232,26 @@ Public Class EntityUser
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from user U where code = '{code}'"
+        command.CommandText = $"Select code, 
+                                    password, 
+                                    firstName, 
+                                    lastName, 
+                                    email, 
+                                    phoneMain, 
+                                    CASE
+                                    	WHEN extensionMain Is NULL THEN -1
+                                        WHEN extensionMain IS NOT NULL THEN extensionMain
+                                    END AS extensionMain, 
+                                    phone2, 
+                                    CASE
+                                    	WHEN extension2 Is NULL THEN -1
+                                        WHEN extension2 IS NOT NULL THEN extension2
+                                    END AS extension2,
+                                    job, 
+                                    permissions, 
+                                    balance 
+                                from user 
+                                where code = '{code}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("user")

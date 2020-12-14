@@ -25,6 +25,7 @@ Partial Class UCDashboard
         Me.panelUC = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelMiddle = New Guna.UI2.WinForms.Guna2Panel()
         Me.lab_late = New System.Windows.Forms.Label()
+        Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelBottom = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridLate = New System.Windows.Forms.DataGridView()
         Me.panelTop = New Guna.UI2.WinForms.Guna2Panel()
@@ -51,9 +52,9 @@ Partial Class UCDashboard
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
-        Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelUC.SuspendLayout()
         Me.panelMiddle.SuspendLayout()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTop.SuspendLayout()
@@ -61,7 +62,6 @@ Partial Class UCDashboard
         Me.panelInactiveUsers.SuspendLayout()
         Me.panelTotalUsers.SuspendLayout()
         Me.panelRentCount.SuspendLayout()
-        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelUC
@@ -97,6 +97,15 @@ Partial Class UCDashboard
         Me.lab_late.Size = New System.Drawing.Size(106, 17)
         Me.lab_late.TabIndex = 15
         Me.lab_late.Text = "Alertes Retards"
+        '
+        'pbGraph
+        '
+        Me.pbGraph.Location = New System.Drawing.Point(90, 86)
+        Me.pbGraph.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbGraph.Name = "pbGraph"
+        Me.pbGraph.Size = New System.Drawing.Size(664, 207)
+        Me.pbGraph.TabIndex = 13
+        Me.pbGraph.TabStop = False
         '
         'panelBottom
         '
@@ -140,7 +149,8 @@ Partial Class UCDashboard
         '
         'panelDepositCount
         '
-        Me.panelDepositCount.BackColor = System.Drawing.Color.White
+        Me.panelDepositCount.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panelDepositCount.BorderRadius = 10
         Me.panelDepositCount.Controls.Add(Me.labDepositCount)
         Me.panelDepositCount.Controls.Add(Me.labDepositName)
         Me.panelDepositCount.Controls.Add(Me.Guna2Panel13)
@@ -201,7 +211,8 @@ Partial Class UCDashboard
         '
         'panelInactiveUsers
         '
-        Me.panelInactiveUsers.BackColor = System.Drawing.Color.White
+        Me.panelInactiveUsers.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panelInactiveUsers.BorderRadius = 10
         Me.panelInactiveUsers.Controls.Add(Me.labInactiveUserCount)
         Me.panelInactiveUsers.Controls.Add(Me.labInactiveUserName)
         Me.panelInactiveUsers.Controls.Add(Me.Guna2Panel10)
@@ -262,7 +273,8 @@ Partial Class UCDashboard
         '
         'panelTotalUsers
         '
-        Me.panelTotalUsers.BackColor = System.Drawing.Color.White
+        Me.panelTotalUsers.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panelTotalUsers.BorderRadius = 10
         Me.panelTotalUsers.Controls.Add(Me.labTotalUserCount)
         Me.panelTotalUsers.Controls.Add(Me.labTotalUserName)
         Me.panelTotalUsers.Controls.Add(Me.Guna2Panel7)
@@ -323,7 +335,8 @@ Partial Class UCDashboard
         '
         'panelRentCount
         '
-        Me.panelRentCount.BackColor = System.Drawing.Color.White
+        Me.panelRentCount.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panelRentCount.BorderRadius = 10
         Me.panelRentCount.Controls.Add(Me.labRentCountCount)
         Me.panelRentCount.Controls.Add(Me.labRentCountName)
         Me.panelRentCount.Controls.Add(Me.Guna2Panel3)
@@ -408,15 +421,6 @@ Partial Class UCDashboard
         Me.TechnoLocationCustomCalendar1.TabIndex = 16
         Me.TechnoLocationCustomCalendar1.TrailingForeColor = System.Drawing.Color.SpringGreen
         '
-        'pbGraph
-        '
-        Me.pbGraph.Location = New System.Drawing.Point(90, 86)
-        Me.pbGraph.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbGraph.Name = "pbGraph"
-        Me.pbGraph.Size = New System.Drawing.Size(664, 207)
-        Me.pbGraph.TabIndex = 13
-        Me.pbGraph.TabStop = False
-        '
         'UCDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -429,6 +433,7 @@ Partial Class UCDashboard
         Me.panelUC.ResumeLayout(False)
         Me.panelMiddle.ResumeLayout(False)
         Me.panelMiddle.PerformLayout()
+        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBottom.ResumeLayout(False)
         CType(Me.gridLate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelTop.ResumeLayout(False)
@@ -440,7 +445,6 @@ Partial Class UCDashboard
         Me.panelTotalUsers.PerformLayout()
         Me.panelRentCount.ResumeLayout(False)
         Me.panelRentCount.PerformLayout()
-        CType(Me.pbGraph, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

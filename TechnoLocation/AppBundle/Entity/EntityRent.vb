@@ -11,42 +11,276 @@ Public Class EntityRent
         Return instance
     End Function
 
-    Public Function testConnection() As Boolean
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim cmd As New MySqlCommand("SELECT IF(EXISTS (SELECT SCHEMA_NAME " &
-                                    "FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = @DbName), 'Y','N')", connection)
-        cmd.Parameters.AddWithValue("@DbName", "projetsession")
-        connection.Open()
-        Dim exists As String = cmd.ExecuteScalar().ToString()
-        Console.WriteLine(exists)
-        connection.Close()
-        Return exists = "Y"
-    End Function
-
-    Public Function getRentals() As DataTable
+    Public Function getRentals(lang As String) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent"
+        If lang = "EN" Then
+            command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                GROUP BY R.code"
+        Else
+            command.CommandText = $"SET lc_time_names = 'en_US';
+                                Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                GROUP BY R.code"
+        End If
         connection.Open()
         Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("rents")
+        Dim table As New DataTable("rentals")
         table.Load(reader)
         connection.Close()
         Return table
     End Function
 
-    Public Function getRentCode(code As Integer) As DataTable
+    Public Function getRentalsBySearch(lang As String, value As String) As DataTable
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R where code = '{code}' order by R.code"
+        If lang = "EN" Then
+            command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                    Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                WHERE upper(( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        )) LIKE upper('%{value}%') OR
+                                    upper(( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        )) LIKE upper('%{value}%') OR
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') LIKE upper('%{value}%') OR
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') LIKE upper('%{value}%')
+                                GROUP BY R.code"
+        Else
+            command.CommandText = $"SET lc_time_names = 'en_US';
+                                    Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                WHERE upper(( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        )) LIKE upper('%{value}%') OR
+                                    upper(( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        )) LIKE upper('%{value}%') OR
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') LIKE upper('%{value}%') OR
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') LIKE upper('%{value}%')
+                                GROUP BY R.code"
+        End If
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("rentals")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getLateRentals(lang As String) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim today = DateTime.Now
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        If lang = "EN" Then
+            command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                    Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                WHERE R.returnDate < CURRENT_DATE
+                                GROUP BY R.code"
+        Else
+            command.CommandText = $"SET lc_time_names = 'en_US';
+                                    Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                WHERE R.returnDate < CURRENT_DATE
+                                GROUP BY R.code"
+        End If
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("rentals")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getRentalDetails(lang As String, code As Integer) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        If lang = "EN" Then
+            lang = "fr_CA"
+        Else
+            lang = "en_US"
+        End If
+        command.CommandText = $"SET lc_time_names = '{lang}';
+                                    Select U.firstName,
+                                        U.lastName,
+                                        U.email,
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                INNER JOIN user U on U.code = R.renter
+                                WHERE R.code = {code}
+                                GROUP BY R.code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("rents")
@@ -166,7 +400,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R 
+        command.CommandText = $"Select equipment from rent R 
                                 where (rentDate between '{dateBegin}' and '{dateEnd}') and 
                                 (returnDate between '{dateBegin}' and '{dateEnd}') 
                                 order by R.code"

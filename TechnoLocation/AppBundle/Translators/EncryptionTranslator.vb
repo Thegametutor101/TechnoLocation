@@ -36,7 +36,11 @@
                 Dim ctr As Integer = 0
                 If String.IsNullOrEmpty(table(pos)) Or table(pos) = vbNullChar Then
                     table(pos) = characterList(i)
-                    Return (Math.Ceiling((CInt(arrayCharacters.Item(passChar)) + pos + 13) * 17 / 5)).ToString()
+                    Try
+                        Return (Math.Ceiling((CInt(arrayCharacters.Item(passChar)) + pos + 13) * 17 / 5)).ToString()
+                    Catch ex As Exception
+                        Return (Math.Ceiling((CInt(Replace(arrayCharacters.Item(passChar), ".", ",")) + pos + 13) * 17 / 5)).ToString()
+                    End Try
                 Else
                     While Not placed
                         ctr += 1

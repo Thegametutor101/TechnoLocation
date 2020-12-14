@@ -29,8 +29,7 @@ Partial Class UCHistory
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
-        Me.dropHistory = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.tbHistory = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridHistory = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -44,8 +43,7 @@ Partial Class UCHistory
         'Guna2Panel3
         '
         Me.Guna2Panel3.Controls.Add(Me.checkAll)
-        Me.Guna2Panel3.Controls.Add(Me.dropHistory)
-        Me.Guna2Panel3.Controls.Add(Me.tbHistory)
+        Me.Guna2Panel3.Controls.Add(Me.tbSearch)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel3.Name = "Guna2Panel3"
@@ -66,50 +64,29 @@ Partial Class UCHistory
         Me.checkAll.Size = New System.Drawing.Size(29, 24)
         Me.checkAll.TabIndex = 50
         '
-        'dropHistory
+        'tbSearch
         '
-        Me.dropHistory.BackColor = System.Drawing.Color.Transparent
-        Me.dropHistory.BorderRadius = 2
-        Me.dropHistory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.dropHistory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropHistory.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropHistory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropHistory.FocusedState.Parent = Me.dropHistory
-        Me.dropHistory.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
-        Me.dropHistory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.dropHistory.HoverState.Parent = Me.dropHistory
-        Me.dropHistory.ItemHeight = 30
-        Me.dropHistory.ItemsAppearance.Parent = Me.dropHistory
-        Me.dropHistory.Location = New System.Drawing.Point(422, 18)
-        Me.dropHistory.Name = "dropHistory"
-        Me.dropHistory.ShadowDecoration.Parent = Me.dropHistory
-        Me.dropHistory.Size = New System.Drawing.Size(229, 36)
-        Me.dropHistory.Sorted = True
-        Me.dropHistory.TabIndex = 49
-        '
-        'tbHistory
-        '
-        Me.tbHistory.BorderRadius = 2
-        Me.tbHistory.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbHistory.DefaultText = ""
-        Me.tbHistory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tbHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tbHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbHistory.DisabledState.Parent = Me.tbHistory
-        Me.tbHistory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbHistory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbHistory.FocusedState.Parent = Me.tbHistory
-        Me.tbHistory.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.tbHistory.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbHistory.HoverState.Parent = Me.tbHistory
-        Me.tbHistory.Location = New System.Drawing.Point(29, 18)
-        Me.tbHistory.Name = "tbHistory"
-        Me.tbHistory.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tbHistory.PlaceholderText = "Recherche"
-        Me.tbHistory.SelectedText = ""
-        Me.tbHistory.ShadowDecoration.Parent = Me.tbHistory
-        Me.tbHistory.Size = New System.Drawing.Size(356, 36)
-        Me.tbHistory.TabIndex = 48
+        Me.tbSearch.BorderRadius = 2
+        Me.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbSearch.DefaultText = ""
+        Me.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbSearch.DisabledState.Parent = Me.tbSearch
+        Me.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbSearch.FocusedState.Parent = Me.tbSearch
+        Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbSearch.HoverState.Parent = Me.tbSearch
+        Me.tbSearch.Location = New System.Drawing.Point(29, 18)
+        Me.tbSearch.Name = "tbSearch"
+        Me.tbSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbSearch.PlaceholderText = "Recherche"
+        Me.tbSearch.SelectedText = ""
+        Me.tbSearch.ShadowDecoration.Parent = Me.tbSearch
+        Me.tbSearch.Size = New System.Drawing.Size(356, 36)
+        Me.tbSearch.TabIndex = 48
         '
         'Guna2Panel4
         '
@@ -236,8 +213,7 @@ Partial Class UCHistory
 
     End Sub
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents tbHistory As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents dropHistory As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents gridHistory As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel

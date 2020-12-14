@@ -31,7 +31,6 @@ Partial Class UCUser
         Me.btDeleteUser = New Guna.UI2.WinForms.Guna2Button()
         Me.btAddUser = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.dropUserSearch = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tbUserSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.checkUser = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
@@ -94,7 +93,6 @@ Partial Class UCUser
         '
         'Guna2Panel2
         '
-        Me.Guna2Panel2.Controls.Add(Me.dropUserSearch)
         Me.Guna2Panel2.Controls.Add(Me.tbUserSearch)
         Me.Guna2Panel2.Controls.Add(Me.checkUser)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -103,27 +101,6 @@ Partial Class UCUser
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
         Me.Guna2Panel2.Size = New System.Drawing.Size(1263, 80)
         Me.Guna2Panel2.TabIndex = 1
-        '
-        'dropUserSearch
-        '
-        Me.dropUserSearch.BackColor = System.Drawing.Color.Transparent
-        Me.dropUserSearch.BorderRadius = 2
-        Me.dropUserSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.dropUserSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropUserSearch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropUserSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dropUserSearch.FocusedState.Parent = Me.dropUserSearch
-        Me.dropUserSearch.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
-        Me.dropUserSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.dropUserSearch.HoverState.Parent = Me.dropUserSearch
-        Me.dropUserSearch.ItemHeight = 30
-        Me.dropUserSearch.ItemsAppearance.Parent = Me.dropUserSearch
-        Me.dropUserSearch.Location = New System.Drawing.Point(371, 7)
-        Me.dropUserSearch.Name = "dropUserSearch"
-        Me.dropUserSearch.ShadowDecoration.Parent = Me.dropUserSearch
-        Me.dropUserSearch.Size = New System.Drawing.Size(229, 36)
-        Me.dropUserSearch.Sorted = True
-        Me.dropUserSearch.TabIndex = 25
         '
         'tbUserSearch
         '
@@ -146,7 +123,7 @@ Partial Class UCUser
         Me.tbUserSearch.PlaceholderText = "Recherche"
         Me.tbUserSearch.SelectedText = ""
         Me.tbUserSearch.ShadowDecoration.Parent = Me.tbUserSearch
-        Me.tbUserSearch.Size = New System.Drawing.Size(329, 36)
+        Me.tbUserSearch.Size = New System.Drawing.Size(472, 36)
         Me.tbUserSearch.TabIndex = 24
         '
         'checkUser
@@ -298,6 +275,5 @@ Partial Class UCUser
     Friend WithEvents gridUser As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents btDeleteUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btAddUser As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents dropUserSearch As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents tbUserSearch As Guna.UI2.WinForms.Guna2TextBox
 End Class

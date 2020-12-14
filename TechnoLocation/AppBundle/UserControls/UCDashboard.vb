@@ -4,7 +4,7 @@
     'Attributes
     '__________________________________________________________________________________________________________
 
-    Dim WithEvents mainForm As MainForm
+    Dim WithEvents mainForm As New MainForm(0)
     Dim topPanelBaseWidth As Integer
 
     '__________________________________________________________________________________________________________
@@ -74,7 +74,7 @@
             labDepositCount.Text = Format(EntityRent.getInstance().getRentDeposits(), "0.00$")
 
         Else
-            labDepositCount.Text = Replace(Format(EntityRent.getInstance().getRentDeposits(), "0.00$"),
+            labDepositCount.Text = Replace(Format(EntityRent.getInstance().getRentDeposits(), "$0.00"),
                                            ".",
                                            ",")
         End If

@@ -63,8 +63,9 @@
     End Sub
 
     Private Sub loadLanguage()
-        LabNameKitAdd.Text = Lang.getInstance().getLang()("AddKitLabel")
-        btKitAdd.Text = Lang.getInstance().getLang()("AddItem")
-        btKitCancel.Text = Lang.getInstance().getLang()("CancelButton")
+        Dim json = Lang.getInstance().getLang()
+        LabNameKitAdd.Text = json("AddKitLabel")
+        btKitAdd.Text = json("AddItem")
+        btKitCancel.Text = json("CancelButton")
     End Sub
 End Class

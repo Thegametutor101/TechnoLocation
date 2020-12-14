@@ -46,7 +46,9 @@ Public Class MainForm
         labAccount.TextAlignment = ContentAlignment.MiddleLeft
         labDisconnect.TextAlignment = ContentAlignment.MiddleCenter
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
-        labSettings.TextAlignment = ContentAlignment.MiddleCenter
+        labPersonConnected.Text = "Bonjour, Allo"
+        labPersonConnected.Refresh()
+        Me.Refresh()
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
@@ -172,6 +174,7 @@ Public Class MainForm
         Next
         If open Then
             panelMain.Controls.Remove(notifications)
+            selectOptionButton(10)
         Else
 
             notifications.Dock = DockStyle.Left
@@ -191,7 +194,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        Dim iReturn As New UCReturn()
+        Dim iReturn As New UCReturn(Me)
         iReturn.Dock = DockStyle.Fill
         panelMain.Controls.Clear()
         panelMain.Controls.Add(iReturn)
@@ -226,15 +229,6 @@ Public Class MainForm
         selectOptionButton(6)
     End Sub
 
-    Private Sub btCalendar_Click(sender As Object, e As EventArgs) Handles btCalendar.Click
-        Dim iRestriction As New UCRestriction()
-        iRestriction.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRestriction)
-        iRestriction.BringToFront()
-        selectOptionButton(7)
-    End Sub
-
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
         Dim iProfile As New UCProfile(Me)
         iProfile.Dock = DockStyle.Fill
@@ -261,9 +255,10 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
+        Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
         Dim json = Lang.getInstance().getLang()
         labAccount.Text = json("MainlabAccount")
-        labPersonConnected.Text = json("MainlabPersonConnected")
+        labPersonConnected.Text = json("MainlabPersonConnected") + data.Item("firstName")
         btHome.Text = json("MainbtHome")
         btAlert.Text = json("MainbtAlert")
         btRent.Text = json("MainbtRent")
@@ -271,9 +266,7 @@ Public Class MainForm
         btUser.Text = json("MainbtUser")
         btEquipment.Text = json("MainbtEquipment")
         btHistory.Text = json("MainbtHistory")
-        btCalendar.Text = json("MainbtCalendar")
         labProfile.Text = json("MainlabProfile")
-        labSettings.Text = json("MainlabSettings")
         labDisconnect.Text = json("MainlabDisconnect")
     End Sub
 
@@ -317,12 +310,14 @@ Public Class MainForm
 
 
     Public Sub maximize()
-        Dim topCorner = New Point(0, 0)
+        Dim topCorner = New Point(Screen.FromControl(Me).GetWorkingArea(Me.Location).X,
+                                  Screen.FromControl(Me).GetWorkingArea(Me.Location).Y)
         If Not Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height And
            Not Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width And
            Not Me.Location = topCorner Then
             'This changes the position and size of the window to be full screen while showing the task bar
-            Me.Location = New Point(0, 0)
+            Me.Location = New Point(Screen.FromControl(Me).GetWorkingArea(Me.Location).X,
+                                    Screen.FromControl(Me).GetWorkingArea(Me.Location).Y)
             Me.Height = Screen.FromControl(Me).GetWorkingArea(Me.Location).Height
             Me.Width = Screen.FromControl(Me).GetWorkingArea(Me.Location).Width
             'Changes the maximise icon according to it's state
@@ -360,6 +355,7 @@ Public Class MainForm
         panelMain.Controls.Add(dashboard)
         dashboard.BringToFront()
         dashboard.resizeLabels()
+        selectOptionButton(0)
     End Sub
 
     Public Sub selectOptionButton(number As Integer)
@@ -370,7 +366,6 @@ Public Class MainForm
         labSide4.Visible = False
         labSide5.Visible = False
         labSide6.Visible = False
-        labSide7.Visible = False
         Select Case number
             Case 0
                 labSide0.Visible = True
@@ -386,8 +381,10 @@ Public Class MainForm
                 labSide5.Visible = True
             Case 6
                 labSide6.Visible = True
-            Case 7
-                labSide7.Visible = True
         End Select
     End Sub
+
+    Public Function getLabSide2()
+        Return labSide2
+    End Function
 End Class
