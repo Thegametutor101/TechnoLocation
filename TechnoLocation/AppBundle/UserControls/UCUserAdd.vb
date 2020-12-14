@@ -78,6 +78,21 @@ Public Class UCUserAdd
         mainForm.isEditing = True
     End Sub
 
+    Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
+        mainForm.isEditing = True
+
+        If numCode.Value >= 10000000 Then
+            numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
+        End If
+    End Sub
+
+    Private Sub numCode_GotFocus(sender As Object, e As EventArgs) Handles numCode.GotFocus
+        numCode.Text = ""
+    End Sub
+
+    Private Sub numCode_LostFocus(sender As Object, e As EventArgs) Handles numCode.LostFocus
+        numCode.Text = numCode.Value
+    End Sub
 
 
     Private Sub checkExt1_CheckedChanged(sender As Object, e As EventArgs) Handles checkExt1.CheckedChanged
@@ -326,7 +341,5 @@ Public Class UCUserAdd
         End If
     End Sub
 
-    Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
 
-    End Sub
 End Class
