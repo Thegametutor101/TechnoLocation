@@ -8,68 +8,68 @@ TechnoLocation
 <members>
 <member name="T:TechnoLocation.My.Resources.Resources">
 <summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.ResourceManager">
 <summary>
-  Returns the cached ResourceManager instance used by this class.
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.Culture">
 <summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_add_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_add_dark_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_add_light_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_add_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_add_white_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_dark_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_light_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_clear_white_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_delete_black_18dp">
@@ -84,107 +84,112 @@ TechnoLocation
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_dark_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_light_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_2_white_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_dark_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_light_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_maximize_white_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_dark_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_light_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_main_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_minimize_white_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_click_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_before_hover_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_next_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_next_click_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TechnoLocation.My.Resources.Resources.baseline_navigate_next_hover_black_18dp">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TechnoLocation.My.Resources.Resources.baseline_person_black_18dp">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="M:TechnoLocation.MainForm.MainForm_Load(System.Object,System.EventArgs)">

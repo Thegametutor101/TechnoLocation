@@ -32,8 +32,8 @@ Partial Class ReturnEquipment
         Me.btKitCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btKitAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.panelItems = New System.Windows.Forms.FlowLayoutPanel()
         Me.labRequiredAction = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.panelItems = New System.Windows.Forms.FlowLayoutPanel()
         Me.panelHeaderBar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
@@ -167,6 +167,18 @@ Partial Class ReturnEquipment
         Me.Guna2Panel2.Size = New System.Drawing.Size(495, 83)
         Me.Guna2Panel2.TabIndex = 16
         '
+        'labRequiredAction
+        '
+        Me.labRequiredAction.AutoSize = False
+        Me.labRequiredAction.BackColor = System.Drawing.Color.White
+        Me.labRequiredAction.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRequiredAction.Location = New System.Drawing.Point(0, 0)
+        Me.labRequiredAction.Name = "labRequiredAction"
+        Me.labRequiredAction.Size = New System.Drawing.Size(495, 83)
+        Me.labRequiredAction.TabIndex = 0
+        Me.labRequiredAction.Text = "Guna2HtmlLabel1"
+        Me.labRequiredAction.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'panelItems
         '
         Me.panelItems.AutoScroll = True
@@ -178,18 +190,6 @@ Partial Class ReturnEquipment
         Me.panelItems.Size = New System.Drawing.Size(495, 380)
         Me.panelItems.TabIndex = 17
         Me.panelItems.WrapContents = False
-        '
-        'labRequiredAction
-        '
-        Me.labRequiredAction.AutoSize = False
-        Me.labRequiredAction.BackColor = System.Drawing.Color.White
-        Me.labRequiredAction.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRequiredAction.Location = New System.Drawing.Point(0, 0)
-        Me.labRequiredAction.Name = "labRequiredAction"
-        Me.labRequiredAction.Size = New System.Drawing.Size(437, 83)
-        Me.labRequiredAction.TabIndex = 0
-        Me.labRequiredAction.Text = "Guna2HtmlLabel1"
-        Me.labRequiredAction.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ReturnEquipment
         '

@@ -143,4 +143,10 @@
   "MsgStudentDette1": " must return ",
   "MsgStudentDette2": " to the Cegep.",
   "MsgNoDette": "No transaction is required for this exchange."
+  "TBCodeFill": "Matricula",
+  "TBNameFill": "Name",
+  "TBEmailFill": "Email",
+  "TBPhoneFill": "Phone number",
+  "TBBalanceFill": "Balance",
+  "CheckAllEquipmentShow": "Display rental equipment",
 }

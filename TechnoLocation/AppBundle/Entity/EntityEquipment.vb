@@ -172,7 +172,15 @@ Public Class EntityEquipment
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from equipment E where available = '{availability}'order by E.code"
+        command.CommandText = $"Select E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state,  
+                                    comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                 from equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                where E.available = '{availability}'"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("equipments")
@@ -194,5 +202,67 @@ Public Class EntityEquipment
         table.Load(reader)
         connection.Close()
         Return table
+    End Function
+
+    Public Function getEquipmentsBySearchRent(value As String, available As Boolean, dateBegin As Date, dateEnd As Date) As DataTable
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        If available Then
+            command.CommandText = $"SELECT E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state, 
+                                    E.comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                WHERE (E.name LIKE '%{value}%' OR
+                                    K.name LIKE '%{value}%' OR
+                                    state LIKE '%{value}%' OR
+                                    E.comments LIKE '%{value}%') AND
+                                    available = 1 AND
+                                    E.code not in (Select equipment from rent R 
+                                                where (rentDate between '{dateBegin}' and '{dateEnd}') or 
+                                               (returnDate between '{dateBegin}' and '{dateEnd}'))
+                                ORDER BY E.code"
+        Else
+            command.CommandText = $"SELECT E.code, 
+                                    E.name, 
+                                    K.name AS kit, 
+                                    state, 
+                                    comments, 
+                                    CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
+                                FROM equipment E
+                                INNER JOIN kit K on K.code = E.kit
+                                WHERE (E.name LIKE '%{value}%' OR
+                                    K.name LIKE '%{value}%' OR
+                                    state LIKE '%{value}%' OR
+                                    comments LIKE '%{value}%')
+                                ORDER BY E.code"
+        End If
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("equipments")
+        table.Load(reader)
+        connection.Close()
+        Return table
+    End Function
+
+    Public Function getAvailability(id As Integer) As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select available from equipment E where code = '{id}' order by E.code"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("equipments")
+        table.Load(reader)
+        connection.Close()
+        Return table.Rows(0).Item(0)
     End Function
 End Class

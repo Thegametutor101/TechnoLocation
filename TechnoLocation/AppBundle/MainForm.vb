@@ -379,4 +379,8 @@ Public Class MainForm
                 labSide6.Visible = True
         End Select
     End Sub
+
+    Public Function getLabSide2()
+        Return labSide2
+    End Function
 End Class
