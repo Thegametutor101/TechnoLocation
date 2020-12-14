@@ -250,10 +250,14 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
         Dim json = Lang.getInstance().getLang()
+        Try
+            Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
+            labPersonConnected.Text = json("MainlabPersonConnected").toString() + data.Item("firstName")
+        Catch ex As Exception
+            labPersonConnected.Text = json("MainlabPersonConnected")
+        End Try
         labAccount.Text = json("MainlabAccount")
-        labPersonConnected.Text = json("MainlabPersonConnected") + data.Item("firstName")
         btHome.Text = json("MainbtHome")
         btAlert.Text = json("MainbtAlert")
         btRent.Text = json("MainbtRent")

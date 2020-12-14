@@ -196,19 +196,22 @@ Public Class EntityUser
         Return table
     End Function
 
-    Public Function getUsersPassword(code As Integer) As DataTable
+    Public Function checkUserMatriculeExists(code As Integer) As Boolean
         If connection.State = ConnectionState.Open Then
             connection.Close()
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select password from user U where code = '{code}' order by U.code"
+        command.CommandText = $"SELECT * 
+                                FROM user
+                                WHERE code = '{code}' 
+                                ORDER BY code"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")
         table.Load(reader)
         connection.Close()
-        Return table
+        Return table.Rows.Count > 0
     End Function
 
     Public Function getUsersCode(code As String) As DataTable
@@ -366,7 +369,7 @@ Public Class EntityUser
                                 (Select count(distinct U.code) 
                                 from user U 
                                 inner join history H on H.renter = U.code 
-                                WHERE (DATE(H.date) < (str_to_date('{currentDay.Year},{currentDay.Month},{currentDay.Day}', '%Y,%m,%d') - 120)))"
+                                WHERE (DATE(H.dateReturned) < (str_to_date('{currentDay.Year},{currentDay.Month},{currentDay.Day}', '%Y,%m,%d') - 120)))"
         connection.Open()
         Dim reader = command.ExecuteReader()
         Dim table As New DataTable("users")

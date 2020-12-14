@@ -149,11 +149,14 @@
   "TBPhoneFill": "Phone number",
   "TBBalanceFill": "Balance",
   "CheckAllEquipmentShow": "Display rental equipment",
+  "MsgNoUserSelected": "No user selected for the rent",
   "Submit": "Submit",
   "MsgReturnedTitle": "Returning equipments",
   "MsgReturned": "The return has been registered.\nHave a good day!",
   "MsgPromptReturn1": "Out of ",
   "MsgPromptReturn2": " how much was given?",
   "MsgChangeComment": "Do you have changes to\nthe notes of ",
-  "labSetAsAvailable": "Set available?"
+  "labSetAsAvailable": "Set available?",
+  "SameMatriculaTitle": "Identical Matricula.",
+  "SameMatricula": "Please check the matricula number.\nIt seams to be used by another user."
 }
