@@ -99,7 +99,6 @@ D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\Techno
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipmentAdd.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCNotif.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -161,3 +160,14 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ChooseUser.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
+D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources

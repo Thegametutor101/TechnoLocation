@@ -46,6 +46,9 @@ Public Class MainForm
         labAccount.TextAlignment = ContentAlignment.MiddleLeft
         labDisconnect.TextAlignment = ContentAlignment.MiddleCenter
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
+        labPersonConnected.Text = "Bonjour, Allo"
+        labPersonConnected.Refresh()
+        Me.Refresh()
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
@@ -252,9 +255,10 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
+        Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
         Dim json = Lang.getInstance().getLang()
         labAccount.Text = json("MainlabAccount")
-        labPersonConnected.Text = json("MainlabPersonConnected")
+        labPersonConnected.Text = json("MainlabPersonConnected") + data.Item("firstName")
         btHome.Text = json("MainbtHome")
         btAlert.Text = json("MainbtAlert")
         btRent.Text = json("MainbtRent")
