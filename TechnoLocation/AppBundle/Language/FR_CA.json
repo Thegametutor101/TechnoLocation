@@ -137,5 +137,10 @@
   "RentalDetailsLabLateFee": "Frais de retard",
   "RentalDetailsLabEquipmentList": "Liste des équipements",
   "MsgReturnItemDeposit1": "Un dépot de ",
-  "MsgReturnItemDeposit2": " à été donné pour " 
+  "MsgReturnItemDeposit2": " à été donné pour ",
+  "MsgCegepDette1": "Le Cégep doit redonner ", 
+  "MsgCegepDette2": " à ", 
+  "MsgStudentDette1": " doit redonner ", 
+  "MsgStudentDette2": " au Cégep.", 
+  "MsgNoDette": "Aucune transaction n'est requise." 
 }

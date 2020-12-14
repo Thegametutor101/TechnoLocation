@@ -30,6 +30,7 @@ Partial Class UCRentalDetails
         Me.tbAuthorized = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labAuthorized = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btReturn = New Guna.UI2.WinForms.Guna2Button()
+        Me.btBack = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -61,7 +62,6 @@ Partial Class UCRentalDetails
         Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labName = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btBack = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
@@ -139,6 +139,21 @@ Partial Class UCRentalDetails
         Me.btReturn.Size = New System.Drawing.Size(202, 80)
         Me.btReturn.TabIndex = 25
         Me.btReturn.Text = "Retourner"
+        '
+        'btBack
+        '
+        Me.btBack.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btBack.CheckedState.Parent = Me.btBack
+        Me.btBack.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btBack.HoverState.Parent = Me.btBack
+        Me.btBack.Image = Global.TechnoLocation.My.Resources.Resources.baseline_navigate_before_black_18dp
+        Me.btBack.ImageRotate = 0!
+        Me.btBack.Location = New System.Drawing.Point(21, 21)
+        Me.btBack.Name = "btBack"
+        Me.btBack.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btBack.PressedState.Parent = Me.btBack
+        Me.btBack.Size = New System.Drawing.Size(64, 54)
+        Me.btBack.TabIndex = 24
         '
         'Guna2Panel2
         '
@@ -222,7 +237,6 @@ Partial Class UCRentalDetails
         Me.gridEquipments.EnableHeadersVisualStyles = False
         Me.gridEquipments.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridEquipments.Location = New System.Drawing.Point(0, 47)
-        Me.gridEquipments.MultiSelect = False
         Me.gridEquipments.Name = "gridEquipments"
         Me.gridEquipments.ReadOnly = True
         Me.gridEquipments.RowHeadersVisible = False
@@ -677,21 +691,6 @@ Partial Class UCRentalDetails
         Me.labName.Size = New System.Drawing.Size(43, 27)
         Me.labName.TabIndex = 57
         Me.labName.Text = "Nom"
-        '
-        'btBack
-        '
-        Me.btBack.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btBack.CheckedState.Parent = Me.btBack
-        Me.btBack.HoverState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btBack.HoverState.Parent = Me.btBack
-        Me.btBack.Image = Global.TechnoLocation.My.Resources.Resources.baseline_navigate_before_black_18dp
-        Me.btBack.ImageRotate = 0!
-        Me.btBack.Location = New System.Drawing.Point(21, 21)
-        Me.btBack.Name = "btBack"
-        Me.btBack.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btBack.PressedState.Parent = Me.btBack
-        Me.btBack.Size = New System.Drawing.Size(64, 54)
-        Me.btBack.TabIndex = 24
         '
         'UCRentalDetails
         '

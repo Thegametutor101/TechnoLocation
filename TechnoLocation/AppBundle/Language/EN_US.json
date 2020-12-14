@@ -137,5 +137,10 @@
   "RentalDetailsLabLateFee": "Return Fee",
   "RentalDetailsLabEquipmentList": "List of equipments",
   "MsgReturnItemDeposit1": "A deposit of ",
-  "MsgReturnItemDeposit2": " was given for "
+  "MsgReturnItemDeposit2": " was given for ",
+  "MsgCegepDette1": "The Cegep must return ",
+  "MsgCegepDette2": " to ",
+  "MsgStudentDette1": " must return ",
+  "MsgStudentDette2": " to the Cegep.",
+  "MsgNoDette": "No transaction is required for this exchange."
 }

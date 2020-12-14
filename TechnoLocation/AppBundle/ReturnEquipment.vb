@@ -6,7 +6,7 @@
 
     Dim WithEvents mainForm As New MainForm(0)
     Dim equipment As DataGridViewRow
-    Dim collection As DataGridViewRowCollection
+    Dim collection As DataGridViewSelectedRowCollection
     Dim isFull As Boolean
     Dim user As DataRow
     Dim balance As Double
@@ -28,7 +28,7 @@
         isFull = False
         getUser(rental)
     End Sub
-    Sub New(main As MainForm, rental As Integer, item As DataGridViewRowCollection)
+    Sub New(main As MainForm, rental As Integer, item As DataGridViewSelectedRowCollection)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
@@ -71,6 +71,8 @@
             panelItems.Controls.Add(Card)
             PanelCount += 1
         End If
+        labRequiredAction.TextAlignment = ContentAlignment.MiddleCenter
+        labRequiredAction.Size = Guna2Panel2.Size
         loadLanguages()
     End Sub
 
@@ -127,6 +129,10 @@
         Me.Close()
     End Sub
 
+    Private Sub btKitAdd_Click(sender As Object, e As EventArgs) Handles btKitAdd.Click
+
+    End Sub
+
     '__________________________________________________________________________________________________________
     'Other
     '__________________________________________________________________________________________________________
@@ -148,6 +154,7 @@
                     row.Cells(1).Value + "."
         End With
         card.Controls.Add(label)
+        adjustBalance(Replace(Replace(row.Cells(5).Value, "$ ", ""), ",", "."))
     End Sub
 
     Private Sub getUser(rental As Integer)
@@ -155,9 +162,27 @@
         balance = user.Item(3)
     End Sub
 
+    Private Sub adjustBalance(value As Double)
+        balance += value
+    End Sub
+
     Private Sub loadLanguages()
         Dim json = Lang.getInstance().getLang()
-        btKitAdd.Text = json("AddItem")
+        btKitAdd.Text = json("RentalDetailsbtReturn")
         btKitCancel.Text = json("CancelButton")
+        If balance > 0 Then
+            labRequiredAction.Text = json("MsgCegepDette1").ToString() +
+                                     Replace(("$ " + balance.ToString()), ".", ",") + vbNewLine +
+                                     json("MsgCegepDette2").ToString() +
+                                     user.Item(1) + ", " + user.Item(2)
+        ElseIf balance < 0 Then
+            labRequiredAction.Text = user.Item(1) + ", " + user.Item(2) +
+                                     json("MsgStudentDette1").ToString() +
+                                     Replace(Replace(("$ " + balance.ToString()), ".", ","), "-", "") + vbNewLine +
+                                     json("MsgStudentDette2").ToString()
+        Else
+            labRequiredAction.Text = json("MsgNoDette")
+        End If
     End Sub
+
 End Class

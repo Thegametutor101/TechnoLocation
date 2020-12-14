@@ -161,10 +161,10 @@ Partial Class ReturnEquipment
         '
         Me.Guna2Panel2.Controls.Add(Me.labRequiredAction)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 473)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 435)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(495, 45)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(495, 83)
         Me.Guna2Panel2.TabIndex = 16
         '
         'panelItems
@@ -175,18 +175,18 @@ Partial Class ReturnEquipment
         Me.panelItems.Location = New System.Drawing.Point(0, 55)
         Me.panelItems.Name = "panelItems"
         Me.panelItems.Padding = New System.Windows.Forms.Padding(10)
-        Me.panelItems.Size = New System.Drawing.Size(495, 418)
+        Me.panelItems.Size = New System.Drawing.Size(495, 380)
         Me.panelItems.TabIndex = 17
         Me.panelItems.WrapContents = False
         '
         'labRequiredAction
         '
         Me.labRequiredAction.AutoSize = False
-        Me.labRequiredAction.BackColor = System.Drawing.Color.Transparent
+        Me.labRequiredAction.BackColor = System.Drawing.Color.White
         Me.labRequiredAction.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labRequiredAction.Location = New System.Drawing.Point(0, 0)
         Me.labRequiredAction.Name = "labRequiredAction"
-        Me.labRequiredAction.Size = New System.Drawing.Size(495, 45)
+        Me.labRequiredAction.Size = New System.Drawing.Size(437, 83)
         Me.labRequiredAction.TabIndex = 0
         Me.labRequiredAction.Text = "Guna2HtmlLabel1"
         Me.labRequiredAction.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter

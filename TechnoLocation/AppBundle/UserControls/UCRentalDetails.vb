@@ -59,7 +59,7 @@
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        Dim returnEquipment = New ReturnEquipment(mainForm, rental, gridEquipments.Rows)
+        Dim returnEquipment = New ReturnEquipment(mainForm, rental, gridEquipments.SelectedRows)
         returnEquipment.ShowDialog()
     End Sub
 
