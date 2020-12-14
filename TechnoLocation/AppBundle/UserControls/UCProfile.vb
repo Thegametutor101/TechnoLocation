@@ -80,26 +80,26 @@ Public Class UCProfile
                             'submit(password, firstName, lastName, email, phone1, phone2)
                             'ElseIf checkPassword.Checked And String.IsNullOrEmpty(password) Then
                             Dim title As String = Lang.getInstance().getLang()("MsgWarning")
-                                Dim message As String = Lang.getInstance().getLang()("MsgSubmitNoPassword")
-                                If MessageBox.Show(message,
+                            Dim message As String = Lang.getInstance().getLang()("MsgSubmitNoPassword")
+                            If MessageBox.Show(message,
                                                title,
                                                MessageBoxButtons.YesNo,
                                                MessageBoxIcon.Warning) = DialogResult.Yes Then
                                 '           submit(password, firstName, lastName, email, phone1, phone2)
                             End If
-                            Else
+                        Else
                             '      submit(password, firstName, lastName, email, phone1, phone2)
                         End If
-                        Else
+                    Else
                         '    tbPhone2.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
                     End If
-                    Else
+                Else
                     '   tbPhone1.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
                 End If
-                Else
+            Else
                 '  tbEmail.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
             End If
-            Else
+        Else
             ' tbLastName.BorderColor = Color.FromArgb(0.8, 224, 70, 70)
         End If
         'Else

@@ -67,23 +67,25 @@ Public Class ModelRent
                                                             '{deposit}',
                                                             '{comments}')"
             connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la connexion.")
         End Try
     End Function
 
-    Public Function delRent(code As Integer)
+    Public Function removeRental(code As Integer, equipment As Integer)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"Delete from rent where code = '{code}'"
+            command.CommandText = $"DELETE FROM rent 
+                                    WHERE code = '{code}' AND
+                                        equipment = '{equipment}'"
             connection.Open()
-            Dim reader = command.ExecuteReader()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
             MessageBox.Show("Une erreur s'est produite lors de la connexion.")

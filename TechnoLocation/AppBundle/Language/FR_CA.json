@@ -144,9 +144,16 @@
   "RentalDetailsLabEquipmentList": "Liste des équipements",
   "MsgReturnItemDeposit1": "Un dépot de ",
   "MsgReturnItemDeposit2": " à été donné pour ",
-  "MsgCegepDette1": "Le Cégep doit redonner ", 
-  "MsgCegepDette2": " à ", 
-  "MsgStudentDette1": " doit redonner ", 
-  "MsgStudentDette2": " au Cégep.", 
-  "MsgNoDette": "Aucune transaction n'est requise." 
+  "MsgCegepDette1": "Le Cégep doit redonner ",
+  "MsgCegepDette2": " à ",
+  "MsgStudentDette1": " doit redonner ",
+  "MsgStudentDette2": " au Cégep.",
+  "MsgNoDette": "Aucune transaction n'est requise.",
+  "Submit": "Soumettre",
+  "MsgReturnedTitle": "Retour d'équipements",
+  "MsgReturned": "Le retour à été enregistré.\nBonne Journée!",
+  "MsgPromptReturn1": "Sur ",
+  "MsgPromptReturn2": " combien à été donné?",
+  "MsgChangeComment": "Avez-vous un changement à\napporter aux commentaires de ",
+  "labSetAsAvailable": "Mettre disponible?" 
 }

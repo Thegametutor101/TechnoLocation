@@ -32,7 +32,14 @@
     'Methods
     '__________________________________________________________________________________________________________
 
-
+    Private Sub checkAll_CheckedChanged(sender As Object, e As EventArgs) Handles checkAll.CheckedChanged
+        If checkAll.Checked Then
+            gridEquipments.SelectAll()
+        Else
+            gridEquipments.ClearSelection()
+            gridEquipments.Rows(0).Selected = True
+        End If
+    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions

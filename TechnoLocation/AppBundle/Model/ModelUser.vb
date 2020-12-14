@@ -224,4 +224,40 @@ Public Class ModelUser
         End Try
     End Function
 
+    Public Function updateUserBalance(code As Integer, value As Double)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"UPDATE user U
+                                    SET U.balance = {value} 
+                                    WHERE U.code='{code}'"
+            connection.Open()
+            command.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("erreur lors de la modification du solde de l'utilisateur.")
+        End Try
+    End Function
+
+    Public Function clearUserBalance(code As Integer)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"UPDATE user U
+                                    SET U.balance = 0 
+                                    WHERE U.code='{code}'"
+            connection.Open()
+            command.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("erreur lors de la modification du solde de l'utilisateur.")
+        End Try
+    End Function
+
 End Class
