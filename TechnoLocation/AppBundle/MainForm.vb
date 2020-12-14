@@ -250,10 +250,10 @@ Public Class MainForm
     '__________________________________________________________________________________________________________
 
     Public Sub loadLanguage()
-        'Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
+        Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
         Dim json = Lang.getInstance().getLang()
         labAccount.Text = json("MainlabAccount")
-        'labPersonConnected.Text = json("MainlabPersonConnected") + data.Item("firstName")
+        labPersonConnected.Text = json("MainlabPersonConnected") + Data.Item("firstName")
         btHome.Text = json("MainbtHome")
         btAlert.Text = json("MainbtAlert")
         btRent.Text = json("MainbtRent")
@@ -379,6 +379,7 @@ Public Class MainForm
                 labSide6.Visible = True
         End Select
     End Sub
+
 
     Public Function getLabSide2()
         Return labSide2
