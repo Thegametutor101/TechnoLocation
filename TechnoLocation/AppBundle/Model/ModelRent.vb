@@ -39,7 +39,8 @@ Public Class ModelRent
         End Try
     End Function
 
-    Public Function addRent(renter As Integer,
+    Public Function addRent(code As Integer,
+                            renter As Integer,
                             lender As Integer,
                             equipment As Integer,
                             rentDate As DateTime,
@@ -52,20 +53,14 @@ Public Class ModelRent
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into rent(renter,
-                                                     lender,
-                                                     equipment,
-                                                     rentDate,
-                                                     returnDate,
-                                                     deposit,
-                                                     comments) 
-                                    values ('{renter}',
-                                           '{lender}',
-                                           '{equipment}',
-                                           '{rentDate}',
-                                           '{returnDate}',
-                                           '{deposit}',
-                                           '{comments}')"
+            command.CommandText = $"insert into rent values ('{code}',
+                                                             '{renter}',
+                                                             '{lender}',
+                                                             '{equipment}',
+                                                             '{rentDate}',
+                                                             '{returnDate}',
+                                                             '{deposit}',
+                                                             '{comments}')"
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()

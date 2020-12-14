@@ -149,6 +149,7 @@
   "MsgStudentDette1": " doit redonner ",
   "MsgStudentDette2": " au Cégep.",
   "MsgNoDette": "Aucune transaction n'est requise.",
+  "MsgRentAddSucces": "Le prêt a été effectuer correctement",
   "Submit": "Soumettre",
   "MsgReturnedTitle": "Retour d'équipements",
   "MsgReturned": "Le retour à été enregistré.\nBonne Journée!",

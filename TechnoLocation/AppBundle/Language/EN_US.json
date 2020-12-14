@@ -158,5 +158,6 @@
   "MsgChangeComment": "Do you have changes to\nthe notes of ",
   "labSetAsAvailable": "Set available?",
   "SameMatriculaTitle": "Identical Matricula.",
-  "SameMatricula": "Please check the matricula number.\nIt seams to be used by another user."
+  "SameMatricula": "Please check the matricula number.\nIt seams to be used by another user.",
+  "MsgRentAddSucces": "The loan was made correctly"
 }
