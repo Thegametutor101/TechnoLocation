@@ -169,3 +169,4 @@ C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocati
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources

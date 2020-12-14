@@ -52,26 +52,21 @@ Public Class ModelRent
         Return (code + 1)
     End Function
 
-    Public Function addRent(renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
+    Public Function addRent(code As Integer, renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = $"insert into rent(renter,
-                                                     lender,
-                                                     equipment,
-                                                     rentDate,
-                                                     returnDate,
-                                                     deposit,
-                                                     comments) values ('{renter}',
-                                                                       '{lender}',
-                                                                       '{equipment}',
-                                                                       '{rentDate}',
-                                                                       '{returnDate}',
-                                                                       '{deposit}',
-                                                                       '{comments}')"
+            command.CommandText = $"insert into rent values ('{code}',
+                                                             '{renter}',
+                                                             '{lender}',
+                                                             '{equipment}',
+                                                             '{rentDate}',
+                                                             '{returnDate}',
+                                                             '{deposit}',
+                                                             '{comments}')"
             connection.Open()
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()

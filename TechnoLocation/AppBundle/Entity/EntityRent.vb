@@ -411,4 +411,19 @@ Public Class EntityRent
         connection.Close()
         Return table
     End Function
+
+    Public Function getLastIDRent() As Integer
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+        Dim command As New MySqlCommand
+        command.Connection = connection
+        command.CommandText = $"Select max(code) from rent"
+        connection.Open()
+        Dim reader = command.ExecuteReader()
+        Dim table As New DataTable("rents")
+        table.Load(reader)
+        connection.Close()
+        Return table.Rows(0).ItemArray(0)
+    End Function
 End Class

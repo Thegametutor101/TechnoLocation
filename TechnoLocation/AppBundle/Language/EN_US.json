@@ -149,5 +149,6 @@
   "TBPhoneFill": "Phone number",
   "TBBalanceFill": "Balance",
   "CheckAllEquipmentShow": "Display rental equipment",
-  "MsgNoUserSelected": "No user selected for the rent"
+  "MsgNoUserSelected": "No user selected for the rent",
+  "MsgRentAddSucces": "The loan was made correctly"
 }

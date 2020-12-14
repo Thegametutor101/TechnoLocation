@@ -153,7 +153,7 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
     'Validation Functions
     '__________________________________________________________________________________________________________
-    Private Sub checkEquipmentSelected() 'Il faut que je change sa vu qu'on a enlever le check available
+    Private Sub checkEquipmentSelected()
         Dim i As Integer
         Dim getMsg As Boolean = False
         If Not IsNothing(table) Then
@@ -178,10 +178,6 @@ Public Class UCRent
     End Sub
 
     Private Sub gridSelectedEquipment_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellEndEdit
-        Dim str As String
-        Dim strBegin As String
-        Dim strEnd As String
-
         If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([0-9]{0,4})([.,][0-9]{0,2})*$") Then
             Try
                 gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
@@ -263,8 +259,11 @@ Public Class UCRent
         End If
         If complete Then
             If MsgBox(Lang.getInstance().getLang()("MsgAddRent"), vbYesNo) = vbYes Then
+                Dim lastId As Integer = EntityRent.getInstance.getLastIDRent()
+                lastId += 1
                 For Each row As DataGridViewRow In gridSelectedEquipment.Rows
-                    ModelRent.getInstance().addRent(tbCodeRenter.Text,
+                    ModelRent.getInstance().addRent(lastId,
+                                                    tbCodeRenter.Text,
                                                     code,
                                                     row.Cells(0).Value,
                                                     dateStart.Value,
@@ -278,12 +277,16 @@ Public Class UCRent
                 For i As Integer = gridSelectedEquipment.Rows.Count - 1 To 0 Step -1
                     gridSelectedEquipment.Rows.RemoveAt(i)
                 Next
+                MsgBox(Lang.getInstance().getLang()("MsgRentAddSucces"), vbOKOnly)
             End If
         End If
     End Sub
 
     Private Sub btViewRentals_Click(sender As Object, e As EventArgs) Handles btViewRentals.Click
-
+        Dim iRentList As New UCRentList(mainForm)
+        iRentList.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(iRentList)
+        iRentList.BringToFront()
     End Sub
 
     '__________________________________________________________________________________________________________
