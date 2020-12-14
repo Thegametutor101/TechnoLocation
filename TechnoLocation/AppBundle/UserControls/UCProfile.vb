@@ -8,7 +8,7 @@ Public Class UCProfile
     '__________________________________________________________________________________________________________
 
     Dim WithEvents mainForm As New MainForm(0)
-    Dim data As DataRow = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
+    Dim data As DataRow
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
@@ -18,6 +18,7 @@ Public Class UCProfile
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
+        data = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
     End Sub
 
     '__________________________________________________________________________________________________________

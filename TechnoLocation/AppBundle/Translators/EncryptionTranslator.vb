@@ -55,7 +55,11 @@
                         If String.IsNullOrEmpty(table(pos)) Or table(pos) = vbNullChar Then
                             table(pos) = characterList(i)
                             placed = True
-                            Return (Math.Ceiling((CInt(arrayCharacters.Item(passChar)) + pos + 13) * 17 / 5)).ToString()
+                            Try
+                                Return (Math.Ceiling((CInt(arrayCharacters.Item(passChar)) + pos + 13) * 17 / 5)).ToString()
+                            Catch ex As Exception
+                                Return (Math.Ceiling((CInt(Replace(arrayCharacters.Item(passChar), ".", ",")) + pos + 13) * 17 / 5)).ToString()
+                            End Try
                         End If
                     End While
                 End If
