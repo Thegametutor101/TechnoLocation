@@ -117,5 +117,11 @@
   "MsgNoDateEndRent": "Vous devez choisir une date de fin pour sélectionner un équipement.",
   "MsgEquipmentDateChange": "Un ou plusieurs équipements sélectionné ne sont\npas disponibles pour les nouvelles dates choisies.",
   "MsgNoSearchResults": "Aucun résultat ne correspond à votre recherche.",
-  "UserLabCheckExtension": "Cochez pour ajouter extension"
+  "UserLabCheckExtension": "Cochez pour ajouter extension",
+  "TBCodeFill": "Matricule",
+  "TBNameFill": "Nom",
+  "TBEmailFill": "Email",
+  "TBPhoneFill": "Numéro de téléphone",
+  "TBBalanceFill": "Balance",
+  "CheckAllEquipmentShow": "Afficher les équipement louer",
 }

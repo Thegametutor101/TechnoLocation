@@ -265,7 +265,7 @@ Public Class EntityRent
         End If
         Dim command As New MySqlCommand
         command.Connection = connection
-        command.CommandText = $"Select * from rent R 
+        command.CommandText = $"Select equipment from rent R 
                                 where (rentDate between '{dateBegin}' and '{dateEnd}') and 
                                 (returnDate between '{dateBegin}' and '{dateEnd}') 
                                 order by R.code"

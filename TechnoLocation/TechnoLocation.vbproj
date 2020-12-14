@@ -135,6 +135,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBundle\ChooseUser.Designer.vb">
+      <DependentUpon>ChooseUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\ChooseUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppBundle\Controllers\BarCodes.vb" />
     <Compile Include="AppBundle\Controllers\LoginController.vb" />
     <Compile Include="AppBundle\Controllers\TechnoLocationCustomCalendar.vb">
@@ -270,6 +276,9 @@
     <EmbeddedResource Include="AppBundle\AddKit.resx">
       <DependentUpon>AddKit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\ChooseUser.resx">
+      <DependentUpon>ChooseUser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\Connection.resx">
       <DependentUpon>Connection.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +354,7 @@
     <None Include="Resources\baseline_add_light_main_18dp.png" />
     <None Include="Resources\baseline_add_main_18dp.png" />
     <None Include="Resources\baseline_add_white_18dp.png" />
+    <None Include="Resources\baseline_person_black_18dp.png" />
     <Content Include="Small_logo_departement_informatique.ico" />
   </ItemGroup>
   <ItemGroup>

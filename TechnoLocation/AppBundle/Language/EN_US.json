@@ -117,5 +117,11 @@
   "MsgNoDateEndRent": "You must choose an end date to select a device.",
   "MsgEquipmentDateChange": "One or more equipments you had previously selected\nare not available for the new dates you have chosen.",
   "MsgNoSearchResults": "There are no results for your current search request.",
-  "UserLabCheckExtension": "Check to add extension"
+  "UserLabCheckExtension": "Check to add extension",
+  "TBCodeFill": "Matricula",
+  "TBNameFill": "Name",
+  "TBEmailFill": "Email",
+  "TBPhoneFill": "Phone number",
+  "TBBalanceFill": "Balance",
+  "CheckAllEquipmentShow": "Display rental equipment",
 }

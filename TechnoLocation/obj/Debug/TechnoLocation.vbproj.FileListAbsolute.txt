@@ -8,7 +8,6 @@ C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocati
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCDashboard.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCEquipment.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRent.resources
-C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRestriction.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCReturn.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCHistory.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUser.resources
@@ -160,3 +159,8 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
+C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
