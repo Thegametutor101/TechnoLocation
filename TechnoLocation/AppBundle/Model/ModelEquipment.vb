@@ -34,7 +34,7 @@ Public Class ModelEquipment
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de l'ajout.")
+            MessageBox.Show($"Échec à la mise a jour de l'équipement {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -52,7 +52,7 @@ Public Class ModelEquipment
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show($"Échec au changement de disponibilité de l'équipement {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -71,28 +71,9 @@ Public Class ModelEquipment
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show($"Échec au changement de disponibilité et commentaires de l'équipement {code}.{Environment.NewLine}" +
+                            ex.Message)
         End Try
-    End Function
-
-    Public Function nextId() As Integer
-        Dim code As Integer
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = "select max(code) from equipment"
-            connection.Open()
-            Dim reader = command.ExecuteReader()
-            reader.Read()
-            code = reader(0)
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-        Return (code + 1)
     End Function
 
     Public Function addEquipment(name As String,
@@ -120,7 +101,7 @@ Public Class ModelEquipment
             connection.Close()
             Return True
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show($"Échec à l'ajout de l'équipement.{Environment.NewLine}" + ex.Message)
             Return False
         End Try
     End Function
@@ -134,10 +115,10 @@ Public Class ModelEquipment
             command.Connection = connection
             command.CommandText = $"Delete from equipment where code = '{code}'"
             connection.Open()
-            Dim reader = command.ExecuteReader()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à la suppression d'équipement {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 

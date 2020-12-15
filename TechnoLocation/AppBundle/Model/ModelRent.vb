@@ -10,7 +10,14 @@ Public Class ModelRent
         Return instance
     End Function
 
-    Public Function updateRent(code As Integer, renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
+    Public Function updateRent(code As Integer,
+                               renter As Integer,
+                               lender As Integer,
+                               equipment As Integer,
+                               rentDate As DateTime,
+                               returnDate As DateTime,
+                               deposit As Double,
+                               comments As String)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
@@ -25,58 +32,40 @@ Public Class ModelRent
                                                     deposit='{deposit}',
                                                     comments='{comments}'"
             connection.Open()
-            Dim add As Integer = command.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à la mise à jour de l'emprunt {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
-    Public Function nextId() As Integer
-        Dim code As Integer
+    Public Function addRent(code As Integer,
+                            renter As Integer,
+                            lender As Integer,
+                            equipment As Integer,
+                            rentDate As DateTime,
+                            returnDate As DateTime,
+                            deposit As Double,
+                            comments As String)
         Try
             If connection.State = ConnectionState.Open Then
                 connection.Close()
             End If
             Dim command As New MySqlCommand
             command.Connection = connection
-            command.CommandText = "select max(code) from rent"
-            connection.Open()
-            Dim reader = command.ExecuteReader()
-            reader.Read()
-            code = reader(0)
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-        Return (code + 1)
-    End Function
-
-    Public Function addRent(renter As Integer, lender As Integer, equipment As Integer, rentDate As DateTime, returnDate As DateTime, deposit As Double, comments As String)
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = $"insert into rent(renter,
-                                                     lender,
-                                                     equipment,
-                                                     rentDate,
-                                                     returnDate,
-                                                     deposit,
-                                                     comments) values ('{renter}',
-                                                                       '{lender}',
-                                                                       '{equipment}',
-                                                                       '{rentDate}',
-                                                                       '{returnDate}',
-                                                                       '{deposit}',
-                                                                       '{comments}')"
+            command.CommandText = $"insert into rent values ('{code}',
+                                                             '{renter}',
+                                                             '{lender}',
+                                                             '{equipment}',
+                                                             '{rentDate}',
+                                                             '{returnDate}',
+                                                             '{deposit}',
+                                                             '{comments}')"
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à l'ajout de l'emprunt.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -94,7 +83,7 @@ Public Class ModelRent
             command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à la supression de l'emprunt {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 

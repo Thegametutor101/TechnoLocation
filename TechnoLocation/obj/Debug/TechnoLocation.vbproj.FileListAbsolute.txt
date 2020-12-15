@@ -226,3 +226,6 @@ C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\Techno
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.exe
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.xml
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.pdb
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistory.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistoryOptions.resources

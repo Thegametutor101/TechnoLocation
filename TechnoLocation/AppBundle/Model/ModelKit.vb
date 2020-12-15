@@ -22,28 +22,8 @@ Public Class ModelKit
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à la mise a jour de l'ensemble {code}.{Environment.NewLine}" + ex.Message)
         End Try
-    End Function
-
-    Public Function nextId() As Integer
-        Dim code As Integer
-        Try
-            If connection.State = ConnectionState.Open Then
-                connection.Close()
-            End If
-            Dim command As New MySqlCommand
-            command.Connection = connection
-            command.CommandText = "select max(code) from kit"
-            connection.Open()
-            Dim reader = command.ExecuteReader()
-            reader.Read()
-            code = reader(0)
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
-        End Try
-        Return (code + 1)
     End Function
 
     Public Function addKit(name As String)
@@ -58,7 +38,7 @@ Public Class ModelKit
             Dim add As Integer = command.ExecuteNonQuery()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show($"Échec à l'ajout de l'ensemble {name}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -74,7 +54,7 @@ Public Class ModelKit
             Dim reader = command.ExecuteReader()
             connection.Close()
         Catch ex As Exception
-            MessageBox.Show("Une erreur s'est produite lors de la connexion.")
+            MessageBox.Show($"Échec à la supression de l'ensemble {code}.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 

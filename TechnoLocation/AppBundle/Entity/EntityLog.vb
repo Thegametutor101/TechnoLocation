@@ -12,33 +12,22 @@ Public Class EntityLog
     End Function
 
     Public Function getLog() As DataTable
-        If connection.State = ConnectionState.Open Then
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select * from log L order by L.code"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim table As New DataTable("logs")
+            table.Load(reader)
             connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from log L order by L.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("logs")
-        table.Load(reader)
-        connection.Close()
-        Return table
-    End Function
-
-    Public Function getLogCode(code As Integer) As DataTable
-        If connection.State = ConnectionState.Open Then
-            connection.Close()
-        End If
-        Dim command As New MySqlCommand
-        command.Connection = connection
-        command.CommandText = $"Select * from log L where code = '{code}'order by L.code"
-        connection.Open()
-        Dim reader = command.ExecuteReader()
-        Dim table As New DataTable("logs")
-        table.Load(reader)
-        connection.Close()
-        Return table
+            Return table
+        Catch ex As Exception
+            MessageBox.Show($"Impossible de récupérer les logs.{Environment.NewLine}" + ex.Message)
+        End Try
     End Function
 
 End Class

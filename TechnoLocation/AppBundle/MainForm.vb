@@ -216,12 +216,7 @@ Public Class MainForm
     End Sub
 
     Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
-        Dim iHistory As New UCHistory()
-        iHistory.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iHistory)
-        iHistory.BringToFront()
-        selectOptionButton(6)
+        loadHistory()
     End Sub
 
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
@@ -252,10 +247,14 @@ Public Class MainForm
     Public Sub loadLanguage()
         Dim json = Lang.getInstance().getLang()
         Try
+
             Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
-            labPersonConnected.Text = json("MainlabPersonConnected").toString() + data.Item("firstName")
+            labPersonConnected.Text = json("MainlabPersonConnected").ToString() + data.Item("firstName")
+
         Catch ex As Exception
+
             labPersonConnected.Text = json("MainlabPersonConnected")
+
         End Try
         labAccount.Text = json("MainlabAccount")
         btHome.Text = json("MainbtHome")
@@ -358,6 +357,9 @@ Public Class MainForm
     End Sub
 
 
+
+
+
     Public Sub selectOptionButton(number As Integer)
         labSide0.Visible = False
         labSide1.Visible = False
@@ -385,6 +387,9 @@ Public Class MainForm
     End Sub
 
 
+
+
+
     Public Function getLabSide2()
         Return labSide2
     End Function
@@ -396,6 +401,15 @@ Public Class MainForm
         panelMain.Controls.Add(iReturn)
         iReturn.BringToFront()
         selectOptionButton(3)
+    End Sub
+
+    Friend Sub loadHistory()
+        Dim iHistory As New UCHistory(Me)
+        iHistory.Dock = DockStyle.Fill
+        panelMain.Controls.Clear()
+        panelMain.Controls.Add(iHistory)
+        iHistory.BringToFront()
+        selectOptionButton(6)
     End Sub
 
 End Class
