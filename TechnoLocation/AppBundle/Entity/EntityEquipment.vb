@@ -157,7 +157,8 @@ Public Class EntityEquipment
                                         CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
                                     FROM equipment E
                                     INNER JOIN kit K on K.code = E.kit
-                                    WHERE (E.name LIKE '%{value}%' OR
+                                    WHERE (E.code LIKE '%{value}%' OR
+                                        E.name LIKE '%{value}%' OR
                                         K.name LIKE '%{value}%' OR
                                         state LIKE '%{value}%' OR
                                         E.comments LIKE '%{value}%') AND
@@ -175,7 +176,8 @@ Public Class EntityEquipment
                                         CAST(REPLACE(CONCAT('$ ', FORMAT(E.deposit, 2)), '.', ',') AS CHAR) AS deposit
                                     FROM equipment E
                                     INNER JOIN kit K on K.code = E.kit
-                                    WHERE (E.name LIKE '%{value}%' OR
+                                    WHERE (E.code LIKE '%{value}%' OR
+                                        E.name LIKE '%{value}%' OR
                                         K.name LIKE '%{value}%' OR
                                         state LIKE '%{value}%' OR
                                         comments LIKE '%{value}%')

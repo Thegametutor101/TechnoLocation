@@ -124,6 +124,7 @@ Public Class EntityRent
                                             from user U1 
                                             where U1.code = R.lender 
                                         )) LIKE upper('%{value}%') OR
+                                        R.code LIKE '%{value}%' OR
                                         DATE_FORMAT(R.rentDate, '%d %M %Y') LIKE upper('%{value}%') OR
                                         DATE_FORMAT(R.returnDate, '%d %M %Y') LIKE upper('%{value}%')
                                 GROUP BY R.code"
@@ -162,6 +163,7 @@ Public Class EntityRent
                                             from user U1 
                                             where U1.code = R.lender 
                                         )) LIKE upper('%{value}%') OR
+                                        R.code LIKE '%{value}%' OR
                                         DATE_FORMAT(R.rentDate, '%d %M %Y') LIKE upper('%{value}%') OR
                                         DATE_FORMAT(R.returnDate, '%d %M %Y') LIKE upper('%{value}%')
                                 GROUP BY R.code"

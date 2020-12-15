@@ -110,7 +110,8 @@ Public Class EntityHistory
                                             WHEN H.broken = 0 THEN 'Aucun défault'
                                             WHEN H.broken = 1 THEN 'Défectueux'
                                         END) LIKE upper('%{value}%') OR
-                                        upper(H.comments) LIKE upper('%{value}%')
+                                        upper(H.comments) LIKE upper('%{value}%')OR
+                                        H.code LIKE '%{value}%'
                                     ORDER BY H.code"
             Else
                 command.CommandText = $"SELECT H.code,
@@ -145,7 +146,8 @@ Public Class EntityHistory
                                             WHEN H.broken = 0 THEN 'No issues'
                                             WHEN H.broken = 1 THEN 'Broken'
                                         END) LIKE upper('%{value}%') OR
-                                        upper(H.comments) LIKE upper('%{value}%')
+                                        upper(H.comments) LIKE upper('%{value}%') OR
+                                        H.code LIKE '%{value}%'
                                     ORDER BY H.code"
             End If
             connection.Open()
