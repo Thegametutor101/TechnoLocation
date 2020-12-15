@@ -137,8 +137,7 @@ Public Class UCEquipment
         tbSearch.FocusedState.BorderColor = blue
         tbSearch.Text = tbSearch.Text.Trim()
         If tbSearch.Text.Length > 0 Then
-            gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearch(tbSearch.Text,
-                                                                                           checkAvailableEquip.Checked)
+            gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearch(tbSearch.Text, checkAvailableEquip.Checked)
             If gridEquipment.Rows.Count = 0 Then
                 tbSearch.BorderColor = red
                 tbSearch.FocusedState.BorderColor = red

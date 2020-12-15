@@ -72,10 +72,10 @@ Public Class UCReturn
 
     Private Sub tbSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles tbSearch.KeyUp
         If e.KeyCode = Keys.V Then
-            If tbSearch.Text.Length = 8 Then
-                tbSearch.Text = codesBarres.isBarcodeEquip(tbSearch.Text)
-            Else
+            If tbSearch.Text.Length > 8 Then
                 tbSearch.Text = codesBarres.isBarcodeUser(tbSearch.Text)
+            Else
+                tbSearch.Text = codesBarres.isBarcodeEquip(tbSearch.Text)
             End If
         End If
     End Sub
