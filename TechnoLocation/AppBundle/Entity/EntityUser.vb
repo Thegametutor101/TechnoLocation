@@ -317,7 +317,6 @@ Public Class EntityUser
             connection.Close()
             Return table.Rows.Item(0).Item(0)
         Catch ex As Exception
-            MessageBox.Show($"Échec au compte du nombre d'utilisateurs.{Environment.NewLine}" + ex.Message)
         End Try
     End Function
 
@@ -350,7 +349,7 @@ Public Class EntityUser
             Next
             Return count
         Catch ex As Exception
-            MessageBox.Show($"Échec au compte du nombre d'utilisateurs inactifs.{Environment.NewLine}" + ex.Message)
+
         End Try
     End Function
 

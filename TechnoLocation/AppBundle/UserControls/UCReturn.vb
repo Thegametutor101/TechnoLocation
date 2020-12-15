@@ -126,7 +126,7 @@ Public Class UCReturn
         gridReturn.Columns("equipmentAmount").Width = 100
         tbSearch.PlaceholderText = json("SearchPlaceholder")
         labLate.Text = json("ReturnLabLate")
-        btReturnAll.Text = json("ReturnbtReturnAll")
+        'btReturnAll.Text = json("ReturnbtReturnAll")
     End Sub
 
 

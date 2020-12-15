@@ -3,27 +3,23 @@
     Dim encryptionTranslator As New EncryptionTranslator
 
     Public Function login(inputCode As String, inputPassword As String) As Boolean
-        If inputCode = "admin" And (inputPassword = "" Or IsNothing(inputPassword)) Then
-            Return True
-        Else
-            Dim listCodes, listPasswords As New List(Of String)
-            Dim entityUser As EntityUser = EntityUser.getInstance()
-            For Each row As DataRow In entityUser.getUserAccounts().Rows
-                listCodes.Add(row.Item("code"))
-                listPasswords.Add(row.Item("password"))
-            Next row
-            If Not IsNothing(listCodes) Then
-                For Each code As String In listCodes
-                    If code = inputCode Then
-                        Dim encryptedPassword As String = encryptionTranslator.encrypt(inputPassword)
-                        If encryptedPassword = listPasswords(listCodes.IndexOf(code)) Then
-                            Return True
-                        Else
-                            MessageBox.Show("Identifiant ou mot de passe invalide", "Erreur", MessageBoxButtons.OK)
-                        End If
+        Dim listCodes, listPasswords As New List(Of String)
+        Dim entityUser As EntityUser = EntityUser.getInstance()
+        For Each row As DataRow In entityUser.getUserAccounts().Rows
+            listCodes.Add(row.Item("code"))
+            listPasswords.Add(row.Item("password"))
+        Next row
+        If Not IsNothing(listCodes) Then
+            For Each code As String In listCodes
+                If code = inputCode Then
+                    Dim encryptedPassword As String = encryptionTranslator.encrypt(inputPassword)
+                    If encryptedPassword = listPasswords(listCodes.IndexOf(code)) Then
+                        Return True
+                    Else
+                        MessageBox.Show("Identifiant ou mot de passe invalide", "Erreur", MessageBoxButtons.OK)
                     End If
-                Next code
-            End If
+                End If
+            Next code
         End If
         Return False
     End Function

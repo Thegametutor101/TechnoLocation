@@ -6,7 +6,7 @@
 
     Dim WithEvents mainForm As New MainForm(0)
     Dim topPanelBaseWidth As Integer
-    Dim table = EntityRent.getInstance().getLateRentals(mainForm.labLang.Text)
+    Dim table As DataTable
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -18,6 +18,7 @@
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
         topPanelBaseWidth = panelTotalUsers.Width
+        table = EntityRent.getInstance().getLateRentals(mainForm.labLang.Text)
         setValues()
     End Sub
 
