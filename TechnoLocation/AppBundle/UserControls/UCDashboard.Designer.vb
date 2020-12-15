@@ -22,13 +22,16 @@ Partial Class UCDashboard
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.panelUC = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelMiddle = New Guna.UI2.WinForms.Guna2Panel()
         Me.TechnoLocationCustomCalendar1 = New TechnoLocation.TechnoLocationCustomCalendar()
         Me.lab_late = New System.Windows.Forms.Label()
         Me.pbGraph = New System.Windows.Forms.PictureBox()
         Me.panelBottom = New Guna.UI2.WinForms.Guna2Panel()
-        Me.gridLate = New System.Windows.Forms.DataGridView()
+        Me.gridLate = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.panelTop = New Guna.UI2.WinForms.Guna2Panel()
         Me.panelDepositCount = New Guna.UI2.WinForms.Guna2Panel()
         Me.labDepositCount = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -129,13 +132,61 @@ Partial Class UCDashboard
         '
         'gridLate
         '
-        Me.gridLate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.gridLate.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.gridLate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.gridLate.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.gridLate.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.gridLate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.gridLate.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridLate.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.gridLate.ColumnHeadersHeight = 30
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridLate.DefaultCellStyle = DataGridViewCellStyle3
         Me.gridLate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridLate.EnableHeadersVisualStyles = False
+        Me.gridLate.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridLate.Location = New System.Drawing.Point(0, 0)
         Me.gridLate.Name = "gridLate"
-        Me.gridLate.RowHeadersWidth = 51
+        Me.gridLate.RowHeadersVisible = False
+        Me.gridLate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gridLate.Size = New System.Drawing.Size(947, 149)
-        Me.gridLate.TabIndex = 14
+        Me.gridLate.TabIndex = 0
+        Me.gridLate.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
+        Me.gridLate.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridLate.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.gridLate.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.gridLate.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.gridLate.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.gridLate.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.gridLate.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.gridLate.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridLate.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.gridLate.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.gridLate.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.gridLate.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.gridLate.ThemeStyle.HeaderStyle.Height = 30
+        Me.gridLate.ThemeStyle.ReadOnly = False
+        Me.gridLate.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridLate.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.gridLate.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.gridLate.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridLate.ThemeStyle.RowsStyle.Height = 22
+        Me.gridLate.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridLate.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'panelTop
         '
@@ -471,7 +522,6 @@ Partial Class UCDashboard
     Friend WithEvents panelUC As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelMiddle As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents panelBottom As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents gridLate As DataGridView
     Friend WithEvents lab_late As Label
     Friend WithEvents panelTop As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
@@ -498,4 +548,5 @@ Partial Class UCDashboard
     Friend WithEvents panelBetweenTop3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TechnoLocationCustomCalendar1 As TechnoLocationCustomCalendar
     Friend WithEvents pbGraph As PictureBox
+    Friend WithEvents gridLate As Guna.UI2.WinForms.Guna2DataGridView
 End Class
