@@ -99,8 +99,8 @@ Public Class UCEquipment
 
     Private Sub btPrintBarcodeEquip_Click(sender As Object, e As EventArgs) Handles btPrintBarcodeEquip.Click
         Dim listeEquip As New List(Of String)
-        For Each selectedItem As DataGridViewRow In gridEquipment.SelectedRows
-            listeEquip.Add(selectedItem.Cells(0).Value.ToString())
+        For Each Item As DataGridViewRow In gridEquipment.Rows
+            listeEquip.Add(Item.Cells(0).Value.ToString())
         Next
         codesBarres.mergeImages(listeEquip)
         codesBarres.PrintBCFromFile("merge")
