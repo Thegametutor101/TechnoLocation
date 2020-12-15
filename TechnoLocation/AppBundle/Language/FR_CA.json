@@ -159,5 +159,21 @@
   "labSetAsAvailable": "Mettre disponible?",
   "MsgNoUserSelected": "Aucun utilisateur choisies pour faire l'emprunt",
   "SameMatriculaTitle": "Matricule identique.",
-  "SameMatricula": "Vérifiez le champ matricule car il semble être\nutilisé par un autre utilisateur."
+  "SameMatricula": "Vérifiez le champ matricule car il semble être\nutilisé par un autre utilisateur.",
+  "HistoryCode": "Numéro",
+  "HistoryReturnDate": "Date retourné",
+  "HistoryRenterName": "Emprunté par",
+  "HistoryReceptorName": "Accepté par",
+  "HistoryState": "État du retour",
+  "HistoryComments": "Commentaires",
+  "PromptClearHistory1Selected": "Sélection seulement",
+  "PromptClearHistory1More": "Plus d'options",
+  "PromptClearHistory1Message": "Quels champs souhaitez-vous supprimer?",
+  "PromptClearHistory1SelectedConfirm1": "Êtes-vous sûr de vouloir supprimer ",
+  "PromptClearHistory1SelectedConfirm2": " enregistrements?\nCette action est irréversible.",
+  "PromptClearHistory2CheckedDeleteAll": "Souhaitez vous vraiment supprimer\nabsolument tous les enregistrements d'historique?\nCette action est irréversible.",
+  "PromptClearHistory2LabCheck": "Supprimer tous les enregistrements",
+  "PromptClearHistory2LabMessage": "Choisissez une date pour supprimer\ntous les enregistrements plus ancients.",
+  "PromptClearHistory2BeforeMessage1": "Souhaitez vous vraiment supprimer\ntous les enregistrements précédant le ",
+  "PromptClearHistory2BeforeMessage2": "?\nCette action est irréversible."
 }

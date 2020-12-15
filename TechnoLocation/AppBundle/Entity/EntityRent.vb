@@ -32,8 +32,8 @@ Public Class EntityRent
                                             where U1.code = R.lender 
                                         ) AS lenderName, 
                                         COUNT(R.equipment) as equipmentAmount,
-                                        DATE_FORMAT(R.rentDate, '%d %M %Y') as rentDate, 
-                                        DATE_FORMAT(R.returnDate, '%d %M %Y') as returnDate, 
+                                        DATE_FORMAT(R.rentDate, '%d %M %Y') AS rentDate, 
+                                        DATE_FORMAT(R.returnDate, '%d %M %Y') AS returnDate, 
                                         CAST(REPLACE(CONCAT('$ ', FORMAT(( 
                                             SELECT SUM(R1.deposit) 
                                             from rent R1 

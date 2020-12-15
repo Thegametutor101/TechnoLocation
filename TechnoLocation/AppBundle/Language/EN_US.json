@@ -159,5 +159,21 @@
   "labSetAsAvailable": "Set available?",
   "SameMatriculaTitle": "Identical Matricula.",
   "SameMatricula": "Please check the matricula number.\nIt seams to be used by another user.",
-  "MsgRentAddSucces": "The loan was made correctly"
+  "MsgRentAddSucces": "The loan was made correctly",
+  "HistoryCode": "Number",
+  "HistoryReturnDate": "Date returned",
+  "HistoryRenterName": "Rented by",
+  "HistoryReceptorName": "Accepted by",
+  "HistoryState": "State returned in",
+  "HistoryComments": "Notes",
+  "PromptClearHistory1Selected": "Selected only",
+  "PromptClearHistory1More": "More options",
+  "PromptClearHistory1Message": "Select a deletion option?",
+  "PromptClearHistory1SelectedConfirm1": "Are you sure you want to delete ",
+  "PromptClearHistory1SelectedConfirm2": " items?\nThis action is irreversible.",
+  "PromptClearHistory2CheckedDeleteAll": "Do you really want to delete all history data?\nThis action is irreversible.",
+  "PromptClearHistory2LabCheck": "Delete all data",
+  "PromptClearHistory2LabMessage": "Select a date to delete\nhistory older than said date.",
+  "PromptClearHistory2BeforeMessage1": "Do you really want to delete all\nhistory data from before ",
+  "PromptClearHistory2BeforeMessage2": "?\nThis action is irreversible."
 }

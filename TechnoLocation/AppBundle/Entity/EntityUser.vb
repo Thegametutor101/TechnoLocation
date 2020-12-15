@@ -117,7 +117,8 @@ Public Class EntityUser
                                         END AS job,
                                         CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
                                     from user U
-                                    WHERE upper(firstName) LIKE upper('%{value}%') OR
+                                    WHERE code LIKE '%{value}%' OR
+                                        upper(firstName) LIKE upper('%{value}%') OR
                                         upper(lastName) LIKE upper('%{value}%') OR
                                         upper(email) LIKE upper('%{value}%') OR
                                         (CASE

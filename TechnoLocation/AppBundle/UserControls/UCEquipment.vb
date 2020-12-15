@@ -74,11 +74,12 @@ Public Class UCEquipment
     End Sub
 
 
-    Private Sub checkSelectAllEquipment_CheckedChanged(sender As Object, e As EventArgs) Handles checkSelectAllEquipment.CheckedChanged
-        If gridEquipment.SelectedRows.Count = gridEquipment.Rows.Count Then
-            gridEquipment.ClearSelection()
-        Else
+    Private Sub checkAll_CheckedChanged(sender As Object, e As EventArgs) Handles checkAll.CheckedChanged
+        If checkAll.Checked Then
             gridEquipment.SelectAll()
+        Else
+            gridEquipment.ClearSelection()
+            gridEquipment.Rows(0).Selected = True
         End If
     End Sub
 

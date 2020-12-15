@@ -18,6 +18,7 @@ Public Class UCProfile
         InitializeComponent()
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
+        data = EntityUser.getInstance().getUsersCode(mainForm.code).Rows(0)
     End Sub
 
     '__________________________________________________________________________________________________________

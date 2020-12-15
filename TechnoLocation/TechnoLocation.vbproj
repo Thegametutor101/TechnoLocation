@@ -170,6 +170,18 @@
     <Compile Include="AppBundle\Model\ModelLog.vb" />
     <Compile Include="AppBundle\Model\ModelRent.vb" />
     <Compile Include="AppBundle\Model\ModelUser.vb" />
+    <Compile Include="AppBundle\PromptClearHistory.Designer.vb">
+      <DependentUpon>PromptClearHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\PromptClearHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppBundle\PromptClearHistoryOptions.Designer.vb">
+      <DependentUpon>PromptClearHistoryOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\PromptClearHistoryOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppBundle\PromptReturnAmount.Designer.vb">
       <DependentUpon>PromptReturnAmount.vb</DependentUpon>
     </Compile>
@@ -314,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\PromptClearHistory.resx">
+      <DependentUpon>PromptClearHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\PromptClearHistoryOptions.resx">
+      <DependentUpon>PromptClearHistoryOptions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\PromptReturnAmount.resx">
       <DependentUpon>PromptReturnAmount.vb</DependentUpon>

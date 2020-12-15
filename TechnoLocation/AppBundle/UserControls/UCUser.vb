@@ -50,6 +50,7 @@ Public Class UCUser
             gridUser.SelectAll()
         Else
             gridUser.ClearSelection()
+            gridUser.Rows(0).Selected = True
         End If
     End Sub
 
