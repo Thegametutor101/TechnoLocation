@@ -185,4 +185,5 @@
   "RentLabSuggestedDeposit": "Dépot suggéré",
   "RentLabRealDeposit": "Dépot réel",
   "MsgDeleteEquipmentRent": "Voulez-vous vraiment supprimer ces équipements de cette location?\nCette action est définitive et ne peut pas être annuler après."
+  "DashboardLabLate": "Emprunts en retard"
 }

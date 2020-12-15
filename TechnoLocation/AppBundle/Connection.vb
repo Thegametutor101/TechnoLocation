@@ -128,7 +128,6 @@ Public Class Connection
         labUsername.Text = json("ConnectionlabUsername")
         labPassword.Text = json("ConnectionlabPassword")
         tbUsername.PlaceholderText = json("ConnectiontbUsernamePlaceholder")
-        linklabPasswordForget.Text = json("ConnectionlabPasswordForget")
         btConnect.Text = json("ConnectionbtConnect")
     End Sub
 

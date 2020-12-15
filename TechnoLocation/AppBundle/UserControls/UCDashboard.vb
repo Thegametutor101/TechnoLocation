@@ -35,9 +35,8 @@
         labInactiveUserCount.TextAlignment = ContentAlignment.BottomCenter
         labDepositName.TextAlignment = ContentAlignment.MiddleCenter
         labDepositCount.TextAlignment = ContentAlignment.BottomCenter
-        loadLanguage()
         gridLate.DataSource = table
-
+        loadLanguage()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -102,6 +101,17 @@
         labTotalUserName.Text = json("DashboardlabTotalUserName")
         labInactiveUserName.Text = json("DashboardlabInactiveUserName")
         labDepositName.Text = json("DashboardlabDepositName")
+        gridLate.Columns("code").HeaderText = json("ReturnGridCode")
+        gridLate.Columns("renterName").HeaderText = json("ReturnGridRenter")
+        gridLate.Columns("lenderName").HeaderText = json("ReturnGridLender")
+        gridLate.Columns("equipmentAmount").HeaderText = json("ReturnGridEquipments")
+        gridLate.Columns("rentDate").HeaderText = json("ReturnGridRentDate")
+        gridLate.Columns("returnDate").HeaderText = json("ReturnGridReturnDate")
+        gridLate.Columns("depositAmount").HeaderText = json("ReturnGridDeposit")
+        gridLate.Columns("code").Width = 80
+        gridLate.Columns("depositAmount").Width = 90
+        gridLate.Columns("equipmentAmount").Width = 100
+        labLate.Text = json("DashboardLabLate")
     End Sub
 
     Public Sub resizeLabels()
@@ -120,4 +130,5 @@
             panelDepositCount.Size = New Size(topPanelBaseWidth, 160)
         End If
     End Sub
+
 End Class
