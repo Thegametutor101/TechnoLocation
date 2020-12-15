@@ -377,8 +377,4 @@ Public Class UCUserAdd
         End If
     End Sub
 
-
-
-
-
 End Class
