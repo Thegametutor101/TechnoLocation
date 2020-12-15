@@ -8,7 +8,7 @@
     Dim liste As New List(Of String)
     Dim listeInfos As New List(Of DataRow)
 
-    Dim table = EntityRent.getInstance().getRentals(mainForm.labLang.Text)
+    Dim table As DataTable
 
 
     '__________________________________________________________________________________________________________
@@ -21,6 +21,7 @@
 
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
+        table = EntityRent.getInstance().getRentalsForNotif()
     End Sub
 
 

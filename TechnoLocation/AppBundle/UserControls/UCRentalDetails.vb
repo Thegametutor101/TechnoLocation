@@ -41,6 +41,10 @@
         End If
     End Sub
 
+    Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
+        resizeInterface()
+    End Sub
+
     '__________________________________________________________________________________________________________
     'General Functions
     '__________________________________________________________________________________________________________
@@ -109,6 +113,10 @@
         labDepositAmount.Text = json("RentalDetailsLabDepositAmount")
         labLateFee.Text = json("RentalDetailsLabLateFee")
         LabEquipmentList.Text = json("RentalDetailsLabEquipmentList")
+    End Sub
+
+    Private Sub resizeInterface()
+
     End Sub
 
 End Class

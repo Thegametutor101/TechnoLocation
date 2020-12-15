@@ -82,6 +82,48 @@ Public Class EntityRent
         End Try
     End Function
 
+    Public Function getRentalsForNotif() As DataTable
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"Select R.code, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
+                                            from user U 
+                                            where U.code = R.renter 
+                                        ) AS renterName, 
+                                        ( 
+                                            SELECT initcap(CONCAT(U1.lastName, ', ', U1.firstName)) 
+                                            from user U1 
+                                            where U1.code = R.lender 
+                                        ) AS lenderName, 
+                                        COUNT(R.equipment) as equipmentAmount,
+                                        R.rentDate, 
+                                        R.returnDate, 
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(( 
+                                            SELECT SUM(R1.deposit) 
+                                            from rent R1 
+                                            where R1.code = R.code AND 
+                                                R1.renter = R.renter AND 
+                                                R1.lender = R.lender 
+                                            GROUP BY R1.code 
+                                        ), 2)), '.', ',') AS CHAR) AS depositAmount 
+                                from rent R 
+                                GROUP BY R.code"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim table As New DataTable("rentals")
+            table.Load(reader)
+            connection.Close()
+            Return table
+        Catch ex As Exception
+            MessageBox.Show($"Impossible de récupérer les emprunts.{Environment.NewLine}" + ex.Message)
+        End Try
+    End Function
+
     Public Function getRentalsBySearch(lang As String, value As String) As DataTable
         Try
             If connection.State = ConnectionState.Open Then
