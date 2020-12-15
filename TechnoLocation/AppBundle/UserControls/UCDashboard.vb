@@ -6,6 +6,7 @@
 
     Dim WithEvents mainForm As New MainForm(0)
     Dim topPanelBaseWidth As Integer
+    Dim table = EntityRent.getInstance().getLateRentals(mainForm.labLang.Text)
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -34,6 +35,8 @@
         labDepositName.TextAlignment = ContentAlignment.MiddleCenter
         labDepositCount.TextAlignment = ContentAlignment.BottomCenter
         loadLanguage()
+        gridLate.DataSource = table
+
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -116,5 +119,4 @@
             panelDepositCount.Size = New Size(topPanelBaseWidth, 160)
         End If
     End Sub
-
 End Class
