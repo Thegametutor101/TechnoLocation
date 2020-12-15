@@ -33,13 +33,13 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadLanguages()
         dateStart.Value = Date.Now
         dateEnd.Value = Date.Now.AddDays(1)
         dateBegin = dateStart.Value
         dateFinish = dateEnd.Value
         code = mainForm.code
         searchEquipment()
+        loadLanguages()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -121,9 +121,14 @@ Public Class UCRent
     Private Sub changeDepositReel()
         Dim deposit As Double = 0
         For Each row As DataGridViewRow In gridSelectedEquipment.Rows
-            deposit += row.Cells(6).Value
+            Try
+                deposit += Replace(row.Cells(6).Value, ",", ".")
+            Catch e As Exception
+                deposit += Replace(row.Cells(6).Value, ".", ",")
+            End Try
         Next
-        tbReelDeposit.Text = checkNumberMoney(deposit)
+
+            tbReelDeposit.Text = checkNumberMoney(deposit)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -159,13 +164,12 @@ Public Class UCRent
     End Sub
 
     Private Sub gridSelectedEquipment_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellEndEdit
-        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([\d])+(\.[\d]{1,2}|\,[\d]{1,2})*$") Then
+        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([\d])*(\.[\d]{0,2}|\,[\d]{0,2})*$") Then
+            changeDepositReel()
             Try
-                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
-                changeDepositReel()
-            Catch
                 gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ",", "."))
-                changeDepositReel()
+            Catch ex As Exception
+                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
             End Try
         Else
             gridSelectedEquipment.CurrentCell.Value = "$ 0,00"
@@ -226,13 +230,19 @@ Public Class UCRent
 
     Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click
         Dim complete As Boolean = True
-        If gridSelectedEquipment.Rows.Count < 1 Then
+        If code = tbCodeRenter.Text Then
             complete = False
             MsgBox(Lang.getInstance().getLang()("MsgNoEquipSelected"),
                    vbOKOnly,
                    Lang.getInstance().getLang()("MsgWarning"))
         End If
-        If tbCodeRenter.Text = "Matricule" Or tbCodeRenter.Text = "Matricula" And complete Then
+        If gridSelectedEquipment.Rows.Count < 1 And complete Then
+            complete = False
+            MsgBox(Lang.getInstance().getLang()("MsgNoEquipSelected"),
+                   vbOKOnly,
+                   Lang.getInstance().getLang()("MsgWarning"))
+        End If
+        If tbCodeRenter.Text = "" And complete Then
             complete = False
             MsgBox(Lang.getInstance().getLang()("MsgNoUserSelected"),
                    vbOKOnly,
@@ -261,6 +271,7 @@ Public Class UCRent
                 For Each row As DataGridViewRow In gridSelectedEquipment.Rows
                     ModelEquipment.getInstance().setAvailable(row.Cells(0).Value, 1)
                 Next
+                ModelUser.getInstance().updateUserBalance(tbCodeRenter.Text, tbReelDeposit.Text)
                 For i As Integer = gridSelectedEquipment.Rows.Count - 1 To 0 Step -1
                     gridSelectedEquipment.Rows.RemoveAt(i)
                 Next
@@ -375,5 +386,4 @@ Public Class UCRent
         gridSelectedEquipment.Columns(5).ReadOnly = True
         gridSelectedEquipment.Columns(6).ReadOnly = False
     End Sub
-
 End Class

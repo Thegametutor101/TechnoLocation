@@ -52,6 +52,7 @@
     End Sub
 
 
+
     '__________________________________________________________________________________________________________
     'General Functions
     '__________________________________________________________________________________________________________
@@ -68,23 +69,11 @@
     'Buttons
     '__________________________________________________________________________________________________________
 
-    Private Sub btDelEquipment_Click(sender As Object, e As EventArgs) Handles btDelEquipment.Click
-        Dim title As String = Lang.getInstance().getLang()("MsgWarning")
-        Dim message As String = Lang.getInstance().getLang()("MsgDeleteEquipment")
-        If MessageBox.Show(message,
-                           title,
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Warning) = DialogResult.Yes Then
-            For Each selectedItem As DataGridViewRow In gridListRent.SelectedRows
-                'TODO il faut spécifier le numéro de l'équipement aussi pour faire une supression d'emprunt
-                'TODO il faut aussi s'assurer que le montant de dépot est traité et que les équipements
-                'sont mis disponible ou non et si il y a un commentaire a ajouter.
-                'TODO tu peux utiliser les formulaires que j'ai fait pour faire a
-                'modification de la disponibilité / commentaires
-                ModelRent.getInstance.removeRental(selectedItem.Cells(0).Value, 0)
-            Next
-            loadDataGridView()
-        End If
+    Private Sub gridListRent_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gridListRent.CellMouseDoubleClick
+        Dim iRentMod = New UCRentMod(gridListRent.CurrentRow, Me, mainForm)
+        iRentMod.Dock = DockStyle.Fill
+        mainForm.panelMain.Controls.Add(iRentMod)
+        iRentMod.BringToFront()
     End Sub
 
     '__________________________________________________________________________________________________________
