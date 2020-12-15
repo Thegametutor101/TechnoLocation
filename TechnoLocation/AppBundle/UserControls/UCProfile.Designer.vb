@@ -22,210 +22,131 @@ Partial Class UCProfile
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.labCode = New System.Windows.Forms.Label()
-        Me.tbFirstName = New System.Windows.Forms.TextBox()
-        Me.labName = New System.Windows.Forms.Label()
-        Me.tbPhone1 = New System.Windows.Forms.TextBox()
-        Me.labTelephone = New System.Windows.Forms.Label()
-        Me.tbEmail = New System.Windows.Forms.TextBox()
-        Me.labEmail = New System.Windows.Forms.Label()
-        Me.tbPhone2 = New System.Windows.Forms.TextBox()
-        Me.labTelephone2 = New System.Windows.Forms.Label()
-        Me.labTitre = New System.Windows.Forms.Label()
-        Me.btSaveModifications = New System.Windows.Forms.Button()
-        Me.btDeleteAccount = New System.Windows.Forms.Button()
-        Me.tbLastName = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbPassword = New System.Windows.Forms.TextBox()
-        Me.labPassword = New System.Windows.Forms.Label()
-        Me.checkPassword = New Guna.UI2.WinForms.Guna2CustomCheckBox()
-        Me.labSetPassword = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btCancelUser = New Guna.UI2.WinForms.Guna2Button()
+        Me.btSaveModification = New Guna.UI2.WinForms.Guna2Button()
         Me.labExt2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.checkExt2 = New Guna.UI2.WinForms.Guna2CustomCheckBox()
-        Me.numExtension2 = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.labExt1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.checkExt1 = New Guna.UI2.WinForms.Guna2CustomCheckBox()
+        Me.numExtension2 = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.numExtension1 = New Guna.UI2.WinForms.Guna2NumericUpDown()
-        Me.dropStatus = New System.Windows.Forms.ComboBox()
-        Me.dropPermissions = New System.Windows.Forms.ComboBox()
-        Me.labStatus = New System.Windows.Forms.Label()
-        Me.labPermissions = New System.Windows.Forms.Label()
-        Me.tbCode = New System.Windows.Forms.TextBox()
+        Me.numBalance = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.labBalance = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labSetPassword = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.checkPassword = New Guna.UI2.WinForms.Guna2CustomCheckBox()
+        Me.tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.dropPermissions = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.dropStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.labPassword = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labPermissions = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labStatus = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.tbPhone2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.labPhone2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.tbPhone1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.labPhone = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.numCode = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.tbEmail = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.labEmail = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.labName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labCodeUser = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel5.SuspendLayout()
         CType(Me.numExtension2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numExtension1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numBalance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'labCode
+        'Guna2Panel5
         '
-        Me.labCode.AutoSize = True
-        Me.labCode.Location = New System.Drawing.Point(345, 60)
-        Me.labCode.Name = "labCode"
-        Me.labCode.Size = New System.Drawing.Size(35, 13)
-        Me.labCode.TabIndex = 0
-        Me.labCode.Text = "Code:"
+        Me.Guna2Panel5.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel5.Controls.Add(Me.btDelete)
+        Me.Guna2Panel5.Controls.Add(Me.btCancelUser)
+        Me.Guna2Panel5.Controls.Add(Me.btSaveModification)
+        Me.Guna2Panel5.Controls.Add(Me.labExt2)
+        Me.Guna2Panel5.Controls.Add(Me.checkExt2)
+        Me.Guna2Panel5.Controls.Add(Me.labExt1)
+        Me.Guna2Panel5.Controls.Add(Me.checkExt1)
+        Me.Guna2Panel5.Controls.Add(Me.numExtension2)
+        Me.Guna2Panel5.Controls.Add(Me.numExtension1)
+        Me.Guna2Panel5.Controls.Add(Me.numBalance)
+        Me.Guna2Panel5.Controls.Add(Me.labBalance)
+        Me.Guna2Panel5.Controls.Add(Me.labSetPassword)
+        Me.Guna2Panel5.Controls.Add(Me.checkPassword)
+        Me.Guna2Panel5.Controls.Add(Me.tbPassword)
+        Me.Guna2Panel5.Controls.Add(Me.dropPermissions)
+        Me.Guna2Panel5.Controls.Add(Me.dropStatus)
+        Me.Guna2Panel5.Controls.Add(Me.labPassword)
+        Me.Guna2Panel5.Controls.Add(Me.labPermissions)
+        Me.Guna2Panel5.Controls.Add(Me.labStatus)
+        Me.Guna2Panel5.Controls.Add(Me.tbPhone2)
+        Me.Guna2Panel5.Controls.Add(Me.labPhone2)
+        Me.Guna2Panel5.Controls.Add(Me.tbPhone1)
+        Me.Guna2Panel5.Controls.Add(Me.labPhone)
+        Me.Guna2Panel5.Controls.Add(Me.numCode)
+        Me.Guna2Panel5.Controls.Add(Me.tbEmail)
+        Me.Guna2Panel5.Controls.Add(Me.labEmail)
+        Me.Guna2Panel5.Controls.Add(Me.tbLastName)
+        Me.Guna2Panel5.Controls.Add(Me.tbFirstName)
+        Me.Guna2Panel5.Controls.Add(Me.labName)
+        Me.Guna2Panel5.Controls.Add(Me.labCodeUser)
+        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
+        Me.Guna2Panel5.Size = New System.Drawing.Size(947, 604)
+        Me.Guna2Panel5.TabIndex = 90
         '
-        'tbFirstName
+        'btCancelUser
         '
-        Me.tbFirstName.Location = New System.Drawing.Point(386, 103)
-        Me.tbFirstName.Name = "tbFirstName"
-        Me.tbFirstName.Size = New System.Drawing.Size(173, 20)
-        Me.tbFirstName.TabIndex = 3
+        Me.btCancelUser.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.btCancelUser.BorderRadius = 15
+        Me.btCancelUser.BorderThickness = 2
+        Me.btCancelUser.CheckedState.Parent = Me.btCancelUser
+        Me.btCancelUser.CustomImages.Parent = Me.btCancelUser
+        Me.btCancelUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.btCancelUser.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btCancelUser.ForeColor = System.Drawing.Color.Black
+        Me.btCancelUser.HoverState.Parent = Me.btCancelUser
+        Me.btCancelUser.Location = New System.Drawing.Point(421, 499)
+        Me.btCancelUser.Margin = New System.Windows.Forms.Padding(2)
+        Me.btCancelUser.Name = "btCancelUser"
+        Me.btCancelUser.ShadowDecoration.Parent = Me.btCancelUser
+        Me.btCancelUser.Size = New System.Drawing.Size(138, 65)
+        Me.btCancelUser.TabIndex = 79
+        Me.btCancelUser.Text = "Annuler"
         '
-        'labName
+        'btSaveModification
         '
-        Me.labName.AutoSize = True
-        Me.labName.Location = New System.Drawing.Point(334, 106)
-        Me.labName.Name = "labName"
-        Me.labName.Size = New System.Drawing.Size(46, 13)
-        Me.labName.TabIndex = 2
-        Me.labName.Text = "Prénom:"
-        '
-        'tbPhone1
-        '
-        Me.tbPhone1.Location = New System.Drawing.Point(386, 194)
-        Me.tbPhone1.Name = "tbPhone1"
-        Me.tbPhone1.Size = New System.Drawing.Size(173, 20)
-        Me.tbPhone1.TabIndex = 7
-        '
-        'labTelephone
-        '
-        Me.labTelephone.AutoSize = True
-        Me.labTelephone.Location = New System.Drawing.Point(319, 197)
-        Me.labTelephone.Name = "labTelephone"
-        Me.labTelephone.Size = New System.Drawing.Size(61, 13)
-        Me.labTelephone.TabIndex = 6
-        Me.labTelephone.Text = "Téléphone:"
-        '
-        'tbEmail
-        '
-        Me.tbEmail.Location = New System.Drawing.Point(386, 168)
-        Me.tbEmail.Name = "tbEmail"
-        Me.tbEmail.Size = New System.Drawing.Size(173, 20)
-        Me.tbEmail.TabIndex = 5
-        '
-        'labEmail
-        '
-        Me.labEmail.AutoSize = True
-        Me.labEmail.Location = New System.Drawing.Point(345, 171)
-        Me.labEmail.Name = "labEmail"
-        Me.labEmail.Size = New System.Drawing.Size(35, 13)
-        Me.labEmail.TabIndex = 4
-        Me.labEmail.Text = "Email:"
-        '
-        'tbPhone2
-        '
-        Me.tbPhone2.Location = New System.Drawing.Point(386, 240)
-        Me.tbPhone2.Name = "tbPhone2"
-        Me.tbPhone2.Size = New System.Drawing.Size(173, 20)
-        Me.tbPhone2.TabIndex = 9
-        '
-        'labTelephone2
-        '
-        Me.labTelephone2.AutoSize = True
-        Me.labTelephone2.Location = New System.Drawing.Point(310, 243)
-        Me.labTelephone2.Name = "labTelephone2"
-        Me.labTelephone2.Size = New System.Drawing.Size(70, 13)
-        Me.labTelephone2.TabIndex = 8
-        Me.labTelephone2.Text = "Téléphone 2:"
-        '
-        'labTitre
-        '
-        Me.labTitre.AutoSize = True
-        Me.labTitre.Location = New System.Drawing.Point(419, 42)
-        Me.labTitre.Name = "labTitre"
-        Me.labTitre.Size = New System.Drawing.Size(30, 13)
-        Me.labTitre.TabIndex = 12
-        Me.labTitre.Text = "Profil"
-        '
-        'btSaveModifications
-        '
-        Me.btSaveModifications.Location = New System.Drawing.Point(402, 473)
-        Me.btSaveModifications.Name = "btSaveModifications"
-        Me.btSaveModifications.Size = New System.Drawing.Size(157, 23)
-        Me.btSaveModifications.TabIndex = 13
-        Me.btSaveModifications.Text = "Sauvegarder les modifications"
-        Me.btSaveModifications.UseVisualStyleBackColor = True
-        '
-        'btDeleteAccount
-        '
-        Me.btDeleteAccount.Location = New System.Drawing.Point(402, 511)
-        Me.btDeleteAccount.Name = "btDeleteAccount"
-        Me.btDeleteAccount.Size = New System.Drawing.Size(157, 23)
-        Me.btDeleteAccount.TabIndex = 14
-        Me.btDeleteAccount.Text = "Supprimer mon Compte"
-        Me.btDeleteAccount.UseVisualStyleBackColor = True
-        '
-        'tbLastName
-        '
-        Me.tbLastName.Location = New System.Drawing.Point(386, 136)
-        Me.tbLastName.Name = "tbLastName"
-        Me.tbLastName.Size = New System.Drawing.Size(173, 20)
-        Me.tbLastName.TabIndex = 16
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(348, 136)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Nom:"
-        '
-        'tbPassword
-        '
-        Me.tbPassword.Location = New System.Drawing.Point(386, 437)
-        Me.tbPassword.Name = "tbPassword"
-        Me.tbPassword.Size = New System.Drawing.Size(173, 20)
-        Me.tbPassword.TabIndex = 18
-        Me.tbPassword.Visible = False
-        '
-        'labPassword
-        '
-        Me.labPassword.AutoSize = True
-        Me.labPassword.Location = New System.Drawing.Point(306, 440)
-        Me.labPassword.Name = "labPassword"
-        Me.labPassword.Size = New System.Drawing.Size(74, 13)
-        Me.labPassword.TabIndex = 17
-        Me.labPassword.Text = "Mot de passe:"
-        Me.labPassword.Visible = False
-        '
-        'checkPassword
-        '
-        Me.checkPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkPassword.CheckedState.BorderRadius = 2
-        Me.checkPassword.CheckedState.BorderThickness = 2
-        Me.checkPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkPassword.CheckedState.Parent = Me.checkPassword
-        Me.checkPassword.Location = New System.Drawing.Point(365, 409)
-        Me.checkPassword.Margin = New System.Windows.Forms.Padding(2)
-        Me.checkPassword.Name = "checkPassword"
-        Me.checkPassword.ShadowDecoration.Parent = Me.checkPassword
-        Me.checkPassword.Size = New System.Drawing.Size(15, 16)
-        Me.checkPassword.TabIndex = 40
-        Me.checkPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.checkPassword.UncheckedState.BorderRadius = 2
-        Me.checkPassword.UncheckedState.BorderThickness = 2
-        Me.checkPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.checkPassword.UncheckedState.Parent = Me.checkPassword
-        '
-        'labSetPassword
-        '
-        Me.labSetPassword.BackColor = System.Drawing.Color.Transparent
-        Me.labSetPassword.Location = New System.Drawing.Point(386, 409)
-        Me.labSetPassword.Margin = New System.Windows.Forms.Padding(2)
-        Me.labSetPassword.Name = "labSetPassword"
-        Me.labSetPassword.Size = New System.Drawing.Size(134, 15)
-        Me.labSetPassword.TabIndex = 68
-        Me.labSetPassword.Text = "Enregistrer un mot de passe"
+        Me.btSaveModification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btSaveModification.BorderRadius = 15
+        Me.btSaveModification.BorderThickness = 2
+        Me.btSaveModification.CheckedState.Parent = Me.btSaveModification
+        Me.btSaveModification.CustomImages.Parent = Me.btSaveModification
+        Me.btSaveModification.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.btSaveModification.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btSaveModification.ForeColor = System.Drawing.Color.Black
+        Me.btSaveModification.HoverState.Parent = Me.btSaveModification
+        Me.btSaveModification.Location = New System.Drawing.Point(279, 499)
+        Me.btSaveModification.Margin = New System.Windows.Forms.Padding(2)
+        Me.btSaveModification.Name = "btSaveModification"
+        Me.btSaveModification.ShadowDecoration.Parent = Me.btSaveModification
+        Me.btSaveModification.Size = New System.Drawing.Size(138, 65)
+        Me.btSaveModification.TabIndex = 78
+        Me.btSaveModification.Text = "Modifier"
         '
         'labExt2
         '
         Me.labExt2.BackColor = System.Drawing.Color.Transparent
-        Me.labExt2.Location = New System.Drawing.Point(584, 225)
+        Me.labExt2.Location = New System.Drawing.Point(702, 214)
         Me.labExt2.Margin = New System.Windows.Forms.Padding(2)
         Me.labExt2.Name = "labExt2"
         Me.labExt2.Size = New System.Drawing.Size(111, 15)
-        Me.labExt2.TabIndex = 80
+        Me.labExt2.TabIndex = 77
         Me.labExt2.Text = "Cochez pour extension"
         '
         'checkExt2
@@ -235,17 +156,46 @@ Partial Class UCProfile
         Me.checkExt2.CheckedState.BorderThickness = 2
         Me.checkExt2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkExt2.CheckedState.Parent = Me.checkExt2
-        Me.checkExt2.Location = New System.Drawing.Point(564, 224)
+        Me.checkExt2.Location = New System.Drawing.Point(682, 213)
         Me.checkExt2.Margin = New System.Windows.Forms.Padding(2)
         Me.checkExt2.Name = "checkExt2"
         Me.checkExt2.ShadowDecoration.Parent = Me.checkExt2
         Me.checkExt2.Size = New System.Drawing.Size(15, 16)
-        Me.checkExt2.TabIndex = 79
+        Me.checkExt2.TabIndex = 76
         Me.checkExt2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkExt2.UncheckedState.BorderRadius = 2
         Me.checkExt2.UncheckedState.BorderThickness = 2
         Me.checkExt2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.checkExt2.UncheckedState.Parent = Me.checkExt2
+        '
+        'labExt1
+        '
+        Me.labExt1.BackColor = System.Drawing.Color.Transparent
+        Me.labExt1.Location = New System.Drawing.Point(702, 162)
+        Me.labExt1.Margin = New System.Windows.Forms.Padding(2)
+        Me.labExt1.Name = "labExt1"
+        Me.labExt1.Size = New System.Drawing.Size(111, 15)
+        Me.labExt1.TabIndex = 75
+        Me.labExt1.Text = "Cochez pour extension"
+        '
+        'checkExt1
+        '
+        Me.checkExt1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkExt1.CheckedState.BorderRadius = 2
+        Me.checkExt1.CheckedState.BorderThickness = 2
+        Me.checkExt1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkExt1.CheckedState.Parent = Me.checkExt1
+        Me.checkExt1.Location = New System.Drawing.Point(682, 161)
+        Me.checkExt1.Margin = New System.Windows.Forms.Padding(2)
+        Me.checkExt1.Name = "checkExt1"
+        Me.checkExt1.ShadowDecoration.Parent = Me.checkExt1
+        Me.checkExt1.Size = New System.Drawing.Size(15, 16)
+        Me.checkExt1.TabIndex = 74
+        Me.checkExt1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.checkExt1.UncheckedState.BorderRadius = 2
+        Me.checkExt1.UncheckedState.BorderThickness = 2
+        Me.checkExt1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.checkExt1.UncheckedState.Parent = Me.checkExt1
         '
         'numExtension2
         '
@@ -257,46 +207,18 @@ Partial Class UCProfile
         Me.numExtension2.DisabledState.Parent = Me.numExtension2
         Me.numExtension2.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
         Me.numExtension2.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.numExtension2.Enabled = False
         Me.numExtension2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.numExtension2.FocusedState.Parent = Me.numExtension2
         Me.numExtension2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.numExtension2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.numExtension2.Location = New System.Drawing.Point(562, 244)
+        Me.numExtension2.Location = New System.Drawing.Point(680, 233)
         Me.numExtension2.Margin = New System.Windows.Forms.Padding(2)
         Me.numExtension2.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.numExtension2.Name = "numExtension2"
         Me.numExtension2.ShadowDecoration.Parent = Me.numExtension2
         Me.numExtension2.Size = New System.Drawing.Size(110, 29)
-        Me.numExtension2.TabIndex = 78
-        '
-        'labExt1
-        '
-        Me.labExt1.BackColor = System.Drawing.Color.Transparent
-        Me.labExt1.Location = New System.Drawing.Point(586, 171)
-        Me.labExt1.Margin = New System.Windows.Forms.Padding(2)
-        Me.labExt1.Name = "labExt1"
-        Me.labExt1.Size = New System.Drawing.Size(111, 15)
-        Me.labExt1.TabIndex = 83
-        Me.labExt1.Text = "Cochez pour extension"
-        '
-        'checkExt1
-        '
-        Me.checkExt1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkExt1.CheckedState.BorderRadius = 2
-        Me.checkExt1.CheckedState.BorderThickness = 2
-        Me.checkExt1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkExt1.CheckedState.Parent = Me.checkExt1
-        Me.checkExt1.Location = New System.Drawing.Point(566, 170)
-        Me.checkExt1.Margin = New System.Windows.Forms.Padding(2)
-        Me.checkExt1.Name = "checkExt1"
-        Me.checkExt1.ShadowDecoration.Parent = Me.checkExt1
-        Me.checkExt1.Size = New System.Drawing.Size(15, 16)
-        Me.checkExt1.TabIndex = 82
-        Me.checkExt1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.checkExt1.UncheckedState.BorderRadius = 2
-        Me.checkExt1.UncheckedState.BorderThickness = 2
-        Me.checkExt1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.checkExt1.UncheckedState.Parent = Me.checkExt1
+        Me.numExtension2.TabIndex = 73
         '
         'numExtension1
         '
@@ -308,133 +230,458 @@ Partial Class UCProfile
         Me.numExtension1.DisabledState.Parent = Me.numExtension1
         Me.numExtension1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
         Me.numExtension1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.numExtension1.Enabled = False
         Me.numExtension1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.numExtension1.FocusedState.Parent = Me.numExtension1
         Me.numExtension1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.numExtension1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.numExtension1.Location = New System.Drawing.Point(564, 190)
+        Me.numExtension1.Location = New System.Drawing.Point(680, 181)
         Me.numExtension1.Margin = New System.Windows.Forms.Padding(2)
         Me.numExtension1.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.numExtension1.Name = "numExtension1"
         Me.numExtension1.ShadowDecoration.Parent = Me.numExtension1
         Me.numExtension1.Size = New System.Drawing.Size(110, 29)
-        Me.numExtension1.TabIndex = 81
+        Me.numExtension1.TabIndex = 72
         '
-        'dropStatus
+        'numBalance
         '
-        Me.dropStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropStatus.FormattingEnabled = True
-        Me.dropStatus.Items.AddRange(New Object() {"0 - Étudiant", "1 - Professeur", "2 - Employé"})
-        Me.dropStatus.Location = New System.Drawing.Point(386, 331)
-        Me.dropStatus.Name = "dropStatus"
-        Me.dropStatus.Size = New System.Drawing.Size(173, 21)
-        Me.dropStatus.TabIndex = 85
+        Me.numBalance.BackColor = System.Drawing.Color.Transparent
+        Me.numBalance.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.numBalance.DecimalPlaces = 2
+        Me.numBalance.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.numBalance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.numBalance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.numBalance.DisabledState.Parent = Me.numBalance
+        Me.numBalance.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.numBalance.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.numBalance.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.numBalance.FocusedState.Parent = Me.numBalance
+        Me.numBalance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.numBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.numBalance.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.numBalance.Location = New System.Drawing.Point(395, 389)
+        Me.numBalance.Margin = New System.Windows.Forms.Padding(2)
+        Me.numBalance.Maximum = New Decimal(New Integer() {9999999, 0, 0, 0})
+        Me.numBalance.Minimum = New Decimal(New Integer() {9999999, 0, 0, -2147483648})
+        Me.numBalance.Name = "numBalance"
+        Me.numBalance.ShadowDecoration.Parent = Me.numBalance
+        Me.numBalance.Size = New System.Drawing.Size(267, 29)
+        Me.numBalance.TabIndex = 38
+        '
+        'labBalance
+        '
+        Me.labBalance.BackColor = System.Drawing.Color.Transparent
+        Me.labBalance.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labBalance.Location = New System.Drawing.Point(244, 389)
+        Me.labBalance.Margin = New System.Windows.Forms.Padding(2)
+        Me.labBalance.Name = "labBalance"
+        Me.labBalance.Size = New System.Drawing.Size(55, 22)
+        Me.labBalance.TabIndex = 68
+        Me.labBalance.Text = "Balance"
+        '
+        'labSetPassword
+        '
+        Me.labSetPassword.BackColor = System.Drawing.Color.Transparent
+        Me.labSetPassword.Location = New System.Drawing.Point(422, 428)
+        Me.labSetPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.labSetPassword.Name = "labSetPassword"
+        Me.labSetPassword.Size = New System.Drawing.Size(134, 15)
+        Me.labSetPassword.TabIndex = 67
+        Me.labSetPassword.Text = "Enregistrer un mot de passe"
+        '
+        'checkPassword
+        '
+        Me.checkPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkPassword.CheckedState.BorderRadius = 2
+        Me.checkPassword.CheckedState.BorderThickness = 2
+        Me.checkPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.checkPassword.CheckedState.Parent = Me.checkPassword
+        Me.checkPassword.Location = New System.Drawing.Point(402, 427)
+        Me.checkPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.checkPassword.Name = "checkPassword"
+        Me.checkPassword.ShadowDecoration.Parent = Me.checkPassword
+        Me.checkPassword.Size = New System.Drawing.Size(15, 16)
+        Me.checkPassword.TabIndex = 39
+        Me.checkPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.checkPassword.UncheckedState.BorderRadius = 2
+        Me.checkPassword.UncheckedState.BorderThickness = 2
+        Me.checkPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.checkPassword.UncheckedState.Parent = Me.checkPassword
+        '
+        'tbPassword
+        '
+        Me.tbPassword.BorderRadius = 2
+        Me.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbPassword.DefaultText = ""
+        Me.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPassword.DisabledState.Parent = Me.tbPassword
+        Me.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPassword.FocusedState.Parent = Me.tbPassword
+        Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPassword.HoverState.Parent = Me.tbPassword
+        Me.tbPassword.Location = New System.Drawing.Point(395, 455)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbPassword.PlaceholderText = ""
+        Me.tbPassword.SelectedText = ""
+        Me.tbPassword.ShadowDecoration.Parent = Me.tbPassword
+        Me.tbPassword.Size = New System.Drawing.Size(267, 29)
+        Me.tbPassword.TabIndex = 40
+        Me.tbPassword.Visible = False
         '
         'dropPermissions
         '
+        Me.dropPermissions.BackColor = System.Drawing.Color.Transparent
+        Me.dropPermissions.BorderRadius = 2
+        Me.dropPermissions.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.dropPermissions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropPermissions.FormattingEnabled = True
+        Me.dropPermissions.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dropPermissions.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dropPermissions.FocusedState.Parent = Me.dropPermissions
+        Me.dropPermissions.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
+        Me.dropPermissions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.dropPermissions.HoverState.Parent = Me.dropPermissions
+        Me.dropPermissions.ItemHeight = 30
         Me.dropPermissions.Items.AddRange(New Object() {"0 - Utilisateur de base", "1 - Utilisateur pouvant prêter", "2 - Professeur", "3 - Admin"})
-        Me.dropPermissions.Location = New System.Drawing.Point(386, 374)
+        Me.dropPermissions.ItemsAppearance.Parent = Me.dropPermissions
+        Me.dropPermissions.Location = New System.Drawing.Point(395, 338)
+        Me.dropPermissions.Margin = New System.Windows.Forms.Padding(2)
         Me.dropPermissions.Name = "dropPermissions"
-        Me.dropPermissions.Size = New System.Drawing.Size(173, 21)
-        Me.dropPermissions.TabIndex = 86
+        Me.dropPermissions.ShadowDecoration.Parent = Me.dropPermissions
+        Me.dropPermissions.Size = New System.Drawing.Size(268, 36)
+        Me.dropPermissions.Sorted = True
+        Me.dropPermissions.TabIndex = 37
         '
-        'labStatus
+        'dropStatus
         '
-        Me.labStatus.AutoSize = True
-        Me.labStatus.Location = New System.Drawing.Point(345, 334)
-        Me.labStatus.Name = "labStatus"
-        Me.labStatus.Size = New System.Drawing.Size(40, 13)
-        Me.labStatus.TabIndex = 87
-        Me.labStatus.Text = "Status:"
+        Me.dropStatus.BackColor = System.Drawing.Color.Transparent
+        Me.dropStatus.BorderRadius = 2
+        Me.dropStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.dropStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dropStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dropStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dropStatus.FocusedState.Parent = Me.dropStatus
+        Me.dropStatus.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
+        Me.dropStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.dropStatus.HoverState.Parent = Me.dropStatus
+        Me.dropStatus.ItemHeight = 30
+        Me.dropStatus.Items.AddRange(New Object() {"0 - Étudiant", "1 - Professeur", "2 - Employé"})
+        Me.dropStatus.ItemsAppearance.Parent = Me.dropStatus
+        Me.dropStatus.Location = New System.Drawing.Point(395, 285)
+        Me.dropStatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.dropStatus.Name = "dropStatus"
+        Me.dropStatus.ShadowDecoration.Parent = Me.dropStatus
+        Me.dropStatus.Size = New System.Drawing.Size(268, 36)
+        Me.dropStatus.Sorted = True
+        Me.dropStatus.TabIndex = 36
+        '
+        'labPassword
+        '
+        Me.labPassword.BackColor = System.Drawing.Color.Transparent
+        Me.labPassword.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPassword.Location = New System.Drawing.Point(244, 455)
+        Me.labPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.labPassword.Name = "labPassword"
+        Me.labPassword.Size = New System.Drawing.Size(92, 22)
+        Me.labPassword.TabIndex = 62
+        Me.labPassword.Text = "Mot de passe"
+        Me.labPassword.Visible = False
         '
         'labPermissions
         '
-        Me.labPermissions.AutoSize = True
-        Me.labPermissions.Location = New System.Drawing.Point(320, 377)
+        Me.labPermissions.BackColor = System.Drawing.Color.Transparent
+        Me.labPermissions.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPermissions.Location = New System.Drawing.Point(244, 338)
+        Me.labPermissions.Margin = New System.Windows.Forms.Padding(2)
         Me.labPermissions.Name = "labPermissions"
-        Me.labPermissions.Size = New System.Drawing.Size(65, 13)
-        Me.labPermissions.TabIndex = 88
-        Me.labPermissions.Text = "Permissions:"
+        Me.labPermissions.Size = New System.Drawing.Size(80, 22)
+        Me.labPermissions.TabIndex = 61
+        Me.labPermissions.Text = "Permissions"
         '
-        'tbCode
+        'labStatus
         '
-        Me.tbCode.Location = New System.Drawing.Point(386, 57)
-        Me.tbCode.Name = "tbCode"
-        Me.tbCode.ReadOnly = True
-        Me.tbCode.Size = New System.Drawing.Size(173, 20)
-        Me.tbCode.TabIndex = 89
+        Me.labStatus.BackColor = System.Drawing.Color.Transparent
+        Me.labStatus.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labStatus.Location = New System.Drawing.Point(244, 291)
+        Me.labStatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.labStatus.Name = "labStatus"
+        Me.labStatus.Size = New System.Drawing.Size(42, 22)
+        Me.labStatus.TabIndex = 60
+        Me.labStatus.Text = "Statut"
+        '
+        'tbPhone2
+        '
+        Me.tbPhone2.BorderRadius = 2
+        Me.tbPhone2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbPhone2.DefaultText = ""
+        Me.tbPhone2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbPhone2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbPhone2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPhone2.DisabledState.Parent = Me.tbPhone2
+        Me.tbPhone2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPhone2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPhone2.FocusedState.Parent = Me.tbPhone2
+        Me.tbPhone2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbPhone2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPhone2.HoverState.Parent = Me.tbPhone2
+        Me.tbPhone2.Location = New System.Drawing.Point(395, 233)
+        Me.tbPhone2.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbPhone2.Name = "tbPhone2"
+        Me.tbPhone2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbPhone2.PlaceholderText = "(819) 995-5566"
+        Me.tbPhone2.SelectedText = ""
+        Me.tbPhone2.ShadowDecoration.Parent = Me.tbPhone2
+        Me.tbPhone2.Size = New System.Drawing.Size(267, 29)
+        Me.tbPhone2.TabIndex = 35
+        '
+        'labPhone2
+        '
+        Me.labPhone2.BackColor = System.Drawing.Color.Transparent
+        Me.labPhone2.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPhone2.Location = New System.Drawing.Point(244, 236)
+        Me.labPhone2.Margin = New System.Windows.Forms.Padding(2)
+        Me.labPhone2.Name = "labPhone2"
+        Me.labPhone2.Size = New System.Drawing.Size(85, 22)
+        Me.labPhone2.TabIndex = 58
+        Me.labPhone2.Text = "Téléphone 2"
+        '
+        'tbPhone1
+        '
+        Me.tbPhone1.BorderRadius = 2
+        Me.tbPhone1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbPhone1.DefaultText = ""
+        Me.tbPhone1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbPhone1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbPhone1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPhone1.DisabledState.Parent = Me.tbPhone1
+        Me.tbPhone1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbPhone1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPhone1.FocusedState.Parent = Me.tbPhone1
+        Me.tbPhone1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbPhone1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbPhone1.HoverState.Parent = Me.tbPhone1
+        Me.tbPhone1.Location = New System.Drawing.Point(395, 181)
+        Me.tbPhone1.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbPhone1.Name = "tbPhone1"
+        Me.tbPhone1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbPhone1.PlaceholderText = "(819) 995-5566"
+        Me.tbPhone1.SelectedText = ""
+        Me.tbPhone1.ShadowDecoration.Parent = Me.tbPhone1
+        Me.tbPhone1.Size = New System.Drawing.Size(267, 29)
+        Me.tbPhone1.TabIndex = 34
+        '
+        'labPhone
+        '
+        Me.labPhone.BackColor = System.Drawing.Color.Transparent
+        Me.labPhone.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPhone.Location = New System.Drawing.Point(244, 184)
+        Me.labPhone.Margin = New System.Windows.Forms.Padding(2)
+        Me.labPhone.Name = "labPhone"
+        Me.labPhone.Size = New System.Drawing.Size(85, 22)
+        Me.labPhone.TabIndex = 56
+        Me.labPhone.Text = "Téléphone 1"
+        '
+        'numCode
+        '
+        Me.numCode.BackColor = System.Drawing.Color.Transparent
+        Me.numCode.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.numCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.numCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.numCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.numCode.DisabledState.Parent = Me.numCode
+        Me.numCode.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.numCode.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.numCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.numCode.FocusedState.Parent = Me.numCode
+        Me.numCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.numCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.numCode.Location = New System.Drawing.Point(395, 17)
+        Me.numCode.Margin = New System.Windows.Forms.Padding(2)
+        Me.numCode.Maximum = New Decimal(New Integer() {9999999, 0, 0, 0})
+        Me.numCode.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numCode.Name = "numCode"
+        Me.numCode.ShadowDecoration.Parent = Me.numCode
+        Me.numCode.Size = New System.Drawing.Size(267, 29)
+        Me.numCode.TabIndex = 30
+        Me.numCode.Value = New Decimal(New Integer() {1000, 0, 0, 0})
+        '
+        'tbEmail
+        '
+        Me.tbEmail.BorderRadius = 2
+        Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbEmail.DefaultText = ""
+        Me.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbEmail.DisabledState.Parent = Me.tbEmail
+        Me.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbEmail.FocusedState.Parent = Me.tbEmail
+        Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbEmail.HoverState.Parent = Me.tbEmail
+        Me.tbEmail.Location = New System.Drawing.Point(395, 124)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbEmail.Name = "tbEmail"
+        Me.tbEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbEmail.PlaceholderText = "example@gmail.com"
+        Me.tbEmail.SelectedText = ""
+        Me.tbEmail.ShadowDecoration.Parent = Me.tbEmail
+        Me.tbEmail.Size = New System.Drawing.Size(267, 29)
+        Me.tbEmail.TabIndex = 33
+        '
+        'labEmail
+        '
+        Me.labEmail.BackColor = System.Drawing.Color.Transparent
+        Me.labEmail.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labEmail.Location = New System.Drawing.Point(244, 127)
+        Me.labEmail.Margin = New System.Windows.Forms.Padding(2)
+        Me.labEmail.Name = "labEmail"
+        Me.labEmail.Size = New System.Drawing.Size(40, 22)
+        Me.labEmail.TabIndex = 53
+        Me.labEmail.Text = "Email"
+        '
+        'tbLastName
+        '
+        Me.tbLastName.BorderRadius = 2
+        Me.tbLastName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbLastName.DefaultText = ""
+        Me.tbLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbLastName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbLastName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbLastName.DisabledState.Parent = Me.tbLastName
+        Me.tbLastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbLastName.FocusedState.Parent = Me.tbLastName
+        Me.tbLastName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbLastName.HoverState.Parent = Me.tbLastName
+        Me.tbLastName.Location = New System.Drawing.Point(531, 70)
+        Me.tbLastName.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbLastName.Name = "tbLastName"
+        Me.tbLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbLastName.PlaceholderText = "Nom de famille"
+        Me.tbLastName.SelectedText = ""
+        Me.tbLastName.ShadowDecoration.Parent = Me.tbLastName
+        Me.tbLastName.Size = New System.Drawing.Size(131, 29)
+        Me.tbLastName.TabIndex = 32
+        '
+        'tbFirstName
+        '
+        Me.tbFirstName.BorderRadius = 2
+        Me.tbFirstName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tbFirstName.DefaultText = ""
+        Me.tbFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tbFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tbFirstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbFirstName.DisabledState.Parent = Me.tbFirstName
+        Me.tbFirstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tbFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbFirstName.FocusedState.Parent = Me.tbFirstName
+        Me.tbFirstName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.tbFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tbFirstName.HoverState.Parent = Me.tbFirstName
+        Me.tbFirstName.Location = New System.Drawing.Point(395, 70)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbFirstName.Name = "tbFirstName"
+        Me.tbFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tbFirstName.PlaceholderText = "Prénom"
+        Me.tbFirstName.SelectedText = ""
+        Me.tbFirstName.ShadowDecoration.Parent = Me.tbFirstName
+        Me.tbFirstName.Size = New System.Drawing.Size(131, 29)
+        Me.tbFirstName.TabIndex = 31
+        '
+        'labName
+        '
+        Me.labName.BackColor = System.Drawing.Color.Transparent
+        Me.labName.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labName.Location = New System.Drawing.Point(244, 73)
+        Me.labName.Margin = New System.Windows.Forms.Padding(2)
+        Me.labName.Name = "labName"
+        Me.labName.Size = New System.Drawing.Size(36, 22)
+        Me.labName.TabIndex = 50
+        Me.labName.Text = "Nom"
+        '
+        'labCodeUser
+        '
+        Me.labCodeUser.BackColor = System.Drawing.Color.Transparent
+        Me.labCodeUser.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labCodeUser.Location = New System.Drawing.Point(244, 17)
+        Me.labCodeUser.Margin = New System.Windows.Forms.Padding(2)
+        Me.labCodeUser.Name = "labCodeUser"
+        Me.labCodeUser.Size = New System.Drawing.Size(65, 22)
+        Me.labCodeUser.TabIndex = 48
+        Me.labCodeUser.Text = "Matricule"
+        '
+        'btDelete
+        '
+        Me.btDelete.BorderColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.btDelete.BorderRadius = 15
+        Me.btDelete.BorderThickness = 2
+        Me.btDelete.CheckedState.Parent = Me.btDelete
+        Me.btDelete.CustomImages.Parent = Me.btDelete
+        Me.btDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.btDelete.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btDelete.ForeColor = System.Drawing.Color.Black
+        Me.btDelete.HoverState.Parent = Me.btDelete
+        Me.btDelete.Location = New System.Drawing.Point(563, 499)
+        Me.btDelete.Margin = New System.Windows.Forms.Padding(2)
+        Me.btDelete.Name = "btDelete"
+        Me.btDelete.ShadowDecoration.Parent = Me.btDelete
+        Me.btDelete.Size = New System.Drawing.Size(138, 65)
+        Me.btDelete.TabIndex = 80
+        Me.btDelete.Text = "Suppression"
         '
         'UCProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.tbCode)
-        Me.Controls.Add(Me.labPermissions)
-        Me.Controls.Add(Me.labStatus)
-        Me.Controls.Add(Me.dropPermissions)
-        Me.Controls.Add(Me.dropStatus)
-        Me.Controls.Add(Me.labExt1)
-        Me.Controls.Add(Me.checkExt1)
-        Me.Controls.Add(Me.numExtension1)
-        Me.Controls.Add(Me.labExt2)
-        Me.Controls.Add(Me.checkExt2)
-        Me.Controls.Add(Me.numExtension2)
-        Me.Controls.Add(Me.labSetPassword)
-        Me.Controls.Add(Me.checkPassword)
-        Me.Controls.Add(Me.tbPassword)
-        Me.Controls.Add(Me.labPassword)
-        Me.Controls.Add(Me.tbLastName)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btDeleteAccount)
-        Me.Controls.Add(Me.btSaveModifications)
-        Me.Controls.Add(Me.labTitre)
-        Me.Controls.Add(Me.tbPhone2)
-        Me.Controls.Add(Me.labTelephone2)
-        Me.Controls.Add(Me.tbPhone1)
-        Me.Controls.Add(Me.labTelephone)
-        Me.Controls.Add(Me.tbEmail)
-        Me.Controls.Add(Me.labEmail)
-        Me.Controls.Add(Me.tbFirstName)
-        Me.Controls.Add(Me.labName)
-        Me.Controls.Add(Me.labCode)
+        Me.Controls.Add(Me.Guna2Panel5)
         Me.Name = "UCProfile"
         Me.Size = New System.Drawing.Size(947, 604)
+        Me.Guna2Panel5.ResumeLayout(False)
+        Me.Guna2Panel5.PerformLayout()
         CType(Me.numExtension2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numExtension1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numBalance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents labCode As Label
-    Friend WithEvents tbFirstName As TextBox
-    Friend WithEvents labName As Label
-    Friend WithEvents tbPhone1 As TextBox
-    Friend WithEvents labTelephone As Label
-    Friend WithEvents tbEmail As TextBox
-    Friend WithEvents labEmail As Label
-    Friend WithEvents tbPhone2 As TextBox
-    Friend WithEvents labTelephone2 As Label
-    Friend WithEvents labTitre As Label
-    Friend WithEvents btSaveModifications As Button
-    Friend WithEvents btDeleteAccount As Button
-    Friend WithEvents tbLastName As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents tbPassword As TextBox
-    Friend WithEvents labPassword As Label
-    Friend WithEvents checkPassword As Guna.UI2.WinForms.Guna2CustomCheckBox
-    Friend WithEvents labSetPassword As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents labExt2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents checkExt2 As Guna.UI2.WinForms.Guna2CustomCheckBox
-    Friend WithEvents numExtension2 As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents labExt1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents checkExt1 As Guna.UI2.WinForms.Guna2CustomCheckBox
+    Friend WithEvents numExtension2 As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents numExtension1 As Guna.UI2.WinForms.Guna2NumericUpDown
-    Friend WithEvents dropStatus As ComboBox
-    Friend WithEvents dropPermissions As ComboBox
-    Friend WithEvents labStatus As Label
-    Friend WithEvents labPermissions As Label
-    Friend WithEvents tbCode As TextBox
+    Friend WithEvents numBalance As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents labBalance As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labSetPassword As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents checkPassword As Guna.UI2.WinForms.Guna2CustomCheckBox
+    Friend WithEvents tbPassword As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents dropPermissions As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents dropStatus As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents labPassword As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labPermissions As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labStatus As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents tbPhone2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents labPhone2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents tbPhone1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents labPhone As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents numCode As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents tbEmail As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents labEmail As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents tbLastName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents tbFirstName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents labName As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labCodeUser As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents btSaveModification As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btCancelUser As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btDelete As Guna.UI2.WinForms.Guna2Button
 End Class

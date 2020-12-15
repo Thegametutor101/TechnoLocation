@@ -103,8 +103,6 @@ Public Class UCUserModify
         mainForm.isEditing = True
     End Sub
 
-
-
     Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
 
         mainForm.isEditing = True
@@ -413,5 +411,4 @@ Public Class UCUserModify
             labExt2.Location = baselabExt2Location
         End If
     End Sub
-
 End Class
