@@ -183,5 +183,6 @@
   "RentLabBeginDate": "Date d'emprunt",
   "RentLabEndDate": "Date de retour",
   "RentLabSuggestedDeposit": "Dépot suggéré",
-  "RentLabRealDeposit": "Dépot réel"
+  "RentLabRealDeposit": "Dépot réel",
+  "MsgDeleteEquipmentRent": "Voulez-vous vraiment supprimer ces équipements de cette location?\nCette action est définitive et ne peut pas être annuler après."
 }

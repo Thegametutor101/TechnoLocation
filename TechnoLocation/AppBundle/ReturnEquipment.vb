@@ -138,7 +138,7 @@
 
     Private Sub btKitAdd_Click(sender As Object, e As EventArgs) Handles btKitAdd.Click
         If balance > 0 Then
-            Dim prompt = New PromptReturnAmount(mainForm, Me, False)
+            Dim prompt = New PromptReturnAmount(mainForm, Me)
             prompt.ShowDialog()
             If Not returnValue = -1 Then
                 If Math.Abs(balance) = returnValue Then
@@ -194,7 +194,7 @@
             mainForm.loadReturns()
             Me.Close()
         ElseIf balance < 0 Then
-            Dim prompt = New PromptReturnAmount(mainForm, Me, True)
+            Dim prompt = New PromptReturnAmount(mainForm, Me)
             prompt.ShowDialog()
             If Not returnValue = -1 Then
                 If Math.Abs(balance) = returnValue Then

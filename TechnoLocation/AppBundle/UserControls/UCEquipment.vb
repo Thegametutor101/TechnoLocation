@@ -165,7 +165,4 @@ Public Class UCEquipment
         gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         gridEquipment.Columns("available").ReadOnly = False
     End Sub
-
-
-
 End Class
