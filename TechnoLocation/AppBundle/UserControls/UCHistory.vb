@@ -98,7 +98,7 @@
         Dim json = Lang.getInstance().getLang()
         tbSearch.PlaceholderText = json("SearchPlaceholder")
         gridHistory.Columns.Item("code").HeaderText = json("HistoryCode")
-        gridHistory.Columns.Item("returnDate").HeaderText = json("HistoryReturnDate")
+        gridHistory.Columns.Item("dateReturned").HeaderText = json("HistoryReturnDate")
         gridHistory.Columns.Item("renterName").HeaderText = json("HistoryRenterName")
         gridHistory.Columns.Item("receptorName").HeaderText = json("HistoryReceptorName")
         gridHistory.Columns.Item("state").HeaderText = json("HistoryState")
