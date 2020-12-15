@@ -10,6 +10,38 @@ Public Class ModelHistory
         Return instance
     End Function
 
+    Public Function addHistory(renter As Integer,
+                               receptor As Integer,
+                               isOk As Boolean,
+                               comment As String)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            Dim broken As Integer = 0
+            If Not isOk Then
+                broken = 1
+            End If
+            command.Connection = connection
+                command.CommandText = $"INSERT INTO history (dateReturned, 
+                                                        renter, 
+                                                        acceptedBy, 
+                                                        broken, 
+                                                        comments)
+                                    VALUES (CURRENT_DATE,
+                                            '{renter}',
+                                            '{receptor}',
+                                            '{broken}',
+                                            '{comment}')"
+            connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+        Catch ex As Exception
+            MessageBox.Show($"Échec à l'ajout de l'historique.{Environment.NewLine}" + ex.Message)
+        End Try
+    End Function
+
     Public Function removeHistory(code As Integer)
         Try
             If connection.State = ConnectionState.Open Then

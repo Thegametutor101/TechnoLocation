@@ -161,6 +161,10 @@
                                                                                 isAvailable)
                         End If
                         ModelRent.getInstance().removeRental(rentalNumber, item.Cells(0).Value)
+                        ModelHistory.getInstance().addHistory(user.Item(0),
+                                                              mainForm.code,
+                                                              isAvailable,
+                                                              newComment)
                     Next
                 Else
                     Dim promptReturnEquipmentComment = New PromptReturnEquipmentComment(mainForm,
@@ -176,6 +180,10 @@
                                                                             isAvailable)
                     End If
                     ModelRent.getInstance().removeRental(rentalNumber, equipment.Cells(0).Value)
+                    ModelHistory.getInstance().addHistory(user.Item(0),
+                                                          mainForm.code,
+                                                          isAvailable,
+                                                          newComment)
                 End If
                 Dim title As String = Lang.getInstance().getLang()("MsgReturnedTitle")
                 Dim message As String = Lang.getInstance().getLang()("MsgReturned")
@@ -208,6 +216,11 @@
                                                                                 newComment,
                                                                                 isAvailable)
                         End If
+                        ModelRent.getInstance().removeRental(rentalNumber, item.Cells(0).Value)
+                        ModelHistory.getInstance().addHistory(user.Item(0),
+                                                              mainForm.code,
+                                                              isAvailable,
+                                                              newComment)
                     Next
                 Else
                     Dim promptReturnEquipmentComment = New PromptReturnEquipmentComment(mainForm,
@@ -222,6 +235,11 @@
                                                                             newComment,
                                                                             isAvailable)
                     End If
+                    ModelRent.getInstance().removeRental(rentalNumber, equipment.Cells(0).Value)
+                    ModelHistory.getInstance().addHistory(user.Item(0),
+                                                          mainForm.code,
+                                                          isAvailable,
+                                                          newComment)
                 End If
                 Dim title As String = Lang.getInstance().getLang()("MsgReturnedTitle")
                 Dim message As String = Lang.getInstance().getLang()("MsgReturned")
@@ -246,6 +264,11 @@
                                                                                 newComment,
                                                                                 isAvailable)
                     End If
+                    ModelRent.getInstance().removeRental(rentalNumber, item.Cells(0).Value)
+                    ModelHistory.getInstance().addHistory(user.Item(0),
+                                                          mainForm.code,
+                                                          isAvailable,
+                                                          newComment)
                 Next
             Else
                 Dim promptReturnEquipmentComment = New PromptReturnEquipmentComment(mainForm,
@@ -260,6 +283,11 @@
                                                                             newComment,
                                                                             isAvailable)
                 End If
+                ModelRent.getInstance().removeRental(rentalNumber, equipment.Cells(0).Value)
+                ModelHistory.getInstance().addHistory(user.Item(0),
+                                                      mainForm.code,
+                                                      isAvailable,
+                                                      newComment)
             End If
             Dim title As String = Lang.getInstance().getLang()("MsgReturnedTitle")
             Dim message As String = Lang.getInstance().getLang()("MsgReturned")
