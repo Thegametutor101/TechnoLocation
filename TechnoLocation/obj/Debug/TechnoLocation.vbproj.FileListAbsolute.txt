@@ -229,3 +229,6 @@ C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\Techno
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistory.resources
 C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistoryOptions.resources
+C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistory.resources
+C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistoryOptions.resources
+C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources

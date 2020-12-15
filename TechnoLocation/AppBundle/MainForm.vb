@@ -165,7 +165,7 @@ Public Class MainForm
 
     Private Sub btAlert_Click(sender As Object, e As EventArgs) Handles btAlert.Click
         Dim open As Boolean = False
-        Dim notifications As New UCNotif()
+        Dim notifications As New UCNotif(Me)
         For Each control As Object In panelMain.Controls
             If control.GetType() = notifications.GetType() Then
                 open = True
@@ -176,8 +176,6 @@ Public Class MainForm
             panelMain.Controls.Remove(notifications)
             selectOptionButton(10)
         Else
-
-            notifications.Dock = DockStyle.Left
             panelMain.Controls.Add(notifications)
             notifications.BringToFront()
             selectOptionButton(1)
