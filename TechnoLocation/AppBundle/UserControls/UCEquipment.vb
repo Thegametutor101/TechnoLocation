@@ -144,7 +144,7 @@ Public Class UCEquipment
                 loadDataGridView()
             End If
         Else
-            loadDataGridView()
+            gridEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearch(tbSearch.Text, checkAvailableEquip.Checked)
         End If
     End Sub
 

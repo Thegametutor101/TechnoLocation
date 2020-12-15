@@ -213,6 +213,12 @@
     <Compile Include="AppBundle\UserControls\UCRentList.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AppBundle\UserControls\UCRentMod.Designer.vb">
+      <DependentUpon>UCRentMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppBundle\UserControls\UCRentMod.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AppBundle\UserControls\UCUserAdd.Designer.vb">
       <DependentUpon>UCUserAdd.vb</DependentUpon>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCRentList.resx">
       <DependentUpon>UCRentList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppBundle\UserControls\UCRentMod.resx">
+      <DependentUpon>UCRentMod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppBundle\UserControls\UCUserAdd.resx">
       <DependentUpon>UCUserAdd.vb</DependentUpon>
