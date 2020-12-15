@@ -5,7 +5,9 @@ Imports System.IO
 
 Public Class BarCodes
 
-    '--variables---------------------------
+    '__________________________________________________________________________________________________________
+    'Attributes
+    '__________________________________________________________________________________________________________
     Dim barCode As Image
     Dim imagePrint As Image
 
@@ -19,7 +21,9 @@ Public Class BarCodes
     Private Const scalehO = scaleh + offset
     Private Const scalewO = scalew + offset
 
-    '--méthodes----------------------------
+    '__________________________________________________________________________________________________________
+    'Methods
+    '__________________________________________________________________________________________________________
 
     '--genere un code barre en tant que image et le stocke dans la variable globale barCode
     Public Sub generateBC(input As String)
@@ -66,11 +70,7 @@ Public Class BarCodes
     End Sub
 
     '--utilise la variable globale imagePrint pour imprimer l'image (utilisé par les autres methodes d'impression)
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+
     Private Sub PrintImage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles printDoc.PrintPage
         e.Graphics.DrawImage(imagePrint, e.MarginBounds.Left, e.MarginBounds.Top)
     End Sub
@@ -164,48 +164,12 @@ Public Class BarCodes
     End Sub
 
 
-    '--fonctions---------------------------
+    '__________________________________________________________________________________________________________
+    'General Functions
+    '__________________________________________________________________________________________________________
 
 
     '--Lecture--
-    Public Function isBarcodeUser(texte As String)
-        If texte = "Demo - please subscribe to full version" Then
-            texte = ""
-            MessageBox.Show("Veuillez scanner le code de nouveau")
-            Return texte
-        End If
-        Try
-            Dim number As Integer
-            number = Integer.Parse(texte)
-            If number >= 10000000 Then
-                number = Math.Floor(number / 10)
-            End If
-            texte = number.ToString
-        Catch ex As Exception
-
-        End Try
-
-        Return texte
-    End Function
-
-    Public Function isBarcodeEquip(texte As String)
-        If texte = "Demo - please subscribe to full version" Then
-            texte = ""
-            MessageBox.Show("Veuillez scanner le code de nouveau")
-            Return texte
-        End If
-        Try
-            Dim number As Integer
-            number = Integer.Parse(texte)
-            texte = number.ToString
-        Catch ex As Exception
-
-        End Try
-
-        Return texte
-    End Function
-
-
     Public Function getBarCode()
         Return barCode
     End Function
@@ -267,7 +231,9 @@ Public Class BarCodes
     End Function
 
 
-    '--fonctions verif---------------------
+    '__________________________________________________________________________________________________________
+    'Validation Functions
+    '__________________________________________________________________________________________________________
 
     '--verifie si le path est vide et le remplie si c'est le cas
     Public Sub pathOk()
@@ -275,5 +241,45 @@ Public Class BarCodes
             makePath()
         End If
     End Sub
+
+    'recoit un string et determine si c'est un nombre ou un texte et renvoie le texte
+    'si c'est un nombre, enleve le dernier chiffre
+    Public Function isBarcodeUser(texte As String)
+        If texte = "Demo - please subscribe to full version" Then
+            texte = ""
+            MessageBox.Show("Veuillez scanner le code de nouveau")
+            Return texte
+        End If
+        Try
+            Dim number As Integer
+            number = Integer.Parse(texte)
+            If number >= 10000000 Then
+                number = Math.Floor(number / 10)
+            End If
+            texte = number.ToString
+        Catch ex As Exception
+
+        End Try
+
+        Return texte
+    End Function
+
+    'recoit un string et determine si c'est un nombre ou un texte et renvoie le texte
+    Public Function isBarcodeEquip(texte As String)
+        If texte = "Demo - please subscribe to full version" Then
+            texte = ""
+            MessageBox.Show("Veuillez scanner le code de nouveau")
+            Return texte
+        End If
+        Try
+            Dim number As Integer
+            number = Integer.Parse(texte)
+            texte = number.ToString
+        Catch ex As Exception
+
+        End Try
+
+        Return texte
+    End Function
 
 End Class
