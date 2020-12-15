@@ -148,7 +148,7 @@
   "TBEmailFill": "Email",
   "TBPhoneFill": "Phone number",
   "TBBalanceFill": "Balance",
-  "CheckAllEquipmentShow": "Display rental equipment",
+  "CheckAllEquipmentShow": "Show all equipments",
   "MsgNoUserSelected": "No user selected for the rent",
   "Submit": "Submit",
   "MsgReturnedTitle": "Returning equipments",
@@ -175,5 +175,13 @@
   "PromptClearHistory2LabCheck": "Delete all data",
   "PromptClearHistory2LabMessage": "Select a date to delete\nhistory older than said date.",
   "PromptClearHistory2BeforeMessage1": "Do you really want to delete all\nhistory data from before ",
-  "PromptClearHistory2BeforeMessage2": "?\nThis action is irreversible."
+  "PromptClearHistory2BeforeMessage2": "?\nThis action is irreversible.",
+  "EquipGridRentDeposit": "Real deposit",
+  "RentBtViewRentals": "List of rentals",
+  "RentLabRenter": "Renter",
+  "RentLabEquipments": "Equipments",
+  "RentLabBeginDate": "Rental date",
+  "RentLabEndDate": "Return date",
+  "RentLabSuggestedDeposit": "Suggested deposit",
+  "RentLabRealDeposit": "Real deposit"
 }

@@ -122,7 +122,7 @@
   "TBEmailFill": "Email",
   "TBPhoneFill": "Numéro de téléphone",
   "TBBalanceFill": "Balance",
-  "CheckAllEquipmentShow": "Afficher les équipement louer",
+  "CheckAllEquipmentShow": "Afficher tous les équipements",
   "UserLabCheckExtension": "Cochez pour ajouter extension",
   "ReturnLabLate": "Afficher les emprunts en retard",
   "ReturnbtReturnAll": "Retourner sélection",
@@ -175,5 +175,13 @@
   "PromptClearHistory2LabCheck": "Supprimer tous les enregistrements",
   "PromptClearHistory2LabMessage": "Choisissez une date pour supprimer\ntous les enregistrements plus ancients.",
   "PromptClearHistory2BeforeMessage1": "Souhaitez vous vraiment supprimer\ntous les enregistrements précédant le ",
-  "PromptClearHistory2BeforeMessage2": "?\nCette action est irréversible."
+  "PromptClearHistory2BeforeMessage2": "?\nCette action est irréversible.",
+  "EquipGridRentDeposit": "Dépot réel",
+  "RentBtViewRentals": "Liste des emprunts",
+  "RentLabRenter": "Emprunteur",
+  "RentLabEquipments": "Équipements",
+  "RentLabBeginDate": "Date d'emprunt",
+  "RentLabEndDate": "Date de retour",
+  "RentLabSuggestedDeposit": "Dépot suggéré",
+  "RentLabRealDeposit": "Dépot réel"
 }

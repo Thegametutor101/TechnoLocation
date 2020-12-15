@@ -164,6 +164,8 @@ Public Class UCEquipment
         gridEquipment.Columns("deposit").HeaderText = json("EquipGridDeposit")
         gridEquipment.Columns("available").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         gridEquipment.Columns("available").ReadOnly = False
-    End Sub
-
+    End Sub
+
+
+
 End Class

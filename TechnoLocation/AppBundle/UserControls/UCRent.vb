@@ -33,29 +33,9 @@ Public Class UCRent
     '__________________________________________________________________________________________________________
 
     Private Sub UCRent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        gridSelectedEquipment.ColumnCount = 7
-        gridSelectedEquipment.Columns(0).Name = "Code"
-        gridSelectedEquipment.Columns(0).ReadOnly = True
-        gridSelectedEquipment.Columns(1).Name = "Nom"
-        gridSelectedEquipment.Columns(1).ReadOnly = True
-        gridSelectedEquipment.Columns(2).Name = "kit"
-        gridSelectedEquipment.Columns(2).ReadOnly = True
-        gridSelectedEquipment.Columns(3).Name = "État"
-        gridSelectedEquipment.Columns(3).ReadOnly = True
-        gridSelectedEquipment.Columns(4).Name = "Commentaire"
-        gridSelectedEquipment.Columns(4).ReadOnly = False
-        'Regarder pour voir si on change le commentaire pour un nouveau commentaire pour les prets
-        gridSelectedEquipment.Columns(5).Name = "Dépôt sugéré"
-        gridSelectedEquipment.Columns(5).ReadOnly = True
-        gridSelectedEquipment.Columns(6).Name = "Dépôt réel"
-        gridSelectedEquipment.Columns(6).ReadOnly = False
-        tbCodeRenter.Text = Lang.getInstance().getLang()("TBCodeFill")
-        tbNameRenter.Text = Lang.getInstance().getLang()("TBNameFill")
-        tbEmailRenter.Text = Lang.getInstance().getLang()("TBEmailFill")
-        tbPhoneRenter.Text = Lang.getInstance().getLang()("TBPhoneFill")
-        tbBalanceRenter.Text = Lang.getInstance().getLang()("TBBalanceFill")
-        checkShowAllEquipment.Text = Lang.getInstance().getLang()("CheckAllEquipmentShow")
+        loadLanguages()
+        dateStart.Value = Date.Now
+        dateEnd.Value = Date.Now.AddDays(1)
         dateBegin = dateStart.Value
         dateFinish = dateEnd.Value
         code = mainForm.code
@@ -179,7 +159,7 @@ Public Class UCRent
     End Sub
 
     Private Sub gridSelectedEquipment_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellEndEdit
-        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([0-9]{0,4})([.,][0-9]{0,2})*$") Then
+        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([\d])+(\.[\d]{1,2}|\,[\d]{1,2})*$") Then
             Try
                 gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
                 changeDepositReel()
@@ -294,11 +274,6 @@ Public Class UCRent
     'Other
     '__________________________________________________________________________________________________________
 
-
-
-
-
-
     Private Sub searchEquipment()
         Dim grey = Color.FromArgb(1, 213, 218, 223)
         Dim red = Color.FromArgb(0.8, 224, 70, 70)
@@ -307,7 +282,7 @@ Public Class UCRent
         tbSearchEquipment.FocusedState.BorderColor = blue
         tbSearchEquipment.Text = tbSearchEquipment.Text.Trim()
         If tbSearchEquipment.Text.Length > 0 Then
-            If checkShowAllEquipment.Checked Then
+            If checkShowAllEquipments.Checked Then
                 gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
                                                                                            False,
                                                                                            dateStart.Value,
@@ -324,7 +299,7 @@ Public Class UCRent
                 loadDataGridView()
             End If
         Else
-            If checkShowAllEquipment.Checked Then
+            If checkShowAllEquipments.Checked Then
                 gridAllEquipment.DataSource = EntityEquipment.getInstance().getEquipmentsBySearchRent(tbSearchEquipment.Text,
                                                                                            False,
                                                                                            dateStart.Value,
@@ -336,13 +311,7 @@ Public Class UCRent
                                                                                            dateEnd.Value)
             End If
         End If
-
         table = EntityRent.getInstance.getRentBetweenDate(dateStart.Value.ToString, dateEnd.Value.ToString)
-
-    End Sub
-
-    Private Sub gridAllEquipment_DragDrop(sender As Object, e As DragEventArgs) Handles gridAllEquipment.DragDrop
-
     End Sub
 
     Private Sub UCRent_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged, Me.HandleDestroyed
@@ -351,24 +320,54 @@ Public Class UCRent
         Next
     End Sub
 
-    Private Sub checkShowAllEquipment_CheckedChanged(sender As Object, e As EventArgs) Handles checkShowAllEquipment.CheckedChanged
+    Private Sub checkShowAllEquipments_CheckedChanged(sender As Object, e As EventArgs) Handles checkShowAllEquipments.CheckedChanged
         searchEquipment()
     End Sub
 
-
-
-
-
-    Private Sub tbCodeRenter_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles tbCodeRenter.KeyUp
-
+    Private Sub tbCodeRenter_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles tbCodeRenter.KeyUp
         If e.KeyCode = Keys.V Then
-
             tbCodeRenter.Text = codesBarres.isBarcodeUser(tbCodeRenter.Text)
-
         End If
-
     End Sub
 
-
+    Private Sub loadLanguages()
+        Dim json = Lang.getInstance().getLang()
+        gridSelectedEquipment.ColumnCount = 7
+        gridSelectedEquipment.Columns(0).HeaderText = json("EquipGridCode")
+        gridSelectedEquipment.Columns(1).HeaderText = json("EquipGridName")
+        gridSelectedEquipment.Columns(2).HeaderText = json("EquipGridKit")
+        gridSelectedEquipment.Columns(3).HeaderText = json("EquipGridState")
+        gridSelectedEquipment.Columns(4).HeaderText = json("EquipGridComments")
+        gridSelectedEquipment.Columns(5).HeaderText = json("EquipGridDeposit")
+        gridSelectedEquipment.Columns(6).HeaderText = json("EquipGridRentDeposit")
+        gridAllEquipment.Columns("code").HeaderText = json("EquipGridCode")
+        gridAllEquipment.Columns("name").HeaderText = json("EquipGridName")
+        gridAllEquipment.Columns("kit").HeaderText = json("EquipGridKit")
+        gridAllEquipment.Columns("state").HeaderText = json("EquipGridState")
+        gridAllEquipment.Columns("comments").HeaderText = json("EquipGridComments")
+        gridAllEquipment.Columns("deposit").HeaderText = json("EquipGridDeposit")
+        tbSearchEquipment.PlaceholderText = json("SearchPlaceholder")
+        tbCodeRenter.PlaceholderText = json("TBCodeFill")
+        tbNameRenter.PlaceholderText = json("TBNameFill")
+        tbEmailRenter.PlaceholderText = json("TBEmailFill")
+        tbPhoneRenter.PlaceholderText = json("TBPhoneFill")
+        tbBalanceRenter.PlaceholderText = json("TBBalanceFill")
+        labShowAllEquipments.Text = json("CheckAllEquipmentShow")
+        btViewRentals.Text = json("RentBtViewRentals")
+        btSave.Text = json("SaveItem")
+        labRenter.Text = json("RentLabRenter")
+        labEquipments.Text = json("RentLabEquipments")
+        labBeginDate.Text = json("RentLabBeginDate")
+        labEndDate.Text = json("RentLabEndDate")
+        labSuggestedDeposit.Text = json("RentLabSuggestedDeposit")
+        labRealDeposit.Text = json("RentLabRealDeposit")
+        gridSelectedEquipment.Columns(0).ReadOnly = True
+        gridSelectedEquipment.Columns(1).ReadOnly = True
+        gridSelectedEquipment.Columns(2).ReadOnly = True
+        gridSelectedEquipment.Columns(3).ReadOnly = True
+        gridSelectedEquipment.Columns(4).ReadOnly = False
+        gridSelectedEquipment.Columns(5).ReadOnly = True
+        gridSelectedEquipment.Columns(6).ReadOnly = False
+    End Sub
 
 End Class
