@@ -162,7 +162,9 @@ Public Class UCProfile
     End Sub
 
     Private Sub btDeleteAccount_Click(sender As Object, e As EventArgs) Handles btDeleteAccount.Click
-
+        ModelUser.getInstance.delUser(tbCode.Text)
+        Connection.Show()
+        mainForm.Close()
     End Sub
 
     Private Sub checkPassword_CheckedChanged(sender As Object, e As EventArgs) Handles checkPassword.CheckedChanged
