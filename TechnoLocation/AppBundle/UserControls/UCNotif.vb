@@ -3,27 +3,23 @@
     '__________________________________________________________________________________________________________
     'Attributes
     '__________________________________________________________________________________________________________
-    Dim WithEvents mainForm As New MainForm(0)
 
+    Dim WithEvents mainForm As New MainForm(0)
     Dim liste As New List(Of String)
     Dim listeInfos As New List(Of DataRow)
-
     Dim table As DataTable
-
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
-    Sub New(main As MainForm)
 
+    Sub New(main As MainForm)
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
-
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
         mainForm = main
         table = EntityRent.getInstance().getRentalsForNotif()
     End Sub
-
 
     '__________________________________________________________________________________________________________
     'Load

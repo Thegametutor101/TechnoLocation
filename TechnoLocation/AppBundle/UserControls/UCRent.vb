@@ -240,7 +240,13 @@ Public Class UCRent
         End If
         If complete Then
             If MsgBox(Lang.getInstance().getLang()("MsgAddRent"), vbYesNo) = vbYes Then
-                Dim lastId As Integer = EntityRent.getInstance.getLastIDRent()
+                Dim lastId As Integer
+                Try
+                    lastId = EntityRent.getInstance.getLastIDRent()
+                Catch ex As Exception
+                    lastId = 0
+                End Try
+
                 lastId += 1
                 For Each row As DataGridViewRow In gridSelectedEquipment.Rows
                     ModelRent.getInstance().addRent(lastId,

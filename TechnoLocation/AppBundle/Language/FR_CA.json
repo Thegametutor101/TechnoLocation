@@ -183,5 +183,6 @@
   "RentLabBeginDate": "Date d'emprunt",
   "RentLabEndDate": "Date de retour",
   "RentLabSuggestedDeposit": "Dépot suggéré",
-  "RentLabRealDeposit": "Dépot réel"
+  "RentLabRealDeposit": "Dépot réel",
+  "DashboardLabLate": "Emprunts en retard"
 }
