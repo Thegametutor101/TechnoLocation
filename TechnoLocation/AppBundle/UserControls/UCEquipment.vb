@@ -99,7 +99,7 @@ Public Class UCEquipment
 
     Private Sub btPrintBarcodeEquip_Click(sender As Object, e As EventArgs) Handles btPrintBarcodeEquip.Click
         Dim listeEquip As New List(Of String)
-        For Each Item As DataGridViewRow In gridEquipment.Rows
+        For Each Item As DataGridViewRow In gridEquipment.SelectedRows
             listeEquip.Add(Item.Cells(0).Value.ToString())
         Next
         codesBarres.mergeImages(listeEquip)
@@ -124,6 +124,7 @@ Public Class UCEquipment
 
     Public Sub loadDataGridView()
         gridEquipment.DataSource = EntityEquipment.getInstance().getEquipment()
+        codesBarres.deleteAllBC()
         For Each selectedItem As DataGridViewRow In gridEquipment.Rows
             codesBarres.generateSaveBC(selectedItem.Cells(0).Value.ToString)
         Next

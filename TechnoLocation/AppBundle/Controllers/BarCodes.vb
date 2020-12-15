@@ -1,6 +1,7 @@
 ﻿Imports ZXing
 Imports System.Drawing
 Imports System.Drawing.Imaging
+Imports System.IO
 
 Public Class BarCodes
 
@@ -79,6 +80,29 @@ Public Class BarCodes
         generateBC(input)
         barCode.Save(path + input + type, System.Drawing.Imaging.ImageFormat.Jpeg)
     End Sub
+
+
+    '--supprime tous les codes barres du dossier barCodeFolder
+    Public Sub deleteAllBC()
+        pathOk()
+        Dim pathFolder, s As String
+
+        s = path
+        pathFolder = ""
+
+        Dim words As String() = s.Split("\")
+
+        For word As Integer = 1 To words.Length - 2
+            If (words(word) IsNot "") Then
+                pathFolder += "\" + words(word)
+            End If
+        Next
+
+        For Each deleteFile In Directory.GetFiles(pathFolder, "*.*", SearchOption.TopDirectoryOnly)
+            File.Delete(deleteFile)
+        Next
+    End Sub
+
 
     '--crée une image qui fusionne tout les codes barres indiqués dans la liste
     '--et la sauvegarde dans le dossier des codes barresavec le nom merge
