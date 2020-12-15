@@ -39,6 +39,7 @@ Partial Class UCRentalDetails
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.gridEquipments = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.LabEquipmentList = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
@@ -52,7 +53,7 @@ Partial Class UCRentalDetails
         Me.labRentDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.labRentalInfo = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelLeft = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbPhone2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labPhone2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbPhone1 = New Guna.UI2.WinForms.Guna2TextBox()
@@ -63,7 +64,6 @@ Partial Class UCRentalDetails
         Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labName = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.checkAll = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
@@ -71,7 +71,7 @@ Partial Class UCRentalDetails
         Me.Guna2Panel11.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel10.SuspendLayout()
-        Me.Guna2Panel8.SuspendLayout()
+        Me.panelLeft.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -284,6 +284,19 @@ Partial Class UCRentalDetails
         Me.Guna2Panel11.Size = New System.Drawing.Size(1143, 47)
         Me.Guna2Panel11.TabIndex = 0
         '
+        'checkAll
+        '
+        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
+        Me.checkAll.CheckedState.Parent = Me.checkAll
+        Me.checkAll.HoverState.Parent = Me.checkAll
+        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
+        Me.checkAll.IndicateFocus = False
+        Me.checkAll.Location = New System.Drawing.Point(6, 15)
+        Me.checkAll.Name = "checkAll"
+        Me.checkAll.PressedState.Parent = Me.checkAll
+        Me.checkAll.Size = New System.Drawing.Size(29, 24)
+        Me.checkAll.TabIndex = 61
+        '
         'LabEquipmentList
         '
         Me.LabEquipmentList.BackColor = System.Drawing.Color.Transparent
@@ -298,7 +311,7 @@ Partial Class UCRentalDetails
         '
         Me.Guna2Panel6.Controls.Add(Me.Guna2Panel10)
         Me.Guna2Panel6.Controls.Add(Me.Guna2Panel9)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2Panel8)
+        Me.Guna2Panel6.Controls.Add(Me.panelLeft)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel6.Name = "Guna2Panel6"
@@ -491,24 +504,24 @@ Partial Class UCRentalDetails
         Me.Guna2Panel9.Size = New System.Drawing.Size(23, 319)
         Me.Guna2Panel9.TabIndex = 1
         '
-        'Guna2Panel8
+        'panelLeft
         '
-        Me.Guna2Panel8.Controls.Add(Me.tbPhone2)
-        Me.Guna2Panel8.Controls.Add(Me.labPhone2)
-        Me.Guna2Panel8.Controls.Add(Me.tbPhone1)
-        Me.Guna2Panel8.Controls.Add(Me.labPhone1)
-        Me.Guna2Panel8.Controls.Add(Me.labRenterInfo)
-        Me.Guna2Panel8.Controls.Add(Me.tbEmail)
-        Me.Guna2Panel8.Controls.Add(Me.labEmail)
-        Me.Guna2Panel8.Controls.Add(Me.tbLastName)
-        Me.Guna2Panel8.Controls.Add(Me.tbFirstName)
-        Me.Guna2Panel8.Controls.Add(Me.labName)
-        Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.ShadowDecoration.Parent = Me.Guna2Panel8
-        Me.Guna2Panel8.Size = New System.Drawing.Size(560, 319)
-        Me.Guna2Panel8.TabIndex = 0
+        Me.panelLeft.Controls.Add(Me.tbPhone2)
+        Me.panelLeft.Controls.Add(Me.labPhone2)
+        Me.panelLeft.Controls.Add(Me.tbPhone1)
+        Me.panelLeft.Controls.Add(Me.labPhone1)
+        Me.panelLeft.Controls.Add(Me.labRenterInfo)
+        Me.panelLeft.Controls.Add(Me.tbEmail)
+        Me.panelLeft.Controls.Add(Me.labEmail)
+        Me.panelLeft.Controls.Add(Me.tbLastName)
+        Me.panelLeft.Controls.Add(Me.tbFirstName)
+        Me.panelLeft.Controls.Add(Me.labName)
+        Me.panelLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelLeft.Location = New System.Drawing.Point(0, 0)
+        Me.panelLeft.Name = "panelLeft"
+        Me.panelLeft.ShadowDecoration.Parent = Me.panelLeft
+        Me.panelLeft.Size = New System.Drawing.Size(560, 319)
+        Me.panelLeft.TabIndex = 0
         '
         'tbPhone2
         '
@@ -695,19 +708,6 @@ Partial Class UCRentalDetails
         Me.labName.TabIndex = 57
         Me.labName.Text = "Nom"
         '
-        'checkAll
-        '
-        Me.checkAll.CheckedState.Image = CType(resources.GetObject("checkAll.CheckedState.Image"), System.Drawing.Image)
-        Me.checkAll.CheckedState.Parent = Me.checkAll
-        Me.checkAll.HoverState.Parent = Me.checkAll
-        Me.checkAll.Image = CType(resources.GetObject("checkAll.Image"), System.Drawing.Image)
-        Me.checkAll.IndicateFocus = False
-        Me.checkAll.Location = New System.Drawing.Point(6, 15)
-        Me.checkAll.Name = "checkAll"
-        Me.checkAll.PressedState.Parent = Me.checkAll
-        Me.checkAll.Size = New System.Drawing.Size(29, 24)
-        Me.checkAll.TabIndex = 61
-        '
         'UCRentalDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -730,8 +730,8 @@ Partial Class UCRentalDetails
         Me.Guna2Panel6.ResumeLayout(False)
         Me.Guna2Panel10.ResumeLayout(False)
         Me.Guna2Panel10.PerformLayout()
-        Me.Guna2Panel8.ResumeLayout(False)
-        Me.Guna2Panel8.PerformLayout()
+        Me.panelLeft.ResumeLayout(False)
+        Me.panelLeft.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -747,7 +747,7 @@ Partial Class UCRentalDetails
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel10 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents panelLeft As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents LabEquipmentList As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labRentalInfo As Guna.UI2.WinForms.Guna2HtmlLabel

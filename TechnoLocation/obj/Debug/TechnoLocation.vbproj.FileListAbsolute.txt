@@ -232,24 +232,6 @@ C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.Pr
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistory.resources
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistoryOptions.resources
 C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources
-<<<<<<< HEAD
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.dll
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\Newtonsoft.Json.xml
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.xml
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ChooseUser.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistory.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptClearHistoryOptions.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptReturnAmount.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.PromptReturnEquipmentComment.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.ReturnEquipment.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentalDetails.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
-D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
-=======
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.dll
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.presentation.dll
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\bin\Debug\zxing.xml
@@ -264,5 +246,4 @@ C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocati
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentList.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentMod.resources
 C:\Users\will_\OneDrive\Documents\Cegep\Projet multi\Projet session\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
->>>>>>> William-Arthur
-C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentMod.resources
+C:\Users\theen\Desktop\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentMod.resources

@@ -5,7 +5,6 @@ Imports System.IO
 
 Public Class BarCodes
 
-
     '--variables---------------------------
     Dim barCode As Image
     Dim imagePrint As Image
@@ -19,7 +18,6 @@ Public Class BarCodes
     Private Const offset = 10
     Private Const scalehO = scaleh + offset
     Private Const scalewO = scalew + offset
-
 
     '--méthodes----------------------------
 
@@ -68,6 +66,11 @@ Public Class BarCodes
     End Sub
 
     '--utilise la variable globale imagePrint pour imprimer l'image (utilisé par les autres methodes d'impression)
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub PrintImage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles printDoc.PrintPage
         e.Graphics.DrawImage(imagePrint, e.MarginBounds.Left, e.MarginBounds.Top)
     End Sub

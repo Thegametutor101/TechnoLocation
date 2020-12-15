@@ -6,6 +6,9 @@
 
     Dim WithEvents mainForm As New MainForm(0)
     Dim rental As Integer
+    Dim baseLocationLastName, baseLocationLabAuthorized, baseLocationTBAuthorized As Point
+    Dim baseLeftInputWidth, baseRightInputWidth, baseAuthorizedWidth As Integer
+    Dim basePanelLeft As Size
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -24,8 +27,16 @@
     '__________________________________________________________________________________________________________
 
     Private Sub UCRentalDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        baseLocationLastName = tbLastName.Location
+        baseLocationLabAuthorized = labAuthorized.Location
+        baseLocationTBAuthorized = tbAuthorized.Location
+        baseLeftInputWidth = tbPhone1.Width
+        baseRightInputWidth = tbRentDate.Width
+        baseAuthorizedWidth = tbAuthorized.Width
+        basePanelLeft = panelLeft.Size
         loadData()
         loadLanguages()
+        resizeInterface()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -39,6 +50,10 @@
             gridEquipments.ClearSelection()
             gridEquipments.Rows(0).Selected = True
         End If
+    End Sub
+
+    Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles mainForm.SizeChanged
+        resizeInterface()
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -109,6 +124,52 @@
         labDepositAmount.Text = json("RentalDetailsLabDepositAmount")
         labLateFee.Text = json("RentalDetailsLabLateFee")
         LabEquipmentList.Text = json("RentalDetailsLabEquipmentList")
+    End Sub
+
+    Private Sub resizeInterface()
+        If mainForm.Height = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Height And
+           mainForm.Width = Screen.FromControl(mainForm).GetWorkingArea(mainForm.Location).Width Then
+            Dim increaseWidth = (Me.Width / mainForm.panelBaseWidth) + 0.4
+            Dim increaseHeight = (Me.Height / mainForm.panelBaseHeight) + 0.4
+            tbFirstName.Size = New Size(CInt(((baseLeftInputWidth * increaseWidth) / 2) - 3), 36)
+            tbLastName.Location = New Point(tbLastName.Location.X +
+                                            (CInt(((baseLeftInputWidth * increaseWidth) / 2) + 3) -
+                                             (baseLeftInputWidth / 2) - 3),
+                                            tbLastName.Location.Y)
+            tbLastName.Size = New Size(CInt(((baseLeftInputWidth * increaseWidth) / 2) - 3), 36)
+            tbEmail.Size = New Size(CInt(baseLeftInputWidth * increaseWidth), 36)
+            tbPhone1.Size = New Size(CInt(baseLeftInputWidth * increaseWidth), 36)
+            tbPhone2.Size = New Size(CInt(baseLeftInputWidth * increaseWidth), 36)
+            panelLeft.Size = New Size(CInt(basePanelLeft.Width * increaseWidth) -
+                                      (basePanelLeft.Width / 2),
+                                      basePanelLeft.Height)
+            tbAuthorized.Size = New Size(CInt(baseAuthorizedWidth * increaseWidth), 36)
+            labAuthorized.Location = New Point(labAuthorized.Location.X +
+                                               CInt(baseAuthorizedWidth * increaseWidth) - (baseAuthorizedWidth / 2),
+                                               labAuthorized.Location.Y)
+            tbAuthorized.Location = New Point(tbAuthorized.Location.X +
+                                               CInt(baseAuthorizedWidth * increaseWidth) - (baseAuthorizedWidth / 2),
+                                               tbAuthorized.Location.Y)
+            tbRentDate.Size = New Size(CInt(baseRightInputWidth * increaseWidth), 36)
+            tbReturnDate.Size = New Size(CInt(baseRightInputWidth * increaseWidth), 36)
+            tbDepositAmount.Size = New Size(CInt(baseRightInputWidth * increaseWidth), 36)
+            tbLateFee.Size = New Size(CInt(baseRightInputWidth * increaseWidth), 36)
+        Else
+            tbFirstName.Size = New Size((baseLeftInputWidth / 2) - 3, 36)
+            tbLastName.Location = baseLocationLastName
+            tbLastName.Size = New Size((baseLeftInputWidth / 2) - 3, 36)
+            tbEmail.Size = New Size(baseLeftInputWidth, 36)
+            tbPhone1.Size = New Size(baseLeftInputWidth, 36)
+            tbPhone2.Size = New Size(baseLeftInputWidth, 36)
+            panelLeft.Size = basePanelLeft
+            tbAuthorized.Size = New Size(baseAuthorizedWidth, 36)
+            labAuthorized.Location = baseLocationLabAuthorized
+            tbAuthorized.Location = baseLocationTBAuthorized
+            tbRentDate.Size = New Size(baseRightInputWidth, 36)
+            tbReturnDate.Size = New Size(baseRightInputWidth, 36)
+            tbDepositAmount.Size = New Size(baseRightInputWidth, 36)
+            tbLateFee.Size = New Size(baseRightInputWidth, 36)
+        End If
     End Sub
 
 End Class

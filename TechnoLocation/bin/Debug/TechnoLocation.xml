@@ -192,6 +192,13 @@ TechnoLocation
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:TechnoLocation.BarCodes.PrintImage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="M:TechnoLocation.MainForm.MainForm_Load(System.Object,System.EventArgs)">
  <summary>
  Au chargement nous voulons voir le Dashboard

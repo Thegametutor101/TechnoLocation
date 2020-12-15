@@ -183,5 +183,6 @@
   "RentLabBeginDate": "Rental date",
   "RentLabEndDate": "Return date",
   "RentLabSuggestedDeposit": "Suggested deposit",
-  "RentLabRealDeposit": "Real deposit"
+  "RentLabRealDeposit": "Real deposit",
+  "DashboardLabLate": "Late rentals"
 }
