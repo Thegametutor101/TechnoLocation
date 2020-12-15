@@ -89,21 +89,21 @@ Partial Class UCRent
         'Guna2Panel2
         '
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 80)
-        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 65)
+        Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(60, 663)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(45, 539)
         Me.Guna2Panel2.TabIndex = 1
         '
         'Guna2Panel4
         '
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel4.Location = New System.Drawing.Point(60, 704)
-        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel4.Location = New System.Drawing.Point(45, 572)
+        Me.Guna2Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.ShadowDecoration.Parent = Me.Guna2Panel4
-        Me.Guna2Panel4.Size = New System.Drawing.Size(1143, 39)
+        Me.Guna2Panel4.Size = New System.Drawing.Size(857, 32)
         Me.Guna2Panel4.TabIndex = 3
         '
         'Guna2Panel6
@@ -117,11 +117,11 @@ Partial Class UCRent
         Me.Guna2Panel6.Controls.Add(Me.dateEnd)
         Me.Guna2Panel6.Controls.Add(Me.dateStart)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 492)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 400)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.ShadowDecoration.Parent = Me.Guna2Panel6
-        Me.Guna2Panel6.Size = New System.Drawing.Size(1143, 132)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(857, 107)
         Me.Guna2Panel6.TabIndex = 44
         '
         'tbReelDeposit
@@ -140,15 +140,15 @@ Partial Class UCRent
         Me.tbReelDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbReelDeposit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbReelDeposit.HoverState.Parent = Me.tbReelDeposit
-        Me.tbReelDeposit.Location = New System.Drawing.Point(839, 76)
-        Me.tbReelDeposit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbReelDeposit.Location = New System.Drawing.Point(629, 62)
+        Me.tbReelDeposit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbReelDeposit.Name = "tbReelDeposit"
         Me.tbReelDeposit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbReelDeposit.PlaceholderText = ""
         Me.tbReelDeposit.ReadOnly = True
         Me.tbReelDeposit.SelectedText = ""
         Me.tbReelDeposit.ShadowDecoration.Parent = Me.tbReelDeposit
-        Me.tbReelDeposit.Size = New System.Drawing.Size(224, 36)
+        Me.tbReelDeposit.Size = New System.Drawing.Size(168, 29)
         Me.tbReelDeposit.TabIndex = 59
         Me.tbReelDeposit.TabStop = False
         '
@@ -168,15 +168,15 @@ Partial Class UCRent
         Me.tbSuggestedDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSuggestedDeposit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSuggestedDeposit.HoverState.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.Location = New System.Drawing.Point(839, 20)
-        Me.tbSuggestedDeposit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbSuggestedDeposit.Location = New System.Drawing.Point(629, 16)
+        Me.tbSuggestedDeposit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbSuggestedDeposit.Name = "tbSuggestedDeposit"
         Me.tbSuggestedDeposit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbSuggestedDeposit.PlaceholderText = ""
         Me.tbSuggestedDeposit.ReadOnly = True
         Me.tbSuggestedDeposit.SelectedText = ""
         Me.tbSuggestedDeposit.ShadowDecoration.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.Size = New System.Drawing.Size(224, 36)
+        Me.tbSuggestedDeposit.Size = New System.Drawing.Size(168, 29)
         Me.tbSuggestedDeposit.TabIndex = 0
         Me.tbSuggestedDeposit.TabStop = False
         '
@@ -184,10 +184,10 @@ Partial Class UCRent
         '
         Me.labRealDeposit.BackColor = System.Drawing.Color.Transparent
         Me.labRealDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRealDeposit.Location = New System.Drawing.Point(646, 80)
-        Me.labRealDeposit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labRealDeposit.Location = New System.Drawing.Point(484, 65)
+        Me.labRealDeposit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labRealDeposit.Name = "labRealDeposit"
-        Me.labRealDeposit.Size = New System.Drawing.Size(133, 27)
+        Me.labRealDeposit.Size = New System.Drawing.Size(112, 22)
         Me.labRealDeposit.TabIndex = 58
         Me.labRealDeposit.Text = "Dépot demandé"
         '
@@ -195,10 +195,10 @@ Partial Class UCRent
         '
         Me.labSuggestedDeposit.BackColor = System.Drawing.Color.Transparent
         Me.labSuggestedDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labSuggestedDeposit.Location = New System.Drawing.Point(646, 29)
-        Me.labSuggestedDeposit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labSuggestedDeposit.Location = New System.Drawing.Point(484, 24)
+        Me.labSuggestedDeposit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labSuggestedDeposit.Name = "labSuggestedDeposit"
-        Me.labSuggestedDeposit.Size = New System.Drawing.Size(122, 27)
+        Me.labSuggestedDeposit.Size = New System.Drawing.Size(102, 22)
         Me.labSuggestedDeposit.TabIndex = 57
         Me.labSuggestedDeposit.Text = "Dépot suggéré"
         '
@@ -206,10 +206,10 @@ Partial Class UCRent
         '
         Me.labEndDate.BackColor = System.Drawing.Color.Transparent
         Me.labEndDate.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labEndDate.Location = New System.Drawing.Point(20, 80)
-        Me.labEndDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labEndDate.Location = New System.Drawing.Point(15, 65)
+        Me.labEndDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labEndDate.Name = "labEndDate"
-        Me.labEndDate.Size = New System.Drawing.Size(24, 27)
+        Me.labEndDate.Size = New System.Drawing.Size(20, 22)
         Me.labEndDate.TabIndex = 56
         Me.labEndDate.Text = "À :"
         '
@@ -217,10 +217,10 @@ Partial Class UCRent
         '
         Me.labBeginDate.BackColor = System.Drawing.Color.Transparent
         Me.labBeginDate.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labBeginDate.Location = New System.Drawing.Point(20, 24)
-        Me.labBeginDate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labBeginDate.Location = New System.Drawing.Point(15, 20)
+        Me.labBeginDate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labBeginDate.Name = "labBeginDate"
-        Me.labBeginDate.Size = New System.Drawing.Size(34, 27)
+        Me.labBeginDate.Size = New System.Drawing.Size(29, 22)
         Me.labBeginDate.TabIndex = 55
         Me.labBeginDate.Text = "De :"
         '
@@ -230,13 +230,13 @@ Partial Class UCRent
         Me.dateEnd.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dateEnd.HoverState.Parent = Me.dateEnd
-        Me.dateEnd.Location = New System.Drawing.Point(177, 76)
-        Me.dateEnd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dateEnd.Location = New System.Drawing.Point(133, 62)
+        Me.dateEnd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dateEnd.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dateEnd.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dateEnd.Name = "dateEnd"
         Me.dateEnd.ShadowDecoration.Parent = Me.dateEnd
-        Me.dateEnd.Size = New System.Drawing.Size(316, 36)
+        Me.dateEnd.Size = New System.Drawing.Size(237, 29)
         Me.dateEnd.TabIndex = 54
         Me.dateEnd.Value = New Date(2020, 12, 9, 20, 49, 6, 542)
         '
@@ -246,13 +246,13 @@ Partial Class UCRent
         Me.dateStart.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dateStart.HoverState.Parent = Me.dateStart
-        Me.dateStart.Location = New System.Drawing.Point(177, 20)
-        Me.dateStart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dateStart.Location = New System.Drawing.Point(133, 16)
+        Me.dateStart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dateStart.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dateStart.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dateStart.Name = "dateStart"
         Me.dateStart.ShadowDecoration.Parent = Me.dateStart
-        Me.dateStart.Size = New System.Drawing.Size(316, 36)
+        Me.dateStart.Size = New System.Drawing.Size(237, 29)
         Me.dateStart.TabIndex = 53
         Me.dateStart.Value = New Date(2020, 12, 9, 20, 49, 5, 629)
         '
@@ -262,20 +262,20 @@ Partial Class UCRent
         Me.Guna2Panel7.Controls.Add(Me.labRenter)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.ShadowDecoration.Parent = Me.Guna2Panel7
-        Me.Guna2Panel7.Size = New System.Drawing.Size(1143, 43)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(857, 35)
         Me.Guna2Panel7.TabIndex = 45
         '
         'labEquipments
         '
         Me.labEquipments.BackColor = System.Drawing.Color.Transparent
         Me.labEquipments.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labEquipments.Location = New System.Drawing.Point(266, 6)
-        Me.labEquipments.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labEquipments.Location = New System.Drawing.Point(200, 5)
+        Me.labEquipments.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labEquipments.Name = "labEquipments"
-        Me.labEquipments.Size = New System.Drawing.Size(106, 27)
+        Me.labEquipments.Size = New System.Drawing.Size(89, 22)
         Me.labEquipments.TabIndex = 59
         Me.labEquipments.Text = "Équipements"
         '
@@ -283,10 +283,10 @@ Partial Class UCRent
         '
         Me.labRenter.BackColor = System.Drawing.Color.Transparent
         Me.labRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRenter.Location = New System.Drawing.Point(9, 6)
-        Me.labRenter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labRenter.Location = New System.Drawing.Point(7, 5)
+        Me.labRenter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labRenter.Name = "labRenter"
-        Me.labRenter.Size = New System.Drawing.Size(96, 27)
+        Me.labRenter.Size = New System.Drawing.Size(80, 22)
         Me.labRenter.TabIndex = 58
         Me.labRenter.Text = "Emprunteur"
         '
@@ -295,11 +295,11 @@ Partial Class UCRent
         Me.Guna2Panel8.Controls.Add(Me.Guna2Panel10)
         Me.Guna2Panel8.Controls.Add(Me.Guna2Panel9)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 43)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel8.Location = New System.Drawing.Point(0, 35)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel8.Name = "Guna2Panel8"
         Me.Guna2Panel8.ShadowDecoration.Parent = Me.Guna2Panel8
-        Me.Guna2Panel8.Size = New System.Drawing.Size(1143, 449)
+        Me.Guna2Panel8.Size = New System.Drawing.Size(857, 365)
         Me.Guna2Panel8.TabIndex = 46
         '
         'Guna2Panel10
@@ -307,11 +307,11 @@ Partial Class UCRent
         Me.Guna2Panel10.Controls.Add(Me.Guna2Panel16)
         Me.Guna2Panel10.Controls.Add(Me.Guna2Panel13)
         Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel10.Location = New System.Drawing.Point(239, 0)
-        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel10.Location = New System.Drawing.Point(179, 0)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel10.Name = "Guna2Panel10"
         Me.Guna2Panel10.ShadowDecoration.Parent = Me.Guna2Panel10
-        Me.Guna2Panel10.Size = New System.Drawing.Size(904, 449)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(678, 365)
         Me.Guna2Panel10.TabIndex = 1
         '
         'Guna2Panel16
@@ -321,22 +321,22 @@ Partial Class UCRent
         Me.Guna2Panel16.Controls.Add(Me.panelTopEquipments)
         Me.Guna2Panel16.Controls.Add(Me.Guna2Panel12)
         Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel16.Location = New System.Drawing.Point(17, 0)
-        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel16.Location = New System.Drawing.Point(13, 0)
+        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel16.Name = "Guna2Panel16"
         Me.Guna2Panel16.ShadowDecoration.Parent = Me.Guna2Panel16
-        Me.Guna2Panel16.Size = New System.Drawing.Size(887, 449)
+        Me.Guna2Panel16.Size = New System.Drawing.Size(665, 365)
         Me.Guna2Panel16.TabIndex = 2
         '
         'Guna2Panel15
         '
         Me.Guna2Panel15.Controls.Add(Me.gridSelectedEquipment)
         Me.Guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 266)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel15.Location = New System.Drawing.Point(0, 217)
+        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel15.Name = "Guna2Panel15"
         Me.Guna2Panel15.ShadowDecoration.Parent = Me.Guna2Panel15
-        Me.Guna2Panel15.Size = New System.Drawing.Size(887, 183)
+        Me.Guna2Panel15.Size = New System.Drawing.Size(665, 148)
         Me.Guna2Panel15.TabIndex = 65
         '
         'gridSelectedEquipment
@@ -372,7 +372,7 @@ Partial Class UCRent
         Me.gridSelectedEquipment.EnableHeadersVisualStyles = False
         Me.gridSelectedEquipment.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridSelectedEquipment.Location = New System.Drawing.Point(0, 0)
-        Me.gridSelectedEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gridSelectedEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gridSelectedEquipment.Name = "gridSelectedEquipment"
         Me.gridSelectedEquipment.RowHeadersVisible = False
         Me.gridSelectedEquipment.RowHeadersWidth = 10
@@ -381,7 +381,7 @@ Partial Class UCRent
         Me.gridSelectedEquipment.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gridSelectedEquipment.RowTemplate.Height = 24
         Me.gridSelectedEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridSelectedEquipment.Size = New System.Drawing.Size(887, 183)
+        Me.gridSelectedEquipment.Size = New System.Drawing.Size(665, 148)
         Me.gridSelectedEquipment.TabIndex = 17
         Me.gridSelectedEquipment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -409,22 +409,22 @@ Partial Class UCRent
         'Guna2Panel14
         '
         Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 248)
-        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel14.Location = New System.Drawing.Point(0, 202)
+        Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel14.Name = "Guna2Panel14"
         Me.Guna2Panel14.ShadowDecoration.Parent = Me.Guna2Panel14
-        Me.Guna2Panel14.Size = New System.Drawing.Size(887, 18)
+        Me.Guna2Panel14.Size = New System.Drawing.Size(665, 15)
         Me.Guna2Panel14.TabIndex = 64
         '
         'panelTopEquipments
         '
         Me.panelTopEquipments.Controls.Add(Me.gridAllEquipment)
         Me.panelTopEquipments.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTopEquipments.Location = New System.Drawing.Point(0, 65)
-        Me.panelTopEquipments.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.panelTopEquipments.Location = New System.Drawing.Point(0, 53)
+        Me.panelTopEquipments.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.panelTopEquipments.Name = "panelTopEquipments"
         Me.panelTopEquipments.ShadowDecoration.Parent = Me.panelTopEquipments
-        Me.panelTopEquipments.Size = New System.Drawing.Size(887, 183)
+        Me.panelTopEquipments.Size = New System.Drawing.Size(665, 149)
         Me.panelTopEquipments.TabIndex = 63
         '
         'gridAllEquipment
@@ -460,7 +460,7 @@ Partial Class UCRent
         Me.gridAllEquipment.EnableHeadersVisualStyles = False
         Me.gridAllEquipment.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.gridAllEquipment.Location = New System.Drawing.Point(0, 0)
-        Me.gridAllEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gridAllEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gridAllEquipment.Name = "gridAllEquipment"
         Me.gridAllEquipment.ReadOnly = True
         Me.gridAllEquipment.RowHeadersVisible = False
@@ -470,7 +470,7 @@ Partial Class UCRent
         Me.gridAllEquipment.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.gridAllEquipment.RowTemplate.Height = 24
         Me.gridAllEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridAllEquipment.Size = New System.Drawing.Size(887, 183)
+        Me.gridAllEquipment.Size = New System.Drawing.Size(665, 149)
         Me.gridAllEquipment.TabIndex = 17
         Me.gridAllEquipment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.gridAllEquipment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -502,19 +502,19 @@ Partial Class UCRent
         Me.Guna2Panel12.Controls.Add(Me.tbSearchEquipment)
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel12.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel12.Name = "Guna2Panel12"
         Me.Guna2Panel12.ShadowDecoration.Parent = Me.Guna2Panel12
-        Me.Guna2Panel12.Size = New System.Drawing.Size(887, 65)
+        Me.Guna2Panel12.Size = New System.Drawing.Size(665, 53)
         Me.Guna2Panel12.TabIndex = 1
         '
         'labShowAllEquipments
         '
         Me.labShowAllEquipments.BackColor = System.Drawing.Color.Transparent
-        Me.labShowAllEquipments.Location = New System.Drawing.Point(442, 24)
-        Me.labShowAllEquipments.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.labShowAllEquipments.Location = New System.Drawing.Point(332, 20)
+        Me.labShowAllEquipments.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.labShowAllEquipments.Name = "labShowAllEquipments"
-        Me.labShowAllEquipments.Size = New System.Drawing.Size(135, 18)
+        Me.labShowAllEquipments.Size = New System.Drawing.Size(105, 15)
         Me.labShowAllEquipments.TabIndex = 25
         Me.labShowAllEquipments.Text = "Disponible Seulement"
         '
@@ -525,11 +525,11 @@ Partial Class UCRent
         Me.checkShowAllEquipments.CheckedState.BorderThickness = 2
         Me.checkShowAllEquipments.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.checkShowAllEquipments.CheckedState.Parent = Me.checkShowAllEquipments
-        Me.checkShowAllEquipments.Location = New System.Drawing.Point(416, 23)
-        Me.checkShowAllEquipments.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.checkShowAllEquipments.Location = New System.Drawing.Point(312, 19)
+        Me.checkShowAllEquipments.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.checkShowAllEquipments.Name = "checkShowAllEquipments"
         Me.checkShowAllEquipments.ShadowDecoration.Parent = Me.checkShowAllEquipments
-        Me.checkShowAllEquipments.Size = New System.Drawing.Size(20, 20)
+        Me.checkShowAllEquipments.Size = New System.Drawing.Size(15, 16)
         Me.checkShowAllEquipments.TabIndex = 24
         Me.checkShowAllEquipments.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.checkShowAllEquipments.UncheckedState.BorderRadius = 2
@@ -552,24 +552,24 @@ Partial Class UCRent
         Me.tbSearchEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 9.0!)
         Me.tbSearchEquipment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearchEquipment.HoverState.Parent = Me.tbSearchEquipment
-        Me.tbSearchEquipment.Location = New System.Drawing.Point(23, 15)
-        Me.tbSearchEquipment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tbSearchEquipment.Location = New System.Drawing.Point(17, 12)
+        Me.tbSearchEquipment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbSearchEquipment.Name = "tbSearchEquipment"
         Me.tbSearchEquipment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbSearchEquipment.PlaceholderText = "Recherche"
         Me.tbSearchEquipment.SelectedText = ""
         Me.tbSearchEquipment.ShadowDecoration.Parent = Me.tbSearchEquipment
-        Me.tbSearchEquipment.Size = New System.Drawing.Size(377, 36)
+        Me.tbSearchEquipment.Size = New System.Drawing.Size(283, 29)
         Me.tbSearchEquipment.TabIndex = 21
         '
         'Guna2Panel13
         '
         Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel13.Name = "Guna2Panel13"
         Me.Guna2Panel13.ShadowDecoration.Parent = Me.Guna2Panel13
-        Me.Guna2Panel13.Size = New System.Drawing.Size(17, 449)
+        Me.Guna2Panel13.Size = New System.Drawing.Size(13, 365)
         Me.Guna2Panel13.TabIndex = 1
         '
         'Guna2Panel9
@@ -582,10 +582,10 @@ Partial Class UCRent
         Me.Guna2Panel9.Controls.Add(Me.Guna2Panel11)
         Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel9.Name = "Guna2Panel9"
         Me.Guna2Panel9.ShadowDecoration.Parent = Me.Guna2Panel9
-        Me.Guna2Panel9.Size = New System.Drawing.Size(239, 449)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(179, 365)
         Me.Guna2Panel9.TabIndex = 0
         '
         'tbBalanceRenter
@@ -604,15 +604,14 @@ Partial Class UCRent
         Me.tbBalanceRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbBalanceRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbBalanceRenter.HoverState.Parent = Me.tbBalanceRenter
-        Me.tbBalanceRenter.Location = New System.Drawing.Point(11, 384)
-        Me.tbBalanceRenter.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbBalanceRenter.Location = New System.Drawing.Point(8, 312)
         Me.tbBalanceRenter.Name = "tbBalanceRenter"
         Me.tbBalanceRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbBalanceRenter.PlaceholderText = ""
         Me.tbBalanceRenter.ReadOnly = True
         Me.tbBalanceRenter.SelectedText = ""
         Me.tbBalanceRenter.ShadowDecoration.Parent = Me.tbBalanceRenter
-        Me.tbBalanceRenter.Size = New System.Drawing.Size(203, 44)
+        Me.tbBalanceRenter.Size = New System.Drawing.Size(152, 36)
         Me.tbBalanceRenter.TabIndex = 59
         '
         'tbPhoneRenter
@@ -631,15 +630,14 @@ Partial Class UCRent
         Me.tbPhoneRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbPhoneRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPhoneRenter.HoverState.Parent = Me.tbPhoneRenter
-        Me.tbPhoneRenter.Location = New System.Drawing.Point(11, 304)
-        Me.tbPhoneRenter.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbPhoneRenter.Location = New System.Drawing.Point(8, 247)
         Me.tbPhoneRenter.Name = "tbPhoneRenter"
         Me.tbPhoneRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPhoneRenter.PlaceholderText = ""
         Me.tbPhoneRenter.ReadOnly = True
         Me.tbPhoneRenter.SelectedText = ""
         Me.tbPhoneRenter.ShadowDecoration.Parent = Me.tbPhoneRenter
-        Me.tbPhoneRenter.Size = New System.Drawing.Size(203, 44)
+        Me.tbPhoneRenter.Size = New System.Drawing.Size(152, 36)
         Me.tbPhoneRenter.TabIndex = 58
         '
         'tbEmailRenter
@@ -658,15 +656,14 @@ Partial Class UCRent
         Me.tbEmailRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbEmailRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEmailRenter.HoverState.Parent = Me.tbEmailRenter
-        Me.tbEmailRenter.Location = New System.Drawing.Point(11, 223)
-        Me.tbEmailRenter.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbEmailRenter.Location = New System.Drawing.Point(7, 181)
         Me.tbEmailRenter.Name = "tbEmailRenter"
         Me.tbEmailRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbEmailRenter.PlaceholderText = ""
         Me.tbEmailRenter.ReadOnly = True
         Me.tbEmailRenter.SelectedText = ""
         Me.tbEmailRenter.ShadowDecoration.Parent = Me.tbEmailRenter
-        Me.tbEmailRenter.Size = New System.Drawing.Size(203, 44)
+        Me.tbEmailRenter.Size = New System.Drawing.Size(152, 36)
         Me.tbEmailRenter.TabIndex = 57
         '
         'tbNameRenter
@@ -685,15 +682,14 @@ Partial Class UCRent
         Me.tbNameRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbNameRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbNameRenter.HoverState.Parent = Me.tbNameRenter
-        Me.tbNameRenter.Location = New System.Drawing.Point(11, 155)
-        Me.tbNameRenter.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbNameRenter.Location = New System.Drawing.Point(8, 127)
         Me.tbNameRenter.Name = "tbNameRenter"
         Me.tbNameRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbNameRenter.PlaceholderText = ""
         Me.tbNameRenter.ReadOnly = True
         Me.tbNameRenter.SelectedText = ""
         Me.tbNameRenter.ShadowDecoration.Parent = Me.tbNameRenter
-        Me.tbNameRenter.Size = New System.Drawing.Size(203, 44)
+        Me.tbNameRenter.Size = New System.Drawing.Size(152, 36)
         Me.tbNameRenter.TabIndex = 56
         '
         'tbCodeRenter
@@ -712,15 +708,14 @@ Partial Class UCRent
         Me.tbCodeRenter.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbCodeRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbCodeRenter.HoverState.Parent = Me.tbCodeRenter
-        Me.tbCodeRenter.Location = New System.Drawing.Point(11, 87)
-        Me.tbCodeRenter.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbCodeRenter.Location = New System.Drawing.Point(8, 71)
         Me.tbCodeRenter.Name = "tbCodeRenter"
         Me.tbCodeRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbCodeRenter.PlaceholderText = ""
         Me.tbCodeRenter.ReadOnly = True
         Me.tbCodeRenter.SelectedText = ""
         Me.tbCodeRenter.ShadowDecoration.Parent = Me.tbCodeRenter
-        Me.tbCodeRenter.Size = New System.Drawing.Size(203, 44)
+        Me.tbCodeRenter.Size = New System.Drawing.Size(152, 36)
         Me.tbCodeRenter.TabIndex = 55
         '
         'Guna2Panel11
@@ -728,10 +723,10 @@ Partial Class UCRent
         Me.Guna2Panel11.Controls.Add(Me.btAddUser)
         Me.Guna2Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel11.Name = "Guna2Panel11"
         Me.Guna2Panel11.ShadowDecoration.Parent = Me.Guna2Panel11
-        Me.Guna2Panel11.Size = New System.Drawing.Size(239, 65)
+        Me.Guna2Panel11.Size = New System.Drawing.Size(179, 53)
         Me.Guna2Panel11.TabIndex = 0
         '
         'btAddUser
@@ -744,13 +739,13 @@ Partial Class UCRent
         Me.btAddUser.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
         Me.btAddUser.ImageRotate = 0!
         Me.btAddUser.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btAddUser.Location = New System.Drawing.Point(11, 11)
-        Me.btAddUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btAddUser.Location = New System.Drawing.Point(8, 9)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btAddUser.Name = "btAddUser"
         Me.btAddUser.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
         Me.btAddUser.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.btAddUser.PressedState.Parent = Me.btAddUser
-        Me.btAddUser.Size = New System.Drawing.Size(43, 42)
+        Me.btAddUser.Size = New System.Drawing.Size(32, 34)
         Me.btAddUser.TabIndex = 54
         '
         'Guna2Panel5
@@ -759,11 +754,11 @@ Partial Class UCRent
         Me.Guna2Panel5.Controls.Add(Me.Guna2Panel7)
         Me.Guna2Panel5.Controls.Add(Me.Guna2Panel6)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel5.Location = New System.Drawing.Point(60, 80)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(45, 65)
+        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.ShadowDecoration.Parent = Me.Guna2Panel5
-        Me.Guna2Panel5.Size = New System.Drawing.Size(1143, 624)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(857, 507)
         Me.Guna2Panel5.TabIndex = 4
         '
         'btSave
@@ -777,11 +772,11 @@ Partial Class UCRent
         Me.btSave.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btSave.ForeColor = System.Drawing.Color.Black
         Me.btSave.HoverState.Parent = Me.btSave
-        Me.btSave.Location = New System.Drawing.Point(293, 10)
-        Me.btSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btSave.Location = New System.Drawing.Point(220, 8)
+        Me.btSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btSave.Name = "btSave"
         Me.btSave.ShadowDecoration.Parent = Me.btSave
-        Me.btSave.Size = New System.Drawing.Size(184, 60)
+        Me.btSave.Size = New System.Drawing.Size(138, 49)
         Me.btSave.TabIndex = 52
         Me.btSave.Text = "Sauvegarder"
         '
@@ -796,11 +791,11 @@ Partial Class UCRent
         Me.btViewRentals.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btViewRentals.ForeColor = System.Drawing.Color.Black
         Me.btViewRentals.HoverState.Parent = Me.btViewRentals
-        Me.btViewRentals.Location = New System.Drawing.Point(17, 10)
-        Me.btViewRentals.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btViewRentals.Location = New System.Drawing.Point(13, 8)
+        Me.btViewRentals.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btViewRentals.Name = "btViewRentals"
         Me.btViewRentals.ShadowDecoration.Parent = Me.btViewRentals
-        Me.btViewRentals.Size = New System.Drawing.Size(249, 60)
+        Me.btViewRentals.Size = New System.Drawing.Size(187, 49)
         Me.btViewRentals.TabIndex = 44
         Me.btViewRentals.Text = "Liste des emprunts"
         '
@@ -810,25 +805,25 @@ Partial Class UCRent
         Me.Guna2Panel1.Controls.Add(Me.btSave)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1263, 80)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(947, 65)
         Me.Guna2Panel1.TabIndex = 0
         '
         'Guna2Panel3
         '
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel3.Location = New System.Drawing.Point(1203, 80)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2Panel3.Location = New System.Drawing.Point(902, 65)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(60, 663)
+        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 539)
         Me.Guna2Panel3.TabIndex = 2
         '
         'UCRent
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2Panel5)
@@ -836,9 +831,8 @@ Partial Class UCRent
         Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCRent"
-        Me.Size = New System.Drawing.Size(1263, 743)
+        Me.Size = New System.Drawing.Size(947, 604)
         Me.Guna2Panel6.ResumeLayout(False)
         Me.Guna2Panel6.PerformLayout()
         Me.Guna2Panel7.ResumeLayout(False)
