@@ -187,5 +187,6 @@
   "NotifLabNbr": "Number of items",
   "NotifLabDate": "Rent date",
   "NotifLabDepo": "Deposit of rent",
+  "MsgDeleteEquipmentRent": "Do you wish to delete this equipment for this rent?\nThis action is not reversable.",
   "DashboardLabLate": "Late rentals"
 }

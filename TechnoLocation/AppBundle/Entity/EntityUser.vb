@@ -89,6 +89,71 @@ Public Class EntityUser
         End Try
     End Function
 
+    Public Function getUsers(lang As String, code As Integer) As DataTable
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            If lang = "EN" Then
+                command.CommandText = $"SET lc_time_names = 'fr_CA';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Étudiant'
+                                            WHEN U.job = 1 THEN 'Professeur'
+                                            WHEN U.job = 2 THEN 'Employé'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    where code != '{code}'
+                                    ORDER BY code"
+            Else
+                command.CommandText = $"SET lc_time_names = 'en_US';
+                                Select code, 
+                                        U.firstName, 
+                                        U.lastName, 
+                                        U.email, 
+                                        CASE
+                                        	WHEN U.extensionMain IS NULL THEN U.phoneMain
+                                            WHEN U.extensionMain IS NOT NULL THEN CAST(CONCAT(U.phoneMain, ' #', U.extensionMain) AS CHAR)
+                                        END AS phoneMain, 
+                                        CASE
+                                        	WHEN U.extension2 IS NULL THEN U.phone2
+                                            WHEN U.extension2 IS NOT NULL THEN CAST(CONCAT(U.phone2, ' #', U.extension2) AS CHAR)
+                                        END AS phone2, 
+                                        CASE
+                                            WHEN U.job = 0 THEN 'Student'
+                                            WHEN U.job = 1 THEN 'Teacher'
+                                            WHEN U.job = 2 THEN 'Employee'
+                                        END AS job,
+                                        CAST(REPLACE(CONCAT('$ ', FORMAT(U.balance, 2)), '.', ',') AS CHAR) AS balance  
+                                    from user U
+                                    where code != '{code}'
+                                    ORDER BY code"
+            End If
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim table As New DataTable("users")
+            table.Load(reader)
+            connection.Close()
+            Return table
+        Catch ex As Exception
+            MessageBox.Show($"Impossible de récupérer les utilisateurs.{Environment.NewLine}" + ex.Message)
+        End Try
+    End Function
+
     Public Function getUsersBySearch(lang As String, value As String) As DataTable
         Try
             If connection.State = ConnectionState.Open Then
@@ -198,6 +263,33 @@ Public Class EntityUser
             command.CommandText = $"SELECT U.code, 
                                     U.firstName, 
                                     U.lastName, 
+                                    U.balance
+                                FROM user U
+                                INNER JOIN rent R on R.renter = U.code
+                                WHERE R.code = {rental}"
+            connection.Open()
+            Dim reader = command.ExecuteReader()
+            Dim table As New DataTable("users")
+            table.Load(reader)
+            connection.Close()
+            Return table
+        Catch ex As Exception
+            MessageBox.Show($"Échec à la recherche de l'utilisateur souhaité.{Environment.NewLine}" + ex.Message)
+        End Try
+    End Function
+
+    Public Function getUserByRentalForRent(rental As Integer) As DataTable
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"SELECT U.code, 
+                                    U.firstName, 
+                                    U.lastName,
+                                    U.email,
+                                    U.phoneMain,
                                     U.balance
                                 FROM user U
                                 INNER JOIN rent R on R.renter = U.code

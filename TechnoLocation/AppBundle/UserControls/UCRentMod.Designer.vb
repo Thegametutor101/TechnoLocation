@@ -29,15 +29,13 @@ Partial Class UCRentMod
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbReelDeposit = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.tbSuggestedDeposit = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labRealDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labSuggestedDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.labEndDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.labBeginDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dateEnd = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.dateStart = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.labEquipments = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -49,15 +47,16 @@ Partial Class UCRentMod
         Me.tbNameRenter = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbCodeRenter = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btDelEquipment = New Guna.UI2.WinForms.Guna2Button()
+        Me.gridEquipmentRent = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btAddUser = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.gridSelectedEquipment = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.btCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         Me.Guna2Panel11.SuspendLayout()
-        CType(Me.gridSelectedEquipment, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridEquipmentRent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel2
@@ -73,9 +72,7 @@ Partial Class UCRentMod
         'Guna2Panel6
         '
         Me.Guna2Panel6.Controls.Add(Me.tbReelDeposit)
-        Me.Guna2Panel6.Controls.Add(Me.tbSuggestedDeposit)
         Me.Guna2Panel6.Controls.Add(Me.labRealDeposit)
-        Me.Guna2Panel6.Controls.Add(Me.labSuggestedDeposit)
         Me.Guna2Panel6.Controls.Add(Me.labEndDate)
         Me.Guna2Panel6.Controls.Add(Me.labBeginDate)
         Me.Guna2Panel6.Controls.Add(Me.dateEnd)
@@ -104,7 +101,7 @@ Partial Class UCRentMod
         Me.tbReelDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbReelDeposit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbReelDeposit.HoverState.Parent = Me.tbReelDeposit
-        Me.tbReelDeposit.Location = New System.Drawing.Point(629, 62)
+        Me.tbReelDeposit.Location = New System.Drawing.Point(626, 20)
         Me.tbReelDeposit.Margin = New System.Windows.Forms.Padding(2)
         Me.tbReelDeposit.Name = "tbReelDeposit"
         Me.tbReelDeposit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -116,55 +113,16 @@ Partial Class UCRentMod
         Me.tbReelDeposit.TabIndex = 59
         Me.tbReelDeposit.TabStop = False
         '
-        'tbSuggestedDeposit
-        '
-        Me.tbSuggestedDeposit.BorderRadius = 2
-        Me.tbSuggestedDeposit.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbSuggestedDeposit.DefaultText = ""
-        Me.tbSuggestedDeposit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tbSuggestedDeposit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tbSuggestedDeposit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbSuggestedDeposit.DisabledState.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbSuggestedDeposit.Enabled = False
-        Me.tbSuggestedDeposit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSuggestedDeposit.FocusedState.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbSuggestedDeposit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSuggestedDeposit.HoverState.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.Location = New System.Drawing.Point(629, 16)
-        Me.tbSuggestedDeposit.Margin = New System.Windows.Forms.Padding(2)
-        Me.tbSuggestedDeposit.Name = "tbSuggestedDeposit"
-        Me.tbSuggestedDeposit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tbSuggestedDeposit.PlaceholderText = ""
-        Me.tbSuggestedDeposit.ReadOnly = True
-        Me.tbSuggestedDeposit.SelectedText = ""
-        Me.tbSuggestedDeposit.ShadowDecoration.Parent = Me.tbSuggestedDeposit
-        Me.tbSuggestedDeposit.Size = New System.Drawing.Size(168, 29)
-        Me.tbSuggestedDeposit.TabIndex = 0
-        Me.tbSuggestedDeposit.TabStop = False
-        '
         'labRealDeposit
         '
         Me.labRealDeposit.BackColor = System.Drawing.Color.Transparent
         Me.labRealDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRealDeposit.Location = New System.Drawing.Point(484, 65)
+        Me.labRealDeposit.Location = New System.Drawing.Point(481, 23)
         Me.labRealDeposit.Margin = New System.Windows.Forms.Padding(2)
         Me.labRealDeposit.Name = "labRealDeposit"
         Me.labRealDeposit.Size = New System.Drawing.Size(112, 22)
         Me.labRealDeposit.TabIndex = 58
         Me.labRealDeposit.Text = "Dépot demandé"
-        '
-        'labSuggestedDeposit
-        '
-        Me.labSuggestedDeposit.BackColor = System.Drawing.Color.Transparent
-        Me.labSuggestedDeposit.Font = New System.Drawing.Font("Segoe UI Symbol", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labSuggestedDeposit.Location = New System.Drawing.Point(484, 24)
-        Me.labSuggestedDeposit.Margin = New System.Windows.Forms.Padding(2)
-        Me.labSuggestedDeposit.Name = "labSuggestedDeposit"
-        Me.labSuggestedDeposit.Size = New System.Drawing.Size(102, 22)
-        Me.labSuggestedDeposit.TabIndex = 57
-        Me.labSuggestedDeposit.Text = "Dépot suggéré"
         '
         'labEndDate
         '
@@ -220,18 +178,9 @@ Partial Class UCRentMod
         Me.dateStart.TabIndex = 53
         Me.dateStart.Value = New Date(2020, 12, 9, 20, 49, 5, 629)
         '
-        'Guna2Panel3
-        '
-        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel3.Location = New System.Drawing.Point(902, 65)
-        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
-        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 539)
-        Me.Guna2Panel3.TabIndex = 68
-        '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.btDelEquipment)
         Me.Guna2Panel1.Controls.Add(Me.btCancel)
         Me.Guna2Panel1.Controls.Add(Me.btSave)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -241,6 +190,25 @@ Partial Class UCRentMod
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(947, 65)
         Me.Guna2Panel1.TabIndex = 65
+        '
+        'btCancel
+        '
+        Me.btCancel.BorderColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.btCancel.BorderRadius = 15
+        Me.btCancel.BorderThickness = 2
+        Me.btCancel.CheckedState.Parent = Me.btCancel
+        Me.btCancel.CustomImages.Parent = Me.btCancel
+        Me.btCancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.btCancel.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btCancel.ForeColor = System.Drawing.Color.Black
+        Me.btCancel.HoverState.Parent = Me.btCancel
+        Me.btCancel.Location = New System.Drawing.Point(290, 8)
+        Me.btCancel.Margin = New System.Windows.Forms.Padding(2)
+        Me.btCancel.Name = "btCancel"
+        Me.btCancel.ShadowDecoration.Parent = Me.btCancel
+        Me.btCancel.Size = New System.Drawing.Size(138, 49)
+        Me.btCancel.TabIndex = 81
+        Me.btCancel.Text = "Quitter"
         '
         'btSave
         '
@@ -328,6 +296,7 @@ Partial Class UCRentMod
         Me.tbBalanceRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbBalanceRenter.HoverState.Parent = Me.tbBalanceRenter
         Me.tbBalanceRenter.Location = New System.Drawing.Point(8, 312)
+        Me.tbBalanceRenter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbBalanceRenter.Name = "tbBalanceRenter"
         Me.tbBalanceRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbBalanceRenter.PlaceholderText = ""
@@ -354,6 +323,7 @@ Partial Class UCRentMod
         Me.tbPhoneRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPhoneRenter.HoverState.Parent = Me.tbPhoneRenter
         Me.tbPhoneRenter.Location = New System.Drawing.Point(8, 247)
+        Me.tbPhoneRenter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbPhoneRenter.Name = "tbPhoneRenter"
         Me.tbPhoneRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbPhoneRenter.PlaceholderText = ""
@@ -380,6 +350,7 @@ Partial Class UCRentMod
         Me.tbEmailRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEmailRenter.HoverState.Parent = Me.tbEmailRenter
         Me.tbEmailRenter.Location = New System.Drawing.Point(7, 181)
+        Me.tbEmailRenter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbEmailRenter.Name = "tbEmailRenter"
         Me.tbEmailRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbEmailRenter.PlaceholderText = ""
@@ -406,6 +377,7 @@ Partial Class UCRentMod
         Me.tbNameRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbNameRenter.HoverState.Parent = Me.tbNameRenter
         Me.tbNameRenter.Location = New System.Drawing.Point(8, 127)
+        Me.tbNameRenter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbNameRenter.Name = "tbNameRenter"
         Me.tbNameRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbNameRenter.PlaceholderText = ""
@@ -432,6 +404,7 @@ Partial Class UCRentMod
         Me.tbCodeRenter.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbCodeRenter.HoverState.Parent = Me.tbCodeRenter
         Me.tbCodeRenter.Location = New System.Drawing.Point(8, 71)
+        Me.tbCodeRenter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbCodeRenter.Name = "tbCodeRenter"
         Me.tbCodeRenter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbCodeRenter.PlaceholderText = ""
@@ -452,6 +425,103 @@ Partial Class UCRentMod
         Me.Guna2Panel11.Size = New System.Drawing.Size(179, 53)
         Me.Guna2Panel11.TabIndex = 0
         '
+        'btDelEquipment
+        '
+        Me.btDelEquipment.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.btDelEquipment.BorderRadius = 15
+        Me.btDelEquipment.BorderThickness = 2
+        Me.btDelEquipment.CheckedState.Parent = Me.btDelEquipment
+        Me.btDelEquipment.CustomImages.Parent = Me.btDelEquipment
+        Me.btDelEquipment.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.btDelEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btDelEquipment.ForeColor = System.Drawing.Color.Black
+        Me.btDelEquipment.HoverState.Parent = Me.btDelEquipment
+        Me.btDelEquipment.Location = New System.Drawing.Point(148, 8)
+        Me.btDelEquipment.Margin = New System.Windows.Forms.Padding(2)
+        Me.btDelEquipment.Name = "btDelEquipment"
+        Me.btDelEquipment.ShadowDecoration.Parent = Me.btDelEquipment
+        Me.btDelEquipment.Size = New System.Drawing.Size(138, 49)
+        Me.btDelEquipment.TabIndex = 82
+        Me.btDelEquipment.Text = "Supprimer"
+        '
+        'gridEquipmentRent
+        '
+        Me.gridEquipmentRent.AllowUserToAddRows = False
+        Me.gridEquipmentRent.AllowUserToDeleteRows = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipmentRent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.gridEquipmentRent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.gridEquipmentRent.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.gridEquipmentRent.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.gridEquipmentRent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipmentRent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.gridEquipmentRent.ColumnHeadersHeight = 30
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridEquipmentRent.DefaultCellStyle = DataGridViewCellStyle7
+        Me.gridEquipmentRent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridEquipmentRent.EnableHeadersVisualStyles = False
+        Me.gridEquipmentRent.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.gridEquipmentRent.Location = New System.Drawing.Point(224, 100)
+        Me.gridEquipmentRent.Margin = New System.Windows.Forms.Padding(2)
+        Me.gridEquipmentRent.Name = "gridEquipmentRent"
+        Me.gridEquipmentRent.ReadOnly = True
+        Me.gridEquipmentRent.RowHeadersVisible = False
+        Me.gridEquipmentRent.RowHeadersWidth = 10
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gridEquipmentRent.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.gridEquipmentRent.RowTemplate.Height = 24
+        Me.gridEquipmentRent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.gridEquipmentRent.Size = New System.Drawing.Size(678, 397)
+        Me.gridEquipmentRent.TabIndex = 80
+        Me.gridEquipmentRent.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
+        Me.gridEquipmentRent.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridEquipmentRent.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.gridEquipmentRent.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.gridEquipmentRent.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.gridEquipmentRent.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.gridEquipmentRent.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.gridEquipmentRent.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.gridEquipmentRent.ThemeStyle.HeaderStyle.Height = 30
+        Me.gridEquipmentRent.ThemeStyle.ReadOnly = True
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.Height = 24
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.gridEquipmentRent.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel3.Location = New System.Drawing.Point(902, 65)
+        Me.Guna2Panel3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
+        Me.Guna2Panel3.Size = New System.Drawing.Size(45, 539)
+        Me.Guna2Panel3.TabIndex = 68
+        '
         'btAddUser
         '
         Me.btAddUser.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
@@ -471,97 +541,11 @@ Partial Class UCRentMod
         Me.btAddUser.Size = New System.Drawing.Size(32, 34)
         Me.btAddUser.TabIndex = 54
         '
-        'gridSelectedEquipment
-        '
-        Me.gridSelectedEquipment.AllowUserToAddRows = False
-        Me.gridSelectedEquipment.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridSelectedEquipment.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.gridSelectedEquipment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.gridSelectedEquipment.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.gridSelectedEquipment.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.gridSelectedEquipment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(163, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridSelectedEquipment.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.gridSelectedEquipment.ColumnHeadersHeight = 30
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridSelectedEquipment.DefaultCellStyle = DataGridViewCellStyle7
-        Me.gridSelectedEquipment.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gridSelectedEquipment.EnableHeadersVisualStyles = False
-        Me.gridSelectedEquipment.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.gridSelectedEquipment.Location = New System.Drawing.Point(224, 100)
-        Me.gridSelectedEquipment.Margin = New System.Windows.Forms.Padding(2)
-        Me.gridSelectedEquipment.Name = "gridSelectedEquipment"
-        Me.gridSelectedEquipment.RowHeadersVisible = False
-        Me.gridSelectedEquipment.RowHeadersWidth = 10
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gridSelectedEquipment.RowsDefaultCellStyle = DataGridViewCellStyle8
-        Me.gridSelectedEquipment.RowTemplate.Height = 24
-        Me.gridSelectedEquipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.gridSelectedEquipment.Size = New System.Drawing.Size(678, 397)
-        Me.gridSelectedEquipment.TabIndex = 80
-        Me.gridSelectedEquipment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
-        Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.gridSelectedEquipment.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.gridSelectedEquipment.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.gridSelectedEquipment.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.gridSelectedEquipment.ThemeStyle.HeaderStyle.Height = 30
-        Me.gridSelectedEquipment.ThemeStyle.ReadOnly = False
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.Height = 24
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.gridSelectedEquipment.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'btCancel
-        '
-        Me.btCancel.BorderColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.btCancel.BorderRadius = 15
-        Me.btCancel.BorderThickness = 2
-        Me.btCancel.CheckedState.Parent = Me.btCancel
-        Me.btCancel.CustomImages.Parent = Me.btCancel
-        Me.btCancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer))
-        Me.btCancel.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.btCancel.ForeColor = System.Drawing.Color.Black
-        Me.btCancel.HoverState.Parent = Me.btCancel
-        Me.btCancel.Location = New System.Drawing.Point(150, 8)
-        Me.btCancel.Margin = New System.Windows.Forms.Padding(2)
-        Me.btCancel.Name = "btCancel"
-        Me.btCancel.ShadowDecoration.Parent = Me.btCancel
-        Me.btCancel.Size = New System.Drawing.Size(138, 49)
-        Me.btCancel.TabIndex = 81
-        Me.btCancel.Text = "Annuler"
-        '
         'UCRentMod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.gridSelectedEquipment)
+        Me.Controls.Add(Me.gridEquipmentRent)
         Me.Controls.Add(Me.Guna2Panel9)
         Me.Controls.Add(Me.Guna2Panel7)
         Me.Controls.Add(Me.Guna2Panel2)
@@ -577,21 +561,18 @@ Partial Class UCRentMod
         Me.Guna2Panel7.PerformLayout()
         Me.Guna2Panel9.ResumeLayout(False)
         Me.Guna2Panel11.ResumeLayout(False)
-        CType(Me.gridSelectedEquipment, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridEquipmentRent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents tbReelDeposit As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents tbSuggestedDeposit As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents labRealDeposit As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents labSuggestedDeposit As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labEndDate As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents labBeginDate As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents dateEnd As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents dateStart As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
@@ -605,6 +586,8 @@ Partial Class UCRentMod
     Friend WithEvents tbCodeRenter As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btAddUser As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents gridSelectedEquipment As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents btCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btDelEquipment As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents gridEquipmentRent As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
 End Class

@@ -9,21 +9,30 @@
     Dim returnEquipment As New ReturnEquipment(New MainForm(0),
                                                0,
                                                New DataGridViewRow())
-    Dim isStudentDept As Boolean
+    Dim ucRentMod As UCRentMod = Nothing
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
+    Dim cancelDeposit As Double
 
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
 
-    Sub New(main As MainForm, returnForm As ReturnEquipment, studentDept As Boolean)
+    Sub New(main As MainForm, returnForm As ReturnEquipment)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         mainForm = main
         returnEquipment = returnForm
-        isStudentDept = studentDept
+    End Sub
+
+    Sub New(main As MainForm, rentMod As UCRentMod, deposit As Double)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        mainForm = main
+        ucRentMod = rentMod
+        cancelDeposit = deposit
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -37,9 +46,15 @@
         labMessage.TextAlignment = ContentAlignment.MiddleCenter
         labMessage.Font = New Font("Segoe UI Symbol", 11.0!)
         labMessage.Size = New Size(Guna2Panel1.Width, 75)
-        numValue.Value = Math.Abs(returnEquipment.balance)
-        numValue.Minimum = 0
-        numValue.Maximum = Math.Abs(returnEquipment.balance)
+        If IsNothing(ucRentMod) Then
+            numValue.Value = Math.Abs(returnEquipment.balance)
+            numValue.Minimum = 0
+            numValue.Maximum = Math.Abs(returnEquipment.balance)
+        Else
+            numValue.Value = Math.Abs(cancelDeposit)
+            numValue.Minimum = 0
+            numValue.Maximum = Math.Abs(cancelDeposit)
+        End If
         loadLanguages()
     End Sub
 
@@ -93,12 +108,19 @@
     End Sub
 
     Private Sub btKitCancel_Click(sender As Object, e As EventArgs) Handles btKitCancel.Click, btHeaderClose.Click
-        returnEquipment.Close()
+        If IsNothing(ucRentMod) Then
+            returnEquipment.Close()
+        End If
         Me.Close()
     End Sub
 
     Private Sub btKitAdd_Click(sender As Object, e As EventArgs) Handles btKitAdd.Click
-        returnEquipment.returnValue = numValue.Value
+        If IsNothing(ucRentMod) Then
+            returnEquipment.returnValue = numValue.Value
+        Else
+            ucRentMod.tbReelDeposit.Text = numValue.Value
+            ucRentMod.setSuccessDeposit()
+        End If
         Me.Close()
     End Sub
 
@@ -117,9 +139,5 @@
                                             "-",
                                             "") +
                           json("MsgPromptReturn2").ToString()
-    End Sub
-
-    Private Sub panelHeaderBar_Paint(sender As Object, e As PaintEventArgs) Handles panelHeaderBar.Paint
-
     End Sub
 End Class

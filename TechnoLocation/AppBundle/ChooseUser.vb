@@ -6,8 +6,10 @@
 
     Dim WithEvents mainform As New MainForm(0)
     Dim ucRent As UCRent
+    Dim ucRentMod As UCRentMod
     Private isMouseDown As Boolean = False
     Private mouseOffset As Point
+    Dim oldUser As Integer
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -19,6 +21,17 @@
         ' Add any initialization after the InitializeComponent() call.
         mainform = main
         ucRent = rent
+        ucRentMod = Nothing
+    End Sub
+
+    Sub New(main As MainForm, rent As UCRentMod, old As Integer)
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+        mainform = main
+        ucRent = Nothing
+        ucRentMod = rent
+        oldUser = old
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -68,6 +81,11 @@
         tbSearchUser.Text = tbSearchUser.Text.Trim()
         If tbSearchUser.Text.Length > 0 Then
             gridUserSearch.DataSource = EntityUser.getInstance().getUsersBySearch(mainform.labLang.Text, tbSearchUser.Text)
+            For Each row As DataGridViewRow In gridUserSearch.Rows
+                If row.Cells(0).Value = mainform.code Then
+                    gridUserSearch.Rows.Remove(row)
+                End If
+            Next
             If gridUserSearch.Rows.Count = 0 Then
                 tbSearchUser.BorderColor = red
                 tbSearchUser.FocusedState.BorderColor = red
@@ -96,14 +114,28 @@
 
     Private Sub gridUserSearch_CellMouseDoubleClick(sender As Object,
                                                     e As DataGridViewCellMouseEventArgs) Handles gridUserSearch.CellMouseDoubleClick
-        ucRent.tbCodeRenter.Text = gridUserSearch.CurrentRow.Cells(0).Value
-        ucRent.tbNameRenter.Text = String.Concat(gridUserSearch.CurrentRow.Cells(2).Value,
-                                                 ", ",
-                                                 gridUserSearch.CurrentRow.Cells(1).Value)
-        ucRent.tbEmailRenter.Text = gridUserSearch.CurrentRow.Cells(3).Value
-        ucRent.tbPhoneRenter.Text = gridUserSearch.CurrentRow.Cells(4).Value
-        ucRent.tbBalanceRenter.Text = gridUserSearch.CurrentRow.Cells(7).Value
-        Me.Close()
+        If Not IsNothing(ucRent) Then
+            ucRent.tbCodeRenter.Text = gridUserSearch.CurrentRow.Cells(0).Value
+            ucRent.tbNameRenter.Text = String.Concat(gridUserSearch.CurrentRow.Cells(2).Value,
+                                                     ", ",
+                                                     gridUserSearch.CurrentRow.Cells(1).Value)
+            ucRent.tbEmailRenter.Text = gridUserSearch.CurrentRow.Cells(3).Value
+            ucRent.tbPhoneRenter.Text = gridUserSearch.CurrentRow.Cells(4).Value
+            ucRent.tbBalanceRenter.Text = gridUserSearch.CurrentRow.Cells(7).Value
+            Me.Close()
+        Else
+            ucRentMod.tbCodeRenter.Text = gridUserSearch.CurrentRow.Cells(0).Value
+            ucRentMod.tbNameRenter.Text = String.Concat(gridUserSearch.CurrentRow.Cells(2).Value,
+                                                     ", ",
+                                                     gridUserSearch.CurrentRow.Cells(1).Value)
+            ucRentMod.tbEmailRenter.Text = gridUserSearch.CurrentRow.Cells(3).Value
+            ucRentMod.tbPhoneRenter.Text = gridUserSearch.CurrentRow.Cells(4).Value
+            ucRentMod.tbBalanceRenter.Text = gridUserSearch.CurrentRow.Cells(7).Value
+            mainform.isEditing = True
+            ModelUser.getInstance.updateUserBalance(oldUser, ucRentMod.tbBalanceRenter.Text - ucRentMod.tbReelDeposit.Text)
+            ModelUser.getInstance.updateUserBalance(ucRentMod.tbCodeRenter.Text, ucRentMod.tbBalanceRenter.Text + ucRentMod.tbReelDeposit.Text)
+            Me.Close()
+        End If
     End Sub
 
     Private Sub btHeaderClose_btQuit_Click(sender As Object, e As EventArgs) Handles btHeaderClose.Click
@@ -119,7 +151,7 @@
     '__________________________________________________________________________________________________________
 
     Public Sub loadDataGridView()
-        gridUserSearch.DataSource = EntityUser.getInstance.getUsers(mainform.labLang.Text)
+        gridUserSearch.DataSource = EntityUser.getInstance.getUsers(mainform.labLang.Text, mainform.code)
     End Sub
 
     Private Sub loadLanguages()

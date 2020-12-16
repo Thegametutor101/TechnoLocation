@@ -184,6 +184,7 @@
   "RentLabEndDate": "Date de retour",
   "RentLabSuggestedDeposit": "Dépot suggéré",
   "RentLabRealDeposit": "Dépot réel",
+  "MsgDeleteEquipmentRent": "Voulez-vous vraiment supprimer ces équipements de cette location?\nCette action est définitive et ne peut pas être annuler après.",
   "NotifLabNbr": "Nombre d'objets",
   "NotifLabDate": "Date de location",
   "NotifLabDepo": "Dépôt de location",
