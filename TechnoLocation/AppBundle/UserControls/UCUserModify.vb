@@ -207,8 +207,7 @@ Public Class UCUserModify
         Else
             matricule = numCode.Value
         End If
-        Try
-            ModelUser.getInstance().updateUser(CInt(numCode.Value),
+        ModelUser.getInstance().updateUser(CInt(numCode.Value),
                                                password,
                                                firstName,
                                                lastName,
@@ -219,16 +218,9 @@ Public Class UCUserModify
                                                ext2,
                                                dropStatus.SelectedIndex,
                                                dropPermissions.SelectedIndex,
-                                               0)
-            interfaceUser.loadDataGridView()
-            Me.SendToBack()
-        Catch ex As Exception
-            MsgBox(Lang.getInstance().getLang()("SameMatricula"),
-                   vbOKOnly,
-                   Lang.getInstance().getLang()("SameMatriculaTitle"))
-            numCode.BorderColor = Color.LightCoral
-            numCode.FocusedState.BorderColor = Color.LightCoral
-        End Try
+                                               numBalance.Value)
+        interfaceUser.loadDataGridView()
+        Me.SendToBack()
     End Sub
 
     '__________________________________________________________________________________________________________
