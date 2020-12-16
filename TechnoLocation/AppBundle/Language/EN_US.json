@@ -184,6 +184,6 @@
   "RentLabEndDate": "Return date",
   "RentLabSuggestedDeposit": "Suggested deposit",
   "RentLabRealDeposit": "Real deposit",
-  "MsgDeleteEquipment": "Do you wish to delete this equipment for this rent?\nThis action is not reversable.",
+  "MsgDeleteEquipmentRent": "Do you wish to delete this equipment for this rent?\nThis action is not reversable.",
   "DashboardLabLate": "Late rentals"
 }

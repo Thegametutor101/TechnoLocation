@@ -220,7 +220,6 @@ Public Class MainForm
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
         Dim iProfile As New UCProfile(Me)
         iProfile.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
         panelMain.Controls.Add(iProfile)
         iProfile.BringToFront()
     End Sub
