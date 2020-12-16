@@ -177,7 +177,7 @@ Public Class UCProfile
                                                ext2,
                                                dropStatus.SelectedIndex,
                                                dropPermissions.SelectedIndex,
-                                               0)
+                                               CInt(numBalance.Value))
         Me.SendToBack()
     End Sub
 
@@ -221,7 +221,11 @@ Public Class UCProfile
     End Sub
 
     Private Sub btDelete_Click(sender As Object, e As EventArgs) Handles btDelete.Click
-
+        If (EntityRent.getInstance().getRentCountRenter(mainForm.code) = 0) Then
+            ModelUser.getInstance().delUser(mainForm.code)
+        Else MessageBox.show("La suppression du compte est impossible, car l'utilisateur a encore des emprunts en cours")
+        End If
+        Me.SendToBack()
     End Sub
 
     Private Sub btModifyUser_Click(sender As Object, e As EventArgs) Handles btSaveModification.Click

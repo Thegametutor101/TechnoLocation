@@ -96,8 +96,14 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Private Sub btDeleteUser_Click(sender As Object, e As EventArgs) Handles btDeleteUser.Click
+        Dim matricule As String
         For Each row As DataGridViewRow In gridUser.SelectedRows
-            ModelUser.getInstance().delUser(row.Cells(0).Value)
+            matricule = CStr(row.Cells(0).Value)
+            If (EntityRent.getInstance().getRentCountRenter(row.Cells(0).Value) = 0) Then
+                ModelUser.getInstance().delUser(row.Cells(0).Value)
+            Else MessageBox.Show(matricule + " n'a pas pu être supprimé, car il avait encore des emprunts en cours")
+            End If
+
         Next
         gridUser.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
         userSearch()
