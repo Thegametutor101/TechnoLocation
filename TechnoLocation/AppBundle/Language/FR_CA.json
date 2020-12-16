@@ -190,5 +190,6 @@
   "NotifLabNbr": "Nombre d'objets",
   "NotifLabDate": "Date de location",
   "NotifLabDepo": "Dépôt de location",
-  "DashboardLabLate": "Emprunts en retard"
+  "DashboardLabLate": "Emprunts en retard",
+  "NoMoreRent": "Il n'y a plus d'équipement dans cette location elle va être complètement supprimer"
 }

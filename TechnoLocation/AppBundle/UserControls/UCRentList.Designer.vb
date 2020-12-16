@@ -27,7 +27,6 @@ Partial Class UCRentList
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbSearchRent = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.checkSelectAll = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.gridListRent = New Guna.UI2.WinForms.Guna2DataGridView()
         CType(Me.gridListRent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,22 +54,6 @@ Partial Class UCRentList
         Me.tbSearchRent.ShadowDecoration.Parent = Me.tbSearchRent
         Me.tbSearchRent.Size = New System.Drawing.Size(222, 36)
         Me.tbSearchRent.TabIndex = 0
-        '
-        'checkSelectAll
-        '
-        Me.checkSelectAll.AutoSize = True
-        Me.checkSelectAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkSelectAll.CheckedState.BorderRadius = 0
-        Me.checkSelectAll.CheckedState.BorderThickness = 0
-        Me.checkSelectAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.checkSelectAll.Location = New System.Drawing.Point(15, 60)
-        Me.checkSelectAll.Name = "checkSelectAll"
-        Me.checkSelectAll.Size = New System.Drawing.Size(15, 14)
-        Me.checkSelectAll.TabIndex = 2
-        Me.checkSelectAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.checkSelectAll.UncheckedState.BorderRadius = 0
-        Me.checkSelectAll.UncheckedState.BorderThickness = 0
-        Me.checkSelectAll.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'gridListRent
         '
@@ -144,17 +127,14 @@ Partial Class UCRentList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.gridListRent)
-        Me.Controls.Add(Me.checkSelectAll)
         Me.Controls.Add(Me.tbSearchRent)
         Me.Name = "UCRentList"
         Me.Size = New System.Drawing.Size(947, 604)
         CType(Me.gridListRent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents tbSearchRent As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents checkSelectAll As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents gridListRent As Guna.UI2.WinForms.Guna2DataGridView
 End Class

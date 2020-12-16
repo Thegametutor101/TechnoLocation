@@ -35,6 +35,7 @@ Partial Class UCRentMod
         Me.dateEnd = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.dateStart = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btDelEquipment = New Guna.UI2.WinForms.Guna2Button()
         Me.btCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
@@ -47,10 +48,9 @@ Partial Class UCRentMod
         Me.tbNameRenter = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbCodeRenter = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btDelEquipment = New Guna.UI2.WinForms.Guna2Button()
+        Me.btAddUser = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.gridEquipmentRent = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btAddUser = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
@@ -190,6 +190,25 @@ Partial Class UCRentMod
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(947, 65)
         Me.Guna2Panel1.TabIndex = 65
+        '
+        'btDelEquipment
+        '
+        Me.btDelEquipment.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.btDelEquipment.BorderRadius = 15
+        Me.btDelEquipment.BorderThickness = 2
+        Me.btDelEquipment.CheckedState.Parent = Me.btDelEquipment
+        Me.btDelEquipment.CustomImages.Parent = Me.btDelEquipment
+        Me.btDelEquipment.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.btDelEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btDelEquipment.ForeColor = System.Drawing.Color.Black
+        Me.btDelEquipment.HoverState.Parent = Me.btDelEquipment
+        Me.btDelEquipment.Location = New System.Drawing.Point(148, 8)
+        Me.btDelEquipment.Margin = New System.Windows.Forms.Padding(2)
+        Me.btDelEquipment.Name = "btDelEquipment"
+        Me.btDelEquipment.ShadowDecoration.Parent = Me.btDelEquipment
+        Me.btDelEquipment.Size = New System.Drawing.Size(138, 49)
+        Me.btDelEquipment.TabIndex = 82
+        Me.btDelEquipment.Text = "Supprimer"
         '
         'btCancel
         '
@@ -425,24 +444,24 @@ Partial Class UCRentMod
         Me.Guna2Panel11.Size = New System.Drawing.Size(179, 53)
         Me.Guna2Panel11.TabIndex = 0
         '
-        'btDelEquipment
+        'btAddUser
         '
-        Me.btDelEquipment.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.btDelEquipment.BorderRadius = 15
-        Me.btDelEquipment.BorderThickness = 2
-        Me.btDelEquipment.CheckedState.Parent = Me.btDelEquipment
-        Me.btDelEquipment.CustomImages.Parent = Me.btDelEquipment
-        Me.btDelEquipment.FillColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.btDelEquipment.Font = New System.Drawing.Font("Segoe UI Symbol", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.btDelEquipment.ForeColor = System.Drawing.Color.Black
-        Me.btDelEquipment.HoverState.Parent = Me.btDelEquipment
-        Me.btDelEquipment.Location = New System.Drawing.Point(148, 8)
-        Me.btDelEquipment.Margin = New System.Windows.Forms.Padding(2)
-        Me.btDelEquipment.Name = "btDelEquipment"
-        Me.btDelEquipment.ShadowDecoration.Parent = Me.btDelEquipment
-        Me.btDelEquipment.Size = New System.Drawing.Size(138, 49)
-        Me.btDelEquipment.TabIndex = 82
-        Me.btDelEquipment.Text = "Supprimer"
+        Me.btAddUser.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btAddUser.CheckedState.Parent = Me.btAddUser
+        Me.btAddUser.HoverState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
+        Me.btAddUser.HoverState.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btAddUser.HoverState.Parent = Me.btAddUser
+        Me.btAddUser.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
+        Me.btAddUser.ImageRotate = 0!
+        Me.btAddUser.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btAddUser.Location = New System.Drawing.Point(8, 9)
+        Me.btAddUser.Margin = New System.Windows.Forms.Padding(2)
+        Me.btAddUser.Name = "btAddUser"
+        Me.btAddUser.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
+        Me.btAddUser.PressedState.ImageSize = New System.Drawing.Size(28, 28)
+        Me.btAddUser.PressedState.Parent = Me.btAddUser
+        Me.btAddUser.Size = New System.Drawing.Size(32, 34)
+        Me.btAddUser.TabIndex = 54
         '
         'gridEquipmentRent
         '
@@ -520,25 +539,6 @@ Partial Class UCRentMod
         Me.Guna2Panel3.ShadowDecoration.Parent = Me.Guna2Panel3
         Me.Guna2Panel3.Size = New System.Drawing.Size(45, 539)
         Me.Guna2Panel3.TabIndex = 68
-        '
-        'btAddUser
-        '
-        Me.btAddUser.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.btAddUser.CheckedState.Parent = Me.btAddUser
-        Me.btAddUser.HoverState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
-        Me.btAddUser.HoverState.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btAddUser.HoverState.Parent = Me.btAddUser
-        Me.btAddUser.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
-        Me.btAddUser.ImageRotate = 0!
-        Me.btAddUser.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btAddUser.Location = New System.Drawing.Point(8, 9)
-        Me.btAddUser.Margin = New System.Windows.Forms.Padding(2)
-        Me.btAddUser.Name = "btAddUser"
-        Me.btAddUser.PressedState.Image = Global.TechnoLocation.My.Resources.Resources.baseline_person_black_18dp
-        Me.btAddUser.PressedState.ImageSize = New System.Drawing.Size(28, 28)
-        Me.btAddUser.PressedState.Parent = Me.btAddUser
-        Me.btAddUser.Size = New System.Drawing.Size(32, 34)
-        Me.btAddUser.TabIndex = 54
         '
         'UCRentMod
         '

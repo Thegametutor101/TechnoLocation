@@ -96,19 +96,7 @@ Public Class UCRent
         gridAllEquipment.DataSource = EntityEquipment.getInstance.getEquipmentsBySearchRent("", True, dateStart.Value, dateEnd.Value)
     End Sub
 
-    Private Sub dateEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateEnd.ValueChanged
-        If Not dateFinish = "0001-01-01" Then
-            If dateEnd.Value < dateStart.Value Then
-                dateEnd.Value = dateFinish
-            Else
-                dateFinish = dateEnd.Value
-                searchEquipment()
-                checkEquipmentSelected()
-                changeDeposit()
-                changeDepositReel()
-            End If
-        End If
-    End Sub
+
 
     Private Sub changeDeposit()
         Dim deposit As Double = 0
@@ -278,6 +266,8 @@ Public Class UCRent
                     gridSelectedEquipment.Rows.RemoveAt(i)
                 Next
                 MsgBox(Lang.getInstance().getLang()("MsgRentAddSucces"), vbOKOnly)
+                changeDeposit()
+                changeDepositReel()
             End If
         End If
     End Sub
