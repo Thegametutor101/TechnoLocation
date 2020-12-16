@@ -124,6 +124,7 @@
             ucRent.tbBalanceRenter.Text = gridUserSearch.CurrentRow.Cells(7).Value
             Me.Close()
         Else
+            ModelUser.getInstance.updateUserBalance(CInt(oldUser), CDbl(ucRentMod.tbBalanceRenter.Text) - CDbl(ucRentMod.tbReelDeposit.Text))
             ucRentMod.tbCodeRenter.Text = gridUserSearch.CurrentRow.Cells(0).Value
             ucRentMod.tbNameRenter.Text = String.Concat(gridUserSearch.CurrentRow.Cells(2).Value,
                                                      ", ",
@@ -132,8 +133,9 @@
             ucRentMod.tbPhoneRenter.Text = gridUserSearch.CurrentRow.Cells(4).Value
             ucRentMod.tbBalanceRenter.Text = gridUserSearch.CurrentRow.Cells(7).Value
             mainform.isEditing = True
-            ModelUser.getInstance.updateUserBalance(oldUser, ucRentMod.tbBalanceRenter.Text - ucRentMod.tbReelDeposit.Text)
-            ModelUser.getInstance.updateUserBalance(ucRentMod.tbCodeRenter.Text, ucRentMod.tbBalanceRenter.Text + ucRentMod.tbReelDeposit.Text)
+
+            ModelUser.getInstance.updateUserBalance(CInt(ucRentMod.tbCodeRenter.Text), CDbl(ucRentMod.tbBalanceRenter.Text) + CDbl(ucRentMod.tbReelDeposit.Text))
+            ucRentMod.tbBalanceRenter.Text = (CDbl(ucRentMod.tbBalanceRenter.Text) + CDbl(ucRentMod.tbReelDeposit.Text))
             Me.Close()
         End If
     End Sub

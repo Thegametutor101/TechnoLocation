@@ -1,4 +1,5 @@
-﻿Public Class UCRentMod
+﻿Imports System.Text.RegularExpressions
+Public Class UCRentMod
 
     '__________________________________________________________________________________________________________
     'Attributes
@@ -11,6 +12,8 @@
     Dim reelDeposit As New List(Of Double)
     Dim depositProvisional As Double
     Dim oldUser As Integer
+    Dim dateBegin As Date
+    Dim dateFinish As Date
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -44,6 +47,30 @@
     'Methods
     '__________________________________________________________________________________________________________
 
+    Private Sub dateStart_ValueChanged(sender As Object, e As EventArgs) Handles dateStart.ValueChanged
+        If Not dateBegin = "0001-01-01" Then
+            If dateStart.Value > dateEnd.Value Then
+                dateStart.Value = dateBegin
+            Else
+                dateBegin = dateStart.Value
+
+            End If
+        End If
+    End Sub
+
+    Private Sub dateEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateEnd.ValueChanged
+        If Not dateFinish = "0001-01-01" Then
+            If dateEnd.Value < dateStart.Value Then
+                dateEnd.Value = dateFinish
+            Else
+                dateFinish = dateEnd.Value
+                searchEquipment()
+                checkEquipmentSelected()
+                changeDeposit()
+                changeDepositReel()
+            End If
+        End If
+    End Sub
 
     '__________________________________________________________________________________________________________
     'General Functions
@@ -55,7 +82,55 @@
     'Validation Functions
     '__________________________________________________________________________________________________________
 
+    Private Sub changeDepositReel()
+        Dim deposit As Double = 0
+        For Each row As DataGridViewRow In gridEquipmentRent.Rows
+            deposit += row.Cells(6).Value
+        Next
+        tbReelDeposit.Text = checkNumberMoney(deposit)
+    End Sub
 
+    Private Function checkNumberMoney(deposit As Double) As String
+        Dim str As String
+        Dim strBegin As String
+        Dim strEnd As String
+
+        Try
+            str = Replace(deposit, ".", ",")
+            If Not str.IndexOf(",") = -1 Then
+                strBegin = str.Substring(0, str.IndexOf(","))
+                strEnd = str.Substring(str.IndexOf(",") + 1, str.Length - strBegin.Length - 1)
+                If strBegin = "" Then
+                    strBegin = "0"
+                End If
+                While Not strEnd.Length = 2
+                    strEnd = strEnd + "0"
+                End While
+                str = "$ " + strBegin + "," + strEnd
+                Return str
+            Else
+                str = "$ " + str + ",00"
+                Return str
+            End If
+        Catch
+            str = Replace(gridEquipmentRent.CurrentCell.Value, ",", ".")
+            If Not str.IndexOf(".") = -1 Then
+                strBegin = str.Substring(0, str.IndexOf("."))
+                strEnd = str.Substring(str.IndexOf(".") + 1, str.Length - strBegin.Length - 1)
+                If strBegin = "" Then
+                    strBegin = "0"
+                End If
+                While Not strEnd.Length = 2
+                    strEnd = strEnd + "0"
+                End While
+                str = "$" + strBegin + "." + strEnd
+                Return str
+            Else
+                str = "$ " + str + ".00"
+                Return str
+            End If
+        End Try
+    End Function
 
     '__________________________________________________________________________________________________________
     'Buttons
@@ -82,7 +157,8 @@
                 Next
                 ModelUser.getInstance.updateUserBalance(oldUser, tbBalanceRenter.Text - tbReelDeposit.Text)
             End If
-                loadDataGridView()
+            loadDataGridView()
+            loadUser()
         End If
     End Sub
 
@@ -105,6 +181,29 @@
     Private Sub btAddUser_Click(sender As Object, e As EventArgs) Handles btAddUser.Click
         Dim user = New ChooseUser(mainForm, Me, oldUser)
         user.ShowDialog()
+        oldUser = tbCodeRenter.Text
+        For Each rows As DataGridViewRow In gridEquipmentRent.Rows
+            ModelRent.getInstance.updateRentForRent(row.Cells(0).Value,
+                                             oldUser,
+                                             mainForm.code,
+                                             rows.Cells(0).Value)
+        Next
+    End Sub
+
+    Private Sub gridEquipmentRent_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridEquipmentRent.CellEndEdit
+        If Not String.IsNullOrEmpty(gridEquipmentRent.CurrentCell.Value) Then
+            If Regex.IsMatch(gridEquipmentRent.CurrentCell.Value, "^([\d])*(\.[\d]{0,2}|\,[\d]{0,2})*$") Then
+                changeDepositReel()
+                Try
+                    gridEquipmentRent.CurrentCell.Value = checkNumberMoney(Replace(gridEquipmentRent.CurrentCell.Value, ",", "."))
+                Catch ex As Exception
+                    gridEquipmentRent.CurrentCell.Value = checkNumberMoney(Replace(gridEquipmentRent.CurrentCell.Value, ".", ","))
+                End Try
+            Else
+                gridEquipmentRent.CurrentCell.Value = "$ 0,00"
+                changeDepositReel()
+            End If
+        End If
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -122,21 +221,30 @@
 
     Private Sub loadUser()
         Dim table As DataTable = EntityUser.getInstance.getUserByRentalForRent(row.Cells(0).Value)
-        oldUser = tbCodeRenter.Text = table.Rows(0).Item(0).ToString
+        tbCodeRenter.Text = table.Rows(0).Item(0).ToString
+        oldUser = tbCodeRenter.Text
         tbNameRenter.Text = table.Rows(0).Item(1).ToString + " " + table.Rows(0).Item(2).ToString
         tbEmailRenter.Text = table.Rows(0).Item(3).ToString
         tbPhoneRenter.Text = table.Rows(0).Item(4).ToString
         tbBalanceRenter.Text = table.Rows(0).Item(5).ToString
+        dateStart.Value = row.Cells(4).Value
+        dateEnd.Value = row.Cells(5).Value
     End Sub
 
     Private Sub loadLang()
         Dim json = Lang.getInstance().getLang()
         gridEquipmentRent.Columns("code").HeaderText = json("EquipGridCode")
+        gridEquipmentRent.Columns("code").ReadOnly = True
         gridEquipmentRent.Columns("name").HeaderText = json("EquipGridName")
+        gridEquipmentRent.Columns("name").ReadOnly = True
         gridEquipmentRent.Columns("kit").HeaderText = json("EquipGridKit")
+        gridEquipmentRent.Columns("kit").ReadOnly = True
         gridEquipmentRent.Columns("state").HeaderText = json("EquipGridState")
+        gridEquipmentRent.Columns("state").ReadOnly = True
         gridEquipmentRent.Columns("comments").HeaderText = json("EquipGridComments")
+        gridEquipmentRent.Columns("comments").ReadOnly = True
         gridEquipmentRent.Columns("depositSuggest").HeaderText = json("RentLabSuggestedDeposit")
+        gridEquipmentRent.Columns("depositSuggest").ReadOnly = True
         gridEquipmentRent.Columns("depositReel").HeaderText = json("RentLabRealDeposit")
         gridEquipmentRent.Columns("depositReel").ReadOnly = False
         tbCodeRenter.PlaceholderText = json("TBCodeFill")
