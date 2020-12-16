@@ -64,10 +64,6 @@ Public Class UCRentMod
                 dateEnd.Value = dateFinish
             Else
                 dateFinish = dateEnd.Value
-                searchEquipment()
-                checkEquipmentSelected()
-                changeDeposit()
-                changeDepositReel()
             End If
         End If
     End Sub
