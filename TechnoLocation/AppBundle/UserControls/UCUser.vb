@@ -9,6 +9,7 @@ Public Class UCUser
 
     Dim mainForm As New MainForm(0)
     Dim codesBarres As New BarCodes
+    Dim msgDelete As String
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -101,7 +102,7 @@ Public Class UCUser
             matricule = CStr(row.Cells(0).Value)
             If (EntityRent.getInstance().getRentCountRenter(row.Cells(0).Value) = 0) Then
                 ModelUser.getInstance().delUser(row.Cells(0).Value)
-            Else MessageBox.Show(matricule + " n'a pas pu être supprimé, car il avait encore des emprunts en cours")
+            Else MessageBox.Show(msgDelete)
             End If
 
         Next
@@ -141,6 +142,7 @@ Public Class UCUser
         gridUser.Columns("code").Width = 70
         gridUser.Columns("job").Width = 70
         gridUser.Columns("balance").Width = 80
+        msgDelete = json("MsgDeleteUserFail")
     End Sub
 
 End Class

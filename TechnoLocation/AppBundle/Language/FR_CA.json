@@ -1,4 +1,5 @@
 ﻿{
+  "AccessDenied": "Vous n'avez pas les permissions mécéssaire pour accéder à cette section",
   "DatabaseNotFound": "Impossible de trouver la base de donnée associée à: ",
   "ConnectionlabUsername": "Identifiant",
   "ConnectiontbUsernamePlaceholder": "Matricule",
@@ -108,6 +109,7 @@
   "MsgDeleteEquipment": "Voulez-vous vraiment supprimer ces équipements?\nCette action est définitive et ne peut pas être annuler après.",
   "MsgDeleteKit1": "Voulez-vous supprimer le kit ",
   "MsgDeleteKit2": " il n'y a plus d'équipement associé a ce kit!",
+  "MsgDeleteUserFail": "La suppression du compte est impossible, car l'utilisateur a encore des emprunts en cours",
   "MsgEditEquipment": "Voulez-vous vraiment modifier cette équipement?",
   "MsgSuccessEditEquip": "La modification a été effectuer!",
   "MsgNoEquipSelected": "Veuillez choisir au moins un équipement pour faire un prêt.",

@@ -1,4 +1,5 @@
 ﻿{
+  "AccessDenied": "You do not have the permission to access this section",
   "DatabaseNotFound": "Unable to find a database associated with: ",
   "ConnectionlabUsername": "User ID",
   "ConnectiontbUsernamePlaceholder": "Matricula",
@@ -108,6 +109,7 @@
   "MsgDeleteEquipment": "Do you wish to delete this equipment?\nThis action is not reversable.",
   "MsgDeleteKit1": "Do you wish to delete this kit?",
   "MsgDeleteKit2": "No equipment is associated to this kit!",
+  "MsgDeleteUserFail": "User could not be deleted since it still has active rents",
   "MsgEditEquipment": "Do you wish to modify this equipment?",
   "MsgSuccessEditEquip": "Modifications have been made!",
   "MsgNoEquipSelected": "Please select at least 1 equipment to rent",

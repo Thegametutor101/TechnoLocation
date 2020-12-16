@@ -10,6 +10,7 @@ Public Class UCProfile
     Dim WithEvents mainForm As New MainForm(0)
     Dim data As DataRow
     Dim codesBarres As New BarCodes
+    Dim msgDelete As String
     '__________________________________________________________________________________________________________
     'Constructor
     '__________________________________________________________________________________________________________
@@ -48,6 +49,13 @@ Public Class UCProfile
                 checkExt2.Checked = True
                 numExtension1.Text = data.Item("extension2")
             End If
+        End If
+        If Not data.Item("permissions") = 3 Then
+            tbFirstName.Enabled = False
+            tbLastName.Enabled = False
+            dropStatus.Enabled = False
+            dropPermissions.Enabled = False
+            numBalance.Enabled = False
         End If
     End Sub
 
@@ -223,7 +231,7 @@ Public Class UCProfile
     Private Sub btDelete_Click(sender As Object, e As EventArgs) Handles btDelete.Click
         If (EntityRent.getInstance().getRentCountRenter(mainForm.code) = 0) Then
             ModelUser.getInstance().delUser(mainForm.code)
-        Else MessageBox.show("La suppression du compte est impossible, car l'utilisateur a encore des emprunts en cours")
+        Else MessageBox.Show(msgDelete)
         End If
         Me.SendToBack()
     End Sub
@@ -288,6 +296,7 @@ Public Class UCProfile
     Public Sub loadLanguages()
         Dim json = Lang.getInstance().getLang()
         btSaveModification.Text = json("SaveItem")
+        btDelete.Text = json("DeleteItem")
         btCancelUser.Text = json("CancelButton")
         labCodeUser.Text = json("UserAddLabMatricula")
         labName.Text = json("UserAddLabName")
@@ -310,5 +319,6 @@ Public Class UCProfile
         dropStatus.Items.Add(json("UserAddDropStatus2"))
         labExt1.Text = json("UserLabCheckExtension")
         labExt2.Text = json("UserLabCheckExtension")
+        msgDelete = json("MsgDeleteUserFail")
     End Sub
 End Class
