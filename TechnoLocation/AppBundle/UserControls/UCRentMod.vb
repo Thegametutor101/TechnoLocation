@@ -14,6 +14,7 @@ Public Class UCRentMod
     Dim oldUser As Integer
     Dim dateBegin As Date
     Dim dateFinish As Date
+    Dim table As DataTable
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -41,6 +42,8 @@ Public Class UCRentMod
         For Each rows As DataGridViewRow In gridEquipmentRent.Rows
             reelDeposit.Add(rows.Cells(6).Value)
         Next
+        dateBegin = dateStart.Value
+        dateFinish = dateEnd.Value
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -48,26 +51,59 @@ Public Class UCRentMod
     '__________________________________________________________________________________________________________
 
     Private Sub dateStart_ValueChanged(sender As Object, e As EventArgs) Handles dateStart.ValueChanged
+        Dim dateOk As Boolean = True
         If Not dateBegin = "0001-01-01" Then
-            If dateStart.Value > dateEnd.Value Then
-                dateStart.Value = dateBegin
-            Else
-                dateBegin = dateStart.Value
+            If dateStart.Value < dateEnd.Value Then
+                If Not dateStart.Value = dateBegin.ToString Then
+                    table = EntityRent.getInstance.getRentBetweenDate(dateStart.Value.ToString, dateEnd.Value.ToString)
+                    For Each rows As DataRow In table.Rows
+                        For Each rowsMod As DataGridViewRow In gridEquipmentRent.Rows
+                            If rows.Item(0).ToString() = rowsMod.Cells(0).Value Then
+                                dateOk = False
+                            End If
+                        Next
+                    Next
+                    If dateOk Then
+                        dateBegin = dateStart.Value
+                    Else
+                        dateStart.Value = dateBegin
+                    End If
+                Else
 
+                        dateBegin = dateStart.Value
+
+                End If
+            Else
+                dateStart.Value = dateBegin
             End If
         End If
     End Sub
 
     Private Sub dateEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateEnd.ValueChanged
+        Dim dateOk As Boolean = True
         If Not dateFinish = "0001-01-01" Then
-            If dateEnd.Value < dateStart.Value Then
-                dateEnd.Value = dateFinish
+            If dateEnd.Value > dateStart.Value Then
+                If Not dateEnd.Value = dateFinish.ToString Then
+                    table = EntityRent.getInstance.getRentBetweenDate(dateStart.Value.ToString, dateEnd.Value.ToString)
+                    For Each rows As DataRow In table.Rows
+                        For Each rowsMod As DataGridViewRow In gridEquipmentRent.Rows
+                            If rows.Item(0).ToString() = rowsMod.Cells(0).Value Then
+                                dateOk = False
+                            End If
+                        Next
+                    Next
+                    If dateOk Then
+                        dateFinish = dateEnd.Value
+                    Else
+                        dateEnd.Value = dateFinish
+                    End If
+                Else
+
+                    dateFinish = dateEnd.Value
+
+                End If
             Else
-                dateFinish = dateEnd.Value
-                searchEquipment()
-                checkEquipmentSelected()
-                changeDeposit()
-                changeDepositReel()
+                dateStart.Value = dateBegin
             End If
         End If
     End Sub
@@ -158,7 +194,13 @@ Public Class UCRentMod
                 ModelUser.getInstance.updateUserBalance(oldUser, tbBalanceRenter.Text - tbReelDeposit.Text)
             End If
             loadDataGridView()
-            loadUser()
+            If gridEquipmentRent.Rows.Count = 0 Then
+                MsgBox(Lang.getInstance.getLang("NoMoreRent"))
+                ucRentList.loadDataGridView()
+                Me.SendToBack()
+            Else
+                loadUser()
+            End If
         End If
     End Sub
 
@@ -204,6 +246,26 @@ Public Class UCRentMod
                 changeDepositReel()
             End If
         End If
+    End Sub
+
+    Private Sub btSave_Click(sender As Object, e As EventArgs) Handles btSave.Click
+        Dim sum As Double = 0
+        For i As Integer = 0 To reelDeposit.Count - 1
+            sum += reelDeposit(i)
+        Next
+        For Each rows As DataGridViewRow In gridEquipmentRent.Rows
+            ModelRent.getInstance.updateRent(row.Cells(0).Value,
+                                             oldUser,
+                                             mainForm.code,
+                                             rows.Cells(0).Value,
+                                             dateStart.Value,
+                                             dateEnd.Value,
+                                             rows.Cells(6).Value,
+                                             rows.Cells(4).Value)
+        Next
+        ModelUser.getInstance.updateUserBalance(oldUser, CDbl(tbBalanceRenter.Text.ToString) - (sum - CDbl(tbReelDeposit.Text.ToString)))
+        ucRentList.loadDataGridView()
+        Me.SendToBack()
     End Sub
 
     '__________________________________________________________________________________________________________
