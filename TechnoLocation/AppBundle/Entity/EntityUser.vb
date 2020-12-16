@@ -340,7 +340,8 @@ Public Class EntityUser
                                     email, 
                                     phoneMain, 
                                     phone2, 
-                                    job, 
+                                    job,
+                                    permissions,
                                     balance 
                                 from user U 
                                 where code = '{code}' 

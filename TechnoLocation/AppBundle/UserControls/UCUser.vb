@@ -9,6 +9,7 @@ Public Class UCUser
 
     Dim mainForm As New MainForm(0)
     Dim codesBarres As New BarCodes
+    Dim msgDelete As String
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -96,8 +97,14 @@ Public Class UCUser
     '__________________________________________________________________________________________________________
 
     Private Sub btDeleteUser_Click(sender As Object, e As EventArgs) Handles btDeleteUser.Click
+        Dim matricule As String
         For Each row As DataGridViewRow In gridUser.SelectedRows
-            ModelUser.getInstance().delUser(row.Cells(0).Value)
+            matricule = CStr(row.Cells(0).Value)
+            If (EntityRent.getInstance().getRentCountRenter(row.Cells(0).Value) = 0) Then
+                ModelUser.getInstance().delUser(row.Cells(0).Value)
+            Else MessageBox.Show(msgDelete)
+            End If
+
         Next
         gridUser.DataSource = EntityUser.getInstance.getUsers(mainForm.labLang.Text)
         userSearch()
@@ -135,6 +142,7 @@ Public Class UCUser
         gridUser.Columns("code").Width = 70
         gridUser.Columns("job").Width = 70
         gridUser.Columns("balance").Width = 80
+        msgDelete = json("MsgDeleteUserFail")
     End Sub
 
 End Class

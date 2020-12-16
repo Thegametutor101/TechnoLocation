@@ -14,6 +14,8 @@ Public Class MainForm
     Public panelBaseWidth, panelBaseHeight As Integer
     Public isEditing As Boolean = False
     Public code As Integer
+    Private data As DataRow
+    Private msgPermission As String
 
     '__________________________________________________________________________________________________________
     'Constructor
@@ -46,13 +48,11 @@ Public Class MainForm
         labAccount.TextAlignment = ContentAlignment.MiddleLeft
         labDisconnect.TextAlignment = ContentAlignment.MiddleCenter
         labProfile.TextAlignment = ContentAlignment.MiddleCenter
-        labPersonConnected.Text = "Bonjour, Allo"
-        labPersonConnected.Refresh()
-        Me.Refresh()
         panelAccountOptions.Visible = False
         panelBaseHeight = panelMain.Height
         panelBaseWidth = panelMain.Width
         selectOptionButton(0)
+        Data = EntityUser.getInstance().getUsersCode(code).Rows(0)
     End Sub
 
     '__________________________________________________________________________________________________________
@@ -183,38 +183,53 @@ Public Class MainForm
     End Sub
 
     Private Sub btRent_Click(sender As Object, e As EventArgs) Handles btRent.Click
-        Dim iRent As New UCRent(Me)
-        iRent.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iRent)
-        iRent.BringToFront()
-        selectOptionButton(2)
+        If (data.Item("permissions") >= 1) Then
+            Dim iRent As New UCRent(Me)
+            iRent.Dock = DockStyle.Fill
+            panelMain.Controls.Clear()
+            panelMain.Controls.Add(iRent)
+            iRent.BringToFront()
+            selectOptionButton(2)
+        Else MessageBox.Show(msgPermission)
+        End If
     End Sub
 
     Private Sub btReturn_Click(sender As Object, e As EventArgs) Handles btReturn.Click
-        loadReturns()
+        If (data.Item("permissions") >= 1) Then
+            loadReturns()
+        Else MessageBox.Show(msgPermission)
+        End If
     End Sub
 
     Private Sub btUser_Click(sender As Object, e As EventArgs) Handles btUser.Click
-        Dim iUser As New UCUser(Me)
-        iUser.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iUser)
-        iUser.BringToFront()
-        selectOptionButton(4)
+        If (data.Item("permissions") = 3) Then
+            Dim iUser As New UCUser(Me)
+            iUser.Dock = DockStyle.Fill
+            panelMain.Controls.Clear()
+            panelMain.Controls.Add(iUser)
+            iUser.BringToFront()
+            selectOptionButton(4)
+        Else MessageBox.Show(msgPermission)
+        End If
     End Sub
 
     Private Sub btEquipment_Click(sender As Object, e As EventArgs) Handles btEquipment.Click
-        Dim iEquipment As New UCEquipment(Me)
-        iEquipment.Dock = DockStyle.Fill
-        panelMain.Controls.Clear()
-        panelMain.Controls.Add(iEquipment)
-        iEquipment.BringToFront()
-        selectOptionButton(5)
+        If (data.Item("permissions") = 3) Then
+            Dim iEquipment As New UCEquipment(Me)
+            iEquipment.Dock = DockStyle.Fill
+            panelMain.Controls.Clear()
+            panelMain.Controls.Add(iEquipment)
+            iEquipment.BringToFront()
+            selectOptionButton(5)
+        Else MessageBox.Show(msgPermission)
+        End If
     End Sub
 
     Private Sub btHistory_Click(sender As Object, e As EventArgs) Handles btHistory.Click
-        loadHistory()
+        If (data.Item("permissions") = 3) Then
+            loadHistory()
+        Else MessageBox.Show(msgPermission)
+        End If
     End Sub
 
     Private Sub labProfile_Click(sender As Object, e As EventArgs) Handles labProfile.Click
@@ -245,7 +260,6 @@ Public Class MainForm
         Dim json = Lang.getInstance().getLang()
         Try
 
-            Dim data As DataRow = EntityUser.getInstance().getUsersCode(code).Rows(0)
             labPersonConnected.Text = json("MainlabPersonConnected").ToString() + data.Item("firstName")
 
         Catch ex As Exception
@@ -263,6 +277,7 @@ Public Class MainForm
         btHistory.Text = json("MainbtHistory")
         labProfile.Text = json("MainlabProfile")
         labDisconnect.Text = json("MainlabDisconnect")
+        msgPermission = json("AccessDenied")
     End Sub
 
     Private Sub panelAccountOptions_MouseLeave(sender As Object, e As EventArgs) Handles panelAccountOptions.MouseLeave,
