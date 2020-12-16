@@ -40,7 +40,7 @@ Public Class EntityHistory
                                     ORDER BY H.code"
             Else
                 command.CommandText = $"SELECT H.code,
-                                        H.dateReturned,
+                                        DATE_FORMAT(H.dateReturned, '%d %M %Y') as returnDate,
                                         ( 
                                             SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
                                             FROM user U 
@@ -79,7 +79,7 @@ Public Class EntityHistory
             command.Connection = connection
             If lang = "EN" Then
                 command.CommandText = $"SELECT H.code,
-                                        H.dateReturned,
+                                        DATE_FORMAT(H.dateReturned, '%d %M %Y') as returnDate,
                                         ( 
                                             SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
                                             FROM user U 
@@ -115,7 +115,7 @@ Public Class EntityHistory
                                     ORDER BY H.code"
             Else
                 command.CommandText = $"SELECT H.code,
-                                        H.dateReturned,
+                                        DATE_FORMAT(H.dateReturned, '%d %M %Y') as returnDate,
                                         ( 
                                             SELECT initcap(CONCAT(U.lastName, ', ', U.firstName)) 
                                             FROM user U 
