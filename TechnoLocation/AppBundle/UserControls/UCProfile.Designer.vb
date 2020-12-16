@@ -366,7 +366,6 @@ Partial Class UCProfile
         Me.dropPermissions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.dropPermissions.HoverState.Parent = Me.dropPermissions
         Me.dropPermissions.ItemHeight = 30
-        Me.dropPermissions.Items.AddRange(New Object() {"0 - Utilisateur de base", "1 - Utilisateur pouvant prêter", "2 - Professeur", "3 - Admin"})
         Me.dropPermissions.ItemsAppearance.Parent = Me.dropPermissions
         Me.dropPermissions.Location = New System.Drawing.Point(527, 431)
         Me.dropPermissions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -389,7 +388,6 @@ Partial Class UCProfile
         Me.dropStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.dropStatus.HoverState.Parent = Me.dropStatus
         Me.dropStatus.ItemHeight = 30
-        Me.dropStatus.Items.AddRange(New Object() {"0 - Étudiant", "1 - Professeur", "2 - Employé"})
         Me.dropStatus.ItemsAppearance.Parent = Me.dropStatus
         Me.dropStatus.Location = New System.Drawing.Point(527, 366)
         Me.dropStatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -643,7 +641,7 @@ Partial Class UCProfile
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Guna2Panel5)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UCProfile"
         Me.Size = New System.Drawing.Size(1263, 743)
         Me.Guna2Panel5.ResumeLayout(False)

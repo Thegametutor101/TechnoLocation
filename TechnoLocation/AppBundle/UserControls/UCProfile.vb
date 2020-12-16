@@ -28,6 +28,7 @@ Public Class UCProfile
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not mainForm.code = 0 Then
             data = EntityUser.getInstance().getUserByCode(mainForm.code).Rows(0)
+            loadLanguages()
             numCode.Text = mainForm.code
             tbFirstName.Text = data.Item("firstName")
             tbLastName.Text = data.Item("lastName")
@@ -48,7 +49,6 @@ Public Class UCProfile
                 numExtension1.Text = data.Item("extension2")
             End If
         End If
-        loadLanguages()
     End Sub
 
 
