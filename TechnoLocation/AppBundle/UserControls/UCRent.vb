@@ -164,16 +164,18 @@ Public Class UCRent
     End Sub
 
     Private Sub gridSelectedEquipment_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles gridSelectedEquipment.CellEndEdit
-        If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([\d])*(\.[\d]{0,2}|\,[\d]{0,2})*$") Then
-            changeDepositReel()
-            Try
-                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ",", "."))
-            Catch ex As Exception
-                gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
-            End Try
-        Else
-            gridSelectedEquipment.CurrentCell.Value = "$ 0,00"
-            changeDepositReel()
+        If Not String.IsNullOrEmpty(gridSelectedEquipment.CurrentCell.Value) Then
+            If Regex.IsMatch(gridSelectedEquipment.CurrentCell.Value, "^([\d])*(\.[\d]{0,2}|\,[\d]{0,2})*$") Then
+                changeDepositReel()
+                Try
+                    gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ",", "."))
+                Catch ex As Exception
+                    gridSelectedEquipment.CurrentCell.Value = checkNumberMoney(Replace(gridSelectedEquipment.CurrentCell.Value, ".", ","))
+                End Try
+            Else
+                gridSelectedEquipment.CurrentCell.Value = "$ 0,00"
+                changeDepositReel()
+            End If
         End If
     End Sub
 

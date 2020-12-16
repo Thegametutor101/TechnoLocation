@@ -28,6 +28,7 @@ Public Class UCProfile
     Private Sub UCProfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not mainForm.code = 0 Then
             data = EntityUser.getInstance().getUserByCode(mainForm.code).Rows(0)
+            loadLanguages()
             numCode.Text = mainForm.code
             tbFirstName.Text = data.Item("firstName")
             tbLastName.Text = data.Item("lastName")
@@ -77,33 +78,22 @@ Public Class UCProfile
     End Sub
 
     Private Sub numCode_ValueChanged(sender As Object, e As EventArgs) Handles numCode.ValueChanged
-
         mainForm.isEditing = True
-
-
-
         If numCode.Value >= 10000000 Then
-
             numCode.Value = Integer.Parse(codesBarres.isBarcodeUser(numCode.Value.ToString))
-
         End If
-
     End Sub
 
 
 
     Private Sub numCode_GotFocus(sender As Object, e As EventArgs) Handles numCode.GotFocus
-
         numCode.Text = ""
-
     End Sub
 
 
 
     Private Sub numCode_LostFocus(sender As Object, e As EventArgs) Handles numCode.LostFocus
-
         numCode.Text = numCode.Value
-
     End Sub
 
     Private Sub numCode_KeyUp(sender As Object, e As KeyEventArgs) Handles numCode.KeyUp
@@ -176,8 +166,7 @@ Public Class UCProfile
         Else
             matricule = numCode.Value
         End If
-        Try
-            ModelUser.getInstance().updateUser(CInt(numCode.Value),
+        ModelUser.getInstance().updateUser(CInt(numCode.Value),
                                                password,
                                                firstName,
                                                lastName,
@@ -189,15 +178,7 @@ Public Class UCProfile
                                                dropStatus.SelectedIndex,
                                                dropPermissions.SelectedIndex,
                                                0)
-            'interfaceUser.loadDataGridView()
-            Me.SendToBack()
-        Catch ex As Exception
-            MsgBox(Lang.getInstance().getLang()("SameMatricula"),
-                   vbOKOnly,
-                   Lang.getInstance().getLang()("SameMatriculaTitle"))
-            numCode.BorderColor = Color.LightCoral
-            numCode.FocusedState.BorderColor = Color.LightCoral
-        End Try
+        Me.SendToBack()
     End Sub
 
     '__________________________________________________________________________________________________________

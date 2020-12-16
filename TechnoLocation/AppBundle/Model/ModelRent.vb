@@ -30,7 +30,32 @@ Public Class ModelRent
                                                     rentDate='{rentDate}',
                                                     returnDate='{returnDate}',
                                                     deposit='{deposit}',
-                                                    comments='{comments}'"
+                                                    comments='{comments}'
+                                                    where code = '{code}' and
+                                                    lender = '{lender}' and
+                                                    equipment = '{equipment}'"
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show($"Échec à la mise à jour de l'emprunt {code}.{Environment.NewLine}" + ex.Message)
+        End Try
+    End Function
+
+    Public Function updateRentForRent(code As Integer,
+                               renter As Integer,
+                               lender As Integer,
+                               equipment As Integer)
+        Try
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            Dim command As New MySqlCommand
+            command.Connection = connection
+            command.CommandText = $"update rent set renter='{renter}'
+                                                    where code = '{code}' and
+                                                    lender = '{lender}' and
+                                                    equipment = '{equipment}'"
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()

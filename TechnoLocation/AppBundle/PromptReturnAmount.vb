@@ -132,12 +132,22 @@
         Dim json = Lang.getInstance().getLang()
         btKitAdd.Text = json("Submit")
         btKitCancel.Text = json("CancelButton")
-        labMessage.Text = json("MsgPromptReturn1").ToString() +
+        If IsNothing(ucRentMod) Then
+            labMessage.Text = json("MsgPromptReturn1").ToString() +
                           Replace(Replace(("$ " + returnEquipment.balance.ToString()),
                                                     ".",
                                                     ","),
                                             "-",
                                             "") +
                           json("MsgPromptReturn2").ToString()
+        Else
+            labMessage.Text = json("MsgPromptReturn1").ToString() +
+                          Replace(Replace(("$ " + cancelDeposit.ToString),
+                                                    ".",
+                                                    ","),
+                                            "-",
+                                            "") +
+                          json("MsgPromptReturn2").ToString()
+        End If
     End Sub
 End Class
