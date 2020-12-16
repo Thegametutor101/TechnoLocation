@@ -264,3 +264,4 @@ D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\Techno
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentMod.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCUserModify.resources
 D:\Mathieu\Desktop\TechnoLocation\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCProfile.resources
+C:\Users\zacha\Documents\PretsGit\TechnoLocation\TechnoLocation\obj\Debug\TechnoLocation.UCRentMod.resources

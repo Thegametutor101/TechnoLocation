@@ -28,6 +28,9 @@ Partial Class UCNotif
         Me.tbRentDate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbEquipNum = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.labNbr = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labRentDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -54,6 +57,9 @@ Partial Class UCNotif
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.labDeposit)
+        Me.Guna2Panel1.Controls.Add(Me.labRentDate)
+        Me.Guna2Panel1.Controls.Add(Me.labNbr)
         Me.Guna2Panel1.Controls.Add(Me.tbDepositAmount)
         Me.Guna2Panel1.Controls.Add(Me.tbRentDate)
         Me.Guna2Panel1.Controls.Add(Me.tbEquipNum)
@@ -61,7 +67,7 @@ Partial Class UCNotif
         Me.Guna2Panel1.Location = New System.Drawing.Point(3, 82)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(243, 126)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(243, 224)
         Me.Guna2Panel1.TabIndex = 1
         '
         'tbDepositAmount
@@ -79,7 +85,7 @@ Partial Class UCNotif
         Me.tbDepositAmount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbDepositAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbDepositAmount.HoverState.Parent = Me.tbDepositAmount
-        Me.tbDepositAmount.Location = New System.Drawing.Point(0, 87)
+        Me.tbDepositAmount.Location = New System.Drawing.Point(0, 185)
         Me.tbDepositAmount.Name = "tbDepositAmount"
         Me.tbDepositAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbDepositAmount.PlaceholderText = ""
@@ -103,7 +109,7 @@ Partial Class UCNotif
         Me.tbRentDate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbRentDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbRentDate.HoverState.Parent = Me.tbRentDate
-        Me.tbRentDate.Location = New System.Drawing.Point(0, 45)
+        Me.tbRentDate.Location = New System.Drawing.Point(0, 110)
         Me.tbRentDate.Name = "tbRentDate"
         Me.tbRentDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbRentDate.PlaceholderText = ""
@@ -127,7 +133,7 @@ Partial Class UCNotif
         Me.tbEquipNum.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbEquipNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEquipNum.HoverState.Parent = Me.tbEquipNum
-        Me.tbEquipNum.Location = New System.Drawing.Point(0, 3)
+        Me.tbEquipNum.Location = New System.Drawing.Point(0, 37)
         Me.tbEquipNum.Name = "tbEquipNum"
         Me.tbEquipNum.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tbEquipNum.PlaceholderText = ""
@@ -147,8 +153,41 @@ Partial Class UCNotif
         Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(123, Byte), Integer))
         Me.Guna2ShadowPanel1.ShadowDepth = 200
         Me.Guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(253, 242)
+        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(253, 323)
         Me.Guna2ShadowPanel1.TabIndex = 2
+        '
+        'labNbr
+        '
+        Me.labNbr.BackColor = System.Drawing.Color.Transparent
+        Me.labNbr.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNbr.ForeColor = System.Drawing.Color.White
+        Me.labNbr.Location = New System.Drawing.Point(4, 16)
+        Me.labNbr.Name = "labNbr"
+        Me.labNbr.Size = New System.Drawing.Size(27, 20)
+        Me.labNbr.TabIndex = 3
+        Me.labNbr.Text = "nbr"
+        '
+        'labRentDate
+        '
+        Me.labRentDate.BackColor = System.Drawing.Color.Transparent
+        Me.labRentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRentDate.ForeColor = System.Drawing.Color.White
+        Me.labRentDate.Location = New System.Drawing.Point(4, 89)
+        Me.labRentDate.Name = "labRentDate"
+        Me.labRentDate.Size = New System.Drawing.Size(35, 20)
+        Me.labRentDate.TabIndex = 4
+        Me.labRentDate.Text = "date"
+        '
+        'labDeposit
+        '
+        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
+        Me.labDeposit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDeposit.ForeColor = System.Drawing.Color.White
+        Me.labDeposit.Location = New System.Drawing.Point(4, 164)
+        Me.labDeposit.Name = "labDeposit"
+        Me.labDeposit.Size = New System.Drawing.Size(58, 20)
+        Me.labDeposit.TabIndex = 5
+        Me.labDeposit.Text = "deposit"
         '
         'UCNotif
         '
@@ -156,8 +195,9 @@ Partial Class UCNotif
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Guna2ShadowPanel1)
         Me.Name = "UCNotif"
-        Me.Size = New System.Drawing.Size(255, 248)
+        Me.Size = New System.Drawing.Size(255, 329)
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -169,4 +209,7 @@ Partial Class UCNotif
     Friend WithEvents tbRentDate As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents tbEquipNum As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
+    Friend WithEvents labDeposit As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labRentDate As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents labNbr As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

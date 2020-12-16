@@ -184,5 +184,8 @@
   "RentLabEndDate": "Return date",
   "RentLabSuggestedDeposit": "Suggested deposit",
   "RentLabRealDeposit": "Real deposit",
+  "NotifLabNbr": "Number of items",
+  "NotifLabDate": "Rent date",
+  "NotifLabDepo": "Deposit of rent",
   "DashboardLabLate": "Late rentals"
 }

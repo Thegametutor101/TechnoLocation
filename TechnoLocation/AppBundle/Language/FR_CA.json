@@ -184,5 +184,8 @@
   "RentLabEndDate": "Date de retour",
   "RentLabSuggestedDeposit": "Dépot suggéré",
   "RentLabRealDeposit": "Dépot réel",
+  "NotifLabNbr": "Nombre d'objets",
+  "NotifLabDate": "Date de location",
+  "NotifLabDepo": "Dépôt de location",
   "DashboardLabLate": "Emprunts en retard"
 }

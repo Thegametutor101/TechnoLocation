@@ -25,6 +25,7 @@
     'Load
     '__________________________________________________________________________________________________________
     Private Sub UCNotif_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadLang()
         For Each row As DataRow In table.Rows
             If Convert.ToDateTime(row.Item(5).ToString).DayOfYear = Today.DayOfYear Then
                 liste.Add(row.Item(1).ToString)
@@ -44,6 +45,13 @@
         tbEquipNum.Text = listeInfos(cbNotifs.SelectedIndex)(3)
         tbRentDate.Text = listeInfos(cbNotifs.SelectedIndex)(4)
         tbDepositAmount.Text = listeInfos(cbNotifs.SelectedIndex)(6)
+    End Sub
+
+    Private Sub loadLang()
+        Dim json = Lang.getInstance().getLang()
+        labNbr.Text = json("NotifLabNbr")
+        labRentDate.Text = json("NotifLabDate")
+        labDeposit.Text = json("NotifLabDepo")
     End Sub
 
 
