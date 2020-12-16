@@ -24,13 +24,13 @@ Partial Class UCNotif
     Private Sub InitializeComponent()
         Me.cbNotifs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labRentDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.labNbr = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tbDepositAmount = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbRentDate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbEquipNum = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
-        Me.labNbr = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labRentDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.labDeposit = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -69,6 +69,39 @@ Partial Class UCNotif
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(243, 224)
         Me.Guna2Panel1.TabIndex = 1
+        '
+        'labDeposit
+        '
+        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
+        Me.labDeposit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDeposit.ForeColor = System.Drawing.Color.White
+        Me.labDeposit.Location = New System.Drawing.Point(4, 164)
+        Me.labDeposit.Name = "labDeposit"
+        Me.labDeposit.Size = New System.Drawing.Size(58, 20)
+        Me.labDeposit.TabIndex = 5
+        Me.labDeposit.Text = "deposit"
+        '
+        'labRentDate
+        '
+        Me.labRentDate.BackColor = System.Drawing.Color.Transparent
+        Me.labRentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRentDate.ForeColor = System.Drawing.Color.White
+        Me.labRentDate.Location = New System.Drawing.Point(4, 89)
+        Me.labRentDate.Name = "labRentDate"
+        Me.labRentDate.Size = New System.Drawing.Size(35, 20)
+        Me.labRentDate.TabIndex = 4
+        Me.labRentDate.Text = "date"
+        '
+        'labNbr
+        '
+        Me.labNbr.BackColor = System.Drawing.Color.Transparent
+        Me.labNbr.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNbr.ForeColor = System.Drawing.Color.White
+        Me.labNbr.Location = New System.Drawing.Point(4, 16)
+        Me.labNbr.Name = "labNbr"
+        Me.labNbr.Size = New System.Drawing.Size(27, 20)
+        Me.labNbr.TabIndex = 3
+        Me.labNbr.Text = "nbr"
         '
         'tbDepositAmount
         '
@@ -155,39 +188,6 @@ Partial Class UCNotif
         Me.Guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
         Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(253, 323)
         Me.Guna2ShadowPanel1.TabIndex = 2
-        '
-        'labNbr
-        '
-        Me.labNbr.BackColor = System.Drawing.Color.Transparent
-        Me.labNbr.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labNbr.ForeColor = System.Drawing.Color.White
-        Me.labNbr.Location = New System.Drawing.Point(4, 16)
-        Me.labNbr.Name = "labNbr"
-        Me.labNbr.Size = New System.Drawing.Size(27, 20)
-        Me.labNbr.TabIndex = 3
-        Me.labNbr.Text = "nbr"
-        '
-        'labRentDate
-        '
-        Me.labRentDate.BackColor = System.Drawing.Color.Transparent
-        Me.labRentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labRentDate.ForeColor = System.Drawing.Color.White
-        Me.labRentDate.Location = New System.Drawing.Point(4, 89)
-        Me.labRentDate.Name = "labRentDate"
-        Me.labRentDate.Size = New System.Drawing.Size(35, 20)
-        Me.labRentDate.TabIndex = 4
-        Me.labRentDate.Text = "date"
-        '
-        'labDeposit
-        '
-        Me.labDeposit.BackColor = System.Drawing.Color.Transparent
-        Me.labDeposit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labDeposit.ForeColor = System.Drawing.Color.White
-        Me.labDeposit.Location = New System.Drawing.Point(4, 164)
-        Me.labDeposit.Name = "labDeposit"
-        Me.labDeposit.Size = New System.Drawing.Size(58, 20)
-        Me.labDeposit.TabIndex = 5
-        Me.labDeposit.Text = "deposit"
         '
         'UCNotif
         '
